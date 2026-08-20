@@ -1,11 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
-
 .idea/
-
 .env
 
 data/raw/
+data/temp/
 
 *.tmp
