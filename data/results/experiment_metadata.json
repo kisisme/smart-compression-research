@@ -1,0 +1,86 @@
+{
+  "base_seed": 20260911,
+  "completed_at_utc": "2026-09-11T14:11:49.265393+00:00",
+  "compression_result_count": 288,
+  "compression_settings": {
+    "bz2": {
+      "level": 9
+    },
+    "gzip": {
+      "level": 9
+    },
+    "lzma": {
+      "preset": 6
+    },
+    "zstd": {
+      "level": 3
+    }
+  },
+  "duration_seconds": 84.83965900000476,
+  "feature_settings": {
+    "duplicate_block_size": 16,
+    "segment_size": 4096
+  },
+  "generator_counts": {
+    "long_runs": 12,
+    "mixed": 12,
+    "random": 12,
+    "repeated_pattern": 12,
+    "small_alphabet": 12,
+    "structured": 12
+  },
+  "generators": [
+    "random",
+    "small_alphabet",
+    "repeated_pattern",
+    "long_runs",
+    "structured",
+    "mixed"
+  ],
+  "git": {
+    "commit_hash": "e44fea992bb6c70330e3b4de235764be36bb0b5f",
+    "worktree_dirty": false
+  },
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "output_files": {
+    "compression_results.csv": {
+      "sha256": "1059756221a3051147e76ad49bd5a00790877ce9570125c78a363f058a7eb1b6"
+    },
+    "samples.csv": {
+      "sha256": "83dcf2d32fa563be07de238fb499c7f5f996b997b024fffd6016ba9d1c3e7571"
+    }
+  },
+  "package_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "zstandard": "0.25.0"
+  },
+  "python_implementation": "CPython",
+  "python_version": "3.14.4",
+  "sample_count": 72,
+  "sample_id_strategy": "sample_{zero_based_sample_index:06d}",
+  "sample_sizes": [
+    16384,
+    65536,
+    262144,
+    1048576
+  ],
+  "schema_version": 1,
+  "seed_strategy": "base_seed + zero_based_sample_index",
+  "size_counts": {
+    "1048576": 18,
+    "16384": 18,
+    "262144": 18,
+    "65536": 18
+  },
+  "started_at_utc": "2026-09-11T14:10:24.425732+00:00",
+  "timing": {
+    "aggregate": "median",
+    "repeats": 5,
+    "timer": "time.perf_counter_ns"
+  },
+  "verification_failure_count": 0,
+  "verification_failures": []
+}
