@@ -1,0 +1,13 @@
+mode,algorithm,win_count,total_count,win_rate
+archive,gzip,8,1008,0.0079365079365079361
+archive,bz2,0,1008,0
+archive,lzma,0,1008,0
+archive,zstd,1000,1008,0.99206349206349209
+balanced,gzip,5,1008,0.00496031746031746
+balanced,bz2,0,1008,0
+balanced,lzma,0,1008,0
+balanced,zstd,1003,1008,0.99503968253968256
+fast_access,gzip,12,1008,0.011904761904761904
+fast_access,bz2,0,1008,0
+fast_access,lzma,0,1008,0
+fast_access,zstd,996,1008,0.98809523809523814

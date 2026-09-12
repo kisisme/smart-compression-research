@@ -1,0 +1,32 @@
+{
+  "algorithms": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "analysis_version": 1,
+  "compression_result_count": 4032,
+  "generated_files": [
+    "feature_summary.csv",
+    "algorithm_metric_summary.csv",
+    "correlations.csv",
+    "win_rates_by_mode.csv",
+    "win_rates_by_generator_mode.csv",
+    "win_rates_by_size_mode.csv",
+    "pareto_frequency.csv"
+  ],
+  "input_sha256": {
+    "compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2"
+  },
+  "modes": [
+    "archive",
+    "balanced",
+    "fast_access"
+  ],
+  "sample_count": 1008,
+  "selection_label_count": 3024,
+  "standard_deviation": "population (ddof=0)"
+}
