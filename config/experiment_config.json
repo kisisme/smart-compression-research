@@ -18,6 +18,17 @@
     "timer": "time.perf_counter_ns",
     "aggregate": "median"
   },
+  "memory": {
+    "status": "validation_only",
+    "platform": "win32",
+    "metric": "peak_process_working_set_bytes",
+    "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+    "unit": "bytes",
+    "isolation": "fresh_subprocess_per_phase_repeat",
+    "repeats": 5,
+    "aggregate": "median",
+    "combined": "max_of_phase_medians"
+  },
   "features": {
     "duplicate_block_size": 16,
     "segment_size": 4096
