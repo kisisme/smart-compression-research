@@ -1,4 +1,4 @@
-"""Train and evaluate protocol-v2 majority and Decision Tree models."""
+"""Train and evaluate protocol-v2 majority, Decision Tree, and Random Forest models."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ import numpy as np
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.ensemble import RandomForestClassifier
 
 from src.analysis import METRIC_NAMES, _read_exact_csv, _sha256, _validate_inputs
 from src.data_generator import GENERATOR_NAMES
@@ -101,18 +102,31 @@ def _write_frame(path: Path, frame: pd.DataFrame) -> None:
     frame.to_csv(path, index=False, encoding="utf-8", float_format="%.17g")
 
 
-def fit_decision_tree(features: pd.DataFrame, labels: list[str], settings: dict) -> DecisionTreeClassifier:
-    """Fit on explicitly selected training features only, without evaluation data."""
+def _validate_training_inputs(features: pd.DataFrame, labels: list[str], settings: dict) -> None:
+    """Require pre-compression features and a recorded deterministic seed."""
     if list(features.columns) != list(FEATURE_NAMES):
-        raise ValueError("Decision Tree requires exactly the ordered protocol features")
+        raise ValueError("Model requires exactly the ordered protocol features")
     if not np.isfinite(features.to_numpy(dtype=float)).all():
-        raise ValueError("Decision Tree features must be finite")
+        raise ValueError("Model features must be finite")
     if not labels or not set(labels) <= set(ALGORITHMS):
-        raise ValueError("Decision Tree labels must be supported algorithms")
+        raise ValueError("Model labels must be supported algorithms")
+    if len(features) != len(labels):
+        raise ValueError("Training feature and label counts differ")
     state = settings.get("random_state")
     if isinstance(state, bool) or not isinstance(state, int) or not 0 <= state < 2**32:
-        raise ValueError("Decision Tree random_state must be a fixed integer")
+        raise ValueError("Model random_state must be a fixed integer")
+
+
+def fit_decision_tree(features: pd.DataFrame, labels: list[str], settings: dict) -> DecisionTreeClassifier:
+    """Fit on explicitly selected training features only, without evaluation data."""
+    _validate_training_inputs(features, labels, settings)
     return DecisionTreeClassifier(**settings).fit(features, labels)
+
+
+def fit_random_forest(features: pd.DataFrame, labels: list[str], settings: dict) -> RandomForestClassifier:
+    """Fit a fresh forest on training features and labels only."""
+    _validate_training_inputs(features, labels, settings)
+    return RandomForestClassifier(**settings).fit(features, labels)
 
 
 def _baseline_reference(directory: Path, input_hashes: dict, config: dict,
@@ -143,13 +157,14 @@ def _baseline_reference(directory: Path, input_hashes: dict, config: dict,
 
 def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
                model_kind: str = "baseline", baseline_dir: str | Path | None = None) -> dict:
-    """Share validation and evaluation so both models use the same definitions."""
+    """Share validation and evaluation so all models use the same definitions."""
     source = Path(experiment_dir)
     destination = Path(output_dir)
     if destination.exists():
         raise FileExistsError(f"Evaluation output already exists: {destination}")
-    if model_kind not in ("baseline", "decision_tree"):
+    if model_kind not in ("baseline", "decision_tree", "random_forest"):
         raise ValueError("Unsupported model kind")
+    uses_features = model_kind != "baseline"
     config = json.loads(_CONFIG_PATH.read_text(encoding="utf-8"))
     if config["selection_modes"] != MODE_WEIGHTS:
         raise ValueError("Loaded scoring weights differ from the current config")
@@ -190,9 +205,9 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
         raise ValueError("Experiment metadata reports verification failures")
 
     reference, reference_hashes = None, {}
-    if model_kind == "decision_tree":
+    if uses_features:
         if baseline_dir is None:
-            raise ValueError("Decision Tree evaluation requires a saved baseline directory")
+            raise ValueError("Feature model evaluation requires a saved baseline directory")
         reference, splits, reference_hashes = _baseline_reference(
             Path(baseline_dir), input_hashes, config, splits,
         )
@@ -214,10 +229,11 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
         truth = test_labels["best_algorithm"].tolist()
         prediction = [model["algorithm"]] * len(test_ids)
         probability_rows = [{} for _ in test_ids]
-        if model_kind == "decision_tree":
-            tree = fit_decision_tree(
+        if uses_features:
+            fit_model = fit_decision_tree if model_kind == "decision_tree" else fit_random_forest
+            tree = fit_model(
                 features.loc[train_ids], mode_labels.loc[train_ids, "best_algorithm"].tolist(),
-                config["decision_tree"],
+                config[model_kind],
             )
             trees[mode] = tree
             prediction = tree.predict(features.loc[test_ids]).tolist()
@@ -230,14 +246,22 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
                 for row in probabilities
             ]
             models[mode] = {
-                "model_file": f"decision_tree_{mode}.pkl", "classes": tree.classes_.tolist(),
-                "parameters": tree.get_params(), "depth": int(tree.get_depth()), "leaf_count": int(tree.get_n_leaves()),
+                "model_file": f"{model_kind}_{mode}.pkl", "classes": tree.classes_.tolist(),
+                "parameters": tree.get_params(),
                 "training_label_counts": model["training_label_counts"],
                 "training_metrics": classification_metrics(
                     mode_labels.loc[train_ids, "best_algorithm"].tolist(),
                     tree.predict(features.loc[train_ids]).tolist(),
                 ),
             }
+            if model_kind == "decision_tree":
+                models[mode].update(depth=int(tree.get_depth()), leaf_count=int(tree.get_n_leaves()))
+            else:
+                models[mode].update(
+                    estimator_count=len(tree.estimators_),
+                    tree_depths=[int(t.get_depth()) for t in tree.estimators_],
+                    tree_leaf_counts=[int(t.get_n_leaves()) for t in tree.estimators_],
+                )
             importance_rows.extend(
                 {"mode": mode, "feature": name, "importance": float(value)}
                 for name, value in zip(FEATURE_NAMES, tree.feature_importances_, strict=True)
@@ -262,12 +286,12 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
                 **probability,
             })
         strategies = (*ALGORITHMS, "baseline", "oracle")
-        if model_kind == "decision_tree":
-            strategies = (*strategies, "decision_tree")
+        if uses_features:
+            strategies = (*strategies, model_kind)
         for strategy in strategies:
             if strategy == "oracle":
                 chosen = truth
-            elif strategy == "decision_tree":
+            elif uses_features and strategy == model_kind:
                 chosen = prediction
             else:
                 chosen = [model["algorithm"] if strategy == "baseline" else strategy] * len(test_ids)
@@ -310,14 +334,22 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
                         "Seed grouping does not detect similarity across different seeds.",
                         "Stored algorithm times exclude feature extraction and prediction overhead."],
     }
-    if model_kind == "decision_tree":
+    if uses_features:
         summary.update({
             "feature_importance": "feature_importance.csv",
             "feature_importance_reason": "Normalized training impurity reduction (MDI), not a causal explanation.",
-            "input_features": list(FEATURE_NAMES), "model_settings": config["decision_tree"],
+            "input_features": list(FEATURE_NAMES), "model_settings": config[model_kind],
             "baseline_reference_sha256": reference_hashes,
-            "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba.",
-            "hyperparameter_selection": "Fixed configuration; no test-based tuning, reweighting, or resampling.",
+            "prediction_confidence_definition": (
+                "Maximum uncalibrated leaf class proportion from predict_proba."
+                if model_kind == "decision_tree" else
+                "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+            ),
+            "hyperparameter_selection": (
+                "Fixed configuration; no test-based tuning, reweighting, or resampling."
+                if model_kind == "decision_tree" else
+                "Fixed configuration; standard training bootstrap only; no test-based tuning or class balancing."
+            ),
             "prediction_tie_break": "First maximum in fitted sklearn classes_ order.",
         })
     # Detect changed inputs before publishing; never overwrite existing results.
@@ -336,10 +368,10 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
         _write_frame(output / "misclassified_samples.csv", prediction_frame.loc[~prediction_frame["correct"]])
         _write_frame(output / "strategy_comparison.csv", pd.DataFrame(comparisons))
         (output / "baseline_models.json").write_text(json.dumps(majority_models, indent=2) + "\n", encoding="utf-8")
-        if model_kind == "decision_tree":
+        if uses_features:
             _write_frame(output / "feature_importance.csv", pd.DataFrame(importance_rows))
             for mode, tree in trees.items():
-                model_path = output / f"decision_tree_{mode}.pkl"
+                model_path = output / f"{model_kind}_{mode}.pkl"
                 model_path.write_bytes(pickle.dumps(tree, protocol=pickle.HIGHEST_PROTOCOL))
                 # Load only the model just written by this process and check round-trip predictions.
                 restored = pickle.loads(model_path.read_bytes())
@@ -348,11 +380,12 @@ def _run_model(experiment_dir: str | Path, output_dir: str | Path, *,
                     restored.predict_proba(test_features), tree.predict_proba(test_features)
                 ):
                     raise RuntimeError(f"Serialized model prediction mismatch: {mode}")
-                (output / f"decision_tree_{mode}_rules.txt").write_text(
-                    export_text(tree, feature_names=list(FEATURE_NAMES),
-                                max_depth=max(1, tree.get_depth()), decimals=10, show_weights=True),
-                    encoding="utf-8",
-                )
+                if model_kind == "decision_tree":
+                    (output / f"decision_tree_{mode}_rules.txt").write_text(
+                        export_text(tree, feature_names=list(FEATURE_NAMES),
+                                    max_depth=max(1, tree.get_depth()), decimals=10, show_weights=True),
+                        encoding="utf-8",
+                    )
         summary["output_sha256"] = {p.name: _sha256(p) for p in sorted(output.iterdir())}
         (output / f"{model_kind}_summary.json").write_text(
             json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8",
@@ -370,15 +403,20 @@ def run_decision_tree(experiment_dir: str | Path, baseline_dir: str | Path,
     return _run_model(experiment_dir, output_dir, model_kind="decision_tree", baseline_dir=baseline_dir)
 
 
+def run_random_forest(experiment_dir: str | Path, baseline_dir: str | Path,
+                      output_dir: str | Path) -> dict:
+    return _run_model(experiment_dir, output_dir, model_kind="random_forest", baseline_dir=baseline_dir)
+
+
 def main(arguments: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--experiment-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--model", choices=("baseline", "decision_tree"), default="baseline")
+    parser.add_argument("--model", choices=("baseline", "decision_tree", "random_forest"), default="baseline")
     parser.add_argument("--baseline-dir", type=Path)
     args = parser.parse_args(arguments)
-    if args.model == "decision_tree" and args.baseline_dir is None:
-        parser.error("--model decision_tree requires --baseline-dir")
+    if args.model != "baseline" and args.baseline_dir is None:
+        parser.error(f"--model {args.model} requires --baseline-dir")
     summary = _run_model(args.experiment_dir, args.output_dir,
                          model_kind=args.model, baseline_dir=args.baseline_dir)
     print(json.dumps({"output_dir": str(args.output_dir), "metrics": summary["metrics"]}, indent=2))
