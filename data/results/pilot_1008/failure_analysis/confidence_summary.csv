@@ -1,0 +1,13 @@
+model,mode,correct,count,confidence_min,confidence_mean,confidence_max,confidence_equal_one_count
+decision_tree,archive,False,4,1,1,1,4
+decision_tree,archive,True,198,1,1,1,198
+decision_tree,balanced,False,1,1,1,1,1
+decision_tree,balanced,True,201,1,1,1,201
+decision_tree,fast_access,False,6,1,1,1,6
+decision_tree,fast_access,True,196,1,1,1,196
+random_forest,archive,False,2,0.54000000000000004,0.77000000000000002,1,1
+random_forest,archive,True,200,0.58999999999999997,0.99270000000000014,1,188
+random_forest,balanced,False,1,1,1,1,1
+random_forest,balanced,True,201,0.56000000000000005,0.99159203980099508,1,186
+random_forest,fast_access,False,3,0.54000000000000004,0.84666666666666668,1,2
+random_forest,fast_access,True,199,0.58999999999999997,0.9884422110552763,1,170

@@ -1,0 +1,103 @@
+{
+  "analysis_scope": "Saved test predictions; no refitting, compression, label changes or tuning.",
+  "analysis_version": 1,
+  "created_at_utc": "2026-09-14T11:23:56.134907+00:00",
+  "error_row_count": 21,
+  "git": {
+    "commit_hash": "c63874d062939b846b50d124ebb6c94456423449",
+    "worktree_dirty": false
+  },
+  "input_sha256": {
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\config\\experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\baseline_summary.json": "25fbe59770b970beb05f5c0745fa98687fa14e0a9515174e694747864824d7fc",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\confusion_matrix.csv": "9b9b4a5058bdae359739180b747da386de093fb9ba9272556abbbcd3ba2598e2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\metrics.csv": "49fade82818d1d534aec484350674353daf95245af360136ca8695d4f2f39dc6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\misclassified_samples.csv": "9524abedfa8ae74814777c0fda418c8b15b28dd70468c7ec4b021bb86c791049",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\strategy_comparison.csv": "977686d5059c56473f5602f8d768a5e5c268ec4044e82d24e8f42964f0c15104",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\baseline\\test_predictions.csv": "c4d8e9f19ac1b932d3e673d714a2c8ef55e5890b76cb9c2a4f930219b212a5fa",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\experiment_metadata.json": "9f2075a20331a7498edaffd14b7ed7abda7f1689a3ec11bdc75019da4b9a177e",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2"
+  },
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "output_sha256": {
+    "confidence_summary.csv": "d1e48cbea5e77fc4a5cf92e089f2fd284f8e758aeaa35af9c209a9581d3c9e3a",
+    "error_algorithm_metrics.csv": "35d95439c3f41a1a7dc459903337f892ea86b72096ab6477af4dd3f2bb7d0549",
+    "error_details.csv": "819653d5d429f6e2b8f346db7db4bce7b35e0352d682c7db50b7ecd39ade53f4",
+    "error_feature_context.csv": "805dc902f0bf1763b25ae0da76a1c43a42d26e549d5ec75931a5b58db651b2eb",
+    "grouped_error_rates.csv": "45427866b9f7ecb96d7226d5fdc01ac834a24059f15c62331969fdb8b9bc61f4",
+    "label_distribution.csv": "0f92bc4ad4ac84ff404a5aeb63dafb0be55d36165b67179a0cea7c4fbdc3a360",
+    "model_summary.csv": "7d8fb39e2130efbd060c1d89bdd6d9d844c599dfdfcd444c9b76189c460e795c",
+    "report.md": "479911f2262a7b752552c755e7f722d55a5a2ba5ff8d4f61a43a45cce9e2194d"
+  },
+  "package_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "zstandard": "0.25.0"
+  },
+  "python_version": "3.14.4",
+  "sample_count": 1008,
+  "selection_modes": {
+    "archive": {
+      "compression_ratio": 0.7,
+      "compression_time": 0.15,
+      "decompression_time": 0.15
+    },
+    "balanced": {
+      "compression_ratio": 0.5,
+      "compression_time": 0.25,
+      "decompression_time": 0.25
+    },
+    "fast_access": {
+      "compression_ratio": 0.3,
+      "compression_time": 0.2,
+      "decompression_time": 0.5
+    }
+  },
+  "source_sha256": {
+    "src/analysis.py": "50d1d2f8e919b4f026fb8edd5c545372081a4c2220681bfe94d763fb17aa1f69",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+    "src/failure_analysis.py": "040d92d74108b9524077c136f055710df5ab7e26295943477ea9ca9e245eb0cc",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "src/memory_benchmark.py": "7d42271c37eef1451962ce6f6626437e1b5909bd0fb62f94e5498bfe0bfb6c0f",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/selection_labels.py": "be90ce306250621f8c91261028e111cb8bc51c3169fcb61a7b9105ee5cc09d01",
+    "src/train_model.py": "27e0e91d222b35775de93a8d67c2be4e0f4b82a551c4d85e12ee5a0c6cdd5a57"
+  },
+  "test_count": 202,
+  "unique_error_samples": 7
+}
