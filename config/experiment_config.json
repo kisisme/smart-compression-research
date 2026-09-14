@@ -55,6 +55,17 @@
     "random_state": 42,
     "group_column": "seed"
   },
+  "decision_tree": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "max_features": null,
+    "class_weight": null,
+    "ccp_alpha": 0.0,
+    "random_state": 42
+  },
   "sample_sizes": [
     16384,
     65536,
