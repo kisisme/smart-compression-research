@@ -1,0 +1,4 @@
+mode,algorithm,train_count,test_count,accuracy,macro_f1
+archive,random_forest,806,202,0.99009900990099009,0.24875621890547264
+balanced,random_forest,806,202,0.99504950495049505,0.24937965260545905
+fast_access,random_forest,806,202,0.98514851485148514,0.24812967581047382

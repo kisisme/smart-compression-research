@@ -52,3 +52,31 @@ prediction_confidence는 각 트리의 잎 클래스 확률을 평균한 predict
 최종 일반화 성능은 별도 unseen 파일에서 평가해야 한다. 저장된 압축·해제 시간은
 특징 추출과 모델 예측 비용을 포함하지 않는다. 다른 seed의 유사 데이터까지
 탐지하는 그룹 분할은 아니므로 이 한계도 유지한다.
+
+## 실제 Pilot 실행 기록
+
+구현 커밋 `01259749bb0bd517765d884f3bbb31b1ed648163`의 깨끗한 작업 트리에서
+위 CLI를 실행했다. 실행 전 전체 64개 테스트가 통과했다. 실제 학습 sample은 806개,
+test sample은 202개이며, 결과는 `data/results/pilot_1008/random_forest/`에 저장했다.
+아래 값은 Python이 생성한 CSV를 Python으로 읽어 소수점 6자리로 표시한 값이다.
+
+| Mode | Accuracy | Macro F1 | Mean regret |
+|---|---:|---:|---:|
+| Archive | 0.990099 | 0.248756 | 0.001788 |
+| Balanced | 0.995050 | 0.249380 | 0.000326 |
+| Fast Access | 0.985149 | 0.248130 | 0.004662 |
+
+Archive와 Fast Access에서는 Random Forest의 accuracy와 Macro F1이 Decision Tree보다
+높고 mean regret이 낮았지만, training 최빈 baseline보다 좋지는 않았다. Balanced는
+세 방법의 이 지표들이 같았다. 따라서 이번 Pilot에서는 Random Forest가 항상 최빈
+알고리즘을 선택하는 방법을 개선했다는 근거를 얻지 못했다. 설정과 데이터는 유지한다.
+
+Random Forest는 Archive·Fast Access에서 각각 gzip 1개, zstd 201개를 예측했고,
+Balanced에서는 zstd 202개를 예측했다. 오분류 CSV는 sample × mode 기준 6행이다.
+네 클래스 고정 Macro F1에는 실제 또는 예측에 없는 클래스의 F1도 0으로 포함하므로,
+높은 accuracy와 약 0.25의 Macro F1을 함께 해석해야 한다.
+
+사후 검증에서 summary에 기록된 출력 11개 파일의 SHA-256을 대조했다. baseline,
+Decision Tree, Random Forest의 split_assignments.csv는 바이트 단위로 일치했다.
+원시 측정 CSV와 기존 평가 결과는 변경하지 않았다. 최종 일반화 결론은 별도의
+unseen 평가로 남기며, 상세 실패 사례 분석은 다음 연구 단계에서 수행한다.

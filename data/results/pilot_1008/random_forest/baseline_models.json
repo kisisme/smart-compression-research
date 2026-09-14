@@ -1,0 +1,29 @@
+{
+  "archive": {
+    "algorithm": "zstd",
+    "training_label_counts": {
+      "gzip": 7,
+      "bz2": 0,
+      "lzma": 0,
+      "zstd": 799
+    }
+  },
+  "balanced": {
+    "algorithm": "zstd",
+    "training_label_counts": {
+      "gzip": 4,
+      "bz2": 0,
+      "lzma": 0,
+      "zstd": 802
+    }
+  },
+  "fast_access": {
+    "algorithm": "zstd",
+    "training_label_counts": {
+      "gzip": 10,
+      "bz2": 0,
+      "lzma": 0,
+      "zstd": 796
+    }
+  }
+}
