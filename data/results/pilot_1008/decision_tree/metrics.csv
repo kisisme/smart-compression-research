@@ -1,0 +1,4 @@
+mode,algorithm,train_count,test_count,accuracy,macro_f1
+archive,decision_tree,806,202,0.98019801980198018,0.2475
+balanced,decision_tree,806,202,0.99504950495049505,0.24937965260545905
+fast_access,decision_tree,806,202,0.97029702970297027,0.24623115577889448

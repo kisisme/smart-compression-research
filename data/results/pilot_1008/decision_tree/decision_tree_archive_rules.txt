@@ -1,0 +1,31 @@
+|--- average_run_length <= 1.0169922709
+|   |--- average_run_length <= 1.0169528127
+|   |   |--- average_run_length <= 1.0126315951
+|   |   |   |--- weights: [0.0000000000, 272.0000000000] class: zstd
+|   |   |--- average_run_length >  1.0126315951
+|   |   |   |--- average_run_length <= 1.0127157569
+|   |   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |   |--- average_run_length >  1.0127157569
+|   |   |   |   |--- duplicate_block_ratio <= 0.5240173340
+|   |   |   |   |   |--- average_run_length <= 1.0127822757
+|   |   |   |   |   |   |--- adjacent_repeat_ratio <= 0.0126115098
+|   |   |   |   |   |   |   |--- weights: [0.0000000000, 2.0000000000] class: zstd
+|   |   |   |   |   |   |--- adjacent_repeat_ratio >  0.0126115098
+|   |   |   |   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |   |--- average_run_length >  1.0127822757
+|   |   |   |   |   |   |--- weights: [0.0000000000, 38.0000000000] class: zstd
+|   |   |   |   |--- duplicate_block_ratio >  0.5240173340
+|   |   |   |   |   |--- most_common_byte_ratio <= 0.0877642632
+|   |   |   |   |   |   |--- segment_entropy_std <= 0.0077707071
+|   |   |   |   |   |   |   |--- weights: [0.0000000000, 8.0000000000] class: zstd
+|   |   |   |   |   |   |--- segment_entropy_std >  0.0077707071
+|   |   |   |   |   |   |   |--- adjacent_repeat_ratio <= 0.0165581862
+|   |   |   |   |   |   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |   |   |   |--- adjacent_repeat_ratio >  0.0165581862
+|   |   |   |   |   |   |   |   |--- weights: [0.0000000000, 3.0000000000] class: zstd
+|   |   |   |   |   |--- most_common_byte_ratio >  0.0877642632
+|   |   |   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |--- average_run_length >  1.0169528127
+|   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|--- average_run_length >  1.0169922709
+|   |--- weights: [0.0000000000, 476.0000000000] class: zstd

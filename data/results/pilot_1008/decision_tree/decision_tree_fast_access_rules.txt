@@ -1,0 +1,40 @@
+|--- segment_entropy_std <= 0.0070829131
+|   |--- weights: [0.0000000000, 409.0000000000] class: zstd
+|--- segment_entropy_std >  0.0070829131
+|   |--- segment_entropy_std <= 0.0071778838
+|   |   |--- segment_entropy_mean <= 4.7872576714
+|   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |--- segment_entropy_mean >  4.7872576714
+|   |   |   |--- weights: [0.0000000000, 1.0000000000] class: zstd
+|   |--- segment_entropy_std >  0.0071778838
+|   |   |--- segment_entropy_std <= 0.0114477705
+|   |   |   |--- segment_entropy_std <= 0.0112872631
+|   |   |   |   |--- duplicate_block_ratio <= 0.6232604980
+|   |   |   |   |   |--- average_run_length <= 1.0127392411
+|   |   |   |   |   |   |--- average_run_length <= 1.0126315951
+|   |   |   |   |   |   |   |--- weights: [0.0000000000, 13.0000000000] class: zstd
+|   |   |   |   |   |   |--- average_run_length >  1.0126315951
+|   |   |   |   |   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |   |--- average_run_length >  1.0127392411
+|   |   |   |   |   |   |--- weights: [0.0000000000, 29.0000000000] class: zstd
+|   |   |   |   |--- duplicate_block_ratio >  0.6232604980
+|   |   |   |   |   |--- average_run_length <= 1.0168054104
+|   |   |   |   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |   |--- average_run_length >  1.0168054104
+|   |   |   |   |   |   |--- weights: [0.0000000000, 5.0000000000] class: zstd
+|   |   |   |--- segment_entropy_std >  0.0112872631
+|   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |   |--- segment_entropy_std >  0.0114477705
+|   |   |   |--- most_common_byte_ratio <= 0.2244567871
+|   |   |   |   |--- most_common_byte_ratio <= 0.0426940918
+|   |   |   |   |   |--- most_common_byte_ratio <= 0.0423126221
+|   |   |   |   |   |   |--- weights: [0.0000000000, 146.0000000000] class: zstd
+|   |   |   |   |   |--- most_common_byte_ratio >  0.0423126221
+|   |   |   |   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |--- most_common_byte_ratio >  0.0426940918
+|   |   |   |   |   |--- weights: [0.0000000000, 184.0000000000] class: zstd
+|   |   |   |--- most_common_byte_ratio >  0.2244567871
+|   |   |   |   |--- segment_entropy_std <= 0.0363904294
+|   |   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |--- segment_entropy_std >  0.0363904294
+|   |   |   |   |   |--- weights: [0.0000000000, 9.0000000000] class: zstd

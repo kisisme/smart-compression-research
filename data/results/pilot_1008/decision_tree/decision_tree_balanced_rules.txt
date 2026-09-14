@@ -1,0 +1,22 @@
+|--- average_run_length <= 1.0168049335
+|   |--- average_run_length <= 1.0167788267
+|   |   |--- segment_entropy_std <= 0.0102081932
+|   |   |   |--- weights: [0.0000000000, 277.0000000000] class: zstd
+|   |   |--- segment_entropy_std >  0.0102081932
+|   |   |   |--- segment_entropy_std <= 0.0103114648
+|   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |   |   |--- segment_entropy_std >  0.0103114648
+|   |   |   |   |--- duplicate_block_ratio <= 0.3521728516
+|   |   |   |   |   |--- duplicate_block_ratio <= 0.3493652344
+|   |   |   |   |   |   |--- weights: [0.0000000000, 9.0000000000] class: zstd
+|   |   |   |   |   |--- duplicate_block_ratio >  0.3493652344
+|   |   |   |   |   |   |--- weights: [1.0000000000, 0.0000000000] class: gzip
+|   |   |   |   |--- duplicate_block_ratio >  0.3521728516
+|   |   |   |   |   |--- weights: [0.0000000000, 25.0000000000] class: zstd
+|   |--- average_run_length >  1.0167788267
+|   |   |--- file_size <= 655360.0000000000
+|   |   |   |--- weights: [0.0000000000, 1.0000000000] class: zstd
+|   |   |--- file_size >  655360.0000000000
+|   |   |   |--- weights: [2.0000000000, 0.0000000000] class: gzip
+|--- average_run_length >  1.0168049335
+|   |--- weights: [0.0000000000, 490.0000000000] class: zstd

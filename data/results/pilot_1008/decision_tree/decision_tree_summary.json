@@ -1,0 +1,381 @@
+{
+  "algorithms": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "baseline_reference_sha256": {
+    "baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "baseline_summary.json": "25fbe59770b970beb05f5c0745fa98687fa14e0a9515174e694747864824d7fc",
+    "confusion_matrix.csv": "9b9b4a5058bdae359739180b747da386de093fb9ba9272556abbbcd3ba2598e2",
+    "metrics.csv": "49fade82818d1d534aec484350674353daf95245af360136ca8695d4f2f39dc6",
+    "misclassified_samples.csv": "9524abedfa8ae74814777c0fda418c8b15b28dd70468c7ec4b021bb86c791049",
+    "split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "strategy_comparison.csv": "977686d5059c56473f5602f8d768a5e5c268ec4044e82d24e8f42964f0c15104",
+    "test_predictions.csv": "c4d8e9f19ac1b932d3e673d714a2c8ef55e5890b76cb9c2a4f930219b212a5fa"
+  },
+  "config_sha256": "751f2700e9cffb3fa51e1b3ef8fdd921890f84c854e47bb48c24d5c95939c3f0",
+  "created_at_utc": "2026-09-14T03:29:41.366256+00:00",
+  "decision_tree_version": 1,
+  "feature_importance": "feature_importance.csv",
+  "feature_importance_reason": "Normalized training impurity reduction (MDI), not a causal explanation.",
+  "git": {
+    "commit_hash": "05623ccc6de31faab2ae7d53069e387bb34bc582",
+    "worktree_dirty": false
+  },
+  "hyperparameter_selection": "Fixed configuration; no test-based tuning, reweighting, or resampling.",
+  "input_features": [
+    "file_size",
+    "entropy",
+    "unique_byte_count",
+    "most_common_byte_ratio",
+    "zero_byte_ratio",
+    "adjacent_repeat_ratio",
+    "average_run_length",
+    "max_run_length",
+    "duplicate_block_ratio",
+    "bigram_diversity",
+    "segment_entropy_mean",
+    "segment_entropy_std"
+  ],
+  "input_sha256": {
+    "compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "experiment_metadata.json": "9f2075a20331a7498edaffd14b7ed7abda7f1689a3ec11bdc75019da4b9a177e",
+    "samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2"
+  },
+  "limitations": [
+    "Synthetic Pilot evaluation; not a final unseen-file evaluation.",
+    "Seed grouping does not detect similarity across different seeds.",
+    "Stored algorithm times exclude feature extraction and prediction overhead."
+  ],
+  "macro_f1_labels": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "majority_tie_break": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "measurement_metadata": {
+    "base_seed": 20260983,
+    "completed_at_utc": "2026-09-12T07:08:35.038191+00:00",
+    "compression_result_count": 4032,
+    "compression_settings": {
+      "bz2": {
+        "level": 9
+      },
+      "gzip": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "duration_seconds": 1370.3384859999933,
+    "feature_settings": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "generator_counts": {
+      "long_runs": 168,
+      "mixed": 168,
+      "random": 168,
+      "repeated_pattern": 168,
+      "small_alphabet": 168,
+      "structured": 168
+    },
+    "generators": [
+      "random",
+      "small_alphabet",
+      "repeated_pattern",
+      "long_runs",
+      "structured",
+      "mixed"
+    ],
+    "git": {
+      "commit_hash": "4d2d637bea96a4a1ddbbedb2c077fd0474ca8c19",
+      "worktree_dirty": false
+    },
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "output_files": {
+      "compression_results.csv": {
+        "sha256": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792"
+      },
+      "samples.csv": {
+        "sha256": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1"
+      }
+    },
+    "package_versions": {
+      "matplotlib": "3.11.1",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "zstandard": "0.25.0"
+    },
+    "python_implementation": "CPython",
+    "python_version": "3.14.4",
+    "sample_count": 1008,
+    "sample_id_strategy": "sample_{zero_based_sample_index:06d}",
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ],
+    "schema_version": 1,
+    "seed_strategy": "base_seed + zero_based_sample_index",
+    "size_counts": {
+      "1048576": 252,
+      "16384": 252,
+      "262144": 252,
+      "65536": 252
+    },
+    "started_at_utc": "2026-09-12T06:45:44.699703+00:00",
+    "timing": {
+      "aggregate": "median",
+      "repeats": 5,
+      "timer": "time.perf_counter_ns"
+    },
+    "verification_failure_count": 0,
+    "verification_failures": []
+  },
+  "metrics": [
+    {
+      "accuracy": 0.9801980198019802,
+      "algorithm": "decision_tree",
+      "macro_f1": 0.2475,
+      "mode": "archive",
+      "test_count": 202,
+      "train_count": 806
+    },
+    {
+      "accuracy": 0.995049504950495,
+      "algorithm": "decision_tree",
+      "macro_f1": 0.24937965260545905,
+      "mode": "balanced",
+      "test_count": 202,
+      "train_count": 806
+    },
+    {
+      "accuracy": 0.9702970297029703,
+      "algorithm": "decision_tree",
+      "macro_f1": 0.24623115577889448,
+      "mode": "fast_access",
+      "test_count": 202,
+      "train_count": 806
+    }
+  ],
+  "model_settings": {
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "random_state": 42,
+    "splitter": "best"
+  },
+  "models": {
+    "archive": {
+      "classes": [
+        "gzip",
+        "zstd"
+      ],
+      "depth": 8,
+      "leaf_count": 11,
+      "model_file": "decision_tree_archive.pkl",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      },
+      "training_label_counts": {
+        "bz2": 0,
+        "gzip": 7,
+        "lzma": 0,
+        "zstd": 799
+      },
+      "training_metrics": {
+        "accuracy": 1.0,
+        "macro_f1": 0.5
+      }
+    },
+    "balanced": {
+      "classes": [
+        "gzip",
+        "zstd"
+      ],
+      "depth": 6,
+      "leaf_count": 8,
+      "model_file": "decision_tree_balanced.pkl",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      },
+      "training_label_counts": {
+        "bz2": 0,
+        "gzip": 4,
+        "lzma": 0,
+        "zstd": 802
+      },
+      "training_metrics": {
+        "accuracy": 1.0,
+        "macro_f1": 0.5
+      }
+    },
+    "fast_access": {
+      "classes": [
+        "gzip",
+        "zstd"
+      ],
+      "depth": 7,
+      "leaf_count": 14,
+      "model_file": "decision_tree_fast_access.pkl",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      },
+      "training_label_counts": {
+        "bz2": 0,
+        "gzip": 10,
+        "lzma": 0,
+        "zstd": 796
+      },
+      "training_metrics": {
+        "accuracy": 1.0,
+        "macro_f1": 0.5
+      }
+    }
+  },
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "output_sha256": {
+    "baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d"
+  },
+  "package_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "zstandard": "0.25.0"
+  },
+  "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba.",
+  "prediction_tie_break": "First maximum in fitted sklearn classes_ order.",
+  "python_version": "3.14.4",
+  "sample_count": 1008,
+  "sample_order": "sample_id ascending",
+  "selection_modes": {
+    "archive": {
+      "compression_ratio": 0.7,
+      "compression_time": 0.15,
+      "decompression_time": 0.15
+    },
+    "balanced": {
+      "compression_ratio": 0.5,
+      "compression_time": 0.25,
+      "decompression_time": 0.25
+    },
+    "fast_access": {
+      "compression_ratio": 0.3,
+      "compression_time": 0.2,
+      "decompression_time": 0.5
+    }
+  },
+  "source_sha256": {
+    "src/analysis.py": "50d1d2f8e919b4f026fb8edd5c545372081a4c2220681bfe94d763fb17aa1f69",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "src/memory_benchmark.py": "7d42271c37eef1451962ce6f6626437e1b5909bd0fb62f94e5498bfe0bfb6c0f",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/selection_labels.py": "be90ce306250621f8c91261028e111cb8bc51c3169fcb61a7b9105ee5cc09d01",
+    "src/train_model.py": "22ce1bac9d89a638163fc14bd50e6a0ae2af18bcd48151f1e0d251d3d6df66e8"
+  },
+  "split_method": "GroupShuffleSplit",
+  "split_settings": {
+    "group_column": "seed",
+    "random_state": 42,
+    "test_size": 0.2
+  },
+  "test_count": 202,
+  "test_group_count": 202,
+  "test_label_counts": {
+    "archive": {
+      "bz2": 0,
+      "gzip": 1,
+      "lzma": 0,
+      "zstd": 201
+    },
+    "balanced": {
+      "bz2": 0,
+      "gzip": 1,
+      "lzma": 0,
+      "zstd": 201
+    },
+    "fast_access": {
+      "bz2": 0,
+      "gzip": 2,
+      "lzma": 0,
+      "zstd": 200
+    }
+  },
+  "test_size_unit": "unique seed groups, rounded up",
+  "train_count": 806,
+  "train_group_count": 806,
+  "zero_division": 0
+}
