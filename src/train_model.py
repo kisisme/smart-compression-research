@@ -126,6 +126,16 @@ def run_baseline(experiment_dir: str | Path, output_dir: str | Path) -> dict:
     if not samples["generator"].isin(GENERATOR_NAMES).all():
         raise ValueError("Seed grouping currently supports only the synthetic generators")
     splits = split_samples(samples, config["baseline"])
+    # Match scoring.py's Python float parser. pandas.to_numeric can truncate
+    # small decimal ratios, changing their logarithmic relative losses.
+    for frame, columns in (
+        (samples, tuple(n for n in FEATURE_NAMES if n not in
+                        ("file_size", "unique_byte_count", "max_run_length"))),
+        (results, METRIC_NAMES),
+        (labels, ("best_score", *(f"score_{a}" for a in ALGORITHMS))),
+    ):
+        for column in columns:
+            frame[column] = frame[column].map(float)
     _validate_inputs(samples, results, labels)
     _validate_scores(results, labels)
     if len(samples) != metadata["sample_count"] or len(results) != metadata["compression_result_count"]:

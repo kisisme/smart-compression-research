@@ -164,6 +164,29 @@ class BaselineTests(unittest.TestCase):
                     run_baseline(root, root / "baseline")
                 self.assertFalse((root / "baseline").exists())
 
+    def test_small_decimal_ratios_keep_python_float_precision(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fixture(root)
+            with (root / "samples.csv").open(newline="", encoding="utf-8") as stream:
+                samples = list(csv.DictReader(stream))
+            with (root / "compression_results.csv").open(newline="", encoding="utf-8") as stream:
+                results = list(csv.DictReader(stream))
+            data = bytes(range(256)) * 4096
+            samples[0].update(size=len(data), **extract_features(data))
+            for row, size in zip(results[:4], (1056, 90, 288, 108), strict=True):
+                row.update(original_size=len(data), compressed_size=size,
+                           compression_ratio=size / len(data))
+            self.assertEqual(results[3]["compression_ratio"], 0.000102996826171875)
+            write_rows(root / "samples.csv", SAMPLE_FIELDS, samples)
+            write_rows(root / "compression_results.csv", COMPRESSION_RESULT_FIELDS, results)
+            # Replace only temporary test labels through the explicit API.
+            generate_selection_labels(root / "compression_results.csv",
+                                      root / "selection_labels.csv", overwrite=True)
+            refresh_hashes(root)
+            summary = run_baseline(root, root / "baseline")
+            self.assertEqual(summary["sample_count"], 16)
+
 
 if __name__ == "__main__":
     unittest.main()

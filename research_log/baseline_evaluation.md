@@ -50,3 +50,15 @@ Python/package/OS, 실행 시각, 원래 측정 metadata를 보존한다.
 `tests/test_train_model.py`의 인위적 측정 fixture는 오류 검출용 단위 테스트이며,
 연구 결과로 저장하거나 해석하지 않는다. 연구 결과는 CLI가 기존 Pilot의 실제
 측정 CSV를 검증한 후 계산한 출력만 사용한다.
+
+## 실제 Pilot에서 발견한 파싱 오류
+
+구현 커밋 `77a21d0`의 첫 Pilot 실행은 `sample_000020/archive/zstd` 점수
+재검증에서 중단되었다. 출력 디렉터리는 생성되지 않았다. 원시 문자열을 기존
+`score_sample`에 직접 전달하면 저장 라벨과 일치했으나, `pandas.to_numeric`가
+작은 소수 압축률을 변환하는 과정에서 정밀도를 잃어 재계산 값이 달라졌다.
+
+baseline 입력의 실수 열을 기존 scoring 코드와 동일한 Python `float`로 먼저
+변환하도록 수정하고 작은 소수 압축률 회귀 테스트를 추가했다. 기존 측정 CSV,
+라벨 및 점수 검증 허용오차는 변경하지 않았다. 실패는 baseline 입력 파싱 오류이며
+기존 무손실 복원 측정의 실패를 의미하지 않는다.
