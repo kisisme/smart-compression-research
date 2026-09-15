@@ -39,6 +39,19 @@ class PeakMemoryBenchmark:
     verified: bool
 
 
+@dataclass(frozen=True, slots=True)
+class MemoryWorkerResult:
+    """One attempted repeat, including diagnostic evidence on failure."""
+
+    peak_process_working_set_bytes: int | None
+    verified: bool | None
+    status: str
+    error: str
+    return_code: int | None
+    stdout: str
+    stderr: str
+
+
 class _ProcessMemoryCounters(ctypes.Structure):
     _fields_ = (
         ("cb", wintypes.DWORD),
@@ -155,12 +168,16 @@ def _worker(operation: str, algorithm: str, input_path: Path, expected: str) -> 
     return 0 if verified else 2
 
 
-def _run_worker(
+def run_memory_worker(
     operation: str,
     algorithm: str,
     input_path: Path,
     expected_sha256: str,
-) -> tuple[int, bool]:
+) -> MemoryWorkerResult:
+    """Run one isolated measurement; retain failures instead of losing repeats."""
+    if operation not in _SUPPORTED_OPERATIONS:
+        raise ValueError(f"Unsupported memory benchmark operation: {operation!r}")
+    _validate_algorithm(algorithm)
     command = (
         sys.executable,
         "-m",
@@ -175,30 +192,57 @@ def _run_worker(
         "--expected-sha256",
         expected_sha256,
     )
-    completed = subprocess.run(
-        command,
-        cwd=_PROJECT_ROOT,
-        capture_output=True,
-        text=True,
-        timeout=120,
-        check=False,
-    )
-    if completed.returncode not in (0, 2):
-        details = completed.stderr.strip() or completed.stdout.strip()
-        raise RuntimeError(
-            f"Memory benchmark worker failed with code {completed.returncode}: {details}"
+    try:
+        completed = subprocess.run(
+            command, cwd=_PROJECT_ROOT, capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=120, check=False,
         )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        def diagnostic(value: str | bytes | None) -> str:
+            return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value or ""
+
+        return MemoryWorkerResult(
+            None, None, "timeout" if isinstance(exc, subprocess.TimeoutExpired) else "worker_failed",
+            f"{type(exc).__name__}: {exc}", None,
+            diagnostic(getattr(exc, "stdout", None)), diagnostic(getattr(exc, "stderr", None)),
+        )
+
+    def result(status: str, error: str = "", peak: int | None = None,
+               verified: bool | None = None) -> MemoryWorkerResult:
+        return MemoryWorkerResult(peak, verified, status, error, completed.returncode,
+                                  completed.stdout, completed.stderr)
+
+    if completed.returncode not in (0, 2):
+        return result("worker_failed", f"Worker exited with code {completed.returncode}")
     try:
         payload = json.loads(completed.stdout)
     except json.JSONDecodeError as exc:
-        raise RuntimeError("Memory benchmark worker returned invalid JSON") from exc
+        return result("invalid_result", f"Invalid worker JSON: {exc}")
+    if not isinstance(payload, dict):
+        return result("invalid_result", "Worker JSON must be an object")
     peak = payload.get("peak_process_working_set_bytes")
     verified = payload.get("verified")
+    raw_peak = peak if isinstance(peak, int) and not isinstance(peak, bool) else None
+    raw_verified = verified if isinstance(verified, bool) else None
+    if payload.get("operation") != operation or payload.get("algorithm") != algorithm:
+        return result("invalid_result", "Worker operation/algorithm mismatch", raw_peak, raw_verified)
     if isinstance(peak, bool) or not isinstance(peak, int) or peak <= 0:
-        raise RuntimeError("Memory benchmark worker returned an invalid peak value")
+        return result("invalid_result", "Worker peak must be a positive integer", raw_peak, raw_verified)
     if not isinstance(verified, bool):
-        raise RuntimeError("Memory benchmark worker returned invalid verification")
-    return peak, verified
+        return result("invalid_result", "Worker verification must be boolean", peak)
+    if completed.returncode != (0 if verified else 2):
+        return result("invalid_result", "Worker exit code and verification disagree", peak, verified)
+    return result("ok" if verified else "verification_failed",
+                  "" if verified else "Worker output SHA-256 mismatch", peak, verified)
+
+
+def _run_worker(
+    operation: str, algorithm: str, input_path: Path, expected_sha256: str,
+) -> tuple[int, bool]:
+    result = run_memory_worker(operation, algorithm, input_path, expected_sha256)
+    if result.status not in ("ok", "verification_failed"):
+        raise RuntimeError(f"Memory benchmark worker failed: {result.error}; {result.stderr}")
+    return result.peak_process_working_set_bytes, result.verified
 
 
 def benchmark_peak_memory(data: bytes, algorithm: str) -> PeakMemoryBenchmark:
