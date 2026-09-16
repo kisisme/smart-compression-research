@@ -1,12 +1,12 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존 갱신: 2026-09-16.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
-이 문서는 저장소의 코드·테스트·실험 결과·연구 로그·Git 이력을 조사한 상태 기록이다. 결과 CSV의 행 수와 평가 수치를 Python으로 읽고, 원시 결과 및 모델 평가 summary에 기록된 산출물 SHA-256을 대조했다. 문서 작성 과정에서 압축 실험·학습·테스트를 재실행하지 않았다.
+이 문서는 저장소의 코드·테스트·실험 결과·연구 로그·Git 이력을 조사한 상태 기록이다. 결과 CSV의 행 수와 평가 수치를 Python으로 읽고, 원시 결과 및 모델 평가 summary에 기록된 산출물 SHA-256을 대조했다. 최초 문서 작성과 증거 보존 단계에서는 압축 실험·학습·테스트를 재실행하지 않았다. 이후 audit 도구 정리에서는 아래에 명시한 인위적 fixture 테스트만 실행했다.
 
 ## 1. 연구 목표
 
@@ -29,6 +29,7 @@
 | 최소 Smart Mode CLI | `smart_compress.py`: 특징 기반 예측 후 선택한 압축기 하나를 한 번 실행하고, 한 번 해제하여 검증 후 저장 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 검증 전용 구현이며 공식 실험 파이프라인 편입은 미완료 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 구현 (`c54b8f5`). 아래 실제 검증 실행은 미완료 |
+| 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -216,6 +217,33 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 
 **기존 1,008 sample Pilot에는 memory 측정값이 없으므로 4지표 결과로 바꾸지 않는다. 과거 CSV·라벨·모델은 보존하고, 향후 4지표 실험은 별도 버전과 경로로 기록한다.**
 
+### Audit 도구 정리 완료 / 인위적 fixture 검증 — 2026-09-16
+
+근거: [audit 스크립트](research_log/verify_memory_validation.py), [전용 테스트](tests/test_verify_memory_validation.py).
+
+- 기존 staged 스크립트의 `assert`를 명시적 `AuditError` 검사로 교체했다. `-O`·`-OO`에서도 실패 검사를 유지한다.
+- 지원 범위는 `run_status=completed`, `validation_only`, `score_inclusion=false`인 schema-v1 전체 검증 행렬이다. 네 압축기·두 phase·각 5회 및 기존 generator·설정 크기·seed 계획을 확인하고, 누락된 hash manifest나 불완전한 행렬을 거부한다. `running`, `interrupted`, `aborted`, `completed_with_failures` 등은 성공 보고서를 만들지 않는다.
+- 입력을 메모리에서 재생성하여 hash를 확인하고 저장 원시값으로 집계 통계를 재계산한다. 압축·해제·memory 측정은 실행하지 않는다. worker의 `verified`는 저장된 증거 확인이며 독립 복원 검증이 아니다. 압축 digest는 형식·반복 간 일관성을 확인할 뿐 재압축해 검증하지 않는다.
+- 실행 당시 소스·설정 바이트와 현재 checkout이 일치해야 한다. 과거 결과의 소스 hash 불일치는 기록된 소스·설정을 갖춘 checkout에서 확인해야 하며 검사 생략으로 우회하지 않는다.
+- 기본 출력은 stdout JSON이다. `--output`은 감사 통과 후 새 JSON만 생성하고 기존 경로는 덮어쓰지 않는다. 오류 시 CLI는 비정상 종료하며 성공 JSON을 출력하지 않는다. 아래 `-B`는 import에 따른 bytecode 파일 쓰기를 방지한다.
+
+저장소 루트에서 사용하는 명령 형식(성공적으로 완료된 실행 경로에만 적용):
+
+```text
+python -B -m research_log.verify_memory_validation --experiment-dir <completed-run-directory>
+```
+
+검증 명령과 실제 결과:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_validation.py -v
+11 tests: OK
+```
+
+임시 폴더의 인위적 memory 값으로 성공 집계, 실패·미완료 거부, hash 불일치, 축소·중복 행렬, 비유한 집계값, worker 응답 형식, 일반/`-O`/`-OO` 오류 거부, 출력 생성·덮어쓰기 거부 및 입력 바이트 보존을 검증했다. fixture 값은 연구 결과가 아니다. 기존 실제 결과 대상 audit·메모리 재측정·복원 재검증은 실행하지 않았으며 전체 테스트 suite를 통과했다고 주장하지 않는다. 기존 원본 4개는 보존 commit과의 바이트·SHA-256 대조로 변경 없음을 확인했다.
+
+이 도구의 테스트 통과는 실제 memory validation 성공이나 공식 4지표 전환 완료를 의미하지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - 위 memory 검증 및 공식 4지표 전환.
@@ -227,13 +255,13 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** 기존 staged `research_log/verify_memory_validation.py`의 완료 실행 전용 범위와 `assert` 의존 검사를 정리하고, 별도 검증 후 독립 commit한다. 이 스크립트는 이번 증거 보존 commit 대상이 아니며 수정·실행하지 않았다. 현재 incomplete 실행을 성공한 audit 결과로 처리하지 않는다.
+**제안/미착수:** 보존된 worker 실패와 종료 metadata 누락을 바탕으로, 실행 종료 처리·오류 기록 경로를 읽기 전용으로 조사하고 원인 확정 가능 범위와 수정 후보를 정리한다. 이미 보존된 실패 기록만으로 worker 종료의 구체적인 원인을 단정하지 않는다.
 
-새 memory 측정 실행·실패 원인 수정·공식 4지표 전환은 이번 증거 보존 작업에 포함하지 않는다.
+새 memory 측정 실행·실패 원인 수정·공식 4지표 전환은 이번 audit 도구 정리에 포함하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-Memory 증거 보존 작업에서 확인한 마지막 관련 구현·실행 코드 commit:
+Audit 도구 정리 시작 전 확인한 마지막 관련 측정 구현·실행 코드 commit:
 
 ```text
 c54b8f5f9b7ae114206b43ce1e23fe4b69666203
@@ -242,6 +270,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `708c9cb`: 미완료 memory 실행 원본·보존용 Git 속성·진행 기록 보존. 이번 audit 구현·테스트는 그 후속 작업이며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 - `70294a6`: 특징 기반 Smart Mode 구현. 최초 문서 작성 당시 마지막 구현 commit.
 - `811385b`: 1,008 sample Pilot 실패 분석 결과 기록.
 - `81adc0d`: Random Forest 평가 결과 기록.
