@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-확인일: 2026-09-15
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존 갱신: 2026-09-16.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -28,10 +28,11 @@
 | 저장 예측의 오류·confidence·regret 기여 분석 | `src/failure_analysis.py` |
 | 최소 Smart Mode CLI | `smart_compress.py`: 특징 기반 예측 후 선택한 압축기 하나를 한 번 실행하고, 한 번 해제하여 검증 후 저장 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 검증 전용 구현이며 공식 실험 파이프라인 편입은 미완료 |
+| Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 구현 (`c54b8f5`). 아래 실제 검증 실행은 미완료 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
-`tests/`에는 12개 테스트 소스 파일과 72개 `test_` 메서드가 있다. [Smart Mode 연구 로그](research_log/smart_mode.md)에 2026-09-15 전체 72개 테스트 통과 및 두 모델 × 세 mode의 README 처리 성공 기록이 있다. 이는 과거 실행 기록이며 이번 문서 작업에서 재실행한 결과가 아니다. README 처리 성공은 일반화 성능 평가가 아니다.
+2026-09-15 최초 상태 조사에서는 테스트 소스 파일 12개와 `test_` 메서드 72개를 기록했다. 이후 `c54b8f5`에서 `tests/test_memory_validation.py`가 추가되었으므로 이전 개수를 현재 전체 개수로 취급하지 않는다. [Smart Mode 연구 로그](research_log/smart_mode.md)에 전체 72개 테스트 통과 및 두 모델 × 세 mode의 README 처리 성공 기록이 있다. 이는 과거 실행 기록이며 이번 증거 보존 작업에서는 테스트를 재실행하지 않았다. README 처리 성공은 일반화 성능 평가가 아니다.
 
 ## 3. 현재 실험 규모
 
@@ -154,7 +155,7 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 
 ## 11. Memory 관련 구현 상태와 계획/미완료
 
-근거: [측정 설계](research_log/peak_memory_measurement_design.md), `src/memory_benchmark.py`, `tests/test_memory_benchmark.py`, config의 `memory`.
+근거: [측정 설계](research_log/peak_memory_measurement_design.md), `src/memory_benchmark.py`, `src/memory_validation.py`, `tests/test_memory_benchmark.py`, `tests/test_memory_validation.py`, config의 `memory`.
 
 ### 구현된 부분 — validation_only
 
@@ -164,11 +165,42 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 - worker 출력의 SHA-256을 기대값과 대조하고 반복 검증 결과를 집계한다.
 - backend의 양수 반환, gzip 반복 측정, 잘못된 입력 거부 테스트가 구현되어 있다.
 - 이 값에는 Python runtime·입력·출력·네이티브 라이브러리가 포함된다. 압축 라이브러리만의 순수 할당량이 아니다.
+- `c54b8f5`에서 별도 validation runner의 long-form 원시 CSV, pair 집계, worker 실패 기록, 설정·환경·소스 hash metadata 저장을 구현했다. 구현 완료와 실제 검증 실행 완료는 구분한다.
+
+### 증거 보존 완료 — 2026-09-15 실행은 incomplete / validation_only
+
+보존 경로: [memory_validation_20260915](data/results/memory_validation_20260915/). 성공한 공식 연구 결과나 4지표 실험이 아니다. 2026-09-16에 기존 파일을 읽기 전용 Python으로 집계했으며, 측정·복원·audit 스크립트를 재실행하지 않았다.
+
+| 원본 파일 | 크기(bytes) | 저장 내용 |
+|---|---:|---|
+| [samples.csv](data/results/memory_validation_20260915/samples.csv) | 6,581 | 생성 정보·입력 hash 22행. 원본 sample bytes는 없음 |
+| [memory_repeats.csv](data/results/memory_validation_20260915/memory_repeats.csv) | 276,583 | 원시 반복 기록 855행: `ok` 854행, `worker_failed` 1행 |
+| [memory_summary.csv](data/results/memory_validation_20260915/memory_summary.csv) | 16,949 | 저장된 pair 집계 85행, 모두 `verified=True` |
+| [memory_validation_metadata.json](data/results/memory_validation_20260915/memory_validation_metadata.json) | 8,133 | 실행 계획·설정·환경·Git·소스 hash 및 마지막 진행 checkpoint |
+
+원본 4개 합계는 308,246 bytes이다. 보존용 `.gitattributes`는 원본 실행 산출물이 아니며 이 합계에 포함하지 않는다. 해당 파일은 이 폴더의 CSV·JSON에만 줄바꿈 변환을 비활성화하여 원본 바이트를 보존한다.
+
+- 계획은 sample 24개 / pair 96개 / repeat 960개였으나 저장된 기록은 각각 22개 / 85개 / 855개이다. 계획된 repeat key 105개가 없으며 저장된 key의 중복·계획 외 key는 없다. `memory_000022`, `memory_000023`의 sample 기록도 없다.
+- 마지막 기록은 `memory_000021`, `long_runs`, 1,048,576 bytes, seed `20260936`, `bz2`, `compress`, repeat 5의 실패이다. `return_code=4294967295`, `error="Worker exited with code 4294967295"`이며 메모리 값·`verified`·stdout·stderr는 비어 있다. 성공한 무손실 측정값으로 사용하지 않는다. 이 기록만으로 worker 종료나 전체 중단의 구체적인 원인을 확정할 수 없다.
+- metadata는 `run_status="running"`, `repeat_count=850`, `failed_repeat_count=0`으로 남아 있다. 실제 원시 CSV와 다른 미완료 checkpoint이며 실패 없음 또는 현재 프로세스 실행 중이라는 근거가 아니다. runner는 pair 완료 후 metadata를 저장하므로 마지막 부분 pair의 원시 기록이 metadata보다 앞서 저장될 수 있다.
+- 종료 필드 `finished_at_utc`, `repeat_status_counts`, `source_sha256_at_end`, `provenance_unchanged`, `artifact_sha256`가 없다. 종료 처리가 완료되었다고 판단할 수 없다. 원본 metadata를 사후 수정하거나 누락 행을 보충하지 않았다.
+- summary의 `verified=True`는 저장된 pair에 한정된다. 전체 실행의 성공, runtime baseline 검증, 공식 memory score 편입을 의미하지 않는다.
+- metadata는 시작 시각 `2026-09-15T11:02:20.343691+00:00`, 실행 commit `c54b8f5f9b7ae114206b43ce1e23fe4b69666203`, 당시 `worktree_dirty=false`를 기록한다. 현재 파일과 기록된 소스·설정 hash의 일치는 읽기 전용으로 확인했지만 실행 종료 시 소스 불변성을 소급 증명하지는 않는다.
+- metadata의 `environment.python_executable`에는 로컬 계정명과 절대 경로가 있다. 원본 증거로 로컬 Git에 보존하며 이번 작업에서는 push하지 않는다. 외부 공개 전 해당 정보의 공개 여부를 검토해야 한다.
+
+다음 SHA-256은 **2026-09-16 보존 점검 시 원본 바이트에서 계산한 값**이며, 누락된 실행 종료 hash를 대신한 당시 기록이 아니다.
+
+| 원본 파일 | 보존 점검 SHA-256 |
+|---|---|
+| samples.csv | `5c3fb733f55b9134d2aeb12cdc3ef578c0ca0cf390eabdd9689f0f35cdd3d4c6` |
+| memory_repeats.csv | `b1f2719175b06a4511e76ba9e9dad737775a974e3e2932abd91bdc72d41b3173` |
+| memory_summary.csv | `7673b5cd0884192b5fb7d8c555f3f001eba1122d3d1c0bba2bd30b912c647f0a` |
+| memory_validation_metadata.json | `1698a3b46b2cde14864a9073588e45880aedbc38640217a66361f5082d536c45` |
 
 ### 계획/미완료
 
-- 네 압축기·네 크기의 반복 변동 및 작은 파일의 runtime baseline 영향 검증과 결과 보존.
-- 공식 experiment runner 연동, 반복별 long-form memory CSV, 집계 열과 환경 metadata 확장, 실패 결과의 지속 저장.
+- 네 압축기·네 크기 전체 행렬의 검증 완료, 반복 변동·작은 파일의 runtime baseline 영향 검증. 위 미완료 증거 보존과 구분한다.
+- 공식 experiment runner 연동 및 공식 결과 schema 확장. 별도 validation runner의 원시값·집계·실패 저장은 구현되었으나 공식 파이프라인 편입은 미완료이다.
 - 새 기준의 50~100개 검증 실험 후 공식 4지표 score 활성화 및 새 Pilot 실행.
 - `research_protocol_v3.md` 작성 및 공식 전환 기록. 현재 해당 파일은 없다.
 
@@ -195,22 +227,22 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** memory 측정 검증을 네 압축기·네 파일 크기로 확대하고, 반복 원시값과 실패를 기존 결과와 분리된 새 경로에 보존하는 검증 기능을 구현한다.
+**제안/미착수:** 기존 staged `research_log/verify_memory_validation.py`의 완료 실행 전용 범위와 `assert` 의존 검사를 정리하고, 별도 검증 후 독립 commit한다. 이 스크립트는 이번 증거 보존 commit 대상이 아니며 수정·실행하지 않았다. 현재 incomplete 실행을 성공한 audit 결과로 처리하지 않는다.
 
-이는 기존 memory 설계 문서의 검증 순서를 따른 다음 연구 작업 제안이다. 이번 두 문서 작성 승인을 memory 구현·실험 실행 승인으로 확대 해석하지 않는다. 착수 전에 현재 상태와 구체적인 단일 작업 범위를 다시 보고한다.
+새 memory 측정 실행·실패 원인 수정·공식 4지표 전환은 이번 증거 보존 작업에 포함하지 않는다.
 
 ## 14. 마지막 관련 Git commit
 
-문서 작성 직전 확인한 마지막 구현 commit:
+Memory 증거 보존 작업에서 확인한 마지막 관련 구현·실행 코드 commit:
 
 ```text
-70294a6a8a2ebe2ea9622c1fd0dc58ee3900d9c8
-2026-09-15 19:09:05 +09:00
-Implement feature-based Smart Mode with verified single compression
+c54b8f5f9b7ae114206b43ce1e23fe4b69666203
+Implement persistent validation-only memory measurement matrix
 ```
 
 관련 이력:
 
+- `70294a6`: 특징 기반 Smart Mode 구현. 최초 문서 작성 당시 마지막 구현 commit.
 - `811385b`: 1,008 sample Pilot 실패 분석 결과 기록.
 - `81adc0d`: Random Forest 평가 결과 기록.
 - `c8e18b5`: Decision Tree 평가 결과 기록.
@@ -218,4 +250,4 @@ Implement feature-based Smart Mode with verified single compression
 - `572760b`: 독립 peak memory 측정 정의.
 - Pilot 원시 실험 metadata의 실행 코드 commit: `4d2d637bea96a4a1ddbbedb2c077fd0474ca8c19`.
 
-문서 작성 전 `main` 작업 트리는 깨끗했다. 샌드박스의 Pilot 하위 폴더 접근 제한으로 삭제처럼 표시된 항목은 실제 권한으로 재확인했으며 삭제가 아니었다. 이후 세션은 당시 상태를 그대로 가정하지 말고 `git status`와 최근 commit을 다시 확인한다.
+최초 문서 작성 전 `main` 작업 트리는 깨끗했다. 샌드박스의 Pilot 하위 폴더 접근 제한으로 삭제처럼 표시된 항목은 실제 권한으로 재확인했으며 삭제가 아니었다. 2026-09-16 증거 보존 작업 시작 시에는 audit 스크립트가 staged이고 memory 결과 폴더가 untracked였다. 이후 세션은 당시 상태를 그대로 가정하지 말고 `git status`와 최근 commit을 다시 확인한다.

@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "measurement_status": "validation_only",
+  "run_status": "running",
+  "started_at_utc": "2026-09-15T11:02:20.343691+00:00",
+  "official_score_protocol": "research_protocol_v2.md",
+  "score_inclusion": false,
+  "base_seed": 20260915,
+  "sample_plan": [
+    {
+      "sample_id": "memory_000000",
+      "generator": "random",
+      "size": 16384,
+      "seed": 20260915
+    },
+    {
+      "sample_id": "memory_000001",
+      "generator": "small_alphabet",
+      "size": 16384,
+      "seed": 20260916
+    },
+    {
+      "sample_id": "memory_000002",
+      "generator": "repeated_pattern",
+      "size": 16384,
+      "seed": 20260917
+    },
+    {
+      "sample_id": "memory_000003",
+      "generator": "long_runs",
+      "size": 16384,
+      "seed": 20260918
+    },
+    {
+      "sample_id": "memory_000004",
+      "generator": "structured",
+      "size": 16384,
+      "seed": 20260919
+    },
+    {
+      "sample_id": "memory_000005",
+      "generator": "mixed",
+      "size": 16384,
+      "seed": 20260920
+    },
+    {
+      "sample_id": "memory_000006",
+      "generator": "random",
+      "size": 65536,
+      "seed": 20260921
+    },
+    {
+      "sample_id": "memory_000007",
+      "generator": "small_alphabet",
+      "size": 65536,
+      "seed": 20260922
+    },
+    {
+      "sample_id": "memory_000008",
+      "generator": "repeated_pattern",
+      "size": 65536,
+      "seed": 20260923
+    },
+    {
+      "sample_id": "memory_000009",
+      "generator": "long_runs",
+      "size": 65536,
+      "seed": 20260924
+    },
+    {
+      "sample_id": "memory_000010",
+      "generator": "structured",
+      "size": 65536,
+      "seed": 20260925
+    },
+    {
+      "sample_id": "memory_000011",
+      "generator": "mixed",
+      "size": 65536,
+      "seed": 20260926
+    },
+    {
+      "sample_id": "memory_000012",
+      "generator": "random",
+      "size": 262144,
+      "seed": 20260927
+    },
+    {
+      "sample_id": "memory_000013",
+      "generator": "small_alphabet",
+      "size": 262144,
+      "seed": 20260928
+    },
+    {
+      "sample_id": "memory_000014",
+      "generator": "repeated_pattern",
+      "size": 262144,
+      "seed": 20260929
+    },
+    {
+      "sample_id": "memory_000015",
+      "generator": "long_runs",
+      "size": 262144,
+      "seed": 20260930
+    },
+    {
+      "sample_id": "memory_000016",
+      "generator": "structured",
+      "size": 262144,
+      "seed": 20260931
+    },
+    {
+      "sample_id": "memory_000017",
+      "generator": "mixed",
+      "size": 262144,
+      "seed": 20260932
+    },
+    {
+      "sample_id": "memory_000018",
+      "generator": "random",
+      "size": 1048576,
+      "seed": 20260933
+    },
+    {
+      "sample_id": "memory_000019",
+      "generator": "small_alphabet",
+      "size": 1048576,
+      "seed": 20260934
+    },
+    {
+      "sample_id": "memory_000020",
+      "generator": "repeated_pattern",
+      "size": 1048576,
+      "seed": 20260935
+    },
+    {
+      "sample_id": "memory_000021",
+      "generator": "long_runs",
+      "size": 1048576,
+      "seed": 20260936
+    },
+    {
+      "sample_id": "memory_000022",
+      "generator": "structured",
+      "size": 1048576,
+      "seed": 20260937
+    },
+    {
+      "sample_id": "memory_000023",
+      "generator": "mixed",
+      "size": 1048576,
+      "seed": 20260938
+    }
+  ],
+  "algorithm_order": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "phase_order": [
+    "compress",
+    "decompress"
+  ],
+  "repeats_per_phase": 5,
+  "measurement_method": "windows_get_process_memory_info_peak_working_set",
+  "execution_order": "sample, algorithm, phase, repeat; sequential fresh worker processes",
+  "config": {
+    "compression": {
+      "gzip": {
+        "level": 9
+      },
+      "bz2": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "timing": {
+      "repeats": 5,
+      "timer": "time.perf_counter_ns",
+      "aggregate": "median"
+    },
+    "memory": {
+      "status": "validation_only",
+      "platform": "win32",
+      "metric": "peak_process_working_set_bytes",
+      "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "unit": "bytes",
+      "isolation": "fresh_subprocess_per_phase_repeat",
+      "repeats": 5,
+      "aggregate": "median",
+      "combined": "max_of_phase_medians"
+    },
+    "features": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "selection_modes": {
+      "archive": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "balanced": {
+        "compression_ratio": 0.5,
+        "compression_time": 0.25,
+        "decompression_time": 0.25
+      },
+      "fast_access": {
+        "compression_ratio": 0.3,
+        "compression_time": 0.2,
+        "decompression_time": 0.5
+      }
+    },
+    "baseline": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "group_column": "seed"
+    },
+    "decision_tree": {
+      "criterion": "gini",
+      "splitter": "best",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": null,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "criterion": "gini",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "min_weight_fraction_leaf": 0.0,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "bootstrap": true,
+      "oob_score": false,
+      "n_jobs": 1,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "max_samples": null,
+      "monotonic_cst": null
+    },
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ]
+  },
+  "source_sha256": {
+    "src/memory_validation.py": "b3dcad19e12391d9434b918464274fce0cfb1dc7c5beba6d24f3e3bf7e9a381f",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e"
+  },
+  "git": {
+    "commit_hash": "c54b8f5f9b7ae114206b43ce1e23fe4b69666203",
+    "worktree_dirty": false,
+    "status_porcelain": ""
+  },
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    }
+  },
+  "planned_sample_count": 24,
+  "planned_pair_count": 96,
+  "planned_repeat_count": 960,
+  "sample_count": 22,
+  "pair_count": 85,
+  "repeat_count": 850,
+  "failed_sample_count": 0,
+  "failed_pair_count": 0,
+  "failed_repeat_count": 0,
+  "limitations": [
+    "Whole-process lifetime peak includes runtime, libraries, input and output.",
+    "Fixed execution order and one seed per generator/size; no population inference.",
+    "Tiny-file runtime baseline and cross-run stability remain unvalidated.",
+    "No timing, selection score, labels, model training or official four-metric transition."
+  ]
+}

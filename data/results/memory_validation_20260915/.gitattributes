@@ -1,0 +1,3 @@
+# Preserve original validation evidence bytes, including mixed CSV line endings.
+*.csv -text
+*.json -text
