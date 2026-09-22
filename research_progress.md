@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증: 2026-09-22.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -186,7 +186,7 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 - metadata는 `run_status="running"`, `repeat_count=850`, `failed_repeat_count=0`으로 남아 있다. 실제 원시 CSV와 다른 미완료 checkpoint이며 실패 없음 또는 현재 프로세스 실행 중이라는 근거가 아니다. runner는 pair 완료 후 metadata를 저장하므로 마지막 부분 pair의 원시 기록이 metadata보다 앞서 저장될 수 있다.
 - 종료 필드 `finished_at_utc`, `repeat_status_counts`, `source_sha256_at_end`, `provenance_unchanged`, `artifact_sha256`가 없다. 종료 처리가 완료되었다고 판단할 수 없다. 원본 metadata를 사후 수정하거나 누락 행을 보충하지 않았다.
 - summary의 `verified=True`는 저장된 pair에 한정된다. 전체 실행의 성공, runtime baseline 검증, 공식 memory score 편입을 의미하지 않는다.
-- metadata는 시작 시각 `2026-09-15T11:02:20.343691+00:00`, 실행 commit `c54b8f5f9b7ae114206b43ce1e23fe4b69666203`, 당시 `worktree_dirty=false`를 기록한다. 현재 파일과 기록된 소스·설정 hash의 일치는 읽기 전용으로 확인했지만 실행 종료 시 소스 불변성을 소급 증명하지는 않는다.
+- metadata는 시작 시각 `2026-09-15T11:02:20.343691+00:00`, 실행 commit `c54b8f5f9b7ae114206b43ce1e23fe4b69666203`, 당시 `worktree_dirty=false`를 기록한다. 2026-09-16 보존 점검 당시 파일과 기록된 소스·설정 hash의 일치는 읽기 전용으로 확인했지만 실행 종료 시 소스 불변성을 소급 증명하지는 않는다. 이후 종료 처리 보강으로 현재 runner 소스는 당시 기록과 다르다.
 - metadata의 `environment.python_executable`에는 로컬 계정명과 절대 경로가 있다. 원본 증거로 로컬 Git에 보존하며 이번 작업에서는 push하지 않는다. 외부 공개 전 해당 정보의 공개 여부를 검토해야 한다.
 
 다음 SHA-256은 **2026-09-16 보존 점검 시 원본 바이트에서 계산한 값**이며, 누락된 실행 종료 hash를 대신한 당시 기록이 아니다.
@@ -244,6 +244,31 @@ python -B -m research_log.verify_memory_validation --experiment-dir <completed-r
 
 이 도구의 테스트 통과는 실제 memory validation 성공이나 공식 4지표 전환 완료를 의미하지 않는다.
 
+### 종료 처리 보강 검토 완료 / 인위적 fixture 검증 — 2026-09-22
+
+근거: [validation runner](src/memory_validation.py), [종료 처리 테스트](tests/test_memory_validation.py), [audit 테스트](tests/test_verify_memory_validation.py).
+
+작업 시작 시 위 세 파일에 있던 미커밋 변경을 검토하고 실행 검증했다. 추가 코드 수정이 필요한 문제는 발견하지 않았으며 기존 변경을 보존했다.
+
+- metadata를 같은 디렉터리의 임시 파일에 완전히 쓰고 `flush`·`fsync` 후 `os.replace`한다. 직렬화·동기화·교체 실패 시 이전 metadata 바이트를 보존한다.
+- 종료 시각·상태별 반복 수를 먼저 저장 시도한 뒤 소스 및 각 CSV hash를 별도로 계산한다. 정상 반복 종료 후에는 `finalizing`을 거쳐 최종 저장까지 성공해야 `completed`가 된다. 종료 처리 오류는 `finalization_errors`에 단계별로 기록하고, 정상 반복 종료 뒤 종료 처리가 실패하면 `finalization_failed`로 처리한다.
+- 실행 본문에서 예외가 발생한 경우 종료 처리의 추가 오류가 원래 예외를 대체하지 않도록 예외 note에 남긴다. `RuntimeError`, `KeyboardInterrupt`, `SystemExit` 원본 예외와 hash·지속적인 저장 실패 조합을 fixture로 검증했다.
+- audit는 `finalizing`, `finalization_failed`를 성공 실행으로 인정하지 않는다. 기존 schema-v1 audit의 완료 상태 검사로 이를 거부하며 해당 회귀 검증을 추가했다.
+- 프로세스 강제 종료나 지속적인 저장장치 오류에서는 종료 기록을 보장할 수 없다. 마지막 저장 실패 시 디스크에는 `running` 또는 `finalizing` 등 이전 checkpoint가 남을 수 있다. 이번 보강은 과거 worker 종료의 구체적인 원인을 규명하거나 과거 실행을 복구한 것이 아니다.
+
+실제 실행한 검증 명령과 결과:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_validation.py -v
+17 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_validation.py -v
+11 tests: OK
+```
+
+샌드박스에서는 가상환경이 참조하는 사용자 Python에 접근하지 못해 사용자 권한으로 실행했다. 위 두 모듈의 총 28개 테스트만 통과했다고 기록하며 전체 suite는 실행하지 않았다. Memory worker는 mock으로 대체했으며, runner 테스트는 작은 인위적 입력의 준비용 압축·복원과 임시 파일 저장을 실행했다. fixture memory 값은 연구 측정값이 아니다. Audit 테스트에는 일반/`-O`/`-OO` CLI의 오류 거부 검증이 포함된다.
+
+보존된 원본 네 파일은 Python으로 읽어 `708c9cb`의 바이트 및 SHA-256과 대조했고 모두 일치했다. 실제 memory 재측정·기존 결과 대상 audit·과거 입력의 복원 재검증·공식 4지표 전환은 수행하지 않았다. 기존 3지표 결과·설정·라벨·모델은 변경하지 않았다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - 위 memory 검증 및 공식 4지표 전환.
@@ -255,13 +280,15 @@ python -B -m research_log.verify_memory_validation --experiment-dir <completed-r
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** 보존된 worker 실패와 종료 metadata 누락을 바탕으로, 실행 종료 처리·오류 기록 경로를 읽기 전용으로 조사하고 원인 확정 가능 범위와 수정 후보를 정리한다. 이미 보존된 실패 기록만으로 worker 종료의 구체적인 원인을 단정하지 않는다.
+**제안/미착수:** 보강된 runner로 구분되는 새 출력 경로에 `validation_only` 전체 memory 검증 행렬을 실행하고 종료 metadata·실패 기록·저장 행렬을 확인한다. 성공적으로 완료된 경우에만 저장 기록 audit를 수행한다. 기존 미완료 결과를 덮어쓰거나 이어 붙이지 않는다.
 
-새 memory 측정 실행·실패 원인 수정·공식 4지표 전환은 이번 audit 도구 정리에 포함하지 않았다.
+이번 작업은 종료 처리 보강의 검토·fixture 검증까지이다. 새 측정 실행, 반복 변동·runtime baseline 영향 검증 및 공식 4지표 전환은 미완료이며, 이미 보존된 실패 기록만으로 worker 종료의 구체적인 원인을 단정하지 않는다.
 
 ## 14. 마지막 관련 Git commit
 
-Audit 도구 정리 시작 전 확인한 마지막 관련 측정 구현·실행 코드 commit:
+종료 처리 보강 검토 시작 시 HEAD는 `210b38dbf40234e7ca8f3e554eddaf874058ff33` (`Audit completed memory validation evidence with explicit checks`)이다. 이번에 검증한 runner·테스트 변경과 이 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+
+기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
 ```text
 c54b8f5f9b7ae114206b43ce1e23fe4b69666203
@@ -270,6 +297,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `210b38d`: 완료된 memory 검증 기록의 audit 도구 및 인위적 fixture 검증 정리.
 - `708c9cb`: 미완료 memory 실행 원본·보존용 Git 속성·진행 기록 보존. 이번 audit 구현·테스트는 그 후속 작업이며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 - `70294a6`: 특징 기반 Smart Mode 구현. 최초 문서 작성 당시 마지막 구현 commit.
 - `811385b`: 1,008 sample Pilot 실패 분석 결과 기록.

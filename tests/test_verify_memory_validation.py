@@ -126,7 +126,8 @@ class SavedMemoryAuditTests(unittest.TestCase):
         self.assertEqual(self.snapshot(), before)
 
     def test_incomplete_and_failed_statuses_are_rejected_without_reading_artifacts(self) -> None:
-        for status in ("running", "interrupted", "aborted", "completed_with_failures", "invalid_provenance_changed"):
+        for status in ("running", "interrupted", "aborted", "completed_with_failures", "invalid_provenance_changed",
+                       "finalizing", "finalization_failed"):
             with self.subTest(status=status):
                 self.meta = {"run_status": status}
                 self.save_metadata()

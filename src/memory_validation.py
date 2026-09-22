@@ -64,6 +64,82 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _save_metadata(path: Path, metadata: dict) -> None:
+    """Replace only this run's metadata, after a complete same-directory write."""
+    serialized = json.dumps(metadata, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="\n",
+                                         dir=path.parent, prefix=f".{path.name}.",
+                                         suffix=".tmp", delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(serialized)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    except BaseException as exc:
+        if temporary is not None:
+            try:
+                temporary.unlink(missing_ok=True)
+            except OSError as cleanup_error:
+                exc.add_note(f"Metadata temporary cleanup failed: {cleanup_error}")
+        raise
+
+
+def _finalize_metadata(path: Path, metadata: dict, counts: Counter) -> None:
+    """Persist terminal evidence before hashes; never publish premature success.
+
+    Each finalization step gets one attempt. Secondary errors are recorded and
+    re-raised after the final save attempt, including KeyboardInterrupt/SystemExit.
+    Process termination and persistent storage failure cannot guarantee a save.
+    """
+    run_status = metadata["run_status"]
+    finished_run = run_status in ("completed", "completed_with_failures")
+    metadata.update(finished_at_utc=_now(), repeat_status_counts=dict(counts),
+                    run_status_before_finalization=run_status,
+                    finalization_status="in_progress", finalization_errors=[],
+                    source_sha256_at_end=None, provenance_unchanged=None,
+                    artifact_sha256={})
+    if finished_run:
+        metadata["run_status"] = "finalizing"
+    failures = []
+
+    def record(stage: str, exc: BaseException) -> None:
+        failures.append(exc)
+        metadata["finalization_errors"].append(
+            {"stage": stage, "error": f"{type(exc).__name__}: {exc}"})
+        metadata["finalization_status"] = "failed"
+        if finished_run:
+            metadata["run_status"] = "finalization_failed"
+
+    try:
+        _save_metadata(path, metadata)
+    except BaseException as exc:
+        record("terminal_checkpoint", exc)
+    try:
+        metadata["source_sha256_at_end"] = _source_hashes()
+        metadata["provenance_unchanged"] = metadata["source_sha256_at_end"] == metadata["source_sha256"]
+    except BaseException as exc:
+        record("source_sha256_at_end", exc)
+    for name in ("samples.csv", "memory_repeats.csv", "memory_summary.csv"):
+        try:
+            metadata["artifact_sha256"][name] = _digest((path.parent / name).read_bytes())
+        except BaseException as exc:
+            record(f"artifact_sha256:{name}", exc)
+    if not failures:
+        metadata["finalization_status"] = "completed"
+        metadata["run_status"] = (
+            "invalid_provenance_changed" if finished_run and not metadata["provenance_unchanged"]
+            else run_status)
+    try:
+        _save_metadata(path, metadata)
+    except BaseException as exc:
+        record("final_metadata_save", exc)
+    if failures:
+        failures[0].add_note("Finalization errors: " + json.dumps(metadata["finalization_errors"]))
+        raise failures[0]
+
+
 def _git_information() -> dict:
     prefix = ["git", "-c", f"safe.directory={ROOT.as_posix()}",
               "--no-optional-locks", "-C", str(ROOT)]
@@ -223,11 +299,11 @@ def run_validation(output_dir: str | Path, *, base_seed: int = 20260915) -> dict
     metadata_path = destination / "memory_validation_metadata.json"
 
     def save_metadata() -> None:
-        metadata_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False, allow_nan=False) + "\n",
-                                 encoding="utf-8")
+        _save_metadata(metadata_path, metadata)
 
     save_metadata()
     counts = Counter()
+    run_error = None
     try:
         with ExitStack() as stack:
             writers = {}
@@ -274,20 +350,19 @@ def run_validation(output_dir: str | Path, *, base_seed: int = 20260915) -> dict
                 print(f"{spec['sample_id']} {spec['generator']} {spec['size']} bytes: saved", flush=True)
         metadata["run_status"] = "completed_with_failures" if metadata["failed_pair_count"] else "completed"
     except BaseException as exc:
+        run_error = exc
         metadata["run_status"] = "interrupted" if isinstance(exc, (KeyboardInterrupt, SystemExit)) else "aborted"
         metadata["run_error"] = f"{type(exc).__name__}: {exc}"
         raise
     finally:
-        metadata["finished_at_utc"] = _now()
-        metadata["repeat_status_counts"] = dict(counts)
-        metadata["source_sha256_at_end"] = _source_hashes()
-        metadata["provenance_unchanged"] = metadata["source_sha256_at_end"] == metadata["source_sha256"]
-        if not metadata["provenance_unchanged"] and metadata["run_status"].startswith("completed"):
-            metadata["run_status"] = "invalid_provenance_changed"
-        metadata["artifact_sha256"] = {
-            path.name: _digest(path.read_bytes()) for path in destination.glob("*.csv")
-        }
-        save_metadata()
+        try:
+            _finalize_metadata(metadata_path, metadata, counts)
+        except BaseException as exc:
+            if run_error is None:
+                raise
+            run_error.add_note(f"Finalization also failed: {type(exc).__name__}: {exc}")
+            for note in getattr(exc, "__notes__", ()):
+                run_error.add_note(note)
     return metadata
 
 

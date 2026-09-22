@@ -74,6 +74,43 @@ class MemoryWorkerEvidenceTests(unittest.TestCase):
         self.assertEqual((result.status, result.stdout), ("invalid_result", "not JSON"))
 
 
+class AtomicMetadataTests(unittest.TestCase):
+    def test_failed_serialization_sync_or_replace_preserves_previous_bytes(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="atomic_metadata_fixture_") as directory:
+            path = Path(directory) / "metadata.json"
+            original = b'{"status": "previous fixture"}\n'
+            path.write_bytes(original)
+            with self.assertRaises(ValueError):
+                validation._save_metadata(path, {"invalid": float("nan")})
+            self.assertEqual(path.read_bytes(), original)
+            for operation in ("fsync", "replace"):
+                with self.subTest(operation=operation):
+                    with patch.object(validation.os, operation, side_effect=OSError("fixture storage failure")):
+                        with self.assertRaisesRegex(OSError, "fixture storage failure"):
+                            validation._save_metadata(path, {"status": "new fixture"})
+                    self.assertEqual(path.read_bytes(), original)
+                    self.assertEqual(list(Path(directory).iterdir()), [path])
+
+    def test_replace_receives_complete_json_beside_untouched_previous_file(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="atomic_metadata_fixture_") as directory:
+            path = Path(directory) / "metadata.json"
+            original = b'{"status": "previous fixture"}\n'
+            path.write_bytes(original)
+            payload = {"status": "new fixture", "text": "검증"}
+            replace = validation.os.replace
+
+            def inspect(source, destination):
+                self.assertEqual(Path(source).parent, path.parent)
+                self.assertEqual(path.read_bytes(), original)
+                self.assertEqual(json.loads(Path(source).read_text(encoding="utf-8")), payload)
+                replace(source, destination)
+
+            with patch.object(validation.os, "replace", side_effect=inspect):
+                validation._save_metadata(path, payload)
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), payload)
+            self.assertEqual(list(Path(directory).iterdir()), [path])
+
+
 @unittest.skipUnless(sys.platform == "win32", "Windows validation runner")
 class MemoryValidationTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -96,6 +133,8 @@ class MemoryValidationTests(unittest.TestCase):
         with patch.object(benchmark, "run_memory_worker", side_effect=[fixture_result(p) for p in peaks]):
             result = validation.run_validation(self.output)
         self.assertEqual(result["run_status"], "completed")
+        self.assertEqual(result["finalization_status"], "completed")
+        self.assertEqual(result["finalization_errors"], [])
         self.assertEqual(result["repeat_count"], 10)
         self.assertEqual(result["failed_repeat_count"], 0)
         rows = read_rows(self.output, "memory_repeats.csv")
@@ -173,6 +212,123 @@ class MemoryValidationTests(unittest.TestCase):
         self.assertEqual(metadata["repeat_count"], 1)
         self.assertEqual(len(read_rows(self.output, "memory_repeats.csv")), 1)
         self.assertEqual(read_rows(self.output, "memory_summary.csv"), [])
+
+
+    def test_original_exception_survives_hash_and_persistent_save_failures(self) -> None:
+        sources = validation._source_hashes()
+        replace = validation.os.replace
+        for kind in (RuntimeError, KeyboardInterrupt, SystemExit):
+            for failure in ("hash", "save"):
+                with self.subTest(kind=kind, failure=failure):
+                    self.output = Path(self.temporary.name) / f"{kind.__name__}_{failure}"
+                    original = kind("fixture original failure")
+
+                    def fail_terminal_saves(source, destination):
+                        payload = json.loads(Path(source).read_text(encoding="utf-8"))
+                        if "finalization_status" in payload:
+                            raise PermissionError("fixture persistent save failure")
+                        replace(source, destination)
+
+                    with patch.object(benchmark, "run_memory_worker", side_effect=[fixture_result(), original]), \
+                            patch.object(validation, "_source_hashes", side_effect=[
+                                sources, OSError("fixture hash failure") if failure == "hash" else sources]), \
+                            patch.object(validation.os, "replace", side_effect=(
+                                fail_terminal_saves if failure == "save" else replace)):
+                        with self.assertRaises(kind) as caught:
+                            validation.run_validation(self.output)
+                    self.assertIs(caught.exception, original)
+                    self.assertIn("Finalization also failed", " ".join(original.__notes__))
+                    metadata = json.loads((self.output / "memory_validation_metadata.json").read_text())
+                    if failure == "hash":
+                        self.assertEqual(metadata["run_status"], "aborted" if kind is RuntimeError else "interrupted")
+                        self.assertEqual(metadata["run_error"], f"{kind.__name__}: fixture original failure")
+                        self.assertEqual(metadata["finalization_status"], "failed")
+                        self.assertEqual(metadata["repeat_count"], 1)
+                        self.assertEqual(len(metadata["artifact_sha256"]), 3)
+                    else:
+                        self.assertEqual(metadata["run_status"], "running")
+                        self.assertIn("final_metadata_save", " ".join(original.__notes__))
+                    self.assertEqual(len(read_rows(self.output, "memory_repeats.csv")), 1)
+                    self.assertEqual(read_rows(self.output, "memory_summary.csv"), [])
+                    self.assertEqual(list(self.output.glob("*.tmp")), [])
+
+    def test_hash_failures_are_independent_and_cli_cannot_report_success(self) -> None:
+        sources = validation._source_hashes()
+        read_bytes = Path.read_bytes
+        source_error = OSError("fixture source hash failure")
+        csv_before = {}
+
+        def end_source_hashes():
+            saved = json.loads((self.output / "memory_validation_metadata.json").read_text())
+            self.assertEqual(saved["run_status"], "finalizing")
+            self.assertEqual(saved["finalization_status"], "in_progress")
+            self.assertTrue(saved["finished_at_utc"])
+            self.assertEqual(saved["repeat_status_counts"], {"ok": 10})
+            csv_before.update({p.name: read_bytes(p) for p in self.output.glob("*.csv")})
+            raise source_error
+
+        def hashes():
+            if not self.output.exists():
+                return sources
+            return end_source_hashes()
+
+        def fail_one_csv(path):
+            if path == self.output / "memory_repeats.csv":
+                raise PermissionError("fixture artifact read failure")
+            return read_bytes(path)
+
+        with patch.object(benchmark, "run_memory_worker", return_value=fixture_result()), \
+                patch.object(validation, "_source_hashes", side_effect=hashes), \
+                patch.object(Path, "read_bytes", fail_one_csv):
+            with self.assertRaises(OSError) as caught:
+                validation.main(["--output-dir", str(self.output)])
+        self.assertIs(caught.exception, source_error)
+        saved = json.loads((self.output / "memory_validation_metadata.json").read_text())
+        self.assertEqual(saved["run_status"], "finalization_failed")
+        self.assertEqual(saved["run_status_before_finalization"], "completed")
+        self.assertIsNone(saved["source_sha256_at_end"])
+        self.assertIsNone(saved["provenance_unchanged"])
+        self.assertEqual([e["stage"] for e in saved["finalization_errors"]],
+                         ["source_sha256_at_end", "artifact_sha256:memory_repeats.csv"])
+        self.assertEqual(set(saved["artifact_sha256"]), {"samples.csv", "memory_summary.csv"})
+        self.assertEqual({p.name: p.read_bytes() for p in self.output.glob("*.csv")}, csv_before)
+
+    def test_terminal_or_final_save_failure_never_leaves_completed_metadata(self) -> None:
+        replace = validation.os.replace
+        for failed_status in ("in_progress", "completed"):
+            with self.subTest(failed_status=failed_status):
+                self.output = Path(self.temporary.name) / failed_status
+
+                def fail_selected_save(source, destination):
+                    payload = json.loads(Path(source).read_text())
+                    if payload.get("finalization_status") == failed_status:
+                        raise PermissionError("fixture replace failure")
+                    replace(source, destination)
+
+                with patch.object(benchmark, "run_memory_worker", return_value=fixture_result()), \
+                        patch.object(validation.os, "replace", side_effect=fail_selected_save):
+                    with self.assertRaises(PermissionError) as caught:
+                        validation.run_validation(self.output)
+                saved = json.loads((self.output / "memory_validation_metadata.json").read_text())
+                if failed_status == "in_progress":
+                    self.assertEqual(saved["run_status"], "finalization_failed")
+                    self.assertEqual(saved["finalization_errors"][0]["stage"], "terminal_checkpoint")
+                else:
+                    self.assertEqual(saved["run_status"], "finalizing")
+                    self.assertEqual(saved["finalization_status"], "in_progress")
+                    self.assertIn("final_metadata_save", " ".join(caught.exception.__notes__))
+                self.assertEqual(saved["repeat_count"], 10)
+                self.assertEqual(len(read_rows(self.output, "memory_repeats.csv")), 10)
+
+    def test_source_change_still_invalidates_an_otherwise_complete_run(self) -> None:
+        sources = validation._source_hashes()
+        changed = {**sources, "src/memory_validation.py": "0" * 64}
+        with patch.object(benchmark, "run_memory_worker", return_value=fixture_result()), \
+                patch.object(validation, "_source_hashes", side_effect=[sources, changed]):
+            result = validation.run_validation(self.output)
+        self.assertEqual(result["run_status"], "invalid_provenance_changed")
+        self.assertFalse(result["provenance_unchanged"])
+        self.assertEqual(result["finalization_status"], "completed")
 
 
 class ValidationPlanTests(unittest.TestCase):
