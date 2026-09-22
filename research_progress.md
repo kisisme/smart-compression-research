@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증: 2026-09-22.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -28,7 +28,7 @@
 | 저장 예측의 오류·confidence·regret 기여 분석 | `src/failure_analysis.py` |
 | 최소 Smart Mode CLI | `smart_compress.py`: 특징 기반 예측 후 선택한 압축기 하나를 한 번 실행하고, 한 번 해제하여 검증 후 저장 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 검증 전용 구현이며 공식 실험 파이프라인 편입은 미완료 |
-| Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 구현 (`c54b8f5`). 아래 실제 검증 실행은 미완료 |
+| Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
@@ -200,7 +200,7 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 
 ### 계획/미완료
 
-- 네 압축기·네 크기 전체 행렬의 검증 완료, 반복 변동·작은 파일의 runtime baseline 영향 검증. 위 미완료 증거 보존과 구분한다.
+- 네 압축기·네 크기 전체 행렬 실행과 실행 내 반복 변동의 집계는 아래 2026-09-22 결과로 완료했다. 작은 파일의 runtime baseline 영향과 실행 간 안정성 검증은 미완료이다. 위 2026-09-15 미완료 증거는 별도로 보존한다.
 - 공식 experiment runner 연동 및 공식 결과 schema 확장. 별도 validation runner의 원시값·집계·실패 저장은 구현되었으나 공식 파이프라인 편입은 미완료이다.
 - 새 기준의 50~100개 검증 실험 후 공식 4지표 score 활성화 및 새 Pilot 실행.
 - `research_protocol_v3.md` 작성 및 공식 전환 기록. 현재 해당 파일은 없다.
@@ -269,6 +269,37 @@ python -B -m research_log.verify_memory_validation --experiment-dir <completed-r
 
 보존된 원본 네 파일은 Python으로 읽어 `708c9cb`의 바이트 및 SHA-256과 대조했고 모두 일치했다. 실제 memory 재측정·기존 결과 대상 audit·과거 입력의 복원 재검증·공식 4지표 전환은 수행하지 않았다. 기존 3지표 결과·설정·라벨·모델은 변경하지 않았다.
 
+### 새 전체 memory 행렬 실행 완료 / 저장 기록 audit 통과 — 2026-09-22
+
+근거: [새 결과 폴더](data/results/memory_validation_20260922/), [실행 metadata](data/results/memory_validation_20260922/memory_validation_metadata.json), [audit.json](data/results/memory_validation_20260922/audit.json).
+
+- 실행 commit: `3e9b2673a116b045a5e225203e0d175429192c09`, 시작 시 `worktree_dirty=false`. 기존 설정과 base seed `20260915`를 유지했다. 이전 미완료 실행을 이어 쓰지 않고 새 경로에서 전체 행렬을 실행했다.
+- 실행 시각(UTC): `2026-09-22T10:04:01.778566+00:00` ~ `2026-09-22T10:08:55.634330+00:00`. 종료 코드 0, `run_status=completed`, `finalization_status=completed`, `finalization_errors=[]`, `provenance_unchanged=true`이다.
+- `measurement_status=validation_only`, `score_inclusion=false`이다. 공식 score는 계속 프로토콜 v2의 3지표이며 정식 4지표 실험이나 새 Pilot이 아니다.
+
+| 저장 파일 | 실제 저장 내용 |
+|---|---|
+| [samples.csv](data/results/memory_validation_20260922/samples.csv) | 6종 generator × 4개 크기, sample 24개 |
+| [memory_repeats.csv](data/results/memory_validation_20260922/memory_repeats.csv) | 24 sample × 4개 알고리즘 × 압축·해제 × 5회, 반복 960개 모두 `ok`·`verified=True`·`reference_roundtrip_verified=True` |
+| [memory_summary.csv](data/results/memory_validation_20260922/memory_summary.csv) | sample × algorithm 집계 96개, 모두 `verified=True` |
+| [memory_validation_metadata.json](data/results/memory_validation_20260922/memory_validation_metadata.json) | sample·pair·repeat 실패 수 모두 0, 종료 기록·환경·설정·소스 및 원시 CSV hash |
+| [audit.json](data/results/memory_validation_20260922/audit.json) | `audit_passed=true`, 입력 재생성 hash·전체 행렬의 고유 key·worker JSON·집계 통계·metadata 수량 확인 |
+
+실행 및 검증 명령:
+
+```text
+.venv\Scripts\python.exe -B -m src.memory_validation --output-dir data/results/memory_validation_20260922 --base-seed 20260915
+.venv\Scripts\python.exe -B -m research_log.verify_memory_validation --experiment-dir data/results/memory_validation_20260922 --output data/results/memory_validation_20260922/audit.json
+```
+
+사용자 Python 접근이 가능한 권한으로 실행했으며 두 명령 모두 종료 코드 0이다. Audit는 저장값을 독립 재계산하고 원본 입력을 재생성했지만 memory 측정·압축·복원을 재실행하지 않았다. 측정 당시 부모 프로세스의 원본/복원 바이트 비교와 worker의 기대 SHA-256 대조를 수행했고, audit는 그 저장 증거의 일관성을 확인했다.
+
+Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 phase 그룹 192개의 CV 중앙값은 **0.396770%**, 최대는 **1.157033%**이다. 최대 그룹은 `memory_000017` / `mixed` / 262,144 bytes / `zstd` / `decompress`이다. 알고리즘·크기별 최대 압축/해제 CV는 `audit.json`의 `variation_by_algorithm_size`에 보존했다. 사전 합격 임계값을 정한 실험이 아니므로 이 값만으로 과학적 측정 검증 완료나 실행 간 안정성을 판정하지 않는다.
+
+기존 2026-09-15 미완료 실행 원본 네 파일은 Python으로 `708c9cb`의 바이트·SHA-256과 대조해 변경 없음을 확인했다. 새 폴더의 `.gitattributes`는 CSV·JSON 줄바꿈 변환만 비활성화하여 측정·audit 바이트를 보존한다. 소스 코드·설정·기존 Pilot·모델은 변경하지 않았다. 이번 작업에서는 단위 테스트를 재실행하지 않았으며 실제 전체 행렬 실행과 audit로 검증했다. 이전 작업의 fixture 테스트 28개 통과 기록과 구분한다.
+
+**미완료:** 아주 작은 파일의 runtime baseline 영향, 실행 간 반복 안정성, 공식 runner 연동·4지표 전환 및 새 기준의 후속 실험. 이번 실행 성공으로 이전 worker 종료 원인이 규명된 것은 아니다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - 위 memory 검증 및 공식 4지표 전환.
@@ -280,13 +311,13 @@ python -B -m research_log.verify_memory_validation --experiment-dir <completed-r
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** 보강된 runner로 구분되는 새 출력 경로에 `validation_only` 전체 memory 검증 행렬을 실행하고 종료 metadata·실패 기록·저장 행렬을 확인한다. 성공적으로 완료된 경우에만 저장 기록 audit를 수행한다. 기존 미완료 결과를 덮어쓰거나 이어 붙이지 않는다.
+**제안/미착수:** 아주 작은 파일에서 Python runtime baseline이 알고리즘 간 memory 차이를 가리는지 확인할 별도 `validation_only` 검증 설계를 구체화한다. 대조군·입력 크기·반복·해석 범위·새 출력 경로를 측정 전에 정하고, 기존 전체 프로세스 peak 정의와 기존 결과는 유지한다.
 
-이번 작업은 종료 처리 보강의 검토·fixture 검증까지이다. 새 측정 실행, 반복 변동·runtime baseline 영향 검증 및 공식 4지표 전환은 미완료이며, 이미 보존된 실패 기록만으로 worker 종료의 구체적인 원인을 단정하지 않는다.
+이번 작업은 새 전체 행렬 실행·저장 기록 audit·증거 보존까지 완료했다. Runtime baseline 검증과 공식 4지표 전환은 포함하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-종료 처리 보강 검토 시작 시 HEAD는 `210b38dbf40234e7ca8f3e554eddaf874058ff33` (`Audit completed memory validation evidence with explicit checks`)이다. 이번에 검증한 runner·테스트 변경과 이 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+현재 새 완료 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이다. 이번 새 결과와 이 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -297,6 +328,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `3e9b267`: 종료 metadata 원자적 저장·오류 기록 보강 및 관련 fixture 테스트 28개 검증. 2026-09-22 전체 행렬의 실행 코드 기준.
 - `210b38d`: 완료된 memory 검증 기록의 audit 도구 및 인위적 fixture 검증 정리.
 - `708c9cb`: 미완료 memory 실행 원본·보존용 Git 속성·진행 기록 보존. 이번 audit 구현·테스트는 그 후속 작업이며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 - `70294a6`: 특징 기반 Smart Mode 구현. 최초 문서 작성 당시 마지막 구현 commit.

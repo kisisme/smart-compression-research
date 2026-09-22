@@ -1,0 +1,145 @@
+{
+  "audit_passed": true,
+  "audited_at_utc": "2026-09-22T10:10:26.263906+00:00",
+  "audit_scope": "completed_schema_v1_saved_evidence_consistency",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "limitations": [
+    "No memory measurement or compression/decompression round trip was rerun.",
+    "Worker verification is saved evidence, not independently repeated verification.",
+    "Compression digests are checked for format and consistency, not recomputed.",
+    "Requires matching recorded source/config bytes in the current checkout.",
+    "Passing this audit does not complete scientific validation or enable memory scoring."
+  ],
+  "audit_script_sha256": "2234717ac462a920d8121ee188c8110d6a490776e34f1a804623d4d74e782b31",
+  "measurement_commit": "3e9b2673a116b045a5e225203e0d175429192c09",
+  "input_sha256": {
+    "samples.csv": "07fa51c0a7de3618fb3ef98db22a1d7563df1275623a48164e5b55b4330114ed",
+    "memory_repeats.csv": "f2c26fda4eeaf9ac272fe61186f44acf9540251393edc268cd978a49bf2bc63d",
+    "memory_summary.csv": "60c7a7c0857f4f0446e4e8293a9244d82b2a2f6ea7f81697f9615a5cd1f5325d",
+    "memory_validation_metadata.json": "48fd7854b174b774426f13cdde1a252c7e19b24cd0b5f429f0b7d521b6af47d3"
+  },
+  "sample_count": 24,
+  "pair_count": 96,
+  "repeat_count": 960,
+  "phase_group_count": 192,
+  "failed_repeat_count": 0,
+  "checks": [
+    "artifact/source SHA-256",
+    "regenerated input SHA-256 and generation parameters",
+    "complete unique matrix keys",
+    "worker JSON and expected digests",
+    "independently recalculated medians/min/max/population std/CV",
+    "metadata counts"
+  ],
+  "median_phase_cv": 0.003967702059283944,
+  "largest_phase_cv": {
+    "sample_id": "memory_000017",
+    "generator": "mixed",
+    "size": 262144,
+    "algorithm": "zstd",
+    "phase": "decompress",
+    "cv": 0.011570328926804659,
+    "median_bytes": 25255936,
+    "min_bytes": 24645632,
+    "max_bytes": 25341952
+  },
+  "variation_by_algorithm_size": [
+    {
+      "algorithm": "gzip",
+      "size": 16384,
+      "max_compress_cv": 0.005202690887909938,
+      "max_decompress_cv": 0.007732875575642556
+    },
+    {
+      "algorithm": "bz2",
+      "size": 16384,
+      "max_compress_cv": 0.009003865285834273,
+      "max_decompress_cv": 0.009405123211997367
+    },
+    {
+      "algorithm": "lzma",
+      "size": 16384,
+      "max_compress_cv": 0.006464937775102693,
+      "max_decompress_cv": 0.008147332226009043
+    },
+    {
+      "algorithm": "zstd",
+      "size": 16384,
+      "max_compress_cv": 0.008125127361490158,
+      "max_decompress_cv": 0.005311039574431182
+    },
+    {
+      "algorithm": "gzip",
+      "size": 65536,
+      "max_compress_cv": 0.007975584064214307,
+      "max_decompress_cv": 0.00763612160092418
+    },
+    {
+      "algorithm": "bz2",
+      "size": 65536,
+      "max_compress_cv": 0.006772599820010532,
+      "max_decompress_cv": 0.008269330018720999
+    },
+    {
+      "algorithm": "lzma",
+      "size": 65536,
+      "max_compress_cv": 0.0028123732565264524,
+      "max_decompress_cv": 0.00374818085167503
+    },
+    {
+      "algorithm": "zstd",
+      "size": 65536,
+      "max_compress_cv": 0.008801775382773895,
+      "max_decompress_cv": 0.008178500969756674
+    },
+    {
+      "algorithm": "gzip",
+      "size": 262144,
+      "max_compress_cv": 0.00965484283966369,
+      "max_decompress_cv": 0.006953184650365356
+    },
+    {
+      "algorithm": "bz2",
+      "size": 262144,
+      "max_compress_cv": 0.009506250796575418,
+      "max_decompress_cv": 0.006608346554059003
+    },
+    {
+      "algorithm": "lzma",
+      "size": 262144,
+      "max_compress_cv": 0.0056180882074539275,
+      "max_decompress_cv": 0.005067910916612073
+    },
+    {
+      "algorithm": "zstd",
+      "size": 262144,
+      "max_compress_cv": 0.009822702248139253,
+      "max_decompress_cv": 0.011570328926804659
+    },
+    {
+      "algorithm": "gzip",
+      "size": 1048576,
+      "max_compress_cv": 0.006295428955050044,
+      "max_decompress_cv": 0.008113478645553531
+    },
+    {
+      "algorithm": "bz2",
+      "size": 1048576,
+      "max_compress_cv": 0.008267083378076188,
+      "max_decompress_cv": 0.007973303904204795
+    },
+    {
+      "algorithm": "lzma",
+      "size": 1048576,
+      "max_compress_cv": 0.003237849572434017,
+      "max_decompress_cv": 0.009379925374909368
+    },
+    {
+      "algorithm": "zstd",
+      "size": 1048576,
+      "max_compress_cv": 0.007482451182132293,
+      "max_decompress_cv": 0.006325722255117251
+    }
+  ]
+}

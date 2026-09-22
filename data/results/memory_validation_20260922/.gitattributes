@@ -1,0 +1,3 @@
+# Preserve measured evidence and audit bytes without newline conversion.
+*.csv -text
+*.json -text
