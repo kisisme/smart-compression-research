@@ -30,6 +30,7 @@
 | 독립 memory 측정 | `src/memory_benchmark.py`: 검증 전용 구현이며 공식 실험 파이프라인 편입은 미완료 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
+| Runtime baseline 진단 worker | `src/memory_runtime_worker.py`: 세 arm의 별도 CLI 및 fixture·Windows subprocess 검증 완료. 전체 runner·audit·실험은 미완료 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -308,7 +309,23 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 - 입력 크기·생성 규칙·seed·반복·run별 순서 무작위화·저장 schema·실패 보존·분석 범위를 측정 전에 정의했다. Python으로 예정 행렬을 계산했고, 이는 연구 측정값이 아니다.
 - 범위 겹침과 run별 차이·순위 변동은 기술적 진단으로 해석한다. 공식 전환의 합격 임계값이나 순수 runtime 점유율을 주장하지 않는다.
 - 코드·공식 API 근거·문서 링크·diff를 검토했다. 문서 작업이므로 실측·단위 테스트를 재실행하지 않았다. 소스·설정·기존 결과는 변경하지 않았다.
-- **미완료:** 이 설계의 별도 worker·runner·audit 구현, fixture 검증과 실제 측정. 기존 schema-v1 audit의 검사를 완화해 재사용하지 않는다.
+- **설계 작성 당시 미완료:** 별도 worker·runner·audit 구현 및 실제 측정. 이후 worker 검증은 다음 항목과 같으며, 기존 schema-v1 audit의 검사를 완화해 재사용하지 않는다.
+
+### Runtime baseline worker 구현·검증 완료 — 2026-09-22
+
+근거: [worker](src/memory_runtime_worker.py), [전용 테스트](tests/test_memory_runtime_worker.py), [CLI·응답 계약](research_log/memory_runtime_baseline_design.md).
+
+- 설계 commit `584fc68`을 기준으로 `import_only`·`input_only`·`codec`의 공통 진입점을 구현했다. 기존 측정 모듈·설정은 그대로 사용하며 설계와 설정 일치를 검사한다.
+- Controls의 `verified`는 null, 입력 대조군의 `input_verified`와 codec의 출력 검증은 서로 구분한다. `codec`은 선택한 압축 또는 해제 호출만 한 번 실행하고 출력 hash를 확인한다. 원본/복원 바이트 비교와 참조 준비는 부모 runner 책임이다.
+- peak는 hash 검증 후, 응답 생성·JSON 출력 전에 조회한다. hash 불일치도 peak와 false를 남기며, 실행 오류·잘못된 peak·중단을 성공으로 바꾸지 않는다.
+- 아래 전용 테스트 13개가 통과했다. 인위적 peak fixture와 임시 입력의 실제 Windows subprocess smoke test를 사용했다. 모든 arm·알고리즘·phase 성공 경로와 일반/`-O`/`-OO` hash 불일치 거부를 포함한다. smoke test는 실제 backend를 사용했으나 baseline 연구 결과로 저장·집계하지 않았다.
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_runtime_worker.py -v
+13 tests: OK
+```
+
+전체 테스트 suite 및 예정 baseline 전체 실험은 실행하지 않았다. worker는 결과 파일을 쓰지 않으며 기존 연구 결과·config·3지표 라벨·모델을 변경하지 않았다. **미완료:** 부모의 참조 준비·응답 검증·timeout·원시 CSV 저장·종료 metadata를 담당하는 전체 runner, 별도 audit, 전체 실측 및 공식 4지표 전환.
 
 ## 12. 아직 완료하지 않은 작업
 
@@ -321,13 +338,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [runtime baseline 설계](research_log/memory_runtime_baseline_design.md)에 따라 공통 진입점의 별도 worker와 단위 테스트를 구현한다. 세 arm의 실행 경로·phase별 입력·hash 검증·peak 조회 순서·검증 필드 의미를 확인한다. 전체 runner·audit 구현과 전체 실측은 후속 작업이다.
+**제안/미착수:** [runtime baseline 설계](research_log/memory_runtime_baseline_design.md)의 별도 runner와 fixture 테스트를 구현한다. 입력·참조 복원 검증, 재현 가능한 schedule, 새 worker 응답 검증·timeout·실패 보존, 원시값·집계·종료 metadata 저장을 하나의 실행 기능으로 검증한다. 별도 audit 구현과 전체 실측은 후속 작업이다.
 
-이번 작업은 runtime baseline의 사전 검증 설계까지 완료했다. 설계에 따른 구현·측정 및 공식 4지표 전환은 포함하지 않았다.
+이번 작업은 runtime baseline worker 구현·전용 테스트까지 완료했다. 전체 runner·audit·전체 실측과 공식 4지표 전환은 포함하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-현재 새 완료 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. 이번 runtime baseline 설계와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. 새 runtime baseline worker의 설계 기준은 `584fc68`이다. 이번 worker·테스트·설계 구현 상태·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -338,6 +355,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `584fc68`: 별도 runtime baseline 검증 설계. 새 worker 작업의 시작 기준 HEAD.
 - `3ad85c9`: 2026-09-22 전체 memory 검증 행렬 및 audit 결과 보존. 현재 별도 runtime baseline 설계의 시작 기준 HEAD.
 - `3e9b267`: 종료 metadata 원자적 저장·오류 기록 보강 및 관련 fixture 테스트 28개 검증. 2026-09-22 전체 행렬의 실행 코드 기준.
 - `210b38d`: 완료된 memory 검증 기록의 audit 도구 및 인위적 fixture 검증 정리.

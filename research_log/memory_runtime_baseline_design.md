@@ -2,7 +2,7 @@
 
 작성일: 2026-09-22. 설계 ID: `memory_runtime_baseline_v1`.
 
-**상태: 설계 완료 / 구현·측정 미착수 / `validation_only` / `score_inclusion=false`.**
+**상태: 설계·별도 worker 구현 검증 완료 / 전체 runner·audit·실험 미착수 / `validation_only` / `score_inclusion=false`.**
 아래 크기·seed·반복 수는 앞으로 실행할 조건이며 측정 결과가 아니다.
 공식 기준은 [프로토콜 v2](../research_protocol_v2.md), 압축 설정은
 [현재 config](../config/experiment_config.json)이다. 공식 설정과 score는 변경하지 않는다.
@@ -178,15 +178,60 @@ arm간 비교도 같은 방식으로 반복 범위의 겹침 여부를 기록한
 
 ## 6. 구현 전후 확인 항목과 현재 상태
 
-다음 단일 작업은 이 설계의 별도 worker와 단위 테스트 구현이다.
-이후 runner·별도 audit·인위적 실패 fixture를 구현하고 검증한 뒤 새 실측을 진행한다.
-현재 새 worker·runner·audit는 존재하지 않으며 위 경로는 계획이다.
+별도 [worker](../src/memory_runtime_worker.py)와 [전용 테스트](../tests/test_memory_runtime_worker.py)를
+구현했다. 다음 단일 작업은 worker를 호출해 예정 행렬·원시 기록·종료 metadata를 저장하는
+별도 runner와 fixture 검증이다. 별도 audit 구현 후 전체 실측을 진행한다.
+현재 전체 runner·audit는 존재하지 않으며 위 결과 경로는 계획이다.
 
 구현 검증에는 control에서 압축기 호출 금지, 실제 phase 입력 사용, codec 호출 1회,
 원본/복원 불일치·잘못된 hash 거부, 측정 전후 처리 순서, arm별 null 규칙,
 seed/schedule 재현, timeout·중단·종료 저장 실패 및 기존 출력 덮어쓰기 거부를 포함한다.
 테스트 fixture의 memory 값은 실험 결과와 구분한다.
 
-본 문서 작업에서는 행렬 규모만 Python으로 계산하고 근거 코드·공식 API 문서·링크·diff를
+최초 설계 문서 작업에서는 행렬 규모만 Python으로 계산하고 근거 코드·공식 API 문서·링크·diff를
 확인했다. memory 실측, 단위 테스트, 모델 학습, 공식 score 변경은 실행하지 않았다.
 관련 구현 기준은 `3e9b267`, 기존 전체 행렬 결과 보존 commit은 `3ad85c9`이다.
+
+### Worker 구현·검증 — 2026-09-22
+
+설계 commit `584fc68`을 기준으로 공통 CLI와 `measure_arm`을 추가했다.
+기존 `memory_benchmark.py`·`compressors.py`·config는 변경하지 않았다.
+CLI 호출 형식은 다음과 같다. 아래는 형식 설명이며 실행된 연구 명령이 아니다.
+
+```text
+python -B -m src.memory_runtime_worker --request-id <unique-request-id> --arm <arm> --phase <phase> --algorithm <algorithm> --input <phase-input-path> --input-sha256 <phase-input-digest> --expected-output-sha256 <reference-output-digest>
+```
+
+모든 arm에서 두 digest 인자를 받아 같은 요청 검증 경로를 사용한다. 공통 설정 파일을
+읽어 import된 설정·설계의 압축 수준·memory 설정과 대조한 후 arm을 실행한다.
+`import_only`는 지정한 phase 입력 경로를 열거나 stat하지 않는다.
+`codec`은 출력 hash만 검사하고 `input_only`는 입력 hash만 검사한다.
+Windows와 bytecode 쓰기 비활성화 조건도 검사한다.
+
+응답은 `design_id`, `schema_version`, `measurement_status`, `score_inclusion`,
+`measurement_method`, `request_id`, `arm`, `phase`, `algorithm`,
+`peak_process_working_set_bytes`, `observed_input_size`, `verified`, `input_verified`,
+`status`, `error`를 포함한다. `observed_input_size`는 import_only에서 null이다.
+부모의 `reference_roundtrip_verified`는 worker가 생성하거나 대신 인증하지 않는다.
+부모가 요청 ID·arm·phase·알고리즘·응답 타입·종료 코드·검증 필드 조합을 검사하고
+참조 복원 검증 결과와 합쳐 원시 기록을 저장해야 한다.
+
+정상 응답은 종료 코드 0, hash 불일치는 측정 peak와 false 검증값을 보존하고 코드 2,
+처리 가능한 실행 오류는 `worker_failed`·null peak의 JSON과 코드 1을 반환한다.
+인자 파싱 오류는 argparse의 stderr·코드 2, import 단계 오류나 강제 종료는 JSON이
+없을 수 있으므로 부모가 그대로 실패 기록으로 보존해야 한다. KeyboardInterrupt와
+SystemExit는 삼키지 않는다. 이 worker 자체는 subprocess 생성·timeout·결과 저장을 하지 않는다.
+
+실행한 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_runtime_worker.py -v
+13 tests: OK
+```
+
+인위적 peak fixture로 control의 입력/압축기 호출 제한, 실제 phase 입력,
+선택한 codec 호출 1회, 잘못된 복원 결과·hash·요청·설정·peak 거부,
+hash → peak → JSON 순서 및 중단 전파를 확인했다. 임시 입력을 쓰는 Windows
+subprocess smoke test로 모든 arm·알고리즘·phase의 성공 경로와 일반/`-O`/`-OO`의
+hash 불일치 거부를 실제 실행했다. smoke test의 메모리는 실제 backend를 사용했지만
+연구 결과로 저장·집계하지 않았다. 전체 suite와 계획된 baseline 전체 행렬은 실행하지 않았다.
