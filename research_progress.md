@@ -300,6 +300,16 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 **미완료:** 아주 작은 파일의 runtime baseline 영향, 실행 간 반복 안정성, 공식 runner 연동·4지표 전환 및 새 기준의 후속 실험. 이번 실행 성공으로 이전 worker 종료 원인이 규명된 것은 아니다.
 
+### 작은 파일 runtime baseline 검증 설계 완료 — 2026-09-22
+
+근거: [별도 검증 설계](research_log/memory_runtime_baseline_design.md), 설계 ID `memory_runtime_baseline_v1`.
+
+- 같은 worker 환경에서 `import_only`, `input_only`, `codec`을 비교하도록 대조군을 정의했다. 압축·해제의 실제 phase 입력을 사용하며 baseline 차이를 압축기 순수 메모리나 공식 score로 사용하지 않는다.
+- 입력 크기·생성 규칙·seed·반복·run별 순서 무작위화·저장 schema·실패 보존·분석 범위를 측정 전에 정의했다. Python으로 예정 행렬을 계산했고, 이는 연구 측정값이 아니다.
+- 범위 겹침과 run별 차이·순위 변동은 기술적 진단으로 해석한다. 공식 전환의 합격 임계값이나 순수 runtime 점유율을 주장하지 않는다.
+- 코드·공식 API 근거·문서 링크·diff를 검토했다. 문서 작업이므로 실측·단위 테스트를 재실행하지 않았다. 소스·설정·기존 결과는 변경하지 않았다.
+- **미완료:** 이 설계의 별도 worker·runner·audit 구현, fixture 검증과 실제 측정. 기존 schema-v1 audit의 검사를 완화해 재사용하지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - 위 memory 검증 및 공식 4지표 전환.
@@ -311,13 +321,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** 아주 작은 파일에서 Python runtime baseline이 알고리즘 간 memory 차이를 가리는지 확인할 별도 `validation_only` 검증 설계를 구체화한다. 대조군·입력 크기·반복·해석 범위·새 출력 경로를 측정 전에 정하고, 기존 전체 프로세스 peak 정의와 기존 결과는 유지한다.
+**제안/미착수:** [runtime baseline 설계](research_log/memory_runtime_baseline_design.md)에 따라 공통 진입점의 별도 worker와 단위 테스트를 구현한다. 세 arm의 실행 경로·phase별 입력·hash 검증·peak 조회 순서·검증 필드 의미를 확인한다. 전체 runner·audit 구현과 전체 실측은 후속 작업이다.
 
-이번 작업은 새 전체 행렬 실행·저장 기록 audit·증거 보존까지 완료했다. Runtime baseline 검증과 공식 4지표 전환은 포함하지 않았다.
+이번 작업은 runtime baseline의 사전 검증 설계까지 완료했다. 설계에 따른 구현·측정 및 공식 4지표 전환은 포함하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-현재 새 완료 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이다. 이번 새 결과와 이 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+현재 새 완료 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. 이번 runtime baseline 설계와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -328,6 +338,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `3ad85c9`: 2026-09-22 전체 memory 검증 행렬 및 audit 결과 보존. 현재 별도 runtime baseline 설계의 시작 기준 HEAD.
 - `3e9b267`: 종료 metadata 원자적 저장·오류 기록 보강 및 관련 fixture 테스트 28개 검증. 2026-09-22 전체 행렬의 실행 코드 기준.
 - `210b38d`: 완료된 memory 검증 기록의 audit 도구 및 인위적 fixture 검증 정리.
 - `708c9cb`: 미완료 memory 실행 원본·보존용 Git 속성·진행 기록 보존. 이번 audit 구현·테스트는 그 후속 작업이며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
