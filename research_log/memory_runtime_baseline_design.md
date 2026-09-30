@@ -2,7 +2,7 @@
 
 작성일: 2026-09-22. 설계 ID: `memory_runtime_baseline_v1`.
 
-**상태: 설계·worker·별도 runner·별도 audit 구현 검증 완료 / 진단 분석·전체 실험 미착수 / `validation_only` / `score_inclusion=false`.**
+**상태: 설계·worker·별도 runner·별도 audit·진단 분석 구현 검증 완료 / 전체 실험 미착수 / `validation_only` / `score_inclusion=false`.**
 아래 크기·seed·반복 수는 앞으로 실행할 조건이며 측정 결과가 아니다.
 공식 기준은 [프로토콜 v2](../research_protocol_v2.md), 압축 설정은
 [현재 config](../config/experiment_config.json)이다. 공식 설정과 score는 변경하지 않는다.
@@ -182,7 +182,7 @@ arm간 비교도 같은 방식으로 반복 범위의 겹침 여부를 기록한
 [runner](../src/memory_runtime_validation.py)와 [runner 테스트](../tests/test_memory_runtime_validation.py)를
 구현했다. 저장 계약을 검사하는 [별도 audit](verify_memory_runtime_validation.py)와
 [전용 테스트](../tests/test_verify_memory_runtime_validation.py)도 구현했다.
-다음 단일 작업은 paired 대비·run 간 진단 분석과 fixture 검증이다. 전체 실측은 후속 작업이며
+paired 대비·run 간 진단 분석과 fixture 검증도 아래와 같이 완료했다. 다음 단일 작업은 전체 실측과 저장 기록 검증이며
 위 연구 결과 경로는 아직 계획이다.
 
 구현 검증에는 control에서 압축기 호출 금지, 실제 phase 입력 사용, codec 호출 1회,
@@ -345,3 +345,50 @@ worker와 부모 호출을 mock했다. Audit 중에는 압축·복원·측정 �
 동시 파일 변경, 일반/`-O`/`-OO` CLI 실패 거부, 출력 덮어쓰기 거부 및 입력 바이트 보존을
 검증했다. 테스트는 사용자 Python 접근이 가능한 권한으로 실행했다. 실제 연구 기록 대상
 audit·baseline 전체 실측·전체 테스트 suite는 실행하지 않았다.
+
+### 진단 분석 구현·fixture 검증 — 2026-09-30
+
+audit 구현 commit `c9bf6e6`을 기준으로 [분석기](analyze_memory_runtime_validation.py)와
+[전용 테스트](../tests/test_analyze_memory_runtime_validation.py)를 추가했다.
+기존 runner·worker·audit·config·연구 결과는 변경하지 않았다.
+
+```text
+python -B -m research_log.analyze_memory_runtime_validation --experiment-dir <completed-study-directory> --output <new-diagnostic-summary-json>
+```
+
+위는 CLI 사용 형식이며 연구 실행 기록이 아니다. 분석기는 기존 audit를 직접 실행하고,
+그 audit가 확인한 원시 CSV 바이트의 hash를 다시 대조한 뒤 메모리의 snapshot으로 계산한다.
+분석 종료 시 전체 감사 입력과 분석기·audit·측정 소스의 변경을 검사한다. 실패·미완료
+기록이나 감사 후 변경을 거부하며 성공 JSON을 만들지 않는다. 기본 출력은 stdout이고
+`--output`은 새 파일만 생성한다. 기존 metadata의 분석 대기 상태도 덮어쓰지 않는다.
+
+JSON schema v1의 주요 필드:
+
+- `audit`: 실행한 독립 감사 보고서, 원시 증거 hash·측정 commit·감사 코드 hash.
+- `analysis_script_sha256`, `samples`: 분석 코드 hash와 입력 생성 명세.
+- `peak_by_run`: round 순서 원시 peak 5개·중앙값·min/max·population std·CV. 단위는 bytes이며 CV는 비율이다.
+- `paired_by_run`: 동일 run·round·block의 `D_input`, `D_codec`, `R_input` 원시 대비와 중앙값·min/max.
+- `arm_pairs_by_run`, `algorithm_pairs_by_run`: 각 arm 쌍과 알고리즘 6쌍의 left 중앙값 − right 중앙값, 부호·동점·양쪽 반복 범위와 겹침.
+- 대응하는 `*_across_runs`: run 1·2·3 각각의 중앙값 또는 쌍별 차이, 그 min/max·부호·부호 일치 여부. 반복을 run 간 합치지 않는다.
+
+알고리즘 비교는 차감하지 않은 codec peak를 사용한다. Arm 쌍의 중앙값 차이는 paired
+차이의 중앙값과 별도 필드로 구분한다. 겹침은 양끝을 포함한 관측 min/max 범위로 정의하며
+경계가 같아도 겹침이다. 동점은 정확한 동일값이며 부호 0으로 보존한다. 차이의 부호 기준은
+0, `R_input`의 run 간 부호 기준은 1이다. 음수 차이와 1 초과 비율을 보존한다.
+자동 인과 해석·과학적 합격 판정·공식 score 변경은 하지 않는다.
+
+전용 테스트는 인위적 peak의 계산 fixture와 기존 audit 테스트의 전체 행렬 저장 fixture를
+사용한다. 짝지은 차이의 중앙값, 음수·비율·동점·범위 경계·순위 역전, run 분리, 실제 audit
+연동과 원본 바이트 보존, 감사 후/분석 중 변경 거부, CLI 출력 독점 생성 및 일반/`-O`/`-OO`
+오류 거부를 검증했다. Fixture 준비에만 실제 참조 압축·복원을 사용하며 분석 중에는
+압축·복원·측정을 금지했다. 아래 전용 테스트가 통과했다.
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_analyze_memory_runtime_validation.py -v
+7 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_runtime_validation.py -v
+15 tests: OK
+```
+
+기존 audit 회귀 테스트도 위와 같이 통과했다. 두 모듈만 실행했으며 전체 suite는 실행하지 않았다.
+실제 baseline 전체 실측·연구 기록 대상 audit/진단 분석·공식 4지표 전환은 미완료다.

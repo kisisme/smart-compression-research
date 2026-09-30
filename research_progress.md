@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline runner·별도 audit 구현 및 fixture 검증: 2026-09-30.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline runner·별도 audit·진단 분석 구현 및 fixture 검증: 2026-09-30.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -31,8 +31,9 @@
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
 | Runtime baseline 진단 worker | `src/memory_runtime_worker.py`: 세 arm의 별도 CLI 및 fixture·Windows subprocess 검증 완료 |
-| Runtime baseline 별도 runner | `src/memory_runtime_validation.py`: 고정 schedule·별도 부모 프로세스·참조 복원 검증·worker 응답 및 실패 보존·원시값/집계/종료 metadata 저장 구현·fixture 검증 완료. 진단 분석·전체 실험은 미완료 |
+| Runtime baseline 별도 runner | `src/memory_runtime_validation.py`: 고정 schedule·별도 부모 프로세스·참조 복원 검증·worker 응답 및 실패 보존·원시값/집계/종료 metadata 저장 구현·fixture 검증 완료. 전체 실험은 미완료 |
 | Runtime baseline 저장 기록 감사 | `research_log/verify_memory_runtime_validation.py`: 전체 완료 기록의 schedule·입력 hash·원시값·집계·종료 증거 독립 검사 구현 및 fixture 검증 완료. 실제 연구 기록 대상 audit는 미실행 |
+| Runtime baseline 진단 분석 | `research_log/analyze_memory_runtime_validation.py`: audit 연동·paired 대비·run 간 범위/부호·arm/알고리즘 쌍별 범위 겹침 구현 및 fixture 검증 완료. 실제 연구 기록 분석은 미실행 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -375,7 +376,30 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 전체 예정 행렬 크기의 임시 fixture에 인위적 peak와 테스트용 Git 정보를 사용했다. Fixture 준비는 실제 입력 생성·참조 압축·복원·저장을 수행하고 worker·부모 호출은 mock했다. Audit 실행 중 압축·복원·측정을 금지한 성공 검사와 hash를 다시 맞춘 오류 증거 거부, 입력 바이트 보존, CLI·최적화 모드·출력 독점 생성을 검증했다. 테스트는 사용자 Python 접근이 가능한 권한으로 실행했으며 위 두 모듈만 통과했다고 기록한다.
 
-**계획/미완료:** paired 대비·run 간 범위·순위 진단 구현과 fixture 검증, 전체 baseline 실측과 실제 저장 기록 audit, 공식 4지표 전환. 기존 schema-v1 audit·runner·worker·config·연구 결과·모델은 변경하지 않았다.
+**당시 계획/미완료:** paired 대비·run 간 범위·순위 진단 구현과 fixture 검증, 전체 baseline 실측과 실제 저장 기록 audit, 공식 4지표 전환. 기존 schema-v1 audit·runner·worker·config·연구 결과·모델은 변경하지 않았다. 이후 진단 분석 구현은 다음 항목과 같다.
+
+### Runtime baseline 진단 분석·fixture 검증 완료 — 2026-09-30
+
+근거: [진단 분석기](research_log/analyze_memory_runtime_validation.py), [전용 테스트](tests/test_analyze_memory_runtime_validation.py), [분석 계약](research_log/memory_runtime_baseline_design.md).
+
+- 시작 기준 HEAD는 별도 audit 구현 commit `c9bf6e6`이며 작업 트리는 깨끗했다. 분석기·fixture 테스트를 하나의 진단 기능으로 구현했다.
+- 기존 audit를 직접 실행하고 감사한 바이트와 원시 입력 hash를 대조한 뒤 계산한다. 분석 종료 때 감사 증거와 관련 소스 변경을 검사하며 실패·미완료·감사 후 변경을 거부한다.
+- run별 원시 peak·통계, 같은 run·round·block의 paired 차이/비율과 통계, 모든 arm 쌍 및 알고리즘 쌍의 중앙값 차이·동점·반복 범위 겹침을 저장한다. Run 간에는 각 run의 중앙값/차이와 범위·부호 일치만 요약하며 반복을 합치지 않는다.
+- 음수 차이·1 초과 비율·동점을 보존한다. 비율의 부호 기준은 1이며 범위가 경계에서 맞닿아도 겹침으로 기록한다. Paired 차이의 중앙값과 중앙값끼리의 차이는 구분한다.
+- 기본 출력은 stdout이며 `--output`은 새 JSON만 생성한다. 기존 원시값·metadata는 읽기 전용이다. `validation_only`, `score_inclusion=false`와 해석 한계를 보고서에 기록한다.
+
+실제 실행한 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_analyze_memory_runtime_validation.py -v
+7 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_runtime_validation.py -v
+15 tests: OK
+```
+
+테스트의 peak는 인위적 fixture이다. 임시 전체 행렬 fixture 준비에 실제 참조 압축·복원을 사용하고 worker·부모 호출은 mock했다. 분석 중에는 압축·복원·측정을 금지한 상태에서 실제 audit 연동을 검증했다. 원본 바이트 보존·잘못된 증거 거부·CLI 출력 덮어쓰기 거부·일반/`-O`/`-OO` 오류 거부도 확인했다. 샌드박스의 사용자 Python 접근 제한 때문에 테스트는 사용자 권한으로 실행했다. 전체 suite는 실행하지 않았다.
+
+**계획/미완료:** 전체 baseline 실측, 실제 저장 기록의 audit·진단 분석, 공식 4지표 전환. 기존 runner·worker·audit·config·연구 결과·3지표 라벨·모델은 변경하지 않았다.
 
 ## 12. 아직 완료하지 않은 작업
 
@@ -388,13 +412,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [runtime baseline 설계](research_log/memory_runtime_baseline_design.md) 5절의 별도 진단 분석과 fixture 테스트를 구현한다. Audit를 통과한 저장 원시값으로 같은 run·round·block의 paired 차이/비율, run별 통계, run 간 범위·부호 일치 및 모든 알고리즘 쌍의 차이·반복 범위 겹침을 계산한다. 음수 차이·동점을 보존하고 원본 결과를 변경하지 않는다. 전체 baseline 실측은 후속 작업이다.
+**제안/미착수:** [runtime baseline 설계](research_log/memory_runtime_baseline_design.md)의 고정 전체 행렬을 새로운 attempt 경로에서 실행하고, 완료 시 별도 audit와 진단 분석을 수행하여 원시 증거와 보고서를 보존한다. 실패·중단 시 해당 기록을 그대로 보존한다. 공식 4지표 전환은 별도 작업이다.
 
-이번 작업은 runtime baseline 별도 audit·전용 테스트와 기존 audit 회귀 검증까지 완료했다. 진단 분석·전체 실측·실제 연구 기록 대상 audit와 공식 4지표 전환은 포함하지 않았다.
+이번 작업은 runtime baseline 진단 분석·전용 fixture 검증과 기존 audit 회귀 검증까지 완료했다. 위 두 모듈만 통과했으며 문서 링크·diff도 확인했다. 전체 실측·실제 연구 기록 대상 audit/분석과 공식 4지표 전환은 포함하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline runner 구현 commit은 `9d3f120`이며 이번 audit 작업의 시작 기준이다. 이번 audit·테스트·설계 구현 상태·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline audit 구현 commit은 `c9bf6e6`이며 이번 진단 분석 작업의 시작 기준이다. 이번 분석기·테스트·설계 구현 상태·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -405,6 +429,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `c9bf6e6`: runtime baseline 별도 audit 및 fixture 검증. 이번 진단 분석 작업의 시작 기준 HEAD.
 - `9d3f120`: runtime baseline runner 및 fixture 테스트 구현. 이번 별도 audit 작업의 시작 기준 HEAD.
 - `018758c`: runtime baseline worker 및 전용 테스트 구현. 이번 runner 작업의 시작 기준 HEAD.
 - `584fc68`: 별도 runtime baseline 검증 설계. 새 worker 작업의 시작 기준 HEAD.
