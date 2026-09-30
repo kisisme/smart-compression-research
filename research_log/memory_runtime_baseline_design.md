@@ -2,7 +2,7 @@
 
 작성일: 2026-09-22. 설계 ID: `memory_runtime_baseline_v1`.
 
-**상태: 설계·별도 worker 구현 검증 완료 / 전체 runner·audit·실험 미착수 / `validation_only` / `score_inclusion=false`.**
+**상태: 설계·worker·별도 runner 구현 검증 완료 / 별도 audit·진단 분석·전체 실험 미착수 / `validation_only` / `score_inclusion=false`.**
 아래 크기·seed·반복 수는 앞으로 실행할 조건이며 측정 결과가 아니다.
 공식 기준은 [프로토콜 v2](../research_protocol_v2.md), 압축 설정은
 [현재 config](../config/experiment_config.json)이다. 공식 설정과 score는 변경하지 않는다.
@@ -97,7 +97,7 @@ sample × algorithm × phase block 120개, run당 worker 시도 1,800개,
 
 ## 4. 저장·실패·재현성 계약
 
-향후 별도 runner에서 아래 경로 형식을 사용한다. 이 문서 작성 시에는 생성하지 않았다.
+별도 runner에서 아래 경로 형식을 사용한다. 실제 연구 실행 경로는 아직 생성하지 않았다.
 
 ```text
 data/results/memory_runtime_baseline_v1_<UTC timestamp>_<attempt_id>/
@@ -178,10 +178,10 @@ arm간 비교도 같은 방식으로 반복 범위의 겹침 여부를 기록한
 
 ## 6. 구현 전후 확인 항목과 현재 상태
 
-별도 [worker](../src/memory_runtime_worker.py)와 [전용 테스트](../tests/test_memory_runtime_worker.py)를
-구현했다. 다음 단일 작업은 worker를 호출해 예정 행렬·원시 기록·종료 metadata를 저장하는
-별도 runner와 fixture 검증이다. 별도 audit 구현 후 전체 실측을 진행한다.
-현재 전체 runner·audit는 존재하지 않으며 위 결과 경로는 계획이다.
+별도 [worker](../src/memory_runtime_worker.py)와 [전용 테스트](../tests/test_memory_runtime_worker.py),
+[runner](../src/memory_runtime_validation.py)와 [runner 테스트](../tests/test_memory_runtime_validation.py)를
+구현했다. 다음 단일 작업은 이 runner의 저장 계약을 검사하는 별도 audit와 fixture 검증이다.
+paired 대비·run 간 진단 분석 구현 및 전체 실측은 후속 작업이다. 위 연구 결과 경로는 아직 계획이다.
 
 구현 검증에는 control에서 압축기 호출 금지, 실제 phase 입력 사용, codec 호출 1회,
 원본/복원 불일치·잘못된 hash 거부, 측정 전후 처리 순서, arm별 null 규칙,
@@ -235,3 +235,63 @@ hash → peak → JSON 순서 및 중단 전파를 확인했다. 임시 입력�
 subprocess smoke test로 모든 arm·알고리즘·phase의 성공 경로와 일반/`-O`/`-OO`의
 hash 불일치 거부를 실제 실행했다. smoke test의 메모리는 실제 backend를 사용했지만
 연구 결과로 저장·집계하지 않았다. 전체 suite와 계획된 baseline 전체 행렬은 실행하지 않았다.
+
+### Runner 구현·검증 — 2026-09-30
+
+worker 구현 commit `018758c`를 기준으로 별도 실행 기능을 추가했다. 기존 worker·공식
+config·schema-v1 audit·기존 결과 파일은 변경하지 않았다. 아래는 사용 형식이며 전체
+연구 실험을 실행한 명령이 아니다.
+
+```text
+python -B -m src.memory_runtime_validation --output-dir data/results/memory_runtime_baseline_v1_<UTC timestamp>_<attempt_id> --attempt-id <attempt_id> --reason <attempt reason>
+```
+
+- 출력 경로는 배타적으로 새로 생성한다. attempt ID는 ASCII 영숫자로 시작하는
+  영숫자·밑줄·하이픈 1~64자로 제한한다. 재시도 사유는 `--reason`으로 기록한다.
+- coordinator가 입력 규칙과 세 run의 전체 schedule을 `plan.json`에 먼저 저장한다.
+  각 run은 같은 Python의 별도 부모 subprocess로 순차 실행한다. 부모·worker 모두
+  `-B`와 `PYTHONDONTWRITEBYTECODE=1`을 사용한다. 축소 행렬 CLI 옵션은 없다.
+- 각 부모는 전체 입력·참조 압축물을 임시 디렉터리에 준비하고 실제 복원 bytes 및
+  저장된 phase 입력 bytes를 확인한 뒤 worker를 호출한다. 준비 실패는 영향을 받는
+  모든 예정 key의 `preparation_failed` 행으로 보존하며 해당 worker를 실행하지 않는다.
+- `samples.csv`는 입력 생성 명세이다. 각 run의 추가 `references.csv`에 실제 원본·압축물
+  SHA-256, 압축 크기, 참조 복원 결과와 준비 실패를 기록한다. 각 원시 반복 행에도
+  phase 입력 크기·hash와 기대 출력 hash를 기록한다. 임시 입력 파일은 종료 후 정리한다.
+- worker 응답의 설계·요청 식별자, 타입, phase 입력 크기, arm별 null/boolean 규칙,
+  양수 정수 peak, 상태·종료 코드 조합을 검사한다. timeout은 120초이며 worker 오류와
+  잘못된 JSON도 stdout·stderr·종료 코드와 함께 남긴다. 유효한 hash 불일치 응답의
+  peak·false를 보존하고, 계약에 어긋난 payload는 원본 stdout에 보존한다.
+- `repeats.csv`는 매 행 flush한다. `summary.csv`는 run별 sample·algorithm·phase·arm의
+  예정 반복이 모두 기록·검증된 경우에만 중앙값·min/max·population std·CV를 저장한다.
+  실패한 조건은 집계값을 null(CSV의 빈 필드)로 남긴다. 중단된 run에서는 summary가
+  없을 수 있으며 원시 CSV와 종료 metadata를 증거로 사용한다.
+- 각 run과 최상위에 `metadata.json`을 둔다. 시작·종료 환경과 가용 물리 메모리,
+  Git·소스·설정, 산출물 hash, 종료 상태·오류를 저장한다. run 도중 plan 또는 소스가
+  바뀌면 완료 결과를 무효화한다. 종료 metadata는 같은 디렉터리의 임시 파일을
+  flush·fsync 후 원자적으로 교체하며, 추가 종료 오류가 원래 예외를 대체하지 않는다.
+- 최상위 `run_XX_stdout.txt`·`run_XX_stderr.txt` 및 부모 종료 코드를 보존한다.
+  예정 행렬이 끝난 worker 실패 run은 다음 run으로 진행하지만 부모 자체의 중단·종료
+  실패는 attempt를 중단한다. 기존 출력에 이어 쓰거나 실패 조건만 재실행하지 않는다.
+- `completed`는 runner 실행·저장 완료만 의미한다. 독립 audit 또는 과학적 합격 판정이
+  아니다. `analysis_status=pending_independent_audit_and_diagnostics`로 남기며 아직
+  `diagnostic_summary.json`은 생성하지 않는다. 위 5절의 paired 대비·음수 차이 보존·
+  run 간 범위·순위 진단은 별도 구현 후 실측 전에 검증해야 한다.
+
+검증 명령과 결과:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_runtime_validation.py -v
+19 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_runtime_worker.py -v
+13 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_validation.py -v
+17 tests: OK
+```
+
+runner 테스트는 임시 폴더·인위적 peak fixture로 schedule 완전성·재현성, 실제 참조
+압축·복원, 잘못된 응답·timeout·준비 실패, 중단·저장 실패·소스/plan 변경, 기존 경로
+보존을 확인했다. 축소 fixture를 실제 별도 부모 프로세스에서 실행하여 CLI와 저장
+계약도 검증했다. worker 연결 smoke test는 임시 입력과 실제 Windows backend를
+사용했지만 연구 결과로 저장·집계하지 않았다. 전체 테스트 suite, 독립 audit 및 전체
+baseline 실측은 실행하지 않았다. 샌드박스의 사용자 Python 접근 제한 때문에 테스트는
+사용자 권한으로 실행했다.
