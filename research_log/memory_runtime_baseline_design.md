@@ -2,7 +2,7 @@
 
 작성일: 2026-09-22. 설계 ID: `memory_runtime_baseline_v1`.
 
-**상태: 설계·worker·별도 runner 구현 검증 완료 / 별도 audit·진단 분석·전체 실험 미착수 / `validation_only` / `score_inclusion=false`.**
+**상태: 설계·worker·별도 runner·별도 audit 구현 검증 완료 / 진단 분석·전체 실험 미착수 / `validation_only` / `score_inclusion=false`.**
 아래 크기·seed·반복 수는 앞으로 실행할 조건이며 측정 결과가 아니다.
 공식 기준은 [프로토콜 v2](../research_protocol_v2.md), 압축 설정은
 [현재 config](../config/experiment_config.json)이다. 공식 설정과 score는 변경하지 않는다.
@@ -180,8 +180,10 @@ arm간 비교도 같은 방식으로 반복 범위의 겹침 여부를 기록한
 
 별도 [worker](../src/memory_runtime_worker.py)와 [전용 테스트](../tests/test_memory_runtime_worker.py),
 [runner](../src/memory_runtime_validation.py)와 [runner 테스트](../tests/test_memory_runtime_validation.py)를
-구현했다. 다음 단일 작업은 이 runner의 저장 계약을 검사하는 별도 audit와 fixture 검증이다.
-paired 대비·run 간 진단 분석 구현 및 전체 실측은 후속 작업이다. 위 연구 결과 경로는 아직 계획이다.
+구현했다. 저장 계약을 검사하는 [별도 audit](verify_memory_runtime_validation.py)와
+[전용 테스트](../tests/test_verify_memory_runtime_validation.py)도 구현했다.
+다음 단일 작업은 paired 대비·run 간 진단 분석과 fixture 검증이다. 전체 실측은 후속 작업이며
+위 연구 결과 경로는 아직 계획이다.
 
 구현 검증에는 control에서 압축기 호출 금지, 실제 phase 입력 사용, codec 호출 1회,
 원본/복원 불일치·잘못된 hash 거부, 측정 전후 처리 순서, arm별 null 규칙,
@@ -295,3 +297,51 @@ runner 테스트는 임시 폴더·인위적 peak fixture로 schedule 완전성�
 사용했지만 연구 결과로 저장·집계하지 않았다. 전체 테스트 suite, 독립 audit 및 전체
 baseline 실측은 실행하지 않았다. 샌드박스의 사용자 Python 접근 제한 때문에 테스트는
 사용자 권한으로 실행했다.
+
+### 별도 audit 구현·fixture 검증 — 2026-09-30
+
+runner 구현 commit `9d3f120`을 기준으로 읽기 전용 audit를 추가했다. 기존 schema-v1
+audit나 runner·worker의 검증 함수를 재사용하거나 완화하지 않았다. 새 audit는 표준
+라이브러리만 사용하며 runner·worker·압축 모듈을 import하지 않는다.
+
+```text
+python -B -m research_log.verify_memory_runtime_validation --experiment-dir <completed-study-directory> --output <new-audit-json>
+```
+
+- 지원 범위는 `memory_runtime_baseline_v1`의 세 run 전체가 `completed`이고 종료 처리가
+  완료된 저장 기록이다. 실패·미완료·소스 변경 상태는 성공 보고서를 만들지 않는다.
+- 고정된 입력 명세·seed와 run별 전체 schedule을 별도로 재생성하여 순서까지 대조한다.
+  입력 bytes의 SHA-256을 재계산하고 sample·참조·원시 행·집계의 고유성 및 완전성을 검사한다.
+- 실제 phase 입력 크기·입력/출력 hash·참조 복원 flag·arm별 null/boolean 규칙·양수 정수
+  peak·종료 코드와 저장 worker JSON을 대조한다. 압축물 hash·크기는 run 간 일관성만 확인한다.
+- 저장 원시값에서 중앙값·min/max·population std·CV를 독립 재계산한다. 정수 통계는
+  정확히 비교하고 부동소수 통계는 상대·절대 허용오차 각각 `1e-12`로 비교한다.
+  비유한 수, JSON 중복 key, CSV 열 누락·추가·중복 header를 거부한다.
+- 최상위/각 run의 상태·수량·설정·Git·환경·실행 시간 순서·부모 출력, 완전한 source 및
+  artifact hash manifest를 확인한다. 당시 소스·설정 바이트가 현재 checkout과 같아야 한다.
+  과거 소스 불일치는 기록된 checkout에서 확인해야 하며 검사를 생략하지 않는다.
+- 읽은 파일의 바이트 snapshot을 검증 종료 때 다시 대조하여 감사 도중 변경을 거부한다.
+  보고서에는 감사 코드 hash와 읽은 증거 파일 hash를 남긴다. 기본 출력은 stdout이며
+  `--output`은 감사 통과 후 새 파일만 생성한다. 오류 시 비정상 종료하고 성공 JSON을 출력하지 않는다.
+
+**해석 한계:** 저장된 복원 flag는 독립 복원 재검증이 아니며 압축물 hash도 재압축해서
+확인하지 않는다. hash는 바이트 일관성 확인이며 증거 진위의 서명이나 조작 불가능성 보장이
+아니다. Audit 통과는 과학적 memory 검증 완료·공식 score 편입을 의미하지 않는다.
+paired 대비·run 간 진단은 이 audit의 산출물에 포함하지 않는다.
+
+실행한 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_runtime_validation.py -v
+15 tests: OK
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_verify_memory_validation.py -v
+11 tests: OK
+```
+
+새 테스트는 전체 예정 행렬 크기의 임시 fixture에 인위적 peak와 테스트용 Git 정보를
+사용했다. Fixture 준비 시 runner의 실제 입력 생성·참조 압축·복원·저장을 사용하고
+worker와 부모 호출을 mock했다. Audit 중에는 압축·복원·측정 호출을 금지하여 독립성을
+확인했다. hash를 다시 맞춘 잘못된 증거, 누락·중복·순서 변경, 비유한 통계, 미완료 상태,
+동시 파일 변경, 일반/`-O`/`-OO` CLI 실패 거부, 출력 덮어쓰기 거부 및 입력 바이트 보존을
+검증했다. 테스트는 사용자 Python 접근이 가능한 권한으로 실행했다. 실제 연구 기록 대상
+audit·baseline 전체 실측·전체 테스트 suite는 실행하지 않았다.
