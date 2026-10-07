@@ -1,0 +1,62 @@
+{
+  "audit_passed": true,
+  "audited_at_utc": "2026-09-30T13:32:29.598650+00:00",
+  "audit_scope": "completed_runtime_baseline_v1_saved_evidence_consistency",
+  "design_id": "memory_runtime_baseline_v1",
+  "attempt_id": "attempt01",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "measurement_commit": "729b97b09771ea2a50e955b22f5023d49b61733a",
+  "audit_script_sha256": "7cfc41c6d5c0c69aae49543ac77ef6e826378f015cb2ccfe2952f78bd720a934",
+  "sample_count": 15,
+  "runs": [
+    {
+      "run_id": 1,
+      "reference_count": 60,
+      "repeat_count": 1800,
+      "summary_count": 360
+    },
+    {
+      "run_id": 2,
+      "reference_count": 60,
+      "repeat_count": 1800,
+      "summary_count": 360
+    },
+    {
+      "run_id": 3,
+      "reference_count": 60,
+      "repeat_count": 1800,
+      "summary_count": 360
+    }
+  ],
+  "input_sha256": {
+    "plan.json": "ebe3dfc7032262205ce3820852bf96f8dd4f25e4af2df3de7e01855badbaf42e",
+    "samples.csv": "0843bf093019cec0a00574f0ebb01c4554ac6b4edac8f1b61d45521b23209807",
+    "metadata.json": "b6b77dff1f8163909be40f32642f60654f46899dfca8cb4b3869fe97e09815cc",
+    "run_01_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_01_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_01/metadata.json": "e5008c0e94a0dcb8d3d8c2bd219d8c65f1767318d5d91ad6a3cc1c25d7689503",
+    "run_02_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_02_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_02/metadata.json": "a5be3cbdf779596347d20289e45429a610f7b558236420a5aaca826f558ceb96",
+    "run_03_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_03_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_03/metadata.json": "2c5097c5a9688d8b101388c237cd59723b84747ee6c53ad1850b40f267cc4559",
+    "run_01/references.csv": "b8d8919facdc479402b224e3e9ec0a9687b882f7751d8ff2107c881107811690",
+    "run_01/repeats.csv": "2039bcd355ab93e2f8e0fa635a39f507d4800461aaa8f6f59088e7396704bf25",
+    "run_01/summary.csv": "1adf3c148172848b845304f70556090d4f72a967da48ca45e1be6cf19f638216",
+    "run_02/references.csv": "b8d8919facdc479402b224e3e9ec0a9687b882f7751d8ff2107c881107811690",
+    "run_02/repeats.csv": "34c69f0f6ba986b6c634b656daa23ec59086a7b65b33d778dd0b99e3eafe0512",
+    "run_02/summary.csv": "09b9b2a8660103c06faf9126f40ce8453fb0e9e477f4aed18b6904bfa5beea46",
+    "run_03/references.csv": "b8d8919facdc479402b224e3e9ec0a9687b882f7751d8ff2107c881107811690",
+    "run_03/repeats.csv": "b53fe683e8aa521ad3188cd3c6770eabe926934a089f82d0274481b46ffa6524",
+    "run_03/summary.csv": "d80e1fdb11e7d4cbfc8dc504d1580cd20d7835e6ddd0f4bf153d0beec958dbb2"
+  },
+  "limitations": [
+    "No memory measurement, compression or restoration was rerun.",
+    "Round-trip flags are saved evidence, not independent restoration verification.",
+    "Compressed digests/sizes are checked for consistency, not recomputed.",
+    "Requires matching recorded source/config bytes; hashes are not authenticity signatures.",
+    "No paired/cross-run diagnostics or scientific acceptance decision; no memory score activation."
+  ]
+}

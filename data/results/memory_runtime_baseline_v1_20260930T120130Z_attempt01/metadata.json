@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "design_id": "memory_runtime_baseline_v1",
+  "attempt_id": "attempt01",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "run_status": "completed",
+  "started_at_utc": "2026-09-30T12:01:31.276279+00:00",
+  "source_sha256": {
+    "src/memory_runtime_validation.py": "a605e0c4b8140e566029036bf97f6fbaf7f4186ed39b83f512eb70f8cc2828c8",
+    "src/memory_runtime_worker.py": "784dd81effa4537994dbb15c84e2b9efce90304a4b8cf3b50db34ff836bb8d5d",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_runtime_baseline_design.md": "36ba13f82f34b816ce9a8dbc1860a87e8ef8d6cc2ef4fc805f7936261908e116"
+  },
+  "git": {
+    "commit_hash": "729b97b09771ea2a50e955b22f5023d49b61733a",
+    "worktree_dirty": false,
+    "status_porcelain": ""
+  },
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 12054880256,
+    "pid": 33360,
+    "bytecode_disabled": true
+  },
+  "config": {
+    "compression": {
+      "gzip": {
+        "level": 9
+      },
+      "bz2": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "timing": {
+      "repeats": 5,
+      "timer": "time.perf_counter_ns",
+      "aggregate": "median"
+    },
+    "memory": {
+      "status": "validation_only",
+      "platform": "win32",
+      "metric": "peak_process_working_set_bytes",
+      "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "unit": "bytes",
+      "isolation": "fresh_subprocess_per_phase_repeat",
+      "repeats": 5,
+      "aggregate": "median",
+      "combined": "max_of_phase_medians"
+    },
+    "features": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "selection_modes": {
+      "archive": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "balanced": {
+        "compression_ratio": 0.5,
+        "compression_time": 0.25,
+        "decompression_time": 0.25
+      },
+      "fast_access": {
+        "compression_ratio": 0.3,
+        "compression_time": 0.2,
+        "decompression_time": 0.5
+      }
+    },
+    "baseline": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "group_column": "seed"
+    },
+    "decision_tree": {
+      "criterion": "gini",
+      "splitter": "best",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": null,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "criterion": "gini",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "min_weight_fraction_leaf": 0.0,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "bootstrap": true,
+      "oob_score": false,
+      "n_jobs": 1,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "max_samples": null,
+      "monotonic_cst": null
+    },
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ]
+  },
+  "measurement_method": "windows_get_process_memory_info_peak_working_set",
+  "subprocess_options": [
+    "-B",
+    "PYTHONDONTWRITEBYTECODE=1"
+  ],
+  "repeat_count": 5400,
+  "failed_repeat_count": 0,
+  "runs": [
+    {
+      "run_id": 1,
+      "return_code": 0,
+      "run_status": "completed"
+    },
+    {
+      "run_id": 2,
+      "return_code": 0,
+      "run_status": "completed"
+    },
+    {
+      "run_id": 3,
+      "return_code": 0,
+      "run_status": "completed"
+    }
+  ],
+  "analysis_status": "pending_independent_audit_and_diagnostics",
+  "finished_at_utc": "2026-09-30T12:23:43.063204+00:00",
+  "run_status_before_finalization": "completed",
+  "finalization_status": "completed",
+  "finalization_errors": [],
+  "artifact_sha256": {
+    "plan.json": "ebe3dfc7032262205ce3820852bf96f8dd4f25e4af2df3de7e01855badbaf42e",
+    "samples.csv": "0843bf093019cec0a00574f0ebb01c4554ac6b4edac8f1b61d45521b23209807",
+    "run_01_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_01_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_01/metadata.json": "e5008c0e94a0dcb8d3d8c2bd219d8c65f1767318d5d91ad6a3cc1c25d7689503",
+    "run_02_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_02_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_02/metadata.json": "a5be3cbdf779596347d20289e45429a610f7b558236420a5aaca826f558ceb96",
+    "run_03_stdout.txt": "b4020815eecb656741ba5a3c9f57ebad5035de99e7cd7712582f76b2c02d240c",
+    "run_03_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_03/metadata.json": "2c5097c5a9688d8b101388c237cd59723b84747ee6c53ad1850b40f267cc4559"
+  },
+  "source_sha256_at_end": {
+    "src/memory_runtime_validation.py": "a605e0c4b8140e566029036bf97f6fbaf7f4186ed39b83f512eb70f8cc2828c8",
+    "src/memory_runtime_worker.py": "784dd81effa4537994dbb15c84e2b9efce90304a4b8cf3b50db34ff836bb8d5d",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_runtime_baseline_design.md": "36ba13f82f34b816ce9a8dbc1860a87e8ef8d6cc2ef4fc805f7936261908e116"
+  },
+  "provenance_unchanged": true,
+  "environment_at_end": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 12760100864,
+    "pid": 33360,
+    "bytecode_disabled": true
+  }
+}
