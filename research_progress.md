@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존 및 memory 채택 검토: 2026-10-07.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -438,9 +438,20 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 공식 기준은 계속 v2의 3지표이며 memory는 `validation_only`, `score_inclusion=false`이다. 후보 weight와 추가 검증의 수치 임계값은 이번 검토에서 승인·활성화하지 않았다.
 
+### Memory 대표값·정답 안정성 후속 검증 사전 설계 완료 — 2026-10-07
+
+근거: [후속 검증 설계](research_log/memory_stability_validation_design.md), 설계 ID `memory_stability_v1`, 시작 HEAD `d8b329a`(채택 검토). 실제 결과 보존 commit은 `3f7e91f`, 기존 실행 코드 commit은 `729b97b`이다. 시작 실제 Git 상태는 사용자 권한으로 깨끗함을 확인했다.
+
+- **완료:** 기존 memory worker 경로, 명시적 bytecode 옵션, 별도 timing worker의 원시 ns·bytes 검증·응답 계약, 새 입력·순서·날짜·환경·실패·저장·독립 audit 계약을 사전 정의했다. 기존 worker launcher에 `-B`가 없는 사실과 새 launcher의 옵션 전달을 구분했다.
+- **계획 수량:** 핵심 입력 72개와 작은 입력 12개, 총 84개를 세 날짜·6 run에서 검증한다. 예정 memory 반복 20,160개, timing 자식 2,016개·원시 호출 20,160개이다. 모두 Python으로 계산한 예정 값이며 실측이나 성공 수가 아니다.
+- **판단 기준 제안:** `delta=0.01`, `epsilon=0.005`에서 memory span의 log 한계 `0.0125`를 유도했다. Memory만의 변동·timing만의 변동·joint 시나리오를 나누고 방향 있는 run 간 regret을 계산한다. 기술적 유효성 실패·memory 조건 불만족·joint 조건 불만족·관측 조건 만족을 구분한다. 기준 만족은 공식 채택이나 미래 실행의 오차 상한을 뜻하지 않는다. 수치는 새 검증용 공학 정책 제안이며 과학적 허용값으로 입증된 것이 아니다.
+- **검증:** Python으로 예정 규모·가중치 합·기존 후보 weight 일치·문서 산술 재현 코드·schedule key 고유성/재현성을 확인했다. 로컬 링크 9개와 기존 보호 대상 파일 54개의 SHA-256 일치를 확인하고 문서 근거·식·diff를 검토했다. 새 입력 생성·압축·복원·측정·audit·모델 학습·단위 테스트는 실행하지 않았다.
+
+**미착수/미완료:** 별도 timing worker·runner·새 audit·분석기 구현과 fixture 검증, 일정 준비·전체 실측·사전 판정 및 공식 전환. 이번에는 설계·진행 문서만 변경했다. 공식 v2의 3지표·config·기존 결과·라벨·모델·memory의 `validation_only`와 `score_inclusion=false`를 유지한다. 실측 전에는 사용자 확인 후 조건을 고정하며, 기존 실행의 판정에 새 기준을 소급 적용하지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- Memory 후속 검증 사전 설계·실측·채택 근거 확보 및 공식 4지표 전환. 채택 검토 문서 작성은 위와 같이 완료했으나 채택은 보류 권고이다.
+- Memory 후속 검증 구현·fixture 검증·실측·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계 문서는 완료했으나 공식 채택은 계속 보류 권고이다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -449,13 +460,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [채택 검토](research_log/memory_adoption_review_20261007.md)의 추가 검증 질문을 구체화하여 memory 대표값·정답 안정성 후속 검증의 사전 설계 문서를 작성한다. 측정 대상·worker 경로·행렬·실행 조건·분석·판단 기준을 새 측정 전에 정한다. 실제 측정과 공식 설정·가중치·라벨 변경은 이번 문서 작업에 포함하지 않는다.
+**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)의 별도 timing worker 계약을 구현하고 전용 fixture로 원시 ns·bytes 검증·응답·오류 처리를 확인한다. 전체 runner·audit·분석기·실측·공식 설정·가중치·라벨 전환은 그 이후의 별도 작업이다.
 
-이번 작업은 memory 채택·추가 검증 필요성·공식 전환 조건 검토 문서와 그 근거 검증까지 완료했다. 공식 채택·후속 검증 설계·새 실측·4지표 전환은 미완료이다.
+이번 작업은 memory 대표값·정답 안정성의 사전 설계와 문서·산술 검증까지 완료했다. 구현·fixture 검증·새 실측·사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 이번 채택 검토 문서와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 이번 후속 검증 설계와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -466,6 +477,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `d8b329a`: memory 공식 채택 보류 권고·추가 검증 필요성·전환 조건 검토. 이번 후속 검증 사전 설계의 시작 기준 HEAD.
 - `3f7e91f`: runtime baseline 원시 증거·audit·진단·보고서 Git 보존 및 읽기 전용 재검증. 이번 채택 검토의 시작 기준 HEAD.
 - `729b97b`: runtime baseline 진단 분석 및 fixture 검증. 이번 전체 실측·audit·진단의 실행 기준 HEAD.
 - `c9bf6e6`: runtime baseline 별도 audit 및 fixture 검증. 이번 진단 분석 작업의 시작 기준 HEAD.
