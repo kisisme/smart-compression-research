@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존 및 memory 채택 검토: 2026-10-07.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -427,9 +427,20 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 **계속 미완료:** memory 지표의 과학적 채택 판단·추가 검증 필요성 검토·공식 4지표 전환. 공식 기준은 v2의 3지표, memory는 `validation_only`, `score_inclusion=false`이다. 자신의 보존 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
+### Memory 지표 채택·추가 검증·공식 전환 조건 검토 완료 — 2026-10-07
+
+근거: [채택 검토 문서](research_log/memory_adoption_review_20261007.md), 실제 결과 보존 commit `3f7e91f`, runtime baseline 실행 코드 commit `729b97b`. 시작 작업 트리는 사용자 권한의 실제 Git 상태로 깨끗함을 확인했다.
+
+- **완료:** 기존 설계·worker 코드·실제 결과를 대조하고 memory의 공식 score 채택 보류를 권고했다. 저장 일관성 검증 완료와 과학적 채택 근거를 구분했다. 이는 검토 권고이며 공식 프로토콜 변경 승인이나 추가 실측 실행이 아니다.
+- **검증:** Python으로 원시 반복 상태·크기별 범위 겹침·run 간 부호 일치·양음 역전을 재집계했다. 검토 문서의 표와 재현 코드 출력이 실제 값과 일치했고 로컬 링크 14개를 확인했다. 기존 보호 대상 증거·소스·설정·설계 및 결과 문서 53개의 SHA-256이 검토 전후 같았다. Microsoft 공식 API 문서의 지표 정의도 확인했다.
+- **계획/미착수:** 공식 후보 worker 경로, 최종 `max_of_phase_medians`의 실행 간 안정성, timing·memory 변동이 정답에 미치는 영향, 새 측정 전 판단 기준을 정하는 후속 검증 설계. 새로운 실측·소규모 4지표 후보 검증·공식 전환 및 새 Pilot은 별도 후속 단계이다.
+- 이번 작업은 문서 근거·수치·재현 코드·링크·diff를 검증했다. 새 측정·압축·복원·audit·모델 학습·단위 테스트는 재실행하지 않았고 소스·config·기존 결과·3지표 라벨·모델은 변경하지 않았다.
+
+공식 기준은 계속 v2의 3지표이며 memory는 `validation_only`, `score_inclusion=false`이다. 후보 weight와 추가 검증의 수치 임계값은 이번 검토에서 승인·활성화하지 않았다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- 위 memory 검증 및 공식 4지표 전환.
+- Memory 후속 검증 사전 설계·실측·채택 근거 확보 및 공식 4지표 전환. 채택 검토 문서 작성은 위와 같이 완료했으나 채택은 보류 권고이다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -438,13 +449,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [runtime baseline 실제 결과](research_log/memory_runtime_baseline_results_20260930.md)를 근거로 memory 지표 채택·추가 검증 필요성·공식 전환 조건을 정리하는 검토 문서를 작성한다. 공식 설정·가중치·라벨 변경은 사용자 확인 이후의 별도 작업이다.
+**제안/미착수:** [채택 검토](research_log/memory_adoption_review_20261007.md)의 추가 검증 질문을 구체화하여 memory 대표값·정답 안정성 후속 검증의 사전 설계 문서를 작성한다. 측정 대상·worker 경로·행렬·실행 조건·분석·판단 기준을 새 측정 전에 정한다. 실제 측정과 공식 설정·가중치·라벨 변경은 이번 문서 작업에 포함하지 않는다.
 
-이번 작업은 runtime baseline 전체 실측·실제 저장 기록 audit·진단 분석과 증거 보존까지 완료했다. 공식 4지표 전환은 포함하지 않았다.
+이번 작업은 memory 채택·추가 검증 필요성·공식 전환 조건 검토 문서와 그 근거 검증까지 완료했다. 공식 채택·후속 검증 설계·새 실측·4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이다. 이번 실제 결과·해석·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 이번 채택 검토 문서와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -455,6 +466,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `3f7e91f`: runtime baseline 원시 증거·audit·진단·보고서 Git 보존 및 읽기 전용 재검증. 이번 채택 검토의 시작 기준 HEAD.
 - `729b97b`: runtime baseline 진단 분석 및 fixture 검증. 이번 전체 실측·audit·진단의 실행 기준 HEAD.
 - `c9bf6e6`: runtime baseline 별도 audit 및 fixture 검증. 이번 진단 분석 작업의 시작 기준 HEAD.
 - `9d3f120`: runtime baseline runner 및 fixture 테스트 구현. 이번 별도 audit 작업의 시작 기준 HEAD.
