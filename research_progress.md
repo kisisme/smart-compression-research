@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07. 후속 검증 timing worker 구현·전용 검증: 2026-10-13.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -34,6 +34,7 @@
 | Runtime baseline 별도 runner | `src/memory_runtime_validation.py`: 구현·fixture 검증 및 2026-09-30 고정 전체 실측 완료 |
 | Runtime baseline 저장 기록 감사 | `research_log/verify_memory_runtime_validation.py`: 구현·fixture 검증 및 2026-09-30 실제 저장 기록 audit 통과 |
 | Runtime baseline 진단 분석 | `research_log/analyze_memory_runtime_validation.py`: 구현·fixture 검증 및 2026-09-30 실제 저장 기록 분석 완료. 과학적 memory 검증 완료·공식 score 편입과 구분 |
+| Memory 안정성 후속 검증 timing worker | `src/memory_stability_timing_worker.py`: 원시 ns·출력 bytes 검증·응답·오류 처리 구현 및 전용 fixture·임시 Windows subprocess 검증 완료. 전체 runner·실측은 미완료 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -447,7 +448,26 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 - **판단 기준 제안:** `delta=0.01`, `epsilon=0.005`에서 memory span의 log 한계 `0.0125`를 유도했다. Memory만의 변동·timing만의 변동·joint 시나리오를 나누고 방향 있는 run 간 regret을 계산한다. 기술적 유효성 실패·memory 조건 불만족·joint 조건 불만족·관측 조건 만족을 구분한다. 기준 만족은 공식 채택이나 미래 실행의 오차 상한을 뜻하지 않는다. 수치는 새 검증용 공학 정책 제안이며 과학적 허용값으로 입증된 것이 아니다.
 - **검증:** Python으로 예정 규모·가중치 합·기존 후보 weight 일치·문서 산술 재현 코드·schedule key 고유성/재현성을 확인했다. 로컬 링크 9개와 기존 보호 대상 파일 54개의 SHA-256 일치를 확인하고 문서 근거·식·diff를 검토했다. 새 입력 생성·압축·복원·측정·audit·모델 학습·단위 테스트는 실행하지 않았다.
 
-**미착수/미완료:** 별도 timing worker·runner·새 audit·분석기 구현과 fixture 검증, 일정 준비·전체 실측·사전 판정 및 공식 전환. 이번에는 설계·진행 문서만 변경했다. 공식 v2의 3지표·config·기존 결과·라벨·모델·memory의 `validation_only`와 `score_inclusion=false`를 유지한다. 실측 전에는 사용자 확인 후 조건을 고정하며, 기존 실행의 판정에 새 기준을 소급 적용하지 않는다.
+**당시 미착수/미완료:** 별도 timing worker·runner·새 audit·분석기 구현과 fixture 검증, 일정 준비·전체 실측·사전 판정 및 공식 전환. 당시에는 설계·진행 문서만 변경했다. 공식 v2의 3지표·config·기존 결과·라벨·모델·memory의 `validation_only`와 `score_inclusion=false`를 유지한다. 실측 전에는 사용자 확인 후 조건을 고정하며, 기존 실행의 판정에 새 기준을 소급 적용하지 않는다. 이후 timing worker 구현은 다음 항목과 같다.
+
+### Memory 안정성 후속 검증 timing worker 구현·전용 검증 완료 — 2026-10-13
+
+근거: [timing worker](src/memory_stability_timing_worker.py), [전용 테스트](tests/test_memory_stability_timing_worker.py), [사전 설계 계약](research_log/memory_stability_validation_design.md). 시작 HEAD는 사전 설계 commit `82550b8`이며 실제 작업 트리는 깨끗했다.
+
+- **완료:** `python -B -m src.memory_stability_timing_worker` 진입점을 구현했다. Windows·bytecode 쓰기 비활성화·로드된 설정과 현재 설정·설계의 압축 및 timing 조건을 확인한다. 비어 있지 않은 원본·참조 압축물을 읽고 두 SHA-256을 확인한 뒤 선택한 압축기의 압축 5회→해제 5회만 실행한다.
+- **완료:** codec 호출만 `time.perf_counter_ns()`로 감싸고 파일 읽기·hash·정확한 bytes 비교·JSON 직렬화는 timed 구간 밖에서 처리한다. 압축 출력 5개를 해제 반복 동안 보유하며 각 출력 hash와 원시 ns를 반환한다. 출력 bytes 불일치는 남은 반복도 수행해 종료 코드 2로, 일반 호출 오류·잘못된 시간은 완료 기록과 실패 시도만 보존해 코드 1로 반환한다. 미실행 반복은 생성하지 않고 명시적 중단은 전파한다.
+- **검증:** 인위적 timer fixture로 순서·호출 횟수·timed 구간·압축 출력 보유·입력 사전 거부·bytes 비교·부분 실패 기록·양수 정수 시간·중단 처리를 확인했다. 임시 입력의 실제 Windows subprocess에서 네 압축기의 성공 응답과 원본 바이트 보존을 확인하고 일반·`-O`·`-OO`의 입력 hash 오류·출력 불일치·codec 오류 거부를 검증했다. 테스트 smoke timing은 연구 결과로 저장·집계하지 않았다.
+
+실제 실행한 전용 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_stability_timing_worker.py -v
+16 tests: OK
+```
+
+기본 실행 환경 초기화 오류로 사용자 권한에서 테스트를 실행했다. 전체 suite·새 전체 검증 실측·memory 측정·audit·분석·모델 학습은 실행하지 않았다. 부모의 실제 참조 복원 검증·응답 검증·timeout·저장 기능은 worker의 책임이 아니며 다음 runner 단계에 남아 있다.
+
+**계획/미착수:** 별도 후속 runner, 새 독립 audit·분석기와 각각의 fixture 검증, 일정 준비·전체 실측·사전 판정·공식 전환. 기존 사전 설계 문서의 미구현 표시는 작성 당시 상태로 보존한다. 이번에는 worker·전용 테스트·이 진행 문서만 변경했고 기존 소스·config·연구 결과·3지표 라벨·모델을 변경하지 않았다. 공식 v2의 3지표와 memory의 `validation_only`, `score_inclusion=false`를 유지한다.
 
 ## 12. 아직 완료하지 않은 작업
 
@@ -460,13 +480,13 @@ Python으로 저장된 audit 결과를 읽고 백분율로 계산한 실행 내 
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)의 별도 timing worker 계약을 구현하고 전용 fixture로 원시 ns·bytes 검증·응답·오류 처리를 확인한다. 전체 runner·audit·분석기·실측·공식 설정·가중치·라벨 전환은 그 이후의 별도 작업이다.
+**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)에 따른 별도 runner를 구현하고 전용 fixture로 고정 입력·schedule·명시적 bytecode 옵션·memory/timing worker 응답·실패 보존·원시 CSV·종료 metadata 저장 계약을 검증한다. 독립 audit·분석기·전체 실측·공식 설정·가중치·라벨 전환은 그 이후의 별도 작업이다.
 
-이번 작업은 memory 대표값·정답 안정성의 사전 설계와 문서·산술 검증까지 완료했다. 구현·fixture 검증·새 실측·사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+이번 작업은 별도 timing worker 구현과 전용 fixture·임시 subprocess 검증까지 완료했다. 전체 후속 runner·audit·분석기 구현·검증, 새 실측·사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 이번 후속 검증 설계와 진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`이다. 이번 timing worker·전용 테스트·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -477,6 +497,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `82550b8`: memory 대표값·정답 안정성 후속 검증 사전 설계. 이번 timing worker 구현의 시작 기준 HEAD.
 - `d8b329a`: memory 공식 채택 보류 권고·추가 검증 필요성·전환 조건 검토. 이번 후속 검증 사전 설계의 시작 기준 HEAD.
 - `3f7e91f`: runtime baseline 원시 증거·audit·진단·보고서 Git 보존 및 읽기 전용 재검증. 이번 채택 검토의 시작 기준 HEAD.
 - `729b97b`: runtime baseline 진단 분석 및 fixture 검증. 이번 전체 실측·audit·진단의 실행 기준 HEAD.
