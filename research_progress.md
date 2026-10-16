@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07. 후속 검증 timing worker·runner 구현 및 전용 검증: 2026-10-13. 후속 검증 독립 audit 구현·전용 fixture 검증: 2026-10-14.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07. 후속 검증 timing worker·runner 구현 및 전용 검증: 2026-10-13. 후속 검증 독립 audit 구현·전용 fixture 검증: 2026-10-14. 후속 검증 분석기 초안 검토·전용 fixture 검증 완료: 2026-10-16.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -35,8 +35,9 @@
 | Runtime baseline 저장 기록 감사 | `research_log/verify_memory_runtime_validation.py`: 구현·fixture 검증 및 2026-09-30 실제 저장 기록 audit 통과 |
 | Runtime baseline 진단 분석 | `research_log/analyze_memory_runtime_validation.py`: 구현·fixture 검증 및 2026-09-30 실제 저장 기록 분석 완료. 과학적 memory 검증 완료·공식 score 편입과 구분 |
 | Memory 안정성 후속 검증 timing worker | `src/memory_stability_timing_worker.py`: 원시 ns·출력 bytes 검증·응답·오류 처리 구현 및 전용 fixture·임시 Windows subprocess 검증 완료. 전체 실측은 미완료 |
-| Memory 안정성 후속 검증 runner | `src/memory_stability_validation.py`: 고정 계획·별도 부모 실행·worker 응답 검증·원시 CSV·종료 metadata 구현 및 전용 fixture 검증 완료. 분석·전체 실측은 미완료 |
+| Memory 안정성 후속 검증 runner | `src/memory_stability_validation.py`: 고정 계획·별도 부모 실행·worker 응답 검증·원시 CSV·종료 metadata 구현 및 전용 fixture 검증 완료. 실제 attempt 분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 저장 기록 감사 | `research_log/verify_memory_stability_validation.py`: 독립 audit 구현·전용 fixture 검증 완료. 실제 후속 검증 attempt 대상 audit·분석·전체 실측은 미완료 |
+| Memory 안정성 후속 검증 분석기 | `research_log/analyze_memory_stability_validation.py`: 기존 초안 검토·전용 fixture 검증 완료. 독립 audit와 결합한 후보 score·regret·사전 판정·진단 및 새 출력 저장 구현. 실제 attempt 분석·전체 실측은 미완료 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -531,11 +532,42 @@ python -B -m research_log.verify_memory_stability_validation --experiment-dir <c
 
 `--output <new-audit-json>`은 선택 사항이다. 이 audit의 성공은 저장 증거의 일관성이다. 저장된 복원 flag와 압축물 hash는 독립 복원 재검증이 아니며, hash·사용자 사건·환경 기록은 증거의 진위나 사건을 독립 인증하지 않는다. Memory span·후보 label·regret·사전 판정 및 공식 4지표 전환은 수행하지 않았다. Runner metadata의 `pending_independent_audit`는 당시 기록으로 유지하고 후속 audit 보고서와 구분한다.
 
-**계획/미완료:** 별도 분석기 구현·fixture 검증, 일정 준비·전체 실측·실제 증거 audit·사전 판정·공식 채택 및 4지표 전환. 이번에는 독립 audit·전용 테스트·이 진행 문서만 변경한다. 기존 runner·worker·설계·공식 config·연구 결과·3지표 라벨·모델은 유지하며 memory는 `validation_only`, `score_inclusion=false`이다.
+**당시 계획/미완료:** 별도 분석기 구현·fixture 검증, 일정 준비·전체 실측·실제 증거 audit·사전 판정·공식 채택 및 4지표 전환. 당시에는 독립 audit·전용 테스트·이 진행 문서만 변경했다. 기존 runner·worker·설계·공식 config·연구 결과·3지표 라벨·모델은 유지하며 memory는 `validation_only`, `score_inclusion=false`이다. 이후 분석기 검증은 다음 항목과 같다.
+
+### Memory 안정성 후속 검증 분석기 초안 검토·전용 fixture 검증 완료 — 2026-10-16
+
+근거: [분석기](research_log/analyze_memory_stability_validation.py), [전용 테스트](tests/test_analyze_memory_stability_validation.py), 사전 설계 commit `82550b8`와 독립 audit 구현 commit `6bea53a`. 시작 HEAD는 이 audit commit이며, 추적 파일의 변경 없이 분석기와 전용 테스트 두 파일이 untracked 상태였다. 진행 문서의 분석기 미착수 표시와 달리 초안이 존재했으므로 이를 보존해 검토·실행했다. 보완이 필요한 오류는 발견하지 않았고 두 파일의 시작 바이트를 그대로 local commit한다.
+
+- **완료:** 분석기가 독립 audit를 직접 실행하고 감사한 바이트의 snapshot만 계산에 사용한다. 종료와 출력 저장 전후에 입력·관련 소스 hash, run 목록과 active claim을 다시 확인하며 audit 실패·미완료·증거 변경을 거부한다. 분석 중 runner·worker·compressors·공식 scoring은 import하거나 실행하지 않는다.
+- **완료:** 원시 반복에서 run별 phase 중앙값·ms 변환·최종 memory 최댓값을 재계산하고, 여섯 run 대표값의 중앙값을 anchor로 사용한다. Reference·memory_only·timing_only·joint 후보 score, 정확한 동점과 차선 gap, 모든 방향 있는 run 쌍의 regret 및 anchor regret을 보존한다. 원시 반복을 run 간 합치지 않는다.
+- **완료:** 핵심 층·작은 입력 층과 전체의 memory span·regret 판정, memory 산술 관계, phase/대표값의 범위·population CV, memory 알고리즘 쌍의 차이·동점·부호·범위 겹침을 보고한다. 공식 v2 비교와 후보 non-memory 비교를 구분하고 memory 선택 영향은 안정성 만족과 별도로 기록한다. 판정에는 원래 식과 반올림 전 값만 사용하며 산술 QA의 부동소수점 허용 오차는 판정에 사용하지 않는다.
+- **완료:** 기본 출력은 전체 stdout JSON이다. `--output-dir`은 기존 경로를 거부하고 새 폴더에 `audit.json`, `candidate_labels.csv`, `transfer_regrets.csv`, `stability_summary.json`을 저장한다. 저장한 표의 hash·열·행 수를 summary에 연결한다. 저장 실패 시 부분 파일과 원래 예외를 보존하고 `publication_failed.json` 기록을 시도한다. 성공 반환과 실패 marker 부재를 함께 요구하며 지속적인 저장 실패에서 marker 생성을 보장하지 않는다.
+- **검증:** 인위적 수치 fixture로 동점·근접 score·정확한 경계·낮은 gap의 label 변경·방향별 regret 비대칭·최댓값 phase 변경·timing/memory 영향 분리·작은 층 실패·dominant label의 span 면제 금지를 확인했다. 전체 예정 행렬 크기의 fixture에서 실제 독립 audit 연동·금지 codec 호출 차단·입력 바이트 보존·audit 전후와 계산 중 증거 변경·소스 변경·덮어쓰기 거부·저장 실패·CLI 및 일반/`-O`/`-OO` 오류 거부를 검증했다.
+
+실제 완료한 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_analyze_memory_stability_validation.py -v
+21 tests: OK
+```
+
+첫 샌드박스 실행은 임시 폴더 접근 거부로 실패했으며 사용자 권한으로 재실행한 위 명령은 종료 코드 0으로 완료했다. 전체 suite와 기존 audit 전용 모듈은 재실행하지 않았다. Fixture 준비에는 실제 입력 생성·참조 압축·복원을 사용했지만 peak/ns·Git commit·시각·사건은 인위적 테스트 값이다. 전체 성공과 CLI에서는 실제 입력 재생성을 수행하고 다른 오류 검사는 독립 재생성으로 확인한 canonical fixture 입력을 재사용했다. Fixture 값과 그 판정은 연구 결과가 아니다.
+
+읽기 전용 Python으로 진행 문서를 제외한 기존 추적 파일 154개의 SHA-256과 두 초안의 바이트가 시작 시점과 같음을 확인했다. 진행 문서의 로컬 링크와 diff도 검토했다. 샌드박스가 삭제처럼 표시한 Pilot 파일은 사용자 권한 Git 상태와 파일 hash로 확인했으며 실제 삭제가 아니었다.
+
+실제 완료된 후속 attempt에서 사용할 CLI 형식(이번에는 실제 연구 증거에 실행하지 않음):
+
+```text
+python -B -m research_log.analyze_memory_stability_validation --experiment-dir <completed-attempt-directory> --output-dir <new-analysis-directory>
+```
+
+`--output-dir`은 선택 사항이다. 분석기는 memory/timing 측정·압축·복원·모델 학습을 재실행하지 않는다. Audit 성공은 저장 일관성이고, 후보 판정 만족은 관측한 조건에 한정된다. 독립 복원 인증·미래 오차 상한·memory 공식 채택·최종 시스템 개선을 뜻하지 않는다.
+
+**계획/미완료:** 일정·환경 준비와 실측 전 조건 확인, 새 전체 attempt 실측·실제 증거 audit·후보 분석과 사전 판정, 공식 채택 및 4지표 전환. 이번에는 분석기·전용 테스트의 기존 초안을 검증해 보존하고 진행 문서만 갱신한다. 기존 runner·worker·audit·설계·공식 config·연구 결과·3지표 라벨·모델을 유지하며 memory는 `validation_only`, `score_inclusion=false`이다.
 
 ## 12. 아직 완료하지 않은 작업
 
-- Memory 후속 검증의 분석기 구현·fixture 검증·전체 실측·실제 증거 audit·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit 구현은 완료했으나 공식 채택은 계속 보류 권고이다.
+- Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -544,13 +576,13 @@ python -B -m research_log.verify_memory_stability_validation --experiment-dir <c
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)의 별도 분석기를 구현하고 전용 fixture로 검증한다. 새 독립 audit에 통과한 바이트와 계산을 묶고 evidence 변경을 거부하며, run별 대표값·reference/memory_only/timing_only/joint 후보 score·방향 있는 run 쌍 regret·사전 판단 규칙·진단을 구현한다. 측정·압축·복원을 재실행하지 않고 fixture 값을 연구 결과와 구분한다. 전체 실측·실제 판정·공식 설정·가중치·라벨 전환은 이후 별도 작업이다.
+**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)에 따른 전체 attempt의 일정·환경·실행 조건을 준비하고 사용자 확인으로 고정한다. 연속 세 날짜·여섯 run의 실행 가능 시간과 전원 모드·동시 작업·사건 기록 방법을 확인한다. 이 준비와 실제 전체 실측은 구분하며, 사용자 확인 전 새 attempt 생성이나 실측을 시작하지 않는다. 공식 설정·가중치·라벨 전환은 이후 별도 작업이다.
 
-이번 작업은 후속 검증 독립 audit 구현과 전용 fixture 검증까지 완료했다. 분석기 구현·검증, 전체 실측·실제 증거 audit·사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+이번 작업은 기존 분석기 초안 검토와 전용 fixture 검증까지 완료했다. 전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`이다. 이번 독립 audit·전용 테스트·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`이다. 이번 분석기·전용 테스트·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -561,6 +593,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `6bea53a`: memory 안정성 후속 검증 독립 audit 및 전용 fixture 검증. 이번 분석기 검토·검증의 시작 기준 HEAD.
 - `a47ba95`: memory 안정성 후속 검증 runner 및 전용 fixture 검증. 이번 독립 audit 구현의 시작 기준 HEAD.
 - `b1d0413`: memory 안정성 후속 검증 timing worker 및 전용 테스트. 이번 runner 구현의 시작 기준 HEAD.
 - `82550b8`: memory 대표값·정답 안정성 후속 검증 사전 설계. 이번 timing worker 구현의 시작 기준 HEAD.
