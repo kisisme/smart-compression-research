@@ -1,6 +1,6 @@
 # 연구 진행 상태
 
-최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07. 후속 검증 timing worker·runner 구현 및 전용 검증: 2026-10-13. 후속 검증 독립 audit 구현·전용 fixture 검증: 2026-10-14. 후속 검증 분석기 초안 검토·전용 fixture 검증 완료: 2026-10-16.
+최초 전체 확인일: 2026-09-15. Memory 검증 증거 보존·audit 도구 갱신: 2026-09-16. 종료 처리 보강 검토·fixture 검증 및 새 전체 memory 행렬 실행·audit: 2026-09-22. Runtime baseline 구현·fixture 검증·전체 실측·audit·진단 분석: 2026-09-30. Git 증거 보존·memory 채택 검토·후속 검증 사전 설계: 2026-10-07. 후속 검증 timing worker·runner 구현 및 전용 검증: 2026-10-13. 후속 검증 독립 audit 구현·전용 fixture 검증: 2026-10-14. 후속 검증 분석기 초안 검토·전용 fixture 검증 완료: 2026-10-16. 후속 실측 준비 점검·일정안 작성 및 조건 확인 대기: 2026-10-16~17.
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
@@ -565,6 +565,19 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 **계획/미완료:** 일정·환경 준비와 실측 전 조건 확인, 새 전체 attempt 실측·실제 증거 audit·후보 분석과 사전 판정, 공식 채택 및 4지표 전환. 이번에는 분석기·전용 테스트의 기존 초안을 검증해 보존하고 진행 문서만 갱신한다. 기존 runner·worker·audit·설계·공식 config·연구 결과·3지표 라벨·모델을 유지하며 memory는 `validation_only`, `score_inclusion=false`이다.
 
+### Memory 안정성 후속 실측 준비 점검·일정안 작성 완료 / 조건 확인 대기 — 2026-10-16~17
+
+근거: [실측 준비안](research_log/memory_stability_execution_preparation_20261016.md), [환경·계획 점검 snapshot](research_log/memory_stability_preflight_20261016.json), 마지막 구현·검증 commit `a51907fe8d8c220b95502977a627cef51c21bfa7`. 사용자 권한으로 확인한 시작 작업 트리는 깨끗했으며 새 후속 attempt 폴더는 없었다.
+
+- **완료:** 실제 runner 계약을 기준으로 실행 순서·동일 HEAD 유지·사건 파일 위치·중단 보존·독립 audit·후보 분석의 명령을 정리했다. Init 후 attempt 밖의 문서 변경이나 commit도 runner의 Git 검사에 걸린다는 점과, 일정 위반을 기록한 채 측정이 진행될 수 있으므로 호출 전에 시간 창을 확인해야 한다는 점을 명시했다.
+- **검증:** Python 3.14.4와 직접 의존성 버전이 requirements와 맞고 `pip check`가 통과했다. Runner config 검사와 메모리상 예정 계획의 독립 audit 계획 대조가 통과했다. 입력 생성·참조 준비·init·worker·codec은 호출을 차단한 채 계획만 확인했다. 예정 수량과 일정 창을 Python으로 확인하고 사건 JSON의 필드·미확인 null 거부 및 CLI 도움말을 대조했다. 일정 검사의 인위적 10분 소요 시간은 실측값이나 소요 시간 추정이 아니다.
+- **환경 관측:** 10월 16일과 날짜 변경 후 17일의 환경을 snapshot에 구분했다. 고정 환경·config·전원 구성표·절전 설정은 일치했다. 17일 11:09경 KST에도 AC 미연결·배터리 23%였고, 배터리 자동 절전 설정은 180초이다. 전원 구성표는 균형 조정이며 Windows 설정의 실제 전원 모드는 별도 확인 대기이다. Python 프로세스 목록은 비어 있었으나 다른 종류의 작업이나 미래의 부재를 인증하지 않는다. 시스템 설정 변경·프로세스 종료는 하지 않았다.
+- **제안/미확정:** 2026-10-17~19 매일 19:00 첫 run, 종료 60분 후 둘째 run의 일정안을 준비했다. 실제 허용 창은 run 1 실제 시작 시각을 기준으로 계산하고 둘째 run은 같은 날짜의 종료 후 30~90분 조건을 따른다. 사용자에게 실행 가능 날짜·시각과 동일 전원 조건·다른 연구 작업 중지 가능 여부를 요청했으나 아직 답변을 받지 않았다. 이 제안은 확정 일정이나 실행 승인이 아니다.
+
+진행 문서를 제외한 기존 추적 파일 156개의 SHA-256을 준비 snapshot의 시작 기준과 대조했다. 준비 문서·진행 문서의 로컬 링크와 diff를 확인했다. 샌드박스의 Pilot 접근 경고는 사용자 권한 Git 상태와 읽기 전용 hash 확인으로 재확인했으며 삭제가 아니었다. 문서·준비 점검 작업으로 단위 테스트와 전체 suite는 재실행하지 않았고 테스트 통과를 새로 주장하지 않는다.
+
+**미완료:** 사용자 일정·전원·동시 연구 작업 조건 확인과 확정 기록, 새 attempt 생성·전체 실측·실제 증거 audit·후보 분석·사전 판정·공식 채택 및 4지표 전환. 새 입력 생성·압축·복원·memory/timing 실측·실제 증거 audit·모델 학습은 수행하지 않았다. 이번에는 준비 문서·snapshot·진행 기록만 보존하며 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`를 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -576,13 +589,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**제안/미착수:** [후속 검증 설계](research_log/memory_stability_validation_design.md)에 따른 전체 attempt의 일정·환경·실행 조건을 준비하고 사용자 확인으로 고정한다. 연속 세 날짜·여섯 run의 실행 가능 시간과 전원 모드·동시 작업·사건 기록 방법을 확인한다. 이 준비와 실제 전체 실측은 구분하며, 사용자 확인 전 새 attempt 생성이나 실측을 시작하지 않는다. 공식 설정·가중치·라벨 전환은 이후 별도 작업이다.
+**사용자 확인 대기:** [실측 준비안](research_log/memory_stability_execution_preparation_20261016.md)의 제안 일정·전원 조건·다른 연구 작업 중지 가능 여부에 대한 사용자 답변을 반영해 조건을 확정하고 기록을 commit한다. 아직 답변이나 확정된 날짜·전원 모드가 없으므로 새 attempt 생성·실측은 시작하지 않는다. 실제 init·첫 run은 조건 확인 후 별도 실행 단계이며, 공식 설정·가중치·라벨 전환도 이후 별도 작업이다.
 
-이번 작업은 기존 분석기 초안 검토와 전용 fixture 검증까지 완료했다. 전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+이번 작업은 실측 전 읽기 전용 환경·계획 점검과 일정·실행 준비안 작성까지 완료했다. 사용자 조건 확인·확정, 전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`이다. 이번 분석기·전용 테스트·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`이다. 이번 실측 준비 문서·snapshot·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -593,6 +606,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `a51907f`: memory 안정성 후속 검증 분석기 초안 검토·전용 fixture 검증과 보존. 이번 실측 준비의 시작 기준 HEAD.
 - `6bea53a`: memory 안정성 후속 검증 독립 audit 및 전용 fixture 검증. 이번 분석기 검토·검증의 시작 기준 HEAD.
 - `a47ba95`: memory 안정성 후속 검증 runner 및 전용 fixture 검증. 이번 독립 audit 구현의 시작 기준 HEAD.
 - `b1d0413`: memory 안정성 후속 검증 timing worker 및 전용 테스트. 이번 runner 구현의 시작 기준 HEAD.
