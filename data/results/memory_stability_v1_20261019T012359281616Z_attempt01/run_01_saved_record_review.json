@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "report_type": "limited_run_1_saved_record_review_and_continuation_assessment",
+  "design_id": "memory_stability_v1",
+  "attempt_id": "attempt01",
+  "observed_at_local": "2026-10-19T15:01:10.907936+09:00",
+  "run_1_start_local": "2026-10-19T10:29:03.899448+09:00",
+  "run_1_end_local": "2026-10-19T10:54:05.908610+09:00",
+  "duration_seconds": 1502.009162,
+  "job_count": 3696,
+  "raw_counts": {
+    "memory": 3360,
+    "timing": 3360
+  },
+  "raw_status_counts": {
+    "memory": {
+      "ok": 3360
+    },
+    "timing": {
+      "ok": 3360
+    }
+  },
+  "measurements": 336,
+  "references": 336,
+  "failed_repeat_count": 0,
+  "hash_and_matrix_median_checks_passed": true,
+  "scope": "Run 1 limited saved-record verification; NOT whole-attempt independent audit",
+  "source_sha256": {
+    "src/memory_stability_validation.py": "4c9aa886ebe9ed18fe66496827ee5bf6ec09b6beb303bf8b897ae32917ac01ff",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_stability_validation_design.md": "a7ce3b08d0e2c94efa13823a630bd0db85bbe3f73151743ca7f20bed7d0943fe"
+  },
+  "measurement_commit": "f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7",
+  "coordinator_status": "awaiting_next_run",
+  "runner_recording_checks_passed": true,
+  "runner_technical_validity_status": "pending_independent_audit",
+  "windows_local": {
+    "run_2_earliest": "2026-10-19T11:24:05.908610+09:00",
+    "run_2_target": "2026-10-19T11:54:05.908610+09:00",
+    "run_2_latest": "2026-10-19T12:24:05.908610+09:00",
+    "run_3_earliest": "2026-10-20T09:29:03.899448+09:00",
+    "run_3_target": "2026-10-20T10:29:03.899448+09:00",
+    "run_3_latest": "2026-10-20T11:29:03.899448+09:00"
+  },
+  "run_2_window_missed": true,
+  "active_claim": false,
+  "original_evidence_sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "metadata.json": "899fce636ab19fe929bcaa63fab703d0ed70eacfa4d9fdb910f9f91925b27405",
+    "operator_context_run_01.json": "19c7cfe6b22601b0bab49311566905d55e02e8b0198f88e1c300d749092f37a5",
+    "operator_events_run_01.json": "ca6e00be0435da9567a239c28720cc49840ab82f2aaec295e3eebcb323ced516",
+    "plan.json": "2be4ec96e35b3e74212453f87ba1d87b3e44c3efd53cbe263dbfdb8995d5029a",
+    "run_01_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_01_stdout.txt": "78999b434f7b1d2a9a3c75ab9f2462901a09a8e91bb9181b903292f67e03e0ff",
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "run_01/measurements.csv": "e80eeef384dd81381ee85e13f63023d9a0b96fac0f74e1b8dc615ca1ff22070f",
+    "run_01/memory_repeats.csv": "c22993705b7f37e994e27b7a8e645fcf840b3ef098abc182df64be9df9327ff0",
+    "run_01/metadata.json": "6c9e4b306ec2d0fbff36a16e4cefd6fe410e95c3f60f3b9939582f49a4028224",
+    "run_01/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_01/timing_repeats.csv": "2f0d4147943cf32722aead1b85a26322bb2baf8de5f008b463f7b9f8a2ef4c01"
+  },
+  "continuation_assessment": {
+    "evaluated_at_local": "2026-10-19T15:01:10.907936+09:00",
+    "status": "ineligible_to_continue_under_fixed_schedule",
+    "reason": "Run 2 has not executed and the fixed first-day second-run start window has elapsed.",
+    "run_2_started": false,
+    "run_2_earliest_local": "2026-10-19T11:24:05.908610+09:00",
+    "run_2_latest_local": "2026-10-19T12:24:05.908610+09:00",
+    "whole_attempt_complete": false,
+    "whole_attempt_independent_audit_performed": false,
+    "scientific_adoption_decision_performed": false,
+    "new_attempt_created": false,
+    "raw_runner_metadata_modified": false,
+    "remaining_runs_executed": false
+  },
+  "limitations": [
+    "Limited counts, saved verification flags, artifact hashes, raw-median and combined-memory checks for Run 1 only; not the complete independent audit.",
+    "Saved restoration flags and digests are not a new independent decompression check.",
+    "Reason for the unexecuted Run 2 is not established; do not attribute it to an internet outage without evidence.",
+    "Original coordinator awaiting_next_run is its last saved state, not proof of present schedule eligibility.",
+    "No missing measurement rows, candidate scores or labels have been fabricated."
+  ]
+}

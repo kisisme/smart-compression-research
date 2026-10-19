@@ -1,0 +1,54 @@
+{
+  "observed_at_utc": "2026-10-19T01:29:00.397176+00:00",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 14611800064,
+    "memory_load_percent": 56,
+    "pid": 37620,
+    "bytecode_disabled": true
+  },
+  "ac_line_status": 1,
+  "battery_percent": 70,
+  "power_mode_guid": "961cc777-2547-4f9d-8174-7d86181b8a7a",
+  "git": {
+    "commit_hash": "f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7",
+    "worktree_dirty": true,
+    "status_porcelain": "?? data/results/memory_stability_v1_20261019T012359281616Z_attempt01/\n"
+  },
+  "operator_report": "No other research jobs or updates; possible Steam game; possible temporary network loss; battery kept above shutdown. No further game-stop answer received.",
+  "network_required_by_measurement_code": false,
+  "events_file": "operator_events_run_01.json",
+  "conditions_not_certified": [
+    "Actual game execution or absence",
+    "Constant AC supply",
+    "Other general or remote workloads",
+    "Future network or power state"
+  ],
+  "source_sha256": {
+    "src/memory_stability_validation.py": "4c9aa886ebe9ed18fe66496827ee5bf6ec09b6beb303bf8b897ae32917ac01ff",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_stability_validation_design.md": "a7ce3b08d0e2c94efa13823a630bd0db85bbe3f73151743ca7f20bed7d0943fe"
+  }
+}

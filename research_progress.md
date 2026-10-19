@@ -4,6 +4,8 @@
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
+최신 실제 실행 확인: 2026-10-19. Memory 안정성 attempt01의 Run 1은 완료했으나 Run 2 시작 창이 미실행 상태로 경과했다. 전체 attempt는 미완료이며 유효한 일정으로 이어서 실행할 수 없다. 상세 증거와 제한된 검증 범위는 아래 실행 기록을 따른다.
+
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
 이 문서는 저장소의 코드·테스트·실험 결과·연구 로그·Git 이력을 조사한 상태 기록이다. 결과 CSV의 행 수와 평가 수치를 Python으로 읽고, 원시 결과 및 모델 평가 summary에 기록된 산출물 SHA-256을 대조했다. 최초 문서 작성과 증거 보존 단계에서는 압축 실험·학습·테스트를 재실행하지 않았다. 이후 audit 도구 정리에서는 아래에 명시한 인위적 fixture 테스트만 실행했다.
@@ -586,6 +588,20 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **다음 실행:** 이 착수 기록·진행 문서를 commit한 깨끗한 HEAD에서 새 `attempt01`을 init한다. Init 결과·경로·성공 여부는 실제 새 metadata와 반환값으로 확인하며, 이 사전 문서에서 완료를 주장하지 않는다. 이후 HEAD를 유지하므로 중간 진행은 attempt 안에 기록한다.
 - **사용자 사건 답변 대기:** 다른 연구 작업 실행 여부·일반 동시 작업·업데이트·기타 사건과 AC 유지 가능 여부를 요청했다. 관측한 빈 Python 목록을 사용자 확인으로 바꾸지 않으며 답변 전 정상 사건 값이나 측정 결과를 생성하지 않는다. 실제 memory/timing run·전체 실측·독립 audit·분석·공식 전환은 아직 미실행이다.
 
+### Memory 안정성 attempt01 Run 1 완료·제한된 저장 검증 / Run 2 시작 창 경과 — 2026-10-19
+
+근거: [보존 attempt](data/results/memory_stability_v1_20261019T012359281616Z_attempt01/), [실행 상태 기록](data/results/memory_stability_v1_20261019T012359281616Z_attempt01/execution_status_20261019.md), [제한된 저장 기록 검증](data/results/memory_stability_v1_20261019T012359281616Z_attempt01/run_01_saved_record_review.json). 실제 측정 commit은 `f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7`이다.
+
+- **완료:** 같은 HEAD에서 새 attempt를 init하고 sample 84개(핵심 72·작은 입력 12), sample 상태 모두 `ok`, 준비 실패·중복 입력 0개, 계획·원본 hash·종료 기록을 확인했다. 기존 Pilot이나 memory 실행에 이어 쓰지 않았다.
+- **완료:** 사용자 보고를 반영한 사건 파일로 Run 1을 실행했다. 다른 연구 작업·업데이트는 없고 Steam 게임은 실행될 수 있으며, 일시적 인터넷 단절 가능성과 배터리를 꺼지지 않을 정도로 유지할 계획을 기록했다. 게임 미실행이나 지속적인 AC 연결을 확인된 사실로 만들지 않았다. 일반 ChatGPT 대화는 가능하나 로컬 고부하 작업은 변동을 키울 수 있다고 안내했다.
+- **실제 실행:** KST 10:29:03.899448~10:54:05.908610, 경과 1,502.009162초. Run 1의 job 3,696개, memory 원시 반복 3,360개·timing 원시 호출 3,360개 모두 `ok`, 실패 반복 0개, 참조·pair 집계 각각 336개이다. 부모 종료 코드 0, run `completed`, coordinator `awaiting_next_run`, 종료 처리 완료·오류 없음·소스 불변이다.
+- **제한된 검증:** Python으로 원시 key 전체 집합·고유성·수량·저장 검증 flag·양수 값과 phase 중앙값·ms 변환·최종 memory 최댓값·산출물 hash를 확인했다. 이는 Run 1의 저장 기록 검사이며 전체 attempt 독립 audit 통과나 새 독립 복원 인증을 뜻하지 않는다. 전체 여섯 run audit·후보 label·regret·안정성 판정·모델 학습·단위 테스트는 실행하지 않았다.
+- **미완료/일정 경과:** 실제 종료에서 Run 2 시작 창을 계산하면 KST 11:24:05.908610~12:24:05.908610이다. 사용자가 작업 재개를 요청한 뒤 15:01 확인 시 Run 2는 실행되지 않았고 창이 지났다. 늦은 Run 2를 정상 일정으로 실행하거나 허용 간격을 사후 완화하지 않았다. 미실행의 구체적 원인을 인터넷 단절 등으로 단정하지 않는다. 활성 claim은 없다.
+
+최상위 metadata의 `awaiting_next_run`, `recording_checks_passed=true`, `pending_independent_audit`는 당시 runner 저장 상태로 보존한다. 현재 일정 적격성·전체 성공·과학적 안정성 판정을 뜻하지 않는다. 기존 실행 증거 13개의 SHA-256을 기록하고 원본 bytes를 보존했다. 제한된 검증 JSON과 실행 상태 문서는 후속 기록으로 구분한다. 새 측정값·실패 행·누락 행·score·label을 보충하지 않았다.
+
+현재 attempt는 고정 일정대로 이어갈 수 없으므로 이번 단계는 기존 증거·후속 판단·진행 기록의 Git 보존으로 마무리한다. 전체 검증 재시도는 이유와 사용자 확인을 남긴 별도 새 attempt에서 여섯 run 전체로 진행하며, 새 실측에 기존 Run 1을 재사용하지 않는다. 이번 보존 작업에서 새 attempt는 생성하지 않았다. 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`를 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -597,13 +613,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**착수/실행 예정:** [착수 기록](research_log/memory_stability_execution_start_20261019.md)을 commit한 뒤 새 attempt를 init한다. 실제 init 결과는 새 attempt의 metadata를 확인한다. Run 1은 사용자 사건 답변을 받아 실행용 사건 파일을 만든 뒤 진행한다. 이후 실제 `t0`와 첫 run 종료 시각에서 다음 run 창을 계산한다. 측정 중 문서·코드 수정이나 commit을 하지 않으며 공식 설정·가중치·라벨 전환은 이후 별도 작업이다.
+**사용자 재시도 확인 대기:** attempt01은 Run 1 완료 후 Run 2 시작 창이 경과해 유효한 일정으로 이어갈 수 없다. 보존 증거와 사유를 바탕으로 새 attempt02의 시작 시각·연속 세 날짜·당일 둘째 run 실행 가능 시간을 확인한 뒤 전체 계획을 새로 init한다. 기존 Run 1 수치를 새 실측에 옮기지 않는다. 실제 전체 검증·공식 설정·가중치·라벨 전환은 미완료이다.
 
-현재는 즉시 착수 지시를 받아 실행 전 점검과 init 준비를 마쳤다. 실제 init 성공 여부는 후속 metadata로 확인하며, 사용자 사건 답변·측정 run·전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+현재는 attempt01의 init·Run 1 실측·제한된 저장 검증을 완료하고, 후속 시작 창이 경과한 원본 증거를 보존한다. 전체 실측·실제 증거 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`이다. 이번 실측 준비 문서·snapshot·진행 기록은 함께 commit하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`, 실측 준비 보존 commit은 `103d1cb`이다. Attempt01의 실제 init·Run 1 측정 실행 HEAD는 `f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7`이다. 이번에는 미완료 attempt의 원시 증거·후속 판단·진행 기록을 함께 보존하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -614,6 +630,8 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `f66f5c0`: 즉시 착수 기록·사건 답변 대기 상태를 고정한 commit. Attempt01의 실제 init·Run 1 측정 실행 HEAD.
+- `103d1cb`: memory 안정성 실측 준비 문서·환경 snapshot·진행 기록 보존. 착수 기록 작업의 시작 HEAD.
 - `a51907f`: memory 안정성 후속 검증 분석기 초안 검토·전용 fixture 검증과 보존. 이번 실측 준비의 시작 기준 HEAD.
 - `6bea53a`: memory 안정성 후속 검증 독립 audit 및 전용 fixture 검증. 이번 분석기 검토·검증의 시작 기준 HEAD.
 - `a47ba95`: memory 안정성 후속 검증 runner 및 전용 fixture 검증. 이번 독립 audit 구현의 시작 기준 HEAD.
