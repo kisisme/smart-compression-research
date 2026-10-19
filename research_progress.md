@@ -6,6 +6,8 @@
 
 최신 실제 실행 확인: 2026-10-19. Memory 안정성 attempt01의 Run 1은 완료했으나 Run 2 시작 창이 미실행 상태로 경과했다. 전체 attempt는 미완료이며 유효한 일정으로 이어서 실행할 수 없다. 상세 증거와 제한된 검증 범위는 아래 실행 기록을 따른다.
 
+최신 승인 변경: 같은 환경에서의 반복 검증 `memory_repeatability_v1`을 별도 설계로 추가했다. 기존 3일 검증을 소급 변경하지 않는다. 새 runner 전용 검증을 완료했으며 사용자가 요청한 새 설계 Run 1을 진행한다. 실제 실측 상태는 새 attempt metadata로 확인한다.
+
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
 이 문서는 저장소의 코드·테스트·실험 결과·연구 로그·Git 이력을 조사한 상태 기록이다. 결과 CSV의 행 수와 평가 수치를 Python으로 읽고, 원시 결과 및 모델 평가 summary에 기록된 산출물 SHA-256을 대조했다. 최초 문서 작성과 증거 보존 단계에서는 압축 실험·학습·테스트를 재실행하지 않았다. 이후 audit 도구 정리에서는 아래에 명시한 인위적 fixture 테스트만 실행했다.
@@ -40,6 +42,7 @@
 | Memory 안정성 후속 검증 runner | `src/memory_stability_validation.py`: 고정 계획·별도 부모 실행·worker 응답 검증·원시 CSV·종료 metadata 구현 및 전용 fixture 검증 완료. 실제 attempt 분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 저장 기록 감사 | `research_log/verify_memory_stability_validation.py`: 독립 audit 구현·전용 fixture 검증 완료. 실제 후속 검증 attempt 대상 audit·분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 분석기 | `research_log/analyze_memory_stability_validation.py`: 기존 초안 검토·전용 fixture 검증 완료. 독립 audit와 결합한 후보 score·regret·사전 판정·진단 및 새 출력 저장 구현. 실제 attempt 분석·전체 실측은 미완료 |
+| 동일 환경 memory·timing 반복 검증 runner | `src/memory_repeatability_validation.py`: 별도 study ID·설계에서 날짜·시각·run 간 간격 제한을 제거했다. 순서·비겹침·전체 수집·실패 보존은 유지하고 전용 테스트 41개를 통과했다. 새 프로토콜 전체 audit·분석 연결은 미구현 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -602,6 +605,26 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 현재 attempt는 고정 일정대로 이어갈 수 없으므로 이번 단계는 기존 증거·후속 판단·진행 기록의 Git 보존으로 마무리한다. 전체 검증 재시도는 이유와 사용자 확인을 남긴 별도 새 attempt에서 여섯 run 전체로 진행하며, 새 실측에 기존 Run 1을 재사용하지 않는다. 이번 보존 작업에서 새 attempt는 생성하지 않았다. 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`를 유지한다.
 
+### 동일 환경 반복 검증으로 사용자 승인 변경·별도 runner 검증 완료 / 새 Run 1 실행 준비 — 2026-10-19
+
+근거: [새 설계](research_log/memory_repeatability_validation_design.md), [새 runner](src/memory_repeatability_validation.py), [전용 테스트](tests/test_memory_repeatability_validation.py). 시작 HEAD는 증거 보존 commit `82041e85c528e6b6edf3142d0d9861f057263118`이며 실제 작업 트리는 깨끗했다. 사용자가 고정 시각 대신 이전처럼 진행할 수 있는지 물었고, 동일 환경 반복 검증의 범위 차이를 설명한 뒤 “지금으로 진행. run 1 진행하자”라고 승인했다.
+
+- **완료:** 별도 `memory_repeatability_v1` 설계를 새 실측 전에 추가했다. 연속 세 날짜·±60분·30~90분·같은 날짜 조건을 제거하고 실제 날짜·시각·간격을 보존한다. 관측 환경의 반복 검증으로 해석하며 날짜 간 안정성으로 일반화하지 않는다. 기존 미완료 `memory_stability_v1` attempt01은 당시 설계의 기록으로 보존한다.
+- **완료:** 검증된 기존 수집 구현을 별도 runner 파일로 고정해 파생했다. 입력·seed·전체 행렬·압축기 설정·memory/timing worker·원시값·복원 검증·오류 처리·환경·소스/HEAD/hash 보존 계약은 유지한다. 새 study ID와 기존 timing worker wire protocol ID를 별도로 명시·검증한다. 새 plan과 결과 경로를 사용하고 예전 측정값을 복사하지 않는다.
+- **완료:** 시간 간격만으로 실패시키지 않되 run 1~6 순서·비겹침·배타적 claim을 유지한다. 겹침은 worker 시작 전에 거부하고 종료 실패 기록을 남긴다. Job 자동 재시도·중단 run 재개·입력 축소 CLI는 추가하지 않았다. `run` CLI 한 번은 다음 run 한 개만 실행한다. 이번 사용자 요청 범위는 Run 1 한 번이다.
+- **검증:** 전용 모듈에서 기존 수집 계약 fixture를 새 runner에 테스트 범위 안에서 연결하고 종료 후 원래 연결을 복구했다. 전체 계획·순서·새 ID/worker ID 구분·즉시/장시간/날짜 변경 후 이어가기·겹침 거부·일반/`-O`/`-OO` 오류 거부·원시 저장·부분 실패·중단·입력/소스/계획 변경·이전 증거 변경·저장 실패·새 부모 CLI를 검증했다. 임시 입력으로 네 압축기의 실제 worker 연결 smoke test도 수행했으나 연구 결과로 저장·집계하지 않았다.
+
+실제 완료한 검증:
+
+```text
+.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_memory_repeatability_validation.py -v
+41 tests: OK
+```
+
+처음 실행에서는 겹침 거부를 다른 환경 위반에도 잘못 적용한 분기 때문에 fixture 오류 2개가 발생했다. 겹침 flag에만 해당 분기를 적용하도록 수정한 뒤 위 모듈 전체가 종료 코드 0으로 완료했다. Fixture의 peak/ns/Git/시각은 인위적 테스트 값이며 연구 결과가 아니다. 전체 suite와 기존 전용 모듈은 재실행하지 않았다. 기존 추적 파일은 진행 문서를 제외하고 SHA-256으로 보존을 확인한다.
+
+**실행 계획/미완료:** 새 설계·runner·테스트·진행 문서를 함께 commit한 깨끗한 HEAD에서 새 attempt를 init하고 Run 1을 실행한다. 실제 생성 경로·성공 여부·실측 수량은 새 metadata와 원시 파일을 확인하며 이 사전 기록에서 완료를 주장하지 않는다. Init 후 여섯 run이 끝날 때까지 같은 HEAD를 유지하고 중간 실행 상태는 attempt 안에 기록한다. 새 프로토콜 전용 독립 audit·분석 연결과 전체 후보 판정은 미구현이다. 기존 audit를 완화해 새 결과를 통과시키지 않는다. 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`는 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -613,9 +636,9 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 재시도 확인 대기:** attempt01은 Run 1 완료 후 Run 2 시작 창이 경과해 유효한 일정으로 이어갈 수 없다. 보존 증거와 사유를 바탕으로 새 attempt02의 시작 시각·연속 세 날짜·당일 둘째 run 실행 가능 시간을 확인한 뒤 전체 계획을 새로 init한다. 기존 Run 1 수치를 새 실측에 옮기지 않는다. 실제 전체 검증·공식 설정·가중치·라벨 전환은 미완료이다.
+**사용자 승인 완료/실행:** 새 `memory_repeatability_v1` 설계의 별도 attempt를 init하고 Run 1 한 번을 실행한다. 실제 실행 상태는 해당 attempt의 metadata와 원시 파일로 확인한다. 후속 run은 순서대로 같은 HEAD에서 이어가며 고정 날짜·시각·간격을 요구하지 않는다. 날짜 간 검증·전체 새 프로토콜 audit·후보 분석·공식 4지표 전환은 미완료이다.
 
-현재는 attempt01의 init·Run 1 실측·제한된 저장 검증을 완료하고, 후속 시작 창이 경과한 원본 증거를 보존한다. 전체 실측·실제 증거 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+현재는 기존 3일 설계 attempt01을 보존한 상태에서 사용자 승인에 따라 별도 동일 환경 반복 설계와 runner를 검증했다. 새 Run 1의 실제 결과는 후속 metadata로 확인한다. 전체 실측·새 프로토콜 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
@@ -630,6 +653,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `82041e8`: 기존 3일 설계 attempt01의 Run 1 원시 증거·제한된 검증·Run 2 시작 창 경과 사실 보존. 새 동일 환경 반복 설계 작업의 시작 HEAD.
 - `f66f5c0`: 즉시 착수 기록·사건 답변 대기 상태를 고정한 commit. Attempt01의 실제 init·Run 1 측정 실행 HEAD.
 - `103d1cb`: memory 안정성 실측 준비 문서·환경 snapshot·진행 기록 보존. 착수 기록 작업의 시작 HEAD.
 - `a51907f`: memory 안정성 후속 검증 분석기 초안 검토·전용 fixture 검증과 보존. 이번 실측 준비의 시작 기준 HEAD.
