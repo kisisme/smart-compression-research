@@ -578,6 +578,14 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 **미완료:** 사용자 일정·전원·동시 연구 작업 조건 확인과 확정 기록, 새 attempt 생성·전체 실측·실제 증거 audit·후보 분석·사전 판정·공식 채택 및 4지표 전환. 새 입력 생성·압축·복원·memory/timing 실측·실제 증거 audit·모델 학습은 수행하지 않았다. 이번에는 준비 문서·snapshot·진행 기록만 보존하며 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`를 유지한다.
 
+### Memory 안정성 후속 검증 즉시 착수 요청·init 준비 — 2026-10-19
+
+근거: [착수 기록](research_log/memory_stability_execution_start_20261019.md), 준비 commit `103d1cb`. 사용자가 “지금 작업 시작해줘”라고 지시했다. 실제 현재 시각은 10월 19일 10:20경 KST였으며, 과거 18시 제안 대신 지금 착수한다. 실제 측정 `t0`는 아직 없고 run 1 metadata에서 정한다.
+
+- **점검 완료:** 실제 Git 상태는 깨끗했고 기존 후속 attempt 폴더는 없었다. Python·패키지·config 검사와 `pip check`가 통과했다. AC 연결·균형 조정 전원 구성표·실제 AC 모드 Best Power Efficiency를 읽기 전용으로 확인했다. 실행 중인 Python 프로세스는 관측되지 않았다. 전원 설정이나 측정 소스는 변경하지 않았다.
+- **다음 실행:** 이 착수 기록·진행 문서를 commit한 깨끗한 HEAD에서 새 `attempt01`을 init한다. Init 결과·경로·성공 여부는 실제 새 metadata와 반환값으로 확인하며, 이 사전 문서에서 완료를 주장하지 않는다. 이후 HEAD를 유지하므로 중간 진행은 attempt 안에 기록한다.
+- **사용자 사건 답변 대기:** 다른 연구 작업 실행 여부·일반 동시 작업·업데이트·기타 사건과 AC 유지 가능 여부를 요청했다. 관측한 빈 Python 목록을 사용자 확인으로 바꾸지 않으며 답변 전 정상 사건 값이나 측정 결과를 생성하지 않는다. 실제 memory/timing run·전체 실측·독립 audit·분석·공식 전환은 아직 미실행이다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -589,9 +597,9 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 확인 대기:** [실측 준비안](research_log/memory_stability_execution_preparation_20261016.md)의 제안 일정·전원 조건·다른 연구 작업 중지 가능 여부에 대한 사용자 답변을 반영해 조건을 확정하고 기록을 commit한다. 아직 답변이나 확정된 날짜·전원 모드가 없으므로 새 attempt 생성·실측은 시작하지 않는다. 실제 init·첫 run은 조건 확인 후 별도 실행 단계이며, 공식 설정·가중치·라벨 전환도 이후 별도 작업이다.
+**착수/실행 예정:** [착수 기록](research_log/memory_stability_execution_start_20261019.md)을 commit한 뒤 새 attempt를 init한다. 실제 init 결과는 새 attempt의 metadata를 확인한다. Run 1은 사용자 사건 답변을 받아 실행용 사건 파일을 만든 뒤 진행한다. 이후 실제 `t0`와 첫 run 종료 시각에서 다음 run 창을 계산한다. 측정 중 문서·코드 수정이나 commit을 하지 않으며 공식 설정·가중치·라벨 전환은 이후 별도 작업이다.
 
-이번 작업은 실측 전 읽기 전용 환경·계획 점검과 일정·실행 준비안 작성까지 완료했다. 사용자 조건 확인·확정, 전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+현재는 즉시 착수 지시를 받아 실행 전 점검과 init 준비를 마쳤다. 실제 init 성공 여부는 후속 metadata로 확인하며, 사용자 사건 답변·측정 run·전체 실측·실제 증거 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
 ## 14. 마지막 관련 Git commit
 
