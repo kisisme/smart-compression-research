@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "report_type": "aborted_run_evidence_summary",
+  "study_dir": "data\\results\\memory_repeatability_v1_20261019T122219435170Z_attempt01",
+  "design_id": "memory_repeatability_v1",
+  "measurement_commit": "7a0ea69abbae7931389993b701380324cded3b42",
+  "run_status": "aborted",
+  "job_count": 469,
+  "repeat_count": 856,
+  "failed_repeat_count": 0,
+  "run_error": "PermissionError: [WinError 5] 액세스가 거부되었습니다: 'C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\results\\\\memory_repeatability_v1_20261019T122219435170Z_attempt01\\\\run_01\\\\.metadata.json.ciyfmtg4.tmp' -> 'C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\results\\\\memory_repeatability_v1_20261019T122219435170Z_attempt01\\\\run_01\\\\metadata.json'",
+  "finalization_status": "completed",
+  "finalization_errors": [],
+  "provenance_unchanged": true,
+  "started_at_utc": "2026-10-19T12:23:41.237151+00:00",
+  "finished_at_utc": "2026-10-19T12:29:07.291151+00:00",
+  "raw": {
+    "memory": {
+      "rows": 426,
+      "status_counts": {
+        "ok": 426
+      },
+      "verified_counts": {
+        "True": 426
+      }
+    },
+    "timing": {
+      "rows": 430,
+      "status_counts": {
+        "ok": 430
+      },
+      "verified_counts": {
+        "True": 430
+      }
+    }
+  },
+  "measurements_file_exists": false,
+  "active_claim": false,
+  "original_evidence_sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "metadata.json": "9ff6dab64ca2e171c6cbbc8ef80494ea9210eb9a0d99ee3e0a908e3675207713",
+    "operator_context_run_01.json": "4cc3e06a0004ce1363106d4dc3d9a4d80477aedb827b05e0bd1cb9585b5c1917",
+    "operator_events_run_01.json": "f13594df382aa9517859be42f46da0d527fcae316d26a06673e9a988d8120b66",
+    "plan.json": "2dbb8d41fa69dffd5746edec54e3e83811f812cc34937b9f16d98f8f59be9030",
+    "run_01_stderr.txt": "65ee14b870bb1e8917162e2dac44bca6f762387daea40731ca75d62893f565cb",
+    "run_01_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "run_01/memory_repeats.csv": "0f9c4b851482c96eb76e6c979c1cb1ac39263e288297d1a9d8044995dda1d25a",
+    "run_01/metadata.json": "c90ec958d24b6ee4d842c01206b4ca492e4698c81e923edea3b6fadafce0315e",
+    "run_01/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_01/timing_repeats.csv": "cb4174adfacac7709fe9d63fa4701c9b62bdde256482279a298b6198a1387cb2"
+  },
+  "git_status": "?? data/results/memory_repeatability_v1_20261019T122219435170Z_attempt01/\n",
+  "interpretation": {
+    "complete_run": false,
+    "normal_pair_aggregation_available": false,
+    "independent_audit_performed": false,
+    "reason": "Windows access denial during atomic metadata replacement; failed_repeat_count=0 does not mean the incomplete run succeeded.",
+    "lock_holder_identified": false,
+    "possible_lock_contention": "A file reader or other process may have denied delete/rename sharing; this specific lock holder is not established.",
+    "automatic_measurement_retry": false,
+    "old_evidence_modified": false,
+    "followup": "Preserve this attempt, validate metadata-only I/O robustness and delete-sharing reads, then start a separate full attempt."
+  }
+}

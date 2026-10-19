@@ -625,6 +625,14 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 **실행 계획/미완료:** 새 설계·runner·테스트·진행 문서를 함께 commit한 깨끗한 HEAD에서 새 attempt를 init하고 Run 1을 실행한다. 실제 생성 경로·성공 여부·실측 수량은 새 metadata와 원시 파일을 확인하며 이 사전 기록에서 완료를 주장하지 않는다. Init 후 여섯 run이 끝날 때까지 같은 HEAD를 유지하고 중간 실행 상태는 attempt 안에 기록한다. 새 프로토콜 전용 독립 audit·분석 연결과 전체 후보 판정은 미구현이다. 기존 audit를 완화해 새 결과를 통과시키지 않는다. 공식 v2의 3지표와 memory `validation_only`, `score_inclusion=false`는 유지한다.
 
+### 동일 환경 반복 검증 attempt01 Run 1 중단·원본 보존 — 2026-10-19
+
+근거: [새 설계 attempt01](data/results/memory_repeatability_v1_20261019T122219435170Z_attempt01/), [실패 보고서](data/results/memory_repeatability_v1_20261019T122219435170Z_attempt01/failure_report.json), 실행 commit `7a0ea69abbae7931389993b701380324cded3b42`.
+
+- **실제 실행/미완료:** UTC 12:23:41.237151~12:29:07.291151. Job 469개 뒤 `aborted`로 종료했다. Memory 원시값 426행·timing 430행, 총 856행은 모두 저장 상태 `ok`·`verified=True`였으나 전체 예정 행렬을 완료하지 못했다. `measurements.csv`는 생성되지 않았고 정상 pair 집계·독립 audit·후보 분석은 수행하지 않았다. 실패 반복 수 0을 run 성공으로 해석하지 않는다.
+- **확인한 원인:** 원래 부모 예외는 metadata 임시 파일을 `metadata.json`으로 `os.replace`하는 단계의 `PermissionError: WinError 5`이다. Coordinator의 `Parent did not finish`는 그 후속 오류다. 종료 기록은 완료했고 소스 불변을 확인했으며 활성 claim은 없다. 압축 검증 실패·게임·네트워크 단절이 원인이라고 단정하지 않는다. 특정 잠금 보유 프로세스는 확인하지 못했다.
+- **보존/후속 수정:** 원시값·metadata·계획·사건·stderr를 원본 hash와 함께 별도 실패 증거로 보존한다. 중단 run을 이어 쓰거나 누락을 보충하지 않는다. 새 runner의 파일 조회에 삭제/이름 변경 공유를 허용하고 metadata 저장에만 한정한 bounded I/O 재시도를 fixture로 검증할 계획이다. 압축기나 측정 job을 재시도하는 변경은 아니다. 수정 후 새 attempt에서 전체 Run 1을 실행한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -636,7 +644,7 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 승인 완료/실행:** 새 `memory_repeatability_v1` 설계의 별도 attempt를 init하고 Run 1 한 번을 실행한다. 실제 실행 상태는 해당 attempt의 metadata와 원시 파일로 확인한다. 후속 run은 순서대로 같은 HEAD에서 이어가며 고정 날짜·시각·간격을 요구하지 않는다. 날짜 간 검증·전체 새 프로토콜 audit·후보 분석·공식 4지표 전환은 미완료이다.
+**사용자 승인 Run 1을 위한 오류 수정:** 새 설계 attempt01이 metadata 교체 접근 거부로 중단됐으므로 원본을 보존하고 새 runner의 metadata I/O 처리와 조회 방식을 보완·검증한다. 수정한 깨끗한 HEAD의 별도 attempt에서 전체 Run 1을 실행하며 이전 일부 원시값을 정상 결과로 재사용하지 않는다. 날짜·시각·간격 제한은 없고 공식 4지표 전환은 미완료이다.
 
 현재는 기존 3일 설계 attempt01을 보존한 상태에서 사용자 승인에 따라 별도 동일 환경 반복 설계와 runner를 검증했다. 새 Run 1의 실제 결과는 후속 metadata로 확인한다. 전체 실측·새 프로토콜 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 

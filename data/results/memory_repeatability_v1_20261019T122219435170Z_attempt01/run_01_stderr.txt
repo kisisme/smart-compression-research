@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\s0109\PycharmProjects\smart_compression_research\src\memory_repeatability_validation.py", line 962, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\s0109\PycharmProjects\smart_compression_research\src\memory_repeatability_validation.py", line 956, in main
+    result = run_one(args.study_dir, args.run_id, args.token)
+  File "C:\Users\s0109\PycharmProjects\smart_compression_research\src\memory_repeatability_validation.py", line 823, in run_one
+    common._save_metadata(path, metadata)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\s0109\PycharmProjects\smart_compression_research\src\memory_validation.py", line 79, in _save_metadata
+    os.replace(temporary, path)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 액세스가 거부되었습니다: 'C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T122219435170Z_attempt01\\run_01\\.metadata.json.ciyfmtg4.tmp' -> 'C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T122219435170Z_attempt01\\run_01\\metadata.json'
