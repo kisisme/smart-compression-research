@@ -7,9 +7,13 @@ Actual temporary worker smoke inputs are not research measurements.
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+import ctypes
+from ctypes import wintypes
 import os
+from pathlib import Path
 import subprocess
 import sys
+import tempfile
 from unittest.mock import patch
 import unittest
 
@@ -43,6 +47,8 @@ class PlanTests(fixtures.PlanTests):
         plan = runner.build_plan("fixture")
         self.assertEqual(plan["design_id"], "memory_repeatability_v1")
         self.assertEqual(plan["timing_worker_design_id"], "memory_stability_v1")
+        self.assertEqual(plan["collector_revision"], 2)
+        self.assertFalse(plan["metadata_io_policy"]["measurement_job_retry"])
         self.assertNotEqual(runner.DESIGN_PATH, original_runner.DESIGN_PATH)
         self.assertIn("src/memory_repeatability_validation.py", runner.SOURCE_PATHS)
         self.assertNotIn("src/memory_stability_validation.py", runner.SOURCE_PATHS)
@@ -185,6 +191,127 @@ with patch.object(runner, 'CORE_SIZES', ()), patch.object(runner, 'TINY_SIZES', 
 
 class RealAdapterSmokeTests(fixtures.RealAdapterSmokeTests):
     pass
+
+
+@unittest.skipUnless(sys.platform == "win32", "Actual Windows file-sharing fixtures")
+class MetadataIOTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory(prefix="repeatability_io_fixture_")
+        self.addCleanup(self.temporary.cleanup)
+        self.path = Path(self.temporary.name) / "metadata.json"
+        self.path.write_text('{"version":1}\n', encoding="utf-8")
+        self.kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        self.kernel.CreateFileW.argtypes = (wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+                                           wintypes.LPVOID, wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE)
+        self.kernel.CreateFileW.restype = wintypes.HANDLE
+        self.kernel.CloseHandle.argtypes = (wintypes.HANDLE,)
+        self.kernel.CloseHandle.restype = wintypes.BOOL
+
+    def deny_delete(self):
+        handle = self.kernel.CreateFileW(str(self.path), 0x80000000, 0x1 | 0x2, None, 3, 0x80, None)
+        if handle == ctypes.c_void_p(-1).value:
+            raise ctypes.WinError(ctypes.get_last_error())
+        return handle
+
+    def test_actual_shared_reader_contention_recovers_after_close(self):
+        with runner._open_shared_text(self.path) as reader:
+            self.assertEqual(runner.strict_json(reader.read()), {"version": 1})
+            with patch.object(runner.time, "sleep", side_effect=lambda delay: reader.close()) as sleep:
+                runner._save_metadata(self.path, {"version": 2})
+            self.assertEqual(sleep.call_count, 1)
+        self.assertEqual(runner._read_json(self.path)["version"], 2)
+        self.assertEqual(list(self.path.parent.glob("*.tmp")), [])
+
+    def test_read_handle_closed_before_parsing_snapshot(self):
+        parse = runner.strict_json
+
+        def parse_after_replace(text):
+            with patch.object(runner.time, "sleep") as sleep:
+                runner._save_metadata(self.path, {"version": 2})
+            sleep.assert_not_called()
+            return parse(text)
+
+        with patch.object(runner, "strict_json", side_effect=parse_after_replace):
+            self.assertEqual(runner._read_json(self.path), {"version": 1})
+        self.assertEqual(runner._read_json(self.path), {"version": 2})
+
+    def test_actual_blocked_replace_then_release_recovers_without_worker(self):
+        handle = self.deny_delete()
+        try:
+            with self.assertRaises(OSError) as caught:
+                runner.common._save_metadata(self.path, {"version": 2})
+            self.assertIn(caught.exception.winerror, (5, 32, 33))
+            self.assertEqual(runner._read_json(self.path), {"version": 1})
+
+            def release(delay):
+                nonlocal handle
+                self.assertEqual(delay, .05)
+                self.assertTrue(self.kernel.CloseHandle(handle))
+                handle = None
+
+            metadata = {"version": 2}
+            with patch.object(runner.time, "sleep", side_effect=release) as sleep, \
+                 patch.object(runner, "run_worker") as worker:
+                runner._save_metadata(self.path, metadata)
+            sleep.assert_called_once()
+            worker.assert_not_called()
+            saved = runner._read_json(self.path)
+            self.assertEqual(saved["version"], 2)
+            self.assertEqual(len(saved["metadata_save_retry_events"]), 1)
+            self.assertEqual(saved["metadata_save_retry_events"][0]["failed_attempt"], 1)
+            self.assertEqual(list(self.path.parent.glob("*.tmp")), [])
+        finally:
+            if handle is not None:
+                self.kernel.CloseHandle(handle)
+
+    def test_persistent_actual_lock_aborts_at_bound_preserving_original(self):
+        handle = self.deny_delete()
+        first = []
+        real_save = runner.common._save_metadata
+
+        def save(*args):
+            try:
+                return real_save(*args)
+            except OSError as exc:
+                first.append(exc)
+                raise
+
+        metadata = {"version": 2}
+        try:
+            with patch.object(runner.common, "_save_metadata", side_effect=save) as writer, \
+                 patch.object(runner.time, "sleep") as sleep, \
+                 patch.object(runner, "run_worker") as worker, self.assertRaises(OSError) as caught:
+                runner._save_metadata(self.path, metadata)
+            self.assertIs(caught.exception, first[0])
+            self.assertEqual(writer.call_count, 5)
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], [.05, .10, .15, .20])
+            self.assertEqual(len(metadata["metadata_save_retry_events"]), 5)
+            worker.assert_not_called()
+            self.assertEqual(runner._read_json(self.path), {"version": 1})
+            self.assertEqual(list(self.path.parent.glob("*.tmp")), [])
+        finally:
+            self.kernel.CloseHandle(handle)
+
+    def test_other_errors_interrupts_and_nonfinite_json_are_not_retried(self):
+        for error in (OSError("fixture non-Windows I/O error"), ValueError("fixture validation"),
+                      KeyboardInterrupt(), SystemExit(23)):
+            with self.subTest(error=type(error).__name__), \
+                 patch.object(runner.common, "_save_metadata", side_effect=error) as save, \
+                 patch.object(runner.time, "sleep") as sleep, self.assertRaises(type(error)) as caught:
+                runner._save_metadata(self.path, {"version": 2})
+            self.assertIs(caught.exception, error)
+            save.assert_called_once()
+            sleep.assert_not_called()
+        with patch.object(runner.time, "sleep") as sleep, self.assertRaises(ValueError):
+            runner._save_metadata(self.path, {"version": float("nan")})
+        sleep.assert_not_called()
+        self.assertEqual(runner._read_json(self.path), {"version": 1})
+
+    def test_shared_reader_keeps_strict_json_validation(self):
+        for text in ('{"a":1,"a":2}', '{"a":NaN}', '{"a":1e999}'):
+            self.path.write_text(text, encoding="utf-8")
+            with self.assertRaises(ValueError):
+                runner._read_json(self.path)
 
 
 if __name__ == "__main__":

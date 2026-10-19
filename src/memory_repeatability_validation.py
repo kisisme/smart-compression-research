@@ -3,7 +3,8 @@
 Frozen additive adaptation of memory_stability_validation at commit 82041e8.
 The study protocol is distinct; existing timing-worker wire protocol is reused.
 CLI init prepares a NEW study; run executes only its next ordered full run.
-No clock/day/gap restriction, sleep, job retry or interrupted-run resumption.
+No clock/day/gap restriction, job retry or interrupted-run resumption.
+Bounded metadata-only I/O backoff does not repeat measurement work.
 Actual timestamps and environment/events remain recorded. No cross-day claim,
 independent audit, candidate labels or scientific adoption is produced here.
 """
@@ -11,7 +12,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
-from contextlib import ExitStack
+from contextlib import ExitStack, contextmanager
 import csv
 import ctypes
 from ctypes import wintypes
@@ -26,6 +27,7 @@ import statistics
 import subprocess
 import sys
 import tempfile
+import time
 import uuid
 
 from src import compressors, data_generator, memory_benchmark
@@ -35,6 +37,13 @@ from src import memory_stability_timing_worker as timing_worker
 ROOT = common.ROOT
 DESIGN_ID = "memory_repeatability_v1"
 TIMING_WORKER_DESIGN_ID = "memory_stability_v1"
+COLLECTOR_REVISION = 2
+METADATA_IO_POLICY = {
+    "max_save_attempts": 5, "retry_winerrors": [5, 32, 33],
+    "backoff_seconds": [.05, .10, .15, .20],
+    "windows_read_share": ["read", "write", "delete"],
+    "measurement_job_retry": False,
+}
 ALGORITHMS = ("gzip", "bz2", "lzma", "zstd")
 PHASES = ("compress", "decompress")
 CORE_SIZES = (16384, 65536, 262144, 1048576)
@@ -118,8 +127,65 @@ def strict_json(text: str):
     return json.loads(text, object_pairs_hook=pairs, parse_float=floating, parse_constant=constant)
 
 
+@contextmanager
+def _open_shared_text(path):
+    """Allow delete sharing; Windows destination replacement can still block."""
+    if sys.platform != "win32":
+        with path.open("r", encoding="utf-8") as stream:
+            yield stream
+        return
+    import msvcrt
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    create = kernel.CreateFileW
+    create.argtypes = (wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID,
+                       wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE)
+    create.restype = wintypes.HANDLE
+    close = kernel.CloseHandle
+    close.argtypes, close.restype = (wintypes.HANDLE,), wintypes.BOOL
+    handle = create(str(path), 0x80000000, 0x1 | 0x2 | 0x4, None, 3, 0x80, None)
+    if handle == ctypes.c_void_p(-1).value:
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        descriptor = msvcrt.open_osfhandle(handle, os.O_RDONLY)
+    except BaseException:
+        close(handle)
+        raise
+    try:
+        stream = os.fdopen(descriptor, "r", encoding="utf-8")
+    except BaseException:
+        os.close(descriptor)
+        raise
+    with stream:
+        yield stream
+
+
 def _read_json(path):
-    return strict_json(path.read_text(encoding="utf-8"))
+    with _open_shared_text(path) as stream:
+        text = stream.read()
+    return strict_json(text)  # Release the handle before parsing the snapshot.
+
+
+def _save_metadata(path, metadata):
+    """Retry only transient Windows metadata I/O; never rerun a worker/job."""
+    first_error = None
+    for index in range(METADATA_IO_POLICY["max_save_attempts"]):
+        try:
+            common._save_metadata(path, metadata)
+            return
+        except OSError as exc:
+            if getattr(exc, "winerror", None) not in METADATA_IO_POLICY["retry_winerrors"]:
+                raise
+            if first_error is None:
+                first_error = exc
+            metadata.setdefault("metadata_save_retry_events", []).append(dict(
+                occurred_at_utc=common._now(), target=path.name, failed_attempt=index + 1,
+                winerror=exc.winerror, error=str(exc)))
+            if index + 1 == METADATA_IO_POLICY["max_save_attempts"]:
+                first_error.add_note("Metadata save exhausted 5 attempts; measurement jobs were not retried")
+                if exc is first_error:
+                    raise
+                raise first_error from exc
+            time.sleep(METADATA_IO_POLICY["backoff_seconds"][index])
 
 
 def _sources():
@@ -198,7 +264,8 @@ def build_plan(attempt_id: str, reason: str = "") -> dict:
         random.Random(SCHEDULE_SEED + run_id).shuffle(jobs)
         schedules[str(run_id)] = [{**job, "run_id": run_id, "schedule_index": index,
                                   "request_id": f"{attempt_id}:{run_id}:{index}"} for index, job in enumerate(jobs)]
-    return dict(schema_version=1, design_id=DESIGN_ID, attempt_id=attempt_id, attempt_reason=reason,
+    return dict(schema_version=1, design_id=DESIGN_ID, collector_revision=COLLECTOR_REVISION,
+                metadata_io_policy=METADATA_IO_POLICY, attempt_id=attempt_id, attempt_reason=reason,
                 measurement_status="validation_only", score_inclusion=False, samples=samples,
                 schedules=schedules, expected_keys={"memory": keys, "timing": keys},
                 base_seed=SEED, schedule_seed=SCHEDULE_SEED, repeats=REPEATS, timeout_seconds=TIMEOUT,
@@ -596,7 +663,8 @@ def _git_for_attempt(study=None):
 
 
 def _metadata(plan):
-    return dict(schema_version=1, design_id=DESIGN_ID, attempt_id=plan["attempt_id"],
+    return dict(schema_version=1, design_id=DESIGN_ID, collector_revision=COLLECTOR_REVISION,
+                metadata_io_policy=METADATA_IO_POLICY, attempt_id=plan["attempt_id"],
                 measurement_status="validation_only", score_inclusion=False, run_status="running",
                 started_at_utc=common._now(), source_sha256=_sources(), environment=_environment(),
                 planned_source_sha256=plan["source_sha256"],
@@ -620,7 +688,7 @@ def _finalize(path, metadata, artifacts, immutable):
         except BaseException as exc:
             failures.append(exc)
             metadata["finalization_errors"].append(dict(stage=stage, error=f"{type(exc).__name__}: {exc}"))
-    attempt("terminal_checkpoint", lambda: common._save_metadata(path, metadata))
+    attempt("terminal_checkpoint", lambda: _save_metadata(path, metadata))
     attempt("environment_at_end", lambda: metadata.update(environment_at_end=_environment()))
     attempt("source_sha256_at_end", lambda: metadata.update(source_sha256_at_end=_sources()))
     for name, (artifact, digest) in immutable.items():
@@ -638,7 +706,7 @@ def _finalize(path, metadata, artifacts, immutable):
     metadata["recording_checks_passed"] = (metadata["run_status"] in ("initialized", "awaiting_next_run", "completed")
                                            and metadata["provenance_unchanged"] is True and not metadata["validity_issues"]
                                            and not metadata["failed_repeat_count"] and not metadata.get("failed_sample_count", 0) and not failures)
-    attempt("final_metadata_save", lambda: common._save_metadata(path, metadata))
+    attempt("final_metadata_save", lambda: _save_metadata(path, metadata))
     if failures:
         failures[0].add_note("Finalization errors: " + _json(metadata["finalization_errors"]))
         raise failures[0]
@@ -676,7 +744,7 @@ def initialize(*, attempt_id, reason="", results_root=None):
                 "planned_timing_repeat_count": len(plan["expected_keys"]["timing"]) * len(RUN_IDS)}
     artifacts, immutable, original_error = [], {}, None
     try:
-        common._save_metadata(path, metadata)
+        _save_metadata(path, metadata)
         if _sources() != plan["source_sha256"] or not _same(_check_config(), plan["config"]):
             raise ValueError("Source/config changed while creating the plan")
         samples = _sample_records(plan["samples"])
@@ -769,7 +837,7 @@ def run_one(study, run_id, token):
     artifacts, original_error = [], None
     memory_rows, timing_rows, counts = [], [], Counter()
     try:
-        common._save_metadata(path, metadata)
+        _save_metadata(path, metadata)
         if "run_overlaps_previous" in metadata["validity_issues"]:
             raise ValueError("A run cannot overlap a preceding run")
         if not claim["events"]["no_research_jobs_running"]:
@@ -820,7 +888,7 @@ def run_one(study, run_id, token):
                                     timing_repeat_count=len(timing_rows), repeat_count=len(memory_rows) + len(timing_rows),
                                     failed_repeat_count=sum(r["status"] != "ok" or r["bundle_status"] != "ok" for r in memory_rows + timing_rows),
                                     repeat_status_counts=dict(counts))
-                    common._save_metadata(path, metadata)
+                    _save_metadata(path, metadata)
             for reference, paths in references.values():
                 if reference["status"] == "ok":
                     for phase, input_path in paths.items():
@@ -862,7 +930,7 @@ def run_next(study, events):
         if run_id not in RUN_IDS:
             raise ValueError("No additional runs are permitted")
         _history(study, run_id - 1, plan)
-        common._save_metadata(lock, dict(token=token, pid=os.getpid(), run_id=run_id, events=events))
+        _save_metadata(lock, dict(token=token, pid=os.getpid(), run_id=run_id, events=events))
         metadata.update(started_at_utc=common._now(), source_sha256=_sources(), environment=_environment(),
                         run_status="running", active_run_id=run_id)
         artifacts = [study / name for name in metadata["artifact_sha256"]]
@@ -870,7 +938,7 @@ def run_next(study, events):
         path = study / "metadata.json"
         original_error = None
         try:
-            common._save_metadata(path, metadata)
+            _save_metadata(path, metadata)
             metadata["git"] = _git_for_attempt(study)
             if plan["source_sha256"] != _sources() or not _same(plan["config"], _check_config()) or metadata["git"]["commit_hash"] != plan["implementation_commit"]:
                 raise ValueError("Study source/config/commit changed before launch")
@@ -921,7 +989,7 @@ def run_next(study, events):
                 if metadata["run_status"] in ("awaiting_next_run", "completed", "completed_with_failures"):
                     metadata["run_status"] = "finalization_failed"
                 try:
-                    common._save_metadata(path, metadata)
+                    _save_metadata(path, metadata)
                 except BaseException as save_error:
                     exc.add_note(f"Saving claim release failure also failed: {type(save_error).__name__}: {save_error}")
             if original_exception is None:

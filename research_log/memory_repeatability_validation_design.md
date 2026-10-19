@@ -39,6 +39,24 @@ Sample ID의 `stability_` 접두사는 동일 입력 명세의 식별자이며 s
 layout·CSV 열·원시값·실패 및 환경 provenance는 기존 수집 계약을 따른다. 예전 attempt01의 측정값을 복사하지 않는다.
 Init은 깨끗한 Git 상태에서 수행하고 동일 HEAD로 여섯 run을 진행한다. 중간 사건·상태 기록은 attempt 안에 남긴다.
 
+### Collector revision 2: metadata 파일 I/O 보완
+
+Revision 1의 새 attempt01은 metadata 원자 교체에서 Windows 접근 거부로 중단됐다. 그 원시값과 오류를
+실패 증거로 보존하고 이어 쓰지 않는다. 측정 정의는 유지하며 revision 2의 새 HEAD·새 attempt로 전체 run을 실행한다.
+Plan과 metadata에 `collector_revision=2`와 `metadata_io_policy`를 기록한다.
+
+새 runner의 Windows JSON 조회는 `CreateFileW`의 read/write/delete 공유를 허용한다.
+[Microsoft API 문서](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew)의 공유 규칙을 따른다.
+다만 실제 임시 fixture에서 열린 대상에 대한 `os.replace`는 삭제 공유가 있어도 실패했다.
+[CPython 이슈의 Windows 구현 설명](https://bugs.python.org/issue46003)과 일치하며, 공유 설정만으로 교체 성공을 보장하지 않는다.
+조회 핸들은 문자열을 읽은 즉시 닫고 JSON 해석은 그 뒤에 한다. 짧은 조회와의 교체 경합은 아래 저장 재시도로 처리한다.
+Metadata 저장에만 WinError 5·32·33인 경우 최대 5번, 대기 0.05·0.10·0.15·0.20초로 재시도한다.
+각 실패 시각·대상·순번·코드·오류를 metadata의 `metadata_save_retry_events`에 남긴다.
+영구 실패 시 첫 예외를 다시 발생시키고 기존 파일을 보존한다. 저장 자체가 끝내 실패하면 새 사건 목록도
+디스크에 반영되지 않을 수 있으므로 stderr와 마지막 성공 checkpoint를 함께 확인한다.
+다른 오류·중단은 즉시 전파한다. 이 제한적 저장 재시도는 압축기·worker·측정 job·중단 run 재시도가 아니다.
+측정 중 상태 조회에도 새 runner의 공유 조회 함수를 사용한다. 잠금 경합 fixture는 임시 파일에서만 재현한다.
+
 ## 3. 사전 후보 계산과 판단 범위
 
 후보 weight·score 식·reference anchor·memory_only/timing_only/joint 시나리오·정확한 tie order·방향 있는 run 쌍 regret은

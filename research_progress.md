@@ -633,6 +633,14 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **확인한 원인:** 원래 부모 예외는 metadata 임시 파일을 `metadata.json`으로 `os.replace`하는 단계의 `PermissionError: WinError 5`이다. Coordinator의 `Parent did not finish`는 그 후속 오류다. 종료 기록은 완료했고 소스 불변을 확인했으며 활성 claim은 없다. 압축 검증 실패·게임·네트워크 단절이 원인이라고 단정하지 않는다. 특정 잠금 보유 프로세스는 확인하지 못했다.
 - **보존/후속 수정:** 원시값·metadata·계획·사건·stderr를 원본 hash와 함께 별도 실패 증거로 보존한다. 중단 run을 이어 쓰거나 누락을 보충하지 않는다. 새 runner의 파일 조회에 삭제/이름 변경 공유를 허용하고 metadata 저장에만 한정한 bounded I/O 재시도를 fixture로 검증할 계획이다. 압축기나 측정 job을 재시도하는 변경은 아니다. 수정 후 새 attempt에서 전체 Run 1을 실행한다.
 
+### 동일 환경 반복 검증 metadata I/O 수정·검증 — 2026-10-19
+
+근거: [새 runner](src/memory_repeatability_validation.py), [설계의 collector revision 2](research_log/memory_repeatability_validation_design.md), [전용 테스트](tests/test_memory_repeatability_validation.py). 실패 attempt01 보존 commit: `b249d53`.
+
+- **구현 완료:** 새 runner에만 collector revision 2와 metadata I/O 정책을 추가했다. Windows 읽기 핸들을 JSON 해석 전에 닫으며 read/write/delete 공유를 허용한다. 실제 Windows에서는 삭제 공유가 있어도 열린 대상에 대한 교체가 실패할 수 있음을 fixture와 설계에 반영했다. Metadata 저장만 WinError 5·32·33에 최대 5번, 합계 최대 0.50초 backoff를 적용하고 첫 예외·재시도 사건을 보존한다. Worker·압축기·측정 job 재시도는 없다. 기존 공용 writer·기존 3일 runner·과거 결과는 수정하지 않았다.
+- **검증 완료:** `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_memory_repeatability_validation.py -v`에서 실제 잠금·해제·영구 잠금·공유 조회와 기존 수집 계약을 포함한 47개 테스트가 통과했다(26.226초). 최초 수정 테스트에서는 삭제 공유만으로 교체 성공을 가정한 한 항목이 실패했고, 실제 OS 동작에 맞춰 구현 설명과 fixture를 수정한 뒤 전체를 다시 통과했다. 테스트용 원시값은 연구 실측이 아니다. 전체 저장소 테스트·새 연구 Run 1 성공·독립 audit·후보 분석 완료를 주장하지 않는다.
+- **다음 실행/미완료:** 이 수정과 사전 기록을 commit하고 깨끗한 HEAD에서 새 attempt02를 init해 전체 Run 1을 실행한다. 첫 실패 attempt 원시값은 재사용하지 않는다. 성공 후에는 여섯 run 동안 HEAD를 유지하기 위해 중간 완료·제한 검사 기록을 attempt 안에 남긴다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
@@ -644,7 +652,7 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 승인 Run 1을 위한 오류 수정:** 새 설계 attempt01이 metadata 교체 접근 거부로 중단됐으므로 원본을 보존하고 새 runner의 metadata I/O 처리와 조회 방식을 보완·검증한다. 수정한 깨끗한 HEAD의 별도 attempt에서 전체 Run 1을 실행하며 이전 일부 원시값을 정상 결과로 재사용하지 않는다. 날짜·시각·간격 제한은 없고 공식 4지표 전환은 미완료이다.
+**사용자 승인 Run 1 실행:** 새 설계 attempt01 중단 증거를 보존했고 collector revision 2의 metadata I/O 수정과 47개 전용 테스트를 완료했다. 수정한 깨끗한 HEAD의 별도 attempt02에서 전체 Run 1을 실행하며 이전 일부 원시값을 정상 결과로 재사용하지 않는다. 실제 완료·제한 검사는 attempt 안에 기록한다. 날짜·시각·간격 제한은 없고 공식 4지표 전환은 미완료이다.
 
 현재는 기존 3일 설계 attempt01을 보존한 상태에서 사용자 승인에 따라 별도 동일 환경 반복 설계와 runner를 검증했다. 새 Run 1의 실제 결과는 후속 metadata로 확인한다. 전체 실측·새 프로토콜 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
 
