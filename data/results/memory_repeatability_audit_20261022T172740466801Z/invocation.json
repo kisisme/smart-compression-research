@@ -1,0 +1,28 @@
+{
+  "started_at_utc": "2026-10-22T17:27:40.467805+00:00",
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "research_log.verify_memory_repeatability_validation",
+    "--experiment-dir",
+    "data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02",
+    "--replacement-dir",
+    "data/results/memory_run02_replacement_20261022T103143486097Z",
+    "--output",
+    "data\\results\\memory_repeatability_audit_20261022T172740466801Z\\audit.json"
+  ],
+  "python_version": "3.14.4",
+  "git_head_at_invocation": "f4dc8c76f92600834c7785caaae6c989602ce669",
+  "audit_source_state": "new auditor/test additions not committed at invocation; exact audit dependency hashes in report",
+  "fixture_validation": {
+    "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_verify_memory_repeatability_validation.py -v",
+    "tests_run": 24,
+    "elapsed_seconds": 303.075,
+    "result": "OK",
+    "source": "actual successful unittest console result"
+  },
+  "test_source_sha256": "a809392f449eb5725fa578e50a6fd883d4559637b6c6d5129ab8af57dafacbd0",
+  "return_code": 0,
+  "finished_at_utc": "2026-10-22T17:27:49.990377+00:00"
+}
