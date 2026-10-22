@@ -6,7 +6,7 @@
 
 최신 실제 실행 확인: 2026-10-22. 별도 동일 환경 반복 검증 attempt02의 Run 1~6 수집을 마감했다. Run 1·3·4·5·6은 정상 완료했고 Run 2의 timeout 3건을 포함한 전체 최종 상태는 `completed_with_failures`이다. 기존 3일 설계 attempt01은 당시 일정 경과의 미완료 증거로 그대로 보존한다.
 
-최신 진행: 같은 환경 반복 검증 `memory_repeatability_v1`의 여섯 run 원시 기록·제한된 저장 검사·마감 집계를 보존했다. 수집 마감과 전체 정상 성공을 구분하며 새 프로토콜 전용 독립 audit·분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
+최신 진행: 같은 환경 반복 검증 `memory_repeatability_v1`의 여섯 run 수집과 보존을 마감한 뒤, 사용자가 절전 영향을 받은 Run 2 전체 재측정과 활성 결과 덮어쓰기를 명시적으로 지시했다. 원본 전체 snapshot 보존·별도 재측정·검증 후 교체를 처리하는 전용 도구와 사전 변경 기록을 준비하고 fixture 검증을 완료했다. 실제 재측정·교체는 아래 준비 기록 시점에 미실행이다. 새 설계/교체 변경 전용 독립 audit·분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
 
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
@@ -663,6 +663,16 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **환경·범위:** Run 6 사전 관측은 외부 전원 미연결·배터리 62%였고 전원 로그에는 공급원 변경 이벤트가 있었다. 사용자 보고와 관측을 구분했으며 연속 AC나 게임 미실행을 인증하지 않았다. 전원·절전·덮개 설정은 바꾸지 않았다. 이번 작업에서 단위 테스트·학습·새 후보 score 계산은 수행하지 않았다.
 - **Git 보존/미완료:** 여섯 run이 종료됐으므로 측정 HEAD 고정을 마감하고 진행 문서와 실제 원본 증거를 로컬 commit으로 보존한다. 공식 3지표 정의와 memory `validation_only`·`score_inclusion=false`는 유지한다. 새 설계 전용 독립 audit·분석·채택 판단과 공식 4지표 전환은 미완료다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
+### Run 2 전체 재측정·활성 결과 교체 준비 — 2026-10-22
+
+근거: [사전 변경 기록](research_log/memory_run02_replacement_amendment.md), [교체 도구](research_log/replace_memory_repeatability_run02.py), [전용 테스트](tests/test_replace_memory_repeatability_run02.py). 시작 HEAD: `d0f801d`.
+
+- **사용자 지시:** “전체 재측정으로 다시 하고, 덮어씌우는걸로 가자.” 대상은 논의 중인 Run 2 전체이며 나머지 다섯 run은 유지한다. 이전 설계의 재측정·덮어쓰기 제한에 대한 이번 명시적 변경이며 공식 3지표 정의는 변경하지 않는다.
+- **구현 완료:** 원본 attempt 전체 hash snapshot, 같은 입력·job 순서·memory/timing 전체 측정, 새 출력 staging, 독립 계산에 의한 저장 중앙값·ratio·검증·행렬 검사, 검증 후 활성 경로 교체, 실패 시 비삭제 rollback, 현재 summary/coordinator/manifest 갱신을 구현했다. 실제 Run 2 재측정은 Run 6 이후이며 시각을 소급하지 않는다. 원래 수집 실패와 교체 후 활성 결과를 구분한다. 측정 함수·worker·config·원래 설계 소스는 변경하지 않았다.
+- **검증 완료:** 전용 인위적 fixture 13개 테스트가 통과했다(1.995초). 임시 폴더 접근 거부 때문에 샌드박스 실행은 실패했고 사용자 권한 실행으로 검증했다. 보관·설치·오류 rollback·절전 요청 해제·변조/잘못된 중앙값/중복 key/요청 ID 탐지·실패 pair 공란·실제 시각 순서·활성 manifest 및 coordinator 갱신을 확인했다. 전체 저장소 테스트는 실행하지 않았다.
+- **실제 사전 관측:** Python으로 원래 여섯 run의 저장 무결성 검사를 통과하고 Run 2 실패 반복 3건을 확인했다. 측정 소스 hash와 고정 환경이 원래 plan과 같았다. 실제 전원 관측 UTC 2026-10-22T10:29:26.165024+00:00은 AC 연결·배터리 80%, OS 부팅 시각 UTC 2026-10-22T08:18:28.5000000Z였다. 현재 Python 검사와 그 launcher 외 다른 Python 프로세스는 관측되지 않았다. 게임/업데이트 미실행을 인증하지 않는다. 임시 thread 절전 억제·복원 API를 실제 호출해 성공했다. 영구 전원 설정은 바꾸지 않았다.
+- **계획/미완료:** 사전 기록과 도구를 commit한 깨끗한 HEAD에서 한 번의 전체 Run 2 재측정을 실행한다. 다시 실패하거나 절전이 관측되면 새 원시값을 보존하고 교체하지 않는다. 성공 시 원본 보존·다른 run 불변을 대조하고 교체·검증 결과를 별도 기록한다. 변경 설계 전용 독립 audit·후보 분석·memory 채택은 이번 작업 범위가 아니다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - Memory 후속 검증의 새 동일 환경 반복 설계 전용 독립 audit·분석·채택 근거 확보와 공식 4지표 전환. 기존 3일 설계의 도구 구현·fixture 검증과 별도 동일 환경 설계의 여섯 run 수집은 완료했으나, 이번 attempt에는 timeout 3건이 있어 완전한 정상 행렬 조건을 충족하지 못한다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다.
@@ -674,9 +684,9 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**새 동일 환경 반복 설계 전용 독립 감사 구현·검증:** `memory_repeatability_v1` attempt02의 여섯 run 종료 증거를 대상으로 고정 계획·원시값·실패 처리·재현 근거를 독립적으로 확인하는 감사 기능을 구현하고 fixture로 검증한다. Run 2의 실패를 성공으로 바꾸지 않으며 감사 결과와 무관하게 원본은 보존한다. 후보 score·변동·regret 분석과 memory 채택 판단은 그 후 별도 작업이다.
+**사용자가 지시한 Run 2 전체 재측정·활성 결과 교체:** 사전 변경 기록과 검증된 교체 도구를 commit한 뒤 전체 Run 2를 한 번 재측정하고, 새 측정·저장 검증이 성공하면 기존 활성 Run 2 경로와 현재 요약을 교체한다. 원본은 별도 snapshot으로 보존한다. 그 후 새 설계와 이번 교체 변경을 이해하는 독립 감사 구현·검증이 다음 작업이다. 후보 score·변동·regret 분석과 memory 채택 판단은 감사 후 별도 작업이다.
 
-현재는 새 설계 attempt02의 수집을 `completed_with_failures`로 마감하고 제한된 저장 무결성 점검을 완료했다. 공식 memory 채택이나 4지표 전환은 하지 않았다. 이번 작업 범위에서 추가 run·부분 재측정·GUI·모델 학습·독립 audit 구현은 수행하지 않았다.
+현재 원래 attempt02는 `completed_with_failures`로 마감·보존돼 있다. 이번 재측정 준비 기록에서 실제 새 측정이나 활성 경로 교체 완료를 주장하지 않는다. 공식 memory 채택·4지표 전환·GUI·모델 학습·독립 audit 구현은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
