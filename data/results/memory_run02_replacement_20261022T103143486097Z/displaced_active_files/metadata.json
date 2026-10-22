@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "design_id": "memory_repeatability_v1",
+  "collector_revision": 2,
+  "metadata_io_policy": {
+    "max_save_attempts": 5,
+    "retry_winerrors": [
+      5,
+      32,
+      33
+    ],
+    "backoff_seconds": [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "windows_read_share": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "measurement_job_retry": false
+  },
+  "attempt_id": "attempt02",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "run_status": "completed_with_failures",
+  "started_at_utc": "2026-10-22T07:00:44.640801+00:00",
+  "source_sha256": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 5933846528,
+    "memory_load_percent": 82,
+    "pid": 33728,
+    "bytecode_disabled": true
+  },
+  "planned_source_sha256": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "subprocess_options": [
+    "-B",
+    "PYTHONDONTWRITEBYTECODE=1"
+  ],
+  "config": {
+    "compression": {
+      "gzip": {
+        "level": 9
+      },
+      "bz2": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "timing": {
+      "repeats": 5,
+      "timer": "time.perf_counter_ns",
+      "aggregate": "median"
+    },
+    "memory": {
+      "status": "validation_only",
+      "platform": "win32",
+      "metric": "peak_process_working_set_bytes",
+      "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "unit": "bytes",
+      "isolation": "fresh_subprocess_per_phase_repeat",
+      "repeats": 5,
+      "aggregate": "median",
+      "combined": "max_of_phase_medians"
+    },
+    "features": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "selection_modes": {
+      "archive": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "balanced": {
+        "compression_ratio": 0.5,
+        "compression_time": 0.25,
+        "decompression_time": 0.25
+      },
+      "fast_access": {
+        "compression_ratio": 0.3,
+        "compression_time": 0.2,
+        "decompression_time": 0.5
+      }
+    },
+    "baseline": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "group_column": "seed"
+    },
+    "decision_tree": {
+      "criterion": "gini",
+      "splitter": "best",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": null,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "criterion": "gini",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "min_weight_fraction_leaf": 0.0,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "bootstrap": true,
+      "oob_score": false,
+      "n_jobs": 1,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "max_samples": null,
+      "monotonic_cst": null
+    },
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ]
+  },
+  "repeat_count": 40320,
+  "failed_repeat_count": 3,
+  "validity_issues": [],
+  "analysis_status": "pending_independent_audit_and_analysis",
+  "technical_validity_status": "pending_independent_audit",
+  "git": {
+    "commit_hash": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+    "worktree_dirty": true,
+    "status_porcelain": "?? data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/\n"
+  },
+  "runs": [
+    {
+      "run_id": 1,
+      "return_code": 0,
+      "run_status": "completed",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-19T12:54:17.536392+00:00: ACLineStatus=0, battery=76%, active power plan Balanced GUID=381b4222-f694-41f0-9685-ff5bb260df2e. Current supply power-mode preference not re-probed; prior observation at 12:23:38 UTC was Best Power Efficiency GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. User reports sufficient battery to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report: no other research jobs; Steam gaming may run and game shutdown was not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light status monitoring by this agent.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "Possible brief internet disconnect/reconnect is user-reported, not a measured outage. New attempt02 first run, no preceding run within this attempt; reboot-since-previous is not applicable. Prior attempt01 aborted on metadata replacement WinError 5 and is preserved; full fresh run under collector revision 2 with no prior raw values reused. No clock/day/gap limits.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-19T12:54:20.986711+00:00",
+      "finished_at_utc": "2026-10-19T13:18:46.318195+00:00"
+    },
+    {
+      "run_id": 2,
+      "return_code": 1,
+      "run_status": "completed_with_failures",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-19T13:44:33.435839+00:00: ACLineStatus=1, battery=53%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. User reports battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "User explicitly requested Run 2 immediately after Run 1. Possible brief internet disconnect/reconnect is user-reported, not a measured outage. Same attempt, source, config and HEAD; actual run gap recorded by timestamps, with no clock/day/gap limits. Reboot-since-previous false is supported by same recorded OS boot time if checked; no reboot was reported in this continuous session.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-19T13:45:37.935528+00:00",
+      "finished_at_utc": "2026-10-19T23:49:24.180423+00:00"
+    },
+    {
+      "run_id": 3,
+      "return_code": 0,
+      "run_status": "completed",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-20T09:50:52.260243+00:00: ACLineStatus=1, battery=80%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "User explicitly chose Run 3 without partial remeasurement after Run 2 timeouts. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-20T09:50:55.742492+00:00",
+      "finished_at_utc": "2026-10-20T10:23:24.717879+00:00"
+    },
+    {
+      "run_id": 4,
+      "return_code": 0,
+      "run_status": "completed",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-20T10:32:17.732739+00:00: ACLineStatus=1, battery=37%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "User requested Run 4 after successful Run 3; prior Run 2 timeout records remain unchanged. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-20T10:32:20.768114+00:00",
+      "finished_at_utc": "2026-10-20T11:02:51.932917+00:00"
+    },
+    {
+      "run_id": 5,
+      "return_code": 0,
+      "run_status": "completed",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-21T07:13:54.128253+00:00: ACLineStatus=1, battery=71%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "User requested Run 5 after successful Run 4; prior Run 2 timeout records remain unchanged. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-21T07:23:22.619992+00:00",
+      "finished_at_utc": "2026-10-21T07:46:54.409695+00:00"
+    },
+    {
+      "run_id": 6,
+      "return_code": 0,
+      "run_status": "completed",
+      "operator_events": {
+        "power_mode": "Observed 2026-10-22T07:00:42.340171+00:00: ACLineStatus=0, battery=62%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredDCPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+        "manual_reboot_since_previous_run": false,
+        "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+        "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+        "other_events": "User requested Run 6 after successful Run 5; prior Run 2 timeout records remain unchanged. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+        "no_research_jobs_running": true
+      },
+      "started_at_utc": "2026-10-22T07:00:45.777913+00:00",
+      "finished_at_utc": "2026-10-22T07:27:29.070826+00:00"
+    }
+  ],
+  "study_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T124938284221Z_attempt02",
+  "attempt_started_at_utc": "2026-10-19T12:49:38.566262+00:00",
+  "environment_at_initialization": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 16261324800,
+    "memory_load_percent": 51,
+    "pid": 33716,
+    "bytecode_disabled": true
+  },
+  "memory_repeat_count": 20160,
+  "timing_repeat_count": 20160,
+  "job_count": 22176,
+  "planned_run_count": 6,
+  "planned_memory_repeat_count": 20160,
+  "planned_timing_repeat_count": 20160,
+  "sample_count": 84,
+  "failed_sample_count": 0,
+  "immutable_sha256": {
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "plan.json": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  "finished_at_utc": "2026-10-22T07:27:29.373143+00:00",
+  "run_status_before_finalization": "completed_with_failures",
+  "finalization_status": "completed",
+  "finalization_errors": [],
+  "artifact_sha256": {
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "plan.json": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "run_01_stdout.txt": "78999b434f7b1d2a9a3c75ab9f2462901a09a8e91bb9181b903292f67e03e0ff",
+    "run_01_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_01/metadata.json": "1bf93fc7ba3f5c493611d6e5ef424241afd343ec3ad4922894a8cebcdbabd64b",
+    "run_02_stdout.txt": "dbfa2ff146cd3ccd1b88dd539bc893d2604971294ad5b413294df6cc1b4cc4bf",
+    "run_02_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_02/metadata.json": "25464898cec732591fed361d6b9753680d5de2d9bcfcb800fb5d2742af81e000",
+    "run_03_stdout.txt": "cde7fdb0a1db62588b0009fcd5747ecb265b59aceb7445883124bb340b579a64",
+    "run_03_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_03/metadata.json": "a3f6c8bac6755db8038f1abbe7e4a4dc602bb5811675b24fb273c7b8f0ad166a",
+    "run_04_stdout.txt": "eb8606e377e08828ee32be0c0678709cc3731f4cf5e25cb224ebc104cc6914f7",
+    "run_04_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_04/metadata.json": "ae05e8be61ce8f122d729269a5cdc8be19e170bc386edc235fb4c6b73ea9de7b",
+    "run_05_stdout.txt": "31a5e3cb2af5dd5c6409f1b2a94c04c3381c975d25b55cf263e42ce369d87d2f",
+    "run_05_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_05/metadata.json": "88a158fb25ff09baafb5b1f297dcb141a8d895de403d452e9dbc3d5a4904413e",
+    "run_06_stdout.txt": "a7b3cfb0900096fbb324df3fc713f82721c768a941320285e69f1457c60fb3c3",
+    "run_06_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_06/metadata.json": "4d1c9d28e0360fbd3607898985a534290c2da2f1df7c8557c16d13219ff1b60c"
+  },
+  "source_sha256_at_end": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "environment_at_end": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 6097780736,
+    "memory_load_percent": 81,
+    "pid": 33728,
+    "bytecode_disabled": true
+  },
+  "immutable_sha256_at_end": {
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "plan.json": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  "provenance_unchanged": true,
+  "recording_checks_passed": false,
+  "active_run_id": 6
+}

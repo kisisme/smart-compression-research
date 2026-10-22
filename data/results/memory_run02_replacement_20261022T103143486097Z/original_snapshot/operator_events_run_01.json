@@ -1,0 +1,8 @@
+{
+  "power_mode": "Observed 2026-10-19T12:54:17.536392+00:00: ACLineStatus=0, battery=76%, active power plan Balanced GUID=381b4222-f694-41f0-9685-ff5bb260df2e. Current supply power-mode preference not re-probed; prior observation at 12:23:38 UTC was Best Power Efficiency GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. User reports sufficient battery to avoid shutdown; continuous AC not guaranteed.",
+  "manual_reboot_since_previous_run": false,
+  "concurrent_activity": "Latest user report: no other research jobs; Steam gaming may run and game shutdown was not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light status monitoring by this agent.",
+  "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+  "other_events": "Possible brief internet disconnect/reconnect is user-reported, not a measured outage. New attempt02 first run, no preceding run within this attempt; reboot-since-previous is not applicable. Prior attempt01 aborted on metadata replacement WinError 5 and is preserved; full fresh run under collector revision 2 with no prior raw values reused. No clock/day/gap limits.",
+  "no_research_jobs_running": true
+}

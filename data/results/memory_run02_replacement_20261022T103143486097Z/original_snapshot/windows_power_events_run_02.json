@@ -1,0 +1,176 @@
+[
+  {
+    "time_created_utc": "2026-10-19T23:55:07.7760291Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 157 to 158.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:55:07.7759046Z",
+    "Id": 507,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is exiting Modern Standby \r\n\r\nReason: Lid."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:55:06.8083575Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Connected, Reason: None"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:45.0668000Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Disconnected, Reason: Policy Setting"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:39.6692176Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 156 to 157.\r\n\r\nReason 55 \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:34.6381600Z",
+    "Id": 506,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is entering Modern Standby \r\n\r\nReason: Austerity Battery Drain Budget Exceeded."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:34.6357287Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 155 to 156.\r\n\r\nReason 55 \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:34.6348635Z",
+    "Id": 507,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is exiting Modern Standby \r\n\r\nReason: Austerity Battery Drain Budget Exceeded."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:54:34.6341650Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Connected, Reason: None"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:53:00.0621452Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Disconnected, Reason: Adaptive Connected Standby"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:52:53.6572504Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 154 to 155.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:52:53.5196793Z",
+    "Id": 506,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is entering Modern Standby \r\n\r\nReason: Lid."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:52:53.5183805Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 153 to 154.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:45:08.6717913Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 152 to 153.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:45:08.6715810Z",
+    "Id": 507,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is exiting Modern Standby \r\n\r\nReason: Lid."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:45:07.5604433Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Connected, Reason: None"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:32.4736628Z",
+    "Id": 172,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Connectivity state in standby: Disconnected, Reason: Adaptive Connected Standby"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:27.0876773Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 151 to 152.\r\n\r\nReason InputMouse \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:20.6138234Z",
+    "Id": 506,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is entering Modern Standby \r\n\r\nReason: AC/DC Display Burst Suppressed."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:20.6115670Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 150 to 151.\r\n\r\nReason InputMouse \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:20.6111192Z",
+    "Id": 507,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is exiting Modern Standby \r\n\r\nReason: AC/DC Display Burst Suppressed."
+  },
+  {
+    "time_created_utc": "2026-10-19T23:04:20.5228813Z",
+    "Id": 105,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Power source change."
+  },
+  {
+    "time_created_utc": "2026-10-19T18:29:58.3074753Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 149 to 150.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T18:29:48.2923122Z",
+    "Id": 506,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is entering Modern Standby \r\n\r\nReason: 16777220."
+  },
+  {
+    "time_created_utc": "2026-10-19T18:29:48.2903696Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 148 to 149.\r\n\r\nReason 16777220 \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T18:29:48.2899096Z",
+    "Id": 507,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is exiting Modern Standby \r\n\r\nReason: 16777220."
+  },
+  {
+    "time_created_utc": "2026-10-19T14:04:58.0090977Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 147 to 148.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  },
+  {
+    "time_created_utc": "2026-10-19T14:04:56.9248803Z",
+    "Id": 506,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system is entering Modern Standby \r\n\r\nReason: Lid."
+  },
+  {
+    "time_created_utc": "2026-10-19T14:04:56.9244570Z",
+    "Id": 566,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "The system session has transitioned from 146 to 147.\r\n\r\nReason PolicyChange \r\n\r\nBootId: 199"
+  }
+]

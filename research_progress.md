@@ -4,9 +4,9 @@
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
-최신 실제 실행 확인: 2026-10-22. 별도 동일 환경 반복 검증 attempt02의 Run 1~6 수집을 마감했다. Run 1·3·4·5·6은 정상 완료했고 Run 2의 timeout 3건을 포함한 전체 최종 상태는 `completed_with_failures`이다. 기존 3일 설계 attempt01은 당시 일정 경과의 미완료 증거로 그대로 보존한다.
+최신 실제 실행 확인: 2026-10-22. 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 같은 환경 반복 검증 `memory_repeatability_v1`의 여섯 run 수집과 보존을 마감한 뒤, 사용자가 절전 영향을 받은 Run 2 전체 재측정과 활성 결과 덮어쓰기를 명시적으로 지시했다. 원본 전체 snapshot 보존·별도 재측정·검증 후 교체를 처리하는 전용 도구와 사전 변경 기록을 준비하고 fixture 검증을 완료했다. 실제 재측정·교체는 아래 준비 기록 시점에 미실행이다. 새 설계/교체 변경 전용 독립 audit·분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
+최신 진행: 사용자 지시의 Run 2 전체 재측정·활성 결과 덮어쓰기와 저장 검증을 완료했다. 원본 attempt 전체 104개 파일은 별도 snapshot으로 보존했고 다른 다섯 run의 원시 파일·metadata 25개는 hash가 불변이다. 활성 summary/coordinator/manifest를 교체 사실과 실제 시각에 맞게 갱신했다. 새 설계/교체 변경 전용 독립 audit·분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
 
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
@@ -673,9 +673,21 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **실제 사전 관측:** Python으로 원래 여섯 run의 저장 무결성 검사를 통과하고 Run 2 실패 반복 3건을 확인했다. 측정 소스 hash와 고정 환경이 원래 plan과 같았다. 실제 전원 관측 UTC 2026-10-22T10:29:26.165024+00:00은 AC 연결·배터리 80%, OS 부팅 시각 UTC 2026-10-22T08:18:28.5000000Z였다. 현재 Python 검사와 그 launcher 외 다른 Python 프로세스는 관측되지 않았다. 게임/업데이트 미실행을 인증하지 않는다. 임시 thread 절전 억제·복원 API를 실제 호출해 성공했다. 영구 전원 설정은 바꾸지 않았다.
 - **계획/미완료:** 사전 기록과 도구를 commit한 깨끗한 HEAD에서 한 번의 전체 Run 2 재측정을 실행한다. 다시 실패하거나 절전이 관측되면 새 원시값을 보존하고 교체하지 않는다. 성공 시 원본 보존·다른 run 불변을 대조하고 교체·검증 결과를 별도 기록한다. 변경 설계 전용 독립 audit·후보 분석·memory 채택은 이번 작업 범위가 아니다.
 
+### Run 2 전체 재측정·활성 결과 교체 완료 — 2026-10-22
+
+근거: [활성 Run 2 완료 기록](data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/run_02_completion.md), [활성 집계](data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/collection_summary.json), [교체 실행 기록](data/results/memory_run02_replacement_20261022T103143486097Z/replacement.json), [교체 후 Python 검증](data/results/memory_run02_replacement_20261022T103143486097Z/post_replacement_verification.json), [원본 전체 snapshot](data/results/memory_run02_replacement_20261022T103143486097Z/original_snapshot/collection_summary.json). 실제 실행 HEAD는 `9a261e46d01f61e986d98eedc11f634eda19c863`이며 재사용한 측정 코드의 원래 기준은 `a8c3e47`이다.
+
+- **실제 실행 완료:** KST 2026-10-22T19:31:44.587980+09:00~2026-10-22T20:11:16.086534+09:00, 부모 wall 2371.498554초. Run 2 전체 3696개 job에서 memory 원시 3360행·timing 원시 3360행을 새로 측정했다. 전부 `ok`·`verified=True`, 실패 반복 0건·정상 pair 336개다. 기존 실패 세 job만 보충하지 않았고 자동 측정 재시도는 하지 않았다.
+- **교체 완료:** 사용자가 지정한 기존 `run_02/` 경로의 memory/timing 원시 CSV·집계·metadata를 새 결과로 교체하고 현재 coordinator·summary·관련 기록·증거 manifest를 갱신했다. `references.csv`는 새로 준비·검증한 결과가 기존과 byte 동일하다. 논리 슬롯은 2이며 실제 새 시각을 그대로 기록했다. 활성 상태는 `completed_after_run_replacement`, 실행 순서는 1→3→4→5→6→replacement 2다. 원래 1~6 순서 계약을 충족했다고 소급 주장하지 않고 `recording_checks_passed=false`와 변경 설계 독립 감사 대기를 구분해 둔다.
+- **원본 보존·검증 완료:** 원본 전체 104개 파일의 snapshot과 SHA-256 manifest, 설치 때 이동한 기존 파일을 보존했다. 최초 Run 2 timeout 3건과 실패 pair 공란도 그대로다. 다른 다섯 run의 원시 파일·metadata 25개는 hash 불변이다. 교체 후 Python으로 활성 여섯 슬롯의 전체 key·검증 flag·원시 중앙값·단위 변환·phase memory 최댓값·ratio, coordinator 산출물 hash와 활성 전체 manifest를 재대조했다. 현재 활성 원시는 memory 20160행·timing 20160행, 총 40320행이며 정상 pair 2016개·실패 반복 0건이다. 이 수치는 원본에 있었던 실패 기록을 삭제했다는 뜻이 아니다.
+- **파생 기록 마감:** 최초 설치가 포함한 `validated_ready_to_install` checkpoint도 별도로 보존한 뒤, 활성 교체 기록과 그 사본을 실제 `installed_and_verified` 결과로 마감하고 현재 manifest를 다시 계산했다. 이 마감은 측정 CSV·plan·sample·run metadata를 바꾸거나 측정을 재실행하지 않았다. 검사 코드는 session의 `finalize_and_verify_replacement.py`에 보존했다.
+- **환경 관측·한계:** 실행 전후 모두 AC 연결·배터리 80%를 관측했다. 해당 측정 시간 범위의 System 전원 사건 조회 결과는 빈 목록이고, 임시 idle 절전 억제 요청은 실제 성공·복원됐다. 연속 AC나 모든 OS 활동을 인증하지 않는다. 진행 중 상태 조회에서 Defender·PyCharm 등의 CPU 활동이 관측됐으나 지연 원인을 확정하지 않았고 전원 설정·프로세스·측정 정의를 바꾸지 않았다. 이 부모 wall은 준비·프로세스·저장 비용을 포함하며 codec 시간으로 해석하지 않는다.
+- **Git 검증:** staged 전체 공백 검사에서는 원본 보관 파일의 기존 EOF 빈 줄 경고가 있었다. 보관 바이트를 수정하지 않았으며 원본 snapshot·이동 보관 경로를 제외한 새 변경의 staged 공백 검사는 통과했다. Python으로 stage된 경로가 이번 작업 범위인지 확인하고 모든 staged blob과 실제 파일 바이트의 일치를 확인했다.
+- **검증 범위·미완료:** 사전 전용 fixture 테스트 13개를 통과한 도구로 실제 측정·교체·저장 재검증을 완료했다. 새 소스 변경이나 전체 suite 추가 실행은 없었다. 저장 무결성 검사는 변경 설계 전용 독립 프로토콜 audit가 아니다. 후보 score·변동·regret 분석·memory 공식 채택·4지표 전환은 미완료다. 현재 결과·원본 보관·진행 문서를 관련 파일만 stage하여 로컬 commit으로 보존하며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- Memory 후속 검증의 새 동일 환경 반복 설계 전용 독립 audit·분석·채택 근거 확보와 공식 4지표 전환. 기존 3일 설계의 도구 구현·fixture 검증과 별도 동일 환경 설계의 여섯 run 수집은 완료했으나, 이번 attempt에는 timeout 3건이 있어 완전한 정상 행렬 조건을 충족하지 못한다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다.
+- Memory 후속 검증의 새 동일 환경 반복 설계와 Run 2 교체 변경을 이해하는 전용 독립 audit·분석·채택 근거 확보 및 공식 4지표 전환. 최초 attempt02 수집의 timeout 3건을 보존한 뒤 사용자 지시로 Run 2 전체를 교체하여 활성 측정은 정상 행렬을 확보했지만, 실제 순서 변경과 별도 실행 HEAD를 포함하는 독립 audit·후보 분석은 미완료다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -684,13 +696,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자가 지시한 Run 2 전체 재측정·활성 결과 교체:** 사전 변경 기록과 검증된 교체 도구를 commit한 뒤 전체 Run 2를 한 번 재측정하고, 새 측정·저장 검증이 성공하면 기존 활성 Run 2 경로와 현재 요약을 교체한다. 원본은 별도 snapshot으로 보존한다. 그 후 새 설계와 이번 교체 변경을 이해하는 독립 감사 구현·검증이 다음 작업이다. 후보 score·변동·regret 분석과 memory 채택 판단은 감사 후 별도 작업이다.
+**새 동일 환경 설계·Run 2 교체 변경 전용 독립 감사 구현·검증:** 활성 측정과 원본 snapshot, 사전 변경 기록, 실제 시각·순서·실행 HEAD, 원시값·집계·실패 이력·보존 근거를 독립적으로 대조하는 감사 기능을 구현하고 fixture로 검증한다. 기존 3일 감사나 원래 순서 검사를 완화해 통과시키지 않는다. 후보 score·변동·regret 분석과 memory 채택 판단은 감사 후 별도 작업이다.
 
-현재 원래 attempt02는 `completed_with_failures`로 마감·보존돼 있다. 이번 재측정 준비 기록에서 실제 새 측정이나 활성 경로 교체 완료를 주장하지 않는다. 공식 memory 채택·4지표 전환·GUI·모델 학습·독립 audit 구현은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체를 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 공식 memory 채택·4지표 전환·GUI·모델 학습·독립 audit 구현은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-동일 환경 반복 검증 attempt02의 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이다. 이번 보존 commit은 측정 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
+동일 환경 반복 검증 attempt02의 최초 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이고 최초 여섯 run 수집 보존 commit은 `d0f801d`다. 이후 사용자 지시의 Run 2 전체 재측정·교체 실행 HEAD는 `9a261e46d01f61e986d98eedc11f634eda19c863`이며 기존 측정 함수·worker·설정 hash를 유지했다. 이번 결과 보존 commit은 그 실행 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
 
 기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`, 실측 준비 보존 commit은 `103d1cb`이다. Attempt01의 실제 init·Run 1 측정 실행 HEAD는 `f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7`이다. 이전 미완료 attempt 증거는 앞선 commit에 보존돼 있다. 이번에는 동일 환경 설계 여섯 run의 마감 증거와 최신 진행 상태를 보존하며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
@@ -703,6 +715,8 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `9a261e4`: 사용자 지시의 Run 2 전체 재측정·원본 보관·활성 결과 교체 도구, 사전 변경 기록과 전용 fixture 검증. 실제 재측정 실행 HEAD.
+- `d0f801d`: 최초 attempt02 여섯 run 수집 마감과 Run 2 timeout 증거 보존. 이번 Run 2 교체 작업의 시작 HEAD.
 - `a8c3e47`: collector revision 2 metadata I/O 보완·47개 전용 테스트 검증. 동일 환경 반복 검증 attempt02 전체 측정 HEAD.
 - `b249d53`: 새 설계 attempt01의 metadata 교체 실패·원시 증거 보존.
 - `7a0ea69`: 별도 동일 환경 반복 설계·runner 구현과 전용 검증.

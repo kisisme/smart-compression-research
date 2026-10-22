@@ -1,0 +1,8 @@
+{
+  "power_mode": "Observed 2026-10-20T10:32:17.732739+00:00: ACLineStatus=1, battery=37%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+  "manual_reboot_since_previous_run": false,
+  "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+  "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+  "other_events": "User requested Run 4 after successful Run 3; prior Run 2 timeout records remain unchanged. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+  "no_research_jobs_running": true
+}

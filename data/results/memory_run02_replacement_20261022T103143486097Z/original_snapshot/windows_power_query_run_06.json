@@ -1,0 +1,20 @@
+{
+  "observed_at_utc": "2026-10-22T07:29:10.6415562Z",
+  "query_start_utc": "2026-10-22T07:00:45.777913+00:00",
+  "query_end_utc": "2026-10-22T07:27:29.070826+00:00",
+  "log_name": "System",
+  "providers": [
+    "Microsoft-Windows-Kernel-Power",
+    "Microsoft-Windows-Power-Troubleshooter"
+  ],
+  "query_status": "queried",
+  "query_error": null,
+  "events": [
+    {
+      "time_created_utc": "2026-10-22T07:24:57.0939774Z",
+      "Id": 105,
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Message": "Power source change."
+    }
+  ]
+}

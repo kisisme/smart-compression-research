@@ -1,0 +1,368 @@
+{
+  "schema_version": 2,
+  "report_type": "active_collection_after_authorized_full_run_replacement_not_protocol_audit",
+  "generated_at_utc": "2026-10-22T11:11:20.851921+00:00",
+  "study_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T124938284221Z_attempt02",
+  "measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+  "replacement_execution_commit": "9a261e46d01f61e986d98eedc11f634eda19c863",
+  "run_count": 6,
+  "input_sample_count": 84,
+  "collection_execution_finished": true,
+  "limited_record_integrity_checks_passed": true,
+  "all_repeats_successful": true,
+  "collector_final_status": "completed_after_run_replacement",
+  "original_collection_all_repeats_successful": false,
+  "counts": {
+    "memory_rows": 20160,
+    "timing_rows": 20160,
+    "jobs": 22176,
+    "raw_rows": 40320,
+    "failed_repeats": 0,
+    "pairs": 2016,
+    "normal_pairs": 2016,
+    "failed_pairs": 0
+  },
+  "runs": [
+    {
+      "run_id": 1,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-19T12:54:20.986711+00:00",
+      "finished_at_utc": "2026-10-19T13:18:46.318195+00:00",
+      "duration_seconds": 1465.331484,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 2,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T10:31:44.587980+00:00",
+      "finished_at_utc": "2026-10-22T11:11:16.086534+00:00",
+      "duration_seconds": 2371.498554,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 3,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T09:50:55.742492+00:00",
+      "finished_at_utc": "2026-10-20T10:23:24.717879+00:00",
+      "duration_seconds": 1948.975387,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 4,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T10:32:20.768114+00:00",
+      "finished_at_utc": "2026-10-20T11:02:51.932917+00:00",
+      "duration_seconds": 1831.164803,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 5,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-21T07:23:22.619992+00:00",
+      "finished_at_utc": "2026-10-21T07:46:54.409695+00:00",
+      "duration_seconds": 1411.789703,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 6,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T07:00:45.777913+00:00",
+      "finished_at_utc": "2026-10-22T07:27:29.070826+00:00",
+      "duration_seconds": 1603.292913,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    }
+  ],
+  "active_execution_order": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    2
+  ],
+  "replacement": {
+    "amendment_id": "memory_repeatability_run02_replacement_v1",
+    "status": "validated_ready_to_install",
+    "session_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z",
+    "original_snapshot": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\original_snapshot",
+    "execution_git": {
+      "commit_hash": "9a261e46d01f61e986d98eedc11f634eda19c863",
+      "worktree_dirty": false,
+      "status_porcelain": ""
+    },
+    "adapter_sha256": {
+      "research_log/replace_memory_repeatability_run02.py": "5cb6fe3ffa9fa1db0338f0a1848a86f3f91c59df66008afaa967dc16c3ff5504",
+      "research_log/memory_run02_replacement_amendment.md": "148ff7241d672fca8bec0de704e9b17dd6b81d1ad88c059c2b94cf78b0e4ef99"
+    },
+    "original_measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+    "original_failed_repeats": 3,
+    "observations": {
+      "before": {
+        "observed_at_utc": "2026-10-22T10:31:41.694073+00:00",
+        "ac_line_status": 1,
+        "battery_percent": 80,
+        "boot_at": "2026-10-22T08:18:28.5000000Z",
+        "python_processes": [
+          {
+            "ProcessId": 19864,
+            "ParentProcessId": 11316,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          },
+          {
+            "ProcessId": 25932,
+            "ParentProcessId": 19864,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          }
+        ],
+        "observation_scope": "Point observations; user activity/updates not continuously certified"
+      },
+      "after": {
+        "observed_at_utc": "2026-10-22T11:11:17.547986+00:00",
+        "ac_line_status": 1,
+        "battery_percent": 80,
+        "boot_at": "2026-10-22T08:18:28.5000000Z",
+        "python_processes": [
+          {
+            "ProcessId": 19864,
+            "ParentProcessId": 11316,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          },
+          {
+            "ProcessId": 25932,
+            "ParentProcessId": 19864,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          }
+        ],
+        "observation_scope": "Point observations; user activity/updates not continuously certified"
+      }
+    },
+    "validation_only": true,
+    "score_inclusion": false,
+    "idle_sleep_inhibition": {
+      "api": "SetThreadExecutionState",
+      "requested_flags": 2147483649,
+      "previous_flags": 2147483648,
+      "acquired_at_utc": "2026-10-22T10:31:44.587384+00:00",
+      "limitation": "Manual sleep and lid closure are not prevented",
+      "restored": true,
+      "released_at_utc": "2026-10-22T11:11:16.127705+00:00"
+    },
+    "power_events": [],
+    "new_run_summary": {
+      "run_id": 2,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T10:31:44.587980+00:00",
+      "finished_at_utc": "2026-10-22T11:11:16.086534+00:00",
+      "duration_seconds": 2371.498554,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    "actual_active_execution_order": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      2
+    ],
+    "original_collection_status": "completed_with_failures",
+    "independent_protocol_audit_performed": false
+  },
+  "original_schedule_order_preserved": false,
+  "validation_only": true,
+  "score_inclusion": false,
+  "independent_protocol_audit_performed": false,
+  "candidate_score_analysis_performed": false,
+  "memory_formally_adopted": false,
+  "limits": [
+    "Original failed Run 2 and whole attempt preserved in original_snapshot.",
+    "Logical run slot 2 was measured after run 6 under an explicit amendment.",
+    "Earlier per-run reports/checkpoints describe the original archived collection.",
+    "Current saved-value checks are not an independent protocol audit or memory adoption."
+  ]
+}

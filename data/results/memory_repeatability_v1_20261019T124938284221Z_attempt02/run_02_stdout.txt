@@ -1,1 +1,1 @@
-{"failed_repeat_count": 3, "repeat_count": 6720, "run_id": 2, "run_status": "completed_with_failures"}
+{"run_status": "completed", "repeat_count": 6720, "failed_repeat_count": 0, "run_id": 2}

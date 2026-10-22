@@ -1,0 +1,73 @@
+{
+  "report_type": "post_replacement_limited_saved_record_verification_not_independent_protocol_audit",
+  "generated_at_utc": "2026-10-22T11:13:06.710552+00:00",
+  "saved_integrity_checks_passed": true,
+  "archive_file_count": 104,
+  "archive_hashes_match": true,
+  "unchanged_other_run_file_count": 25,
+  "unchanged_other_run_hashes_match": true,
+  "active_manifest_file_count": 104,
+  "active_manifest_complete": true,
+  "original_run_02_failed_repeats": 3,
+  "new_run_02": {
+    "run_id": 2,
+    "run_status": "completed",
+    "job_count": 3696,
+    "raw": {
+      "memory": {
+        "rows": 3360,
+        "status_counts": {
+          "ok": 3360
+        },
+        "verified_counts": {
+          "True": 3360
+        }
+      },
+      "timing": {
+        "rows": 3360,
+        "status_counts": {
+          "ok": 3360
+        },
+        "verified_counts": {
+          "True": 3360
+        }
+      }
+    },
+    "pair_count": 336,
+    "normal_pair_count": 336,
+    "failed_pair_count": 0,
+    "failed_repeat_count": 0,
+    "started_at_utc": "2026-10-22T10:31:44.587980+00:00",
+    "finished_at_utc": "2026-10-22T11:11:16.086534+00:00",
+    "duration_seconds": 2371.498554,
+    "preserved_failed_records": [],
+    "record_integrity_checks_passed": true
+  },
+  "active_totals": {
+    "jobs": 22176,
+    "memory_rows": 20160,
+    "timing_rows": 20160,
+    "failed_repeats": 0,
+    "pairs": 2016,
+    "verified_pairs": 2016
+  },
+  "active_execution_order": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    2
+  ],
+  "new_run_02_started_at_kst": "2026-10-22T19:31:44.587980+09:00",
+  "new_run_02_finished_at_kst": "2026-10-22T20:11:16.086534+09:00",
+  "execution_commit": "9a261e46d01f61e986d98eedc11f634eda19c863",
+  "measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+  "idle_sleep_inhibition_restored": true,
+  "power_event_query_result": [],
+  "original_collection_success_claimed": false,
+  "independent_protocol_audit_performed": false,
+  "candidate_score_analysis_performed": false,
+  "memory_formally_adopted": false,
+  "score_inclusion": false
+}

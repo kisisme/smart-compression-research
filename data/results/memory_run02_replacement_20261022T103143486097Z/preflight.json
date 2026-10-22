@@ -1,0 +1,378 @@
+{
+  "amendment_id": "memory_repeatability_run02_replacement_v1",
+  "status": "preparing",
+  "session_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z",
+  "original_snapshot": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\original_snapshot",
+  "execution_git": {
+    "commit_hash": "9a261e46d01f61e986d98eedc11f634eda19c863",
+    "worktree_dirty": false,
+    "status_porcelain": ""
+  },
+  "adapter_sha256": {
+    "research_log/replace_memory_repeatability_run02.py": "5cb6fe3ffa9fa1db0338f0a1848a86f3f91c59df66008afaa967dc16c3ff5504",
+    "research_log/memory_run02_replacement_amendment.md": "148ff7241d672fca8bec0de704e9b17dd6b81d1ad88c059c2b94cf78b0e4ef99"
+  },
+  "original_measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+  "original_failed_repeats": 3,
+  "observations": {
+    "before": {
+      "observed_at_utc": "2026-10-22T10:31:41.694073+00:00",
+      "ac_line_status": 1,
+      "battery_percent": 80,
+      "boot_at": "2026-10-22T08:18:28.5000000Z",
+      "python_processes": [
+        {
+          "ProcessId": 19864,
+          "ParentProcessId": 11316,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        },
+        {
+          "ProcessId": 25932,
+          "ParentProcessId": 19864,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        }
+      ],
+      "observation_scope": "Point observations; user activity/updates not continuously certified"
+    }
+  },
+  "validation_only": true,
+  "score_inclusion": false,
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 10278256640,
+    "memory_load_percent": 69,
+    "pid": 25932,
+    "bytecode_disabled": true
+  },
+  "plan_sha256": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+  "original_runs": [
+    {
+      "run_id": 1,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-19T12:54:20.986711+00:00",
+      "finished_at_utc": "2026-10-19T13:18:46.318195+00:00",
+      "duration_seconds": 1465.331484,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 2,
+      "run_status": "completed_with_failures",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3357,
+            "timeout": 3
+          },
+          "verified_counts": {
+            "True": 3357,
+            "": 3
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 333,
+      "failed_pair_count": 3,
+      "failed_repeat_count": 3,
+      "started_at_utc": "2026-10-19T13:45:37.935528+00:00",
+      "finished_at_utc": "2026-10-19T23:49:24.180423+00:00",
+      "duration_seconds": 36226.244895,
+      "preserved_failed_records": [
+        {
+          "kind": "memory",
+          "attempt_id": "attempt02",
+          "run_id": "2",
+          "sample_id": "stability_000023",
+          "algorithm": "zstd",
+          "phase": "decompress",
+          "repeat_index": "1",
+          "schedule_index": "3295",
+          "request_id": "attempt02:2:3295",
+          "started_at_utc": "2026-10-19T14:04:57.910062+00:00",
+          "finished_at_utc": "2026-10-19T18:29:49.625133+00:00",
+          "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"zstd\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000023_zstd_decompress.bin\", \"--expected-sha256\", \"a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745\"]",
+          "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+          "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+          "input_size": "21481",
+          "input_sha256": "fb275fab849fe8e15153e2a31a0e74b990e5d9eb1d254807c615012289a48db0",
+          "expected_output_sha256": "a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745",
+          "reference_roundtrip_verified": "True",
+          "bundle_status": "timeout",
+          "verified": "",
+          "status": "timeout",
+          "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'zstd', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000023_zstd_decompress.bin', '--expected-sha256', 'a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745']' timed out after 120 seconds",
+          "return_code": "",
+          "stdout": "",
+          "stderr": "",
+          "input_verified_before": "True",
+          "input_verified_after": "True",
+          "actual_output_sha256": "",
+          "measurement_method": "windows_get_process_memory_info_peak_working_set",
+          "peak_process_working_set_bytes": ""
+        },
+        {
+          "kind": "memory",
+          "attempt_id": "attempt02",
+          "run_id": "2",
+          "sample_id": "stability_000009",
+          "algorithm": "bz2",
+          "phase": "decompress",
+          "repeat_index": "4",
+          "schedule_index": "3313",
+          "request_id": "attempt02:2:3313",
+          "started_at_utc": "2026-10-19T18:29:58.076298+00:00",
+          "finished_at_utc": "2026-10-19T23:04:23.404860+00:00",
+          "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"bz2\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000009_bz2_decompress.bin\", \"--expected-sha256\", \"297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1\"]",
+          "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+          "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+          "input_size": "834",
+          "input_sha256": "338db17cd764825f44bf31c5f5ac99aab65ed77b721529938a5a727acec6cc07",
+          "expected_output_sha256": "297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1",
+          "reference_roundtrip_verified": "True",
+          "bundle_status": "timeout",
+          "verified": "",
+          "status": "timeout",
+          "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'bz2', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000009_bz2_decompress.bin', '--expected-sha256', '297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1']' timed out after 120 seconds",
+          "return_code": "",
+          "stdout": "{\"algorithm\": \"bz2\", \"operation\": \"decompress\", \"peak_process_working_set_bytes\": 24784896, \"verified\": true}\r\n",
+          "stderr": "",
+          "input_verified_before": "True",
+          "input_verified_after": "True",
+          "actual_output_sha256": "",
+          "measurement_method": "windows_get_process_memory_info_peak_working_set",
+          "peak_process_working_set_bytes": ""
+        },
+        {
+          "kind": "memory",
+          "attempt_id": "attempt02",
+          "run_id": "2",
+          "sample_id": "stability_000027",
+          "algorithm": "bz2",
+          "phase": "decompress",
+          "repeat_index": "1",
+          "schedule_index": "3320",
+          "request_id": "attempt02:2:3320",
+          "started_at_utc": "2026-10-19T23:04:26.649840+00:00",
+          "finished_at_utc": "2026-10-19T23:45:07.730427+00:00",
+          "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"bz2\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000027_bz2_decompress.bin\", \"--expected-sha256\", \"4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a\"]",
+          "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+          "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+          "input_size": "7118",
+          "input_sha256": "92a93f67038c4ae9f72fe2f9969f046c2d12936fd02aa7e72d15dffe918e6673",
+          "expected_output_sha256": "4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a",
+          "reference_roundtrip_verified": "True",
+          "bundle_status": "timeout",
+          "verified": "",
+          "status": "timeout",
+          "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'bz2', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000027_bz2_decompress.bin', '--expected-sha256', '4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a']' timed out after 120 seconds",
+          "return_code": "",
+          "stdout": "{\"algorithm\": \"bz2\", \"operation\": \"decompress\", \"peak_process_working_set_bytes\": 24961024, \"verified\": true}\r\n",
+          "stderr": "",
+          "input_verified_before": "True",
+          "input_verified_after": "True",
+          "actual_output_sha256": "",
+          "measurement_method": "windows_get_process_memory_info_peak_working_set",
+          "peak_process_working_set_bytes": ""
+        }
+      ],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 3,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T09:50:55.742492+00:00",
+      "finished_at_utc": "2026-10-20T10:23:24.717879+00:00",
+      "duration_seconds": 1948.975387,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 4,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T10:32:20.768114+00:00",
+      "finished_at_utc": "2026-10-20T11:02:51.932917+00:00",
+      "duration_seconds": 1831.164803,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 5,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-21T07:23:22.619992+00:00",
+      "finished_at_utc": "2026-10-21T07:46:54.409695+00:00",
+      "duration_seconds": 1411.789703,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    {
+      "run_id": 6,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T07:00:45.777913+00:00",
+      "finished_at_utc": "2026-10-22T07:27:29.070826+00:00",
+      "duration_seconds": 1603.292913,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    }
+  ],
+  "user_instruction": "전체 재측정으로 다시 하고, 덮어씌우는걸로 가자",
+  "actual_active_order_after_replacement": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    2
+  ]
+}

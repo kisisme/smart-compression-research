@@ -1,0 +1,72 @@
+{
+  "status": "installed",
+  "changes": [
+    {
+      "name": "collection_completion.md",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "collection_summary.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "evidence_manifest.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "limited_record_check_run_02.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "metadata.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "operator_context_run_02.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "operator_events_run_02.json",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "run_02",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "run_02_completion.md",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "run_02_replacement.json",
+      "old_moved": false,
+      "new_installed": true
+    },
+    {
+      "name": "run_02_stderr.txt",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "run_02_stdout.txt",
+      "old_moved": true,
+      "new_installed": true
+    },
+    {
+      "name": "windows_power_events_run_02.json",
+      "old_moved": true,
+      "new_installed": true
+    }
+  ],
+  "started_at_utc": "2026-10-22T11:11:21.183360+00:00",
+  "finished_at_utc": "2026-10-22T11:11:21.383533+00:00"
+}

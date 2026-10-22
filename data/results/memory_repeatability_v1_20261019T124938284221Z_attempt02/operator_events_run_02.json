@@ -1,8 +1,48 @@
 {
-  "power_mode": "Observed 2026-10-19T13:44:33.435839+00:00: ACLineStatus=1, battery=53%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. User reports battery sufficient to avoid shutdown; continuous AC not guaranteed.",
-  "manual_reboot_since_previous_run": false,
-  "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
-  "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
-  "other_events": "User explicitly requested Run 2 immediately after Run 1. Possible brief internet disconnect/reconnect is user-reported, not a measured outage. Same attempt, source, config and HEAD; actual run gap recorded by timestamps, with no clock/day/gap limits. Reboot-since-previous false is supported by same recorded OS boot time if checked; no reboot was reported in this continuous session.",
-  "no_research_jobs_running": true
+  "execution_amendment": "memory_repeatability_run02_replacement_v1",
+  "report_scope": "Observed snapshots, no new user activity confirmation",
+  "observations": {
+    "before": {
+      "observed_at_utc": "2026-10-22T10:31:41.694073+00:00",
+      "ac_line_status": 1,
+      "battery_percent": 80,
+      "boot_at": "2026-10-22T08:18:28.5000000Z",
+      "python_processes": [
+        {
+          "ProcessId": 19864,
+          "ParentProcessId": 11316,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        },
+        {
+          "ProcessId": 25932,
+          "ParentProcessId": 19864,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        }
+      ],
+      "observation_scope": "Point observations; user activity/updates not continuously certified"
+    },
+    "after": {
+      "observed_at_utc": "2026-10-22T11:11:17.547986+00:00",
+      "ac_line_status": 1,
+      "battery_percent": 80,
+      "boot_at": "2026-10-22T08:18:28.5000000Z",
+      "python_processes": [
+        {
+          "ProcessId": 19864,
+          "ParentProcessId": 11316,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        },
+        {
+          "ProcessId": 25932,
+          "ParentProcessId": 19864,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        }
+      ],
+      "observation_scope": "Point observations; user activity/updates not continuously certified"
+    }
+  }
 }

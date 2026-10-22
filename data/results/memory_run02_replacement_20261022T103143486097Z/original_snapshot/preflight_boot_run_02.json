@@ -1,0 +1,6 @@
+﻿{
+    "observed_at_utc":  "2026-10-19T13:48:05.3776121Z",
+    "last_boot_at_local":  "2026-10-15T22:06:37.6973080+09:00",
+    "run_01_preflight_boot_at_local":  "2026-10-15T22:06:37.6973080+09:00",
+    "same_boot_verified_before_launch":  true
+}

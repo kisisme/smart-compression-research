@@ -1,0 +1,8 @@
+[
+  {
+    "time_created_utc": "2026-10-22T07:24:57.0939774Z",
+    "Id": 105,
+    "ProviderName": "Microsoft-Windows-Kernel-Power",
+    "Message": "Power source change."
+  }
+]

@@ -1,425 +1,234 @@
 {
-  "schema_version": 1,
-  "report_type": "byte_preservation_manifest_for_local_git",
-  "generated_at_utc": "2026-10-22T07:50:31.114239+00:00",
-  "measurement_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
-  "manifest_self_excluded": true,
-  "files": {
-    ".gitattributes": {
-      "bytes": 8,
-      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
-    },
-    "check_collection_closure.py": {
-      "bytes": 10024,
-      "sha256": "3c9aa0b9be952a0bb6b803a0d199f015268c18ad06a7dd110d006a8fe98f6a19"
-    },
-    "check_collection_closure_v2.py": {
-      "bytes": 10143,
-      "sha256": "b8f213c4a3ccc0be145b9cb1c3d2e7843cc07660d6e1004d365c2bf2c3f1cf60"
-    },
-    "check_saved_run_01.py": {
-      "bytes": 10548,
-      "sha256": "b62ad3ab4288aa9837e1381266a0f704afedf2688b744711ae76ecf0a82dbc53"
-    },
-    "check_saved_run_02.py": {
-      "bytes": 14319,
-      "sha256": "d6b74cf105a98ff74e95b5bc7f51203e5f3b0ee4410101dcc48963c0db738eb9"
-    },
-    "check_saved_run_03.py": {
-      "bytes": 15101,
-      "sha256": "2e57a54405a1285653408654f8f7280c4c5adffd7023c64d9ca6566847d1737a"
-    },
-    "check_saved_run_04.py": {
-      "bytes": 15101,
-      "sha256": "ef8aaa22f40b5b1880b4a3964c1355dfc20e9455d7f7f02674cc1c0d588c6a2a"
-    },
-    "check_saved_run_05.py": {
-      "bytes": 15102,
-      "sha256": "61c9a857cc8c51bdc91c4d8dbbd208cca7cca15df5814956fdba8bf667b841a0"
-    },
-    "check_saved_run_06.py": {
-      "bytes": 15287,
-      "sha256": "952227d0638002c13a4418516f3fb29807dbd50f5d117014191f3ead4ec3bfc6"
-    },
-    "collection_closure_check_error.json": {
-      "bytes": 562,
-      "sha256": "497eec71cfbaf3c98d31014f32fd3806fd0fc76695f34fb6d9dacd73d94fb2e6"
-    },
-    "collection_completion.md": {
-      "bytes": 3592,
-      "sha256": "51d698c7bf169b6b9d6b153f30a01a3bfcf01b4fa032e6de6a048441d768a56e"
-    },
-    "collection_summary.json": {
-      "bytes": 17528,
-      "sha256": "3270cb7d44c7b1e1c539e52351c23deb3ffb50c45ec0d357d6b45e16b7b526d0"
-    },
-    "limited_record_check_run_01.json": {
-      "bytes": 4538,
-      "sha256": "8a7281251be72b30ae993bf34343544e676a9137089394d9adabeab1804d960a"
-    },
-    "limited_record_check_run_02.json": {
-      "bytes": 16754,
-      "sha256": "c88793a7e256576717959ec6d400a0d7fdcc3a0e29953a73b44668fd384dc233"
-    },
-    "limited_record_check_run_03.json": {
-      "bytes": 10187,
-      "sha256": "fa444816575de5bc488f991601850745c0f08a046514e8aa4cadb699b0e6ade1"
-    },
-    "limited_record_check_run_04.json": {
-      "bytes": 12292,
-      "sha256": "69a8e4120ebda6e20781419d0b2162dbaebfbebecbda42d4cedba99e766b73c1"
-    },
-    "limited_record_check_run_05.json": {
-      "bytes": 14607,
-      "sha256": "43b4c58e4cdb1a98fb565291b6de4e557ed48f5967f8815bb2e680e64345993e"
-    },
-    "limited_record_check_run_06.json": {
-      "bytes": 17273,
-      "sha256": "7063438a5bf1e227e38da609a582b266ed691fc7d5354db45f51895fcea18f0b"
-    },
-    "metadata.json": {
-      "bytes": 21105,
-      "sha256": "00ee33a72f7e6cfa8185e166e3768da262148eead311d828f9cbcbc4c886fb69"
-    },
-    "monitor_run_03.py": {
-      "bytes": 1731,
-      "sha256": "4a82d16ebdc16a03d59c4534183d904fdc0268ffc889abd8eee1ae56a9b3d656"
-    },
-    "monitor_run_04.py": {
-      "bytes": 1730,
-      "sha256": "ff7ff2ec29c6ba21956d40c3c7041c52e09a4be7c971417bfddaa66202a787e3"
-    },
-    "monitor_run_05.py": {
-      "bytes": 1730,
-      "sha256": "77bb7d2f2677bcdb28fcdc72dc59eeae72f248ff28df33651f86901e41fb4cb0"
-    },
-    "monitor_run_06.py": {
-      "bytes": 1730,
-      "sha256": "2cf28ab41c99092e09776cef5c4784fc2b68dcfc6a444255fcad7f799f92db6b"
-    },
-    "operator_context_run_01.json": {
-      "bytes": 3508,
-      "sha256": "6aebb311aa9439e55bebf4a04200424b07a49ddcaf8c8d2e0134716dff961142"
-    },
-    "operator_context_run_02.json": {
-      "bytes": 5185,
-      "sha256": "37eab758f71e58daf70de4a96c269ec9e52fb7d0173da670115aec0df90f3d8d"
-    },
-    "operator_context_run_03.json": {
-      "bytes": 7469,
-      "sha256": "7c678b00e8a637b41bab408a3011817e146e241f8fa3a9844e74b1f3507a5399"
-    },
-    "operator_context_run_04.json": {
-      "bytes": 8895,
-      "sha256": "54071ebba747ca477e961762638ac84db86ff2deccf5912d51e1ffb1a8b270a3"
-    },
-    "operator_context_run_05.json": {
-      "bytes": 10599,
-      "sha256": "91bc8fb9d7e7674568f76e0cbfbd746ee6577c7c9368337396880c91f1a07bf0"
-    },
-    "operator_context_run_06.json": {
-      "bytes": 12302,
-      "sha256": "8dfe5ceee14ddf58de7b880eab342221158bdb5b40f4c9d7682bb6cb5e6a4da4"
-    },
-    "operator_events_run_01.json": {
-      "bytes": 1267,
-      "sha256": "7c32917377c8d5936f9a9f730fcd2f6aa77663f1fc720a3600945192c46d64e7"
-    },
-    "operator_events_run_02.json": {
-      "bytes": 1235,
-      "sha256": "3fa64fa67d2dae495aeca3948629d3516d306f1fd816870e48f7ca02111b1d08"
-    },
-    "operator_events_run_03.json": {
-      "bytes": 1277,
-      "sha256": "6ff00c3d1766b96cdf57f40fd7e620838ce2deac5ca6013874b8a9989899d588"
-    },
-    "operator_events_run_04.json": {
-      "bytes": 1288,
-      "sha256": "454409c6cc5c7952bdad48ec5ab3141667ca30c834811ec1efd26afcebd0ce3f"
-    },
-    "operator_events_run_05.json": {
-      "bytes": 1288,
-      "sha256": "4f72a3f3ad6012b878311d73b0cc678ca5d9cb548f88dfa349417874697467fa"
-    },
-    "operator_events_run_06.json": {
-      "bytes": 1288,
-      "sha256": "8924e35f4bfe1eb3a2b013152721c2d9448981d06a32981afa16761733a3ce60"
-    },
-    "plan.json": {
-      "bytes": 4423599,
-      "sha256": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8"
-    },
-    "preflight_boot_run_02.json": {
-      "bytes": 255,
-      "sha256": "66366fc833855fc4a46db1709d7f849a897cbcffec3b2f22ba8cc56710294bf7"
-    },
-    "preflight_run_03.py": {
-      "bytes": 6568,
-      "sha256": "108e1276455b51fb0e217919f9e0a5703678dea3c601473bf349960ffd55a71b"
-    },
-    "preflight_run_04.py": {
-      "bytes": 6240,
-      "sha256": "46ade3a76dda79af8030ccec9e724f1a23b4107bf6b47fb6c1fa0bab0054ef3b"
-    },
-    "preflight_run_05.py": {
-      "bytes": 6240,
-      "sha256": "343bcab4943d2e42ba0a5f1527797498211b0cc47f0345be10f3491c0686fd67"
-    },
-    "preflight_run_06.py": {
-      "bytes": 6240,
-      "sha256": "0bdb472ebf8a015b1823b4c46a33bdc5ee2456f1a4540f2e29690aefad94642f"
-    },
-    "run_01/measurements.csv": {
-      "bytes": 29743,
-      "sha256": "46d7cf47e9389dc45cf00bcc5517aed5a52115163cda6c8f3ba71b1b411f75c9"
-    },
-    "run_01/memory_repeats.csv": {
-      "bytes": 3495627,
-      "sha256": "2f5dc52c2216d196dd3ee6f2be2e0a84a6e0143b41bc6df904b74a7c4482bdfd"
-    },
-    "run_01/metadata.json": {
-      "bytes": 10158,
-      "sha256": "1bf93fc7ba3f5c493611d6e5ef424241afd343ec3ad4922894a8cebcdbabd64b"
-    },
-    "run_01/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_01/timing_repeats.csv": {
-      "bytes": 13422011,
-      "sha256": "43f9ef686c93c98d9eff72e0819cceb87d526fcb13a9c099c48fbfdaab89a899"
-    },
-    "run_01_completion.md": {
-      "bytes": 2983,
-      "sha256": "a9d4072cadbb4b7ee67335becc6d038c11e70ac6adc0c1e5c0039d8b268fe35d"
-    },
-    "run_01_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_01_stdout.txt": {
-      "bytes": 90,
-      "sha256": "78999b434f7b1d2a9a3c75ab9f2462901a09a8e91bb9181b903292f67e03e0ff"
-    },
-    "run_02/measurements.csv": {
-      "bytes": 29604,
-      "sha256": "d0812e250b87d8bb1cfd6d4812c1b4683d6071a8f7c80890bbedcd5cae1b6f5f"
-    },
-    "run_02/memory_repeats.csv": {
-      "bytes": 3496782,
-      "sha256": "5b537ff46ea7ca60659f02df8664713f9e7c9353950c59c1237aa98cea672d33"
-    },
-    "run_02/metadata.json": {
-      "bytes": 10805,
-      "sha256": "25464898cec732591fed361d6b9753680d5de2d9bcfcb800fb5d2742af81e000"
-    },
-    "run_02/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_02/timing_repeats.csv": {
-      "bytes": 13421044,
-      "sha256": "4e15d91709ce3d16d454b289b0b019f659dc72db8c7ddf487ca7760b33b9ebce"
-    },
-    "run_02_completion.md": {
-      "bytes": 4756,
-      "sha256": "ff09558a7828bac4a93c63d3899164e1fe892e9692b76a42824c8d9230bf4772"
-    },
-    "run_02_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_02_stdout.txt": {
-      "bytes": 104,
-      "sha256": "dbfa2ff146cd3ccd1b88dd539bc893d2604971294ad5b413294df6cc1b4cc4bf"
-    },
-    "run_03/measurements.csv": {
-      "bytes": 29789,
-      "sha256": "d4d47370a36e6577ab6accbb13d2037d3cb5d6172efa48a4560ecd99ad638caa"
-    },
-    "run_03/memory_repeats.csv": {
-      "bytes": 3495619,
-      "sha256": "e918b7fe105abe1c696460cf00a6b77ba779784be43b0cd0e2c17414858952b6"
-    },
-    "run_03/metadata.json": {
-      "bytes": 10166,
-      "sha256": "a3f6c8bac6755db8038f1abbe7e4a4dc602bb5811675b24fb273c7b8f0ad166a"
-    },
-    "run_03/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_03/timing_repeats.csv": {
-      "bytes": 13426384,
-      "sha256": "ee94ca199c9a26a3af2861cac2bcdc26db07d3fb7485ac0f918797d3efddb156"
-    },
-    "run_03_completion.md": {
-      "bytes": 4399,
-      "sha256": "be044c5033cbf2a6947abef3e62f1cb8eceaa465031d9ebaf9b4b16f29baad8f"
-    },
-    "run_03_monitor.jsonl": {
-      "bytes": 15721,
-      "sha256": "13eb33fbf4be527a28cfad619db1b9eb4b811ff902d00cff6cea1943bd9e2f5f"
-    },
-    "run_03_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_03_stdout.txt": {
-      "bytes": 90,
-      "sha256": "cde7fdb0a1db62588b0009fcd5747ecb265b59aceb7445883124bb340b579a64"
-    },
-    "run_04/measurements.csv": {
-      "bytes": 29767,
-      "sha256": "3bf1106cf96ed1a4ee1cef946208408a708ddf3311a0d3e90d98ab12f344162f"
-    },
-    "run_04/memory_repeats.csv": {
-      "bytes": 3495637,
-      "sha256": "e95c2c79281e754bfb47e94def9c886f5e157d4fa88aa8c0f90ba00aae5a2b51"
-    },
-    "run_04/metadata.json": {
-      "bytes": 10177,
-      "sha256": "ae05e8be61ce8f122d729269a5cdc8be19e170bc386edc235fb4c6b73ea9de7b"
-    },
-    "run_04/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_04/timing_repeats.csv": {
-      "bytes": 13425056,
-      "sha256": "9689d8c84d50251190a73af451fceb2f7e2ad9b63b26860663faa9c85a60fff4"
-    },
-    "run_04_completion.md": {
-      "bytes": 3986,
-      "sha256": "23c6ffe96eef385252d626dc7e006179555e72e9b470e019221a20ea546c2c51"
-    },
-    "run_04_monitor.jsonl": {
-      "bytes": 16497,
-      "sha256": "c839a0e62dc6795e71c3384e777ced3be63245f127ecc2161b623980a17be0fe"
-    },
-    "run_04_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_04_stdout.txt": {
-      "bytes": 90,
-      "sha256": "eb8606e377e08828ee32be0c0678709cc3731f4cf5e25cb224ebc104cc6914f7"
-    },
-    "run_05/measurements.csv": {
-      "bytes": 29731,
-      "sha256": "458fe429a4248da5c6e24d182839c85dc2d205437930f8f9a71db681007983d3"
-    },
-    "run_05/memory_repeats.csv": {
-      "bytes": 3495579,
-      "sha256": "4d938be658c8686a14cd74a14d6b7aef992c96d2605a25be97442bddf493cfb9"
-    },
-    "run_05/metadata.json": {
-      "bytes": 10177,
-      "sha256": "88a158fb25ff09baafb5b1f297dcb141a8d895de403d452e9dbc3d5a4904413e"
-    },
-    "run_05/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_05/timing_repeats.csv": {
-      "bytes": 13421673,
-      "sha256": "913010fd8b741d78739f6756c7d46cd8ba6d3eddd77401acd7773c1818060cbb"
-    },
-    "run_05_completion.md": {
-      "bytes": 4325,
-      "sha256": "e39ed11b2f2781095534d3630e0898674eb09064071a16e4f3a5af161d5213e7"
-    },
-    "run_05_monitor.jsonl": {
-      "bytes": 12205,
-      "sha256": "fa7e8a7a8d598481b5cce1994e95505087d34235866cf58beac5ac4478f1792c"
-    },
-    "run_05_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_05_stdout.txt": {
-      "bytes": 90,
-      "sha256": "31a5e3cb2af5dd5c6409f1b2a94c04c3381c975d25b55cf263e42ce369d87d2f"
-    },
-    "run_06/measurements.csv": {
-      "bytes": 29748,
-      "sha256": "6438e6ae773ba338cfcae195eb7050f917321306d10df52835295f26520be91a"
-    },
-    "run_06/memory_repeats.csv": {
-      "bytes": 3495591,
-      "sha256": "e94cc4123e77694f8289e4971bed3d59fa040bc46ea11abf46c48217048c6957"
-    },
-    "run_06/metadata.json": {
-      "bytes": 10177,
-      "sha256": "4d1c9d28e0360fbd3607898985a534290c2da2f1df7c8557c16d13219ff1b60c"
-    },
-    "run_06/references.csv": {
-      "bytes": 58399,
-      "sha256": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e"
-    },
-    "run_06/timing_repeats.csv": {
-      "bytes": 13422709,
-      "sha256": "c301057c9b45201849d2104dfcf852b6e6d511b5435a756e45fe3fcaaea719af"
-    },
-    "run_06_completion.md": {
-      "bytes": 2691,
-      "sha256": "79d70b3e8e08b2336013cd5cb211b7539dfa5d586cb8f0e35213c3e40abeee3c"
-    },
-    "run_06_monitor.jsonl": {
-      "bytes": 14355,
-      "sha256": "a1465af99ba3fa9f5ec6f84c562f0d9ef1676ba2d4ed00572e2eda6fa2121090"
-    },
-    "run_06_stderr.txt": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "run_06_stdout.txt": {
-      "bytes": 90,
-      "sha256": "a7b3cfb0900096fbb324df3fc713f82721c768a941320285e69f1457c60fb3c3"
-    },
-    "samples.csv": {
-      "bytes": 26325,
-      "sha256": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430"
-    },
-    "windows_power_events_run_02.json": {
-      "bytes": 6689,
-      "sha256": "f91f08c872473a68493a7079471b70704e7d0833ae5a633d95f05393c66adf1e"
-    },
-    "windows_power_events_run_03.json": {
-      "bytes": 175,
-      "sha256": "6064a617b87dc2c614a3965991988192902ec26e626e125c51a0888489f2a354"
-    },
-    "windows_power_events_run_04.json": {
-      "bytes": 3,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
-    },
-    "windows_power_events_run_05.json": {
-      "bytes": 3,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
-    },
-    "windows_power_events_run_06.json": {
-      "bytes": 175,
-      "sha256": "e0ef2437294c26a444b825e4c27f5c05473a01b29d97c95fd37b8c9fbda8648b"
-    },
-    "windows_power_query_run_03.json": {
-      "bytes": 551,
-      "sha256": "53f7204149b591913fcc8992cdd81aea6f6f9f4c3900b8a4052508b71f88d7fb"
-    },
-    "windows_power_query_run_04.json": {
-      "bytes": 376,
-      "sha256": "b304fa0db0c222d330ba53debca352f37c7216b5f7532fd66c90693311cca6e3"
-    },
-    "windows_power_query_run_05.json": {
-      "bytes": 376,
-      "sha256": "cc885d6bc6df4a17b942712ac8dd248d487cceb2e1530fde5e42d96ac266a95e"
-    },
-    "windows_power_query_run_06.json": {
-      "bytes": 551,
-      "sha256": "3830ba66e84d327f312a5ceba1e84c2d9d738c6595abf1d54e0a37000368df94"
-    }
+  "schema_version": 2,
+  "scope": "Active files after Run 2 replacement",
+  "generated_at_utc": "2026-10-22T11:13:06.101494+00:00",
+  "sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "check_collection_closure.py": "3c9aa0b9be952a0bb6b803a0d199f015268c18ad06a7dd110d006a8fe98f6a19",
+    "check_collection_closure_v2.py": "b8f213c4a3ccc0be145b9cb1c3d2e7843cc07660d6e1004d365c2bf2c3f1cf60",
+    "check_saved_run_01.py": "b62ad3ab4288aa9837e1381266a0f704afedf2688b744711ae76ecf0a82dbc53",
+    "check_saved_run_02.py": "d6b74cf105a98ff74e95b5bc7f51203e5f3b0ee4410101dcc48963c0db738eb9",
+    "check_saved_run_03.py": "2e57a54405a1285653408654f8f7280c4c5adffd7023c64d9ca6566847d1737a",
+    "check_saved_run_04.py": "ef8aaa22f40b5b1880b4a3964c1355dfc20e9455d7f7f02674cc1c0d588c6a2a",
+    "check_saved_run_05.py": "61c9a857cc8c51bdc91c4d8dbbd208cca7cca15df5814956fdba8bf667b841a0",
+    "check_saved_run_06.py": "952227d0638002c13a4418516f3fb29807dbd50f5d117014191f3ead4ec3bfc6",
+    "collection_closure_check_error.json": "497eec71cfbaf3c98d31014f32fd3806fd0fc76695f34fb6d9dacd73d94fb2e6",
+    "collection_completion.md": "d84ba173d89b445d7b2de2643462ae399ccd236e88ada4f88c5ecefdf140adaf",
+    "collection_summary.json": "614af61fc88078b55dbd0a663fee9029518533efc33374cb9c51479bc39f2d9d",
+    "limited_record_check_run_01.json": "8a7281251be72b30ae993bf34343544e676a9137089394d9adabeab1804d960a",
+    "limited_record_check_run_02.json": "3771ffcb9888322a11af3e4a745a6955aded70f1f8ce0237ded700f437756eff",
+    "limited_record_check_run_03.json": "fa444816575de5bc488f991601850745c0f08a046514e8aa4cadb699b0e6ade1",
+    "limited_record_check_run_04.json": "69a8e4120ebda6e20781419d0b2162dbaebfbebecbda42d4cedba99e766b73c1",
+    "limited_record_check_run_05.json": "43b4c58e4cdb1a98fb565291b6de4e557ed48f5967f8815bb2e680e64345993e",
+    "limited_record_check_run_06.json": "7063438a5bf1e227e38da609a582b266ed691fc7d5354db45f51895fcea18f0b",
+    "metadata.json": "5f38569369682424bef8db32659800930f6cdad2c70c84fe7a353d3cacfa86b9",
+    "monitor_run_03.py": "4a82d16ebdc16a03d59c4534183d904fdc0268ffc889abd8eee1ae56a9b3d656",
+    "monitor_run_04.py": "ff7ff2ec29c6ba21956d40c3c7041c52e09a4be7c971417bfddaa66202a787e3",
+    "monitor_run_05.py": "77bb7d2f2677bcdb28fcdc72dc59eeae72f248ff28df33651f86901e41fb4cb0",
+    "monitor_run_06.py": "2cf28ab41c99092e09776cef5c4784fc2b68dcfc6a444255fcad7f799f92db6b",
+    "operator_context_run_01.json": "6aebb311aa9439e55bebf4a04200424b07a49ddcaf8c8d2e0134716dff961142",
+    "operator_context_run_02.json": "32478b1ecafad6530c587b91b10e13abb12b1e0893b71205cfae38d939cbe755",
+    "operator_context_run_03.json": "7c678b00e8a637b41bab408a3011817e146e241f8fa3a9844e74b1f3507a5399",
+    "operator_context_run_04.json": "54071ebba747ca477e961762638ac84db86ff2deccf5912d51e1ffb1a8b270a3",
+    "operator_context_run_05.json": "91bc8fb9d7e7674568f76e0cbfbd746ee6577c7c9368337396880c91f1a07bf0",
+    "operator_context_run_06.json": "8dfe5ceee14ddf58de7b880eab342221158bdb5b40f4c9d7682bb6cb5e6a4da4",
+    "operator_events_run_01.json": "7c32917377c8d5936f9a9f730fcd2f6aa77663f1fc720a3600945192c46d64e7",
+    "operator_events_run_02.json": "caca12e59a4fb9888cfb7e5a07d7e8b183221b11d12d37a7bb41f215c3ad14cf",
+    "operator_events_run_03.json": "6ff00c3d1766b96cdf57f40fd7e620838ce2deac5ca6013874b8a9989899d588",
+    "operator_events_run_04.json": "454409c6cc5c7952bdad48ec5ab3141667ca30c834811ec1efd26afcebd0ce3f",
+    "operator_events_run_05.json": "4f72a3f3ad6012b878311d73b0cc678ca5d9cb548f88dfa349417874697467fa",
+    "operator_events_run_06.json": "8924e35f4bfe1eb3a2b013152721c2d9448981d06a32981afa16761733a3ce60",
+    "plan.json": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+    "preflight_boot_run_02.json": "66366fc833855fc4a46db1709d7f849a897cbcffec3b2f22ba8cc56710294bf7",
+    "preflight_run_03.py": "108e1276455b51fb0e217919f9e0a5703678dea3c601473bf349960ffd55a71b",
+    "preflight_run_04.py": "46ade3a76dda79af8030ccec9e724f1a23b4107bf6b47fb6c1fa0bab0054ef3b",
+    "preflight_run_05.py": "343bcab4943d2e42ba0a5f1527797498211b0cc47f0345be10f3491c0686fd67",
+    "preflight_run_06.py": "0bdb472ebf8a015b1823b4c46a33bdc5ee2456f1a4540f2e29690aefad94642f",
+    "run_01/measurements.csv": "46d7cf47e9389dc45cf00bcc5517aed5a52115163cda6c8f3ba71b1b411f75c9",
+    "run_01/memory_repeats.csv": "2f5dc52c2216d196dd3ee6f2be2e0a84a6e0143b41bc6df904b74a7c4482bdfd",
+    "run_01/metadata.json": "1bf93fc7ba3f5c493611d6e5ef424241afd343ec3ad4922894a8cebcdbabd64b",
+    "run_01/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_01/timing_repeats.csv": "43f9ef686c93c98d9eff72e0819cceb87d526fcb13a9c099c48fbfdaab89a899",
+    "run_01_completion.md": "a9d4072cadbb4b7ee67335becc6d038c11e70ac6adc0c1e5c0039d8b268fe35d",
+    "run_01_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_01_stdout.txt": "78999b434f7b1d2a9a3c75ab9f2462901a09a8e91bb9181b903292f67e03e0ff",
+    "run_02/measurements.csv": "dea89a3848347bcb2c812d580fd07a5403ab7875b3610794d16aacee941b4c7b",
+    "run_02/memory_repeats.csv": "a005d3ce8218aa7b3cab32679072b4dbe7879e6b95e3347309e61e7aaeb5c4cf",
+    "run_02/metadata.json": "eb0a35fd5de9c323eb17c7742b35c34eaeed03c93c4d903cfc7c85aecd38de91",
+    "run_02/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_02/timing_repeats.csv": "a84ba99bd5c4f4172a1444e49db1f1df2c7920024557e071cc75beb7a7512dcd",
+    "run_02_completion.md": "d84ba173d89b445d7b2de2643462ae399ccd236e88ada4f88c5ecefdf140adaf",
+    "run_02_replacement.json": "5a8c753ad097538ad99f38b5a1bbfdf69e08270a62d6a5e119919e9af42f8a7c",
+    "run_02_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_02_stdout.txt": "1aeee021ad5149e4b4dcf1cb2f433ae56e45150c9477ea3e134cee82386c5301",
+    "run_03/measurements.csv": "d4d47370a36e6577ab6accbb13d2037d3cb5d6172efa48a4560ecd99ad638caa",
+    "run_03/memory_repeats.csv": "e918b7fe105abe1c696460cf00a6b77ba779784be43b0cd0e2c17414858952b6",
+    "run_03/metadata.json": "a3f6c8bac6755db8038f1abbe7e4a4dc602bb5811675b24fb273c7b8f0ad166a",
+    "run_03/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_03/timing_repeats.csv": "ee94ca199c9a26a3af2861cac2bcdc26db07d3fb7485ac0f918797d3efddb156",
+    "run_03_completion.md": "be044c5033cbf2a6947abef3e62f1cb8eceaa465031d9ebaf9b4b16f29baad8f",
+    "run_03_monitor.jsonl": "13eb33fbf4be527a28cfad619db1b9eb4b811ff902d00cff6cea1943bd9e2f5f",
+    "run_03_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_03_stdout.txt": "cde7fdb0a1db62588b0009fcd5747ecb265b59aceb7445883124bb340b579a64",
+    "run_04/measurements.csv": "3bf1106cf96ed1a4ee1cef946208408a708ddf3311a0d3e90d98ab12f344162f",
+    "run_04/memory_repeats.csv": "e95c2c79281e754bfb47e94def9c886f5e157d4fa88aa8c0f90ba00aae5a2b51",
+    "run_04/metadata.json": "ae05e8be61ce8f122d729269a5cdc8be19e170bc386edc235fb4c6b73ea9de7b",
+    "run_04/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_04/timing_repeats.csv": "9689d8c84d50251190a73af451fceb2f7e2ad9b63b26860663faa9c85a60fff4",
+    "run_04_completion.md": "23c6ffe96eef385252d626dc7e006179555e72e9b470e019221a20ea546c2c51",
+    "run_04_monitor.jsonl": "c839a0e62dc6795e71c3384e777ced3be63245f127ecc2161b623980a17be0fe",
+    "run_04_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_04_stdout.txt": "eb8606e377e08828ee32be0c0678709cc3731f4cf5e25cb224ebc104cc6914f7",
+    "run_05/measurements.csv": "458fe429a4248da5c6e24d182839c85dc2d205437930f8f9a71db681007983d3",
+    "run_05/memory_repeats.csv": "4d938be658c8686a14cd74a14d6b7aef992c96d2605a25be97442bddf493cfb9",
+    "run_05/metadata.json": "88a158fb25ff09baafb5b1f297dcb141a8d895de403d452e9dbc3d5a4904413e",
+    "run_05/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_05/timing_repeats.csv": "913010fd8b741d78739f6756c7d46cd8ba6d3eddd77401acd7773c1818060cbb",
+    "run_05_completion.md": "e39ed11b2f2781095534d3630e0898674eb09064071a16e4f3a5af161d5213e7",
+    "run_05_monitor.jsonl": "fa7e8a7a8d598481b5cce1994e95505087d34235866cf58beac5ac4478f1792c",
+    "run_05_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_05_stdout.txt": "31a5e3cb2af5dd5c6409f1b2a94c04c3381c975d25b55cf263e42ce369d87d2f",
+    "run_06/measurements.csv": "6438e6ae773ba338cfcae195eb7050f917321306d10df52835295f26520be91a",
+    "run_06/memory_repeats.csv": "e94cc4123e77694f8289e4971bed3d59fa040bc46ea11abf46c48217048c6957",
+    "run_06/metadata.json": "4d1c9d28e0360fbd3607898985a534290c2da2f1df7c8557c16d13219ff1b60c",
+    "run_06/references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "run_06/timing_repeats.csv": "c301057c9b45201849d2104dfcf852b6e6d511b5435a756e45fe3fcaaea719af",
+    "run_06_completion.md": "79d70b3e8e08b2336013cd5cb211b7539dfa5d586cb8f0e35213c3e40abeee3c",
+    "run_06_monitor.jsonl": "a1465af99ba3fa9f5ec6f84c562f0d9ef1676ba2d4ed00572e2eda6fa2121090",
+    "run_06_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_06_stdout.txt": "a7b3cfb0900096fbb324df3fc713f82721c768a941320285e69f1457c60fb3c3",
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    "windows_power_events_run_02.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "windows_power_events_run_03.json": "6064a617b87dc2c614a3965991988192902ec26e626e125c51a0888489f2a354",
+    "windows_power_events_run_04.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "windows_power_events_run_05.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "windows_power_events_run_06.json": "e0ef2437294c26a444b825e4c27f5c05473a01b29d97c95fd37b8c9fbda8648b",
+    "windows_power_query_run_03.json": "53f7204149b591913fcc8992cdd81aea6f6f9f4c3900b8a4052508b71f88d7fb",
+    "windows_power_query_run_04.json": "b304fa0db0c222d330ba53debca352f37c7216b5f7532fd66c90693311cca6e3",
+    "windows_power_query_run_05.json": "cc885d6bc6df4a17b942712ac8dd248d487cceb2e1530fde5e42d96ac266a95e",
+    "windows_power_query_run_06.json": "3830ba66e84d327f312a5ceba1e84c2d9d738c6595abf1d54e0a37000368df94"
   },
-  "file_count": 103,
-  "total_bytes": 106957579,
-  "external_progress_sha256": "ec093b12481e92bb160808fd2331413bab2a0d8fa1e7b3ec7327a6233d895618",
-  "independent_protocol_audit_performed": false
+  "replacement": {
+    "amendment_id": "memory_repeatability_run02_replacement_v1",
+    "status": "installed_and_verified",
+    "session_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z",
+    "original_snapshot": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\original_snapshot",
+    "execution_git": {
+      "commit_hash": "9a261e46d01f61e986d98eedc11f634eda19c863",
+      "worktree_dirty": false,
+      "status_porcelain": ""
+    },
+    "adapter_sha256": {
+      "research_log/replace_memory_repeatability_run02.py": "5cb6fe3ffa9fa1db0338f0a1848a86f3f91c59df66008afaa967dc16c3ff5504",
+      "research_log/memory_run02_replacement_amendment.md": "148ff7241d672fca8bec0de704e9b17dd6b81d1ad88c059c2b94cf78b0e4ef99"
+    },
+    "original_measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+    "original_failed_repeats": 3,
+    "observations": {
+      "before": {
+        "observed_at_utc": "2026-10-22T10:31:41.694073+00:00",
+        "ac_line_status": 1,
+        "battery_percent": 80,
+        "boot_at": "2026-10-22T08:18:28.5000000Z",
+        "python_processes": [
+          {
+            "ProcessId": 19864,
+            "ParentProcessId": 11316,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          },
+          {
+            "ProcessId": 25932,
+            "ParentProcessId": 19864,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          }
+        ],
+        "observation_scope": "Point observations; user activity/updates not continuously certified"
+      },
+      "after": {
+        "observed_at_utc": "2026-10-22T11:11:17.547986+00:00",
+        "ac_line_status": 1,
+        "battery_percent": 80,
+        "boot_at": "2026-10-22T08:18:28.5000000Z",
+        "python_processes": [
+          {
+            "ProcessId": 19864,
+            "ParentProcessId": 11316,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          },
+          {
+            "ProcessId": 25932,
+            "ParentProcessId": 19864,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+          }
+        ],
+        "observation_scope": "Point observations; user activity/updates not continuously certified"
+      }
+    },
+    "validation_only": true,
+    "score_inclusion": false,
+    "idle_sleep_inhibition": {
+      "api": "SetThreadExecutionState",
+      "requested_flags": 2147483649,
+      "previous_flags": 2147483648,
+      "acquired_at_utc": "2026-10-22T10:31:44.587384+00:00",
+      "limitation": "Manual sleep and lid closure are not prevented",
+      "restored": true,
+      "released_at_utc": "2026-10-22T11:11:16.127705+00:00"
+    },
+    "power_events": [],
+    "new_run_summary": {
+      "run_id": 2,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T10:31:44.587980+00:00",
+      "finished_at_utc": "2026-10-22T11:11:16.086534+00:00",
+      "duration_seconds": 2371.498554,
+      "preserved_failed_records": [],
+      "record_integrity_checks_passed": true
+    },
+    "actual_active_execution_order": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      2
+    ],
+    "original_collection_status": "completed_with_failures",
+    "independent_protocol_audit_performed": false,
+    "finished_at_utc": "2026-10-22T11:11:22.227808+00:00",
+    "unchanged_other_run_files": true,
+    "original_snapshot_hashes_verified": true,
+    "record_scope": "Verified completed installation; pre-install checkpoint retained in session",
+    "transaction_status_file": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\installation.json"
+  },
+  "note": "Historical checkpoint hashes refer to original_snapshot, not this active manifest"
 }

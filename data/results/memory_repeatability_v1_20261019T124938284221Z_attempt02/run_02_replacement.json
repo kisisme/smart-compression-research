@@ -1,0 +1,122 @@
+{
+  "amendment_id": "memory_repeatability_run02_replacement_v1",
+  "status": "installed_and_verified",
+  "session_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z",
+  "original_snapshot": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\original_snapshot",
+  "execution_git": {
+    "commit_hash": "9a261e46d01f61e986d98eedc11f634eda19c863",
+    "worktree_dirty": false,
+    "status_porcelain": ""
+  },
+  "adapter_sha256": {
+    "research_log/replace_memory_repeatability_run02.py": "5cb6fe3ffa9fa1db0338f0a1848a86f3f91c59df66008afaa967dc16c3ff5504",
+    "research_log/memory_run02_replacement_amendment.md": "148ff7241d672fca8bec0de704e9b17dd6b81d1ad88c059c2b94cf78b0e4ef99"
+  },
+  "original_measurement_code_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+  "original_failed_repeats": 3,
+  "observations": {
+    "before": {
+      "observed_at_utc": "2026-10-22T10:31:41.694073+00:00",
+      "ac_line_status": 1,
+      "battery_percent": 80,
+      "boot_at": "2026-10-22T08:18:28.5000000Z",
+      "python_processes": [
+        {
+          "ProcessId": 19864,
+          "ParentProcessId": 11316,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        },
+        {
+          "ProcessId": 25932,
+          "ParentProcessId": 19864,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        }
+      ],
+      "observation_scope": "Point observations; user activity/updates not continuously certified"
+    },
+    "after": {
+      "observed_at_utc": "2026-10-22T11:11:17.547986+00:00",
+      "ac_line_status": 1,
+      "battery_percent": 80,
+      "boot_at": "2026-10-22T08:18:28.5000000Z",
+      "python_processes": [
+        {
+          "ProcessId": 19864,
+          "ParentProcessId": 11316,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        },
+        {
+          "ProcessId": 25932,
+          "ParentProcessId": 19864,
+          "Name": "python.exe",
+          "CommandLine": "\"C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe\" -B research_log/replace_memory_repeatability_run02.py --study-dir data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02"
+        }
+      ],
+      "observation_scope": "Point observations; user activity/updates not continuously certified"
+    }
+  },
+  "validation_only": true,
+  "score_inclusion": false,
+  "idle_sleep_inhibition": {
+    "api": "SetThreadExecutionState",
+    "requested_flags": 2147483649,
+    "previous_flags": 2147483648,
+    "acquired_at_utc": "2026-10-22T10:31:44.587384+00:00",
+    "limitation": "Manual sleep and lid closure are not prevented",
+    "restored": true,
+    "released_at_utc": "2026-10-22T11:11:16.127705+00:00"
+  },
+  "power_events": [],
+  "new_run_summary": {
+    "run_id": 2,
+    "run_status": "completed",
+    "job_count": 3696,
+    "raw": {
+      "memory": {
+        "rows": 3360,
+        "status_counts": {
+          "ok": 3360
+        },
+        "verified_counts": {
+          "True": 3360
+        }
+      },
+      "timing": {
+        "rows": 3360,
+        "status_counts": {
+          "ok": 3360
+        },
+        "verified_counts": {
+          "True": 3360
+        }
+      }
+    },
+    "pair_count": 336,
+    "normal_pair_count": 336,
+    "failed_pair_count": 0,
+    "failed_repeat_count": 0,
+    "started_at_utc": "2026-10-22T10:31:44.587980+00:00",
+    "finished_at_utc": "2026-10-22T11:11:16.086534+00:00",
+    "duration_seconds": 2371.498554,
+    "preserved_failed_records": [],
+    "record_integrity_checks_passed": true
+  },
+  "actual_active_execution_order": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    2
+  ],
+  "original_collection_status": "completed_with_failures",
+  "independent_protocol_audit_performed": false,
+  "finished_at_utc": "2026-10-22T11:11:22.227808+00:00",
+  "unchanged_other_run_files": true,
+  "original_snapshot_hashes_verified": true,
+  "record_scope": "Verified completed installation; pre-install checkpoint retained in session",
+  "transaction_status_file": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z\\installation.json"
+}
