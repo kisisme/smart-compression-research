@@ -4,9 +4,9 @@
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
-최신 실제 실행 확인: 2026-10-19. Memory 안정성 attempt01의 Run 1은 완료했으나 Run 2 시작 창이 미실행 상태로 경과했다. 전체 attempt는 미완료이며 유효한 일정으로 이어서 실행할 수 없다. 상세 증거와 제한된 검증 범위는 아래 실행 기록을 따른다.
+최신 실제 실행 확인: 2026-10-22. 별도 동일 환경 반복 검증 attempt02의 Run 1~6 수집을 마감했다. Run 1·3·4·5·6은 정상 완료했고 Run 2의 timeout 3건을 포함한 전체 최종 상태는 `completed_with_failures`이다. 기존 3일 설계 attempt01은 당시 일정 경과의 미완료 증거로 그대로 보존한다.
 
-최신 승인 변경: 같은 환경에서의 반복 검증 `memory_repeatability_v1`을 별도 설계로 추가했다. 기존 3일 검증을 소급 변경하지 않는다. 새 runner 전용 검증을 완료했으며 사용자가 요청한 새 설계 Run 1을 진행한다. 실제 실측 상태는 새 attempt metadata로 확인한다.
+최신 진행: 같은 환경 반복 검증 `memory_repeatability_v1`의 여섯 run 원시 기록·제한된 저장 검사·마감 집계를 보존했다. 수집 마감과 전체 정상 성공을 구분하며 새 프로토콜 전용 독립 audit·분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
 
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
@@ -42,7 +42,7 @@
 | Memory 안정성 후속 검증 runner | `src/memory_stability_validation.py`: 고정 계획·별도 부모 실행·worker 응답 검증·원시 CSV·종료 metadata 구현 및 전용 fixture 검증 완료. 실제 attempt 분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 저장 기록 감사 | `research_log/verify_memory_stability_validation.py`: 독립 audit 구현·전용 fixture 검증 완료. 실제 후속 검증 attempt 대상 audit·분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 분석기 | `research_log/analyze_memory_stability_validation.py`: 기존 초안 검토·전용 fixture 검증 완료. 독립 audit와 결합한 후보 score·regret·사전 판정·진단 및 새 출력 저장 구현. 실제 attempt 분석·전체 실측은 미완료 |
-| 동일 환경 memory·timing 반복 검증 runner | `src/memory_repeatability_validation.py`: 별도 study ID·설계에서 날짜·시각·run 간 간격 제한을 제거했다. 순서·비겹침·전체 수집·실패 보존은 유지하고 전용 테스트 41개를 통과했다. 새 프로토콜 전체 audit·분석 연결은 미구현 |
+| 동일 환경 memory·timing 반복 검증 runner | `src/memory_repeatability_validation.py`: 별도 study ID·시각 제한 없는 설계, 순서·비겹침·실패 보존 유지. Collector revision 2의 metadata I/O 보완과 전용 테스트 47개는 2026-10-19 완료했다. Attempt02 여섯 run 수집은 마감했으나 Run 2 timeout 3건이 남으며 새 프로토콜 전체 audit·분석 연결은 미구현 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -641,9 +641,31 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **검증 완료:** `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_memory_repeatability_validation.py -v`에서 실제 잠금·해제·영구 잠금·공유 조회와 기존 수집 계약을 포함한 47개 테스트가 통과했다(26.226초). 최초 수정 테스트에서는 삭제 공유만으로 교체 성공을 가정한 한 항목이 실패했고, 실제 OS 동작에 맞춰 구현 설명과 fixture를 수정한 뒤 전체를 다시 통과했다. 테스트용 원시값은 연구 실측이 아니다. 전체 저장소 테스트·새 연구 Run 1 성공·독립 audit·후보 분석 완료를 주장하지 않는다.
 - **다음 실행/미완료:** 이 수정과 사전 기록을 commit하고 깨끗한 HEAD에서 새 attempt02를 init해 전체 Run 1을 실행한다. 첫 실패 attempt 원시값은 재사용하지 않는다. 성공 후에는 여섯 run 동안 HEAD를 유지하기 위해 중간 완료·제한 검사 기록을 attempt 안에 남긴다.
 
+### 동일 환경 반복 검증 attempt02 여섯 run 수집 마감 — 2026-10-22
+
+근거: [수집 마감 기록](data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/collection_completion.md), [Python 마감 집계](data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/collection_summary.json), [Run 6 완료 기록](data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/run_06_completion.md). 모든 run의 측정 commit은 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이다.
+
+- **실행 완료:** 고정 시각·날짜·간격 제한이 없는 별도 설계에서 동일 입력 84개로 여섯 run을 같은 HEAD에서 수집했다. Run 6은 KST 2026-10-22T16:00:45.777913+09:00~2026-10-22T16:27:29.070826+09:00, 부모 wall 1603.292913초이며 새 실패는 0건이다. 전체 최종 상태는 `completed_with_failures`이다.
+- **실제 수량:** 전체 job 22176개, memory 20160행·timing 20160행으로 원시 40320행이다. Pair 기록 2016개 중 정상 flag 2013개·실패 3개다. 새로운 독립 학습 sample을 늘린 결과가 아니다.
+
+| Run | 상태 | Job | Memory 원시 행 | Timing 원시 행 | 실패 반복 | 검증 통과 pair / 전체 |
+|---|---|---:|---:|---:|---:|---:|
+| 1 | completed | 3696 | 3360 | 3360 | 0 | 336 / 336 |
+| 2 | completed_with_failures | 3696 | 3360 | 3360 | 3 | 333 / 336 |
+| 3 | completed | 3696 | 3360 | 3360 | 0 | 336 / 336 |
+| 4 | completed | 3696 | 3360 | 3360 | 0 | 336 / 336 |
+| 5 | completed | 3696 | 3360 | 3360 | 0 | 336 / 336 |
+| 6 | completed | 3696 | 3360 | 3360 | 0 | 336 / 336 |
+
+- **실패 보존:** Run 2의 memory decompress timeout 3건과 해당 pair 공란을 유지했다. Windows 절전/재개 관련 로그도 해당 attempt에 보존했다. 부분 재시도·누락 보충·다른 run 값으로 대체·실패 sample 삭제를 하지 않았다. 나머지 run 성공이 Run 2 실패를 해소하지 않는다. 최종 coordinator의 `recording_checks_passed=false`와 마감 집계의 `all_repeats_successful=false`를 정상 성공으로 바꾸지 않았다.
+- **제한 검사 완료:** 각 run 원시 key·검증 flag·양수 값·원시 중앙값·ns→ms·phase memory 최댓값·ratio와 소스/산출물 hash를 저장 검사로 대조했다. 마감 점검에서 전체 수량·실패·공란 pair·시각 순서/비겹침·참조 동일성과 과거 결합 파일 불변을 확인했다. 과거 보고서의 최상위 coordinator metadata hash는 당시 checkpoint이며 이후 정상 갱신되는 현재 값과 구분한다. 독립 프로토콜 audit나 후보 분석 완료를 뜻하지 않는다.
+- **점검 코드 오류 수정:** 최초 마감 점검에서 이미 존재하는 `run_id`를 중복 전달한 TypeError가 결과 파일 생성 전에 발생했다. 첫 코드·오류를 보존하고 별도 `check_collection_closure_v2.py`에서 합치기를 고친 뒤 저장 무결성 점검을 통과했다. 실측 원본·이전 검사 보고서·측정 job은 변경하거나 재실행하지 않았다.
+- **환경·범위:** Run 6 사전 관측은 외부 전원 미연결·배터리 62%였고 전원 로그에는 공급원 변경 이벤트가 있었다. 사용자 보고와 관측을 구분했으며 연속 AC나 게임 미실행을 인증하지 않았다. 전원·절전·덮개 설정은 바꾸지 않았다. 이번 작업에서 단위 테스트·학습·새 후보 score 계산은 수행하지 않았다.
+- **Git 보존/미완료:** 여섯 run이 종료됐으므로 측정 HEAD 고정을 마감하고 진행 문서와 실제 원본 증거를 로컬 commit으로 보존한다. 공식 3지표 정의와 memory `validation_only`·`score_inclusion=false`는 유지한다. 새 설계 전용 독립 audit·분석·채택 판단과 공식 4지표 전환은 미완료다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- Memory 후속 검증의 일정·환경 준비·전체 실측·실제 증거 audit·분석·사전 판정·채택 근거 확보 및 공식 4지표 전환. 채택 검토·사전 설계·timing worker·runner·독립 audit·분석기 구현과 전용 fixture 검증은 완료했으나 공식 채택은 계속 보류 권고이다.
+- Memory 후속 검증의 새 동일 환경 반복 설계 전용 독립 audit·분석·채택 근거 확보와 공식 4지표 전환. 기존 3일 설계의 도구 구현·fixture 검증과 별도 동일 환경 설계의 여섯 run 수집은 완료했으나, 이번 attempt에는 timeout 3건이 있어 완전한 정상 행렬 조건을 충족하지 못한다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -652,13 +674,15 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 승인 Run 1 실행:** 새 설계 attempt01 중단 증거를 보존했고 collector revision 2의 metadata I/O 수정과 47개 전용 테스트를 완료했다. 수정한 깨끗한 HEAD의 별도 attempt02에서 전체 Run 1을 실행하며 이전 일부 원시값을 정상 결과로 재사용하지 않는다. 실제 완료·제한 검사는 attempt 안에 기록한다. 날짜·시각·간격 제한은 없고 공식 4지표 전환은 미완료이다.
+**새 동일 환경 반복 설계 전용 독립 감사 구현·검증:** `memory_repeatability_v1` attempt02의 여섯 run 종료 증거를 대상으로 고정 계획·원시값·실패 처리·재현 근거를 독립적으로 확인하는 감사 기능을 구현하고 fixture로 검증한다. Run 2의 실패를 성공으로 바꾸지 않으며 감사 결과와 무관하게 원본은 보존한다. 후보 score·변동·regret 분석과 memory 채택 판단은 그 후 별도 작업이다.
 
-현재는 기존 3일 설계 attempt01을 보존한 상태에서 사용자 승인에 따라 별도 동일 환경 반복 설계와 runner를 검증했다. 새 Run 1의 실제 결과는 후속 metadata로 확인한다. 전체 실측·새 프로토콜 전체 audit·후보 분석과 사전 판정·공식 채택 및 4지표 전환은 미완료이다.
+현재는 새 설계 attempt02의 수집을 `completed_with_failures`로 마감하고 제한된 저장 무결성 점검을 완료했다. 공식 memory 채택이나 4지표 전환은 하지 않았다. 이번 작업 범위에서 추가 run·부분 재측정·GUI·모델 학습·독립 audit 구현은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`, 실측 준비 보존 commit은 `103d1cb`이다. Attempt01의 실제 init·Run 1 측정 실행 HEAD는 `f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7`이다. 이번에는 미완료 attempt의 원시 증거·후속 판단·진행 기록을 함께 보존하며, 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+동일 환경 반복 검증 attempt02의 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이다. 이번 보존 commit은 측정 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
+
+기존 완료 memory 실행의 구현·실험 기준 commit은 `3e9b2673a116b045a5e225203e0d175429192c09` (`Harden memory validation finalization and preserve failure evidence`)이며, 결과·audit 보존 commit은 `3ad85c9`이다. Runtime baseline 전체 실측·audit·진단의 실행 코드 commit은 `729b97b09771ea2a50e955b22f5023d49b61733a`이며, 결과·보고서 보존 commit은 `3f7e91ff36266cf2c0271a8ffc3b6a9d5edcafa4`이다. 채택 검토 commit은 `d8b329ad4305322a3bf49aa21d680585220cbb73`이다. 후속 검증 사전 설계 commit은 `82550b8`, timing worker 구현 commit은 `b1d0413`, runner 구현 commit은 `a47ba95`, 독립 audit 구현 commit은 `6bea53a`, 분석기 검증 commit은 `a51907f`, 실측 준비 보존 commit은 `103d1cb`이다. Attempt01의 실제 init·Run 1 측정 실행 HEAD는 `f66f5c0b7e1a41ffb1af66f42d961451e5bf8ac7`이다. 이전 미완료 attempt 증거는 앞선 commit에 보존돼 있다. 이번에는 동일 환경 설계 여섯 run의 마감 증거와 최신 진행 상태를 보존하며 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 기존 보존 실행이 기록한 마지막 관련 측정 구현·실행 코드 commit:
 
@@ -669,6 +693,9 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `a8c3e47`: collector revision 2 metadata I/O 보완·47개 전용 테스트 검증. 동일 환경 반복 검증 attempt02 전체 측정 HEAD.
+- `b249d53`: 새 설계 attempt01의 metadata 교체 실패·원시 증거 보존.
+- `7a0ea69`: 별도 동일 환경 반복 설계·runner 구현과 전용 검증.
 - `82041e8`: 기존 3일 설계 attempt01의 Run 1 원시 증거·제한된 검증·Run 2 시작 창 경과 사실 보존. 새 동일 환경 반복 설계 작업의 시작 HEAD.
 - `f66f5c0`: 즉시 착수 기록·사건 답변 대기 상태를 고정한 commit. Attempt01의 실제 init·Run 1 측정 실행 HEAD.
 - `103d1cb`: memory 안정성 실측 준비 문서·환경 snapshot·진행 기록 보존. 착수 기록 작업의 시작 HEAD.

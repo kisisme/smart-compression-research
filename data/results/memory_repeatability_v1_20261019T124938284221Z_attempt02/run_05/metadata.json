@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "design_id": "memory_repeatability_v1",
+  "collector_revision": 2,
+  "metadata_io_policy": {
+    "max_save_attempts": 5,
+    "retry_winerrors": [
+      5,
+      32,
+      33
+    ],
+    "backoff_seconds": [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "windows_read_share": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "measurement_job_retry": false
+  },
+  "attempt_id": "attempt02",
+  "measurement_status": "validation_only",
+  "score_inclusion": false,
+  "run_status": "completed",
+  "started_at_utc": "2026-10-21T07:23:22.619992+00:00",
+  "source_sha256": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 4804239360,
+    "memory_load_percent": 85,
+    "pid": 12984,
+    "bytecode_disabled": true
+  },
+  "planned_source_sha256": {
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e"
+  },
+  "subprocess_options": [
+    "-B",
+    "PYTHONDONTWRITEBYTECODE=1"
+  ],
+  "config": {
+    "compression": {
+      "gzip": {
+        "level": 9
+      },
+      "bz2": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "timing": {
+      "repeats": 5,
+      "timer": "time.perf_counter_ns",
+      "aggregate": "median"
+    },
+    "memory": {
+      "status": "validation_only",
+      "platform": "win32",
+      "metric": "peak_process_working_set_bytes",
+      "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "unit": "bytes",
+      "isolation": "fresh_subprocess_per_phase_repeat",
+      "repeats": 5,
+      "aggregate": "median",
+      "combined": "max_of_phase_medians"
+    },
+    "features": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "selection_modes": {
+      "archive": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "balanced": {
+        "compression_ratio": 0.5,
+        "compression_time": 0.25,
+        "decompression_time": 0.25
+      },
+      "fast_access": {
+        "compression_ratio": 0.3,
+        "compression_time": 0.2,
+        "decompression_time": 0.5
+      }
+    },
+    "baseline": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "group_column": "seed"
+    },
+    "decision_tree": {
+      "criterion": "gini",
+      "splitter": "best",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": null,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "criterion": "gini",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "min_weight_fraction_leaf": 0.0,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "bootstrap": true,
+      "oob_score": false,
+      "n_jobs": 1,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false,
+      "class_weight": null,
+      "ccp_alpha": 0.0,
+      "max_samples": null,
+      "monotonic_cst": null
+    },
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ]
+  },
+  "repeat_count": 6720,
+  "failed_repeat_count": 0,
+  "validity_issues": [],
+  "analysis_status": "pending_independent_audit_and_analysis",
+  "technical_validity_status": "pending_independent_audit",
+  "run_id": 5,
+  "git": {
+    "commit_hash": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+    "worktree_dirty": true,
+    "status_porcelain": "?? data/results/memory_repeatability_v1_20261019T124938284221Z_attempt02/\n"
+  },
+  "operator_events": {
+    "power_mode": "Observed 2026-10-21T07:13:54.128253+00:00: ACLineStatus=1, battery=71%, active power plan GUID=381b4222-f694-41f0-9685-ff5bb260df2e; PowerGetUserConfiguredACPowerMode return=0, current supply preference GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. Latest user report: battery sufficient to avoid shutdown; continuous AC not guaranteed.",
+    "manual_reboot_since_previous_run": false,
+    "concurrent_activity": "Latest user report carried forward: no other research jobs; Steam gaming may run, game shutdown not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light agent status monitoring.",
+    "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+    "other_events": "User requested Run 5 after successful Run 4; prior Run 2 timeout records remain unchanged. User later reported falling asleep and approving requests late; this is not established as the cause of worker timeouts. Run 2 Windows Modern Standby logs and failures retained. Same source/config/HEAD; actual gaps/timestamps preserved without clock/day/gap limits. No sleep or lid settings changed; continued wakefulness is not certified.",
+    "no_research_jobs_running": true
+  },
+  "planned_memory_repeat_count": 3360,
+  "planned_timing_repeat_count": 3360,
+  "memory_repeat_count": 3360,
+  "timing_repeat_count": 3360,
+  "job_count": 3696,
+  "repeat_status_counts": {
+    "ok": 6720
+  },
+  "finished_at_utc": "2026-10-21T07:46:54.409695+00:00",
+  "run_status_before_finalization": "completed",
+  "finalization_status": "completed",
+  "finalization_errors": [],
+  "artifact_sha256": {
+    "references.csv": "03b54000bc20128faf2203733290afe89f9d6ad3e66eefac86dc77d802f3328e",
+    "memory_repeats.csv": "4d938be658c8686a14cd74a14d6b7aef992c96d2605a25be97442bddf493cfb9",
+    "timing_repeats.csv": "913010fd8b741d78739f6756c7d46cd8ba6d3eddd77401acd7773c1818060cbb",
+    "measurements.csv": "458fe429a4248da5c6e24d182839c85dc2d205437930f8f9a71db681007983d3"
+  },
+  "source_sha256_at_end": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "environment_at_end": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 7772160000,
+    "memory_load_percent": 77,
+    "pid": 12984,
+    "bytecode_disabled": true
+  },
+  "immutable_sha256_at_end": {
+    "plan.json": "3f53c8516acd7e47b1e55482b741818eaf000dbaa5a2cb9cd489f49ea0e699e8",
+    "samples.csv": "87bde6f083f147fe91db19a8de7f7597a8b526613f9c55d254e714d76fd2a430",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  "provenance_unchanged": true,
+  "recording_checks_passed": true
+}

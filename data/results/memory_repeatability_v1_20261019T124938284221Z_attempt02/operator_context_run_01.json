@@ -1,0 +1,53 @@
+{
+  "study_design_id": "memory_repeatability_v1",
+  "collector_revision": 2,
+  "observed_at_utc": "2026-10-19T12:54:17.536392+00:00",
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "architecture": "AMD64",
+    "python_pointer_bits": 64,
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 18,
+    "total_physical_memory_bytes": 33804922880,
+    "package_versions": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.11.1",
+      "zstandard": "0.25.0"
+    },
+    "available_physical_memory_bytes": 16182079488,
+    "memory_load_percent": 52,
+    "pid": 29784,
+    "bytecode_disabled": true
+  },
+  "ac_line_status": 0,
+  "battery_percent": 76,
+  "active_power_plan_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+  "current_supply_preference_reprobed": false,
+  "source_sha256": {
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff"
+  },
+  "operator_report_scope": "Latest user report carried forward, not continuous observation",
+  "preflight_other_python_processes_observed": 0,
+  "events": {
+    "power_mode": "Observed 2026-10-19T12:54:17.536392+00:00: ACLineStatus=0, battery=76%, active power plan Balanced GUID=381b4222-f694-41f0-9685-ff5bb260df2e. Current supply power-mode preference not re-probed; prior observation at 12:23:38 UTC was Best Power Efficiency GUID=961cc777-2547-4f9d-8174-7d86181b8a7a. No power settings changed. User reports sufficient battery to avoid shutdown; continuous AC not guaranteed.",
+    "manual_reboot_since_previous_run": false,
+    "concurrent_activity": "Latest user report: no other research jobs; Steam gaming may run and game shutdown was not confirmed. Other ChatGPT activity not independently known. No Python processes observed in immediate preflight. Only light status monitoring by this agent.",
+    "os_update_events": "Latest user report: none. No independent continuous update monitoring.",
+    "other_events": "Possible brief internet disconnect/reconnect is user-reported, not a measured outage. New attempt02 first run, no preceding run within this attempt; reboot-since-previous is not applicable. Prior attempt01 aborted on metadata replacement WinError 5 and is preserved; full fresh run under collector revision 2 with no prior raw values reused. No clock/day/gap limits.",
+    "no_research_jobs_running": true
+  },
+  "old_attempt_reused": false,
+  "clock_windows_required": false
+}

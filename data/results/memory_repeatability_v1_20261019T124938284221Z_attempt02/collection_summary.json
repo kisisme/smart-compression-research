@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "report_type": "limited_saved_collection_closure_not_protocol_audit",
+  "generated_at_utc": "2026-10-22T07:34:49.299781+00:00",
+  "study_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T124938284221Z_attempt02",
+  "measurement_commit": "a8c3e47edc4f9d231605434c464b036240b7b2ed",
+  "run_count": 6,
+  "input_sample_count": 84,
+  "collection_execution_finished": true,
+  "limited_record_integrity_checks_passed": true,
+  "all_repeats_successful": false,
+  "collector_final_status": "completed_with_failures",
+  "counts": {
+    "memory_rows": 20160,
+    "timing_rows": 20160,
+    "jobs": 22176,
+    "raw_rows": 40320,
+    "failed_repeats": 3,
+    "pairs": 2016,
+    "normal_pairs": 2013,
+    "failed_pairs": 3
+  },
+  "runs": [
+    {
+      "run_id": 1,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-19T12:54:20.986711+00:00",
+      "finished_at_utc": "2026-10-19T13:18:46.318195+00:00",
+      "duration_seconds": 1465.331484,
+      "gap_since_previous_seconds": null,
+      "metadata_save_retry_event_count": 0
+    },
+    {
+      "run_id": 2,
+      "run_status": "completed_with_failures",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3357,
+            "timeout": 3
+          },
+          "verified_counts": {
+            "True": 3357,
+            "": 3
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 333,
+      "failed_pair_count": 3,
+      "failed_repeat_count": 3,
+      "started_at_utc": "2026-10-19T13:45:37.935528+00:00",
+      "finished_at_utc": "2026-10-19T23:49:24.180423+00:00",
+      "duration_seconds": 36226.244895,
+      "gap_since_previous_seconds": 1611.617333,
+      "metadata_save_retry_event_count": 1
+    },
+    {
+      "run_id": 3,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T09:50:55.742492+00:00",
+      "finished_at_utc": "2026-10-20T10:23:24.717879+00:00",
+      "duration_seconds": 1948.975387,
+      "gap_since_previous_seconds": 36091.562069,
+      "metadata_save_retry_event_count": 0
+    },
+    {
+      "run_id": 4,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-20T10:32:20.768114+00:00",
+      "finished_at_utc": "2026-10-20T11:02:51.932917+00:00",
+      "duration_seconds": 1831.164803,
+      "gap_since_previous_seconds": 536.050235,
+      "metadata_save_retry_event_count": 0
+    },
+    {
+      "run_id": 5,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-21T07:23:22.619992+00:00",
+      "finished_at_utc": "2026-10-21T07:46:54.409695+00:00",
+      "duration_seconds": 1411.789703,
+      "gap_since_previous_seconds": 73230.687075,
+      "metadata_save_retry_event_count": 0
+    },
+    {
+      "run_id": 6,
+      "run_status": "completed",
+      "job_count": 3696,
+      "raw": {
+        "memory": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        },
+        "timing": {
+          "rows": 3360,
+          "status_counts": {
+            "ok": 3360
+          },
+          "verified_counts": {
+            "True": 3360
+          }
+        }
+      },
+      "pair_count": 336,
+      "normal_pair_count": 336,
+      "failed_pair_count": 0,
+      "failed_repeat_count": 0,
+      "started_at_utc": "2026-10-22T07:00:45.777913+00:00",
+      "finished_at_utc": "2026-10-22T07:27:29.070826+00:00",
+      "duration_seconds": 1603.292913,
+      "gap_since_previous_seconds": 83631.368218,
+      "metadata_save_retry_event_count": 0
+    }
+  ],
+  "preserved_failed_records": [
+    {
+      "kind": "memory",
+      "attempt_id": "attempt02",
+      "run_id": "2",
+      "sample_id": "stability_000023",
+      "algorithm": "zstd",
+      "phase": "decompress",
+      "repeat_index": "1",
+      "schedule_index": "3295",
+      "request_id": "attempt02:2:3295",
+      "started_at_utc": "2026-10-19T14:04:57.910062+00:00",
+      "finished_at_utc": "2026-10-19T18:29:49.625133+00:00",
+      "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"zstd\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000023_zstd_decompress.bin\", \"--expected-sha256\", \"a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745\"]",
+      "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+      "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+      "input_size": "21481",
+      "input_sha256": "fb275fab849fe8e15153e2a31a0e74b990e5d9eb1d254807c615012289a48db0",
+      "expected_output_sha256": "a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745",
+      "reference_roundtrip_verified": "True",
+      "bundle_status": "timeout",
+      "verified": "",
+      "status": "timeout",
+      "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'zstd', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000023_zstd_decompress.bin', '--expected-sha256', 'a4b4423da2eeeb5d3ac5be95f39e1b3309908fc01145736b5f9e9afe9e693745']' timed out after 120 seconds",
+      "return_code": "",
+      "stdout": "",
+      "stderr": "",
+      "input_verified_before": "True",
+      "input_verified_after": "True",
+      "actual_output_sha256": "",
+      "measurement_method": "windows_get_process_memory_info_peak_working_set",
+      "peak_process_working_set_bytes": ""
+    },
+    {
+      "kind": "memory",
+      "attempt_id": "attempt02",
+      "run_id": "2",
+      "sample_id": "stability_000009",
+      "algorithm": "bz2",
+      "phase": "decompress",
+      "repeat_index": "4",
+      "schedule_index": "3313",
+      "request_id": "attempt02:2:3313",
+      "started_at_utc": "2026-10-19T18:29:58.076298+00:00",
+      "finished_at_utc": "2026-10-19T23:04:23.404860+00:00",
+      "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"bz2\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000009_bz2_decompress.bin\", \"--expected-sha256\", \"297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1\"]",
+      "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+      "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+      "input_size": "834",
+      "input_sha256": "338db17cd764825f44bf31c5f5ac99aab65ed77b721529938a5a727acec6cc07",
+      "expected_output_sha256": "297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1",
+      "reference_roundtrip_verified": "True",
+      "bundle_status": "timeout",
+      "verified": "",
+      "status": "timeout",
+      "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'bz2', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000009_bz2_decompress.bin', '--expected-sha256', '297a68d14d08447e9392bf14092d8eae7e5705b4f81a7140bf5814d58ffe0ba1']' timed out after 120 seconds",
+      "return_code": "",
+      "stdout": "{\"algorithm\": \"bz2\", \"operation\": \"decompress\", \"peak_process_working_set_bytes\": 24784896, \"verified\": true}\r\n",
+      "stderr": "",
+      "input_verified_before": "True",
+      "input_verified_after": "True",
+      "actual_output_sha256": "",
+      "measurement_method": "windows_get_process_memory_info_peak_working_set",
+      "peak_process_working_set_bytes": ""
+    },
+    {
+      "kind": "memory",
+      "attempt_id": "attempt02",
+      "run_id": "2",
+      "sample_id": "stability_000027",
+      "algorithm": "bz2",
+      "phase": "decompress",
+      "repeat_index": "1",
+      "schedule_index": "3320",
+      "request_id": "attempt02:2:3320",
+      "started_at_utc": "2026-10-19T23:04:26.649840+00:00",
+      "finished_at_utc": "2026-10-19T23:45:07.730427+00:00",
+      "argv": "[\"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\", \"-B\", \"-m\", \"src.memory_benchmark\", \"worker\", \"--operation\", \"decompress\", \"--algorithm\", \"bz2\", \"--input\", \"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000027_bz2_decompress.bin\", \"--expected-sha256\", \"4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a\"]",
+      "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+      "subprocess_options": "[\"-B\", \"PYTHONDONTWRITEBYTECODE=1\"]",
+      "input_size": "7118",
+      "input_sha256": "92a93f67038c4ae9f72fe2f9969f046c2d12936fd02aa7e72d15dffe918e6673",
+      "expected_output_sha256": "4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a",
+      "reference_roundtrip_verified": "True",
+      "bundle_status": "timeout",
+      "verified": "",
+      "status": "timeout",
+      "error": "Command '['C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe', '-B', '-m', 'src.memory_benchmark', 'worker', '--operation', 'decompress', '--algorithm', 'bz2', '--input', 'C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\Temp\\\\stability_phase_inputs_clks25yr\\\\stability_000027_bz2_decompress.bin', '--expected-sha256', '4acf6783b377edc1adcae7845f2d6c00d54f432402cb4766441a5cb9f3bb433a']' timed out after 120 seconds",
+      "return_code": "",
+      "stdout": "{\"algorithm\": \"bz2\", \"operation\": \"decompress\", \"peak_process_working_set_bytes\": 24961024, \"verified\": true}\r\n",
+      "stderr": "",
+      "input_verified_before": "True",
+      "input_verified_after": "True",
+      "actual_output_sha256": "",
+      "measurement_method": "windows_get_process_memory_info_peak_working_set",
+      "peak_process_working_set_bytes": ""
+    }
+  ],
+  "historical_report_hash_checks": [
+    {
+      "run_id": 1,
+      "checked_files": 13,
+      "mutable_coordinator_checkpoint_excluded": true
+    },
+    {
+      "run_id": 2,
+      "checked_files": 27,
+      "mutable_coordinator_checkpoint_excluded": true
+    },
+    {
+      "run_id": 3,
+      "checked_files": 44,
+      "mutable_coordinator_checkpoint_excluded": true
+    },
+    {
+      "run_id": 4,
+      "checked_files": 61,
+      "mutable_coordinator_checkpoint_excluded": true
+    },
+    {
+      "run_id": 5,
+      "checked_files": 78,
+      "mutable_coordinator_checkpoint_excluded": true
+    },
+    {
+      "run_id": 6,
+      "checked_files": 97,
+      "mutable_coordinator_checkpoint_excluded": false
+    }
+  ],
+  "checks": {
+    "claim_released": 1,
+    "no_unplanned_run": 1,
+    "six_planned_runs": 1,
+    "validation_only": 1,
+    "measurement_head_at_closure": 1,
+    "source_hash": 9,
+    "samples_hash": 1,
+    "sample_matrix": 1,
+    "reference_count": 1,
+    "coordinator_finalization": 1,
+    "coordinator_artifact_hash": 21,
+    "run_1_saved_limited_check": 1,
+    "run_1_finalization": 1,
+    "run_1_source": 1,
+    "run_1_artifact_hash": 4,
+    "run_1_same_reference": 1,
+    "run_1_historical_evidence_hash": 13,
+    "run_1_chronology": 1,
+    "run_1_memory_complete_keys": 1,
+    "run_1_memory_counts": 1,
+    "run_1_timing_complete_keys": 1,
+    "run_1_timing_counts": 1,
+    "run_1_pair_count": 1,
+    "run_1_failure_count": 1,
+    "run_1_status": 1,
+    "run_1_jobs": 1,
+    "run_1_stderr_empty": 1,
+    "run_2_saved_limited_check": 1,
+    "run_2_finalization": 1,
+    "run_2_source": 1,
+    "run_2_artifact_hash": 4,
+    "run_2_same_reference": 1,
+    "run_2_historical_evidence_hash": 27,
+    "run_2_chronology": 1,
+    "run_2_memory_complete_keys": 1,
+    "run_2_memory_counts": 1,
+    "run_2_timing_complete_keys": 1,
+    "run_2_timing_counts": 1,
+    "run_2_pair_count": 1,
+    "run_2_failed_pair_null": 3,
+    "run_2_failure_count": 1,
+    "run_2_status": 1,
+    "run_2_jobs": 1,
+    "run_2_stderr_empty": 1,
+    "run_3_saved_limited_check": 1,
+    "run_3_finalization": 1,
+    "run_3_source": 1,
+    "run_3_artifact_hash": 4,
+    "run_3_same_reference": 1,
+    "run_3_historical_evidence_hash": 44,
+    "run_3_chronology": 1,
+    "run_3_memory_complete_keys": 1,
+    "run_3_memory_counts": 1,
+    "run_3_timing_complete_keys": 1,
+    "run_3_timing_counts": 1,
+    "run_3_pair_count": 1,
+    "run_3_failure_count": 1,
+    "run_3_status": 1,
+    "run_3_jobs": 1,
+    "run_3_stderr_empty": 1,
+    "run_4_saved_limited_check": 1,
+    "run_4_finalization": 1,
+    "run_4_source": 1,
+    "run_4_artifact_hash": 4,
+    "run_4_same_reference": 1,
+    "run_4_historical_evidence_hash": 61,
+    "run_4_chronology": 1,
+    "run_4_memory_complete_keys": 1,
+    "run_4_memory_counts": 1,
+    "run_4_timing_complete_keys": 1,
+    "run_4_timing_counts": 1,
+    "run_4_pair_count": 1,
+    "run_4_failure_count": 1,
+    "run_4_status": 1,
+    "run_4_jobs": 1,
+    "run_4_stderr_empty": 1,
+    "run_5_saved_limited_check": 1,
+    "run_5_finalization": 1,
+    "run_5_source": 1,
+    "run_5_artifact_hash": 4,
+    "run_5_same_reference": 1,
+    "run_5_historical_evidence_hash": 78,
+    "run_5_chronology": 1,
+    "run_5_memory_complete_keys": 1,
+    "run_5_memory_counts": 1,
+    "run_5_timing_complete_keys": 1,
+    "run_5_timing_counts": 1,
+    "run_5_pair_count": 1,
+    "run_5_failure_count": 1,
+    "run_5_status": 1,
+    "run_5_jobs": 1,
+    "run_5_stderr_empty": 1,
+    "run_6_saved_limited_check": 1,
+    "run_6_finalization": 1,
+    "run_6_source": 1,
+    "run_6_artifact_hash": 4,
+    "run_6_same_reference": 1,
+    "run_6_historical_evidence_hash": 97,
+    "run_6_chronology": 1,
+    "run_6_memory_complete_keys": 1,
+    "run_6_memory_counts": 1,
+    "run_6_timing_complete_keys": 1,
+    "run_6_timing_counts": 1,
+    "run_6_pair_count": 1,
+    "run_6_failure_count": 1,
+    "run_6_status": 1,
+    "run_6_jobs": 1,
+    "run_6_stderr_empty": 1,
+    "coordinator_total_counts": 1,
+    "terminal_status": 1
+  },
+  "issues": [],
+  "validation_only": true,
+  "score_inclusion": false,
+  "independent_protocol_audit_performed": false,
+  "candidate_score_analysis_performed": false,
+  "memory_formally_adopted": false,
+  "limits": [
+    "A finished collection with failures is not a complete successful matrix.",
+    "Previous coordinator checkpoints in historical reports are intentionally mutable.",
+    "Per-run saved-record checks are not the pending independent protocol audit.",
+    "No failed repeat was retried, substituted or admitted as a normal result."
+  ]
+}

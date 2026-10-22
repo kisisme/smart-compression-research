@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-10-20T11:03:39.7518244Z",
+  "query_start_utc": "2026-10-20T10:32:20.768114+00:00",
+  "query_end_utc": "2026-10-20T11:02:51.932917+00:00",
+  "log_name": "System",
+  "providers": [
+    "Microsoft-Windows-Kernel-Power",
+    "Microsoft-Windows-Power-Troubleshooter"
+  ],
+  "query_status": "no_matching_events",
+  "query_error": null,
+  "events": []
+}

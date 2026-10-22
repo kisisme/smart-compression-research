@@ -1,0 +1,11 @@
+{
+  "report_type": "post_collection_check_code_error_not_measurement_failure",
+  "script": "check_collection_closure.py",
+  "error": "TypeError: dict() got multiple values for keyword argument 'run_id'",
+  "site": "failures_preserved += [dict(run_id=run_id, **row) for row in failed_rows]",
+  "collection_summary_written": false,
+  "measurement_retried": false,
+  "raw_files_modified": false,
+  "original_checker_preserved": true,
+  "correction": "Preserve each original failed row (which already has run_id) with dict(row) in check_collection_closure_v2.py."
+}
