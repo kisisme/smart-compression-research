@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 새 동일 환경 설계와 Run 2 교체 변경 전용 독립 감사 구현·전용 fixture 테스트 24개·실제 저장 기록 감사가 완료됐다. 원본 attempt 전체 104개 파일과 실패 3건 보존, 나머지 run 불변, 활성 원시값·집계·교체 이력·실제 순서·실행 HEAD를 대조했다. 보고서는 기존 입력 밖 새 경로에 저장했고 실험 파일·기존 manifest는 변경하지 않았다. 후보 분석·memory 채택 판단은 미완료다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다.
+최신 진행: 새 동일 환경 설계·Run 2 교체 결과 전용 후보 분석기 연결, 전용 fixture 11개와 기존 계산부 회귀 13개 검증, 실제 분석·저장 재검증을 완료했다. 독립 감사를 다시 통과한 입력에 고정 기준을 적용한 결과는 `memory_stability_not_satisfied`다. Memory span 336개 조건 중 96개가 한계를 넘었으며 core의 joint regret도 한계를 넘었다. Memory-only 선택은 유지됐지만 사전 span 기준을 면제하지 않는다. 공식 기준은 계속 3지표이며 memory는 `validation_only`이다. 채택 검토 문서의 후속 갱신과 공식 전환은 별도 작업이다.
 
 실제 설정: [config/experiment_config.json](config/experiment_config.json)
 
@@ -42,8 +42,9 @@
 | Memory 안정성 후속 검증 runner | `src/memory_stability_validation.py`: 고정 계획·별도 부모 실행·worker 응답 검증·원시 CSV·종료 metadata 구현 및 전용 fixture 검증 완료. 실제 attempt 분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 저장 기록 감사 | `research_log/verify_memory_stability_validation.py`: 독립 audit 구현·전용 fixture 검증 완료. 실제 후속 검증 attempt 대상 audit·분석·전체 실측은 미완료 |
 | Memory 안정성 후속 검증 분석기 | `research_log/analyze_memory_stability_validation.py`: 기존 초안 검토·전용 fixture 검증 완료. 독립 audit와 결합한 후보 score·regret·사전 판정·진단 및 새 출력 저장 구현. 실제 attempt 분석·전체 실측은 미완료 |
-| 동일 환경 memory·timing 반복 검증 runner | `src/memory_repeatability_validation.py`: 별도 study ID·시각 제한 없는 설계. Collector revision 2의 metadata I/O 보완과 전용 테스트 47개는 2026-10-19 완료했다. Attempt02 최초 수집 실패를 보존한 뒤 사용자 지시로 Run 2 전체를 재측정·교체했다. 활성 원시 기록은 정상 행렬이며 실제 순서 변경을 포함하는 별도 독립 감사를 통과했다. 후보 분석 연결은 미완료 |
+| 동일 환경 memory·timing 반복 검증 runner | `src/memory_repeatability_validation.py`: 별도 study ID·시각 제한 없는 설계. Collector revision 2의 metadata I/O 보완과 전용 테스트 47개는 2026-10-19 완료했다. Attempt02 최초 수집 실패를 보존한 뒤 사용자 지시로 Run 2 전체를 재측정·교체했다. 활성 원시 기록은 정상 행렬이며 실제 순서 변경을 포함하는 별도 독립 감사와 후보 분석을 완료했다. 후보 안정성 기준은 미충족 |
 | 동일 환경·Run 2 교체 저장 기록 독립 감사 | `research_log/verify_memory_repeatability_validation.py`: 전용 fixture 24개 및 실제 활성/원본/교체 session의 저장 일관성 감사 통과. 원래 실패·phase 검증·집계·보관·실제 순서·실행 HEAD·보고서 저장 시 입력 불변을 대조한다. 과학적 memory 채택과 구분 |
+| 동일 환경·Run 2 교체 후보 분석 | `research_log/analyze_memory_repeatability_validation.py`: 기존 순수 수치 계산부를 새 독립 감사와 연결했다. 전용 fixture 11개·기존 계산부 회귀 13개 및 실제 분석·출력 재검증 완료. 고정 weight·anchor·exact tie·세 시나리오·전체 방향별 regret를 계산했으며 결과는 `memory_stability_not_satisfied`. 공식 memory 채택과 구분 |
 
 Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다. 모델·설정·소스·환경의 일치와 모델 해시를 검사하며, 기존 출력 경로를 덮어쓰지 않는다. 선택 전에 benchmark나 네 압축기 비교를 실행하지 않는다.
 
@@ -698,9 +699,20 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **Git 검증:** 이번 기능의 staged 파일 9개만 확인하고 실제 파일과 staged blob의 바이트 일치를 Python으로 대조했다. 전체 공백 검사의 실행 기록/실제 stdout CRLF 및 EOF 경고는 원본 출력 형식으로 보존했다. `cr-at-eol`을 허용하고 실제 stdout만 제외한 코드·문서·나머지 보고서의 staged 공백 검사는 통과했다.
 - **보존·판정 한계:** 기존 활성/원본/session 파일과 manifest를 수정하지 않았고 새 압축 측정·실제 복원·후보 score·regret 계산·모델 학습은 실행하지 않았다. 입력 metadata에 남은 `pending` 또는 `independent_protocol_audit_performed=false`는 작성 당시 checkpoint로 유지하며 현재 감사 판정은 새 보고서를 참조한다. 이 감사는 저장 증거 일관성 확인이며 실행·연속 환경·절전 인과관계를 독립 인증하거나 날짜 간 안정성·과학적 memory 채택을 입증하지 않는다. 후보 분석·공식 4지표 전환은 미완료다. 이번 기능 코드·테스트·새 보고서·진행 문서만 로컬 commit으로 보존하며 문서 자신의 commit hash를 넣는 반복 commit은 만들지 않는다.
 
+### 동일 환경·Run 2 교체 후보 분석 완료 — 2026-10-23
+
+근거: [새 후보 분석기](research_log/analyze_memory_repeatability_validation.py), [전용 테스트](tests/test_analyze_memory_repeatability_validation.py), [실제 결과 안내](data/results/memory_repeatability_analysis_20261023T001439769818Z/README.md), [전체 진단·판정](data/results/memory_repeatability_analysis_20261023T001439769818Z/stability_summary.json), [실행 기록](data/results/memory_repeatability_analysis_20261023T001439769818Z/invocation.json), [저장 재검증](data/results/memory_repeatability_analysis_20261023T001439769818Z/verification.json). 작업 시작·실제 호출 HEAD는 독립 감사 보존 commit `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`다. 새 분석기·테스트는 호출 당시 commit 전 추가 파일이었으며 정확한 source/test SHA-256을 실행 기록과 함께 보존했다.
+
+- **구현 완료:** 기존 3일 분석기를 변경하지 않고 순수 수치·CSV 함수만 재사용한다. 기존 `audit()`·`analyze()`·날짜 승인 규칙·publisher는 호출하지 않는다. 새 독립 감사로 두 입력 root를 다시 검증하고 audit manifest와 같은 active snapshot만 계산에 사용한다. 고정 plan·후보 weight·수치 기준·tie order와 계산부의 일치를 확인하며 원본 archive·교체 session·소스 전체를 계산 전후와 저장 전후에 재대조한다. 입력 아래 저장·기존 출력 덮어쓰기를 거부하고 저장 실패나 저장 후 입력 변경은 부분 출력과 `inconclusive` 표시를 남긴다.
+- **fixture 검증 완료:** 새 전용 `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_analyze_memory_repeatability_validation.py -v`는 11개를 471.879초에, 기존 계산부의 `-p test_analyze_memory_stability_validation.py -k CalculationTests -v`는 13개를 0.357초에 통과했다. Fresh Python producer import 차단, 일반/`-O`/`-OO`의 잘못된 증거 거부, 불리한 결과 보존·정확한 동점·경계값·anchor·방향 비대칭·두 root와 소스 변경·전체 CSV round-trip·저장 실패/후속 변경·기존 출력 보존을 확인했다. 첫 sandbox 실행은 임시 fixture 폴더 WinError 5로 차단돼 같은 테스트를 실제 권한으로 재실행했다. 인위적 fixture 수치는 연구 실측이 아니며 전체 저장소 suite는 실행하지 않았다.
+- **실제 분석 완료:** 새 출력 `data/results/memory_repeatability_analysis_20261023T001439769818Z/`에 CLI 종료 0·stderr 0바이트로 저장했다. Sample 84개·대표값 2016개·phase 진단 8064개·후보 정답 4788행·방향별 regret 27216행·anchor regret 4536개·공식/후보 비교 1512개다. Anchor는 여섯 run 대표값 중앙값, memory는 phase 중앙값의 최댓값이며 정확한 tie order와 모든 36개 방향 쌍을 적용했다. 실제 순서는 1→3→4→5→6→replacement 2이며 논리 ID·실제 시각·별도 실행 HEAD를 유지했다.
+- **사전 판정:** 결과는 `memory_stability_not_satisfied`, memory 안정성 false·joint 안정성 false다. Memory span은 총 336조건 중 96조건 미충족(core 89/288, tiny 7/48)이며 최대 log span은 core `0.026396253608327876`, tiny `0.02710013828754913`이다. 원래 한계식 `epsilon/(2*w_memory_max)`의 Python 값 `0.012499999999999999`를 반올림 없이 적용했다. 두 층의 memory_only regret는 모두 0이고 선택은 일치했지만 span 기준을 면제하지 않았다. Core 최대 timing_only regret는 `1.7752505920281887`, joint regret는 `1.7749495552044472`로 budget `0.01`을 넘었다. Tiny의 timing_only/joint regret는 0이다. 이는 관측한 시간 변동의 영향을 포함하며 환경 로그만으로 특정 원인을 단정하지 않는다.
+- **효과와 한계:** Candidate joint와 후보 memory=0 선택 차이는 0/1512이며 모든 여섯 run에서 memory 이득이 delta를 초과한 sample·mode 조건은 0/252다. 기존 공식 3지표와의 선택 차이 6/1512는 다른 비-memory weight도 포함하므로 memory 단독 효과로 해석하지 않는다. 실제 수치는 모두 Python으로 저장 결과에서 집계했다. 원하는 결과를 위한 weight 변경·sample 제외·실패값 추정은 하지 않았다. 공식 memory 채택·4지표 전환 근거는 충족하지 못했으며 계속 `validation_only`, `score_inclusion=false`다.
+- **보존·재검증 완료:** CSV 정답의 score·exact tie·gap, regret 차이·0 diagonal·전체 방향 행렬, 저장 artifact hash·행 수·stdout/summary 일치·빈 stderr와 두 증거 root·분석 소스 불변을 재확인했다. 원본 실패 3건과 활성 실패 0건은 구분해 유지했다. 기존 manifest·metadata의 당시 pending/분석 미수행 checkpoint는 수정하지 않았으며 현재 판정은 새 보고서를 참조한다. 새 압축 측정·복원·모델 학습·공식 라벨 생성은 수행하지 않았다. 이번 기능의 코드·테스트·별도 결과·진행 문서만 로컬 commit으로 보존한다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- Memory 후속 검증의 새 동일 환경 설계·Run 2 교체 결과 전용 후보 분석 연결·검증·실제 분석·채택 근거 확보와 공식 4지표 전환. 실제 순서 변경·별도 실행 HEAD·원본 실패 보존을 포함하는 독립 저장 감사를 통과했지만 후보 score·변동·regret 분석과 memory 채택 판단은 미완료다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다.
+- Memory 채택 검토 문서의 후속 갱신과 공식 4지표 전환. 새 동일 환경·Run 2 교체 결과의 독립 저장 감사·후보 분석은 완료됐지만 사전 안정성·관측 memory 효과 근거는 충족하지 못했다. 공식 채택은 계속 보류 상태이며 기존 3일 attempt의 미완료 기록도 보존한다. 새 측정 정의나 추가 실험은 이번 분석 결과를 소급 조정하지 않고 별도 설계로 판단한다.
 - 독립 `smart_decompress.py` CLI: 현재 빈 파일이다. `main.py`도 빈 파일이다.
 - 사용자용 Compare/Demo Mode와 GUI.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
@@ -709,13 +721,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**새 동일 환경·Run 2 교체 결과 전용 후보 분석기 연결·검증:** 이번 독립 감사를 통과한 입력 snapshot에 사전 고정 weight·reference anchor·tie order를 적용하여 memory_only/timing_only/joint의 후보 선택 변화·memory span·방향별 regret를 계산하는 별도 분석기를 연결하고 fixture로 검증한다. 기존 3일 분석기와 원래 실패 기록은 그대로 유지한다. 검증 후 실제 분석·사전 기준에 따른 판단을 별도 기록하며 결과를 보고 weight나 sample을 조정하지 않는다. memory 공식 채택과 4지표 전환은 별도 결정이다.
+**Memory 채택 검토 갱신:** 기존 `research_log/memory_adoption_review_20261007.md`의 보류 판단에 새 동일 환경·Run 2 교체 독립 감사와 실제 후보 분석 근거를 연결한다. Memory span 미충족·memory_only 선택 유지·timing/joint regret 초과·관측 memory 이득 부재를 구분하고 공식 3지표 유지 및 남은 검증 과제를 정리한다. 과거 결과·고정 기준을 수정하거나 추가 측정을 자동 실행하지 않는다. 공식 4지표 전환은 별도 결정이다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체 및 이번 독립 저장 감사를 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 공식 memory 채택·4지표 전환·후보 분석·GUI·모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 공식 memory 채택·4지표 전환·GUI·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-이번 동일 환경·Run 2 교체 전용 독립 감사 작업의 시작 HEAD와 실제 감사 호출 당시 HEAD는 `f4dc8c7`(Run 2 교체 및 원본 증거 보존)이다. 새 감사 코드·테스트·실제 보고서는 그 이후 작업이며 실행 기록에 정확한 코드 hash와 commit 전 추가 파일 상태를 남겼다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+이번 동일 환경·Run 2 교체 후보 분석 작업의 시작 HEAD와 실제 분석 호출 당시 HEAD는 `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`(전용 독립 감사 보존)다. 새 분석 코드·테스트·실제 보고서는 그 이후 작업이며 실행 기록에 정확한 코드 hash와 commit 전 추가 파일 상태를 남겼다. 직전 독립 감사의 실제 호출 HEAD는 `f4dc8c7`이며 측정 실행 HEAD와 구분한다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 동일 환경 반복 검증 attempt02의 최초 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이고 최초 여섯 run 수집 보존 commit은 `d0f801d`다. 이후 사용자 지시의 Run 2 전체 재측정·교체 실행 HEAD는 `9a261e46d01f61e986d98eedc11f634eda19c863`이며 기존 측정 함수·worker·설정 hash를 유지했다. 이번 결과 보존 commit은 그 실행 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
 
@@ -730,7 +742,8 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
-- `f4dc8c7`: Run 2 전체 재측정 결과 교체·원본 전체 보존·저장 검증. 이번 독립 감사 작업의 시작 HEAD.
+- `3927a35`: 동일 환경·Run 2 교체 전용 독립 감사 구현·전용 fixture 24개·실제 감사 보고서 보존. 이번 후보 분석 작업의 시작 HEAD.
+- `f4dc8c7`: Run 2 전체 재측정 결과 교체·원본 전체 보존·저장 검증. 직전 독립 감사 작업의 시작 HEAD.
 - `9a261e4`: 사용자 지시의 Run 2 전체 재측정·원본 보관·활성 결과 교체 도구, 사전 변경 기록과 전용 fixture 검증. 실제 재측정 실행 HEAD.
 - `d0f801d`: 최초 attempt02 여섯 run 수집 마감과 Run 2 timeout 증거 보존. 이번 Run 2 교체 작업의 시작 HEAD.
 - `a8c3e47`: collector revision 2 metadata I/O 보완·47개 전용 테스트 검증. 동일 환경 반복 검증 attempt02 전체 측정 HEAD.

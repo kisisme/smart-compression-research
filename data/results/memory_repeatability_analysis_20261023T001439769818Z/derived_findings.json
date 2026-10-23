@@ -1,0 +1,112 @@
+{
+  "decision": {
+    "status": "memory_stability_not_satisfied",
+    "memory_stability_satisfied": false,
+    "joint_stability_satisfied": false,
+    "by_stratum": {
+      "core": {
+        "sample_count": 72,
+        "span_condition_count": 288,
+        "max_memory_span": 0.026396253608327876,
+        "max_memory_only_regret": 0.0,
+        "max_joint_regret": 1.7749495552044472,
+        "status": "memory_stability_not_satisfied",
+        "memory_stability_satisfied": false,
+        "joint_stability_satisfied": false
+      },
+      "tiny": {
+        "sample_count": 12,
+        "span_condition_count": 48,
+        "max_memory_span": 0.02710013828754913,
+        "max_memory_only_regret": 0.0,
+        "max_joint_regret": 0.0,
+        "status": "memory_stability_not_satisfied",
+        "memory_stability_satisfied": false,
+        "joint_stability_satisfied": true
+      }
+    }
+  },
+  "counts": {
+    "samples": 84,
+    "representatives": 2016,
+    "phase_groups": 8064,
+    "candidate_labels": 4788,
+    "transfer_regrets": 27216,
+    "anchor_regrets": 4536,
+    "comparisons": 1512
+  },
+  "memory_span_conditions": 336,
+  "failed_memory_span_conditions": 96,
+  "worst_memory_span": {
+    "sample_id": "stability_000083",
+    "stratum": "tiny",
+    "algorithm": "zstd",
+    "log_span": 0.02710013828754913,
+    "limit": 0.012499999999999999,
+    "satisfied": false
+  },
+  "memory_benefit_conditions": 252,
+  "all_runs_memory_benefit_condition_count": 0,
+  "scenario_summary": [
+    {
+      "stratum": "core",
+      "scenario": "memory_only",
+      "transfer_count": 7776,
+      "max_regret": 0.0,
+      "mean_regret": 0.0,
+      "exact_label_match_count": 7776,
+      "exact_label_match_rate": 1.0,
+      "diagonal_pairs_included": true
+    },
+    {
+      "stratum": "core",
+      "scenario": "timing_only",
+      "transfer_count": 7776,
+      "max_regret": 1.7752505920281887,
+      "mean_regret": 0.00581390716797561,
+      "exact_label_match_count": 7594,
+      "exact_label_match_rate": 0.9765946502057613,
+      "diagonal_pairs_included": true
+    },
+    {
+      "stratum": "core",
+      "scenario": "joint",
+      "transfer_count": 7776,
+      "max_regret": 1.7749495552044472,
+      "mean_regret": 0.005815750273839201,
+      "exact_label_match_count": 7594,
+      "exact_label_match_rate": 0.9765946502057613,
+      "diagonal_pairs_included": true
+    },
+    {
+      "stratum": "tiny",
+      "scenario": "memory_only",
+      "transfer_count": 1296,
+      "max_regret": 0.0,
+      "mean_regret": 0.0,
+      "exact_label_match_count": 1296,
+      "exact_label_match_rate": 1.0,
+      "diagonal_pairs_included": true
+    },
+    {
+      "stratum": "tiny",
+      "scenario": "timing_only",
+      "transfer_count": 1296,
+      "max_regret": 0.0,
+      "mean_regret": 0.0,
+      "exact_label_match_count": 1296,
+      "exact_label_match_rate": 1.0,
+      "diagonal_pairs_included": true
+    },
+    {
+      "stratum": "tiny",
+      "scenario": "joint",
+      "transfer_count": 1296,
+      "max_regret": 0.0,
+      "mean_regret": 0.0,
+      "exact_label_match_count": 1296,
+      "exact_label_match_rate": 1.0,
+      "diagonal_pairs_included": true
+    }
+  ]
+}

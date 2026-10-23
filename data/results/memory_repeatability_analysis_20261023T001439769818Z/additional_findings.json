@@ -1,0 +1,30 @@
+{
+  "span_by_stratum": {
+    "core": {
+      "conditions": 288,
+      "failed": 89,
+      "max_span": 0.026396253608327876
+    },
+    "tiny": {
+      "conditions": 48,
+      "failed": 7,
+      "max_span": 0.02710013828754913
+    }
+  },
+  "worst_directed_regret": {
+    "sample_id": "stability_000025",
+    "stratum": "core",
+    "mode": "fast_access",
+    "scenario": "timing_only",
+    "source_run_id": "5",
+    "target_run_id": "6",
+    "selected_algorithm": "gzip",
+    "target_best_algorithm": "zstd",
+    "predicted_score": "1.7760140758013054",
+    "oracle_best_score": "0.0007634837731167731",
+    "regret": "1.7752505920281887"
+  },
+  "candidate_joint_vs_without_memory_label_changes": 0,
+  "candidate_joint_vs_official_v2_label_changes": 6,
+  "per_run_benefit_exceeds_delta_count": 0
+}

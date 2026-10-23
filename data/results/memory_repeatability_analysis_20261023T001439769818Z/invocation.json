@@ -1,0 +1,61 @@
+{
+  "started_at_utc": "2026-10-23T00:14:39.769818+00:00",
+  "finished_at_utc": "2026-10-23T00:14:59.364291+00:00",
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "research_log.analyze_memory_repeatability_validation",
+    "--experiment-dir",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_v1_20261019T124938284221Z_attempt02",
+    "--replacement-dir",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_run02_replacement_20261022T103143486097Z",
+    "--output-dir",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\memory_repeatability_analysis_20261023T001439769818Z"
+  ],
+  "working_directory": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research",
+  "execution_head": "3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da",
+  "execution_source_state": "New analyzer and tests were untracked; their exact hashes are preserved and committed with this report.",
+  "source_sha256": {
+    "research_log/analyze_memory_repeatability_validation.py": "c5fbd32d0b4a1b48362ceaa3be9725e79429692b662a24f5cea8d6ef1c19fe48",
+    "research_log/analyze_memory_stability_validation.py": "a50b56cafe175084fe077e0ab441ff0da54054c07faaf78501045ba1455a4b17",
+    "research_log/verify_memory_repeatability_validation.py": "5e8dd06bba18d442021a28e49079a80e896fffb9b66b81115c0c1ce5ef87e66a",
+    "research_log/verify_memory_stability_validation.py": "48525ae1a25885f6db98cf979686ed9b145bf59aa90a8918197b5f068b271ee0",
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/memory_repeatability_validation_design.md": "f126724e712a7d45ffbd4d61163a9dd737382e36cd2e37c422cefd85e9ec3eff",
+    "research_log/memory_run02_replacement_amendment.md": "148ff7241d672fca8bec0de704e9b17dd6b81d1ad88c059c2b94cf78b0e4ef99"
+  },
+  "test_source_sha256": {
+    "tests/test_analyze_memory_repeatability_validation.py": "2d46adb46ab9ed65e044412aa760e41943d35f53cd6831d5b3881e1cd11c3296",
+    "tests/test_analyze_memory_stability_validation.py": "81df46186ea8c1f03980f94c2f27ad9c557f67bcea5f7b5049eca53b74f389e6"
+  },
+  "verification": [
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_analyze_memory_repeatability_validation.py -v",
+      "passed": 11,
+      "elapsed_seconds": 471.879,
+      "result": "OK"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_analyze_memory_stability_validation.py -k CalculationTests -v",
+      "passed": 13,
+      "elapsed_seconds": 0.357,
+      "result": "OK"
+    }
+  ],
+  "sandbox_note": "Initial integration fixture access was denied with WinError 5; identical tests passed under actual filesystem permissions.",
+  "return_code": 0,
+  "stdout_bytes": 1425,
+  "stderr_bytes": 0,
+  "stdout_sha256": "a6c56591428907f08325c8773e9a4adba207295094206809ac3d1128e0c6422c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "new_measurements_performed": false,
+  "official_scoring_modified": false
+}

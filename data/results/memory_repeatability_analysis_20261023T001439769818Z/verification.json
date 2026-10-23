@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-10-23T00:16:08.929871+00:00",
+  "checks_passed": true,
+  "active_and_replacement_evidence_unchanged": true,
+  "analysis_sources_unchanged": true,
+  "output_hashes_match_summary": true,
+  "csv_label_tie_score_checks": true,
+  "full_directed_regret_matrix": true,
+  "stdout_matches_summary": true,
+  "stderr_empty": true,
+  "publication_failed_marker_absent": true,
+  "candidate_label_rows": 4788,
+  "transfer_regret_rows": 27216,
+  "output_files_excluding_this_verification": {
+    ".gitattributes": {
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    "additional_findings.json": {
+      "bytes": 795,
+      "sha256": "b88bd2dbffcee31470dc2f645b8668a45a092781c43ce666e5eda98cb176d392"
+    },
+    "audit.json": {
+      "bytes": 43416,
+      "sha256": "a0a1c11c1300540a722312378d6791cd4f11fc3ee95d91d0f73997882825d103"
+    },
+    "candidate_labels.csv": {
+      "bytes": 932448,
+      "sha256": "7c7e09636808772f8f0c6eb3776e2c70d2611bc4f755c7d3c94c4e45ad33d6f1"
+    },
+    "derived_findings.json": {
+      "bytes": 3169,
+      "sha256": "da1244bf7670b8c943acab67bd93de74ee1b76e073daf17e486e3607025ac60c"
+    },
+    "invocation.json": {
+      "bytes": 3912,
+      "sha256": "1200082af211263754be151b4caa274f66b76a652109b1bf3fff90894756ca5e"
+    },
+    "README.md": {
+      "bytes": 5422,
+      "sha256": "0b8b15fa4617078fa2c59db3aa7e9e130686fb4479016d3239f525452637ce56"
+    },
+    "stability_summary.json": {
+      "bytes": 10783323,
+      "sha256": "550ebc4213fe15425b15e9571613938a39e73cebd25320e8f8e60494ff578767"
+    },
+    "stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.json": {
+      "bytes": 1425,
+      "sha256": "a6c56591428907f08325c8773e9a4adba207295094206809ac3d1128e0c6422c"
+    },
+    "transfer_regrets.csv": {
+      "bytes": 2680079,
+      "sha256": "fff0a272526508a397ef2d7d68a2790b1e9a79fec02e748071effbd6403aab0f"
+    }
+  },
+  "scope": "Saved consistency and export checks; no new measurement or official memory adoption."
+}
