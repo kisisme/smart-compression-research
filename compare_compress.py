@@ -221,8 +221,8 @@ def compare_file(input_path: str | Path, output_dir: str | Path) -> dict:
     return report
 
 
-def main(arguments: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(arguments: list[str] | None = None, *, prog: str | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__, prog=prog)
     parser.add_argument("input", type=Path, help="Non-empty input file to benchmark with all four codecs")
     parser.add_argument("--output-dir", type=Path, required=True, help="New directory for comparison reports")
     args = parser.parse_args(arguments)

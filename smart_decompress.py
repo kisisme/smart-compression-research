@@ -146,8 +146,8 @@ def smart_decompress(package_dir: str | Path, output_dir: str | Path) -> dict:
     return result
 
 
-def main(arguments: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(arguments: list[str] | None = None, *, prog: str | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__, prog=prog)
     parser.add_argument("package_dir", type=Path, help="Smart Mode directory containing manifest.json and payload")
     parser.add_argument("--output-dir", type=Path, required=True, help="New directory for the restored original file")
     args = parser.parse_args(arguments)

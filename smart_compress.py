@@ -194,8 +194,8 @@ def smart_compress(input_path: str | Path, output_dir: str | Path, *, mode: str,
     return manifest
 
 
-def main(arguments: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(arguments: list[str] | None = None, *, prog: str | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__, prog=prog)
     parser.add_argument("input", type=Path, help="Non-empty input file")
     parser.add_argument("--mode", choices=MODE_NAMES, required=True)
     parser.add_argument("--model", choices=tuple(MODEL_TYPES), required=True)

@@ -1,0 +1,533 @@
+{
+  "scope": "Unified CLI operational validation; not model evaluation or a new Pilot",
+  "started_at_utc": "2026-10-23T12:45:03.907295+00:00",
+  "finished_at_utc": "2026-10-23T12:45:32.536042+00:00",
+  "execution_head": "c0394a0b2fd50d4ff5fb8df970eca6e7a9da1b84",
+  "source_state": "Final working-tree implementation before its local commit",
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z",
+  "main_source_sha256": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+  "protected_sha256": {
+    "README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+    "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+    "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+    "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "data/results/pilot_1008/decision_tree/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/decision_tree/confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "data/results/pilot_1008/decision_tree/decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "data/results/pilot_1008/decision_tree/feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "data/results/pilot_1008/decision_tree/metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "data/results/pilot_1008/decision_tree/misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "data/results/pilot_1008/decision_tree/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/decision_tree/strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "data/results/pilot_1008/decision_tree/test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "data/results/pilot_1008/random_forest/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/random_forest/confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "data/results/pilot_1008/random_forest/feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "data/results/pilot_1008/random_forest/metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "data/results/pilot_1008/random_forest/misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "data/results/pilot_1008/random_forest/random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "data/results/pilot_1008/random_forest/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/random_forest/strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "data/results/pilot_1008/random_forest/test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82"
+  },
+  "records": [
+    {
+      "kind": "help",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "--help"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "usage: main.py [-h] {smart,decompress,compare}\r\n\r\nSmart Compression CLI: choose smart compression, restoration, or comparison.\r\n\r\npositional arguments:\r\n  {smart,decompress,compare}\r\n                        Operation to run\r\n\r\noptions:\r\n  -h, --help            show this help message and exit\r\n\r\nCommands:\r\n  smart       Predict one codec and save a verified compressed package.\r\n  decompress  Restore a saved package and verify its size and SHA-256.\r\n  compare     Measure all four codecs and report mode-specific scores.\r\n\r\nUse main.py COMMAND --help for that command's input and options.\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "help",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "--help"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "usage: main.py smart [-h] --mode {archive,balanced,fast_access}\r\n                     --model {decision_tree,random_forest}\r\n                     [--model-dir MODEL_DIR] --output-dir OUTPUT_DIR\r\n                     input\r\n\r\nSelect from pre-compression features, then compress with one saved model's\r\nchoice. Only load trusted, locally generated model directories: pickle hashes\r\ndetect accidental changes, but do not make an untrusted pickle safe to\r\nexecute.\r\n\r\npositional arguments:\r\n  input                 Non-empty input file\r\n\r\noptions:\r\n  -h, --help            show this help message and exit\r\n  --mode {archive,balanced,fast_access}\r\n  --model {decision_tree,random_forest}\r\n  --model-dir MODEL_DIR\r\n                        Trusted model directory; defaults to saved Pilot\r\n                        models\r\n  --output-dir OUTPUT_DIR\r\n                        New directory for payload and manifest\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "help",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "--help"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "usage: main.py decompress [-h] --output-dir OUTPUT_DIR package_dir\r\n\r\nRestore a Smart Mode package into a new directory, checking both SHA-256s.\r\nUses the saved algorithm only. No model, feature extraction, benchmark, or\r\nmemory measurement is needed. Reads whole files into memory, as\r\nsmart_compress.py does.\r\n\r\npositional arguments:\r\n  package_dir           Smart Mode directory containing manifest.json and\r\n                        payload\r\n\r\noptions:\r\n  -h, --help            show this help message and exit\r\n  --output-dir OUTPUT_DIR\r\n                        New directory for the restored original file\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "help",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "compare",
+        "--help"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "usage: main.py compare [-h] --output-dir OUTPUT_DIR input\r\n\r\nCompare four codecs on one non-empty file using protocol-v2 timing and scores.\r\nReports only: no compressed package, model prediction, training, or memory\r\nmeasurement. Raw repeat ns and measured medians are separate from mode labels.\r\n\r\npositional arguments:\r\n  input                 Non-empty input file to benchmark with all four codecs\r\n\r\noptions:\r\n  -h, --help            show this help message and exit\r\n  --output-dir OUTPUT_DIR\r\n                        New directory for comparison reports\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_archive\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_archive\",\r\n  \"manifest_sha256\": \"9424b90257476c74ca3dc1064863695f7d2aa3d0556e9b052ef70e18373bd9b3\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_archive_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:10.995461+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "balanced",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_balanced"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"balanced\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_balanced\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_balanced_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_balanced\",\r\n  \"manifest_sha256\": \"85d63fe95e1ebbf140d09fbf26640905a4bd57bab910a29957b006a5e5eb60c3\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_balanced_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:14.477273+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "fast_access",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_fast_access"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"fast_access\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_fast_access\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_fast_access_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_fast_access\",\r\n  \"manifest_sha256\": \"1446b24591b8c44ea4b0920f441ae428c320aa87715074c15703977e3dfe45f3\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\decision_tree_fast_access_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:17.766835+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_archive"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 0.99,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_archive\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_archive_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_archive\",\r\n  \"manifest_sha256\": \"5c66c239df99b296d85ab41f543538ead946a4cd7441f6eb5adf0b6daab22262\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_archive_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:21.495294+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "balanced",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_balanced"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"balanced\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_balanced\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_balanced_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_balanced\",\r\n  \"manifest_sha256\": \"19d373dbbfaf32ca1d430001162e8b7a054c2bd0f8a88d49a3a10000757205da\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_balanced_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:23.883440+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "smart",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "fast_access",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_fast_access"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"fast_access\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 0.97,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_fast_access\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "decompress",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\random_forest_fast_access_restored"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_fast_access\",\r\n  \"manifest_sha256\": \"b19c27f3a679f02ad9e3cbd946cdccdd6e4b63321b1eafd18feb95ed3fac9809\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\random_forest_fast_access_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T12:45:27.233625+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "compare",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "compare",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\comparison"
+      ],
+      "expected_return_code": 0,
+      "return_code": 0,
+      "stdout": "{\r\n  \"status\": \"completed\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\comparison\",\r\n  \"measurements\": [\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"gzip\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1581,\r\n      \"compression_ratio\": 0.4922166874221669,\r\n      \"compression_time_ms\": 0.0645,\r\n      \"decompression_time_ms\": 0.0137,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"bz2\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1584,\r\n      \"compression_ratio\": 0.4931506849315068,\r\n      \"compression_time_ms\": 0.4447,\r\n      \"decompression_time_ms\": 0.1029,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"lzma\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1620,\r\n      \"compression_ratio\": 0.5043586550435866,\r\n      \"compression_time_ms\": 5.2868,\r\n      \"decompression_time_ms\": 0.0962,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"zstd\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1673,\r\n      \"compression_ratio\": 0.5208592777085927,\r\n      \"compression_time_ms\": 0.0248,\r\n      \"decompression_time_ms\": 0.0066,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    }\r\n  ],\r\n  \"selections\": [\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"archive\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.039592604644146316,\r\n      \"score_gzip\": 0.2529221631648735,\r\n      \"score_bz2\": 0.84631365033843,\r\n      \"score_lzma\": 1.2232806860646697,\r\n      \"score_zstd\": 0.039592604644146316\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"balanced\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.02828043188867594,\r\n      \"score_gzip\": 0.42153693860812247,\r\n      \"score_bz2\": 1.409258927120784,\r\n      \"score_lzma\": 2.022555416096478,\r\n      \"score_zstd\": 0.02828043188867594\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"fast_access\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.016968259133205564,\r\n      \"score_gzip\": 0.5563274060270078,\r\n      \"score_bz2\": 1.9512239663224247,\r\n      \"score_lzma\": 2.4194153863672705,\r\n      \"score_zstd\": 0.016968259133205564\r\n    }\r\n  ],\r\n  \"errors\": []\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "kind": "existing_output",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive"
+      ],
+      "expected_return_code": 1,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Smart Mode failed: Output directory already exists: C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive\r\n"
+    },
+    {
+      "kind": "existing_output",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive_restored"
+      ],
+      "expected_return_code": 1,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Smart decompression failed: Output directory already exists: C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\decision_tree_archive_restored\r\n"
+    },
+    {
+      "kind": "existing_output",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "compare",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\comparison"
+      ],
+      "expected_return_code": 1,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Compare Mode failed: Output directory already exists: C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\comparison\r\n"
+    },
+    {
+      "kind": "syntax_error",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "unknown"
+      ],
+      "expected_return_code": 2,
+      "return_code": 2,
+      "stdout": "",
+      "stderr": "usage: main.py [-h] {smart,decompress,compare}\r\nmain.py: error: argument command: invalid choice: 'unknown' (choose from smart, decompress, compare)\r\n"
+    },
+    {
+      "kind": "syntax_error",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T124503907295Z\\must_not_exist"
+      ],
+      "expected_return_code": 2,
+      "return_code": 2,
+      "stdout": "",
+      "stderr": "usage: main.py smart [-h] --mode {archive,balanced,fast_access}\r\n                     --model {decision_tree,random_forest}\r\n                     [--model-dir MODEL_DIR] --output-dir OUTPUT_DIR\r\n                     input\r\nmain.py smart: error: the following arguments are required: --model\r\n"
+    }
+  ],
+  "roundtrips": [
+    {
+      "model": "decision_tree",
+      "mode": "archive",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    },
+    {
+      "model": "decision_tree",
+      "mode": "balanced",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    },
+    {
+      "model": "decision_tree",
+      "mode": "fast_access",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    },
+    {
+      "model": "random_forest",
+      "mode": "archive",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    },
+    {
+      "model": "random_forest",
+      "mode": "balanced",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    },
+    {
+      "model": "random_forest",
+      "mode": "fast_access",
+      "algorithm": "zstd",
+      "verified": true,
+      "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+    }
+  ],
+  "comparison_row_counts": {
+    "algorithms": 4,
+    "planned_repeats": 40,
+    "attempted_repeats": 40,
+    "labels": 3
+  },
+  "all_expected_exit_codes_matched": true,
+  "protected_inputs_unchanged": true,
+  "comparison_medians_scores_hashes_checked": true,
+  "memory_measurement_performed": false,
+  "model_training_performed": false,
+  "previous_operational_validation": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\unified_cli_validation_20261023T122426688067Z\\validation.json",
+  "previous_validation_sha256": "9283cad445a25404e74b56b049e4756a0ddec09e5aa418286105dbd391d4c32d",
+  "development_note": "Initial direct-script validation succeeded; tests exposed Python 3.14 module-context help naming. Optional prog parameters now preserve correct help without mutating sys.argv. Both operational runs remain preserved.",
+  "saved_validation_record_sha256": "8928d145b03e74fd119a4cd20f238445cedd17ad9d423495626d2c2f6f49047d",
+  "reverified_at_utc": "2026-10-23T12:58:41.440776+00:00",
+  "comparison_artifacts": {
+    ".gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "text_utf8": "* -text\n"
+    },
+    "comparison.json": {
+      "sha256": "8cb4ec05abaf37efe9cb083175130598343d817b28c8ed902e8f6718c8f0c789",
+      "text_utf8": "{\n  \"compare_mode_version\": 1,\n  \"status\": \"completed\",\n  \"scope\": \"Single-file measured comparison; not Smart prediction, model evaluation, or a new Pilot\",\n  \"input_path\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\README.md\",\n  \"original_filename\": \"README.md\",\n  \"input_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\n  \"original_size\": 3212,\n  \"sample_id\": \"file_dd827c4618193728\",\n  \"seed\": null,\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\unified_cli_validation_20261023T124503907295Z\\\\comparison\",\n  \"started_at_utc\": \"2026-10-23T12:45:27.608934+00:00\",\n  \"finished_measurement_at_utc\": \"2026-10-23T12:45:27.676318+00:00\",\n  \"algorithm_order\": [\n    \"gzip\",\n    \"bz2\",\n    \"lzma\",\n    \"zstd\"\n  ],\n  \"phase_order\": [\n    \"compress\",\n    \"decompress\"\n  ],\n  \"compression_settings\": {\n    \"gzip\": {\n      \"level\": 9\n    },\n    \"bz2\": {\n      \"level\": 9\n    },\n    \"lzma\": {\n      \"preset\": 6\n    },\n    \"zstd\": {\n      \"level\": 3\n    }\n  },\n  \"timing\": {\n    \"repeats\": 5,\n    \"timer\": \"time.perf_counter_ns\",\n    \"aggregate\": \"median\"\n  },\n  \"selection_modes\": {\n    \"archive\": {\n      \"compression_ratio\": 0.7,\n      \"compression_time\": 0.15,\n      \"decompression_time\": 0.15\n    },\n    \"balanced\": {\n      \"compression_ratio\": 0.5,\n      \"compression_time\": 0.25,\n      \"decompression_time\": 0.25\n    },\n    \"fast_access\": {\n      \"compression_ratio\": 0.3,\n      \"compression_time\": 0.2,\n      \"decompression_time\": 0.5\n    }\n  },\n  \"tie_order\": [\n    \"gzip\",\n    \"bz2\",\n    \"lzma\",\n    \"zstd\"\n  ],\n  \"score_epsilon\": null,\n  \"memory_measured\": false,\n  \"memory_score_inclusion\": false,\n  \"git_commit\": \"c0394a0b2fd50d4ff5fb8df970eca6e7a9da1b84\",\n  \"source_sha256\": {\n    \"compare_compress.py\": \"8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07\",\n    \"src/compressors.py\": \"0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c\",\n    \"src/scoring.py\": \"7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778\",\n    \"config/experiment_config.json\": \"f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652\",\n    \"research_protocol_v2.md\": \"d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5\",\n    \"requirements.txt\": \"318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e\"\n  },\n  \"environment\": {\n    \"python_version\": \"3.14.4\",\n    \"python_executable\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\",\n    \"operating_system\": \"Windows-11-10.0.26300-SP0\",\n    \"zstandard_version\": \"0.25.0\"\n  },\n  \"row_counts\": {\n    \"algorithms\": 4,\n    \"planned_repeats\": 40,\n    \"attempted_repeats\": 40,\n    \"labels\": 3\n  },\n  \"measurements\": [\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"gzip\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1581,\n      \"compression_ratio\": 0.4922166874221669,\n      \"compression_time_ms\": 0.0645,\n      \"decompression_time_ms\": 0.0137,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"bz2\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1584,\n      \"compression_ratio\": 0.4931506849315068,\n      \"compression_time_ms\": 0.4447,\n      \"decompression_time_ms\": 0.1029,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"lzma\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1620,\n      \"compression_ratio\": 0.5043586550435866,\n      \"compression_time_ms\": 5.2868,\n      \"decompression_time_ms\": 0.0962,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"zstd\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1673,\n      \"compression_ratio\": 0.5208592777085927,\n      \"compression_time_ms\": 0.0248,\n      \"decompression_time_ms\": 0.0066,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    }\n  ],\n  \"selections\": [\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"archive\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.039592604644146316,\n      \"score_gzip\": 0.2529221631648735,\n      \"score_bz2\": 0.84631365033843,\n      \"score_lzma\": 1.2232806860646697,\n      \"score_zstd\": 0.039592604644146316\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"balanced\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.02828043188867594,\n      \"score_gzip\": 0.42153693860812247,\n      \"score_bz2\": 1.409258927120784,\n      \"score_lzma\": 2.022555416096478,\n      \"score_zstd\": 0.02828043188867594\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"fast_access\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.016968259133205564,\n      \"score_gzip\": 0.5563274060270078,\n      \"score_bz2\": 1.9512239663224247,\n      \"score_lzma\": 2.4194153863672705,\n      \"score_zstd\": 0.016968259133205564\n    }\n  ],\n  \"errors\": [],\n  \"publication_contract\": \"Use scores only for status=completed, successful return, and no publication_failed.json.\",\n  \"limitations\": [\n    \"Fixed algorithm order and one execution environment; no generalization or model accuracy claim.\",\n    \"All data are in memory; file I/O and verification/hash work are outside timed codec calls.\",\n    \"Five repeats per phase; medians in ms are derived from raw ns; no warmup, epsilon or measurement retries.\",\n    \"Failed repeats stop that algorithm and retain unexecuted slots; other algorithms continue; no partial-set scoring.\",\n    \"No model or features are loaded; no memory measurement, training or compressed packages are produced.\",\n    \"Source byte hashes describe this execution; Git HEAD may predate working-tree implementation.\"\n  ],\n  \"artifact_sha256\": {\n    \"timing_repeats.csv\": \"5079df6843c2393bc55c0f6ced938e921a4c17f401b08336d03637465e1693c6\",\n    \"compression_results.csv\": \"bc4d5fa1ef686f4187c970f25727d9482990748765a1b7d6da25b72ae339c673\",\n    \"selection_labels.csv\": \"07609a87f5fd1f00eb3fd033515e384d8b166747643f473ffa7b3eb9b9ac4da9\",\n    \"config_snapshot.json\": \"f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652\",\n    \".gitattributes\": \"705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da\"\n  }\n}\n"
+    },
+    "compression_results.csv": {
+      "sha256": "bc4d5fa1ef686f4187c970f25727d9482990748765a1b7d6da25b72ae339c673",
+      "text_utf8": "sample_id,algorithm,original_size,compressed_size,compression_ratio,compression_time_ms,decompression_time_ms,verified,status,error\nfile_dd827c4618193728,gzip,3212,1581,0.4922166874221669,0.0645,0.0137,True,ok,\nfile_dd827c4618193728,bz2,3212,1584,0.4931506849315068,0.4447,0.1029,True,ok,\nfile_dd827c4618193728,lzma,3212,1620,0.5043586550435866,5.2868,0.0962,True,ok,\nfile_dd827c4618193728,zstd,3212,1673,0.5208592777085927,0.0248,0.0066,True,ok,\n"
+    },
+    "config_snapshot.json": {
+      "sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+      "text_utf8": "{\n  \"compression\": {\n    \"gzip\": {\n      \"level\": 9\n    },\n    \"bz2\": {\n      \"level\": 9\n    },\n    \"lzma\": {\n      \"preset\": 6\n    },\n    \"zstd\": {\n      \"level\": 3\n    }\n  },\n  \"timing\": {\n    \"repeats\": 5,\n    \"timer\": \"time.perf_counter_ns\",\n    \"aggregate\": \"median\"\n  },\n  \"memory\": {\n    \"status\": \"validation_only\",\n    \"platform\": \"win32\",\n    \"metric\": \"peak_process_working_set_bytes\",\n    \"backend\": \"GetProcessMemoryInfo.PeakWorkingSetSize\",\n    \"unit\": \"bytes\",\n    \"isolation\": \"fresh_subprocess_per_phase_repeat\",\n    \"repeats\": 5,\n    \"aggregate\": \"median\",\n    \"combined\": \"max_of_phase_medians\"\n  },\n  \"features\": {\n    \"duplicate_block_size\": 16,\n    \"segment_size\": 4096\n  },\n  \"selection_modes\": {\n    \"archive\": {\n      \"compression_ratio\": 0.70,\n      \"compression_time\": 0.15,\n      \"decompression_time\": 0.15\n    },\n    \"balanced\": {\n      \"compression_ratio\": 0.50,\n      \"compression_time\": 0.25,\n      \"decompression_time\": 0.25\n    },\n    \"fast_access\": {\n      \"compression_ratio\": 0.30,\n      \"compression_time\": 0.20,\n      \"decompression_time\": 0.50\n    }\n  },\n  \"baseline\": {\n    \"test_size\": 0.20,\n    \"random_state\": 42,\n    \"group_column\": \"seed\"\n  },\n  \"decision_tree\": {\n    \"criterion\": \"gini\",\n    \"splitter\": \"best\",\n    \"max_depth\": null,\n    \"min_samples_split\": 2,\n    \"min_samples_leaf\": 1,\n    \"max_features\": null,\n    \"class_weight\": null,\n    \"ccp_alpha\": 0.0,\n    \"random_state\": 42\n  },\n  \"random_forest\": {\n    \"n_estimators\": 100,\n    \"criterion\": \"gini\",\n    \"max_depth\": null,\n    \"min_samples_split\": 2,\n    \"min_samples_leaf\": 1,\n    \"min_weight_fraction_leaf\": 0.0,\n    \"max_features\": \"sqrt\",\n    \"max_leaf_nodes\": null,\n    \"min_impurity_decrease\": 0.0,\n    \"bootstrap\": true,\n    \"oob_score\": false,\n    \"n_jobs\": 1,\n    \"random_state\": 42,\n    \"verbose\": 0,\n    \"warm_start\": false,\n    \"class_weight\": null,\n    \"ccp_alpha\": 0.0,\n    \"max_samples\": null,\n    \"monotonic_cst\": null\n  },\n  \"sample_sizes\": [\n    16384,\n    65536,\n    262144,\n    1048576\n  ]\n}\n"
+    },
+    "selection_labels.csv": {
+      "sha256": "07609a87f5fd1f00eb3fd033515e384d8b166747643f473ffa7b3eb9b9ac4da9",
+      "text_utf8": "sample_id,mode,best_algorithm,best_score,score_gzip,score_bz2,score_lzma,score_zstd\nfile_dd827c4618193728,archive,zstd,0.039592604644146316,0.2529221631648735,0.84631365033843,1.2232806860646697,0.039592604644146316\nfile_dd827c4618193728,balanced,zstd,0.02828043188867594,0.42153693860812247,1.409258927120784,2.022555416096478,0.02828043188867594\nfile_dd827c4618193728,fast_access,zstd,0.016968259133205564,0.5563274060270078,1.9512239663224247,2.4194153863672705,0.016968259133205564\n"
+    },
+    "timing_repeats.csv": {
+      "sha256": "5079df6843c2393bc55c0f6ced938e921a4c17f401b08336d03637465e1693c6",
+      "text_utf8": "sample_id,algorithm,phase,repeat_index,elapsed_ns,status,consistent_with_reference,verified,output_size,output_sha256,error\nfile_dd827c4618193728,gzip,compress,1,185400,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,2,72400,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,3,64500,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,4,59600,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,5,56300,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,decompress,1,48400,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,2,19600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,3,13700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,4,11300,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,5,10900,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,compress,1,512300,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,2,485000,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,3,444700,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,4,417100,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,5,436300,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,decompress,1,133300,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,2,110500,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,3,102900,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,4,96100,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,5,98700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,compress,1,6862300,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,2,5867300,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,3,5192300,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,4,5177000,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,5,5286800,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,decompress,1,143700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,2,106200,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,3,96200,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,4,89600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,5,90000,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,compress,1,106400,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,2,24800,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,3,22100,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,4,20700,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,5,27300,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,decompress,1,30600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,2,7900,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,3,6600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,4,6400,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,5,6400,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\n"
+    }
+  },
+  "test_verification": {
+    "suites": [
+      {
+        "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_main_cli.py -v",
+        "passed": 12,
+        "elapsed_seconds": 5.936
+      },
+      {
+        "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_smart_*.py -v",
+        "passed": 18,
+        "elapsed_seconds": 10.39
+      },
+      {
+        "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_compare_compress.py -v",
+        "passed": 16,
+        "elapsed_seconds": 2.048
+      }
+    ],
+    "test_source_sha256": {
+      "tests/test_main_cli.py": "cd522467aa1ef5d4d5f500077047ec5ffbb71878c15e93628f032c689a1e43a8",
+      "tests/test_smart_compress.py": "c2522b7d4a5614032e43118f7cca875ad2c364357043c4e2f98957e9dfcc64df",
+      "tests/test_smart_decompress.py": "1becf2ad2b2b1cf68ee0c362081cf43379b7db578d50abfe73808e008901d541",
+      "tests/test_compare_compress.py": "d20dfe72404f2d4eb0df4e11bfe60a7c3289d52bb7c0e04a2884e90d091f125b"
+    },
+    "full_repository_suite_run": false
+  }
+}

@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 독립 `compare_compress.py` CLI 구현·전용 검증·README 실제 비교를 완료했다. 네 압축기의 phase별 5회 원시 ns·중앙값·복원 검증과 공식 3지표의 세 mode 점수를 구분해 저장한다. 정상 원시 반복 40개·집계 4개·mode 정답 3개를 재검증했고 전용 16개·기존 압축 7개·점수 9개, 총 32개 테스트가 통과했다. 실패·미실행 슬롯과 부분 출력은 보존하며 네 결과가 모두 유효할 때만 점수를 계산한다. 근거는 [Compare Mode 안내](research_log/compare_mode.md), [실제 결과](data/results/compare_mode_validation_20261023T120641453081Z/comparison.json), [재검증 기록](data/results/compare_mode_validation_20261023T120641453081Z/verification.json)이다.
+최신 진행: `main.py` 통합 CLI 구현·검증을 완료했다. `smart`, `decompress`, `compare` 중 선택한 기능만 지연 import하고 기존 옵션·검증·종료 상태를 전달한다. 관련 테스트 46개와 최종 실제 CLI 호출 22건을 확인했으며 저장된 두 Pilot 모델 × 세 mode의 압축→복원 여섯 건이 원본과 일치했다. Compare의 원시 반복 40개·집계 4개·mode 정답 3개와 보호 파일 38개 불변을 재검증했다. 근거는 [통합 CLI 안내](research_log/unified_cli.md)와 [실제 호출·검증 기록](research_log/unified_cli_validation_20261023.json)이다. 공식 3지표와 memory 참고 지표 보존 방침을 유지한다.
 
 현재 memory 방침: 2026-10-23 사용자가 memory를 참고 지표로 보존하고, 추가 구현은 여건이 마련됐을 때 진행하기로 선택했다. [결정 기록](research_log/memory_reference_indicator_decision_20261023.md)에 기존 검토·최신 독립 감사·후보 분석 근거를 연결했다. 공식 기준은 계속 압축률·압축 시간·압축 해제 시간의 3지표이며 memory는 `validation_only`, `score_inclusion=false`를 유지한다. Memory 추가 구현·측정·4지표 전환은 재개 일정이 없는 보류 과제다. 당장의 작업 우선순위는 기존 3지표 시스템 완성이다.
 
@@ -37,6 +37,7 @@
 | 최소 Smart Mode CLI | `smart_compress.py`: 특징 기반 예측 후 선택한 압축기 하나를 한 번 실행하고, 한 번 해제하여 검증 후 저장 |
 | 독립 압축 해제 CLI | `smart_decompress.py`: 기존 version-1 manifest·payload 검증 후 저장된 해제기 하나로 복원·원본 크기/SHA-256 대조·새 출력 게시. 전용 테스트 13개와 기존 압축 회귀 5개, 기존 package 여섯 건 실제 복원 완료. 모델·특징·benchmark·memory 측정 불필요 |
 | 독립 Compare Mode CLI | `compare_compress.py`: 네 알고리즘의 실제 5회 압축/해제·원시 ns·중앙값·복원 검증·기존 공식 3지표 점수를 새 출력에 저장. 실패·미실행·입력 변경·부분 저장을 구분한다. 전용 16개/회귀 16개와 README 실제 비교·재검증 완료. 모델 평가·새 Pilot과 구분 |
+| 통합 CLI 진입점 | `main.py`: Smart 압축·해제·Compare 명령을 선택적으로 연결한다. 기존 파서·검증·종료 코드를 유지하고 Python 3.14 모듈 문맥의 도움말을 선택적 `prog`로 전달한다. 전용 12개/회귀 34개 및 최종 실제 호출 22건 검증 완료 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 참고·검증용으로 보존. 2026-10-23 사용자 결정에 따라 공식 점수 편입·추가 구현은 여건이 마련될 때까지 보류 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
@@ -745,24 +746,33 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **테스트 완료:** `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_compare_compress.py -v` 16개(2.484초), `-p test_compressors.py -v` 7개(0.035초), `-p test_scoring.py -v` 9개(0.001초), 총 32개가 통과했다. 기존 benchmark와 제어 ns/중앙값 일치, 독립 점수 수식·exact tie, 실패·미실행·부분 점수 차단·입력/소스 변경·저장 실패·저장 후 변경·출력 경합·CLI/import 차단을 확인했다. 최초 독립 수식 검증의 부동소수점 합산 차이를 수치 QA 허용 오차로만 보완했고 실제 점수·동점 정책은 바꾸지 않았다. 인위적 fixture는 연구 측정이 아니며 전체 저장소 suite는 실행하지 않았다.
 - **범위·미완료:** Compare CLI는 보고서만 만들고 압축 package·모델 예측·특징·학습·memory 측정을 실행하지 않는다. Memory 참고 지표 보존·추가 구현 보류를 유지했다. 통합 `main.py`·GUI/Demo·스트리밍 처리·새 unseen 평가·성능 개선 검증은 미완료다. 정상 점수 사용에는 `status=completed`, 성공 반환, 실패 표시 없음이 모두 필요하다.
 
+### 통합 CLI 진입점 구현·검증 완료 — 2026-10-23
+
+근거: [진입점](main.py), [전용 테스트](tests/test_main_cli.py), [사용 안내](README.md), [통합 실행 기록](research_log/unified_cli.md), [실제 호출·비교 산출물·검증 JSON](research_log/unified_cli_validation_20261023.json). 작업 시작·실제 실행 HEAD는 Compare CLI 보존 commit `c0394a0`이다. 새 진입점과 선택적 도움말 인자 변경은 당시 commit 전 작업 트리 상태였으며 정확한 소스·테스트 hash를 기록했다.
+
+- **구현 완료:** 명시적인 `smart`, `decompress`, `compare` 명령을 받은 뒤 대응 모듈 하나를 import하고 나머지 인자를 기존 `main()`에 전달한다. 각 기능의 필수 옵션·입력/출력·모델·무결성·실패/기존 출력 검사를 유지한다. 정상 0·작업 실패 1·파서 오류 2를 전달하며 잘못된 최상위 명령과 최상위 도움말은 기능 모듈을 불러오지 않는다. 독립 CLI도 계속 사용할 수 있다.
+- **도움말 보완 완료:** 기존 세 CLI의 `main(arguments=None, *, prog=None)`에 선택적인 도움말 이름만 추가했다. 측정·특징·점수·압축 설정·모델·복원 함수의 정의는 변경하지 않았다. 최초 직접 CLI 검증은 통과했으나 Python 3.14의 모듈 실행 문맥에서 기본 도움말 이름이 달라지는 점을 테스트로 확인했다. 전역 `sys.argv`를 바꾸는 방식을 제거하고 `prog`를 명시해 파일/`python -m main` 실행 모두 명령 이름을 유지하도록 보완했다.
+- **테스트 완료:** `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_main_cli.py -v` 최종 12개(5.936초), `-p test_smart_*.py -v` 18개(10.390초), `-p test_compare_compress.py -v` 16개(2.048초), 총 46개가 통과했다. 인자 전달·종료/예외·전역 인자 불변·모듈 실행 도움말·필수 옵션·기존 출력 보존·부분 비교 실패를 확인했다. Fresh Python에서 최상위 도움말의 기능 import 없음과 해제/Compare의 모델·불필요한 모듈 import 차단을 확인했다. Smart 경로는 한 번 압축·복원 검증을 유지하고 Compare/benchmark를 호출하지 않았다. 제어 fixture는 연구 데이터가 아니며 전체 저장소 suite는 실행하지 않았다.
+- **실제 실행·재검증 완료:** 최종 코드로 도움말·정상 처리·기존 출력 거부·잘못된 명령/필수 옵션 등 22개 CLI 호출의 기대 종료 코드를 확인했다. 실제 저장 모델 두 종류 × 세 mode의 README 압축→복원 여섯 건이 원본 bytes·크기·SHA-256과 일치했다. Compare 한 건의 원시 반복 40개·집계 4개·mode 정답 3개를 중앙값·공식 점수·산출물 hash로 재검증했다. 입력·모델·설정·구현 등 보호 파일 38개의 SHA-256 불변을 확인했다. 측정/학습 정의·모델을 변경하지 않았으며 이는 해당 파일의 동작 검증이지 일반화·모델 우수성·새 Pilot이 아니다.
+- **결과 보존:** 최초 직접 실행은 `data/temp/unified_cli_validation_20261023T122426688067Z/`, 최종 코드 재검증은 `data/temp/unified_cli_validation_20261023T124503907295Z/`에 각각 보존했다. 중단된 서버 재시작 뒤 최종 재검증 호출이 시작되지 않았음을 확인하고 이어 실행했다. 최종 실행의 전체 명령·stdout/stderr·원시 비교 산출물 원문·보호 hash·테스트 기록은 별도 JSON으로 Git 보존한다. README에 세 명령과 상세 안내를 추가했다. Memory 추가 구현·GUI·새 모델·성능 개선 평가·스트리밍은 수행하지 않았다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
-- `main.py` 통합 진입점: 현재 빈 파일이다. 독립 Smart 압축·해제·Compare CLI는 구현·검증을 완료했다.
-- 사용자용 통합 Demo Mode와 GUI. 실제 비교 기능은 독립 Compare CLI로 완료했다.
+- 사용자용 GUI/Demo 화면과 비동기 실행·결과 표시. 통합 `main.py`와 독립 Smart 압축·해제·Compare CLI는 구현·검증을 완료했다.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**통합 CLI 진입점 구현·검증:** 현재 빈 `main.py`에 Smart 압축·압축 해제·Compare를 명시적인 subcommand로 연결한다. 각 기능의 기존 입력/출력·검증·종료 상태를 유지하고 Smart 경로에서 Compare benchmark를 실행하지 않도록 분리한다. 도움말·옵션 전달·실제 압축→복원·Compare·실패 반환과 기존 출력 보존을 검증한다. GUI·새 모델·memory 추가 구현은 이 작업에 포함하지 않는다. 이번 Compare 기능 작업에서는 통합 진입점을 구현하지 않았다.
+**GUI/Demo 최소 화면·실행 흐름 설계:** 기존 통합 CLI/함수를 재사용하는 로컬 사용자 화면의 파일·package 선택, 새 출력 경로, Smart mode·모델 선택, 명시적 Compare 실행, 복원·무결성 결과·오류 표시를 정리한다. 실행 중 UI 응답과 중복 실행 처리, confidence 해석·측정/예측 구분, 기존 출력 보호의 검증 방법을 함께 정한다. Smart를 실행할 때 Compare를 자동 호출하지 않고 공식 3지표·memory 보류 방침을 유지한다. GUI 구현과 새 연구 실험은 이번 통합 CLI 작업에서 수행하지 않았다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 독립 Smart 압축·해제·Compare CLI는 완료됐고 공식 4지표 전환·통합 진입점·GUI·새 모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합 진입점과 독립 Smart 압축·해제·Compare CLI는 완료됐고 공식 4지표 전환·GUI·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-이번 독립 Compare CLI 구현·실제 비교 작업의 시작 HEAD는 `085f1ab`(독립 압축 해제 보존)다. 새 구현의 실제 실행은 commit 전 작업 트리 상태였으며 정확한 소스 hash·시작 HEAD·테스트와 재검증을 보고서에 보존했다. 직전 압축 해제 작업의 시작 HEAD는 `409c9fd`다. 마지막 memory 후보 분석 보존 commit은 `0761b098142433476ef29f9bcc4e70454ef7562b`이고 그 분석 호출 당시 HEAD는 `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`(전용 독립 감사 보존)다. 독립 감사의 실제 호출 HEAD는 `f4dc8c7`이며 측정 실행 HEAD와 구분한다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+이번 통합 CLI 구현·실제 실행 작업의 시작 HEAD는 `c0394a0`(Compare CLI 보존)다. 실제 실행 당시 진입점과 선택적 도움말 인자 보완은 commit 전 작업 트리 상태였으며 정확한 소스 hash·시작 HEAD·테스트를 별도 기록했다. 직전 Compare 작업의 시작 HEAD는 `085f1ab`, 압축 해제 작업의 시작 HEAD는 `409c9fd`다. 마지막 memory 후보 분석 보존 commit은 `0761b098142433476ef29f9bcc4e70454ef7562b`이고 그 분석 호출 당시 HEAD는 `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`(전용 독립 감사 보존)다. 독립 감사의 실제 호출 HEAD는 `f4dc8c7`이며 측정 실행 HEAD와 구분한다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 동일 환경 반복 검증 attempt02의 최초 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이고 최초 여섯 run 수집 보존 commit은 `d0f801d`다. 이후 사용자 지시의 Run 2 전체 재측정·교체 실행 HEAD는 `9a261e46d01f61e986d98eedc11f634eda19c863`이며 기존 측정 함수·worker·설정 hash를 유지했다. 이번 결과 보존 commit은 그 실행 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
 
@@ -777,7 +787,8 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
-- `085f1ab`: 독립 압축 해제 CLI·전용 13개/기존 압축 5개 검증·기존 여섯 package 실제 복원 보존. 이번 Compare CLI 작업의 시작 HEAD.
+- `c0394a0`: 독립 Compare CLI·전용 16개/회귀 16개 검증·README 실제 비교와 원시 반복/점수 보존. 이번 통합 CLI 작업의 시작 HEAD.
+- `085f1ab`: 독립 압축 해제 CLI·전용 13개/기존 압축 5개 검증·기존 여섯 package 실제 복원 보존. 직전 Compare CLI 작업의 시작 HEAD.
 - `409c9fd`: Memory 참고 지표 보존·추가 구현 보류 사용자 결정과 진행 상태 기록. 직전 독립 압축 해제 CLI 작업의 시작 HEAD.
 - `0761b09`: 동일 환경·Run 2 교체 후보 분석기·전용 11개/계산부 회귀 13개 검증·실제 사전 기준 미충족 결과 보존. 직전 사용자 결정 기록 작업의 시작 HEAD.
 - `3927a35`: 동일 환경·Run 2 교체 전용 독립 감사 구현·전용 fixture 24개·실제 감사 보고서 보존. 직전 후보 분석 작업의 시작 HEAD.
