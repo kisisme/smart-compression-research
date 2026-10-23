@@ -1,0 +1,41 @@
+{
+  "verified_at_utc": "2026-10-23T12:12:40.082792+00:00",
+  "checks_passed": true,
+  "source_and_protected_inputs_unchanged": true,
+  "complete_positive_raw_matrix": true,
+  "all_roundtrips_verified": true,
+  "exact_medians_match_raw": true,
+  "official_scores_match": true,
+  "output_hashes_match": true,
+  "stdout_matches_report": true,
+  "stderr_empty": true,
+  "publication_failed_marker_absent": true,
+  "checked_repeat_rows": 40,
+  "checked_measurement_rows": 4,
+  "checked_label_rows": 3,
+  "tests": [
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_compare_compress.py -v",
+      "passed": 16,
+      "elapsed_seconds": 2.484
+    },
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_compressors.py -v",
+      "passed": 7,
+      "elapsed_seconds": 0.035
+    },
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_scoring.py -v",
+      "passed": 9,
+      "elapsed_seconds": 0.001
+    }
+  ],
+  "full_repository_suite_run": false,
+  "development_note": "Initial independent-formula assertion differed by one floating-point bit; only numeric QA uses tolerance. Official score and exact tie policy were unchanged.",
+  "test_source_sha256": {
+    "tests/test_compare_compress.py": "d20dfe72404f2d4eb0df4e11bfe60a7c3289d52bb7c0e04a2884e90d091f125b",
+    "tests/test_compressors.py": "f7ee6722a9ae3aa447127aa3310f34bd1cbee348d544294c4dc7bbefbff7e63b",
+    "tests/test_scoring.py": "738ea3c35b7f9722931f05e95c9602f060e64f2ede572a8da6ab656a48010ea6"
+  },
+  "scope": "Single README comparison and implementation tests; no model evaluation, memory measurement, or new Pilot"
+}

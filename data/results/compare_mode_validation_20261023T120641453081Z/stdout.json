@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\compare_mode_validation_20261023T120641453081Z",
+  "measurements": [
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "algorithm": "gzip",
+      "original_size": 1129,
+      "compressed_size": 664,
+      "compression_ratio": 0.5881310894596988,
+      "compression_time_ms": 0.0389,
+      "decompression_time_ms": 0.0102,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "algorithm": "bz2",
+      "original_size": 1129,
+      "compressed_size": 706,
+      "compression_ratio": 0.62533215234721,
+      "compression_time_ms": 0.1878,
+      "decompression_time_ms": 0.0698,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "algorithm": "lzma",
+      "original_size": 1129,
+      "compressed_size": 728,
+      "compression_ratio": 0.6448184233835252,
+      "compression_time_ms": 4.8533,
+      "decompression_time_ms": 0.0807,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "algorithm": "zstd",
+      "original_size": 1129,
+      "compressed_size": 700,
+      "compression_ratio": 0.6200177147918512,
+      "compression_time_ms": 0.0157,
+      "decompression_time_ms": 0.0044,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    }
+  ],
+  "selections": [
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "mode": "archive",
+      "best_algorithm": "zstd",
+      "best_score": 0.03695872989687958,
+      "score_gzip": 0.26221750764542223,
+      "score_bz2": 0.8297951101013676,
+      "score_lzma": 1.3608463521428573,
+      "score_zstd": 0.03695872989687958
+    },
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "mode": "balanced",
+      "best_algorithm": "zstd",
+      "best_score": 0.026399092783485414,
+      "score_gzip": 0.43702917940903707,
+      "score_bz2": 1.342103124824407,
+      "score_lzma": 2.2067313210912607,
+      "score_zstd": 0.026399092783485414
+    },
+    {
+      "sample_id": "file_f8bff21e68e47721",
+      "mode": "fast_access",
+      "best_algorithm": "zstd",
+      "best_score": 0.01583945567009125,
+      "score_gzip": 0.6018582973370327,
+      "score_bz2": 1.8967580317110784,
+      "score_lzma": 2.6289233773064895,
+      "score_zstd": 0.01583945567009125
+    }
+  ],
+  "errors": []
+}

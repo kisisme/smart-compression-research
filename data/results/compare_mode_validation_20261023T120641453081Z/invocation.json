@@ -1,0 +1,34 @@
+{
+  "scope": "Operational single-file comparison validation, not model performance or a Pilot",
+  "started_at_utc": "2026-10-23T12:06:41.453081+00:00",
+  "finished_at_utc": "2026-10-23T12:06:41.945482+00:00",
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "-B",
+    "compare_compress.py",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+    "--output-dir",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\compare_mode_validation_20261023T120641453081Z"
+  ],
+  "return_code": 0,
+  "stdout_sha256": "1132a79a2b68fc74ace2251a3104fe400c1faf09d7bd12e57a8aa82b39c4ae08",
+  "stderr_bytes": 0,
+  "execution_head": "085f1abe61f8eb985eaa5f1a903aadab12ff411d",
+  "source_state": "New working-tree CLI before its local commit; exact source hashes in comparison.json",
+  "protected_sha256": {
+    "README.md": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "smart_compress.py": "3623c5da0f5a374da908e6012ad66f533df5aa2b894c225d73ccdacd61087bcb",
+    "smart_decompress.py": "a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e"
+  },
+  "checks": {
+    "raw_repeat_medians_match": true,
+    "official_scoring_matches": true,
+    "artifact_hashes_match": true,
+    "protected_inputs_unchanged": true
+  }
+}
