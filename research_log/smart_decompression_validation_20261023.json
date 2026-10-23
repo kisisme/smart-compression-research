@@ -1,0 +1,193 @@
+{
+  "scope": "Operational restoration smoke check, not a research measurement or model evaluation",
+  "started_at_utc": "2026-10-23T11:48:47.091056+00:00",
+  "finished_at_utc": "2026-10-23T11:48:48.756409+00:00",
+  "execution_head": "409c9fd61e6e67465a83008c45e9d9f350989f79",
+  "implementation_source_sha256": "a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8",
+  "source_state": "Working-tree implementation before its local commit",
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z",
+  "checked_package_count": 6,
+  "protected_files_unchanged": 43,
+  "protected_sha256": {
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\config\\experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\src\\compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\smart_compress.py": "3623c5da0f5a374da908e6012ad66f533df5aa2b894c225d73ccdacd61087bcb",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_archive\\manifest.json": "754612754454ff23fc500ea2d2350896e34d1f9ff801f21f0dc7fd7f49328290",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_archive\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_balanced\\manifest.json": "291b105f8bdd224a327f8fcf2e6b824bfd98648f2acbaf58dfefaf0d09159a39",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_balanced\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_fast_access\\manifest.json": "a6876505cb4244ad96641c50d494e09924027cfce2360beccc1b86bfa877391a",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_fast_access\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_archive\\manifest.json": "81aeb44cbc447ed02d9e5956c0e5816a17e651fb325a6d452b3e052edd8fb94c",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_archive\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_balanced\\manifest.json": "802e8b8a6fcfdefbad9bcb1f9d9c5b8db9da7a129bf6ef7ca215897db0651762",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_balanced\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_fast_access\\manifest.json": "1ef1c06a4daca74241d0d2ed088ceb2ee3ec60a70887cb3fba767b360c53756e",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_fast_access\\payload.zst": "34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6"
+  },
+  "memory_measurement_performed": false,
+  "model_training_performed": false,
+  "records": [
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_archive",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\decision_tree_archive"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\decision_tree_archive\",\r\n  \"manifest_sha256\": \"754612754454ff23fc500ea2d2350896e34d1f9ff801f21f0dc7fd7f49328290\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\decision_tree_archive\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:47.415719+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    },
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_balanced",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\decision_tree_balanced"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\decision_tree_balanced\",\r\n  \"manifest_sha256\": \"291b105f8bdd224a327f8fcf2e6b824bfd98648f2acbaf58dfefaf0d09159a39\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\decision_tree_balanced\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:47.636523+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    },
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_fast_access",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\decision_tree_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\decision_tree_fast_access"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\decision_tree_fast_access\",\r\n  \"manifest_sha256\": \"a6876505cb4244ad96641c50d494e09924027cfce2360beccc1b86bfa877391a\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\decision_tree_fast_access\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:47.905100+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    },
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_archive",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\random_forest_archive"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\random_forest_archive\",\r\n  \"manifest_sha256\": \"81aeb44cbc447ed02d9e5956c0e5816a17e651fb325a6d452b3e052edd8fb94c\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\random_forest_archive\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:48.155310+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    },
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_balanced",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\random_forest_balanced"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\random_forest_balanced\",\r\n  \"manifest_sha256\": \"802e8b8a6fcfdefbad9bcb1f9d9c5b8db9da7a129bf6ef7ca215897db0651762\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\random_forest_balanced\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:48.430793+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    },
+    {
+      "package": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_fast_access",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "smart_decompress.py",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_mode_validation_20260915\\random_forest_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\smart_decompression_validation_20261023T114847091056Z\\random_forest_fast_access"
+      ],
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_mode_validation_20260915\\\\random_forest_fast_access\",\r\n  \"manifest_sha256\": \"1ef1c06a4daca74241d0d2ed088ceb2ee3ec60a70887cb3fba767b360c53756e\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 700,\r\n  \"compressed_sha256\": \"34c262cbc7e22ac8f1142d2d78f022dd4a6f75d76614099abfe8ce1877c2a7d6\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\smart_decompression_validation_20261023T114847091056Z\\\\random_forest_fast_access\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 1129,\r\n  \"restored_sha256\": \"f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-23T11:48:48.721876+00:00\",\r\n  \"smart_decompress_source_sha256\": \"a53b12ce8a6c2e09080c9775de019f14c0f0cca454aae7f585260c3746679de8\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "verified": true,
+      "restored_sha256": "f8bff21e68e47721d39917b6acc7a7152ba0ea9e42b0fd6ca1d3e8c31ba31c72",
+      "restored_size": 1129,
+      "matches_original_readme": true,
+      "algorithm": "zstd"
+    }
+  ],
+  "saved_record_verified_at_utc": "2026-10-23T11:55:56.258764+00:00",
+  "original_validation_record_sha256": "7684983b232fe2023d5da7fc17758076a39fdbaad7a21057ed0a83ead7fde18c",
+  "test_verification": {
+    "combined_before_gate_assertion_strengthening": {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_smart_*.py -v",
+      "passed": 18,
+      "elapsed_seconds": 11.17,
+      "result": "OK"
+    },
+    "final_decompression_tests": {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_smart_decompress.py -v",
+      "passed": 13,
+      "elapsed_seconds": 3.872,
+      "result": "OK",
+      "source_sha256": "1becf2ad2b2b1cf68ee0c362081cf43379b7db578d50abfe73808e008901d541"
+    },
+    "unchanged_compression_regression_tests_passed": 5,
+    "full_repository_suite_run": false
+  }
+}

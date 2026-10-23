@@ -1,4 +1,4 @@
-# 최소 Smart Mode 구현
+# Smart Mode 압축·복원 CLI
 
 ## 범위와 선택 방식
 
@@ -44,7 +44,31 @@ model: `decision_tree`, `random_forest`.
 확인한다. `manifest.json`에는 원본 파일의 절대 경로가 포함된다.
 
 payload는 별도 컨테이너가 아닌 기존 `src.compressors.decompress_data`와 호환되는
-표준 형식이다. 독립적인 `smart_decompress.py` CLI 구현은 이후 단계로 남겨 둔다.
+표준 형식이다. `smart_decompress.py`는 이 압축 결과 폴더를 읽어 새 출력 폴더에
+원래 파일명으로 복원한다.
+
+```powershell
+.\.venv\Scripts\python.exe -B smart_decompress.py data/temp/smart_archive --output-dir data/temp/restored_archive
+```
+
+입력 폴더에는 `manifest.json`과 기록된 `payload.*`가 함께 있어야 한다.
+`--output-dir`은 아직 존재하지 않고 입력 폴더 밖에 있는 경로여야 한다. 원래 파일명에
+경로나 Windows 예약 이름이 들어 있으면 거부한다. 입력 manifest와 payload는 링크가
+아닌 일반 파일이어야 한다.
+
+해제 CLI는 manifest version·성공한 복원 검증 기록·알고리즘·payload 이름·양수 크기·
+SHA-256·압축 비율의 일관성을 확인한다. 압축 bytes의 크기·해시를 먼저 대조한 뒤
+저장된 알고리즘의 해제기 하나를 한 번 호출하고, 복원 bytes를 기록된 원본 크기·
+SHA-256과 대조한다. 임시 위치에 저장한 파일의 bytes 및 입력 불변도 확인한 뒤
+Windows의 새 출력 디렉터리로 게시한다. 손상·불일치·저장 실패 시 정상 복원 출력을
+게시하지 않으며, 실행 도중 생긴 기존 출력도 덮어쓰지 않는다.
+
+원본 파일·학습 모델·특징 추출·예측·점수 계산·benchmark·memory 측정은 사용하지 않는다.
+Manifest의 과거 `input_path`를 읽거나 그 경로에 저장하지 않는다. 출력 폴더에는 복원한
+파일 하나를 저장하고, 입력 manifest hash·알고리즘·크기·복원 hash·`verified` 등을 JSON으로
+stdout에 출력한다. CLI 성공 종료 코드는 0, 작업 오류는 stderr 메시지와 종료 코드 1이다.
+파일 전체를 메모리에 읽는 방식이며 대용량 스트리밍 복원은 이번 범위가 아니다.
+해시 일치는 저장 metadata와의 무결성 검사이며 manifest와 payload의 진위를 인증하지 않는다.
 
 ## 수치 해석
 
@@ -60,6 +84,7 @@ benchmark와 혼동되는 압축·해제 시간 필드를 만들지 않는다. o
 
 ```powershell
 .\.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_smart_compress.py -v
+.\.venv\Scripts\python.exe -B -m unittest discover -s tests -p test_smart_decompress.py -v
 .\.venv\Scripts\python.exe -B -m unittest discover -s tests -v
 ```
 
@@ -80,3 +105,32 @@ Smart Mode 테스트 5개와 기존 테스트를 포함한 전체 72개 테스�
 각 manifest는 실제 특징과 확률, 해시 및 수정 중인 작업 트리 상태를 기록한다.
 이 경로는 기존 `.gitignore`에 따라 Git에서 제외되는 구현 검증용 출력이다.
 실험 원시 CSV, 기존 모델, 정답 및 설정은 변경하지 않았다.
+
+## 독립 압축 해제 구현·실제 실행 기록 — 2026-10-23
+
+작업 시작 HEAD는 `409c9fd`다. Memory 참고 지표 보존·추가 구현 보류와 공식 3지표
+기준을 유지하면서 `smart_decompress.py`와 전용 테스트를 추가했다. 압축기·모델·config·
+기존 압축 manifest 형식은 변경하지 않았다.
+
+전용 복원 테스트 13개와 기존 Smart 압축 회귀 테스트 5개를 포함한 관련 18개가
+11.170초에 통과했다. 잘못된 manifest·payload가 해제기 호출 전에 차단되는 assertion을
+강화한 뒤 최종 전용 13개는 3.872초에 다시 통과했다. 네 압축기 각각의 한 번 해제,
+두 모델·세 mode·네 알고리즘의 실제 producer 출력 호환, Unicode 파일명, 중복 JSON key·
+잘못된 version/검증 flag·크기·해시·비율·경로·예약 이름, 손상 stream·누락/링크 파일,
+입력 변경·기존 출력·저장 bytes 불일치·저장/게시 실패를 검증했다. Fresh Python에서는
+ML·특징·scoring·memory 모듈의 import를 차단한 채 CLI 성공을 확인했다.
+제어용 모델·입력 fixture는 연구 실측이나 모델 성능 평가가 아니다. 전체 저장소 suite는
+이번 기능 작업에서 실행하지 않았다.
+
+기존 `data/temp/smart_mode_validation_20260915/`의 두 모델 × 세 mode 압축 결과
+여섯 건을 새 CLI로 실제 복원했다. 모두 원본 README와 bytes·크기·SHA-256이 일치했고
+종료 코드 0·stderr 없음이었다. 기존 압축 결과가 모두 zstd였으므로 다른 세 형식의
+분기 검증은 전용 fixture·producer 호환 테스트에서 확인했다. 보호 대상 기존 package·
+모델·설정·코드·원본 파일 43개의 SHA-256 불변과 저장된 복원 bytes를 재확인했다.
+이는 파일 복원 동작 검증이며 일반화 성능·새 연구 benchmark가 아니다.
+
+복원 파일과 원래 실행 기록은 Git 제외 경로
+`data/temp/smart_decompression_validation_20261023T114847091056Z/`에 보존했다.
+[실행·출력·보호 hash·테스트 기록](smart_decompression_validation_20261023.json)을 별도로
+Git 보존한다. 실제 CLI 호출 당시 구현은 commit 전 작업 트리 상태였고 정확한 소스 hash를
+기록했으며, 최종 구현과 실제 실행 소스의 일치를 확인했다.
