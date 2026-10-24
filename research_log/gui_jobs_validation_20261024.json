@@ -1,0 +1,1868 @@
+{
+  "scope": "GUI worker operational validation; no Tk window, model training or new Pilot",
+  "started_at_utc": "2026-10-24T03:46:13.427419+00:00",
+  "finished_at_utc": "2026-10-24T03:46:39.247388+00:00",
+  "execution_head": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+  "source_state": "New working-tree job layer before its local commit",
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z",
+  "implementation_sha256": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+  "protected_sha256": {
+    "README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+    "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+    "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+    "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "data/results/pilot_1008/decision_tree/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/decision_tree/confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "data/results/pilot_1008/decision_tree/decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "data/results/pilot_1008/decision_tree/feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "data/results/pilot_1008/decision_tree/metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "data/results/pilot_1008/decision_tree/misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "data/results/pilot_1008/decision_tree/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/decision_tree/strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "data/results/pilot_1008/decision_tree/test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "data/results/pilot_1008/random_forest/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/random_forest/confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "data/results/pilot_1008/random_forest/feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "data/results/pilot_1008/random_forest/metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "data/results/pilot_1008/random_forest/misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "data/results/pilot_1008/random_forest/random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "data/results/pilot_1008/random_forest/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/random_forest/strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "data/results/pilot_1008/random_forest/test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82"
+  },
+  "results": [
+    {
+      "job_id": "b61d273a4dc346559e118e15171b785f",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive",
+        "mode": "archive",
+        "model_kind": "decision_tree",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive"
+      ],
+      "started_at_utc": "2026-10-24T03:46:13.449091+00:00",
+      "finished_at_utc": "2026-10-24T03:46:19.143277+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_archive\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJhcmNoaXZlIiwNCiAgImFsZ29yaXRobSI6ICJ6c3RkIiwNCiAgInByZWRpY3Rpb25fY29uZmlkZW5jZSI6IDEuMCwNCiAgImNvbmZpZGVuY2Vfbm90ZSI6ICJVbmNhbGlicmF0ZWQgbW9kZWwgb3V0cHV0OyBub3QgYSB2YWxpZGF0ZWQgY29ycmVjdG5lc3MgcHJvYmFiaWxpdHkuIiwNCiAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2pvYnNfdmFsaWRhdGlvbl8yMDI2MTAyNFQwMzQ2MTM0Mjc0MTlaXFxkZWNpc2lvbl90cmVlX2FyY2hpdmUiDQp9DQo=",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "archive",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 1.0,
+        "algorithm_probabilities": {
+          "gzip": 0.0,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 1.0
+        },
+        "provenance": {
+          "model_kind": "decision_tree",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl",
+          "model_sha256": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+          "model_summary_sha256": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+          "training_git": {
+            "commit_hash": "05623ccc6de31faab2ae7d53069e387bb34bc582",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.7,
+            "compression_time": 0.15,
+            "decompression_time": 0.15
+          },
+          "model_settings": {
+            "criterion": "gini",
+            "splitter": "best",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": null,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "random_state": 42
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:18.707270+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\b61d273a4dc346559e118e15171b785f\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "35fef115513a48cca4341656767ea329",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:19.146800+00:00",
+      "finished_at_utc": "2026-10-24T03:46:19.415024+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_archive\",\r\n  \"manifest_sha256\": \"6e9988b8381c73bd6a4e330e2ad41657a0594279e2f4390125eae68eadef665f\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_archive_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:19.379132+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXGRlY2lzaW9uX3RyZWVfYXJjaGl2ZSIsDQogICJtYW5pZmVzdF9zaGEyNTYiOiAiNmU5OTg4YjgzODFjNzNiZDZhNGUzMzBlMmFkNDE2NTdhMDU5NDI3OWUyZjQzOTAxMjVlYWU2OGVhZGVmNjY1ZiIsDQogICJjb21wcmVzc2VkX2ZpbGUiOiAicGF5bG9hZC56c3QiLA0KICAiY29tcHJlc3NlZF9zaXplIjogMTY3MywNCiAgImNvbXByZXNzZWRfc2hhMjU2IjogIjgzNTk0NTU5ZDUyZjZjMWY2NjFmZjcwNGRjNzFmZmI4OTEyYjZjY2YzOGY0MWNkZTU1MzQ5ZWMyOTY1ZDgwNGMiLA0KICAib3V0cHV0X2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXGRlY2lzaW9uX3RyZWVfYXJjaGl2ZV9yZXN0b3JlZCIsDQogICJyZXN0b3JlZF9maWxlIjogIlJFQURNRS5tZCIsDQogICJyZXN0b3JlZF9zaXplIjogMzIxMiwNCiAgInJlc3RvcmVkX3NoYTI1NiI6ICJkZDgyN2M0NjE4MTkzNzI4ZTJkNGMxYWZiMDg4YWJmMDEwYzRiZDVhZjNjNmE2YjU4MTM3NjVkNDIzMzRkNzFlIiwNCiAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgImNyZWF0ZWRfYXRfdXRjIjogIjIwMjYtMTAtMjRUMDM6NDY6MTkuMzc5MTMyKzAwOjAwIiwNCiAgInNtYXJ0X2RlY29tcHJlc3Nfc291cmNlX3NoYTI1NiI6ICIwODlhM2ZmZDEyMjAxNTI2NDI1MWJmYzBmZDQ5ZTFmYjlmZTFmYmI0YTk3YjdiMDJiMDdiMzJjMzZhMWI4ODNjIiwNCiAgIm9wZXJhdGlvbiI6ICJPbmUgc2F2ZWQtYWxnb3JpdGhtIGRlY29tcHJlc3Npb247IHNpemUvU0hBLTI1NiB2ZXJpZmljYXRpb247IG5vIG1vZGVsIG9yIGJlbmNobWFyay4iDQp9DQo=",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive",
+        "manifest_sha256": "6e9988b8381c73bd6a4e330e2ad41657a0594279e2f4390125eae68eadef665f",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:19.379132+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive\\manifest.json": "6e9988b8381c73bd6a4e330e2ad41657a0594279e2f4390125eae68eadef665f",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_archive\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "6e9988b8381c73bd6a4e330e2ad41657a0594279e2f4390125eae68eadef665f",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\35fef115513a48cca4341656767ea329\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "0248ff0009464aac8349be90856c85cd",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced",
+        "mode": "balanced",
+        "model_kind": "decision_tree",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "balanced",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced"
+      ],
+      "started_at_utc": "2026-10-24T03:46:19.419181+00:00",
+      "finished_at_utc": "2026-10-24T03:46:21.924863+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"balanced\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_balanced\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJiYWxhbmNlZCIsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwcmVkaWN0aW9uX2NvbmZpZGVuY2UiOiAxLjAsDQogICJjb25maWRlbmNlX25vdGUiOiAiVW5jYWxpYnJhdGVkIG1vZGVsIG91dHB1dDsgbm90IGEgdmFsaWRhdGVkIGNvcnJlY3RuZXNzIHByb2JhYmlsaXR5LiIsDQogICJ2ZXJpZmllZCI6IHRydWUsDQogICJvdXRwdXRfZGlyIjogIkM6XFxVc2Vyc1xcczAxMDlcXFB5Y2hhcm1Qcm9qZWN0c1xcc21hcnRfY29tcHJlc3Npb25fcmVzZWFyY2hcXGRhdGFcXHRlbXBcXGd1aV9qb2JzX3ZhbGlkYXRpb25fMjAyNjEwMjRUMDM0NjEzNDI3NDE5WlxcZGVjaXNpb25fdHJlZV9iYWxhbmNlZCINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "balanced",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 1.0,
+        "algorithm_probabilities": {
+          "gzip": 0.0,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 1.0
+        },
+        "provenance": {
+          "model_kind": "decision_tree",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced.pkl",
+          "model_sha256": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+          "model_summary_sha256": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+          "training_git": {
+            "commit_hash": "05623ccc6de31faab2ae7d53069e387bb34bc582",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.5,
+            "compression_time": 0.25,
+            "decompression_time": 0.25
+          },
+          "model_settings": {
+            "criterion": "gini",
+            "splitter": "best",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": null,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "random_state": 42
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:21.594352+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\0248ff0009464aac8349be90856c85cd\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "d6ab31898c3f42e9b3ffcf223f910f8b",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:21.928834+00:00",
+      "finished_at_utc": "2026-10-24T03:46:22.181487+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_balanced\",\r\n  \"manifest_sha256\": \"baab36c8caa06ef53cd8d70494c53d42dab883d13a78fad782466d9537fea529\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_balanced_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:22.146965+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXGRlY2lzaW9uX3RyZWVfYmFsYW5jZWQiLA0KICAibWFuaWZlc3Rfc2hhMjU2IjogImJhYWIzNmM4Y2FhMDZlZjUzY2Q4ZDcwNDk0YzUzZDQyZGFiODgzZDEzYTc4ZmFkNzgyNDY2ZDk1MzdmZWE1MjkiLA0KICAiY29tcHJlc3NlZF9maWxlIjogInBheWxvYWQuenN0IiwNCiAgImNvbXByZXNzZWRfc2l6ZSI6IDE2NzMsDQogICJjb21wcmVzc2VkX3NoYTI1NiI6ICI4MzU5NDU1OWQ1MmY2YzFmNjYxZmY3MDRkYzcxZmZiODkxMmI2Y2NmMzhmNDFjZGU1NTM0OWVjMjk2NWQ4MDRjIiwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2pvYnNfdmFsaWRhdGlvbl8yMDI2MTAyNFQwMzQ2MTM0Mjc0MTlaXFxkZWNpc2lvbl90cmVlX2JhbGFuY2VkX3Jlc3RvcmVkIiwNCiAgInJlc3RvcmVkX2ZpbGUiOiAiUkVBRE1FLm1kIiwNCiAgInJlc3RvcmVkX3NpemUiOiAzMjEyLA0KICAicmVzdG9yZWRfc2hhMjU2IjogImRkODI3YzQ2MTgxOTM3MjhlMmQ0YzFhZmIwODhhYmYwMTBjNGJkNWFmM2M2YTZiNTgxMzc2NWQ0MjMzNGQ3MWUiLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAiY3JlYXRlZF9hdF91dGMiOiAiMjAyNi0xMC0yNFQwMzo0NjoyMi4xNDY5NjUrMDA6MDAiLA0KICAic21hcnRfZGVjb21wcmVzc19zb3VyY2Vfc2hhMjU2IjogIjA4OWEzZmZkMTIyMDE1MjY0MjUxYmZjMGZkNDllMWZiOWZlMWZiYjRhOTdiN2IwMmIwN2IzMmMzNmExYjg4M2MiLA0KICAib3BlcmF0aW9uIjogIk9uZSBzYXZlZC1hbGdvcml0aG0gZGVjb21wcmVzc2lvbjsgc2l6ZS9TSEEtMjU2IHZlcmlmaWNhdGlvbjsgbm8gbW9kZWwgb3IgYmVuY2htYXJrLiINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced",
+        "manifest_sha256": "baab36c8caa06ef53cd8d70494c53d42dab883d13a78fad782466d9537fea529",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:22.146965+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced\\manifest.json": "baab36c8caa06ef53cd8d70494c53d42dab883d13a78fad782466d9537fea529",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_balanced\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "baab36c8caa06ef53cd8d70494c53d42dab883d13a78fad782466d9537fea529",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\d6ab31898c3f42e9b3ffcf223f910f8b\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "b7836f913eac4d53900af0caf2e925c1",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access",
+        "mode": "fast_access",
+        "model_kind": "decision_tree",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "fast_access",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access"
+      ],
+      "started_at_utc": "2026-10-24T03:46:22.186050+00:00",
+      "finished_at_utc": "2026-10-24T03:46:25.312443+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"fast_access\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_fast_access\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJmYXN0X2FjY2VzcyIsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwcmVkaWN0aW9uX2NvbmZpZGVuY2UiOiAxLjAsDQogICJjb25maWRlbmNlX25vdGUiOiAiVW5jYWxpYnJhdGVkIG1vZGVsIG91dHB1dDsgbm90IGEgdmFsaWRhdGVkIGNvcnJlY3RuZXNzIHByb2JhYmlsaXR5LiIsDQogICJ2ZXJpZmllZCI6IHRydWUsDQogICJvdXRwdXRfZGlyIjogIkM6XFxVc2Vyc1xcczAxMDlcXFB5Y2hhcm1Qcm9qZWN0c1xcc21hcnRfY29tcHJlc3Npb25fcmVzZWFyY2hcXGRhdGFcXHRlbXBcXGd1aV9qb2JzX3ZhbGlkYXRpb25fMjAyNjEwMjRUMDM0NjEzNDI3NDE5WlxcZGVjaXNpb25fdHJlZV9mYXN0X2FjY2VzcyINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "fast_access",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 1.0,
+        "algorithm_probabilities": {
+          "gzip": 0.0,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 1.0
+        },
+        "provenance": {
+          "model_kind": "decision_tree",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access.pkl",
+          "model_sha256": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+          "model_summary_sha256": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+          "training_git": {
+            "commit_hash": "05623ccc6de31faab2ae7d53069e387bb34bc582",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.3,
+            "compression_time": 0.2,
+            "decompression_time": 0.5
+          },
+          "model_settings": {
+            "criterion": "gini",
+            "splitter": "best",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": null,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "random_state": 42
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:24.905945+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\b7836f913eac4d53900af0caf2e925c1\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "ddb90151cc87452c8d08fe1066949450",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:25.318333+00:00",
+      "finished_at_utc": "2026-10-24T03:46:25.596388+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_fast_access\",\r\n  \"manifest_sha256\": \"5237bae4fc8a4f62f7370c144ce9450cd92c8c5d4e174cf6a02ae125dcb6c78b\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\decision_tree_fast_access_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:25.561853+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXGRlY2lzaW9uX3RyZWVfZmFzdF9hY2Nlc3MiLA0KICAibWFuaWZlc3Rfc2hhMjU2IjogIjUyMzdiYWU0ZmM4YTRmNjJmNzM3MGMxNDRjZTk0NTBjZDkyYzhjNWQ0ZTE3NGNmNmEwMmFlMTI1ZGNiNmM3OGIiLA0KICAiY29tcHJlc3NlZF9maWxlIjogInBheWxvYWQuenN0IiwNCiAgImNvbXByZXNzZWRfc2l6ZSI6IDE2NzMsDQogICJjb21wcmVzc2VkX3NoYTI1NiI6ICI4MzU5NDU1OWQ1MmY2YzFmNjYxZmY3MDRkYzcxZmZiODkxMmI2Y2NmMzhmNDFjZGU1NTM0OWVjMjk2NWQ4MDRjIiwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2pvYnNfdmFsaWRhdGlvbl8yMDI2MTAyNFQwMzQ2MTM0Mjc0MTlaXFxkZWNpc2lvbl90cmVlX2Zhc3RfYWNjZXNzX3Jlc3RvcmVkIiwNCiAgInJlc3RvcmVkX2ZpbGUiOiAiUkVBRE1FLm1kIiwNCiAgInJlc3RvcmVkX3NpemUiOiAzMjEyLA0KICAicmVzdG9yZWRfc2hhMjU2IjogImRkODI3YzQ2MTgxOTM3MjhlMmQ0YzFhZmIwODhhYmYwMTBjNGJkNWFmM2M2YTZiNTgxMzc2NWQ0MjMzNGQ3MWUiLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAiY3JlYXRlZF9hdF91dGMiOiAiMjAyNi0xMC0yNFQwMzo0NjoyNS41NjE4NTMrMDA6MDAiLA0KICAic21hcnRfZGVjb21wcmVzc19zb3VyY2Vfc2hhMjU2IjogIjA4OWEzZmZkMTIyMDE1MjY0MjUxYmZjMGZkNDllMWZiOWZlMWZiYjRhOTdiN2IwMmIwN2IzMmMzNmExYjg4M2MiLA0KICAib3BlcmF0aW9uIjogIk9uZSBzYXZlZC1hbGdvcml0aG0gZGVjb21wcmVzc2lvbjsgc2l6ZS9TSEEtMjU2IHZlcmlmaWNhdGlvbjsgbm8gbW9kZWwgb3IgYmVuY2htYXJrLiINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access",
+        "manifest_sha256": "5237bae4fc8a4f62f7370c144ce9450cd92c8c5d4e174cf6a02ae125dcb6c78b",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:25.561853+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access\\manifest.json": "5237bae4fc8a4f62f7370c144ce9450cd92c8c5d4e174cf6a02ae125dcb6c78b",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\decision_tree_fast_access\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "5237bae4fc8a4f62f7370c144ce9450cd92c8c5d4e174cf6a02ae125dcb6c78b",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\ddb90151cc87452c8d08fe1066949450\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "dedb09dbbba54988b9790570645c476b",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive",
+        "mode": "archive",
+        "model_kind": "random_forest",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "archive",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive"
+      ],
+      "started_at_utc": "2026-10-24T03:46:25.602162+00:00",
+      "finished_at_utc": "2026-10-24T03:46:28.503413+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 0.99,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_archive\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJhcmNoaXZlIiwNCiAgImFsZ29yaXRobSI6ICJ6c3RkIiwNCiAgInByZWRpY3Rpb25fY29uZmlkZW5jZSI6IDAuOTksDQogICJjb25maWRlbmNlX25vdGUiOiAiVW5jYWxpYnJhdGVkIG1vZGVsIG91dHB1dDsgbm90IGEgdmFsaWRhdGVkIGNvcnJlY3RuZXNzIHByb2JhYmlsaXR5LiIsDQogICJ2ZXJpZmllZCI6IHRydWUsDQogICJvdXRwdXRfZGlyIjogIkM6XFxVc2Vyc1xcczAxMDlcXFB5Y2hhcm1Qcm9qZWN0c1xcc21hcnRfY29tcHJlc3Npb25fcmVzZWFyY2hcXGRhdGFcXHRlbXBcXGd1aV9qb2JzX3ZhbGlkYXRpb25fMjAyNjEwMjRUMDM0NjEzNDI3NDE5WlxccmFuZG9tX2ZvcmVzdF9hcmNoaXZlIg0KfQ0K",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "archive",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 0.99,
+        "algorithm_probabilities": {
+          "gzip": 0.01,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 0.99
+        },
+        "provenance": {
+          "model_kind": "random_forest",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl",
+          "model_sha256": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+          "model_summary_sha256": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+          "training_git": {
+            "commit_hash": "01259749bb0bd517765d884f3bbb31b1ed648163",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.7,
+            "compression_time": 0.15,
+            "decompression_time": 0.15
+          },
+          "model_settings": {
+            "n_estimators": 100,
+            "criterion": "gini",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "min_weight_fraction_leaf": 0.0,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "bootstrap": true,
+            "oob_score": false,
+            "n_jobs": 1,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "max_samples": null,
+            "monotonic_cst": null
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:27.877240+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\dedb09dbbba54988b9790570645c476b\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "5e6a5e513be14feabb14a683c25efa4c",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:28.509528+00:00",
+      "finished_at_utc": "2026-10-24T03:46:28.956159+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_archive\",\r\n  \"manifest_sha256\": \"000f378888bf809d55057f1945e884293e858e695adaa6f5c9852fbd7ac725b3\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_archive_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:28.911231+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXHJhbmRvbV9mb3Jlc3RfYXJjaGl2ZSIsDQogICJtYW5pZmVzdF9zaGEyNTYiOiAiMDAwZjM3ODg4OGJmODA5ZDU1MDU3ZjE5NDVlODg0MjkzZTg1OGU2OTVhZGFhNmY1Yzk4NTJmYmQ3YWM3MjViMyIsDQogICJjb21wcmVzc2VkX2ZpbGUiOiAicGF5bG9hZC56c3QiLA0KICAiY29tcHJlc3NlZF9zaXplIjogMTY3MywNCiAgImNvbXByZXNzZWRfc2hhMjU2IjogIjgzNTk0NTU5ZDUyZjZjMWY2NjFmZjcwNGRjNzFmZmI4OTEyYjZjY2YzOGY0MWNkZTU1MzQ5ZWMyOTY1ZDgwNGMiLA0KICAib3V0cHV0X2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXHJhbmRvbV9mb3Jlc3RfYXJjaGl2ZV9yZXN0b3JlZCIsDQogICJyZXN0b3JlZF9maWxlIjogIlJFQURNRS5tZCIsDQogICJyZXN0b3JlZF9zaXplIjogMzIxMiwNCiAgInJlc3RvcmVkX3NoYTI1NiI6ICJkZDgyN2M0NjE4MTkzNzI4ZTJkNGMxYWZiMDg4YWJmMDEwYzRiZDVhZjNjNmE2YjU4MTM3NjVkNDIzMzRkNzFlIiwNCiAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgImNyZWF0ZWRfYXRfdXRjIjogIjIwMjYtMTAtMjRUMDM6NDY6MjguOTExMjMxKzAwOjAwIiwNCiAgInNtYXJ0X2RlY29tcHJlc3Nfc291cmNlX3NoYTI1NiI6ICIwODlhM2ZmZDEyMjAxNTI2NDI1MWJmYzBmZDQ5ZTFmYjlmZTFmYmI0YTk3YjdiMDJiMDdiMzJjMzZhMWI4ODNjIiwNCiAgIm9wZXJhdGlvbiI6ICJPbmUgc2F2ZWQtYWxnb3JpdGhtIGRlY29tcHJlc3Npb247IHNpemUvU0hBLTI1NiB2ZXJpZmljYXRpb247IG5vIG1vZGVsIG9yIGJlbmNobWFyay4iDQp9DQo=",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive",
+        "manifest_sha256": "000f378888bf809d55057f1945e884293e858e695adaa6f5c9852fbd7ac725b3",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:28.911231+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive\\manifest.json": "000f378888bf809d55057f1945e884293e858e695adaa6f5c9852fbd7ac725b3",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_archive\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "000f378888bf809d55057f1945e884293e858e695adaa6f5c9852fbd7ac725b3",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\5e6a5e513be14feabb14a683c25efa4c\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "a18c0244616b406cade737c7f8d2999a",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced",
+        "mode": "balanced",
+        "model_kind": "random_forest",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "balanced",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced"
+      ],
+      "started_at_utc": "2026-10-24T03:46:28.964390+00:00",
+      "finished_at_utc": "2026-10-24T03:46:33.659927+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"balanced\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_balanced\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJiYWxhbmNlZCIsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwcmVkaWN0aW9uX2NvbmZpZGVuY2UiOiAxLjAsDQogICJjb25maWRlbmNlX25vdGUiOiAiVW5jYWxpYnJhdGVkIG1vZGVsIG91dHB1dDsgbm90IGEgdmFsaWRhdGVkIGNvcnJlY3RuZXNzIHByb2JhYmlsaXR5LiIsDQogICJ2ZXJpZmllZCI6IHRydWUsDQogICJvdXRwdXRfZGlyIjogIkM6XFxVc2Vyc1xcczAxMDlcXFB5Y2hhcm1Qcm9qZWN0c1xcc21hcnRfY29tcHJlc3Npb25fcmVzZWFyY2hcXGRhdGFcXHRlbXBcXGd1aV9qb2JzX3ZhbGlkYXRpb25fMjAyNjEwMjRUMDM0NjEzNDI3NDE5WlxccmFuZG9tX2ZvcmVzdF9iYWxhbmNlZCINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "balanced",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 1.0,
+        "algorithm_probabilities": {
+          "gzip": 0.0,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 1.0
+        },
+        "provenance": {
+          "model_kind": "random_forest",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_balanced.pkl",
+          "model_sha256": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+          "model_summary_sha256": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+          "training_git": {
+            "commit_hash": "01259749bb0bd517765d884f3bbb31b1ed648163",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.5,
+            "compression_time": 0.25,
+            "decompression_time": 0.25
+          },
+          "model_settings": {
+            "n_estimators": 100,
+            "criterion": "gini",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "min_weight_fraction_leaf": 0.0,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "bootstrap": true,
+            "oob_score": false,
+            "n_jobs": 1,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "max_samples": null,
+            "monotonic_cst": null
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:33.195130+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\a18c0244616b406cade737c7f8d2999a\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "6d2501b306204f9f8e85109e09ea3d31",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:33.664225+00:00",
+      "finished_at_utc": "2026-10-24T03:46:34.038357+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_balanced\",\r\n  \"manifest_sha256\": \"124fe08ddf10373edd700a6361621edd67076cd7671c805b8a0334c36320e983\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_balanced_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:33.988051+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXHJhbmRvbV9mb3Jlc3RfYmFsYW5jZWQiLA0KICAibWFuaWZlc3Rfc2hhMjU2IjogIjEyNGZlMDhkZGYxMDM3M2VkZDcwMGE2MzYxNjIxZWRkNjcwNzZjZDc2NzFjODA1YjhhMDMzNGMzNjMyMGU5ODMiLA0KICAiY29tcHJlc3NlZF9maWxlIjogInBheWxvYWQuenN0IiwNCiAgImNvbXByZXNzZWRfc2l6ZSI6IDE2NzMsDQogICJjb21wcmVzc2VkX3NoYTI1NiI6ICI4MzU5NDU1OWQ1MmY2YzFmNjYxZmY3MDRkYzcxZmZiODkxMmI2Y2NmMzhmNDFjZGU1NTM0OWVjMjk2NWQ4MDRjIiwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2pvYnNfdmFsaWRhdGlvbl8yMDI2MTAyNFQwMzQ2MTM0Mjc0MTlaXFxyYW5kb21fZm9yZXN0X2JhbGFuY2VkX3Jlc3RvcmVkIiwNCiAgInJlc3RvcmVkX2ZpbGUiOiAiUkVBRE1FLm1kIiwNCiAgInJlc3RvcmVkX3NpemUiOiAzMjEyLA0KICAicmVzdG9yZWRfc2hhMjU2IjogImRkODI3YzQ2MTgxOTM3MjhlMmQ0YzFhZmIwODhhYmYwMTBjNGJkNWFmM2M2YTZiNTgxMzc2NWQ0MjMzNGQ3MWUiLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAiY3JlYXRlZF9hdF91dGMiOiAiMjAyNi0xMC0yNFQwMzo0NjozMy45ODgwNTErMDA6MDAiLA0KICAic21hcnRfZGVjb21wcmVzc19zb3VyY2Vfc2hhMjU2IjogIjA4OWEzZmZkMTIyMDE1MjY0MjUxYmZjMGZkNDllMWZiOWZlMWZiYjRhOTdiN2IwMmIwN2IzMmMzNmExYjg4M2MiLA0KICAib3BlcmF0aW9uIjogIk9uZSBzYXZlZC1hbGdvcml0aG0gZGVjb21wcmVzc2lvbjsgc2l6ZS9TSEEtMjU2IHZlcmlmaWNhdGlvbjsgbm8gbW9kZWwgb3IgYmVuY2htYXJrLiINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced",
+        "manifest_sha256": "124fe08ddf10373edd700a6361621edd67076cd7671c805b8a0334c36320e983",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:33.988051+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced\\manifest.json": "124fe08ddf10373edd700a6361621edd67076cd7671c805b8a0334c36320e983",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_balanced\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "124fe08ddf10373edd700a6361621edd67076cd7671c805b8a0334c36320e983",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\6d2501b306204f9f8e85109e09ea3d31\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "24b3c96e48a04f1b9d34c76256656041",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access",
+        "mode": "fast_access",
+        "model_kind": "random_forest",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--mode",
+        "fast_access",
+        "--model",
+        "random_forest",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access"
+      ],
+      "started_at_utc": "2026-10-24T03:46:34.044000+00:00",
+      "finished_at_utc": "2026-10-24T03:46:37.969894+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"fast_access\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 0.97,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_fast_access\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJmYXN0X2FjY2VzcyIsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwcmVkaWN0aW9uX2NvbmZpZGVuY2UiOiAwLjk3LA0KICAiY29uZmlkZW5jZV9ub3RlIjogIlVuY2FsaWJyYXRlZCBtb2RlbCBvdXRwdXQ7IG5vdCBhIHZhbGlkYXRlZCBjb3JyZWN0bmVzcyBwcm9iYWJpbGl0eS4iLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAib3V0cHV0X2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXHJhbmRvbV9mb3Jlc3RfZmFzdF9hY2Nlc3MiDQp9DQo=",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "fast_access",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "compressed_size": 1673,
+        "compression_ratio": 0.5208592777085927,
+        "verified": true,
+        "features": {
+          "file_size": 3212,
+          "entropy": 5.840850069739417,
+          "unique_byte_count": 123,
+          "most_common_byte_ratio": 0.09246575342465753,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.024914356898162567,
+          "average_run_length": 1.0255427841634739,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.009950248756218905,
+          "bigram_diversity": 0.22578635938959826,
+          "segment_entropy_mean": 5.840850069739417,
+          "segment_entropy_std": 0.0
+        },
+        "prediction_confidence": 0.97,
+        "algorithm_probabilities": {
+          "gzip": 0.03,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 0.97
+        },
+        "provenance": {
+          "model_kind": "random_forest",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_fast_access.pkl",
+          "model_sha256": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+          "model_summary_sha256": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+          "training_git": {
+            "commit_hash": "01259749bb0bd517765d884f3bbb31b1ed648163",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.3,
+            "compression_time": 0.2,
+            "decompression_time": 0.5
+          },
+          "model_settings": {
+            "n_estimators": 100,
+            "criterion": "gini",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "min_weight_fraction_leaf": 0.0,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "bootstrap": true,
+            "oob_score": false,
+            "n_jobs": 1,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "max_samples": null,
+            "monotonic_cst": null
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+        },
+        "git": {
+          "commit_hash": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T03:46:37.461108+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\24b3c96e48a04f1b9d34c76256656041\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "08172d71e1244e3fbd378c80998e197f",
+      "request": {
+        "operation": "decompress",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access_restored",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Restored artifact and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "decompress",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access_restored"
+      ],
+      "started_at_utc": "2026-10-24T03:46:37.977038+00:00",
+      "finished_at_utc": "2026-10-24T03:46:38.396617+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_fast_access\",\r\n  \"manifest_sha256\": \"8dbad1e11c5fc3c373be3c894d295a6769e970f16a5eff87f2a59b3d425a3c93\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 1673,\r\n  \"compressed_sha256\": \"83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\random_forest_fast_access_restored\",\r\n  \"restored_file\": \"README.md\",\r\n  \"restored_size\": 3212,\r\n  \"restored_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-24T03:46:38.351174+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxndWlfam9ic192YWxpZGF0aW9uXzIwMjYxMDI0VDAzNDYxMzQyNzQxOVpcXHJhbmRvbV9mb3Jlc3RfZmFzdF9hY2Nlc3MiLA0KICAibWFuaWZlc3Rfc2hhMjU2IjogIjhkYmFkMWUxMWM1ZmMzYzM3M2JlM2M4OTRkMjk1YTY3NjllOTcwZjE2YTVlZmY4N2YyYTU5YjNkNDI1YTNjOTMiLA0KICAiY29tcHJlc3NlZF9maWxlIjogInBheWxvYWQuenN0IiwNCiAgImNvbXByZXNzZWRfc2l6ZSI6IDE2NzMsDQogICJjb21wcmVzc2VkX3NoYTI1NiI6ICI4MzU5NDU1OWQ1MmY2YzFmNjYxZmY3MDRkYzcxZmZiODkxMmI2Y2NmMzhmNDFjZGU1NTM0OWVjMjk2NWQ4MDRjIiwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2pvYnNfdmFsaWRhdGlvbl8yMDI2MTAyNFQwMzQ2MTM0Mjc0MTlaXFxyYW5kb21fZm9yZXN0X2Zhc3RfYWNjZXNzX3Jlc3RvcmVkIiwNCiAgInJlc3RvcmVkX2ZpbGUiOiAiUkVBRE1FLm1kIiwNCiAgInJlc3RvcmVkX3NpemUiOiAzMjEyLA0KICAicmVzdG9yZWRfc2hhMjU2IjogImRkODI3YzQ2MTgxOTM3MjhlMmQ0YzFhZmIwODhhYmYwMTBjNGJkNWFmM2M2YTZiNTgxMzc2NWQ0MjMzNGQ3MWUiLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAiY3JlYXRlZF9hdF91dGMiOiAiMjAyNi0xMC0yNFQwMzo0NjozOC4zNTExNzQrMDA6MDAiLA0KICAic21hcnRfZGVjb21wcmVzc19zb3VyY2Vfc2hhMjU2IjogIjA4OWEzZmZkMTIyMDE1MjY0MjUxYmZjMGZkNDllMWZiOWZlMWZiYjRhOTdiN2IwMmIwN2IzMmMzNmExYjg4M2MiLA0KICAib3BlcmF0aW9uIjogIk9uZSBzYXZlZC1hbGdvcml0aG0gZGVjb21wcmVzc2lvbjsgc2l6ZS9TSEEtMjU2IHZlcmlmaWNhdGlvbjsgbm8gbW9kZWwgb3IgYmVuY2htYXJrLiINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_decompress_version": 1,
+        "smart_mode_version": 1,
+        "algorithm": "zstd",
+        "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access",
+        "manifest_sha256": "8dbad1e11c5fc3c373be3c894d295a6769e970f16a5eff87f2a59b3d425a3c93",
+        "compressed_file": "payload.zst",
+        "compressed_size": 1673,
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access_restored",
+        "restored_file": "README.md",
+        "restored_size": 3212,
+        "restored_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "verified": true,
+        "created_at_utc": "2026-10-24T03:46:38.351174+00:00",
+        "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access\\manifest.json": "8dbad1e11c5fc3c373be3c894d295a6769e970f16a5eff87f2a59b3d425a3c93",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\random_forest_fast_access\\payload.zst": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c"
+        },
+        "manifest_sha256": "8dbad1e11c5fc3c373be3c894d295a6769e970f16a5eff87f2a59b3d425a3c93",
+        "algorithm": "zstd",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "original_filename": "README.md",
+        "compressed_sha256": "83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c",
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\08172d71e1244e3fbd378c80998e197f\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "fad7ebefb0a746a98dbd12d763acb9a5",
+      "request": {
+        "operation": "compare",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\comparison",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Comparison completed and saved reports agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "compare",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\comparison"
+      ],
+      "started_at_utc": "2026-10-24T03:46:38.488247+00:00",
+      "finished_at_utc": "2026-10-24T03:46:39.227757+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"status\": \"completed\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\comparison\",\r\n  \"measurements\": [\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"gzip\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1581,\r\n      \"compression_ratio\": 0.4922166874221669,\r\n      \"compression_time_ms\": 0.2178,\r\n      \"decompression_time_ms\": 0.0463,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"bz2\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1584,\r\n      \"compression_ratio\": 0.4931506849315068,\r\n      \"compression_time_ms\": 0.7301,\r\n      \"decompression_time_ms\": 0.1646,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"lzma\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1620,\r\n      \"compression_ratio\": 0.5043586550435866,\r\n      \"compression_time_ms\": 8.4399,\r\n      \"decompression_time_ms\": 0.1357,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"algorithm\": \"zstd\",\r\n      \"original_size\": 3212,\r\n      \"compressed_size\": 1673,\r\n      \"compression_ratio\": 0.5208592777085927,\r\n      \"compression_time_ms\": 0.0295,\r\n      \"decompression_time_ms\": 0.0091,\r\n      \"verified\": true,\r\n      \"status\": \"ok\",\r\n      \"error\": \"\"\r\n    }\r\n  ],\r\n  \"selections\": [\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"archive\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.039592604644146316,\r\n      \"score_gzip\": 0.5439081742083705,\r\n      \"score_bz2\": 0.9169322829808939,\r\n      \"score_lzma\": 1.270834158084494,\r\n      \"score_zstd\": 0.039592604644146316\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"balanced\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.02828043188867594,\r\n      \"score_gzip\": 0.9065136236806175,\r\n      \"score_bz2\": 1.526956648191557,\r\n      \"score_lzma\": 2.101811202796185,\r\n      \"score_zstd\": 0.02828043188867594\r\n    },\r\n    {\r\n      \"sample_id\": \"file_dd827c4618193728\",\r\n      \"mode\": \"fast_access\",\r\n      \"best_algorithm\": \"zstd\",\r\n      \"best_score\": 0.016968259133205564,\r\n      \"score_gzip\": 1.2132711632153093,\r\n      \"score_bz2\": 2.0899489074528055,\r\n      \"score_lzma\": 2.4896637491306577,\r\n      \"score_zstd\": 0.016968259133205564\r\n    }\r\n  ],\r\n  \"errors\": []\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAic3RhdHVzIjogImNvbXBsZXRlZCIsDQogICJvdXRwdXRfZGlyIjogIkM6XFxVc2Vyc1xcczAxMDlcXFB5Y2hhcm1Qcm9qZWN0c1xcc21hcnRfY29tcHJlc3Npb25fcmVzZWFyY2hcXGRhdGFcXHRlbXBcXGd1aV9qb2JzX3ZhbGlkYXRpb25fMjAyNjEwMjRUMDM0NjEzNDI3NDE5WlxcY29tcGFyaXNvbiIsDQogICJtZWFzdXJlbWVudHMiOiBbDQogICAgew0KICAgICAgInNhbXBsZV9pZCI6ICJmaWxlX2RkODI3YzQ2MTgxOTM3MjgiLA0KICAgICAgImFsZ29yaXRobSI6ICJnemlwIiwNCiAgICAgICJvcmlnaW5hbF9zaXplIjogMzIxMiwNCiAgICAgICJjb21wcmVzc2VkX3NpemUiOiAxNTgxLA0KICAgICAgImNvbXByZXNzaW9uX3JhdGlvIjogMC40OTIyMTY2ODc0MjIxNjY5LA0KICAgICAgImNvbXByZXNzaW9uX3RpbWVfbXMiOiAwLjIxNzgsDQogICAgICAiZGVjb21wcmVzc2lvbl90aW1lX21zIjogMC4wNDYzLA0KICAgICAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgICAgICJzdGF0dXMiOiAib2siLA0KICAgICAgImVycm9yIjogIiINCiAgICB9LA0KICAgIHsNCiAgICAgICJzYW1wbGVfaWQiOiAiZmlsZV9kZDgyN2M0NjE4MTkzNzI4IiwNCiAgICAgICJhbGdvcml0aG0iOiAiYnoyIiwNCiAgICAgICJvcmlnaW5hbF9zaXplIjogMzIxMiwNCiAgICAgICJjb21wcmVzc2VkX3NpemUiOiAxNTg0LA0KICAgICAgImNvbXByZXNzaW9uX3JhdGlvIjogMC40OTMxNTA2ODQ5MzE1MDY4LA0KICAgICAgImNvbXByZXNzaW9uX3RpbWVfbXMiOiAwLjczMDEsDQogICAgICAiZGVjb21wcmVzc2lvbl90aW1lX21zIjogMC4xNjQ2LA0KICAgICAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgICAgICJzdGF0dXMiOiAib2siLA0KICAgICAgImVycm9yIjogIiINCiAgICB9LA0KICAgIHsNCiAgICAgICJzYW1wbGVfaWQiOiAiZmlsZV9kZDgyN2M0NjE4MTkzNzI4IiwNCiAgICAgICJhbGdvcml0aG0iOiAibHptYSIsDQogICAgICAib3JpZ2luYWxfc2l6ZSI6IDMyMTIsDQogICAgICAiY29tcHJlc3NlZF9zaXplIjogMTYyMCwNCiAgICAgICJjb21wcmVzc2lvbl9yYXRpbyI6IDAuNTA0MzU4NjU1MDQzNTg2NiwNCiAgICAgICJjb21wcmVzc2lvbl90aW1lX21zIjogOC40Mzk5LA0KICAgICAgImRlY29tcHJlc3Npb25fdGltZV9tcyI6IDAuMTM1NywNCiAgICAgICJ2ZXJpZmllZCI6IHRydWUsDQogICAgICAic3RhdHVzIjogIm9rIiwNCiAgICAgICJlcnJvciI6ICIiDQogICAgfSwNCiAgICB7DQogICAgICAic2FtcGxlX2lkIjogImZpbGVfZGQ4MjdjNDYxODE5MzcyOCIsDQogICAgICAiYWxnb3JpdGhtIjogInpzdGQiLA0KICAgICAgIm9yaWdpbmFsX3NpemUiOiAzMjEyLA0KICAgICAgImNvbXByZXNzZWRfc2l6ZSI6IDE2NzMsDQogICAgICAiY29tcHJlc3Npb25fcmF0aW8iOiAwLjUyMDg1OTI3NzcwODU5MjcsDQogICAgICAiY29tcHJlc3Npb25fdGltZV9tcyI6IDAuMDI5NSwNCiAgICAgICJkZWNvbXByZXNzaW9uX3RpbWVfbXMiOiAwLjAwOTEsDQogICAgICAidmVyaWZpZWQiOiB0cnVlLA0KICAgICAgInN0YXR1cyI6ICJvayIsDQogICAgICAiZXJyb3IiOiAiIg0KICAgIH0NCiAgXSwNCiAgInNlbGVjdGlvbnMiOiBbDQogICAgew0KICAgICAgInNhbXBsZV9pZCI6ICJmaWxlX2RkODI3YzQ2MTgxOTM3MjgiLA0KICAgICAgIm1vZGUiOiAiYXJjaGl2ZSIsDQogICAgICAiYmVzdF9hbGdvcml0aG0iOiAienN0ZCIsDQogICAgICAiYmVzdF9zY29yZSI6IDAuMDM5NTkyNjA0NjQ0MTQ2MzE2LA0KICAgICAgInNjb3JlX2d6aXAiOiAwLjU0MzkwODE3NDIwODM3MDUsDQogICAgICAic2NvcmVfYnoyIjogMC45MTY5MzIyODI5ODA4OTM5LA0KICAgICAgInNjb3JlX2x6bWEiOiAxLjI3MDgzNDE1ODA4NDQ5NCwNCiAgICAgICJzY29yZV96c3RkIjogMC4wMzk1OTI2MDQ2NDQxNDYzMTYNCiAgICB9LA0KICAgIHsNCiAgICAgICJzYW1wbGVfaWQiOiAiZmlsZV9kZDgyN2M0NjE4MTkzNzI4IiwNCiAgICAgICJtb2RlIjogImJhbGFuY2VkIiwNCiAgICAgICJiZXN0X2FsZ29yaXRobSI6ICJ6c3RkIiwNCiAgICAgICJiZXN0X3Njb3JlIjogMC4wMjgyODA0MzE4ODg2NzU5NCwNCiAgICAgICJzY29yZV9nemlwIjogMC45MDY1MTM2MjM2ODA2MTc1LA0KICAgICAgInNjb3JlX2J6MiI6IDEuNTI2OTU2NjQ4MTkxNTU3LA0KICAgICAgInNjb3JlX2x6bWEiOiAyLjEwMTgxMTIwMjc5NjE4NSwNCiAgICAgICJzY29yZV96c3RkIjogMC4wMjgyODA0MzE4ODg2NzU5NA0KICAgIH0sDQogICAgew0KICAgICAgInNhbXBsZV9pZCI6ICJmaWxlX2RkODI3YzQ2MTgxOTM3MjgiLA0KICAgICAgIm1vZGUiOiAiZmFzdF9hY2Nlc3MiLA0KICAgICAgImJlc3RfYWxnb3JpdGhtIjogInpzdGQiLA0KICAgICAgImJlc3Rfc2NvcmUiOiAwLjAxNjk2ODI1OTEzMzIwNTU2NCwNCiAgICAgICJzY29yZV9nemlwIjogMS4yMTMyNzExNjMyMTUzMDkzLA0KICAgICAgInNjb3JlX2J6MiI6IDIuMDg5OTQ4OTA3NDUyODA1NSwNCiAgICAgICJzY29yZV9sem1hIjogMi40ODk2NjM3NDkxMzA2NTc3LA0KICAgICAgInNjb3JlX3pzdGQiOiAwLjAxNjk2ODI1OTEzMzIwNTU2NA0KICAgIH0NCiAgXSwNCiAgImVycm9ycyI6IFtdDQp9DQo=",
+      "stderr_base64": "",
+      "data": {
+        "compare_mode_version": 1,
+        "status": "completed",
+        "scope": "Single-file measured comparison; not Smart prediction, model evaluation, or a new Pilot",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "original_filename": "README.md",
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "sample_id": "file_dd827c4618193728",
+        "seed": null,
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\comparison",
+        "started_at_utc": "2026-10-24T03:46:38.854996+00:00",
+        "finished_measurement_at_utc": "2026-10-24T03:46:38.962604+00:00",
+        "algorithm_order": [
+          "gzip",
+          "bz2",
+          "lzma",
+          "zstd"
+        ],
+        "phase_order": [
+          "compress",
+          "decompress"
+        ],
+        "compression_settings": {
+          "gzip": {
+            "level": 9
+          },
+          "bz2": {
+            "level": 9
+          },
+          "lzma": {
+            "preset": 6
+          },
+          "zstd": {
+            "level": 3
+          }
+        },
+        "timing": {
+          "repeats": 5,
+          "timer": "time.perf_counter_ns",
+          "aggregate": "median"
+        },
+        "selection_modes": {
+          "archive": {
+            "compression_ratio": 0.7,
+            "compression_time": 0.15,
+            "decompression_time": 0.15
+          },
+          "balanced": {
+            "compression_ratio": 0.5,
+            "compression_time": 0.25,
+            "decompression_time": 0.25
+          },
+          "fast_access": {
+            "compression_ratio": 0.3,
+            "compression_time": 0.2,
+            "decompression_time": 0.5
+          }
+        },
+        "tie_order": [
+          "gzip",
+          "bz2",
+          "lzma",
+          "zstd"
+        ],
+        "score_epsilon": null,
+        "memory_measured": false,
+        "memory_score_inclusion": false,
+        "git_commit": "8a8d3c820b5e30638db6c8f5621e471a19285b4d",
+        "source_sha256": {
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+          "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e"
+        },
+        "environment": {
+          "python_version": "3.14.4",
+          "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "zstandard_version": "0.25.0"
+        },
+        "row_counts": {
+          "algorithms": 4,
+          "planned_repeats": 40,
+          "attempted_repeats": 40,
+          "labels": 3
+        },
+        "measurements": [
+          {
+            "sample_id": "file_dd827c4618193728",
+            "algorithm": "gzip",
+            "original_size": 3212,
+            "compressed_size": 1581,
+            "compression_ratio": 0.4922166874221669,
+            "compression_time_ms": 0.2178,
+            "decompression_time_ms": 0.0463,
+            "verified": true,
+            "status": "ok",
+            "error": ""
+          },
+          {
+            "sample_id": "file_dd827c4618193728",
+            "algorithm": "bz2",
+            "original_size": 3212,
+            "compressed_size": 1584,
+            "compression_ratio": 0.4931506849315068,
+            "compression_time_ms": 0.7301,
+            "decompression_time_ms": 0.1646,
+            "verified": true,
+            "status": "ok",
+            "error": ""
+          },
+          {
+            "sample_id": "file_dd827c4618193728",
+            "algorithm": "lzma",
+            "original_size": 3212,
+            "compressed_size": 1620,
+            "compression_ratio": 0.5043586550435866,
+            "compression_time_ms": 8.4399,
+            "decompression_time_ms": 0.1357,
+            "verified": true,
+            "status": "ok",
+            "error": ""
+          },
+          {
+            "sample_id": "file_dd827c4618193728",
+            "algorithm": "zstd",
+            "original_size": 3212,
+            "compressed_size": 1673,
+            "compression_ratio": 0.5208592777085927,
+            "compression_time_ms": 0.0295,
+            "decompression_time_ms": 0.0091,
+            "verified": true,
+            "status": "ok",
+            "error": ""
+          }
+        ],
+        "selections": [
+          {
+            "sample_id": "file_dd827c4618193728",
+            "mode": "archive",
+            "best_algorithm": "zstd",
+            "best_score": 0.039592604644146316,
+            "score_gzip": 0.5439081742083705,
+            "score_bz2": 0.9169322829808939,
+            "score_lzma": 1.270834158084494,
+            "score_zstd": 0.039592604644146316
+          },
+          {
+            "sample_id": "file_dd827c4618193728",
+            "mode": "balanced",
+            "best_algorithm": "zstd",
+            "best_score": 0.02828043188867594,
+            "score_gzip": 0.9065136236806175,
+            "score_bz2": 1.526956648191557,
+            "score_lzma": 2.101811202796185,
+            "score_zstd": 0.02828043188867594
+          },
+          {
+            "sample_id": "file_dd827c4618193728",
+            "mode": "fast_access",
+            "best_algorithm": "zstd",
+            "best_score": 0.016968259133205564,
+            "score_gzip": 1.2132711632153093,
+            "score_bz2": 2.0899489074528055,
+            "score_lzma": 2.4896637491306577,
+            "score_zstd": 0.016968259133205564
+          }
+        ],
+        "errors": [],
+        "publication_contract": "Use scores only for status=completed, successful return, and no publication_failed.json.",
+        "limitations": [
+          "Fixed algorithm order and one execution environment; no generalization or model accuracy claim.",
+          "All data are in memory; file I/O and verification/hash work are outside timed codec calls.",
+          "Five repeats per phase; medians in ms are derived from raw ns; no warmup, epsilon or measurement retries.",
+          "Failed repeats stop that algorithm and retain unexecuted slots; other algorithms continue; no partial-set scoring.",
+          "No model or features are loaded; no memory measurement, training or compressed packages are produced.",
+          "Source byte hashes describe this execution; Git HEAD may predate working-tree implementation."
+        ],
+        "artifact_sha256": {
+          "timing_repeats.csv": "054416280091ac888ab2f0269d7be2da60ac1c8b7218baf39bbd55bd5a1f29bc",
+          "compression_results.csv": "3c41faf2b9c0374a4185804886275ac76f7c44654cbde67a1489415a4d827eab",
+          "selection_labels.csv": "86e617b11318a95863c2b2b463d9619eee7878bdfdb3748782a7e266f6c699df",
+          "config_snapshot.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+        }
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e"
+        },
+        "input_sha256": "dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e",
+        "original_size": 3212,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\fad7ebefb0a746a98dbd12d763acb9a5\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    },
+    {
+      "job_id": "cfa8ca8cd3b64ab1ba978ee560597bd6",
+      "request": {
+        "operation": "compare",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\comparison",
+        "mode": null,
+        "model_kind": null,
+        "model_dir": null
+      },
+      "status": "failed",
+      "message": "ValueError: Output directory already exists",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "compare",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\README.md",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\comparison"
+      ],
+      "started_at_utc": "2026-10-24T03:46:39.232406+00:00",
+      "finished_at_utc": "2026-10-24T03:46:39.232543+00:00",
+      "return_code": null,
+      "stdout": "",
+      "stderr": "",
+      "stdout_base64": "",
+      "stderr_base64": "",
+      "data": null,
+      "input_snapshot": null,
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_jobs_validation_20261024T034613427419Z\\sessions\\cfa8ca8cd3b64ab1ba978ee560597bd6\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    }
+  ],
+  "roundtrips": 6,
+  "comparison_row_counts": {
+    "algorithms": 4,
+    "planned_repeats": 40,
+    "attempted_repeats": 40,
+    "labels": 3
+  },
+  "all_logs_match_queue_results": true,
+  "existing_output_blocked_before_spawn": true,
+  "protected_inputs_unchanged": true,
+  "gui_launched": false,
+  "memory_measured": false,
+  "model_training_performed": false,
+  "comparison_artifacts": {
+    ".gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "text_utf8": "* -text\n"
+    },
+    "comparison.json": {
+      "sha256": "018d3667b5a4f2b60e8dcbd54805247743fc37595ec53a528c1c5adb32877c03",
+      "text_utf8": "{\n  \"compare_mode_version\": 1,\n  \"status\": \"completed\",\n  \"scope\": \"Single-file measured comparison; not Smart prediction, model evaluation, or a new Pilot\",\n  \"input_path\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\README.md\",\n  \"original_filename\": \"README.md\",\n  \"input_sha256\": \"dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e\",\n  \"original_size\": 3212,\n  \"sample_id\": \"file_dd827c4618193728\",\n  \"seed\": null,\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_jobs_validation_20261024T034613427419Z\\\\comparison\",\n  \"started_at_utc\": \"2026-10-24T03:46:38.854996+00:00\",\n  \"finished_measurement_at_utc\": \"2026-10-24T03:46:38.962604+00:00\",\n  \"algorithm_order\": [\n    \"gzip\",\n    \"bz2\",\n    \"lzma\",\n    \"zstd\"\n  ],\n  \"phase_order\": [\n    \"compress\",\n    \"decompress\"\n  ],\n  \"compression_settings\": {\n    \"gzip\": {\n      \"level\": 9\n    },\n    \"bz2\": {\n      \"level\": 9\n    },\n    \"lzma\": {\n      \"preset\": 6\n    },\n    \"zstd\": {\n      \"level\": 3\n    }\n  },\n  \"timing\": {\n    \"repeats\": 5,\n    \"timer\": \"time.perf_counter_ns\",\n    \"aggregate\": \"median\"\n  },\n  \"selection_modes\": {\n    \"archive\": {\n      \"compression_ratio\": 0.7,\n      \"compression_time\": 0.15,\n      \"decompression_time\": 0.15\n    },\n    \"balanced\": {\n      \"compression_ratio\": 0.5,\n      \"compression_time\": 0.25,\n      \"decompression_time\": 0.25\n    },\n    \"fast_access\": {\n      \"compression_ratio\": 0.3,\n      \"compression_time\": 0.2,\n      \"decompression_time\": 0.5\n    }\n  },\n  \"tie_order\": [\n    \"gzip\",\n    \"bz2\",\n    \"lzma\",\n    \"zstd\"\n  ],\n  \"score_epsilon\": null,\n  \"memory_measured\": false,\n  \"memory_score_inclusion\": false,\n  \"git_commit\": \"8a8d3c820b5e30638db6c8f5621e471a19285b4d\",\n  \"source_sha256\": {\n    \"compare_compress.py\": \"8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07\",\n    \"src/compressors.py\": \"0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c\",\n    \"src/scoring.py\": \"7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778\",\n    \"config/experiment_config.json\": \"f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652\",\n    \"research_protocol_v2.md\": \"d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5\",\n    \"requirements.txt\": \"318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e\"\n  },\n  \"environment\": {\n    \"python_version\": \"3.14.4\",\n    \"python_executable\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\.venv\\\\Scripts\\\\python.exe\",\n    \"operating_system\": \"Windows-11-10.0.26300-SP0\",\n    \"zstandard_version\": \"0.25.0\"\n  },\n  \"row_counts\": {\n    \"algorithms\": 4,\n    \"planned_repeats\": 40,\n    \"attempted_repeats\": 40,\n    \"labels\": 3\n  },\n  \"measurements\": [\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"gzip\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1581,\n      \"compression_ratio\": 0.4922166874221669,\n      \"compression_time_ms\": 0.2178,\n      \"decompression_time_ms\": 0.0463,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"bz2\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1584,\n      \"compression_ratio\": 0.4931506849315068,\n      \"compression_time_ms\": 0.7301,\n      \"decompression_time_ms\": 0.1646,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"lzma\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1620,\n      \"compression_ratio\": 0.5043586550435866,\n      \"compression_time_ms\": 8.4399,\n      \"decompression_time_ms\": 0.1357,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"algorithm\": \"zstd\",\n      \"original_size\": 3212,\n      \"compressed_size\": 1673,\n      \"compression_ratio\": 0.5208592777085927,\n      \"compression_time_ms\": 0.0295,\n      \"decompression_time_ms\": 0.0091,\n      \"verified\": true,\n      \"status\": \"ok\",\n      \"error\": \"\"\n    }\n  ],\n  \"selections\": [\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"archive\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.039592604644146316,\n      \"score_gzip\": 0.5439081742083705,\n      \"score_bz2\": 0.9169322829808939,\n      \"score_lzma\": 1.270834158084494,\n      \"score_zstd\": 0.039592604644146316\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"balanced\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.02828043188867594,\n      \"score_gzip\": 0.9065136236806175,\n      \"score_bz2\": 1.526956648191557,\n      \"score_lzma\": 2.101811202796185,\n      \"score_zstd\": 0.02828043188867594\n    },\n    {\n      \"sample_id\": \"file_dd827c4618193728\",\n      \"mode\": \"fast_access\",\n      \"best_algorithm\": \"zstd\",\n      \"best_score\": 0.016968259133205564,\n      \"score_gzip\": 1.2132711632153093,\n      \"score_bz2\": 2.0899489074528055,\n      \"score_lzma\": 2.4896637491306577,\n      \"score_zstd\": 0.016968259133205564\n    }\n  ],\n  \"errors\": [],\n  \"publication_contract\": \"Use scores only for status=completed, successful return, and no publication_failed.json.\",\n  \"limitations\": [\n    \"Fixed algorithm order and one execution environment; no generalization or model accuracy claim.\",\n    \"All data are in memory; file I/O and verification/hash work are outside timed codec calls.\",\n    \"Five repeats per phase; medians in ms are derived from raw ns; no warmup, epsilon or measurement retries.\",\n    \"Failed repeats stop that algorithm and retain unexecuted slots; other algorithms continue; no partial-set scoring.\",\n    \"No model or features are loaded; no memory measurement, training or compressed packages are produced.\",\n    \"Source byte hashes describe this execution; Git HEAD may predate working-tree implementation.\"\n  ],\n  \"artifact_sha256\": {\n    \"timing_repeats.csv\": \"054416280091ac888ab2f0269d7be2da60ac1c8b7218baf39bbd55bd5a1f29bc\",\n    \"compression_results.csv\": \"3c41faf2b9c0374a4185804886275ac76f7c44654cbde67a1489415a4d827eab\",\n    \"selection_labels.csv\": \"86e617b11318a95863c2b2b463d9619eee7878bdfdb3748782a7e266f6c699df\",\n    \"config_snapshot.json\": \"f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652\",\n    \".gitattributes\": \"705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da\"\n  }\n}\n"
+    },
+    "compression_results.csv": {
+      "sha256": "3c41faf2b9c0374a4185804886275ac76f7c44654cbde67a1489415a4d827eab",
+      "text_utf8": "sample_id,algorithm,original_size,compressed_size,compression_ratio,compression_time_ms,decompression_time_ms,verified,status,error\nfile_dd827c4618193728,gzip,3212,1581,0.4922166874221669,0.2178,0.0463,True,ok,\nfile_dd827c4618193728,bz2,3212,1584,0.4931506849315068,0.7301,0.1646,True,ok,\nfile_dd827c4618193728,lzma,3212,1620,0.5043586550435866,8.4399,0.1357,True,ok,\nfile_dd827c4618193728,zstd,3212,1673,0.5208592777085927,0.0295,0.0091,True,ok,\n"
+    },
+    "config_snapshot.json": {
+      "sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+      "text_utf8": "{\n  \"compression\": {\n    \"gzip\": {\n      \"level\": 9\n    },\n    \"bz2\": {\n      \"level\": 9\n    },\n    \"lzma\": {\n      \"preset\": 6\n    },\n    \"zstd\": {\n      \"level\": 3\n    }\n  },\n  \"timing\": {\n    \"repeats\": 5,\n    \"timer\": \"time.perf_counter_ns\",\n    \"aggregate\": \"median\"\n  },\n  \"memory\": {\n    \"status\": \"validation_only\",\n    \"platform\": \"win32\",\n    \"metric\": \"peak_process_working_set_bytes\",\n    \"backend\": \"GetProcessMemoryInfo.PeakWorkingSetSize\",\n    \"unit\": \"bytes\",\n    \"isolation\": \"fresh_subprocess_per_phase_repeat\",\n    \"repeats\": 5,\n    \"aggregate\": \"median\",\n    \"combined\": \"max_of_phase_medians\"\n  },\n  \"features\": {\n    \"duplicate_block_size\": 16,\n    \"segment_size\": 4096\n  },\n  \"selection_modes\": {\n    \"archive\": {\n      \"compression_ratio\": 0.70,\n      \"compression_time\": 0.15,\n      \"decompression_time\": 0.15\n    },\n    \"balanced\": {\n      \"compression_ratio\": 0.50,\n      \"compression_time\": 0.25,\n      \"decompression_time\": 0.25\n    },\n    \"fast_access\": {\n      \"compression_ratio\": 0.30,\n      \"compression_time\": 0.20,\n      \"decompression_time\": 0.50\n    }\n  },\n  \"baseline\": {\n    \"test_size\": 0.20,\n    \"random_state\": 42,\n    \"group_column\": \"seed\"\n  },\n  \"decision_tree\": {\n    \"criterion\": \"gini\",\n    \"splitter\": \"best\",\n    \"max_depth\": null,\n    \"min_samples_split\": 2,\n    \"min_samples_leaf\": 1,\n    \"max_features\": null,\n    \"class_weight\": null,\n    \"ccp_alpha\": 0.0,\n    \"random_state\": 42\n  },\n  \"random_forest\": {\n    \"n_estimators\": 100,\n    \"criterion\": \"gini\",\n    \"max_depth\": null,\n    \"min_samples_split\": 2,\n    \"min_samples_leaf\": 1,\n    \"min_weight_fraction_leaf\": 0.0,\n    \"max_features\": \"sqrt\",\n    \"max_leaf_nodes\": null,\n    \"min_impurity_decrease\": 0.0,\n    \"bootstrap\": true,\n    \"oob_score\": false,\n    \"n_jobs\": 1,\n    \"random_state\": 42,\n    \"verbose\": 0,\n    \"warm_start\": false,\n    \"class_weight\": null,\n    \"ccp_alpha\": 0.0,\n    \"max_samples\": null,\n    \"monotonic_cst\": null\n  },\n  \"sample_sizes\": [\n    16384,\n    65536,\n    262144,\n    1048576\n  ]\n}\n"
+    },
+    "selection_labels.csv": {
+      "sha256": "86e617b11318a95863c2b2b463d9619eee7878bdfdb3748782a7e266f6c699df",
+      "text_utf8": "sample_id,mode,best_algorithm,best_score,score_gzip,score_bz2,score_lzma,score_zstd\nfile_dd827c4618193728,archive,zstd,0.039592604644146316,0.5439081742083705,0.9169322829808939,1.270834158084494,0.039592604644146316\nfile_dd827c4618193728,balanced,zstd,0.02828043188867594,0.9065136236806175,1.526956648191557,2.101811202796185,0.02828043188867594\nfile_dd827c4618193728,fast_access,zstd,0.016968259133205564,1.2132711632153093,2.0899489074528055,2.4896637491306577,0.016968259133205564\n"
+    },
+    "timing_repeats.csv": {
+      "sha256": "054416280091ac888ab2f0269d7be2da60ac1c8b7218baf39bbd55bd5a1f29bc",
+      "text_utf8": "sample_id,algorithm,phase,repeat_index,elapsed_ns,status,consistent_with_reference,verified,output_size,output_sha256,error\nfile_dd827c4618193728,gzip,compress,1,1101600,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,2,219600,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,3,124300,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,4,217800,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,compress,5,191200,ok,True,,1581,19f65fd43fca3c76445a5ef0134acedb9d91bf35cd191e2684e7d53737dafa4a,\nfile_dd827c4618193728,gzip,decompress,1,721500,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,2,91800,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,3,46300,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,4,20700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,gzip,decompress,5,17600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,compress,1,1696900,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,2,762700,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,3,730100,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,4,680200,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,compress,5,649500,ok,True,,1584,bc8eb56ea1284871d2110bf197905ed6aeb241f2d0e56344f0ab665514f23e89,\nfile_dd827c4618193728,bz2,decompress,1,229900,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,2,168900,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,3,154400,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,4,159200,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,bz2,decompress,5,164600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,compress,1,8439900,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,2,6161300,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,3,10574600,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,4,9071500,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,compress,5,6129700,ok,True,,1620,27a18cedc9021327b7d9138cb8e7a6a426e3088115c9b728d6a5e89d6035590c,\nfile_dd827c4618193728,lzma,decompress,1,564800,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,2,224500,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,3,135700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,4,111800,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,lzma,decompress,5,108700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,compress,1,116300,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,2,34000,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,3,29500,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,4,28500,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,compress,5,27700,ok,True,,1673,83594559d52f6c1f661ff704dc71ffb8912b6ccf38f41cde55349ec2965d804c,\nfile_dd827c4618193728,zstd,decompress,1,38600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,2,10600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,3,9100,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,4,8700,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\nfile_dd827c4618193728,zstd,decompress,5,8600,ok,,True,3212,dd827c4618193728e2d4c1afb088abf010c4bd5af3c6a6b5813765d42334d71e,\n"
+    }
+  },
+  "saved_validation_record_sha256": "21b1f0deb1fa2a159544438d26146fe8c9c446118a3afa17658c9fad3eebfff4",
+  "reverified_at_utc": "2026-10-24T03:59:46.001686+00:00",
+  "test_verification": {
+    "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_gui_jobs.py -v",
+    "passed": 18,
+    "elapsed_seconds": 3.128,
+    "result": "OK",
+    "full_repository_suite_run": false,
+    "test_source_sha256": "c1b85ab726a54a7c23c771bb0d5b7c9a8b55507c5248a471ad2423f72c24ce0e"
+  }
+}

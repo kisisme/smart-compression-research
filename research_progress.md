@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [GUI/Demo 최소 화면·실행 흐름 설계](research_log/gui_demo_design_v1.md)를 완료했다. 프로토콜의 Tkinter 후보와 현재 환경의 tkinter/Tcl import 가능 여부, 기존 CLI 함수·성공 응답 계약을 확인했다. 세 작업 탭·새 출력·명시적 모델/사용 목적·단일 비동기 작업·실제 근거에 따른 결과/오류 표시·동일 입력의 명시적 Demo 대조·구현 후 검증 조건을 정리했다. GUI·작업 실행 계층·실제 창 검증은 미완료이며 이번에는 문서·환경/계약 확인만 수행했다. [확인 기록](research_log/gui_demo_design_v1_checks.json)을 보존한다. 통합 CLI의 기존 구현·검증과 공식 3지표·memory 참고 지표 보존 방침을 유지한다.
+최신 진행: GUI 작업 실행 계층 `src/gui_jobs.py`의 구현·전용 테스트 18개·실제 CLI 연결 검증을 완료했다. Frozen 요청·단일 non-daemon worker·queue·출력/응답 판정·로그를 Tk와 분리했다. 실제 worker 요청 14건에서 저장 모델의 압축→복원 여섯 건·Compare 정상 처리와 기존 출력의 실행 전 차단을 확인했다. 원시 반복 40개·mode 정답 3개·로그/queue 일치·보호 파일 38개 불변을 재검증했다. [계층 안내](research_log/gui_jobs.md)와 [실제 결과·테스트 기록](research_log/gui_jobs_validation_20261024.json)을 보존한다. Tk 화면·실제 GUI 응답성·Demo 대조 연결은 미완료다. 공식 3지표·memory 참고 지표 보존 방침을 유지한다.
 
 현재 memory 방침: 2026-10-23 사용자가 memory를 참고 지표로 보존하고, 추가 구현은 여건이 마련됐을 때 진행하기로 선택했다. [결정 기록](research_log/memory_reference_indicator_decision_20261023.md)에 기존 검토·최신 독립 감사·후보 분석 근거를 연결했다. 공식 기준은 계속 압축률·압축 시간·압축 해제 시간의 3지표이며 memory는 `validation_only`, `score_inclusion=false`를 유지한다. Memory 추가 구현·측정·4지표 전환은 재개 일정이 없는 보류 과제다. 당장의 작업 우선순위는 기존 3지표 시스템 완성이다.
 
@@ -38,6 +38,7 @@
 | 독립 압축 해제 CLI | `smart_decompress.py`: 기존 version-1 manifest·payload 검증 후 저장된 해제기 하나로 복원·원본 크기/SHA-256 대조·새 출력 게시. 전용 테스트 13개와 기존 압축 회귀 5개, 기존 package 여섯 건 실제 복원 완료. 모델·특징·benchmark·memory 측정 불필요 |
 | 독립 Compare Mode CLI | `compare_compress.py`: 네 알고리즘의 실제 5회 압축/해제·원시 ns·중앙값·복원 검증·기존 공식 3지표 점수를 새 출력에 저장. 실패·미실행·입력 변경·부분 저장을 구분한다. 전용 16개/회귀 16개와 README 실제 비교·재검증 완료. 모델 평가·새 Pilot과 구분 |
 | 통합 CLI 진입점 | `main.py`: Smart 압축·해제·Compare 명령을 선택적으로 연결한다. 기존 파서·검증·종료 코드를 유지하고 Python 3.14 모듈 문맥의 도움말을 선택적 `prog`로 전달한다. 전용 12개/회귀 34개 및 최종 실제 호출 22건 검증 완료 |
+| GUI 작업 실행 계층 | `src/gui_jobs.py`: Tk와 분리된 frozen 요청·기존 CLI 프로세스·입력/모델/source 및 산출물 검증·단일 worker/queue·실행 기록. 전용 테스트 18개와 실제 요청 14건 검증 완료. GUI 화면/응답성 검증은 미완료 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 참고·검증용으로 보존. 2026-10-23 사용자 결정에 따라 공식 점수 편입·추가 구현은 여건이 마련될 때까지 보류 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
@@ -766,23 +767,34 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **읽기 전용·문서 확인 완료:** 창을 만들지 않는 tkinter import/Tcl 초기화에서 Tcl 8.6.15/Tk 8.6을 확인했다. Python AST로 기존 공개 함수 인자를 읽고 보존된 실제 통합 CLI JSON에서 성공 응답 필드를 확인했다. 코드·config·프로토콜·기존 근거·관련 테스트 15개의 SHA-256 불변과 설계 로컬 링크 6개 유효·다음 작업 일치를 확인했다. GUI 실행·화면 렌더링·단위 테스트·모델 로딩·새 압축/복원·새 Compare·새 연구 실험은 수행하지 않았으며 GUI가 동작한다고 기록하지 않는다.
 - **다음 구현 계획:** 먼저 `src/gui_jobs.py`의 작업 요청·명령 구성·프로세스/응답 처리·단일 worker·로그 계층을 구현·검증한다. 그 다음 Tk 화면·상태/결과 연결·명시적 Demo 대조와 실제 Windows 창 검증을 진행한다. Memory는 참고 지표로 유지하며 새 UI 지표·score·측정을 추가하지 않는다.
 
+### GUI 작업 실행 계층 구현·검증 완료 — 2026-10-24
+
+근거: [구현](src/gui_jobs.py), [전용 테스트](tests/test_gui_jobs.py), [API·판정·실행 기록](research_log/gui_jobs.md), [실제 worker 결과·명령·로그·원시 비교·테스트](research_log/gui_jobs_validation_20261024.json). 작업 시작·실제 실행 HEAD는 설계 보존 commit `8a8d3c8`이다. 새 계층은 당시 commit 전 작업 트리 상태였으며 정확한 소스 hash를 기록해 최종 구현과의 일치를 확인했다.
+
+- **구현 완료:** Frozen `JobRequest`, `build_command`, 동기 worker용 `run_job`, 비동기 `JobRunner.submit/poll/busy`를 추가했다. 별도 Python의 기존 `main.py`에 인자 목록·`-B`·프로젝트 cwd·UTF-8을 전달하며 Windows 콘솔을 숨긴다. Tk·ML 역직렬화·특징·codec·scoring을 부모 계층에서 import/실행하지 않는다. Source·config·입력 및 선택한 model/summary의 hash snapshot을 확인하고 무거운 읽기/대기는 worker에서 수행한다. 정상적인 runtime 호출은 재시도하지 않는다.
+- **판정·보존 완료:** 종료 코드만으로 정상 처리하지 않고 Smart manifest/payload·복원 파일·Compare stdout/보고서/hash·정상 검증·입력/모델/config/source 일치를 대조한다. `succeeded`, `partial`, `invalidated`, `failed`, `inconclusive`를 구분하고 정상 표시용 데이터는 유효한 결과만 반환한다. 비교 실패의 정상 선택은 비어 있어야 한다. 로그는 별도 새 session에 원문 bytes/base64·요청·명령·시각·상태·근거를 보존한다. 입력 package/출력 아래 로그와 기존 로그 덮어쓰기는 거부한다. Backend 성공 후 로그만 실패하면 성공 파일을 유지하고 log_error로 별도 보고한다.
+- **단일 작업 제어 완료:** 하나의 non-daemon thread만 실행하고 busy일 때 중복 요청을 거부한다. Widget callback 대신 ID가 있는 terminal 결과를 queue로 반환하며 예외 후에도 busy를 해제한다. GUI는 `poll()`을 사용하고 `wait()`는 테스트/비-GUI 호출자용이다. 취소·백분율·실시간 codec 진행·Tk 화면은 이 계층에 추가하지 않았다.
+- **실제 실행·재검증 완료:** 새 `data/temp/gui_jobs_validation_20261024T034613427419Z/`에서 JobRunner 요청 14건을 확인했다. 저장된 두 Pilot 모델 × 세 mode의 Smart→복원 여섯 건과 Compare 한 건, 총 자식 작업 13개가 정상이고 기존 출력 요청 한 건은 자식 프로세스 시작 전에 차단됐다. 모든 복원 bytes가 원본과 일치했고 각 queue 결과와 저장 로그가 일치했다. Python으로 Compare 원시 반복 40개·집계 4개·mode 정답 3개의 중앙값·공식 점수와 입력·모델·설정·구현 등 보호 파일 38개의 SHA-256 불변을 확인했다. 이 동작 검증은 모델 성능·일반화·새 Pilot이 아니다.
+- **테스트 완료:** `.venv/Scripts/python.exe -B -m unittest discover -s tests -p test_gui_jobs.py -v`의 최종 18개가 3.128초에 통과했다. Frozen 요청·명령/환경·단일 worker·busy/queue·사전 차단·비정상 JSON/검증/산출물·입력/모델/source 변경·비교 상태·로그 저장/동기화/ID 충돌·원문 bytes 보존·부모 의존성 import 차단을 확인했다. 인위적인 payload·모델·CSV fixture는 GUI 계약 검사용이며 연구 데이터나 실제 codec 결과가 아니다. 실제 codec 동작은 별도 CLI 연결로 확인했고 전체 저장소 suite는 실행하지 않았다.
+- **범위·미완료:** 기존 CLI·측정·점수·특징·모델·config는 변경하지 않았다. 실제 파일과 원래 로그는 Git 제외 경로에, 실행 결과와 원시 비교 산출물 원문·보호 hash·최종 테스트는 별도 JSON으로 Git 보존한다. Tk 창·UI 응답성·화면 Demo 대조·취소·스트리밍·새 학습·memory 측정은 미완료다. GUI가 실행됐다고 기록하지 않는다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
-- 사용자용 GUI/Demo 구현·작업 실행 계층·실제 창/응답성 검증. 최소 화면·실행 흐름 설계는 완료했다. 통합 `main.py`와 독립 Smart 압축·해제·Compare CLI는 구현·검증을 완료했다.
+- 사용자용 Tk GUI/Demo 화면·실제 창/응답성 검증·명시적 예측/실제 대조 연결. 최소 설계와 widget 없는 작업 실행 계층은 완료했다. 통합 `main.py`와 독립 Smart 압축·해제·Compare CLI는 구현·검증을 완료했다.
 - 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**GUI 작업 실행 계층 구현·검증:** 설계에 따라 `src/gui_jobs.py`에 Tk widget과 분리된 작업 요청 snapshot·기존 통합 CLI 인자 목록·단일 worker/queue·프로세스 대기·JSON/종료 상태·산출물/실패 표시 확인·로컬 실행 기록을 구현한다. Smart/Compare 분리, Unicode 경로, 기존 출력, 입력/응답 오류와 정상·부분 결과 처리 및 실제 CLI 연결을 검증한다. Tk 화면은 후속 작업이며 새 모델·memory·연구 기준 변경은 포함하지 않는다.
+**Tkinter 최소 GUI 연결·검증:** `gui_app.py`에 Smart 압축·복원·실제 비교 탭과 파일/package·새 출력·사용 목적/모델 선택, 상태·결과 표·오류/로그 표시를 구현한다. 기존 `JobRunner`와 `after()`/queue를 연결해 한 작업만 실행하고 UI thread에서 대기/측정을 하지 않는다. 동일 입력/config/mode의 명시적 Smart/Compare 결과만 Demo로 대조하며 자동 Compare·모델 실행을 하지 않는다. 실제 Windows 창·응답성·중복 실행/닫기·오류 상태·기존 출력 보호를 검증한다. 새 모델·memory·연구 기준 변경은 포함하지 않는다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합 진입점과 독립 CLI·GUI 사전 설계는 완료됐고 공식 4지표 전환·GUI 구현·새 모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·GUI 사전 설계·작업 실행 계층은 완료됐고 공식 4지표 전환·Tk GUI 화면·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
 
-이번 GUI/Demo 설계 작업의 시작 HEAD와 마지막 관련 구현 보존 commit은 `f1d8388`(통합 CLI 보존)이다. 직전 통합 CLI 작업의 시작 HEAD는 `c0394a0`(Compare CLI 보존)이며 실제 실행 당시 진입점과 선택적 도움말 인자 보완의 정확한 소스 hash·테스트를 기록했다. Compare 작업의 시작 HEAD는 `085f1ab`, 압축 해제 작업의 시작 HEAD는 `409c9fd`다. 마지막 memory 후보 분석 보존 commit은 `0761b098142433476ef29f9bcc4e70454ef7562b`이고 그 분석 호출 당시 HEAD는 `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`(전용 독립 감사 보존)다. 독립 감사의 실제 호출 HEAD는 `f4dc8c7`이며 측정 실행 HEAD와 구분한다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
+이번 GUI 작업 실행 계층 구현·실제 실행의 시작 HEAD는 `8a8d3c8`(GUI/Demo 설계 보존)이다. 새 계층의 실제 검증은 commit 전 작업 트리 상태였으며 소스 hash·명령·원시 결과·최종 테스트를 기록했다. 마지막 통합 CLI 구현 보존은 `f1d8388`이고 그 작업의 시작 HEAD는 `c0394a0`(Compare CLI 보존)이다. Compare 작업의 시작 HEAD는 `085f1ab`, 압축 해제 작업의 시작 HEAD는 `409c9fd`다. 마지막 memory 후보 분석 보존 commit은 `0761b098142433476ef29f9bcc4e70454ef7562b`이고 그 분석 호출 당시 HEAD는 `3927a35c06e6c00fbae0eaaf2bd53d4cbd65e4da`(전용 독립 감사 보존)다. 독립 감사의 실제 호출 HEAD는 `f4dc8c7`이며 측정 실행 HEAD와 구분한다. 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 동일 환경 반복 검증 attempt02의 최초 Run 1~6 실제 측정 코드·HEAD는 `a8c3e47edc4f9d231605434c464b036240b7b2ed`이고 최초 여섯 run 수집 보존 commit은 `d0f801d`다. 이후 사용자 지시의 Run 2 전체 재측정·교체 실행 HEAD는 `9a261e46d01f61e986d98eedc11f634eda19c863`이며 기존 측정 함수·worker·설정 hash를 유지했다. 이번 결과 보존 commit은 그 실행 commit과 구분한다. 그 직전 실패한 새 설계 attempt01의 증거는 `b249d53`에 보존했다. 새 설계·runner 초기 구현은 `7a0ea69`이다.
 
@@ -797,7 +809,8 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
-- `f1d8388`: 통합 CLI·전용 12개/회귀 34개 검증·최종 실제 호출 22건과 원시 비교 근거 보존. 이번 GUI/Demo 설계 작업의 시작 HEAD.
+- `8a8d3c8`: GUI/Demo 화면·실행 흐름·결과/오류·검증 계획과 환경/계약 확인 보존. 이번 GUI 작업 실행 계층 작업의 시작 HEAD.
+- `f1d8388`: 통합 CLI·전용 12개/회귀 34개 검증·최종 실제 호출 22건과 원시 비교 근거 보존. 직전 GUI/Demo 설계 작업의 시작 HEAD.
 - `c0394a0`: 독립 Compare CLI·전용 16개/회귀 16개 검증·README 실제 비교와 원시 반복/점수 보존. 직전 통합 CLI 작업의 시작 HEAD.
 - `085f1ab`: 독립 압축 해제 CLI·전용 13개/기존 압축 5개 검증·기존 여섯 package 실제 복원 보존. 직전 Compare CLI 작업의 시작 HEAD.
 - `409c9fd`: Memory 참고 지표 보존·추가 구현 보류 사용자 결정과 진행 상태 기록. 직전 독립 압축 해제 CLI 작업의 시작 HEAD.
