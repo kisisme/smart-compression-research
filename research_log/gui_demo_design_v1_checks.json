@@ -1,0 +1,122 @@
+{
+  "design_id": "gui_demo_design_v1",
+  "checked_at_utc": "2026-10-23T13:07:18.271982+00:00",
+  "starting_head": "f1d838816121b6df8fa6ae63844f5e2775ad6b99",
+  "observed_environment": {
+    "tkinter_import_available": true,
+    "tk_version": 8.6,
+    "tcl_version": "8.6.15",
+    "window_created": false
+  },
+  "backend_function_signatures": {
+    "smart_compress": {
+      "positional_arguments": [
+        "input_path",
+        "output_dir"
+      ],
+      "keyword_arguments": [
+        "mode",
+        "model_kind",
+        "model_dir"
+      ]
+    },
+    "smart_decompress": {
+      "positional_arguments": [
+        "package_dir",
+        "output_dir"
+      ],
+      "keyword_arguments": []
+    },
+    "compare_file": {
+      "positional_arguments": [
+        "input_path",
+        "output_dir"
+      ],
+      "keyword_arguments": []
+    }
+  },
+  "observed_success_stdout_fields": {
+    "smart": [
+      "algorithm",
+      "confidence_note",
+      "mode",
+      "output_dir",
+      "prediction_confidence",
+      "verified"
+    ],
+    "decompress": [
+      "algorithm",
+      "compressed_file",
+      "compressed_sha256",
+      "compressed_size",
+      "created_at_utc",
+      "manifest_sha256",
+      "operation",
+      "output_dir",
+      "package_dir",
+      "restored_file",
+      "restored_sha256",
+      "restored_size",
+      "smart_decompress_source_sha256",
+      "smart_decompress_version",
+      "smart_mode_version",
+      "verified"
+    ],
+    "compare": [
+      "errors",
+      "measurements",
+      "output_dir",
+      "selections",
+      "status"
+    ]
+  },
+  "policy": {
+    "memory_status": "validation_only",
+    "selection_modes": {
+      "archive": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "balanced": {
+        "compression_ratio": 0.5,
+        "compression_time": 0.25,
+        "decompression_time": 0.25
+      },
+      "fast_access": {
+        "compression_ratio": 0.3,
+        "compression_time": 0.2,
+        "decompression_time": 0.5
+      }
+    }
+  },
+  "protected_source_sha256": {
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+    "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+    "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e",
+    "research_log/unified_cli_validation_20261023.json": "eac56c0a86f3fa8a7dac31490deb06e4c82ebd170395f5ba07cd431e34389779",
+    "tests/test_main_cli.py": "cd522467aa1ef5d4d5f500077047ec5ffbb71878c15e93628f032c689a1e43a8",
+    "tests/test_smart_compress.py": "c2522b7d4a5614032e43118f7cca875ad2c364357043c4e2f98957e9dfcc64df",
+    "tests/test_smart_decompress.py": "1becf2ad2b2b1cf68ee0c362081cf43379b7db578d50abfe73808e008901d541",
+    "tests/test_compare_compress.py": "d20dfe72404f2d4eb0df4e11bfe60a7c3289d52bb7c0e04a2884e90d091f125b"
+  },
+  "scope": "Read-only design evidence; no GUI launched, codec run, model loaded, benchmark rerun or unit test executed.",
+  "documentation_validation": {
+    "checked_at_utc": "2026-10-23T13:14:14.698099+00:00",
+    "passed": true,
+    "protected_files_unchanged": 15,
+    "local_design_links_valid": 6,
+    "required_contract_terms_checked": true,
+    "progress_and_next_task_consistent": true,
+    "unit_tests_run": false,
+    "gui_launched": false,
+    "codecs_or_models_executed": false
+  }
+}
