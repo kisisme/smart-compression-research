@@ -107,3 +107,8 @@ Windows 화면 자동화 도구는 `failed to write kernel assets` / `os error 3
 후속 진행 — 2026-10-26: 새 작업에서 초기화와 kernel reset 후 재시도도 같은 경로 오류로 실패했다.
 이 GUI QA는 미완료로 유지한다. 도구와 독립적으로 [실제 파일 unseen 평가 사전 설계](unseen_evaluation_design_v1.md)를
 준비했으며 현재 다음 구현은 후보 manifest 검증·동결 도구다. GUI 입력·시각 QA는 화면 도구 복구 시 별도로 완료한다.
+
+후속 오류 복구 — 2026-10-26: 사용자 지시로 도구 복구를 우선했다.
+[진단 기록](node_repl_recovery_20261026.md)에서 실패 커널이 참조한 누락 임시 폴더를 확인·복원했고
+원래 kernel assets 단계는 통과했다. 현재 연결의 Node 시작 오류는 남아 있어 MCP 서버 Restart와
+재검증을 기다린다. GUI 입력·시각 QA를 완료한 것으로 바꾸지 않는다.

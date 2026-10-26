@@ -1,0 +1,381 @@
+{
+  "status": "partial_recovery_awaiting_mcp_restart",
+  "created_at_utc": "2026-10-26T01:10:30.197812+00:00",
+  "git_head": "d474f54cc41affc8df6fd7557736e76b414551e6",
+  "original_error": "failed to write kernel assets: 지정된 경로를 찾을 수 없습니다. (os error 3)",
+  "identified_failing_process": {
+    "pid": 37600,
+    "parent_pid": 40520,
+    "runtime": "a9ba6825a525118c"
+  },
+  "missing_temp_directory": {
+    "path": "C:/Users/s0109/AppData/Local/Temp/.tmpqycGtw",
+    "existed_before": false,
+    "repaired_by": "Create an empty directory only",
+    "assets_generated_after": true
+  },
+  "latest_live_error": "failed to start Node runtime: 지정된 경로를 찾을 수 없습니다. (os error 3)",
+  "live_process_cli_path": {
+    "path": "C:/Users/s0109/AppData/Local/OpenAI/Codex/bin/9614f1d9b40d9c4f/codex.exe",
+    "exists": false
+  },
+  "current_config_paths": {
+    "CODEX_CLI_PATH": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\bin\\2993767bd1dfb009\\codex.exe",
+    "NODE_REPL_NODE_PATH": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1fb7137c46617d50\\bin\\node.exe",
+    "NODE_REPL_NODE_MODULE_DIRS": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1fb7137c46617d50\\bin\\node_modules"
+  },
+  "user_config_sha256": "6b46cd6c6916855e785bd0501a1cdacd7b0ee4376bac16830013ed13c185d622",
+  "user_config_modified": false,
+  "isolated_mcp_probe_records": [
+    {
+      "path": "data\\temp\\node_repl_diagnosis_20261026T003605428028Z\\probe_results.json",
+      "records": [
+        {
+          "label": "configured_environment",
+          "pid": 33200,
+          "temp_override": null,
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_kernel_probe_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [],
+          "return_code": 0
+        },
+        {
+          "label": "fresh_workspace_temp",
+          "pid": 24304,
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T003605428028Z\\fresh_temp",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_kernel_probe_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [],
+          "return_code": 0
+        }
+      ]
+    },
+    {
+      "path": "data\\temp\\node_repl_diagnosis_20261026T003928856273Z\\probe_results.json",
+      "records": [
+        {
+          "label": "old_runtime_fresh_process",
+          "pid": 26224,
+          "command": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T003928856273Z\\old_fresh",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_kernel_probe_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [],
+          "return_code": 0
+        },
+        {
+          "label": "old_runtime_removed_empty_temp_fixture",
+          "pid": 12072,
+          "command": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T003928856273Z\\old_removed",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "removed_empty_probe_temp_dirs": [
+            "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T003928856273Z\\old_removed\\.tmpuhxKBB"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "failed to write kernel assets: 지정된 경로를 찾을 수 없습니다. (os error 3)"
+                }
+              ],
+              "isError": true
+            }
+          },
+          "stderr": [
+            "2026-10-26T00:39:29.506718Z ERROR node_repl::diagnostics: node_repl kernel failed to start failure_kind=\"kernel_assets\" sandbox_configured=true target_os=\"windows\" target_arch=\"x86_64\"\n"
+          ],
+          "return_code": 0
+        }
+      ]
+    },
+    {
+      "path": "data\\temp\\node_repl_diagnosis_20261026T010824578984Z\\probe_results.json",
+      "records": [
+        {
+          "label": "old_runtime_current_cli",
+          "pid": 22000,
+          "command": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T010824578984Z\\old_current_cli",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_kernel_probe_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [],
+          "return_code": 0
+        },
+        {
+          "label": "old_runtime_missing_cli",
+          "pid": 6860,
+          "command": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T010824578984Z\\old_missing_cli",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_kernel_probe_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [],
+          "return_code": 0
+        },
+        {
+          "label": "old_runtime_removed_and_restored_temp",
+          "pid": 4188,
+          "command": "C:\\Users\\s0109\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+          "temp_override": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T010824578984Z\\old_temp_restore",
+          "server_info": {
+            "name": "rmcp",
+            "version": "1.5.0"
+          },
+          "tool_names": [
+            "js",
+            "js_add_node_module_dir",
+            "js_reset",
+            "turn_ended"
+          ],
+          "removed_empty_probe_temp_dirs": [
+            "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\node_repl_diagnosis_20261026T010824578984Z\\old_temp_restore\\.tmpSaSQRN"
+          ],
+          "probe_response": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "failed to write kernel assets: 지정된 경로를 찾을 수 없습니다. (os error 3)"
+                }
+              ],
+              "isError": true
+            }
+          },
+          "after_restoring_empty_temp": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "isolated_temp_recovery_ok"
+                }
+              ],
+              "isError": false,
+              "_meta": {
+                "codex/nodeReplExecutionDurationMs": 0
+              }
+            }
+          },
+          "stderr": [
+            "2026-10-26T01:08:27.623686Z ERROR node_repl::diagnostics: node_repl kernel failed to start failure_kind=\"kernel_assets\" sandbox_configured=true target_os=\"windows\" target_arch=\"x86_64\"\n"
+          ],
+          "return_code": 0
+        }
+      ]
+    }
+  ],
+  "reload_attempt": {
+    "transport": "codex app-server proxy",
+    "initialization": "TimeoutError: initialize did not respond",
+    "reload_method_sent": false,
+    "daemon_stopped": false
+  },
+  "pending_action": "User: Settings > MCP servers > node_repl > Restart, then live connection and Sky verification",
+  "native_window_or_gui_qa_performed": false,
+  "research_or_model_run_performed": false,
+  "unit_tests_run": false,
+  "project_protected_hashes": {
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "data/results/pilot_1008/baseline/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/baseline/baseline_summary.json": "25fbe59770b970beb05f5c0745fa98687fa14e0a9515174e694747864824d7fc",
+    "data/results/pilot_1008/baseline/confusion_matrix.csv": "9b9b4a5058bdae359739180b747da386de093fb9ba9272556abbbcd3ba2598e2",
+    "data/results/pilot_1008/baseline/metrics.csv": "49fade82818d1d534aec484350674353daf95245af360136ca8695d4f2f39dc6",
+    "data/results/pilot_1008/baseline/misclassified_samples.csv": "9524abedfa8ae74814777c0fda418c8b15b28dd70468c7ec4b021bb86c791049",
+    "data/results/pilot_1008/baseline/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/baseline/strategy_comparison.csv": "977686d5059c56473f5602f8d768a5e5c268ec4044e82d24e8f42964f0c15104",
+    "data/results/pilot_1008/baseline/test_predictions.csv": "c4d8e9f19ac1b932d3e673d714a2c8ef55e5890b76cb9c2a4f930219b212a5fa",
+    "data/results/pilot_1008/compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "data/results/pilot_1008/decision_tree/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/decision_tree/confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "data/results/pilot_1008/decision_tree/decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "data/results/pilot_1008/decision_tree/feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "data/results/pilot_1008/decision_tree/metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "data/results/pilot_1008/decision_tree/misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "data/results/pilot_1008/decision_tree/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/decision_tree/strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "data/results/pilot_1008/decision_tree/test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "data/results/pilot_1008/experiment_metadata.json": "9f2075a20331a7498edaffd14b7ed7abda7f1689a3ec11bdc75019da4b9a177e",
+    "data/results/pilot_1008/random_forest/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/random_forest/confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "data/results/pilot_1008/random_forest/feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "data/results/pilot_1008/random_forest/metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "data/results/pilot_1008/random_forest/misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "data/results/pilot_1008/random_forest/random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "data/results/pilot_1008/random_forest/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/random_forest/strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "data/results/pilot_1008/random_forest/test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82",
+    "data/results/pilot_1008/samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "data/results/pilot_1008/selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2",
+    "gui_app.py": "1f15869619516e0770c56d2ecdc43c37e827a01557aa0fa261d325d09c8a8ff1",
+    "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+    "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+    "src/failure_analysis.py": "040d92d74108b9524077c136f055710df5ab7e26295943477ea9ca9e245eb0cc",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/selection_labels.py": "be90ce306250621f8c91261028e111cb8bc51c3169fcb61a7b9105ee5cc09d01",
+    "src/train_model.py": "27e0e91d222b35775de93a8d67c2be4e0f4b82a551c4d85e12ee5a0c6cdd5a57"
+  },
+  "project_protected_unchanged": true,
+  "diagnostic_programs": {
+    "diagnose_node_repl_20261026.py": "\"\"\"Isolated MCP/JavaScript startup probe. No UI, browser, network or model work.\"\"\"\nfrom datetime import datetime, timezone\nimport json\nimport os\nfrom pathlib import Path\nimport queue\nimport subprocess\nimport threading\nimport time\nimport tomllib\n\nROOT = Path(__file__).resolve().parents[2]\nCONFIG = Path(\"C:/Users/s0109/.codex/config.toml\")\nblock = tomllib.loads(CONFIG.read_text(encoding=\"utf-8\"))[\"mcp_servers\"][\"node_repl\"]\nstamp = datetime.now(timezone.utc).strftime(\"%Y%m%dT%H%M%S%fZ\")\noutput = ROOT / \"data/temp\" / (\"node_repl_diagnosis_\"+stamp)\noutput.mkdir()\n\n\ndef probe(label, temp_override=None, *, old_runtime=False, remove_empty_temp=False, cli_override=None):\n    environment = {**os.environ,**block.get(\"env\",{})}\n    if cli_override:\n        environment[\"CODEX_CLI_PATH\"] = cli_override\n    if temp_override:\n        temp_override.mkdir()\n        environment.update(TEMP=str(temp_override),TMP=str(temp_override),TMPDIR=str(temp_override))\n    command = block[\"command\"]\n    if old_runtime:\n        runtime = Path(\"C:/Users/s0109/AppData/Local/OpenAI/Codex/runtimes/cua_node/a9ba6825a525118c/bin\")\n        command = str(runtime/\"node_repl.exe\")\n        environment[\"NODE_REPL_NODE_PATH\"] = str(runtime/\"node.exe\")\n        environment[\"NODE_REPL_NODE_MODULE_DIRS\"] = str(runtime/\"node_modules\")\n    process = subprocess.Popen([command,*block.get(\"args\",[])],cwd=ROOT,env=environment,\n        stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding=\"utf-8\",\n        creationflags=subprocess.CREATE_NO_WINDOW)\n    messages, errors = queue.Queue(), []\n    def read():\n        for line in process.stdout:\n            try: messages.put(json.loads(line))\n            except json.JSONDecodeError: errors.append(\"Non-JSON stdout: \"+line[:500])\n    def stderr():\n        for line in process.stderr:\n            errors.append(line[:1000])\n    threading.Thread(target=read,daemon=True).start()\n    threading.Thread(target=stderr,daemon=True).start()\n    def send(value):\n        process.stdin.write(json.dumps(value)+\"\\n\")\n        process.stdin.flush()\n    def request(identifier,method,params):\n        send(dict(jsonrpc=\"2.0\",id=identifier,method=method,params=params))\n        deadline=time.monotonic()+20\n        while time.monotonic()<deadline:\n            try: response=messages.get(timeout=.2)\n            except queue.Empty:\n                if process.poll() is not None: raise RuntimeError(\"Probe server exited\")\n                continue\n            if response.get(\"id\")==identifier: return response\n        raise TimeoutError(method+\" did not return\")\n    record = dict(label=label,pid=process.pid,command=command,temp_override=str(temp_override) if temp_override else None)\n    try:\n        initialized=request(1,\"initialize\",dict(protocolVersion=\"2025-06-18\",capabilities={},\n            clientInfo=dict(name=\"local-kernel-diagnostic\",version=\"1\")))\n        record[\"server_info\"]=initialized.get(\"result\",{}).get(\"serverInfo\")\n        send(dict(jsonrpc=\"2.0\",method=\"notifications/initialized\"))\n        response=request(2,\"tools/list\",{})\n        names=[t[\"name\"] for t in response.get(\"result\",{}).get(\"tools\",[])]\n        record[\"tool_names\"]=names\n        if \"js\" not in names: raise ValueError(\"No js tool was listed\")\n        if remove_empty_temp:\n            assert temp_override and temp_override.resolve().is_relative_to(output.resolve())\n            record[\"removed_empty_probe_temp_dirs\"] = []\n            for path in temp_override.iterdir():\n                if path.is_dir() and path.name.startswith(\".tmp\"):\n                    assert path.resolve().parent == temp_override.resolve()\n                    path.rmdir()  # Own newly created, empty test directory only; no recursive deletion.\n                    record[\"removed_empty_probe_temp_dirs\"].append(str(path))\n        record[\"probe_response\"]=request(3,\"tools/call\",dict(name=\"js\",arguments=dict(code=\"nodeRepl.write('isolated_kernel_probe_ok');\")))\n        if remove_empty_temp:\n            for name in record[\"removed_empty_probe_temp_dirs\"]:\n                path=Path(name)\n                assert path.resolve().parent == temp_override.resolve() and not path.exists()\n                path.mkdir()\n            record[\"after_restoring_empty_temp\"]=request(4,\"tools/call\",dict(name=\"js\",arguments=dict(code=\"nodeRepl.write('isolated_temp_recovery_ok');\")))\n    except Exception as exc:\n        record[\"exception\"]=type(exc).__name__+\": \"+str(exc)\n    finally:\n        if process.poll() is None:\n            process.stdin.close()\n            try: process.wait(timeout=4)\n            except subprocess.TimeoutExpired:\n                process.terminate()\n                process.wait(timeout=4)\n        record[\"stderr\"]=errors[-8:]\n        record[\"return_code\"]=process.returncode\n    return record\n\n\nrecords=[probe(\"old_runtime_current_cli\",output/\"old_current_cli\",old_runtime=True),\n         probe(\"old_runtime_missing_cli\",output/\"old_missing_cli\",old_runtime=True,\n               cli_override=\"C:/Users/s0109/AppData/Local/OpenAI/Codex/bin/9614f1d9b40d9c4f/codex.exe\"),\n         probe(\"old_runtime_removed_and_restored_temp\",output/\"old_temp_restore\",old_runtime=True,remove_empty_temp=True)]\nwith (output/\"probe_results.json\").open(\"x\",encoding=\"utf-8\") as stream:\n    json.dump(records,stream,ensure_ascii=False,indent=2)\nprint(json.dumps(dict(output=str(output),probes=records),ensure_ascii=False,indent=2))\n",
+    "find_node_repl_temp_20261026.py": "\"\"\"Read only temporary-directory strings from the identified node_repl process.\n\nNo full memory dump or environment output. Never targets the ChatGPT/Codex app.\n\"\"\"\nimport ctypes as c\nfrom ctypes import wintypes as w\nimport json\nfrom pathlib import Path\nimport re\n\nPID = 37600\nkernel = c.WinDLL(\"kernel32\",use_last_error=True)\nclass MEMORY_BASIC_INFORMATION(c.Structure):\n    _fields_ = [(\"BaseAddress\",c.c_void_p),(\"AllocationBase\",c.c_void_p),\n        (\"AllocationProtect\",w.DWORD),(\"PartitionId\",w.WORD),(\"RegionSize\",c.c_size_t),\n        (\"State\",w.DWORD),(\"Protect\",w.DWORD),(\"Type\",w.DWORD)]\nassert c.sizeof(MEMORY_BASIC_INFORMATION) == 48\nkernel.OpenProcess.argtypes = [w.DWORD,w.BOOL,w.DWORD]\nkernel.OpenProcess.restype = w.HANDLE\nkernel.VirtualQueryEx.argtypes = [w.HANDLE,c.c_void_p,c.POINTER(MEMORY_BASIC_INFORMATION),c.c_size_t]\nkernel.VirtualQueryEx.restype = c.c_size_t\nkernel.ReadProcessMemory.argtypes = [w.HANDLE,c.c_void_p,c.c_void_p,c.c_size_t,c.POINTER(c.c_size_t)]\nkernel.ReadProcessMemory.restype = w.BOOL\nkernel.CloseHandle.argtypes = [w.HANDLE]\nhandle = kernel.OpenProcess(0x0400|0x0010,False,PID)\nif not handle: raise c.WinError(c.get_last_error())\npattern = re.compile(r\"C:\\\\Users\\\\s0109\\\\AppData\\\\Local\\\\(?:Temp|Packages\\\\OpenAI\\.Codex_2p2nqsd0c76g0\\\\LocalCache\\\\Local\\\\Temp)\\\\\\.tmp[A-Za-z0-9]{6,12}\",re.I)\nfound, address, scanned, regions = set(), 0, 0, 0\ntry:\n    while scanned < 64*1024*1024:\n        info = MEMORY_BASIC_INFORMATION()\n        if not kernel.VirtualQueryEx(handle,address,c.byref(info),c.sizeof(info)): break\n        base, size = info.BaseAddress or 0, info.RegionSize\n        if not size: break\n        if info.State == 0x1000 and info.Type == 0x20000 and info.Protect & 0x0e and not info.Protect & 0x100:\n            regions += 1\n            for offset in range(0,size,1024*1024):\n                amount = min(1024*1024+512,size-offset,64*1024*1024-scanned)\n                if amount <= 0: break\n                buffer = c.create_string_buffer(amount)\n                count = c.c_size_t()\n                if kernel.ReadProcessMemory(handle,base+offset,buffer,amount,c.byref(count)):\n                    raw = buffer.raw[:count.value]\n                    for encoding in (\"ascii\",\"utf-16-le\"):\n                        found.update(pattern.findall(raw.decode(encoding,errors=\"ignore\")))\n                    del raw\n                scanned += amount\n        address = base+size\nfinally:\n    kernel.CloseHandle(handle)\nprint(json.dumps(dict(pid=PID,regions_checked=regions,bytes_scanned=scanned,\n    temporary_paths=[dict(path=p,exists=Path(p).exists()) for p in sorted(found)]),ensure_ascii=False,indent=2))\n",
+    "read_node_repl_paths_20261026.py": "\"\"\"Print only startup path metadata for the identified node_repl process.\"\"\"\nimport ctypes as c\nfrom ctypes import wintypes as w\nimport json\nfrom pathlib import Path\n\nPID = 37600\nkernel = c.WinDLL(\"kernel32\",use_last_error=True)\nntdll = c.WinDLL(\"ntdll\")\nkernel.OpenProcess.argtypes=[w.DWORD,w.BOOL,w.DWORD]\nkernel.OpenProcess.restype=w.HANDLE\nkernel.ReadProcessMemory.argtypes=[w.HANDLE,c.c_void_p,c.c_void_p,c.c_size_t,c.POINTER(c.c_size_t)]\nkernel.ReadProcessMemory.restype=w.BOOL\nkernel.CloseHandle.argtypes=[w.HANDLE]\nntdll.NtQueryInformationProcess.argtypes=[w.HANDLE,w.ULONG,c.c_void_p,w.ULONG,c.POINTER(w.ULONG)]\nntdll.NtQueryInformationProcess.restype=c.c_long\nclass BASIC(c.Structure):\n    _fields_=[(\"ExitStatus\",c.c_long),(\"PebBaseAddress\",c.c_void_p),(\"AffinityMask\",c.c_size_t),\n        (\"BasePriority\",c.c_long),(\"UniqueProcessId\",c.c_size_t),(\"InheritedFromUniqueProcessId\",c.c_size_t)]\nhandle=kernel.OpenProcess(0x0400|0x0010,False,PID)\nif not handle: raise c.WinError(c.get_last_error())\ndef read(address,size):\n    buffer=c.create_string_buffer(size)\n    count=c.c_size_t()\n    if not kernel.ReadProcessMemory(handle,address,buffer,size,c.byref(count)):\n        raise c.WinError(c.get_last_error())\n    return buffer.raw[:count.value]\ndef pointer(address):\n    return int.from_bytes(read(address,8),\"little\")\ntry:\n    info=BASIC()\n    length=w.ULONG()\n    status=ntdll.NtQueryInformationProcess(handle,0,c.byref(info),c.sizeof(info),c.byref(length))\n    if status: raise RuntimeError(\"NtQueryInformationProcess failed\")\n    parameters=pointer(info.PebBaseAddress+0x20)\n    cwd_length=int.from_bytes(read(parameters+0x38,2),\"little\")\n    assert 0 < cwd_length < 32768 and cwd_length%2==0\n    cwd=read(pointer(parameters+0x40),cwd_length).decode(\"utf-16-le\")\n    assert Path(cwd).is_absolute()\n    # The environment block is inspected in memory; only the named path values\n    # below are emitted. No full environment or credential data is saved.\n    environment=read(pointer(parameters+0x80),32768).decode(\"utf-16-le\",errors=\"ignore\").split(\"\\0\\0\",1)[0]\n    pairs=dict(item.split(\"=\",1) for item in environment.split(\"\\0\") if \"=\" in item and not item.startswith(\"=\"))\n    allowed=(\"TEMP\",\"TMP\",\"TMPDIR\",\"NODE_REPL_NODE_PATH\",\"NODE_REPL_RUNTIME_MODE\",\"CODEX_CLI_PATH\")\n    output={k:pairs[k] for k in allowed if k in pairs}\n    output[\"process_current_directory\"]=dict(path=cwd,exists=Path(cwd).exists())\n    wrapper=pairs.get(\"NODE_REPL_WORKER_WRAPPER\")\n    if wrapper:\n        values=json.loads(wrapper)\n        if isinstance(values,list) and values and isinstance(values[0],str):\n            output[\"worker_wrapper_executable\"]=dict(path=values[0],exists=Path(values[0]).exists())\n            output[\"wrapper_argument_flags\"]=[v for v in values[1:] if isinstance(v,str) and v.startswith(\"--\") and \"=\" not in v]\n        else:\n            output[\"worker_wrapper_shape\"]=type(values).__name__\n    del environment,pairs\nfinally:\n    kernel.CloseHandle(handle)\nprint(json.dumps(output,ensure_ascii=False,indent=2))\n",
+    "reload_node_repl_mcp_20261026.py": "\"\"\"Use the documented local app-server RPC to reload on-disk MCP configuration.\"\"\"\nimport json\nimport queue\nimport subprocess\nimport threading\nimport time\n\ncommand=[\"C:/Users/s0109/AppData/Local/OpenAI/Codex/bin/2993767bd1dfb009/codex.exe\",\"app-server\",\"proxy\"]\nprocess=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,\n    encoding=\"utf-8\",text=True,creationflags=subprocess.CREATE_NO_WINDOW)\nresponses,errors=queue.Queue(),[]\ndef reader():\n    for line in process.stdout:\n        try: responses.put(json.loads(line))\n        except json.JSONDecodeError: errors.append(\"Invalid JSON response\")\ndef stderr():\n    for line in process.stderr: errors.append(line[:1000])\nthreading.Thread(target=reader,daemon=True).start()\nthreading.Thread(target=stderr,daemon=True).start()\ndef send(message):\n    process.stdin.write(json.dumps(message)+\"\\n\")\n    process.stdin.flush()\ndef request(identifier,method,params):\n    send(dict(id=identifier,method=method,params=params))\n    deadline=time.monotonic()+20\n    while time.monotonic()<deadline:\n        try: response=responses.get(timeout=.2)\n        except queue.Empty:\n            if process.poll() is not None: raise RuntimeError(\"Proxy exited: \"+str(errors))\n            continue\n        if response.get(\"id\")==identifier: return response\n    raise TimeoutError(method+\" did not respond\")\ntry:\n    initialized=request(1,\"initialize\",dict(clientInfo=dict(name=\"local-kernel-repair\",version=\"1\")))\n    if \"error\" in initialized: raise RuntimeError(str(initialized[\"error\"]))\n    send(dict(method=\"initialized\"))\n    loaded=request(2,\"thread/loaded/list\",dict(limit=100))\n    print(json.dumps(dict(initialized=True,loaded_threads_count=len(loaded.get(\"result\",{}).get(\"data\",[]))),ensure_ascii=False))\n    response=request(3,\"config/mcpServer/reload\",None)\n    print(json.dumps(dict(method=\"config/mcpServer/reload\",response=response),ensure_ascii=False))\nfinally:\n    if process.poll() is None:\n        process.stdin.close()\n        try: process.wait(timeout=3)\n        except subprocess.TimeoutExpired:\n            process.terminate()\n            process.wait(timeout=3)\n    if errors: print(json.dumps(dict(proxy_stderr=errors[-3:]),ensure_ascii=False))\n"
+  },
+  "limitations": [
+    "Filesystem cleanup actor/time not established",
+    "Missing CLI path alone did not fail a bare isolated MCP probe; live sandbox launch must be reverified",
+    "No complete process memory dump, credential data, security policy changes, patched binaries or process memory writes"
+  ]
+}
