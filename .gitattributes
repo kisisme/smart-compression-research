@@ -4,3 +4,7 @@
 /research_log/verify_unseen_collection_20261026.py -text
 /research_log/unseen_collection_plan_20261026.json -text
 /research_log/unseen_source_review_20261026.json -text
+/data/results/real_unseen/real_candidates_20261026_02/** -text
+/research_log/collect_additional_unseen_20261026.py -text
+/research_log/verify_additional_unseen_20261026.py -text
+/research_log/unseen_additional_collection_plan_20261026.json -text

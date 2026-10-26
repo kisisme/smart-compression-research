@@ -1,0 +1,1400 @@
+{
+  "status": "downloaded_pending_review",
+  "completed_at_utc": "2026-10-26T10:43:51.441287+00:00",
+  "execution_git_head": "edf2dcf7e0829ad29a28018332d2b7f9ac3cb20c",
+  "collector_sha256": "f34fd08c5efae6fa3e9e687f182119f375713e46df16724c01d413e815476be6",
+  "plan_sha256": "c83606a5e849dca7072d840f5830815580a706271a8b1e2edefe33bc55504e6b",
+  "raw_root": "data/raw/real_unseen/real_candidates_20261026_02",
+  "output_root": "data/results/real_unseen/real_candidates_20261026_02",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "base_collection": "real_candidates_20261026_01",
+  "records": [
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/ABeeZee-Regular.ttf",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/ABeeZee-Regular.ttf",
+      "started_at_utc": "2026-10-26T10:43:41.281991+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.564642+00:00",
+      "headers": {
+        "ETag": "\"26ffe6369d3be7c495c96a20d2940df4cbd5b490a99207a02b9ec52b73e4777f\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "46016"
+      },
+      "size": 46016,
+      "input_sha256": "2901c8df256648cc2bb2e3afb381cb8d28e65ed3dbe11de20695ae4d5ffdeda9",
+      "git_blob_sha1": "2ecf01bdec7b6a8568825da840897f9b0aee8a86",
+      "kind": "candidate",
+      "raw_relative_path": "additional/google_fonts/ofl/abeezee/ABeeZee-Regular.ttf",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/Abel-Regular.ttf",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/Abel-Regular.ttf",
+      "started_at_utc": "2026-10-26T10:43:41.565197+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.867026+00:00",
+      "headers": {
+        "ETag": "\"6151ffb533456201ed063121d74fa39ad1d10e1be5420d82ebaa1dc4acc49319\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "35220"
+      },
+      "size": 35220,
+      "input_sha256": "8809dcad25318225052f88333e208c5aad4adcb7b2c934c135735ec19aa410b4",
+      "git_blob_sha1": "f621a1273d78878b129ac93be7b93c2837ed5810",
+      "kind": "candidate",
+      "raw_relative_path": "additional/google_fonts/ofl/abel/Abel-Regular.ttf",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/Aboreto-Regular.ttf",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/Aboreto-Regular.ttf",
+      "started_at_utc": "2026-10-26T10:43:41.867471+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:42.205388+00:00",
+      "headers": {
+        "ETag": "\"2dd1461d40ece2edd4b2198f8ba0ddd5ae525a93b69dfd577854de2216b82310\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "48356"
+      },
+      "size": 48356,
+      "input_sha256": "fc702d535857fa2bda802647b9d55f82a07502d4acdfd95b47279b3bf479eaa1",
+      "git_blob_sha1": "b9c09bfa15f38fa9ccabcb90320de9d33a6e991b",
+      "kind": "candidate",
+      "raw_relative_path": "additional/google_fonts/ofl/aboreto/Aboreto-Regular.ttf",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/Acme-Regular.ttf",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/Acme-Regular.ttf",
+      "started_at_utc": "2026-10-26T10:43:42.205855+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:42.471370+00:00",
+      "headers": {
+        "ETag": "\"72df9a4a85419a2640c927ac11345e6c4965409182bac354d6e721254abefdae\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "23292"
+      },
+      "size": 23292,
+      "input_sha256": "76fdb582f54653c27274d5cd986f994c28d7fa7d323e7eb9ee14ce8875d39dc4",
+      "git_blob_sha1": "e66595e175d51fa1b31a7d32a150f7737a54a77f",
+      "kind": "candidate",
+      "raw_relative_path": "additional/google_fonts/ofl/acme/Acme-Regular.ttf",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/Actor-Regular.ttf",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/Actor-Regular.ttf",
+      "started_at_utc": "2026-10-26T10:43:42.471612+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:42.800579+00:00",
+      "headers": {
+        "ETag": "\"61bad840116281aa3159d6e2f910edc8e1a4d8268f9bf60d869f8c7804e0bd4b\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "64944"
+      },
+      "size": 64944,
+      "input_sha256": "a7cf62975a5ecaa8a3be2e2913ffb4a335831315478b93bec722ad982308ea38",
+      "git_blob_sha1": "f63387cb6ec20d216eb5520ce5ac2110ec2cc89a",
+      "kind": "candidate",
+      "raw_relative_path": "additional/google_fonts/ofl/actor/Actor-Regular.ttf",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "started_at_utc": "2026-10-26T10:43:40.105376+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.478185+00:00",
+      "headers": {
+        "ETag": "\"f59d0ab26d281a42b1af39fe085888af77e2e7be8a256aa7563355da6c6aaa79\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "164270"
+      },
+      "size": 164270,
+      "input_sha256": "6c6dc8a8836720c83e73146347e4d003b90637347ba35121af77edc436a12e23",
+      "git_blob_sha1": "fbd4bf9adf97b6a8caca5c6043cf2cb725ee976c",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_inference/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "started_at_utc": "2026-10-26T10:43:40.479557+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.839313+00:00",
+      "headers": {
+        "ETag": "\"4f641bc60f6f668c5594361156d69e91ddf96451e276a1ec248f266ab0b0911b\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "172709"
+      },
+      "size": 172709,
+      "input_sha256": "cd70d9725e7e2b3e7e6f190f453f84eb71374081e386eb51fca1b7702557322b",
+      "git_blob_sha1": "04a3f480f3a2e87afbe1b3c45d1bd83af7b2aa1c",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_inference/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "started_at_utc": "2026-10-26T10:43:40.839973+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.263949+00:00",
+      "headers": {
+        "ETag": "\"29d43e25f5ecefc510568a23a0cf8ec966dd8dff25f3a72d3b826be59ab0eb90\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "166974"
+      },
+      "size": 166974,
+      "input_sha256": "ad99d73ccaac30b049a128d0ce598eb95dedf45d5d4bb0e2b561c1cc956ff0d1",
+      "git_blob_sha1": "eb41075990217eaa45f78db5e9f04f3dc94f962e",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_inference/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "started_at_utc": "2026-10-26T10:43:41.264527+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.580383+00:00",
+      "headers": {
+        "ETag": "\"c6e72c3446fcd49854f3c8fee5997baf9794816eb36b3ee7bc020ecc0faf4ffd\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "172670"
+      },
+      "size": 172670,
+      "input_sha256": "562b18fd8bb76caf0277ccc945df016315540f234d901e043a4862558442ca64",
+      "git_blob_sha1": "5f2467aac3253db4025fe789c526d60306264162",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_inference/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-TURIN/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-TURIN/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "started_at_utc": "2026-10-26T10:43:41.581382+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.919689+00:00",
+      "headers": {
+        "ETag": "\"f13c115b1f379827b90a10cfbab28f2efd6caa120d7f333c2e9664a25d9e4e06\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "167313"
+      },
+      "size": 167313,
+      "input_sha256": "0c0012d120f190f47ea766e0944c6a7695a8dbe87f04b6d19e8cef8e7b7fab84",
+      "git_blob_sha1": "931c6bfc78d84e3ac2c5b17631ef61cd246d107e",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_inference/closed/AMD/results/8xMI300X_2xEPYC-TURIN/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_0.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_0.txt",
+      "started_at_utc": "2026-10-26T10:43:40.111486+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.444897+00:00",
+      "headers": {
+        "ETag": "\"a9055bdabb4e96f33677583a3c0be66a2ba5b0c8a1f17d07131f30e6f4f55ea4\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "28216"
+      },
+      "size": 28216,
+      "input_sha256": "8fbe693da188061685b20dbb1952dd5e7b25b9eeb9fb8f320c2f02718dc8e167",
+      "git_blob_sha1": "5c396420bfb5692086fded55147dd874c6a2caff",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_training/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_0.txt",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_1.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_1.txt",
+      "started_at_utc": "2026-10-26T10:43:40.445258+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.745177+00:00",
+      "headers": {
+        "ETag": "\"5eeac21e10f8c151a6046c74b9fc06ccd1f9529d7c35a77d6a3ec025a002bca5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "28220"
+      },
+      "size": 28220,
+      "input_sha256": "085ee9b85bd3ed2cc1e1aaa8f009545db7fb9250efbc659465d8833ec64a4cd1",
+      "git_blob_sha1": "1229dd9fa77d8ce981aeeabd31a13ef7b33e3923",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_training/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_1.txt",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_2.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_2.txt",
+      "started_at_utc": "2026-10-26T10:43:40.745571+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.062286+00:00",
+      "headers": {
+        "ETag": "\"cd9ef8ce3cc0ce3af16810aa0c42e75e07ae9975d8de889428a16f734a672f06\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "30952"
+      },
+      "size": 30952,
+      "input_sha256": "6cf79a1a18dc75ec06b6cf4267ec2e36057faddca0df63ff90daafd829ece4cd",
+      "git_blob_sha1": "c58fb6d332ad42296c68ad0c62166e048006c5a9",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_training/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_2.txt",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_3.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_3.txt",
+      "started_at_utc": "2026-10-26T10:43:41.062531+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.360840+00:00",
+      "headers": {
+        "ETag": "\"31826e3cb745f5073f9f1c8a0b3f3b6a0ab0c45be378ce97c988c1fcc10a0edd\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "29579"
+      },
+      "size": 29579,
+      "input_sha256": "e32ae0831d57afd0fa390613124663c8bcbed8ade8f2b82acd9b18d2f3f02724",
+      "git_blob_sha1": "35cd594cd3a5c4a31b8114535f6324f50e204f56",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_training/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_3.txt",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_4.txt",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_4.txt",
+      "started_at_utc": "2026-10-26T10:43:41.361145+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.681087+00:00",
+      "headers": {
+        "ETag": "\"520e929f039b77c13ebd7123b181921ad4c82abdf63fc2400420546df5589d13\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "29577"
+      },
+      "size": 29577,
+      "input_sha256": "9bf2b3283bc88dd4743aec85e0d47c686037752900a46d847fee2748677f1e5c",
+      "git_blob_sha1": "aa9e9c4e4542e753ae1340b7ac4f88fcdb319fed",
+      "kind": "candidate",
+      "raw_relative_path": "additional/mlperf_training/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_4.txt",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_abalone/abalone.data",
+      "origin_group_id": "uci_abalone",
+      "url": "https://archive.ics.uci.edu/static/public/1/abalone.zip",
+      "archive_relative_path": "archives/uci_abalone.zip",
+      "archive_sha256": "755a6a67c5b266961a3f149ea13be2cfb6e6c727e48cee3c83bc0b4526210ee4",
+      "archive_member": "abalone.data",
+      "member_crc32": "865eacdb",
+      "acquired_at_utc": "2026-10-26T10:43:47.729141+00:00",
+      "size": 191873,
+      "input_sha256": "de37cdcdcaaa50c309d514f248f7c2302a5f1f88c168905eba23fe2fbc78449f"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_automobile/automobile/imports-85.data",
+      "origin_group_id": "uci_automobile",
+      "url": "https://archive.ics.uci.edu/static/public/10/automobile.zip",
+      "archive_relative_path": "archives/uci_automobile.zip",
+      "archive_sha256": "0360d2379d2d505540f0c43bfe0ada96244ad2662faf9dada1629824948294ec",
+      "archive_member": "automobile/imports-85.data",
+      "member_crc32": "5f0f9ecc",
+      "acquired_at_utc": "2026-10-26T10:43:47.391119+00:00",
+      "size": 25936,
+      "input_sha256": "125db8bd36a84801f7223faf54071d15f85f26c13a9a7aee63375ac46098fb7f"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_bike_sharing/day.csv",
+      "origin_group_id": "uci_bike_sharing",
+      "url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+      "archive_relative_path": "archives/uci_bike_sharing.zip",
+      "archive_sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+      "archive_member": "day.csv",
+      "member_crc32": "faf56e4a",
+      "acquired_at_utc": "2026-10-26T10:43:44.969646+00:00",
+      "size": 57569,
+      "input_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_biodegradation/biodeg.csv",
+      "origin_group_id": "uci_biodegradation",
+      "url": "https://archive.ics.uci.edu/static/public/254/qsar+biodegradation.zip",
+      "archive_relative_path": "archives/uci_biodegradation.zip",
+      "archive_sha256": "b5f7cf1b05564d94d65265a9a4aeae5fffcd15b8d3bcafe4225a8827d7ae08ac",
+      "archive_member": "biodeg.csv",
+      "member_crc32": "a6c04acc",
+      "acquired_at_utc": "2026-10-26T10:43:50.523903+00:00",
+      "size": 155987,
+      "input_sha256": "c66ac1a23aba11fb166fd5054fea14ac97b8e4f7e4940ae679dc863d1cc4b3c9"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_forest_fires/forestfires.csv",
+      "origin_group_id": "uci_forest_fires",
+      "url": "https://archive.ics.uci.edu/static/public/162/forest+fires.zip",
+      "archive_relative_path": "archives/uci_forest_fires.zip",
+      "archive_sha256": "abd40d6142b5e30fea73ff7292f91dcdd8b64bf3b3f36e20f96c37f5d14f06fb",
+      "archive_member": "forestfires.csv",
+      "member_crc32": "e8f7a860",
+      "acquired_at_utc": "2026-10-26T10:43:44.182486+00:00",
+      "size": 25478,
+      "input_sha256": "0d6586a1fa52f55bef48578aef14eb97273f1e9330e1a53423df497a77065253"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_seoul_bike/SeoulBikeData.csv",
+      "origin_group_id": "uci_seoul_bike",
+      "url": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip",
+      "archive_relative_path": "archives/uci_seoul_bike.zip",
+      "archive_sha256": "139e9908f0a3544bb222386855c9ce107e96467306bb8e4ce936aab59e7baac4",
+      "archive_member": "SeoulBikeData.csv",
+      "member_crc32": "6250fbad",
+      "acquired_at_utc": "2026-10-26T10:43:46.395191+00:00",
+      "size": 604166,
+      "input_sha256": "373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_wilt/testing.csv",
+      "origin_group_id": "uci_wilt",
+      "url": "https://archive.ics.uci.edu/static/public/285/wilt.zip",
+      "archive_relative_path": "archives/uci_wilt.zip",
+      "archive_sha256": "80b96a0a23e2593442c3f57fa23e1c168895d4c81f826f2792424e48df62486a",
+      "archive_member": "testing.csv",
+      "member_crc32": "c4ed5f08",
+      "acquired_at_utc": "2026-10-26T10:43:47.937544+00:00",
+      "size": 28930,
+      "input_sha256": "00b50577283aac9f1e54e31074fd5a8866fc954ccb5d3523d2974d0d95ed6994"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_wilt/training.csv",
+      "origin_group_id": "uci_wilt",
+      "url": "https://archive.ics.uci.edu/static/public/285/wilt.zip",
+      "archive_relative_path": "archives/uci_wilt.zip",
+      "archive_sha256": "80b96a0a23e2593442c3f57fa23e1c168895d4c81f826f2792424e48df62486a",
+      "archive_member": "training.csv",
+      "member_crc32": "af1441bc",
+      "acquired_at_utc": "2026-10-26T10:43:47.937544+00:00",
+      "size": 249070,
+      "input_sha256": "2e439f523f913c8e6bf1ad8d975d3b0f8a7249f43d6f427a7ecf0e30841f6caa"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_wine/winequality-red.csv",
+      "origin_group_id": "uci_wine",
+      "url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+      "archive_relative_path": "archives/uci_wine.zip",
+      "archive_sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "archive_member": "winequality-red.csv",
+      "member_crc32": "4b7ff157",
+      "acquired_at_utc": "2026-10-26T10:43:44.435633+00:00",
+      "size": 84199,
+      "input_sha256": "4a402cf041b025d4566d954c3b9ba8635a3a8a01e039005d97d6a710278cf05e"
+    },
+    {
+      "kind": "candidate",
+      "raw_relative_path": "additional/uci_wine/winequality-white.csv",
+      "origin_group_id": "uci_wine",
+      "url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+      "archive_relative_path": "archives/uci_wine.zip",
+      "archive_sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "archive_member": "winequality-white.csv",
+      "member_crc32": "64115603",
+      "acquired_at_utc": "2026-10-26T10:43:44.435633+00:00",
+      "size": 264426,
+      "input_sha256": "76c3f809815c17c07212622f776311faeb31e87610d52c26d87d6e361b169836"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/package.json",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/package.json",
+      "started_at_utc": "2026-10-26T10:43:40.386870+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.685535+00:00",
+      "headers": {
+        "ETag": "\"8b8e5f0d59db4668df86f3bc1dbcb37e049ff604f0db4b2c31a4e37b275c6dfd\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "288175"
+      },
+      "size": 288175,
+      "input_sha256": "0006be00196847dee96d00ea60b2dc02378ef7521f95bdd47498828078de1f62",
+      "git_blob_sha1": "f4cbb6f881ebec63d98f0a4fc0f6989aa418c068",
+      "kind": "candidate",
+      "raw_relative_path": "additional/vscode/extensions/copilot/package.json",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/css-language-features/package.json",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/css-language-features/package.json",
+      "started_at_utc": "2026-10-26T10:43:40.686469+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.960374+00:00",
+      "headers": {
+        "ETag": "\"34f03f5fd6d70ffb12b6a3a7fb87c1bc04a743288543ad423ddb83e3d70d01df\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "30479"
+      },
+      "size": 30479,
+      "input_sha256": "5069d45656a0b9239658170bc580f94cb886f5d9b346440328de30d50d3f8a9e",
+      "git_blob_sha1": "67a5f1651b3ae3c21dd2fbf62e5b632b0a4e5833",
+      "kind": "candidate",
+      "raw_relative_path": "additional/vscode/extensions/css-language-features/package.json",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/git/package.json",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/git/package.json",
+      "started_at_utc": "2026-10-26T10:43:40.960626+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.294360+00:00",
+      "headers": {
+        "ETag": "\"38cf2a51c1f9f2ef30cefb831006720d42c48b7442fce990f7380332466aec5f\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "138827"
+      },
+      "size": 138827,
+      "input_sha256": "ef1349f9dc21abbe666f1e35b5c6103d740fb357c350dd6efa7e5a9ee4ef9ce6",
+      "git_blob_sha1": "f98f628268b49509238c55984809815c03cc16de",
+      "kind": "candidate",
+      "raw_relative_path": "additional/vscode/extensions/git/package.json",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/markdown-language-features/package.json",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/markdown-language-features/package.json",
+      "started_at_utc": "2026-10-26T10:43:41.294825+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.587023+00:00",
+      "headers": {
+        "ETag": "\"b61dc3a5ecfbce19b1891eca35ecbd9074bc30657bf3a19e9513e9de7f2b19f5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "73048"
+      },
+      "size": 73048,
+      "input_sha256": "e0a23d4e66aa70cdeb8832e135c65ce6e4b43b1f8653aa2bea57988a5aa0a45f",
+      "git_blob_sha1": "928ebfaa11bbfd14eb28321c071545bd17c6fa55",
+      "kind": "candidate",
+      "raw_relative_path": "additional/vscode/extensions/markdown-language-features/package.json",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/typescript-language-features/package.json",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/typescript-language-features/package.json",
+      "started_at_utc": "2026-10-26T10:43:41.587739+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.914580+00:00",
+      "headers": {
+        "ETag": "\"f1807e4510ea3c6f0016052942597943d315605eb6fa67d61f6387f553fa940e\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "127473"
+      },
+      "size": 127473,
+      "input_sha256": "601bcd52beb81ab31a05da96d57279d7cc0263f310b5f7573dd14237340a50de",
+      "git_blob_sha1": "e4a2324f82473f2d250467bed31ae07fde5e5f64",
+      "kind": "candidate",
+      "raw_relative_path": "additional/vscode/extensions/typescript-language-features/package.json",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/1/abalone.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/1/abalone.zip",
+      "started_at_utc": "2026-10-26T10:43:46.339725+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:47.729141+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 55357,
+      "input_sha256": "755a6a67c5b266961a3f149ea13be2cfb6e6c727e48cee3c83bc0b4526210ee4",
+      "git_blob_sha1": "0f696eaca5e3b176b1067a33cddad0a846bba3f4",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_abalone.zip",
+      "origin_group_id": "uci_abalone"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/10/automobile.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/10/automobile.zip",
+      "started_at_utc": "2026-10-26T10:43:46.393761+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:47.391119+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 8531,
+      "input_sha256": "0360d2379d2d505540f0c43bfe0ada96244ad2662faf9dada1629824948294ec",
+      "git_blob_sha1": "ff508ef1b0edeb303df634a875b793f399da26e6",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_automobile.zip",
+      "origin_group_id": "uci_automobile"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+      "started_at_utc": "2026-10-26T10:43:43.303829+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:44.969646+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 279992,
+      "input_sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+      "git_blob_sha1": "1260db62cdd07ab358330c0215b0e925a88f4e36",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_bike_sharing.zip",
+      "origin_group_id": "uci_bike_sharing"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/254/qsar+biodegradation.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/254/qsar+biodegradation.zip",
+      "started_at_utc": "2026-10-26T10:43:48.991683+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:50.523903+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 156105,
+      "input_sha256": "b5f7cf1b05564d94d65265a9a4aeae5fffcd15b8d3bcafe4225a8827d7ae08ac",
+      "git_blob_sha1": "9e781735131dda550d328e0669daec4776e59b37",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_biodegradation.zip",
+      "origin_group_id": "uci_biodegradation"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/162/forest+fires.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/162/forest+fires.zip",
+      "started_at_utc": "2026-10-26T10:43:43.331539+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:44.182486+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 8932,
+      "input_sha256": "abd40d6142b5e30fea73ff7292f91dcdd8b64bf3b3f36e20f96c37f5d14f06fb",
+      "git_blob_sha1": "5d5941ce8ff81d64cfc3f394798b27aeee27608a",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_forest_fires.zip",
+      "origin_group_id": "uci_forest_fires"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip",
+      "started_at_utc": "2026-10-26T10:43:44.262609+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:46.395191+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 604298,
+      "input_sha256": "139e9908f0a3544bb222386855c9ce107e96467306bb8e4ce936aab59e7baac4",
+      "git_blob_sha1": "9fc4584600f77c2c14d8387fbdd3a65868a376e9",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_seoul_bike.zip",
+      "origin_group_id": "uci_seoul_bike"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/285/wilt.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/285/wilt.zip",
+      "started_at_utc": "2026-10-26T10:43:46.477925+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:47.937544+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 118593,
+      "input_sha256": "80b96a0a23e2593442c3f57fa23e1c168895d4c81f826f2792424e48df62486a",
+      "git_blob_sha1": "75535350ef2b57fe48eee0b1f64c5bcbff39f753",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_wilt.zip",
+      "origin_group_id": "uci_wilt"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+      "final_url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+      "started_at_utc": "2026-10-26T10:43:43.214372+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:44.435633+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": null,
+        "Content-Type": null,
+        "Content-Length": null
+      },
+      "size": 91353,
+      "input_sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "git_blob_sha1": "91805819fdff18daff641cec9305f9aee76e39ca",
+      "kind": "source_archive",
+      "raw_relative_path": "archives/uci_wine.zip",
+      "origin_group_id": "uci_wine"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "final_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "started_at_utc": "2026-10-26T10:43:50.529082+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:51.360561+00:00",
+      "headers": {
+        "ETag": null,
+        "Last-Modified": "Thu, 01 Oct 2026 17:09:56 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": null
+      },
+      "size": 48742,
+      "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+      "git_blob_sha1": "ff01e642021cac7a66bcc26383b834cf484d3a48",
+      "kind": "common_license_notice",
+      "raw_relative_path": "notices/CC-BY-4.0/legalcode.en.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/OFL.txt",
+      "started_at_utc": "2026-10-26T10:43:39.617103+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.084589+00:00",
+      "headers": {
+        "ETag": "\"7163494a8beb49607529b8c668af6a9b1f1b43c2ccb973beba475d558b2588c9\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4516"
+      },
+      "size": 4516,
+      "input_sha256": "f0376d04eb58fb19e9f1690a99a1eb37380ad0246f7d503f2abd8e8a74ed12be",
+      "git_blob_sha1": "fc163c7f211e6aa6ad5d66171e2e7913d66190f0",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/google_fonts/ofl/abeezee/OFL.txt",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/OFL.txt",
+      "started_at_utc": "2026-10-26T10:43:40.084754+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.386305+00:00",
+      "headers": {
+        "ETag": "\"2369e56f0d5fe3a21d2d6beff5e3da94fc41967f6fdf767b79d2cb79655264ae\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4418"
+      },
+      "size": 4418,
+      "input_sha256": "4f4bc3806a1e55789c6ef75ca5fc628297b05292f74966474dc0d40324abc609",
+      "git_blob_sha1": "d67c839261b0dfff0452c6290b03b29d13ce854d",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/google_fonts/ofl/abel/OFL.txt",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/OFL.txt",
+      "started_at_utc": "2026-10-26T10:43:40.386475+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.708288+00:00",
+      "headers": {
+        "ETag": "\"e4ed3025bcf4be45719bd5dae33d05106a08b13775b7e4d83180187dc4ff0ad5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4383"
+      },
+      "size": 4383,
+      "input_sha256": "da0971c73aa1773b791926b81530f3cec50c94031912f162a320263488805ef8",
+      "git_blob_sha1": "74c26d0608eb802425dc4f82a967d8294cba9e55",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/google_fonts/ofl/aboreto/OFL.txt",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/OFL.txt",
+      "started_at_utc": "2026-10-26T10:43:40.708475+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.007909+00:00",
+      "headers": {
+        "ETag": "\"c7a780fb732f1a66e0ac18ad1fb94018836e542cb8e21de939a5d51d89b041c3\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4406"
+      },
+      "size": 4406,
+      "input_sha256": "48f7bdf873033e141893f72d36f06ef8aa320c822d884d59ea7847899a291025",
+      "git_blob_sha1": "0b2b6aed80251fa310c17adc1a4defb49ca4a4e8",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/google_fonts/ofl/acme/OFL.txt",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/OFL.txt",
+      "started_at_utc": "2026-10-26T10:43:41.008111+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:41.281845+00:00",
+      "headers": {
+        "ETag": "\"73f9f245f5f018989c68149b3ea470585791a04f92b39c3f205c3d67390729fd\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4407"
+      },
+      "size": 4407,
+      "input_sha256": "c1bcd16ffc9d095822fd6b7fa1a24c7918b24815ed05711421f804293d2efa62",
+      "git_blob_sha1": "8782abad97e439e5e7a9b276f6cdcb32ae09242c",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/google_fonts/ofl/actor/OFL.txt",
+      "origin_group_id": "google_fonts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/inference_results_v4.1/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "started_at_utc": "2026-10-26T10:43:39.617964+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.105119+00:00",
+      "headers": {
+        "ETag": "\"680ced5002c4c0e74e30f7b4df745fd1865a6438ab3e28659ce7650b2449c0c5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "10174"
+      },
+      "size": 10174,
+      "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/mlperf_inference/LICENSE.md",
+      "origin_group_id": "mlperf_inference"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "final_url": "https://raw.githubusercontent.com/mlcommons/training_results_v5.1/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "started_at_utc": "2026-10-26T10:43:39.619091+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.111108+00:00",
+      "headers": {
+        "ETag": "\"680ced5002c4c0e74e30f7b4df745fd1865a6438ab3e28659ce7650b2449c0c5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "10174"
+      },
+      "size": 10174,
+      "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/mlperf_training/LICENSE.md",
+      "origin_group_id": "mlperf_training"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/1/abalone",
+      "final_url": "https://archive.ics.uci.edu/dataset/1/abalone",
+      "started_at_utc": "2026-10-26T10:43:44.191804+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:46.338966+00:00",
+      "headers": {
+        "ETag": "\"lw4tm9\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "144403"
+      },
+      "size": 144403,
+      "input_sha256": "8d2b2fb8ef0ed2d94b1e5700cbb7e8a297f89078c9d39472b53cd4932ce03e01",
+      "git_blob_sha1": "d00d7f18fb1aa8bc2e52ca8337ee676bb832a063",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_abalone/source_page.html",
+      "origin_group_id": "uci_abalone"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/10/automobile",
+      "final_url": "https://archive.ics.uci.edu/dataset/10/automobile",
+      "started_at_utc": "2026-10-26T10:43:44.450527+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:46.392855+00:00",
+      "headers": {
+        "ETag": "\"am7p85\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "159284"
+      },
+      "size": 159284,
+      "input_sha256": "e60688080b98b8b82998238fe3a6d6eb277a6c65e854c32b602d1316d9014d13",
+      "git_blob_sha1": "71cf0f128d4338e389a6df12a55227e9a75e7fe7",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_automobile/source_page.html",
+      "origin_group_id": "uci_automobile"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+      "final_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+      "started_at_utc": "2026-10-26T10:43:41.921316+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:43.303178+00:00",
+      "headers": {
+        "ETag": "\"1dngidu\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "157040"
+      },
+      "size": 157040,
+      "input_sha256": "06b3d99b3477dc9a043be1072690a2f11ed82bdd3eedc9efb7a26bb40986f46d",
+      "git_blob_sha1": "ae9946e49fe7694397317b2043b9b5b1d5ce6e2b",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_bike_sharing/source_page.html",
+      "origin_group_id": "uci_bike_sharing"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/254/qsar+biodegradation",
+      "final_url": "https://archive.ics.uci.edu/dataset/254/qsar+biodegradation",
+      "started_at_utc": "2026-10-26T10:43:46.405518+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:48.990921+00:00",
+      "headers": {
+        "ETag": "\"b3vxkx\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "93716"
+      },
+      "size": 93716,
+      "input_sha256": "9fda2277741d417812c975a005ef02bd9173802c454aa9f3bb397a0c339f6187",
+      "git_blob_sha1": "31a084c9ad686a483c236cc6fd6d222c000b3d99",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_biodegradation/source_page.html",
+      "origin_group_id": "uci_biodegradation"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+      "final_url": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+      "started_at_utc": "2026-10-26T10:43:41.915551+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:43.330963+00:00",
+      "headers": {
+        "ETag": "\"7m0tqv\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "137424"
+      },
+      "size": 137424,
+      "input_sha256": "2cd058c0f63745f33d16cc7fa83f1aec6077bd5cdb9e30b6838e99d1cf4e1209",
+      "git_blob_sha1": "46621ccf91254529e039c9d4da41dc006cf16e8e",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_forest_fires/source_page.html",
+      "origin_group_id": "uci_forest_fires"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+      "final_url": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+      "started_at_utc": "2026-10-26T10:43:42.801083+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:44.261970+00:00",
+      "headers": {
+        "ETag": "\"1b4ju9i\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "154822"
+      },
+      "size": 154822,
+      "input_sha256": "0a5b541d523c1d40f2517d4bf1da29f776fbbf5a79960b0a7b7afe649eb6a674",
+      "git_blob_sha1": "a30b0e99880f2e5759149aeef76cbbe93a721cab",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_seoul_bike/source_page.html",
+      "origin_group_id": "uci_seoul_bike"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "final_url": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "started_at_utc": "2026-10-26T10:43:44.976778+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:46.477423+00:00",
+      "headers": {
+        "ETag": "\"rgpdx\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "78603"
+      },
+      "size": 78603,
+      "input_sha256": "b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e",
+      "git_blob_sha1": "85643152e1d58773f69991bed857e63e9ed49109",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_wilt/source_page.html",
+      "origin_group_id": "uci_wilt"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "final_url": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "started_at_utc": "2026-10-26T10:43:41.681576+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:43.212746+00:00",
+      "headers": {
+        "ETag": "\"tfdh0l\"",
+        "Last-Modified": null,
+        "Content-Type": "text/html",
+        "Content-Length": "169231"
+      },
+      "size": 169231,
+      "input_sha256": "09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451",
+      "git_blob_sha1": "a6cf179a735ef11a792dd051d1c1a91346bd77c9",
+      "kind": "source_page",
+      "raw_relative_path": "notices/uci_wine/source_page.html",
+      "origin_group_id": "uci_wine"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "started_at_utc": "2026-10-26T10:43:39.615242+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.087409+00:00",
+      "headers": {
+        "ETag": "\"1900f82fb57025e8228be00b33652f42ac7eff359d80e626bff150ce362fca3f\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "1088"
+      },
+      "size": 1088,
+      "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9",
+      "git_blob_sha1": "0ac28ee234d232ac0691f39cebf95bf6b2a763a5",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/vscode/LICENSE.txt",
+      "origin_group_id": "vscode"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/LICENSE.txt",
+      "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/LICENSE.txt",
+      "started_at_utc": "2026-10-26T10:43:40.087586+00:00",
+      "acquired_at_utc": "2026-10-26T10:43:40.386723+00:00",
+      "headers": {
+        "ETag": "\"25f949544fda83fe1c5c76dbca073f9c5e6b5518b2b2b3e9c3855b9ffc063b14\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "1094"
+      },
+      "size": 1094,
+      "input_sha256": "8f3b85643422256a936daede0159c60fe5d140ace61a4fbb7de8b912e1274260",
+      "git_blob_sha1": "dc0c2ffb3dc1523bed6ab4090e9215504bd39b17",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/vscode/extensions/copilot/LICENSE.txt",
+      "origin_group_id": "vscode"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/cldr/cldr-json/cldr-dates-full/main/en/dateFields.json",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/cldr/cldr-json/cldr-dates-full/main/en/dateFields.json",
+      "size": 26073,
+      "input_sha256": "4fcaa5f74d743a0bc734a556638c687ee7607824cc763be0f746a20d36e9cb0c",
+      "copied_at_utc": "2026-10-26T10:43:39.541301+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/cldr/cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/cldr/cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+      "size": 44939,
+      "input_sha256": "db04305a4bac1389b965e71974adf174adc4130f38b86dfcf1f4e2eec343a174",
+      "copied_at_utc": "2026-10-26T10:43:39.543323+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/cldr/cldr-json/cldr-localenames-full/main/en/languages.json",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/cldr/cldr-json/cldr-localenames-full/main/en/languages.json",
+      "size": 20815,
+      "input_sha256": "a5960d2371bc7d982da7fcfd9a0e237429d3467a5cc76f680bc3af5bcef9fb4e",
+      "copied_at_utc": "2026-10-26T10:43:39.546203+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/cldr/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/cldr/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+      "size": 17470,
+      "input_sha256": "29b07edcff9a65505c0b543e6c2dba90eea217cf1080232b37d3b461420ae078",
+      "copied_at_utc": "2026-10-26T10:43:39.548123+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/cldr/cldr-json/cldr-numbers-full/main/en/currencies.json",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/cldr/cldr-json/cldr-numbers-full/main/en/currencies.json",
+      "size": 71492,
+      "input_sha256": "a6c41b28f4035f65ae698b53a66866982b4ff49bc0de7e840f91d2c6e6bdc23b",
+      "copied_at_utc": "2026-10-26T10:43:39.551249+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/curl/docs/CIPHERS-TLS12.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/curl/docs/CIPHERS-TLS12.md",
+      "size": 38498,
+      "input_sha256": "78a9964545b3269bac03c70601b014f96b18a98aabb71d1a37fde41fe0b572ab",
+      "copied_at_utc": "2026-10-26T10:43:39.553573+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/curl/docs/ECH.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/curl/docs/ECH.md",
+      "size": 19110,
+      "input_sha256": "4cc689059c066c96eec06f123049f33a4c4d2b8f07c7f5df6cb9da61455c9fdd",
+      "copied_at_utc": "2026-10-26T10:43:39.555788+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/curl/docs/FAQ.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/curl/docs/FAQ.md",
+      "size": 60446,
+      "input_sha256": "21789939dfb18654dfe05c8b299f883cb4f7a5d57eeedc1ff6f4c507db9ca26a",
+      "copied_at_utc": "2026-10-26T10:43:39.557928+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/curl/docs/INSTALL-CMAKE.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/curl/docs/INSTALL-CMAKE.md",
+      "size": 39635,
+      "input_sha256": "44fc74d7065e0963915425c69f894d95174354785d4936ed17da8d69522d5b47",
+      "copied_at_utc": "2026-10-26T10:43:39.559391+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/curl/docs/INSTALL.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/curl/docs/INSTALL.md",
+      "size": 26697,
+      "input_sha256": "c9440be6db41c62342742f334805f636cabdccb133a7944ea57a892d76be0951",
+      "copied_at_utc": "2026-10-26T10:43:39.562058+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/git/Documentation/technical/api-trace2.adoc",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/git/Documentation/technical/api-trace2.adoc",
+      "size": 44494,
+      "input_sha256": "a17b02c0be9804049293498f58f533a88b052f524eb7b0f813a9233a28e17ff4",
+      "copied_at_utc": "2026-10-26T10:43:39.564965+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/git/Documentation/technical/bundle-uri.adoc",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/git/Documentation/technical/bundle-uri.adoc",
+      "size": 26750,
+      "input_sha256": "c00e786e56cde209dca048db487ecc15dc8fad29045f8b69730a45ee194b7e0b",
+      "copied_at_utc": "2026-10-26T10:43:39.566311+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/git/Documentation/technical/commit-graph.adoc",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/git/Documentation/technical/commit-graph.adoc",
+      "size": 18122,
+      "input_sha256": "bf1e8aeeec83a1063e36c2ba88d3c513aa07b71b3facde924fe680cc43d22b1e",
+      "copied_at_utc": "2026-10-26T10:43:39.567839+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/git/Documentation/technical/hash-function-transition.adoc",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/git/Documentation/technical/hash-function-transition.adoc",
+      "size": 36339,
+      "input_sha256": "5525e6da835a7589d094b03b3c895e561518b71be3977c3cac592f6d7f05e9ba",
+      "copied_at_utc": "2026-10-26T10:43:39.570227+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/git/Documentation/technical/large-object-promisors.adoc",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/git/Documentation/technical/large-object-promisors.adoc",
+      "size": 27224,
+      "input_sha256": "b76baff2c662164b423673ce3f7a663c96181f84998a7e71ada39bd650594e2f",
+      "copied_at_utc": "2026-10-26T10:43:39.572466+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/natural_earth/110m_physical/ne_110m_coastline.shp",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/natural_earth/110m_physical/ne_110m_coastline.shp",
+      "size": 89652,
+      "input_sha256": "a1f8285d0e0a4858392cd78fc74fa3ee4cd9088947cf6e3693729dc852d70b60",
+      "copied_at_utc": "2026-10-26T10:43:39.575615+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/natural_earth/110m_physical/ne_110m_geography_marine_polys.shp",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/natural_earth/110m_physical/ne_110m_geography_marine_polys.shp",
+      "size": 339268,
+      "input_sha256": "e37b4d4e1009be878ea51afca5f94c456d954deec1fc5ba5a690112edb907bfe",
+      "copied_at_utc": "2026-10-26T10:43:39.578729+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/natural_earth/110m_physical/ne_110m_land.shp",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/natural_earth/110m_physical/ne_110m_land.shp",
+      "size": 89504,
+      "input_sha256": "8689e6932b8e370e2ca4587cf3ba21e460b1235db37b6ed3c172c35b4a6088de",
+      "copied_at_utc": "2026-10-26T10:43:39.580735+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/natural_earth/110m_physical/ne_110m_ocean.shp",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/natural_earth/110m_physical/ne_110m_ocean.shp",
+      "size": 84804,
+      "input_sha256": "8006f16c5af40875fbe8e975bef6d4b6c1ffc7b767491bdc277fbc0b62ba5d02",
+      "copied_at_utc": "2026-10-26T10:43:39.582324+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/natural_earth/110m_physical/ne_110m_rivers_lake_centerlines.shp",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/natural_earth/110m_physical/ne_110m_rivers_lake_centerlines.shp",
+      "size": 19180,
+      "input_sha256": "4a5d41e67457fbd3d0c82ef4ca972f42f21faf8a639d0b0368725d38940f72c2",
+      "copied_at_utc": "2026-10-26T10:43:39.584057+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/cldr/LICENSE",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/cldr/LICENSE",
+      "size": 2033,
+      "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "copied_at_utc": "2026-10-26T10:43:39.585948+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/curl/COPYING",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/curl/COPYING",
+      "size": 1088,
+      "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681",
+      "copied_at_utc": "2026-10-26T10:43:39.587415+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/git/COPYING",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/git/COPYING",
+      "size": 18765,
+      "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e",
+      "copied_at_utc": "2026-10-26T10:43:39.589246+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/natural_earth/LICENSE.md",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/natural_earth/LICENSE.md",
+      "size": 4636,
+      "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b",
+      "copied_at_utc": "2026-10-26T10:43:39.591179+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/numpy/LICENSE.txt",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/numpy/LICENSE.txt",
+      "size": 1543,
+      "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491",
+      "copied_at_utc": "2026-10-26T10:43:39.592749+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/notices/pandas/LICENSE",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/notices/pandas/LICENSE",
+      "size": 1634,
+      "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae",
+      "copied_at_utc": "2026-10-26T10:43:39.594479+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/numpy/numpy/__init__.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/numpy/numpy/__init__.py",
+      "size": 25251,
+      "input_sha256": "da15041cceb1f6f5abf9bae3140a5f3d95773221980ba60efe48780af4725483",
+      "copied_at_utc": "2026-10-26T10:43:39.597721+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/numpy/numpy/_core/_add_newdocs.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/numpy/numpy/_core/_add_newdocs.py",
+      "size": 216659,
+      "input_sha256": "40fe45928ca5081fd4c51c05dfd342bff3ad055a6d256a703431c09607b70103",
+      "copied_at_utc": "2026-10-26T10:43:39.599533+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/numpy/numpy/_core/_internal.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/numpy/numpy/_core/_internal.py",
+      "size": 29401,
+      "input_sha256": "497f1ce325bcc6ffc2ccf013e2cdd2ff2e32c55106a0a07997213d45d6c777a0",
+      "copied_at_utc": "2026-10-26T10:43:39.601049+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/numpy/numpy/_core/arrayprint.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/numpy/numpy/_core/arrayprint.py",
+      "size": 65592,
+      "input_sha256": "4e80a4f9d2ab63c5b7b7c1e717c5f06d7cd7fb9a28cd088640b0c614d73c1a7c",
+      "copied_at_utc": "2026-10-26T10:43:39.602656+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/numpy/numpy/_core/defchararray.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/numpy/numpy/_core/defchararray.py",
+      "size": 38241,
+      "input_sha256": "a174cd2354ef6fd8851d51c6f5b43f3fc836a344d1a37fa9600060387858d395",
+      "copied_at_utc": "2026-10-26T10:43:39.604995+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/pandas/pandas/_config/config.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/pandas/pandas/_config/config.py",
+      "size": 28674,
+      "input_sha256": "1b76a9475b7065e0757c84d0eb6691804a4134fe93de7a6f2d2533a08b6c4d5c",
+      "copied_at_utc": "2026-10-26T10:43:39.607321+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/pandas/pandas/_typing.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/pandas/pandas/_typing.py",
+      "size": 16836,
+      "input_sha256": "98207bb411b9f2c318d8c06303d1aa3dc98ee3bf073acc9b484326590da2d164",
+      "copied_at_utc": "2026-10-26T10:43:39.608557+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/pandas/pandas/core/_numba/extensions.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/pandas/pandas/core/_numba/extensions.py",
+      "size": 18513,
+      "input_sha256": "b3ec1eeb3d57f9c00ccbb9f33d5cebb0d474acf33590550c9e98ff2018cec58d",
+      "copied_at_utc": "2026-10-26T10:43:39.610969+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/pandas/pandas/core/algorithms.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/pandas/pandas/core/algorithms.py",
+      "size": 69105,
+      "input_sha256": "ac7b7dfd5d590dbab06439a3f07678a1d6cf09064197c4764a1c0b31919f9fd1",
+      "copied_at_utc": "2026-10-26T10:43:39.612435+00:00"
+    },
+    {
+      "kind": "prior_byte_copy",
+      "raw_relative_path": "prior/pandas/pandas/core/apply.py",
+      "prior_relative_path": "data/raw/real_unseen/real_candidates_20261026_01/pandas/pandas/core/apply.py",
+      "size": 82071,
+      "input_sha256": "a38b4dc76a2bbb1157e369a700ab1e17c57b6b63385e237d7d6c141948408919",
+      "copied_at_utc": "2026-10-26T10:43:39.613865+00:00"
+    }
+  ],
+  "errors": [],
+  "archive_members": {
+    "uci_forest_fires": [
+      {
+        "name": "forestfires.csv",
+        "original_size": 25478,
+        "archived_size": 7020,
+        "crc32": "e8f7a860"
+      },
+      {
+        "name": "forestfires.names",
+        "original_size": 3420,
+        "archived_size": 1642,
+        "crc32": "aa108ebc"
+      }
+    ],
+    "uci_wine": [
+      {
+        "name": "winequality-red.csv",
+        "original_size": 84199,
+        "archived_size": 22684,
+        "crc32": "4b7ff157"
+      },
+      {
+        "name": "winequality-white.csv",
+        "original_size": 264426,
+        "archived_size": 66747,
+        "crc32": "64115603"
+      },
+      {
+        "name": "winequality.names",
+        "original_size": 3305,
+        "archived_size": 1510,
+        "crc32": "639dc7d2"
+      }
+    ],
+    "uci_bike_sharing": [
+      {
+        "name": "Readme.txt",
+        "original_size": 5607,
+        "archived_size": 2257,
+        "crc32": "253b76ea"
+      },
+      {
+        "name": "day.csv",
+        "original_size": 57569,
+        "archived_size": 20490,
+        "crc32": "faf56e4a"
+      },
+      {
+        "name": "hour.csv",
+        "original_size": 1156736,
+        "archived_size": 256945,
+        "crc32": "235b7c31"
+      }
+    ],
+    "uci_seoul_bike": [
+      {
+        "name": "SeoulBikeData.csv",
+        "original_size": 604166,
+        "archived_size": 604166,
+        "crc32": "6250fbad"
+      }
+    ],
+    "uci_automobile": [
+      {
+        "name": "automobile/",
+        "original_size": 0,
+        "archived_size": 0,
+        "crc32": "00000000"
+      },
+      {
+        "name": "automobile/Index",
+        "original_size": 144,
+        "archived_size": 113,
+        "crc32": "9c043e65"
+      },
+      {
+        "name": "automobile/imports-85.names",
+        "original_size": 4747,
+        "archived_size": 2087,
+        "crc32": "c4b56fb8"
+      },
+      {
+        "name": "automobile/misc",
+        "original_size": 3757,
+        "archived_size": 728,
+        "crc32": "198b6529"
+      },
+      {
+        "name": "automobile/imports-85.data",
+        "original_size": 25936,
+        "archived_size": 4667,
+        "crc32": "5f0f9ecc"
+      }
+    ],
+    "uci_abalone": [
+      {
+        "name": "Index",
+        "original_size": 114,
+        "archived_size": 78,
+        "crc32": "d4dc069e"
+      },
+      {
+        "name": "abalone.data",
+        "original_size": 191873,
+        "archived_size": 52782,
+        "crc32": "865eacdb"
+      },
+      {
+        "name": "abalone.names",
+        "original_size": 4319,
+        "archived_size": 2139,
+        "crc32": "2e7b0bfc"
+      }
+    ],
+    "uci_wilt": [
+      {
+        "name": "testing.csv",
+        "original_size": 28930,
+        "archived_size": 12862,
+        "crc32": "c4ed5f08"
+      },
+      {
+        "name": "training.csv",
+        "original_size": 249070,
+        "archived_size": 105511,
+        "crc32": "af1441bc"
+      }
+    ],
+    "uci_biodegradation": [
+      {
+        "name": "biodeg.csv",
+        "original_size": 155987,
+        "archived_size": 155987,
+        "crc32": "a6c04acc"
+      }
+    ]
+  },
+  "acquisition_review": "source_context_checked_only; individual rights/privacy/derivation pending",
+  "evaluation_ready": false,
+  "unseen_overlap_audit": "not_performed"
+}

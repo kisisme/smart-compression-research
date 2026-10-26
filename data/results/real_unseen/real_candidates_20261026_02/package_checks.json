@@ -1,0 +1,12 @@
+{
+  "status": "metadata_report_and_byte_preservation_checked",
+  "checked_at_utc": "2026-10-26T10:50:40.718766+00:00",
+  "json_files_checked": 14,
+  "report_local_links_checked": 15,
+  "candidate_table_rows_checked": 30,
+  "previous_tracked_files_equal_to_head": 15,
+  "new_metadata_sources_text_conversion_disabled": 16,
+  "report_sha256": "73df2d45b50c0b1b37c9100778bf328883d1a4aff1b85c1f4124fc3d08191cce",
+  "progress_sha256": "d5985e393c84125ca4600a0d6613bfefdacd930109f2cbb3b7b35d01fd10b19c",
+  "scope": "Package/document checks only; no repeated scientific measurements or unit tests"
+}

@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자 요청에 따라 [1차 수집 보고서](research_log/unseen_collection_20261026.md)를 보강했다. 저장 inventory·계획·검증 JSON을 Python으로 읽어 원본 그룹별 실제 수량/bytes와 파일 30개의 경로·크기·hash 목록을 정리했다. 보고서 정리 다음에 부족한 30개 후보를 수집하는 순서를 명시했다. CSV/log 각 10개·JSON/binary 각 5개와 최소 6개 새 원본 그룹이 필요하며, 기존 후보에서 검토 제외가 발생하면 대체 수집량이 더 늘 수 있다. 이번 작업은 문서/근거 정리이며 추가 다운로드·후보 승인·압축/모델 평가는 하지 않았다. [보고서 검증 근거](research_log/unseen_collection_report_checks_20261026.json)를 보존한다.
+최신 진행: [추가 원본 30개 수집·통합 draft](research_log/unseen_additional_collection_20261026.md)를 완료했다. CSV/log 각 10개·JSON/binary 각 5개를 새 경로에 확보하고, 기존 30개를 보존한 채 총 60개·여섯 형식 각 10개·잠정 원본 그룹 18개를 구성했다. [독립 검증](data/results/real_unseen/real_candidates_20261026_02/verification.json)에서 Git/전체 hash·archive member bytes/CRC·형식·정확 중복 0개·quota·그룹 상한과 기존 보호 파일 114개 불변을 확인했다. 수량 조건은 충족했으나 모든 후보는 권리/개인정보 검토 `pending`, 선정 0개이며 `evaluation_ready=false`다. 다음은 파일별 내용·notice·개인정보·원본/파생 관계 검토다. 합성 겹침 감사·실제 corpus 동결·압축/예측/학습·memory 추가 측정은 하지 않았다.
+
+직전 보고서: 사용자 요청에 따라 [1차 수집 보고서](research_log/unseen_collection_20261026.md)를 보강했다. 저장 inventory·계획·검증 JSON을 Python으로 읽어 원본 그룹별 실제 수량/bytes와 파일 30개의 경로·크기·hash 목록을 정리했다. 보고서 정리 다음에 부족한 30개 후보를 수집하는 순서를 명시했다. 당시 CSV/log 각 10개·JSON/binary 각 5개와 최소 6개 새 원본 그룹이 필요했으며, 기존 후보에서 검토 제외가 발생하면 대체 수집량이 더 늘 수 있다고 기록했다. 해당 보고서 작업에서는 추가 다운로드·후보 승인·압축/모델 평가를 하지 않았다. [보고서 검증 근거](research_log/unseen_collection_report_checks_20261026.json)를 보존한다.
 
 직전 수집: [실제 파일 후보 1차 출처 검토·초안 수집](research_log/unseen_collection_20261026.md)을 마쳤다. 고정 upstream commit에서 text 10·Python 10·JSON 5·binary 5, 총 30개와 라이선스 원문 6개를 새 Git 제외 경로에 보존했다. 원본 그룹은 6개이며 각 5개다. [독립 검증](data/results/real_unseen/real_candidates_20261026_01/verification.json)에서 bytes/크기/full SHA-256/Git blob hash·정확 중복 0개·draft 연결·기존 보호 파일 총 59개 불변을 확인했다. 목표 60개/최소 12개 그룹은 미충족이고 모든 후보의 권리·개인정보 검토는 `pending`, 선정은 0개다. `evaluation_ready=false`, 합성 겹침 확인·실제 corpus 동결·압축/모델 평가는 미수행이다. 공식 3지표·memory 참고 지표 방침을 유지하며 GUI OS QA/현재 Node 시작 오류는 별도 미완료다.
 
@@ -840,22 +842,33 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **완료:** 저장 inventory·획득·계획·검증 파일을 Python으로 읽어 기존 30개/6개 그룹의 수량·그룹별 bytes·원래 경로·크기·hash 목록을 보고서에 보강했다. 나머지 형식별 수집 목표와 최소 새 그룹 수, 보고서→추가 수집→검토/선정→겹침 확인/동결 순서를 명시했다. 검토 제외 시 대체 후보가 더 필요할 수 있음을 기록했다.
 - **검증/범위:** 보고서의 표·기존 근거 파일과 로컬 링크·Git diff를 확인했다. 기존 수집 package/source와의 byte 일치도 문서 근거에 기록했다. 추가 다운로드·원본 변경·후보 승인·연구 실험·학습·단위 테스트 재실행을 하지 않았다. 후보 30개는 계속 `pending`이며 실제 corpus 동결/연구 평가는 미완료다.
 
+### 추가 실제 원본 30개 수집·통합 draft 검증 완료 — 2026-10-26
+
+- **근거/실행 기준:** [보고서](research_log/unseen_additional_collection_20261026.md), [고정 계획](research_log/unseen_additional_collection_plan_20261026.json), `data/results/real_unseen/real_candidates_20261026_02/`의 통합/추가 inventory·draft·획득/attribution·실제 CLI·독립 검증·보존·최초 중단 기록. 실행 HEAD는 `edf2dcf`이고 당시 commit 전 수집/검증 script hash를 별도로 기록했다.
+- **수집 완료:** UCI의 원래 관측 collection 8개에서 CSV 10개, VS Code의 배포 설정 JSON 5개, Google Fonts의 글꼴 binary 5개, MLPerf Training/Inference 실행 로그 각 5개를 확보했다. 새 원본 그룹은 12개, 기존을 합쳐 잠정 18개다. 전체 형식별 각 10개·그룹당 최대 5개·형식별 최소 2개 그룹을 충족했다. 같은 저장소의 폴더/버전·같은 자료의 red/white 또는 train/test를 별도 그룹으로 세지 않았다.
+- **출처/보존:** Git commit·blob hash/크기와 root/family notice, UCI DOI·source page·전체 archive/member·citation·CC BY legalcode를 보존했다. 후보 전체 파일을 그대로 읽었으며 자르기·재인코딩·개행/값/확장자 변환을 하지 않았다. 기존 30개/notice/metadata는 유지하고 새 raw 경로에 독립적인 바이트 사본을 만들었다. 상충하는 이용 조건의 Air Quality, 크기 범위 밖/형식이 다른 자료, 개인정보 불확실 로그의 미수집 이유를 남겼다.
+- **실제 실행·독립 검증 완료:** 획득 오류 0개, draft CLI와 독립 검증 종료 0. 통합 후보 60개의 정확 중복 0개·원본/notice Git blob hash·UCI archive/member bytes/CRC·JSON/CSV/로그/TrueType 형식을 확인했다. 기존 연구/1차 자료 포함 보호 파일 114개 불변, 새 raw 경로 파일 92개 Git 제외를 확인했다. 추가 후보 3,553,944 bytes, 통합 5,284,799 bytes, 개별 16,836~604,166 bytes다. 초기 제한 실행의 Pilot 읽기 거부도 보존했다.
+- **검토/미완료:** 모든 후보의 권리/개인정보 상태는 `pending`, 선정 0개다. root license·파싱·패턴 검사로 안전/독립성을 승인하지 않았다. MLCommons 조직/동일 제출 업체와 각 UCI 원래 collection의 공통 호스트/출처도 기록했다. 실제 내용·추가 notice·embedded 정보·개인정보·파생 관계 검토와 필요한 대체 수집, 합성 겹침 확인·실제 corpus 동결·평가 runner/평가는 남아 있다.
+- **범위:** 연구 특징·압축 benchmark·모델 로딩/예측/학습·memory 추가 측정·기존 단위 테스트/전체 suite를 실행하지 않았다. ZIP member 추출은 원본 획득으로 구분한다. `evaluation_ready=false`, `unseen_overlap_audit=not_performed`를 유지한다. 기존 1차 보고서/결과를 소급 수정하지 않았다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
 - 현재 `node_repl` MCP 연결 재시작 후 최소 JavaScript·Sky 초기화·Windows 창 조회 재검증. 원래 kernel assets 임시 경로는 부분 복구했으나 전체 정상 동작은 미확인이다.
 - GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
-- 실제 파일 후보의 나머지 형식/원본 그룹 수집·파일별 권리/개인정보/파생 관계 승인·합성 데이터와의 겹침 확인·실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1·manifest 도구 구현/인위적 검증과 실제 후보 30개의 미선정 draft/정확 중복 검사는 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
+- 실제 후보 60개의 파일별 권리/개인정보/원본·파생 관계 검토/승인 및 제외 시 대체 수집·합성 데이터와의 겹침 확인·실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1·manifest 도구 구현/인위적 검증, 실제 60개 통합 미선정 draft의 수량/형식/잠정 그룹 조건·정확 중복 검사는 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**부족 형식의 공개 원출처 검토·추가 초안 수집:** CSV/log 각 10개와 별도 원본 그룹의 JSON/binary 각 5개를 검토한다. 기존 30개와 라이선스/draft를 보존하고 새 출력 경로를 사용한다. 전체 최소 12개 그룹·그룹당 최대 5개 및 권리/개인정보/내용·파생 관계 검토를 충족할 때까지 실제 corpus 선정/동결 완료로 기록하지 않는다. 합성/fixture로 수량을 채우거나 특징·예측·압축 성능을 보고 선정하지 않는다. 합성 겹침 감사·실제 동결·평가 runner는 후속 단위다. MCP Restart 완료가 확인되면 별도 작업으로 최소 JS/Sky/Windows 창 조회와 남은 GUI QA를 마친다.
+**후보 60개의 파일별 권리·개인정보·원본/파생 관계 검토:** 통합 draft의 실제 내용·추가 notice·공개 이용 범위·식별자/경로·embedded 정보·출처 간 복제/파생 관계를 확인하고 후보별 판단/근거를 새 기록에 남긴다. root license나 패턴 검사만으로 승인하지 않는다. 제외가 발생하면 기존 후보와 이유를 보존하고 같은 사전 조건의 대체 원본을 수집한다. 검토·명시적 선정 후 합성 겹침 감사·실제 corpus 동결·평가 runner를 별도 단위로 진행한다. 특징·예측·압축 성능으로 후보를 고르지 않는다. MCP Restart 완료가 확인되면 별도 작업으로 최소 JS/Sky/Windows 창 조회와 남은 GUI QA를 마친다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구와 실제 후보 30개의 미선정 초안을 마련했으며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구와 실제 후보 60개의 통합 미선정 초안을 마련했으며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 추가 원본 수집·통합 draft 검증의 시작/실행 HEAD는 `edf2dcf`(1차 보고서 정리)다. 새 수집/검증 script는 commit 전 정확한 source hash를 기록했고, upstream Git commit·UCI DOI/archive hash는 별도로 보존했다. 연구 압축/모델 평가의 실행 commit으로 취급하지 않는다.
 
 이번 1차 수집 보고서 정리의 시작 HEAD이자 실제 수집/검증 근거 보존 commit은 `65deab0`이다. 보고서의 새 표는 기존 저장 파일을 Python으로 읽어 생성했으며 추가 수집/연구 실측의 실행 commit으로 취급하지 않는다.
 
@@ -884,6 +897,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `edf2dcf`: 1차 수집 보고서의 그룹/파일 목록·부족분·추가 수집 순서와 문서 검증 근거 보존. 이번 추가 원본 수집/통합 draft 검증의 시작 HEAD.
 - `65deab0`: 실제 후보 30개/6개 원본 그룹의 고정 출처·원본 보존·미선정 draft·획득/독립 검증 근거 보존. 이번 1차 수집 보고서 정리의 시작 HEAD.
 - `173bb47`: 실제 파일 후보 manifest 도구 구현·전용 23개/fixture CLI 9건·실패/선정 상태 검증 보존. 이번 실제 파일 1차 후보 수집의 시작 HEAD.
 - `c0efb44`: node_repl 누락 임시 경로 진단·부분 복구·독립 재현·현재 연결 재시작 대기 기록 보존. 이번 manifest 도구 구현의 시작 HEAD.

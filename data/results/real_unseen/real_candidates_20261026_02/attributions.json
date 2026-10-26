@@ -1,0 +1,157 @@
+{
+  "uci": [
+    {
+      "origin_group_id": "uci_wine",
+      "doi": "10.24432/C56S3T",
+      "citation": "Cortez, P., Cerdeira, A., Almeida, F., Matos, T. & Reis, J. (2009). Wine Quality. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "license_id": "CC-BY-4.0",
+      "role": "Physicochemical wine observations and sensory scores."
+    },
+    {
+      "origin_group_id": "uci_forest_fires",
+      "doi": "10.24432/C5D88D",
+      "citation": "Cortez, P. & Morais, A. (2007). Forest Fires. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+      "license_id": "CC-BY-4.0",
+      "role": "Portuguese forest-fire/weather observations."
+    },
+    {
+      "origin_group_id": "uci_bike_sharing",
+      "doi": "10.24432/C5W894",
+      "citation": "Fanaee-T, H. (2013). Bike Sharing. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+      "license_id": "CC-BY-4.0",
+      "role": "Daily aggregate bike-rental counts; no individual trip file selected."
+    },
+    {
+      "origin_group_id": "uci_seoul_bike",
+      "doi": "10.24432/C5F62R",
+      "citation": "Seoul Bike Sharing Demand (2020). UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+      "license_id": "CC-BY-4.0",
+      "role": "Hourly aggregate rental counts and weather; preserve original encoding."
+    },
+    {
+      "origin_group_id": "uci_abalone",
+      "doi": "10.24432/C55C7W",
+      "citation": "Nash, W., Sellers, T., Talbot, S., Cawthorn, A. & Ford, W. (1994). Abalone. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/1/abalone",
+      "license_id": "CC-BY-4.0",
+      "role": "Physical shellfish observations; original .data is a comma-delimited table, no conversion or rename."
+    },
+    {
+      "origin_group_id": "uci_automobile",
+      "doi": "10.24432/C5B01C",
+      "citation": "Schlimmer, J. (1985). Automobile. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/10/automobile",
+      "license_id": "CC-BY-4.0",
+      "role": "Vehicle specifications and aggregate model risk/loss ratings; not individual insurance records. Original .data is comma-delimited."
+    },
+    {
+      "origin_group_id": "uci_wilt",
+      "doi": "10.24432/C5KS4M",
+      "citation": "Johnson, B. (2013). Wilt. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "license_id": "CC-BY-4.0",
+      "role": "Remote-sensing observation segments. Upstream training/testing filenames both remain external input files; no fit or split for this research."
+    },
+    {
+      "origin_group_id": "uci_biodegradation",
+      "doi": "10.24432/C5H60M",
+      "citation": "Mansouri, K., Ringsted, T., Ballabio, D., Todeschini, R. & Consonni, V. (2013). QSAR biodegradation. UCI Machine Learning Repository.",
+      "page_url": "https://archive.ics.uci.edu/dataset/254/qsar+biodegradation",
+      "license_id": "CC-BY-4.0",
+      "role": "Published descriptors paired with experimental chemical biodegradation outcomes, not generated random samples."
+    }
+  ],
+  "github": [
+    {
+      "repo": "microsoft/vscode",
+      "origin_group_id": "vscode",
+      "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "role": "Production extension package configuration; no tests, fixture JSON or local project inputs.",
+      "notices": [
+        {
+          "path": "LICENSE.txt",
+          "size": 1088,
+          "git_blob_sha1": "0ac28ee234d232ac0691f39cebf95bf6b2a763a5",
+          "license_id": "MIT"
+        },
+        {
+          "path": "extensions/copilot/LICENSE.txt",
+          "size": 1094,
+          "git_blob_sha1": "dc0c2ffb3dc1523bed6ab4090e9215504bd39b17",
+          "license_id": "MIT"
+        }
+      ]
+    },
+    {
+      "repo": "google/fonts",
+      "origin_group_id": "google_fonts",
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "role": "Published TrueType font binaries, one family each; preserve each family notice. Entire distribution repository is conservatively one origin group.",
+      "notices": [
+        {
+          "path": "ofl/abeezee/OFL.txt",
+          "size": 4516,
+          "git_blob_sha1": "fc163c7f211e6aa6ad5d66171e2e7913d66190f0",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/abel/OFL.txt",
+          "size": 4418,
+          "git_blob_sha1": "d67c839261b0dfff0452c6290b03b29d13ce854d",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/aboreto/OFL.txt",
+          "size": 4383,
+          "git_blob_sha1": "74c26d0608eb802425dc4f82a967d8294cba9e55",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/acme/OFL.txt",
+          "size": 4406,
+          "git_blob_sha1": "0b2b6aed80251fa310c17adc1a4defb49ca4a4e8",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/actor/OFL.txt",
+          "size": 4407,
+          "git_blob_sha1": "8782abad97e439e5e7a9b276f6cdcb32ae09242c",
+          "license_id": "OFL-1.1"
+        }
+      ]
+    },
+    {
+      "repo": "mlcommons/inference_results_v4.1",
+      "origin_group_id": "mlperf_inference",
+      "commit": "198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "role": "Published benchmark execution logs under results, not handwritten examples/fixtures. Training and Inference are distinct collections; shared organization/vendor is recorded, independence remains provisional.",
+      "notices": [
+        {
+          "path": "LICENSE.md",
+          "size": 10174,
+          "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "license_id": "Apache-2.0"
+        }
+      ]
+    },
+    {
+      "repo": "mlcommons/training_results_v5.1",
+      "origin_group_id": "mlperf_training",
+      "commit": "441d65f4445cd59687466533fd9f55399136e7a4",
+      "role": "Published benchmark execution logs under results, not handwritten examples/fixtures. Training and Inference are distinct collections; shared organization/vendor is recorded, independence remains provisional.",
+      "notices": [
+        {
+          "path": "LICENSE.md",
+          "size": 10174,
+          "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "license_id": "Apache-2.0"
+        }
+      ]
+    }
+  ],
+  "grouping": "Entire repositories and distinct original UCI observation collections. Shared UCI host/creators or MLCommons organization/vendor are not hidden; cross-source derivation/independence remains pending."
+}

@@ -1,0 +1,419 @@
+{
+  "status": "additional_acquisition_and_combined_draft_verified",
+  "verified_at_utc": "2026-10-26T10:45:57.601652+00:00",
+  "execution_git_head": "edf2dcf7e0829ad29a28018332d2b7f9ac3cb20c",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "verifier_sha256": "28080c6fdb5322a738dfa342bd638b845898d1f94b19ad05d95b3c624029a89d",
+  "new_candidates": 30,
+  "combined_candidates": 60,
+  "by_format": {
+    "binary": 10,
+    "csv": 10,
+    "json": 10,
+    "log": 10,
+    "python": 10,
+    "text": 10
+  },
+  "by_origin_group": {
+    "cldr": 5,
+    "curl": 5,
+    "git": 5,
+    "google_fonts": 5,
+    "mlperf_inference": 5,
+    "mlperf_training": 5,
+    "natural_earth": 5,
+    "numpy": 5,
+    "pandas": 5,
+    "uci_abalone": 1,
+    "uci_automobile": 1,
+    "uci_bike_sharing": 1,
+    "uci_biodegradation": 1,
+    "uci_forest_fires": 1,
+    "uci_seoul_bike": 1,
+    "uci_wilt": 2,
+    "uci_wine": 2,
+    "vscode": 5
+  },
+  "format_origin_groups": {
+    "binary": 2,
+    "csv": 8,
+    "json": 2,
+    "log": 2,
+    "python": 2,
+    "text": 2
+  },
+  "new_origin_groups": 12,
+  "total_origin_groups": 18,
+  "original_candidate_fields_preserved": 30,
+  "protected_files_unchanged": 114,
+  "total_candidate_bytes": 5284799,
+  "new_candidate_bytes": 3553944,
+  "minimum_bytes": 16836,
+  "maximum_bytes": 604166,
+  "exact_duplicate_candidates": 0,
+  "raw_files_git_ignored": 92,
+  "source_archives": 8,
+  "source_grouping": "Provisional repository/original observation collection groups; distinct collection does not establish statistical independence",
+  "rights_pending": 60,
+  "privacy_pending": 60,
+  "selected_files": 0,
+  "count_and_group_quotas_met": true,
+  "evaluation_ready": false,
+  "unseen_overlap_audit": "not_performed",
+  "scientific_evaluation_run": false,
+  "content_review": "Read-only format/pattern triage, not complete rights/privacy/derivative approval. Do not infer safety from absent flags.",
+  "content_triage": [
+    {
+      "candidate_id": "google_fonts_01",
+      "format": "binary",
+      "content_review": "pending",
+      "format_check": "TrueType sfnt header, table bounds/tags; embedded metadata not privacy-approved"
+    },
+    {
+      "candidate_id": "google_fonts_02",
+      "format": "binary",
+      "content_review": "pending",
+      "format_check": "TrueType sfnt header, table bounds/tags; embedded metadata not privacy-approved"
+    },
+    {
+      "candidate_id": "google_fonts_03",
+      "format": "binary",
+      "content_review": "pending",
+      "format_check": "TrueType sfnt header, table bounds/tags; embedded metadata not privacy-approved"
+    },
+    {
+      "candidate_id": "google_fonts_04",
+      "format": "binary",
+      "content_review": "pending",
+      "format_check": "TrueType sfnt header, table bounds/tags; embedded metadata not privacy-approved"
+    },
+    {
+      "candidate_id": "google_fonts_05",
+      "format": "binary",
+      "content_review": "pending",
+      "format_check": "TrueType sfnt header, table bounds/tags; embedded metadata not privacy-approved"
+    },
+    {
+      "candidate_id": "mlperf_inference_01",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_inference_02",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_inference_03",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_inference_04",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_inference_05",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_training_01",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_training_02",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_training_03",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_training_04",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "mlperf_training_05",
+      "format": "log",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 published execution log with MLLOG markers; no benchmark metrics evaluated"
+    },
+    {
+      "candidate_id": "uci_abalone_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_automobile_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_bike_sharing_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_biodegradation_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ";",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_forest_fires_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_seoul_bike_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "latin-1",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_wilt_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_wilt_02",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ",",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_wine_01",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ";",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "uci_wine_02",
+      "format": "csv",
+      "content_review": "pending",
+      "format_check": "Complete original delimited table parsed without rewriting",
+      "encoding_for_read_only_check": "utf-8",
+      "delimiter": ";",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      }
+    },
+    {
+      "candidate_id": "vscode_01",
+      "format": "json",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [
+          416
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 JSON object; not executed"
+    },
+    {
+      "candidate_id": "vscode_02",
+      "format": "json",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 JSON object; not executed"
+    },
+    {
+      "candidate_id": "vscode_03",
+      "format": "json",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 JSON object; not executed"
+    },
+    {
+      "candidate_id": "vscode_04",
+      "format": "json",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 JSON object; not executed"
+    },
+    {
+      "candidate_id": "vscode_05",
+      "format": "json",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "home_path_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": []
+      },
+      "format_check": "UTF-8 JSON object; not executed"
+    }
+  ]
+}

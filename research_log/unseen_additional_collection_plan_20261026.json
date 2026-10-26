@@ -1,0 +1,477 @@
+{
+  "plan_version": 1,
+  "base_collection": "real_candidates_20261026_01",
+  "new_collection": "real_candidates_20261026_02",
+  "data_kind": "research_candidate",
+  "scope": "Acquire additional candidates and build a combined draft. No selection, freeze, features, compression, model load, training or evaluation.",
+  "all_candidate_reviews": "pending",
+  "selection_basis": "Public provenance/rights context, original file format, complete original file, inclusive size range, paths and exact hashes only.",
+  "github_groups": [
+    {
+      "kind": "github",
+      "repo": "microsoft/vscode",
+      "origin_group_id": "vscode",
+      "format": "json",
+      "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "role": "Production extension package configuration; no tests, fixture JSON or local project inputs.",
+      "files": [
+        {
+          "candidate_id": "vscode_01",
+          "path": "extensions/copilot/package.json",
+          "size": 288175,
+          "git_blob_sha1": "f4cbb6f881ebec63d98f0a4fc0f6989aa418c068",
+          "license_id": "MIT",
+          "license_path": "extensions/copilot/LICENSE.txt"
+        },
+        {
+          "candidate_id": "vscode_02",
+          "path": "extensions/css-language-features/package.json",
+          "size": 30479,
+          "git_blob_sha1": "67a5f1651b3ae3c21dd2fbf62e5b632b0a4e5833",
+          "license_id": "MIT",
+          "license_path": "LICENSE.txt"
+        },
+        {
+          "candidate_id": "vscode_03",
+          "path": "extensions/git/package.json",
+          "size": 138827,
+          "git_blob_sha1": "f98f628268b49509238c55984809815c03cc16de",
+          "license_id": "MIT",
+          "license_path": "LICENSE.txt"
+        },
+        {
+          "candidate_id": "vscode_04",
+          "path": "extensions/markdown-language-features/package.json",
+          "size": 73048,
+          "git_blob_sha1": "928ebfaa11bbfd14eb28321c071545bd17c6fa55",
+          "license_id": "MIT",
+          "license_path": "LICENSE.txt"
+        },
+        {
+          "candidate_id": "vscode_05",
+          "path": "extensions/typescript-language-features/package.json",
+          "size": 127473,
+          "git_blob_sha1": "e4a2324f82473f2d250467bed31ae07fde5e5f64",
+          "license_id": "MIT",
+          "license_path": "LICENSE.txt"
+        }
+      ],
+      "notices": [
+        {
+          "path": "LICENSE.txt",
+          "size": 1088,
+          "git_blob_sha1": "0ac28ee234d232ac0691f39cebf95bf6b2a763a5",
+          "license_id": "MIT"
+        },
+        {
+          "path": "extensions/copilot/LICENSE.txt",
+          "size": 1094,
+          "git_blob_sha1": "dc0c2ffb3dc1523bed6ab4090e9215504bd39b17",
+          "license_id": "MIT"
+        }
+      ]
+    },
+    {
+      "kind": "github",
+      "repo": "google/fonts",
+      "origin_group_id": "google_fonts",
+      "format": "binary",
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "role": "Published TrueType font binaries, one family each; preserve each family notice. Entire distribution repository is conservatively one origin group.",
+      "files": [
+        {
+          "candidate_id": "google_fonts_01",
+          "path": "ofl/abeezee/ABeeZee-Regular.ttf",
+          "size": 46016,
+          "git_blob_sha1": "2ecf01bdec7b6a8568825da840897f9b0aee8a86",
+          "license_id": "OFL-1.1",
+          "license_path": "ofl/abeezee/OFL.txt"
+        },
+        {
+          "candidate_id": "google_fonts_02",
+          "path": "ofl/abel/Abel-Regular.ttf",
+          "size": 35220,
+          "git_blob_sha1": "f621a1273d78878b129ac93be7b93c2837ed5810",
+          "license_id": "OFL-1.1",
+          "license_path": "ofl/abel/OFL.txt"
+        },
+        {
+          "candidate_id": "google_fonts_03",
+          "path": "ofl/aboreto/Aboreto-Regular.ttf",
+          "size": 48356,
+          "git_blob_sha1": "b9c09bfa15f38fa9ccabcb90320de9d33a6e991b",
+          "license_id": "OFL-1.1",
+          "license_path": "ofl/aboreto/OFL.txt"
+        },
+        {
+          "candidate_id": "google_fonts_04",
+          "path": "ofl/acme/Acme-Regular.ttf",
+          "size": 23292,
+          "git_blob_sha1": "e66595e175d51fa1b31a7d32a150f7737a54a77f",
+          "license_id": "OFL-1.1",
+          "license_path": "ofl/acme/OFL.txt"
+        },
+        {
+          "candidate_id": "google_fonts_05",
+          "path": "ofl/actor/Actor-Regular.ttf",
+          "size": 64944,
+          "git_blob_sha1": "f63387cb6ec20d216eb5520ce5ac2110ec2cc89a",
+          "license_id": "OFL-1.1",
+          "license_path": "ofl/actor/OFL.txt"
+        }
+      ],
+      "notices": [
+        {
+          "path": "ofl/abeezee/OFL.txt",
+          "size": 4516,
+          "git_blob_sha1": "fc163c7f211e6aa6ad5d66171e2e7913d66190f0",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/abel/OFL.txt",
+          "size": 4418,
+          "git_blob_sha1": "d67c839261b0dfff0452c6290b03b29d13ce854d",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/aboreto/OFL.txt",
+          "size": 4383,
+          "git_blob_sha1": "74c26d0608eb802425dc4f82a967d8294cba9e55",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/acme/OFL.txt",
+          "size": 4406,
+          "git_blob_sha1": "0b2b6aed80251fa310c17adc1a4defb49ca4a4e8",
+          "license_id": "OFL-1.1"
+        },
+        {
+          "path": "ofl/actor/OFL.txt",
+          "size": 4407,
+          "git_blob_sha1": "8782abad97e439e5e7a9b276f6cdcb32ae09242c",
+          "license_id": "OFL-1.1"
+        }
+      ]
+    },
+    {
+      "kind": "github",
+      "repo": "mlcommons/inference_results_v4.1",
+      "origin_group_id": "mlperf_inference",
+      "format": "log",
+      "commit": "198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "role": "Published benchmark execution logs under results, not handwritten examples/fixtures. Training and Inference are distinct collections; shared organization/vendor is recorded, independence remains provisional.",
+      "files": [
+        {
+          "candidate_id": "mlperf_inference_01",
+          "path": "closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+          "size": 164270,
+          "git_blob_sha1": "fbd4bf9adf97b6a8caca5c6043cf2cb725ee976c",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_inference_02",
+          "path": "closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+          "size": 172709,
+          "git_blob_sha1": "04a3f480f3a2e87afbe1b3c45d1bd83af7b2aa1c",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_inference_03",
+          "path": "closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+          "size": 166974,
+          "git_blob_sha1": "eb41075990217eaa45f78db5e9f04f3dc94f962e",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_inference_04",
+          "path": "closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+          "size": 172670,
+          "git_blob_sha1": "5f2467aac3253db4025fe789c526d60306264162",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_inference_05",
+          "path": "closed/AMD/results/8xMI300X_2xEPYC-TURIN/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+          "size": 167313,
+          "git_blob_sha1": "931c6bfc78d84e3ac2c5b17631ef61cd246d107e",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        }
+      ],
+      "notices": [
+        {
+          "path": "LICENSE.md",
+          "size": 10174,
+          "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "license_id": "Apache-2.0"
+        }
+      ]
+    },
+    {
+      "kind": "github",
+      "repo": "mlcommons/training_results_v5.1",
+      "origin_group_id": "mlperf_training",
+      "format": "log",
+      "commit": "441d65f4445cd59687466533fd9f55399136e7a4",
+      "role": "Published benchmark execution logs under results, not handwritten examples/fixtures. Training and Inference are distinct collections; shared organization/vendor is recorded, independence remains provisional.",
+      "files": [
+        {
+          "candidate_id": "mlperf_training_01",
+          "path": "AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_0.txt",
+          "size": 28216,
+          "git_blob_sha1": "5c396420bfb5692086fded55147dd874c6a2caff",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_training_02",
+          "path": "AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_1.txt",
+          "size": 28220,
+          "git_blob_sha1": "1229dd9fa77d8ce981aeeabd31a13ef7b33e3923",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_training_03",
+          "path": "AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_2.txt",
+          "size": 30952,
+          "git_blob_sha1": "c58fb6d332ad42296c68ad0c62166e048006c5a9",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_training_04",
+          "path": "AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_3.txt",
+          "size": 29579,
+          "git_blob_sha1": "35cd594cd3a5c4a31b8114535f6324f50e204f56",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        },
+        {
+          "candidate_id": "mlperf_training_05",
+          "path": "AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_4.txt",
+          "size": 29577,
+          "git_blob_sha1": "aa9e9c4e4542e753ae1340b7ac4f88fcdb319fed",
+          "license_id": "Apache-2.0",
+          "license_path": "LICENSE.md"
+        }
+      ],
+      "notices": [
+        {
+          "path": "LICENSE.md",
+          "size": 10174,
+          "git_blob_sha1": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "license_id": "Apache-2.0"
+        }
+      ]
+    }
+  ],
+  "uci_groups": [
+    {
+      "id": 186,
+      "slug": "wine+quality",
+      "group": "uci_wine",
+      "doi": "10.24432/C56S3T",
+      "members": [
+        "winequality-red.csv",
+        "winequality-white.csv"
+      ],
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "citation": "Cortez, P., Cerdeira, A., Almeida, F., Matos, T. & Reis, J. (2009). Wine Quality. UCI Machine Learning Repository.",
+      "role": "Physicochemical wine observations and sensory scores.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_wine",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "archive_url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip"
+    },
+    {
+      "id": 162,
+      "slug": "forest+fires",
+      "group": "uci_forest_fires",
+      "doi": "10.24432/C5D88D",
+      "members": [
+        "forestfires.csv"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "citation": "Cortez, P. & Morais, A. (2007). Forest Fires. UCI Machine Learning Repository.",
+      "role": "Portuguese forest-fire/weather observations.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_forest_fires",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+      "archive_url": "https://archive.ics.uci.edu/static/public/162/forest+fires.zip"
+    },
+    {
+      "id": 275,
+      "slug": "bike+sharing+dataset",
+      "group": "uci_bike_sharing",
+      "doi": "10.24432/C5W894",
+      "members": [
+        "day.csv"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "citation": "Fanaee-T, H. (2013). Bike Sharing. UCI Machine Learning Repository.",
+      "role": "Daily aggregate bike-rental counts; no individual trip file selected.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_bike_sharing",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+      "archive_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip"
+    },
+    {
+      "id": 560,
+      "slug": "seoul+bike+sharing+demand",
+      "group": "uci_seoul_bike",
+      "doi": "10.24432/C5F62R",
+      "members": [
+        "SeoulBikeData.csv"
+      ],
+      "delimiter": ",",
+      "encoding": "latin-1",
+      "citation": "Seoul Bike Sharing Demand (2020). UCI Machine Learning Repository.",
+      "role": "Hourly aggregate rental counts and weather; preserve original encoding.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_seoul_bike",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+      "archive_url": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip"
+    },
+    {
+      "id": 1,
+      "slug": "abalone",
+      "group": "uci_abalone",
+      "doi": "10.24432/C55C7W",
+      "members": [
+        "abalone.data"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "citation": "Nash, W., Sellers, T., Talbot, S., Cawthorn, A. & Ford, W. (1994). Abalone. UCI Machine Learning Repository.",
+      "role": "Physical shellfish observations; original .data is a comma-delimited table, no conversion or rename.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_abalone",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/1/abalone",
+      "archive_url": "https://archive.ics.uci.edu/static/public/1/abalone.zip"
+    },
+    {
+      "id": 10,
+      "slug": "automobile",
+      "group": "uci_automobile",
+      "doi": "10.24432/C5B01C",
+      "members": [
+        "imports-85.data"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "citation": "Schlimmer, J. (1985). Automobile. UCI Machine Learning Repository.",
+      "role": "Vehicle specifications and aggregate model risk/loss ratings; not individual insurance records. Original .data is comma-delimited.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_automobile",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/10/automobile",
+      "archive_url": "https://archive.ics.uci.edu/static/public/10/automobile.zip"
+    },
+    {
+      "id": 285,
+      "slug": "wilt",
+      "group": "uci_wilt",
+      "doi": "10.24432/C5KS4M",
+      "members": [
+        "training.csv",
+        "testing.csv"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "citation": "Johnson, B. (2013). Wilt. UCI Machine Learning Repository.",
+      "role": "Remote-sensing observation segments. Upstream training/testing filenames both remain external input files; no fit or split for this research.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_wilt",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "archive_url": "https://archive.ics.uci.edu/static/public/285/wilt.zip"
+    },
+    {
+      "id": 254,
+      "slug": "qsar+biodegradation",
+      "group": "uci_biodegradation",
+      "doi": "10.24432/C5H60M",
+      "members": [
+        "biodeg.csv"
+      ],
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "citation": "Mansouri, K., Ringsted, T., Ballabio, D., Todeschini, R. & Consonni, V. (2013). QSAR biodegradation. UCI Machine Learning Repository.",
+      "role": "Published descriptors paired with experimental chemical biodegradation outcomes, not generated random samples.",
+      "kind": "uci_archive",
+      "origin_group_id": "uci_biodegradation",
+      "format": "csv",
+      "license_id": "CC-BY-4.0",
+      "page_url": "https://archive.ics.uci.edu/dataset/254/qsar+biodegradation",
+      "archive_url": "https://archive.ics.uci.edu/static/public/254/qsar+biodegradation.zip"
+    }
+  ],
+  "metadata_duplicate_exclusions": [
+    {
+      "repo": "mlcommons/inference_results_v4.1",
+      "path": "closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99/Offline/performance/run_1/mlperf_log_detail.txt",
+      "git_blob_sha1": "fbd4bf9adf97b6a8caca5c6043cf2cb725ee976c",
+      "reason": "Exact Git blob duplicate encountered before reaching the five-file quota; not downloaded."
+    },
+    {
+      "repo": "mlcommons/inference_results_v4.1",
+      "path": "closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99/Server/performance/run_1/mlperf_log_detail.txt",
+      "git_blob_sha1": "04a3f480f3a2e87afbe1b3c45d1bd83af7b2aa1c",
+      "reason": "Exact Git blob duplicate encountered before reaching the five-file quota; not downloaded."
+    },
+    {
+      "repo": "mlcommons/inference_results_v4.1",
+      "path": "closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99/Offline/performance/run_1/mlperf_log_detail.txt",
+      "git_blob_sha1": "eb41075990217eaa45f78db5e9f04f3dc94f962e",
+      "reason": "Exact Git blob duplicate encountered before reaching the five-file quota; not downloaded."
+    },
+    {
+      "repo": "mlcommons/inference_results_v4.1",
+      "path": "closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99/Server/performance/run_1/mlperf_log_detail.txt",
+      "git_blob_sha1": "5f2467aac3253db4025fe789c526d60306264162",
+      "reason": "Exact Git blob duplicate encountered before reaching the five-file quota; not downloaded."
+    }
+  ],
+  "deferred_or_rejected_sources": [
+    {
+      "source": "https://archive.ics.uci.edu/dataset/360/air+quality",
+      "reason": "Conflicting CC-BY-4.0 label and research-only/noncommercial clause on the same official page; not acquired."
+    },
+    {
+      "source": "https://archive.ics.uci.edu/dataset/547/algerian+forest+fires+dataset",
+      "reason": "Listed whole CSV below minimum byte bound; not enlarged or acquired."
+    },
+    {
+      "source": "https://archive.ics.uci.edu/dataset/247/istanbul+stock+exchange",
+      "reason": "Published input is XLSX, not a CSV; no conversion to fill CSV quota."
+    },
+    {
+      "source": "https://github.com/logpai/loghub",
+      "reason": "Unsanitized log/privacy uncertainty; not acquired."
+    },
+    {
+      "source": "https://github.com/mlcommons/training_results_v4.1",
+      "reason": "Prior unresolved root-license provenance retained; distinct v5.1 has an explicit pinned root license. Versions are not counted as separate training origin groups."
+    }
+  ]
+}
