@@ -1,0 +1,53 @@
+{
+  "status": "report_tables_links_and_preservation_verified",
+  "checked_at_utc": "2026-10-26T10:05:50.138103+00:00",
+  "base_git_head": "65deab05d4a92e5e3289e715161e9d0f34cc4420",
+  "report_sha256": "26462296f25ac1c71a71f91658d09762aba0c12b82401380024d041c77ba86da",
+  "progress_sha256": "2106ec92027d99c264c8cf1bff1414b21e45e2be474cb615ed7729042b05edf8",
+  "checker_sha256": "1d372689f38586cd0e856ecdf18a832f0f484c4c88db9f265545ced4b6137246",
+  "candidates": 30,
+  "origin_groups": 6,
+  "by_format": {
+    "text": 10,
+    "csv": 0,
+    "json": 5,
+    "python": 10,
+    "log": 0,
+    "binary": 5
+  },
+  "total_candidate_bytes": 1730855,
+  "remaining_by_format": {
+    "text": 0,
+    "csv": 10,
+    "json": 5,
+    "python": 0,
+    "log": 10,
+    "binary": 5
+  },
+  "minimum_new_origin_groups": 6,
+  "candidate_table_rows_checked": 30,
+  "report_local_links_checked": 13,
+  "existing_collection_files_unchanged": {
+    "data/results/real_unseen/real_candidates_20261026_01/acquisition.json": "20ac9462f48d4425e11479683dfca390dde557615ccf89236798b58b3f28e6f3",
+    "data/results/real_unseen/real_candidates_20261026_01/collection_plan_snapshot.json": "c1caff15968e90082d0794bcee1247fb0c20ef7176d5072fe0672185b3d1cb56",
+    "data/results/real_unseen/real_candidates_20261026_01/draft/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "data/results/real_unseen/real_candidates_20261026_01/draft/inventory_snapshot.json": "def325c52b4459502da3efc5488b55c0a4b57aaa33f7a858abcc3b2a6cba67cc",
+    "data/results/real_unseen/real_candidates_20261026_01/draft/manifest.json": "9904b77f0e35a7ad5383b1e0f96ddf9307969894a3d0f60b79b66dac96d4c4da",
+    "data/results/real_unseen/real_candidates_20261026_01/draft_cli.json": "e6088c1f80c95db3ad6139a1247811c49a4946934c770530fc3418eed63599c9",
+    "data/results/real_unseen/real_candidates_20261026_01/inventory.json": "def325c52b4459502da3efc5488b55c0a4b57aaa33f7a858abcc3b2a6cba67cc",
+    "data/results/real_unseen/real_candidates_20261026_01/package_checks.json": "eb90326d762f8a3104acdaa34ad5e2035831267eea5b534d76b9bc271056bc2c",
+    "data/results/real_unseen/real_candidates_20261026_01/preservation_check.json": "7f486d6d0243c307b5046dc7662f0f5e47504967e01daf49a60bacc10d37ea47",
+    "data/results/real_unseen/real_candidates_20261026_01/protected_after.json": "2b6b394ce53f4f2c865eb88e01d0499add08d5a06ff80eeac1a94e41cf3d3cd8",
+    "data/results/real_unseen/real_candidates_20261026_01/protected_before.json": "2b6b394ce53f4f2c865eb88e01d0499add08d5a06ff80eeac1a94e41cf3d3cd8",
+    "data/results/real_unseen/real_candidates_20261026_01/run_notes.json": "30f4cc3337a596d9b491e07f62ab5c23e5dd03f262537cb1e4d820cc8d8e065b",
+    "data/results/real_unseen/real_candidates_20261026_01/verification.json": "14b04d44d1a7bc6042af02897247e950e82e6ee0c74b89d386e554298b2d0afe",
+    "research_log/collect_unseen_candidates_20261026.py": "c82d12f3ffb8778a9c4e432b1c29c8fa34ac0c3c618f5fd9e48ef05e2a6c9d43",
+    "research_log/verify_unseen_collection_20261026.py": "bbf9cd185db4f4f64d993eb5e0ae4bbb8fe834f7f426a4ffd631b174c4b254d2",
+    "research_log/unseen_collection_plan_20261026.json": "c1caff15968e90082d0794bcee1247fb0c20ef7176d5072fe0672185b3d1cb56",
+    "research_log/unseen_source_review_20261026.json": "4f23c4254e96f12e667f59cf06a5d959d89963af8f4c7d91b7a6167084095a2a",
+    ".gitattributes": "ccda6f4fdaffc6a0d9e895852a907ecfef4ab7fae18733a28fbccf2815c5c8b9"
+  },
+  "additional_downloads": 0,
+  "approved_or_selected_candidates": 0,
+  "checks_scope": "Saved metadata, report tables/links and exact bytes of existing tracked acquisition/source files; no raw remeasurement, downloads, codec/model execution or unit tests"
+}
