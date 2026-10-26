@@ -1,0 +1,225 @@
+{
+  "plan_version": 1,
+  "collection_scope": "initial_partial_candidate_pool",
+  "data_kind": "research_candidate",
+  "selection_basis": "Pinned production source subtrees, public source/rights context, original format and inclusive size bounds only. No performance/feature/model/score selection.",
+  "evaluation_ready": false,
+  "groups": [
+    {
+      "repo": "numpy/numpy",
+      "origin_group_id": "numpy",
+      "format": "python",
+      "license_id": "BSD-3-Clause",
+      "commit": "f9f1772ce010001208475f751d19253469788410",
+      "license_path": "LICENSE.txt",
+      "license_url": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "files": [
+        {
+          "path": "numpy/__init__.py",
+          "size": 25251,
+          "git_blob_sha1": "7620d2b52daadf41080432589076e5169d86e733"
+        },
+        {
+          "path": "numpy/_core/_add_newdocs.py",
+          "size": 216659,
+          "git_blob_sha1": "bf0706c4ca6a00490a0bc0c3d9b5b936f4fb00e4"
+        },
+        {
+          "path": "numpy/_core/_internal.py",
+          "size": 29401,
+          "git_blob_sha1": "15f436b80bd78ab03e4fd54be6ca26f3f923b93b"
+        },
+        {
+          "path": "numpy/_core/arrayprint.py",
+          "size": 65592,
+          "git_blob_sha1": "daf7317a4d657932be59bb42cba331b7db4a87b0"
+        },
+        {
+          "path": "numpy/_core/defchararray.py",
+          "size": 38241,
+          "git_blob_sha1": "8d67766b6e97d4cb499a50a5f14524948596fee8"
+        }
+      ]
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "origin_group_id": "pandas",
+      "format": "python",
+      "license_id": "BSD-3-Clause",
+      "commit": "180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "license_path": "LICENSE",
+      "license_url": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "files": [
+        {
+          "path": "pandas/_config/config.py",
+          "size": 28674,
+          "git_blob_sha1": "33b14548a96c135f040abfe12c610b02d8f3ffed"
+        },
+        {
+          "path": "pandas/_typing.py",
+          "size": 16836,
+          "git_blob_sha1": "dd202c658f94c9ed21ce0528eab70ce3040d4eb7"
+        },
+        {
+          "path": "pandas/core/_numba/extensions.py",
+          "size": 18513,
+          "git_blob_sha1": "56b8b7cb39eac11ea533385eba51d1c8b628a0ab"
+        },
+        {
+          "path": "pandas/core/algorithms.py",
+          "size": 69105,
+          "git_blob_sha1": "9a43c1989f75e8c9ba8b5550b19522b63f3db525"
+        },
+        {
+          "path": "pandas/core/apply.py",
+          "size": 82071,
+          "git_blob_sha1": "714d9f50467c4b3e3f379796fd9ab82a99cca2a7"
+        }
+      ]
+    },
+    {
+      "repo": "git/git",
+      "origin_group_id": "git",
+      "format": "text",
+      "license_id": "GPL-2.0-only",
+      "commit": "7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "license_path": "COPYING",
+      "license_url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "files": [
+        {
+          "path": "Documentation/technical/api-trace2.adoc",
+          "size": 44494,
+          "git_blob_sha1": "918e517c2e6edb83fd556fd6304c371a7acf6561"
+        },
+        {
+          "path": "Documentation/technical/bundle-uri.adoc",
+          "size": 26750,
+          "git_blob_sha1": "12283fa9ed52f839331840f744739c1f06fd8ef5"
+        },
+        {
+          "path": "Documentation/technical/commit-graph.adoc",
+          "size": 18122,
+          "git_blob_sha1": "a259d1567bfe0d72be4df6d7273aa9f1a6a7d7bf"
+        },
+        {
+          "path": "Documentation/technical/hash-function-transition.adoc",
+          "size": 36339,
+          "git_blob_sha1": "f6b38ddd500d10ed877166e44467273029a723c9"
+        },
+        {
+          "path": "Documentation/technical/large-object-promisors.adoc",
+          "size": 27224,
+          "git_blob_sha1": "2aa815e0237b4d025d9f1fdd25f6b517bef00561"
+        }
+      ]
+    },
+    {
+      "repo": "curl/curl",
+      "origin_group_id": "curl",
+      "format": "text",
+      "license_id": "curl",
+      "commit": "bc677a8f16a51e728136eff130509cfac57aad19",
+      "license_path": "COPYING",
+      "license_url": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "files": [
+        {
+          "path": "docs/CIPHERS-TLS12.md",
+          "size": 38498,
+          "git_blob_sha1": "d67c62ba7ef94ea68fe97684ba18bb053aa4493e"
+        },
+        {
+          "path": "docs/ECH.md",
+          "size": 19110,
+          "git_blob_sha1": "8a0153209d8c147dcddc21139e8aedfd8a42931e"
+        },
+        {
+          "path": "docs/FAQ.md",
+          "size": 60446,
+          "git_blob_sha1": "78151f905adbb0b3845c2fd213036d760521a3c4"
+        },
+        {
+          "path": "docs/INSTALL-CMAKE.md",
+          "size": 39635,
+          "git_blob_sha1": "3df61ebbd44f72145908c1c1121ef3bd07279a25"
+        },
+        {
+          "path": "docs/INSTALL.md",
+          "size": 26697,
+          "git_blob_sha1": "0d6a157120df216974979e9967a374249f082e1c"
+        }
+      ]
+    },
+    {
+      "repo": "unicode-org/cldr-json",
+      "origin_group_id": "cldr",
+      "format": "json",
+      "license_id": "Unicode-3.0",
+      "commit": "91c267402229a59e3ef2774544f001bf959e8809",
+      "license_path": "LICENSE",
+      "license_url": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "files": [
+        {
+          "path": "cldr-json/cldr-dates-full/main/en/dateFields.json",
+          "size": 26073,
+          "git_blob_sha1": "b519c001372ca3b61855d9d2ab36e15c5368767b"
+        },
+        {
+          "path": "cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+          "size": 44939,
+          "git_blob_sha1": "bb768640558ee9e83692ea3f016dc0270251498f"
+        },
+        {
+          "path": "cldr-json/cldr-localenames-full/main/en/languages.json",
+          "size": 20815,
+          "git_blob_sha1": "6792bb4989204e75287fc87f99680eb142d21712"
+        },
+        {
+          "path": "cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+          "size": 17470,
+          "git_blob_sha1": "5bcd0874fdf0f55f0df987038f70eb5fbf02d0b3"
+        },
+        {
+          "path": "cldr-json/cldr-numbers-full/main/en/currencies.json",
+          "size": 71492,
+          "git_blob_sha1": "c4b7ea5b343e3293feba4678b9aa4e12e1e132d8"
+        }
+      ]
+    },
+    {
+      "repo": "nvkelso/natural-earth-vector",
+      "origin_group_id": "natural_earth",
+      "format": "binary",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "commit": "ca96624a56bd078437bca8184e78163e5039ad19",
+      "license_path": "LICENSE.md",
+      "license_url": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "files": [
+        {
+          "path": "110m_physical/ne_110m_coastline.shp",
+          "size": 89652,
+          "git_blob_sha1": "fc3f939fdbc90d1535ad1f07f21e742ee3043afc"
+        },
+        {
+          "path": "110m_physical/ne_110m_geography_marine_polys.shp",
+          "size": 339268,
+          "git_blob_sha1": "ed8c0c8f45173cfef9fbb693111f9f20ff98b52a"
+        },
+        {
+          "path": "110m_physical/ne_110m_land.shp",
+          "size": 89504,
+          "git_blob_sha1": "69ce127bf49cc005144f63846b102e6b91358e8e"
+        },
+        {
+          "path": "110m_physical/ne_110m_ocean.shp",
+          "size": 84804,
+          "git_blob_sha1": "953e7a149e153de05f1739e4266d5cf470112591"
+        },
+        {
+          "path": "110m_physical/ne_110m_rivers_lake_centerlines.shp",
+          "size": 19180,
+          "git_blob_sha1": "4cc1268c214698b4b49395a27afc0e070e9b482a"
+        }
+      ]
+    }
+  ]
+}

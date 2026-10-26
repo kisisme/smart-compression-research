@@ -1,0 +1,485 @@
+{
+  "status": "initial_partial_draft_verified",
+  "verified_at_utc": "2026-10-26T06:28:49.631268+00:00",
+  "execution_git_head": "173bb47d00482684872103abc09a8d3ce6162003",
+  "verifier_sha256": "bbf9cd185db4f4f64d993eb5e0ae4bbb8fe834f7f426a4ffd631b174c4b254d2",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "candidates": 30,
+  "by_format": {
+    "text": 10,
+    "csv": 0,
+    "json": 5,
+    "python": 10,
+    "log": 0,
+    "binary": 5
+  },
+  "by_origin_group": {
+    "cldr": 5,
+    "curl": 5,
+    "git": 5,
+    "natural_earth": 5,
+    "numpy": 5,
+    "pandas": 5
+  },
+  "distinct_origin_groups": 6,
+  "format_origin_groups": {
+    "text": 2,
+    "csv": 0,
+    "json": 1,
+    "python": 2,
+    "log": 0,
+    "binary": 1
+  },
+  "total_candidate_bytes": 1730855,
+  "minimum_bytes": 16836,
+  "maximum_bytes": 339268,
+  "exact_duplicate_files": 0,
+  "license_notices": [
+    {
+      "origin_group_id": "numpy",
+      "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491",
+      "git_blob_sha1": "f37a12cc4cccf83af4517809791777e71c1df2a9"
+    },
+    {
+      "origin_group_id": "pandas",
+      "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae",
+      "git_blob_sha1": "bd1cc2a30c626d0bbe43ab6ec1c4744c2e2df831"
+    },
+    {
+      "origin_group_id": "git",
+      "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e",
+      "git_blob_sha1": "536e55524db72bd2acf175208aef4f3dfc148d42"
+    },
+    {
+      "origin_group_id": "curl",
+      "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681",
+      "git_blob_sha1": "2f71d999a9c8816b9ed595fbae9c9a7b6b7ad039"
+    },
+    {
+      "origin_group_id": "cldr",
+      "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "git_blob_sha1": "f56d93a38302cbedd632a983d2d2eaa8ac34970a"
+    },
+    {
+      "origin_group_id": "natural_earth",
+      "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b",
+      "git_blob_sha1": "9dfbc3d55a4ab1dd758c253b2ee339888f632889"
+    }
+  ],
+  "git_ignored_raw_files": 36,
+  "protected_files_unchanged": 59,
+  "shortfall_by_format": {
+    "text": 0,
+    "csv": 10,
+    "json": 5,
+    "python": 0,
+    "log": 10,
+    "binary": 5
+  },
+  "minimum_origin_group_shortfall": 6,
+  "rights_pending": 30,
+  "privacy_pending": 30,
+  "selected_files": 0,
+  "evaluation_ready": false,
+  "unseen_overlap_audit": "not_performed",
+  "research_experiments_run": false,
+  "triage_caveat": "Pattern/format triage only; no full rights/privacy or derivative review and no inference of safety from absent flags.",
+  "content_triage": [
+    {
+      "candidate_id": "cldr_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "cldr_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "cldr_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "cldr_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "cldr_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "curl_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          2
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "candidate_id": "curl_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          2
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "candidate_id": "curl_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          2
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": [
+          2,
+          4,
+          1324,
+          1341,
+          1342,
+          1353,
+          1364
+        ]
+      }
+    },
+    {
+      "candidate_id": "curl_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          2
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "candidate_id": "curl_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          2
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "candidate_id": "git_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          935
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [
+          688,
+          933,
+          969,
+          974,
+          975,
+          1026,
+          1071,
+          1127
+        ],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "git_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          568
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "git_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          386,
+          389,
+          393,
+          405,
+          408
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "git_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          83,
+          585,
+          734,
+          786,
+          787,
+          789,
+          791,
+          798,
+          812,
+          831,
+          832,
+          833,
+          834,
+          835
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "git_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "natural_earth_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "format_check_method": "Shapefile magic, declared file length and version; no geometric statistics"
+    },
+    {
+      "candidate_id": "natural_earth_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "format_check_method": "Shapefile magic, declared file length and version; no geometric statistics"
+    },
+    {
+      "candidate_id": "natural_earth_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "format_check_method": "Shapefile magic, declared file length and version; no geometric statistics"
+    },
+    {
+      "candidate_id": "natural_earth_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "format_check_method": "Shapefile magic, declared file length and version; no geometric statistics"
+    },
+    {
+      "candidate_id": "natural_earth_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "format_check_method": "Shapefile magic, declared file length and version; no geometric statistics"
+    },
+    {
+      "candidate_id": "numpy_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "numpy_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "numpy_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "numpy_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [
+          12
+        ],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "numpy_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "pandas_01",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "pandas_02",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "pandas_03",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "pandas_04",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    },
+    {
+      "candidate_id": "pandas_05",
+      "format_check": "passed",
+      "content_review": "pending",
+      "triage_flag_lines": {
+        "email_like": [],
+        "private_ipv4_like": [],
+        "private_key_header": [],
+        "home_path_like": [],
+        "license_notice_like": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Preserve the byte-level provenance of this acquisition package and its scripts.
+/data/results/real_unseen/real_candidates_20261026_01/** -text
+/research_log/collect_unseen_candidates_20261026.py -text
+/research_log/verify_unseen_collection_20261026.py -text
+/research_log/unseen_collection_plan_20261026.json -text
+/research_log/unseen_source_review_20261026.json -text

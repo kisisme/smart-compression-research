@@ -6,11 +6,13 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 다음 작업 지시에 따라 연결을 재확인했으나 `node_repl`의 Node 시작 오류는 남아 있다. GUI QA는 미완료로 유지하고, 화면 도구와 독립적인 [실제 파일 후보 manifest 도구](research_log/unseen_manifest.md)를 구현했다. 초안·명시적 후보 선정·동결·hash 감사·경로/수량/검토/중복/변경·실패 보존과 후보별 선정/미선정 사유를 확인한다. 전용 테스트 23개와 실제 CLI 9건의 인위적 검증을 완료하고 [최종 근거](research_log/unseen_manifest_validation_20261026_final.json)를 보존했다. 동결은 입력 목록 고정이며 `evaluation_ready=false`, 합성 데이터와의 겹침 검사는 미수행이다. 실제 corpus 수집·동결·압축·모델 평가는 수행하지 않았다. 기존 연구 파일 55개·공식 3지표·memory 참고 지표 방침은 유지한다.
+최신 진행: [실제 파일 후보 1차 출처 검토·초안 수집](research_log/unseen_collection_20261026.md)을 마쳤다. 고정 upstream commit에서 text 10·Python 10·JSON 5·binary 5, 총 30개와 라이선스 원문 6개를 새 Git 제외 경로에 보존했다. 원본 그룹은 6개이며 각 5개다. [독립 검증](data/results/real_unseen/real_candidates_20261026_01/verification.json)에서 bytes/크기/full SHA-256/Git blob hash·정확 중복 0개·draft 연결·기존 보호 파일 총 59개 불변을 확인했다. 목표 60개/최소 12개 그룹은 미충족이고 모든 후보의 권리·개인정보 검토는 `pending`, 선정은 0개다. `evaluation_ready=false`, 합성 겹침 확인·실제 corpus 동결·압축/모델 평가는 미수행이다. 공식 3지표·memory 참고 지표 방침을 유지하며 GUI OS QA/현재 Node 시작 오류는 별도 미완료다.
+
+직전 manifest 구현: [실제 파일 후보 도구](research_log/unseen_manifest.md)의 초안·명시적 선정·동결·기대 hash 감사·경로/수량/검토/중복/변경·실패 보존을 구현하고 전용 테스트 23개와 실제 CLI 9건의 인위적 검증을 완료했다. [최종 근거](research_log/unseen_manifest_validation_20261026_final.json)는 test fixture 전용이다. 이때는 실제 파일 수집·동결·연구 평가를 수행하지 않았고, 위 최신 진행에서 실제 원본의 미선정 draft 수집을 시작했다.
 
 직전 환경 복구: 누락된 커널 임시 폴더를 빈 폴더로 복원해 원래 `kernel assets` 단계는 통과했으나 Node 시작 오류가 남아 있다. 구 CLI 경로 누락·현재 디스크 설정과 살아 있는 프로세스의 차이 및 독립 재현을 [진단 기록](research_log/node_repl_recovery_20261026.md)과 [근거 JSON](research_log/node_repl_recovery_20261026.json)에 보존했다. 공식 reload 연결 초기화가 timeout돼 사용자에게 MCP Restart를 요청했다. 현재 연결·화면 자동화의 전체 복구 완료는 확인하지 않았다.
 
-직전 unseen 준비: [실제 파일 unseen 평가 사전 설계 v1](research_log/unseen_evaluation_design_v1.md)을 완료했다. 60개 파일·여섯 형식·원본 그룹/중복/출처 확인·저장 모델/baseline 고정·3지표 점수·실패 보존·평가 범위를 정했다. 60개는 수집 목표이며 실제 corpus·예측·측정·평가는 아직 없다. 기존 산출물 32개 hash·Pilot 학습 라벨의 최빈 baseline·모델/설정 계약과 보호 파일 55개 불변을 확인한 [읽기 전용 근거](research_log/unseen_evaluation_design_v1_checks.json)를 보존한다. 당시 미완료였던 후보 manifest 도구는 위 최신 진행에서 구현·인위적 검증을 마쳤다.
+직전 unseen 준비: [실제 파일 unseen 평가 사전 설계 v1](research_log/unseen_evaluation_design_v1.md)을 완료했다. 60개 파일·여섯 형식·원본 그룹/중복/출처 확인·저장 모델/baseline 고정·3지표 점수·실패 보존·평가 범위를 정했다. 60개는 수집 목표이며 설계 당시 실제 후보·예측·측정·평가는 없었다. 기존 산출물 32개 hash·Pilot 학습 라벨의 최빈 baseline·모델/설정 계약과 보호 파일 55개 불변을 확인한 [읽기 전용 근거](research_log/unseen_evaluation_design_v1_checks.json)를 보존한다. 이후 manifest 도구의 구현/인위적 검증과 실제 후보 30개의 미선정 초안을 마련했으며 연구 평가는 미완료다.
 
 직전 GUI 진행: `gui_app.py`에 Smart 압축·복원·실제 비교 탭과 명시적 Demo 대조를 연결했다. 실제 Tk 창을 생성해 callback/queue·이벤트 응답·중복/닫기 차단·결과/오류 표시를 검증했다. 전용 15개와 계층 회귀 18개, 총 33개 테스트가 통과했다. 저장 모델 두 종류×세 mode의 압축/복원 12개 및 Compare 1개 정상, 손상 복사본 복원 1개 실패 판정과 기존 출력의 사전 차단을 확인했다. 원시 반복·공식 점수·로그/queue·보호 hash를 Python으로 재검증했다. [GUI 안내](research_log/gui_app.md)·[완료 근거](research_log/gui_validation_20261026.json)·[중단된 최초 시도](research_log/gui_validation_interrupted_20261024.json)를 보존한다. OS 클릭·선택창·스크린샷/DPI QA는 미완료다.
 
@@ -822,22 +824,32 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **실제 CLI 연결 완료 — fixture 전용:** 새 `data/temp/unseen_manifest_validation_20261026T014612253392Z/`에서 help·draft·freeze·audit와 거부 사례 총 9건을 확인했다. 기존 출력·잘못된 기대 hash·검토 대기 freeze·손상 복사본 audit가 종료 1로 차단되고 기존 파일은 유지됐다. Python으로 raw metadata와 정책/선정/full hash·원본 fixture bytes·기존 연구 파일 55개 및 최종 구현/테스트 source hash 불변을 대조했다. 최종 source는 commit 전 작업 트리 상태였으며 정확한 hash와 stdout/stderr·원래 산출물을 보존했다. 초기 CLI 검증의 새 경로와 근거도 유지했다.
 - **미완료·범위:** `data_kind=test_fixture`와 `research_candidate`를 구분한다. `frozen`은 입력 목록 고정이고 항상 `evaluation_ready=false`, `unseen_overlap_audit=not_performed`다. 실제 출처/권리/원본 관계 검토·후보 수집·기존 합성 bytes와의 겹침 검사·실제 corpus 동결·평가 runner·연구 실측·모델 평가는 미완료다. 기존 학습/압축/점수/특징/config/모델 코드는 변경하지 않았다. Memory 추가 구현·재학습을 하지 않았다. 현재 연결의 Node 시작 오류와 GUI OS QA도 미완료다.
 
+### 실제 파일 후보 1차 출처 검토·초안 수집 완료 — 2026-10-26
+
+- **근거/실행 기준:** [수집 보고서](research_log/unseen_collection_20261026.md), 고정 [계획](research_log/unseen_collection_plan_20261026.json)·[출처 검토](research_log/unseen_source_review_20261026.json), `data/results/real_unseen/real_candidates_20261026_01/`의 inventory/draft·획득·검증·중단 기록. 시작 HEAD이자 마지막 manifest 구현 commit은 `173bb47`이다. 획득/검증 source hash와 실제 명령·UTC를 보존했다.
+- **수집 완료 범위:** 원본 30개(text/Python 각 10, JSON/binary 각 5), 고정 버전 라이선스 6개. 원본 그룹은 NumPy·pandas·Git·curl·CLDR·Natural Earth 각 5개다. 전체 저장소를 한 그룹으로 묶고 테스트/fixture·vendored source·인공 좌표 격자/기준선 파일은 넣지 않았다. 권리/개인정보가 해결되지 않은 로그는 metadata 확인/미수집으로 남겼다.
+- **실제 실행·검증 완료:** HTTP 원본 bytes를 새 경로에 보존하고 Git tree 크기/blob hash를 대조했다. draft CLI 종료 0이며 별도 Python 검증에서 snapshot/artifact/full hash·형식·정확 중복 0개·원본 Git 제외 36개와 보호 파일 총 59개 불변을 확인했다. 후보 합계 1,730,855 bytes, 개별 16,836~339,268 bytes로 사전 범위 안이다. 기존 보호 55개와 도구/테스트/기준 문서의 집합을 대조했으며 중복 경로를 이중 집계하지 않았다. 제한 환경의 Pilot 읽기 실패 및 검증 스크립트의 상태명 기대 오류/수정도 기록했다. 원본과 draft를 오류에 맞춰 고치지 않았다.
+- **미완료:** 목표까지 CSV/log 각 10개와 별도 원본 그룹의 JSON/binary 각 5개, 전체 최소 6개 원본 그룹이 더 필요하다. 모든 후보의 권리/개인정보 검토는 `pending`, 선정은 0개이며 출처 간 파생/복제 관계도 승인하지 않았다. 간단한 내용 패턴/형식 검사는 개인정보 승인으로 사용하지 않는다. 합성 bytes 겹침 감사·실제 corpus 동결·연구 평가는 미수행이다.
+- **범위:** 연구 특징·압축·예측·pickle 로딩·학습·memory 추가 측정을 실행하지 않았다. 이번 수집 검증 때문에 기존 단위 테스트/전체 suite를 재실행하지 않았다. `evaluation_ready=false`, `unseen_overlap_audit=not_performed`를 유지한다. 정확한 byte hash가 Git 개행 변환으로 달라지지 않도록 이번 package/source에 한정한 속성을 추가했다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
 - 현재 `node_repl` MCP 연결 재시작 후 최소 JavaScript·Sky 초기화·Windows 창 조회 재검증. 원래 kernel assets 임시 경로는 부분 복구했으나 전체 정상 동작은 미확인이다.
 - GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
-- 실제 파일 출처/권리/원본 그룹 확인·후보 수집/중복 검사·합성 데이터와의 겹침 확인·실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1과 manifest 도구의 구현/인위적 검증은 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
+- 실제 파일 후보의 나머지 형식/원본 그룹 수집·파일별 권리/개인정보/파생 관계 승인·합성 데이터와의 겹침 확인·실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1·manifest 도구 구현/인위적 검증과 실제 후보 30개의 미선정 draft/정확 중복 검사는 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**실제 파일 후보 출처 검토·초안 수집:** 사전 설계 v1의 여섯 형식·원본 그룹·크기 범위에 맞는 공개 원출처와 권리/개인정보/파생 관계 근거를 먼저 확인한다. 실제 원본은 새 Git 제외 경로에 두고 후보 inventory·선정/제외 사유와 draft를 보존한다. 목표 60개를 충족하지 못하면 미완료로 남기며 합성/fixture로 채우지 않는다. 특징·예측·압축 성능을 보고 후보를 선정하지 않는다. 겹침 검사·실제 동결·평가 runner는 후속 단위다. MCP Restart 완료가 확인되면 별도 작업으로 최소 JS/Sky/Windows 창 조회와 남은 GUI QA를 마친다.
+**부족 형식의 공개 원출처 검토·추가 초안 수집:** CSV/log 각 10개와 별도 원본 그룹의 JSON/binary 각 5개를 검토한다. 기존 30개와 라이선스/draft를 보존하고 새 출력 경로를 사용한다. 전체 최소 12개 그룹·그룹당 최대 5개 및 권리/개인정보/내용·파생 관계 검토를 충족할 때까지 실제 corpus 선정/동결 완료로 기록하지 않는다. 합성/fixture로 수량을 채우거나 특징·예측·압축 성능을 보고 선정하지 않는다. 합성 겹침 감사·실제 동결·평가 runner는 후속 단위다. MCP Restart 완료가 확인되면 별도 작업으로 최소 JS/Sky/Windows 창 조회와 남은 GUI QA를 마친다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계를 마쳤으며 실제 corpus·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구와 실제 후보 30개의 미선정 초안을 마련했으며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 실제 파일 1차 후보 수집의 시작 HEAD이자 마지막 manifest 구현 commit은 `173bb47`이다. 고정 upstream commit·원본 bytes/hash·실제 획득/검증 script hash는 이번 package에 별도로 보존했다. 이번 수집을 연구 압축/모델 평가의 실행 commit으로 취급하지 않는다.
 
 이번 manifest 도구 구현·CLI/인위적 검증의 시작 HEAD는 `c0efb44`(node_repl 진단·부분 복구 기록)다. 최종 구현은 commit 전 source hash로 확인했고 정확한 명령·fixture 산출물·테스트와 기존 보호 파일 hash를 기록했다. 실제 corpus나 모델 성능 실험의 실행 commit으로 취급하지 않는다.
 
@@ -862,6 +874,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `173bb47`: 실제 파일 후보 manifest 도구 구현·전용 23개/fixture CLI 9건·실패/선정 상태 검증 보존. 이번 실제 파일 1차 후보 수집의 시작 HEAD.
 - `c0efb44`: node_repl 누락 임시 경로 진단·부분 복구·독립 재현·현재 연결 재시작 대기 기록 보존. 이번 manifest 도구 구현의 시작 HEAD.
 - `d474f54`: 실제 파일 unseen 평가 사전 설계·기존 모델/baseline·보호 파일의 읽기 전용 계약 확인 보존. 이번 node_repl 오류 복구의 시작 HEAD.
 - `e1e9d41`: Tk GUI/Demo·전용 15개+계층 18개 테스트·실제 callback/CLI 흐름·최초 중단 근거 보존. 이번 unseen 평가 사전 설계의 시작 HEAD. GUI OS 입력·시각 QA는 미완료.

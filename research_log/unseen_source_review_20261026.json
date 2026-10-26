@@ -1,0 +1,132 @@
+{
+  "review_scope": "Source-level preliminary review; no per-file rights or privacy approval, no final corpus selection.",
+  "groups": [
+    {
+      "repo": "numpy/numpy",
+      "origin_group_id": "numpy",
+      "commit": "f9f1772ce010001208475f751d19253469788410",
+      "license_id": "BSD-3-Clause",
+      "license_url": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "license_path": "LICENSE.txt",
+      "expected_license_blob_sha1": "f37a12cc4cccf83af4517809791777e71c1df2a9",
+      "source_role": "Production library source, outside tests/fixtures and vendored Tempita",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "origin_group_id": "pandas",
+      "commit": "180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "license_id": "BSD-3-Clause",
+      "license_url": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "license_path": "LICENSE",
+      "expected_license_blob_sha1": "bd1cc2a30c626d0bbe43ab6ec1c4744c2e2df831",
+      "source_role": "Production library source, outside tests/fixtures and vendored Tempita",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    },
+    {
+      "repo": "git/git",
+      "origin_group_id": "git",
+      "commit": "7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "license_id": "GPL-2.0-only",
+      "license_url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "license_path": "COPYING",
+      "expected_license_blob_sha1": "536e55524db72bd2acf175208aef4f3dfc148d42",
+      "source_role": "Published technical documentation",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    },
+    {
+      "repo": "curl/curl",
+      "origin_group_id": "curl",
+      "commit": "bc677a8f16a51e728136eff130509cfac57aad19",
+      "license_id": "curl",
+      "license_url": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "license_path": "COPYING",
+      "expected_license_blob_sha1": "2f71d999a9c8816b9ed595fbae9c9a7b6b7ad039",
+      "source_role": "Published technical documentation",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    },
+    {
+      "repo": "unicode-org/cldr-json",
+      "origin_group_id": "cldr",
+      "commit": "91c267402229a59e3ef2774544f001bf959e8809",
+      "license_id": "Unicode-3.0",
+      "license_url": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "license_path": "LICENSE",
+      "expected_license_blob_sha1": "f56d93a38302cbedd632a983d2d2eaa8ac34970a",
+      "source_role": "Official production locale data distribution",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    },
+    {
+      "repo": "nvkelso/natural-earth-vector",
+      "origin_group_id": "natural_earth",
+      "commit": "ca96624a56bd078437bca8184e78163e5039ad19",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_url": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "license_path": "LICENSE.md",
+      "expected_license_blob_sha1": "9dfbc3d55a4ab1dd758c253b2ee339888f632889",
+      "source_role": "Published physical vector-map geometry files; same source group for related layers",
+      "review_status": "pending",
+      "group_relationship_review": "Provisional entire-repository grouping; cross-repository copying/derivation not cleared.",
+      "privacy_review": "Pending full content review; public availability and a root license are not privacy clearance.",
+      "notice_policy": "Original upstream license stored under ignored raw/notices; retain notices with any future data distribution."
+    }
+  ],
+  "deferred_sources": [
+    {
+      "source": "https://github.com/logpai/loghub",
+      "status": "not_downloaded",
+      "reason": "Public log collection warns about unsanitized information; privacy and file-specific rights need review before acquisition."
+    },
+    {
+      "source": "https://github.com/mlcommons/training_results_v4.1",
+      "commit": "b87b9e396f771345d4ef122ba33456304f15228d",
+      "status": "metadata_only_not_downloaded",
+      "reason": "Result files found in size range; applicable result-file rights and privacy not resolved. Root tree has no license file; this is not a conclusion that the files are unlicensed."
+    },
+    {
+      "source": "https://github.com/mlcommons/inference_results_v4.1",
+      "commit": "198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "status": "metadata_only_not_downloaded",
+      "reason": "Result files found in size range and a root LICENSE.md exists; its applicability and content/privacy review remain pending."
+    }
+  ],
+  "excluded_source_paths": [
+    {
+      "source": "numpy/numpy",
+      "path": "numpy/_build_utils/tempita",
+      "reason": "Vendored source with separate provenance; skipped before collection."
+    },
+    {
+      "source": "pandas-dev/pandas",
+      "path": "pandas/_testing and pandas/conftest.py",
+      "reason": "Test support/fixture context; not used as real production file candidates."
+    },
+    {
+      "source": "nvkelso/natural-earth-vector",
+      "path": "110m_physical/*graticules* and ne_110m_geographic_lines.shp",
+      "reason": "Constructed coordinate grids/reference lines; skipped to avoid using generated geometric patterns as natural candidates."
+    }
+  ],
+  "next_requirements": [
+    "CSV and safe real-log sources have not been collected.",
+    "Additional JSON and binary sources must be different origin groups; existing groups have five candidates each.",
+    "Complete rights/privacy/content and known derivative/copy review before approving any candidate.",
+    "Preserve original files, pending draft and all rejection/shortfall evidence; do not adjust selection using compression/model outcomes.",
+    "Synthetic-data overlap audit and actual corpus freeze/evaluation remain separate future tasks."
+  ]
+}

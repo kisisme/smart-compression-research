@@ -1,0 +1,666 @@
+{
+  "status": "downloaded_pending_reviews",
+  "started_git_head": "173bb47d00482684872103abc09a8d3ce6162003",
+  "completed_at_utc": "2026-10-26T06:24:21.804704+00:00",
+  "plan_sha256": "c1caff15968e90082d0794bcee1247fb0c20ef7176d5072fe0672185b3d1cb56",
+  "collector_sha256": "c82d12f3ffb8778a9c4e432b1c29c8fa34ac0c3c618f5fd9e48ef05e2a6c9d43",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "raw_root": "data/raw/real_unseen/real_candidates_20261026_01",
+  "output_root": "data/results/real_unseen/real_candidates_20261026_01",
+  "records": [
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/dateFields.json",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/dateFields.json",
+      "started_at_utc": "2026-10-26T06:24:20.500686+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.872457+00:00",
+      "headers": {
+        "ETag": "\"e1ea1b6de1487db7cb910b5d6d9c9410ac60cc459b568090364a447bfe6aab14\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "26073"
+      },
+      "size": 26073,
+      "input_sha256": "4fcaa5f74d743a0bc734a556638c687ee7607824cc763be0f746a20d36e9cb0c",
+      "git_blob_sha1": "b519c001372ca3b61855d9d2ab36e15c5368767b",
+      "origin_group_id": "cldr",
+      "kind": "candidate",
+      "raw_relative_path": "cldr/cldr-json/cldr-dates-full/main/en/dateFields.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+      "started_at_utc": "2026-10-26T06:24:20.502197+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.867113+00:00",
+      "headers": {
+        "ETag": "\"2fa9b17f6b1b929256644f1ca01816dcc9db21dd59c59fae6eaafcc7180c7165\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "44939"
+      },
+      "size": 44939,
+      "input_sha256": "db04305a4bac1389b965e71974adf174adc4130f38b86dfcf1f4e2eec343a174",
+      "git_blob_sha1": "bb768640558ee9e83692ea3f016dc0270251498f",
+      "origin_group_id": "cldr",
+      "kind": "candidate",
+      "raw_relative_path": "cldr/cldr-json/cldr-dates-full/main/en/timeZoneNames.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/languages.json",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/languages.json",
+      "started_at_utc": "2026-10-26T06:24:20.522210+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.953190+00:00",
+      "headers": {
+        "ETag": "\"a90488af9d4bb9a3fa7f4b043bf0321b74d30688410bbc7880c5f26a460feff8\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "20815"
+      },
+      "size": 20815,
+      "input_sha256": "a5960d2371bc7d982da7fcfd9a0e237429d3467a5cc76f680bc3af5bcef9fb4e",
+      "git_blob_sha1": "6792bb4989204e75287fc87f99680eb142d21712",
+      "origin_group_id": "cldr",
+      "kind": "candidate",
+      "raw_relative_path": "cldr/cldr-json/cldr-localenames-full/main/en/languages.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+      "started_at_utc": "2026-10-26T06:24:20.679564+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.103340+00:00",
+      "headers": {
+        "ETag": "\"78b289e3ed3b94b66dfd9965c848e037492ad9cb5382f2f4b10df0192735860e\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "17470"
+      },
+      "size": 17470,
+      "input_sha256": "29b07edcff9a65505c0b543e6c2dba90eea217cf1080232b37d3b461420ae078",
+      "git_blob_sha1": "5bcd0874fdf0f55f0df987038f70eb5fbf02d0b3",
+      "origin_group_id": "cldr",
+      "kind": "candidate",
+      "raw_relative_path": "cldr/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/en/currencies.json",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/en/currencies.json",
+      "started_at_utc": "2026-10-26T06:24:20.867378+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.357896+00:00",
+      "headers": {
+        "ETag": "\"1e6ead4e5801a27bc3e2bc30efec73054dc358c7e9413e77fb72e6ab39fcb4dc\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "71492"
+      },
+      "size": 71492,
+      "input_sha256": "a6c41b28f4035f65ae698b53a66866982b4ff49bc0de7e840f91d2c6e6bdc23b",
+      "git_blob_sha1": "c4b7ea5b343e3293feba4678b9aa4e12e1e132d8",
+      "origin_group_id": "cldr",
+      "kind": "candidate",
+      "raw_relative_path": "cldr/cldr-json/cldr-numbers-full/main/en/currencies.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/CIPHERS-TLS12.md",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/CIPHERS-TLS12.md",
+      "started_at_utc": "2026-10-26T06:24:19.842768+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.161388+00:00",
+      "headers": {
+        "ETag": "\"9707af73dfabd2014eca47c75252a2af795eb827a7e4f86e80e673be2f598104\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "38498"
+      },
+      "size": 38498,
+      "input_sha256": "78a9964545b3269bac03c70601b014f96b18a98aabb71d1a37fde41fe0b572ab",
+      "git_blob_sha1": "d67c62ba7ef94ea68fe97684ba18bb053aa4493e",
+      "origin_group_id": "curl",
+      "kind": "candidate",
+      "raw_relative_path": "curl/docs/CIPHERS-TLS12.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/ECH.md",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/ECH.md",
+      "started_at_utc": "2026-10-26T06:24:20.064970+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.438132+00:00",
+      "headers": {
+        "ETag": "\"5633579835be9eede0ce7d2d3207425d3e215df9928ecbfe5ab32a914f99330c\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "19110"
+      },
+      "size": 19110,
+      "input_sha256": "4cc689059c066c96eec06f123049f33a4c4d2b8f07c7f5df6cb9da61455c9fdd",
+      "git_blob_sha1": "8a0153209d8c147dcddc21139e8aedfd8a42931e",
+      "origin_group_id": "curl",
+      "kind": "candidate",
+      "raw_relative_path": "curl/docs/ECH.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/FAQ.md",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/FAQ.md",
+      "started_at_utc": "2026-10-26T06:24:20.137807+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.521973+00:00",
+      "headers": {
+        "ETag": "\"e0ffc66d9a16a70a3424eb257690dcc94a91247495a9f5db52ca6b11221411f3\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "60446"
+      },
+      "size": 60446,
+      "input_sha256": "21789939dfb18654dfe05c8b299f883cb4f7a5d57eeedc1ff6f4c507db9ca26a",
+      "git_blob_sha1": "78151f905adbb0b3845c2fd213036d760521a3c4",
+      "origin_group_id": "curl",
+      "kind": "candidate",
+      "raw_relative_path": "curl/docs/FAQ.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL-CMAKE.md",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL-CMAKE.md",
+      "started_at_utc": "2026-10-26T06:24:20.140747+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.500447+00:00",
+      "headers": {
+        "ETag": "\"8b5ca657ec4593dbfc8a54f728349edd7401b738aa88a7b54c34c85e16062f75\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "39635"
+      },
+      "size": 39635,
+      "input_sha256": "44fc74d7065e0963915425c69f894d95174354785d4936ed17da8d69522d5b47",
+      "git_blob_sha1": "3df61ebbd44f72145908c1c1121ef3bd07279a25",
+      "origin_group_id": "curl",
+      "kind": "candidate",
+      "raw_relative_path": "curl/docs/INSTALL-CMAKE.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL.md",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL.md",
+      "started_at_utc": "2026-10-26T06:24:20.161589+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.501985+00:00",
+      "headers": {
+        "ETag": "\"99b4fc483e1613126ea2c951550c46322c6e6db99db03e05640149de9a4ee8fd\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "26697"
+      },
+      "size": 26697,
+      "input_sha256": "c9440be6db41c62342742f334805f636cabdccb133a7944ea57a892d76be0951",
+      "git_blob_sha1": "0d6a157120df216974979e9967a374249f082e1c",
+      "origin_group_id": "curl",
+      "kind": "candidate",
+      "raw_relative_path": "curl/docs/INSTALL.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/api-trace2.adoc",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/api-trace2.adoc",
+      "started_at_utc": "2026-10-26T06:24:19.465219+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.779265+00:00",
+      "headers": {
+        "ETag": "\"1e78a2b41744c384f32ee3666a83f18896550c672f3483487fb7cab980503017\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "44494"
+      },
+      "size": 44494,
+      "input_sha256": "a17b02c0be9804049293498f58f533a88b052f524eb7b0f813a9233a28e17ff4",
+      "git_blob_sha1": "918e517c2e6edb83fd556fd6304c371a7acf6561",
+      "origin_group_id": "git",
+      "kind": "candidate",
+      "raw_relative_path": "git/Documentation/technical/api-trace2.adoc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/bundle-uri.adoc",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/bundle-uri.adoc",
+      "started_at_utc": "2026-10-26T06:24:19.517399+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.842585+00:00",
+      "headers": {
+        "ETag": "\"23bf772ee279806381e2cb098f2c221d048156461a17cc8e75fca66197fec75b\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "26750"
+      },
+      "size": 26750,
+      "input_sha256": "c00e786e56cde209dca048db487ecc15dc8fad29045f8b69730a45ee194b7e0b",
+      "git_blob_sha1": "12283fa9ed52f839331840f744739c1f06fd8ef5",
+      "origin_group_id": "git",
+      "kind": "candidate",
+      "raw_relative_path": "git/Documentation/technical/bundle-uri.adoc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/commit-graph.adoc",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/commit-graph.adoc",
+      "started_at_utc": "2026-10-26T06:24:19.521279+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.841281+00:00",
+      "headers": {
+        "ETag": "\"562bb2f2820eaef7c729a00e0506a47dcbf1c0d9791a10f3a11b41dcb3c96f11\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "18122"
+      },
+      "size": 18122,
+      "input_sha256": "bf1e8aeeec83a1063e36c2ba88d3c513aa07b71b3facde924fe680cc43d22b1e",
+      "git_blob_sha1": "a259d1567bfe0d72be4df6d7273aa9f1a6a7d7bf",
+      "origin_group_id": "git",
+      "kind": "candidate",
+      "raw_relative_path": "git/Documentation/technical/commit-graph.adoc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/hash-function-transition.adoc",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/hash-function-transition.adoc",
+      "started_at_utc": "2026-10-26T06:24:19.716532+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.064717+00:00",
+      "headers": {
+        "ETag": "\"dcde5c489b9a54ce626df6e62bb58f2d67ec831954849f783a40a95d010b5a37\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "36339"
+      },
+      "size": 36339,
+      "input_sha256": "5525e6da835a7589d094b03b3c895e561518b71be3977c3cac592f6d7f05e9ba",
+      "git_blob_sha1": "f6b38ddd500d10ed877166e44467273029a723c9",
+      "origin_group_id": "git",
+      "kind": "candidate",
+      "raw_relative_path": "git/Documentation/technical/hash-function-transition.adoc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/large-object-promisors.adoc",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/large-object-promisors.adoc",
+      "started_at_utc": "2026-10-26T06:24:19.779548+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.140541+00:00",
+      "headers": {
+        "ETag": "\"e0a0b95a75ed60192958b2b628fd21001916afff9c5df3825019828320013f21\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "27224"
+      },
+      "size": 27224,
+      "input_sha256": "b76baff2c662164b423673ce3f7a663c96181f84998a7e71ada39bd650594e2f",
+      "git_blob_sha1": "2aa815e0237b4d025d9f1fdd25f6b517bef00561",
+      "origin_group_id": "git",
+      "kind": "candidate",
+      "raw_relative_path": "git/Documentation/technical/large-object-promisors.adoc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_coastline.shp",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_coastline.shp",
+      "started_at_utc": "2026-10-26T06:24:20.953434+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.401524+00:00",
+      "headers": {
+        "ETag": "\"8f087e6b32fb23c0b97b92dc820a7b879e006456fefe7a8e224823b4c47051d6\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "89652"
+      },
+      "size": 89652,
+      "input_sha256": "a1f8285d0e0a4858392cd78fc74fa3ee4cd9088947cf6e3693729dc852d70b60",
+      "git_blob_sha1": "fc3f939fdbc90d1535ad1f07f21e742ee3043afc",
+      "origin_group_id": "natural_earth",
+      "kind": "candidate",
+      "raw_relative_path": "natural_earth/110m_physical/ne_110m_coastline.shp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_geography_marine_polys.shp",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_geography_marine_polys.shp",
+      "started_at_utc": "2026-10-26T06:24:21.103616+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.707879+00:00",
+      "headers": {
+        "ETag": "\"306560032961261154722abf71eafed679928f472cde9d90d88744a3503ebf20\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "339268"
+      },
+      "size": 339268,
+      "input_sha256": "e37b4d4e1009be878ea51afca5f94c456d954deec1fc5ba5a690112edb907bfe",
+      "git_blob_sha1": "ed8c0c8f45173cfef9fbb693111f9f20ff98b52a",
+      "origin_group_id": "natural_earth",
+      "kind": "candidate",
+      "raw_relative_path": "natural_earth/110m_physical/ne_110m_geography_marine_polys.shp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_land.shp",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_land.shp",
+      "started_at_utc": "2026-10-26T06:24:21.202063+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.707031+00:00",
+      "headers": {
+        "ETag": "\"72720209eea02f1b1092b6296fb96637a456a9b28014c35e7e5f1717df9af49c\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "89504"
+      },
+      "size": 89504,
+      "input_sha256": "8689e6932b8e370e2ca4587cf3ba21e460b1235db37b6ed3c172c35b4a6088de",
+      "git_blob_sha1": "69ce127bf49cc005144f63846b102e6b91358e8e",
+      "origin_group_id": "natural_earth",
+      "kind": "candidate",
+      "raw_relative_path": "natural_earth/110m_physical/ne_110m_land.shp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_ocean.shp",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_ocean.shp",
+      "started_at_utc": "2026-10-26T06:24:21.358183+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.801342+00:00",
+      "headers": {
+        "ETag": "\"c53654147429d7b3a109656effda044c7b0762a844161b07176f7c78b2bcb092\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "84804"
+      },
+      "size": 84804,
+      "input_sha256": "8006f16c5af40875fbe8e975bef6d4b6c1ffc7b767491bdc277fbc0b62ba5d02",
+      "git_blob_sha1": "953e7a149e153de05f1739e4266d5cf470112591",
+      "origin_group_id": "natural_earth",
+      "kind": "candidate",
+      "raw_relative_path": "natural_earth/110m_physical/ne_110m_ocean.shp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_rivers_lake_centerlines.shp",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_rivers_lake_centerlines.shp",
+      "started_at_utc": "2026-10-26T06:24:21.401820+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.779297+00:00",
+      "headers": {
+        "ETag": "\"db0c2048e4a258161d954bf287ae18daf950684e32fc15e9c0bcbea5536f41a5\"",
+        "Last-Modified": null,
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "19180"
+      },
+      "size": 19180,
+      "input_sha256": "4a5d41e67457fbd3d0c82ef4ca972f42f21faf8a639d0b0368725d38940f72c2",
+      "git_blob_sha1": "4cc1268c214698b4b49395a27afc0e070e9b482a",
+      "origin_group_id": "natural_earth",
+      "kind": "candidate",
+      "raw_relative_path": "natural_earth/110m_physical/ne_110m_rivers_lake_centerlines.shp"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "started_at_utc": "2026-10-26T06:24:20.438324+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.679393+00:00",
+      "headers": {
+        "ETag": "\"0b835bab340eb1c837cc89e3e332abd48919a0d01b51f22d766ffec82fab9de8\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "2033"
+      },
+      "size": 2033,
+      "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "git_blob_sha1": "f56d93a38302cbedd632a983d2d2eaa8ac34970a",
+      "origin_group_id": "cldr",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/cldr/LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "final_url": "https://raw.githubusercontent.com/curl/curl/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "started_at_utc": "2026-10-26T06:24:19.841481+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:20.137580+00:00",
+      "headers": {
+        "ETag": "\"d5b1350290d3edec94c1f09ba6f8091766df2002100ab86014fd57a3435d0ef3\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "1088"
+      },
+      "size": 1088,
+      "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681",
+      "git_blob_sha1": "2f71d999a9c8816b9ed595fbae9c9a7b6b7ad039",
+      "origin_group_id": "curl",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/curl/COPYING"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "final_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "started_at_utc": "2026-10-26T06:24:19.439697+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.716343+00:00",
+      "headers": {
+        "ETag": "\"fb45a81d1aa8ffb26570f8ec192cecf35fef340df705d0be82a83ecbcd38eafb\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "18765"
+      },
+      "size": 18765,
+      "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e",
+      "git_blob_sha1": "536e55524db72bd2acf175208aef4f3dfc148d42",
+      "origin_group_id": "git",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/git/COPYING"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "final_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "started_at_utc": "2026-10-26T06:24:20.872674+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:21.201839+00:00",
+      "headers": {
+        "ETag": "\"105b5f35c153e1d0d76ff5533c0234d1561ac6834e26293b53de3e450ef8f2a5\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "4636"
+      },
+      "size": 4636,
+      "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b",
+      "git_blob_sha1": "9dfbc3d55a4ab1dd758c253b2ee339888f632889",
+      "origin_group_id": "natural_earth",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/natural_earth/LICENSE.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "started_at_utc": "2026-10-26T06:24:18.371167+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:18.888591+00:00",
+      "headers": {
+        "ETag": "\"a1e5280e1568ed7faf6273a3c73dedceefc28f8ee40f80dba5a46f5cf6bf50e6\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "1543"
+      },
+      "size": 1543,
+      "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491",
+      "git_blob_sha1": "f37a12cc4cccf83af4517809791777e71c1df2a9",
+      "origin_group_id": "numpy",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/numpy/LICENSE.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "started_at_utc": "2026-10-26T06:24:18.913327+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.197575+00:00",
+      "headers": {
+        "ETag": "\"698845fff7fd9dd731add7a4a16df835a6fdd94c5c290eda694c2f7c827c83f1\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "1634"
+      },
+      "size": 1634,
+      "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae",
+      "git_blob_sha1": "bd1cc2a30c626d0bbe43ab6ec1c4744c2e2df831",
+      "origin_group_id": "pandas",
+      "kind": "license_notice",
+      "raw_relative_path": "notices/pandas/LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/__init__.py",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/__init__.py",
+      "started_at_utc": "2026-10-26T06:24:18.372120+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:18.899614+00:00",
+      "headers": {
+        "ETag": "\"c387714b419494d116ccbd6f33c45dbef5c068808b203ebfe42b3de55861cf86\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "25251"
+      },
+      "size": 25251,
+      "input_sha256": "da15041cceb1f6f5abf9bae3140a5f3d95773221980ba60efe48780af4725483",
+      "git_blob_sha1": "7620d2b52daadf41080432589076e5169d86e733",
+      "origin_group_id": "numpy",
+      "kind": "candidate",
+      "raw_relative_path": "numpy/numpy/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/_add_newdocs.py",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/_add_newdocs.py",
+      "started_at_utc": "2026-10-26T06:24:18.372639+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:18.945822+00:00",
+      "headers": {
+        "ETag": "\"ea5c25d350cb257bfd8c052514e1243e6e2d34fa1a896148cf91ac6d93f07fce\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "216659"
+      },
+      "size": 216659,
+      "input_sha256": "40fe45928ca5081fd4c51c05dfd342bff3ad055a6d256a703431c09607b70103",
+      "git_blob_sha1": "bf0706c4ca6a00490a0bc0c3d9b5b936f4fb00e4",
+      "origin_group_id": "numpy",
+      "kind": "candidate",
+      "raw_relative_path": "numpy/numpy/_core/_add_newdocs.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/_internal.py",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/_internal.py",
+      "started_at_utc": "2026-10-26T06:24:18.373459+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:18.913144+00:00",
+      "headers": {
+        "ETag": "\"865bf2d143eb0289d8de8e850b560acfc1010aee77276587699dd5a4be94cbb3\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "29401"
+      },
+      "size": 29401,
+      "input_sha256": "497f1ce325bcc6ffc2ccf013e2cdd2ff2e32c55106a0a07997213d45d6c777a0",
+      "git_blob_sha1": "15f436b80bd78ab03e4fd54be6ca26f3f923b93b",
+      "origin_group_id": "numpy",
+      "kind": "candidate",
+      "raw_relative_path": "numpy/numpy/_core/_internal.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/arrayprint.py",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/arrayprint.py",
+      "started_at_utc": "2026-10-26T06:24:18.888800+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.162236+00:00",
+      "headers": {
+        "ETag": "\"d404e0cdd547c5250564ea710f269f643fe8506a7e429976e15f7ed3d399be74\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "65592"
+      },
+      "size": 65592,
+      "input_sha256": "4e80a4f9d2ab63c5b7b7c1e717c5f06d7cd7fb9a28cd088640b0c614d73c1a7c",
+      "git_blob_sha1": "daf7317a4d657932be59bb42cba331b7db4a87b0",
+      "origin_group_id": "numpy",
+      "kind": "candidate",
+      "raw_relative_path": "numpy/numpy/_core/arrayprint.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/defchararray.py",
+      "final_url": "https://raw.githubusercontent.com/numpy/numpy/f9f1772ce010001208475f751d19253469788410/numpy/_core/defchararray.py",
+      "started_at_utc": "2026-10-26T06:24:18.899884+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.194319+00:00",
+      "headers": {
+        "ETag": "\"522cd6175a271a4b7477839ad2cc5c9bfe1e0d86f572496d5d71c6b249e19983\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "38241"
+      },
+      "size": 38241,
+      "input_sha256": "a174cd2354ef6fd8851d51c6f5b43f3fc836a344d1a37fa9600060387858d395",
+      "git_blob_sha1": "8d67766b6e97d4cb499a50a5f14524948596fee8",
+      "origin_group_id": "numpy",
+      "kind": "candidate",
+      "raw_relative_path": "numpy/numpy/_core/defchararray.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_config/config.py",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_config/config.py",
+      "started_at_utc": "2026-10-26T06:24:18.946311+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.228134+00:00",
+      "headers": {
+        "ETag": "\"e69afd05bd5f2baa1b33c51edbde9f18c5afc62eed4c514c1d456768bd809846\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "28674"
+      },
+      "size": 28674,
+      "input_sha256": "1b76a9475b7065e0757c84d0eb6691804a4134fe93de7a6f2d2533a08b6c4d5c",
+      "git_blob_sha1": "33b14548a96c135f040abfe12c610b02d8f3ffed",
+      "origin_group_id": "pandas",
+      "kind": "candidate",
+      "raw_relative_path": "pandas/pandas/_config/config.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_typing.py",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_typing.py",
+      "started_at_utc": "2026-10-26T06:24:19.162478+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.439486+00:00",
+      "headers": {
+        "ETag": "\"2ed84aed4f8e942e950bfacef99de58ea4fd525d8451b1981b3c41a1ad78478e\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "16836"
+      },
+      "size": 16836,
+      "input_sha256": "98207bb411b9f2c318d8c06303d1aa3dc98ee3bf073acc9b484326590da2d164",
+      "git_blob_sha1": "dd202c658f94c9ed21ce0528eab70ce3040d4eb7",
+      "origin_group_id": "pandas",
+      "kind": "candidate",
+      "raw_relative_path": "pandas/pandas/_typing.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/_numba/extensions.py",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/_numba/extensions.py",
+      "started_at_utc": "2026-10-26T06:24:19.194513+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.465024+00:00",
+      "headers": {
+        "ETag": "\"723c5ad8f532445a61b979aa71b7a5dabd5940cf64643667031ee4c3a950311e\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "18513"
+      },
+      "size": 18513,
+      "input_sha256": "b3ec1eeb3d57f9c00ccbb9f33d5cebb0d474acf33590550c9e98ff2018cec58d",
+      "git_blob_sha1": "56b8b7cb39eac11ea533385eba51d1c8b628a0ab",
+      "origin_group_id": "pandas",
+      "kind": "candidate",
+      "raw_relative_path": "pandas/pandas/core/_numba/extensions.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/algorithms.py",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/algorithms.py",
+      "started_at_utc": "2026-10-26T06:24:19.197777+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.521000+00:00",
+      "headers": {
+        "ETag": "\"c73ff3e2df0489af80b2a7b9fa1158289f18c27d42671773e153d5fa84751104\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "69105"
+      },
+      "size": 69105,
+      "input_sha256": "ac7b7dfd5d590dbab06439a3f07678a1d6cf09064197c4764a1c0b31919f9fd1",
+      "git_blob_sha1": "9a43c1989f75e8c9ba8b5550b19522b63f3db525",
+      "origin_group_id": "pandas",
+      "kind": "candidate",
+      "raw_relative_path": "pandas/pandas/core/algorithms.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/apply.py",
+      "final_url": "https://raw.githubusercontent.com/pandas-dev/pandas/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/apply.py",
+      "started_at_utc": "2026-10-26T06:24:19.228336+00:00",
+      "acquired_at_utc": "2026-10-26T06:24:19.517137+00:00",
+      "headers": {
+        "ETag": "\"5b87fefa0d2ba08c450a697a76363ea8973241265772cc80503e565d1b7cb996\"",
+        "Last-Modified": null,
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "82071"
+      },
+      "size": 82071,
+      "input_sha256": "a38b4dc76a2bbb1157e369a700ab1e17c57b6b63385e237d7d6c141948408919",
+      "git_blob_sha1": "714d9f50467c4b3e3f379796fd9ab82a99cca2a7",
+      "origin_group_id": "pandas",
+      "kind": "candidate",
+      "raw_relative_path": "pandas/pandas/core/apply.py"
+    }
+  ],
+  "errors": [],
+  "rights_review": "pending",
+  "privacy_review": "pending",
+  "evaluation_ready": false,
+  "source_group_independence": "provisional_repository_grouping",
+  "unseen_overlap_audit": "not_performed"
+}

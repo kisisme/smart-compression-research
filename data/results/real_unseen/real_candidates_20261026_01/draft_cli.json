@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "src.unseen_manifest",
+    "draft",
+    "--root",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\raw\\real_unseen\\real_candidates_20261026_01",
+    "--inventory",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\real_unseen\\real_candidates_20261026_01\\inventory.json",
+    "--output-dir",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\real_unseen\\real_candidates_20261026_01\\draft"
+  ],
+  "returncode": 0,
+  "stdout": "{\"status\": \"draft\", \"corpus_id\": \"real_candidates_20261026_01\", \"data_kind\": \"research_candidate\", \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\results\\\\real_unseen\\\\real_candidates_20261026_01\\\\draft\", \"manifest_sha256\": \"9904b77f0e35a7ad5383b1e0f96ddf9307969894a3d0f60b79b66dac96d4c4da\", \"selected_count\": 0, \"candidate_count\": 30, \"evaluation_ready\": false}\n",
+  "stderr": "",
+  "completed_at_utc": "2026-10-26T06:24:23.403148+00:00"
+}

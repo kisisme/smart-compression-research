@@ -1,0 +1,52 @@
+{
+  "recorded_at_utc": "2026-10-26 06:32:42 UTC",
+  "source": "Tool execution outputs from this collection session",
+  "attempts": [
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B research_log/collect_unseen_candidates_20261026.py real_candidates_20261026_01",
+      "environment": "restricted",
+      "exit_code": 1,
+      "error_type": "PermissionError",
+      "failed_step": "protected_before; read data/results/pilot_1008/baseline/baseline_models.json",
+      "raw_or_output_path_created": false
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B research_log/collect_unseen_candidates_20261026.py real_candidates_20261026_01",
+      "environment": "approved_escalated",
+      "exit_code": 0,
+      "evidence": "acquisition.json and draft_cli.json"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B research_log/verify_unseen_collection_20261026.py",
+      "environment": "approved_escalated",
+      "exit_code": 1,
+      "error_type": "AssertionError",
+      "failed_step": "Expected selection_status=review_pending; actual documented contract is candidate.",
+      "output_published": false,
+      "correction": "Verifier now asserts candidate with review_not_approved/review_evidence_incomplete issues. Original bytes, inventory and draft were unchanged."
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -B research_log/verify_unseen_collection_20261026.py",
+      "environment": "approved_escalated",
+      "exit_code": 0,
+      "evidence": "verification.json"
+    },
+    {
+      "command": "Inline python -c helper to write these notes",
+      "exit_code": 1,
+      "error_type": "SyntaxError",
+      "failed_step": "Windows native argument quoting; no metadata output was created.",
+      "correction": "Wrote explicit JSON via apply_patch instead."
+    }
+  ],
+  "commentary_correction": "Protected set contains 59 unique paths; a prior commentary said 60 before the independent count was available.",
+  "unrun": [
+    "unit test suite",
+    "features",
+    "compression",
+    "prediction",
+    "training",
+    "synthetic overlap audit",
+    "freeze"
+  ]
+}
