@@ -103,3 +103,7 @@ Windows 화면 자동화 도구는 `failed to write kernel assets` / `os error 3
 스크린샷으로 한국어 글꼴·잘림·긴 경로·DPI/배율 점검. 자동 테스트의 실제 Tk 매핑/좌표·상태 확인과
 이 시각/입력 QA를 구분하며, GUI의 모든 사용 환경이 검증됐다고 기록하지 않는다.
 다음 단일 작업은 이 Windows 입력·시각 QA와 발견된 UI 문제 수정이다.
+
+후속 진행 — 2026-10-26: 새 작업에서 초기화와 kernel reset 후 재시도도 같은 경로 오류로 실패했다.
+이 GUI QA는 미완료로 유지한다. 도구와 독립적으로 [실제 파일 unseen 평가 사전 설계](unseen_evaluation_design_v1.md)를
+준비했으며 현재 다음 구현은 후보 manifest 검증·동결 도구다. GUI 입력·시각 QA는 화면 도구 복구 시 별도로 완료한다.

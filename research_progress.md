@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: `gui_app.py`에 Smart 압축·복원·실제 비교 탭과 명시적 Demo 대조를 연결했다. 실제 Tk 창을 생성해 callback/queue·이벤트 응답·중복/닫기 차단·결과/오류 표시를 검증했다. 전용 15개와 계층 회귀 18개, 총 33개 테스트가 통과했다. 저장 모델 두 종류×세 mode의 압축/복원 12개 및 Compare 1개 정상, 손상 복사본 복원 1개 실패 판정과 기존 출력의 사전 차단을 확인했다. 원시 반복·공식 점수·로그/queue·보호 hash를 Python으로 재검증했다. [GUI 안내](research_log/gui_app.md)·[완료 근거](research_log/gui_validation_20261026.json)·[중단된 최초 시도](research_log/gui_validation_interrupted_20261024.json)를 보존한다. OS 클릭·선택창·스크린샷/DPI QA는 화면 도구 초기화 오류로 미완료다. 공식 3지표·memory 참고 지표 방침을 유지한다.
+최신 진행: GUI OS 입력·시각 QA 도구를 세션 reset 후 재시도했지만 같은 `kernel assets` 경로 오류로 초기화되지 않았다. GUI QA는 미완료로 유지하고 독립적으로 준비 가능한 [실제 파일 unseen 평가 사전 설계 v1](research_log/unseen_evaluation_design_v1.md)을 작성했다. 60개 파일·여섯 형식·원본 그룹/중복/출처 확인·저장 모델/baseline 고정·3지표 점수·실패 보존·평가 범위를 정했다. 60개는 수집 목표이며 실제 corpus·예측·측정·평가는 아직 없다. Python으로 기존 산출물 32개 hash·Pilot 학습 라벨의 최빈 baseline·모델/설정 계약과 보호 파일 55개 불변을 확인하고 [읽기 전용 근거](research_log/unseen_evaluation_design_v1_checks.json)를 보존했다. 다음 구현은 후보 manifest 작성·검증·동결 도구다. 공식 3지표·memory 참고 지표 방침을 유지한다.
+
+직전 GUI 진행: `gui_app.py`에 Smart 압축·복원·실제 비교 탭과 명시적 Demo 대조를 연결했다. 실제 Tk 창을 생성해 callback/queue·이벤트 응답·중복/닫기 차단·결과/오류 표시를 검증했다. 전용 15개와 계층 회귀 18개, 총 33개 테스트가 통과했다. 저장 모델 두 종류×세 mode의 압축/복원 12개 및 Compare 1개 정상, 손상 복사본 복원 1개 실패 판정과 기존 출력의 사전 차단을 확인했다. 원시 반복·공식 점수·로그/queue·보호 hash를 Python으로 재검증했다. [GUI 안내](research_log/gui_app.md)·[완료 근거](research_log/gui_validation_20261026.json)·[중단된 최초 시도](research_log/gui_validation_interrupted_20261024.json)를 보존한다. OS 클릭·선택창·스크린샷/DPI QA는 미완료다.
 
 현재 memory 방침: 2026-10-23 사용자가 memory를 참고 지표로 보존하고, 추가 구현은 여건이 마련됐을 때 진행하기로 선택했다. [결정 기록](research_log/memory_reference_indicator_decision_20261023.md)에 기존 검토·최신 독립 감사·후보 분석 근거를 연결했다. 공식 기준은 계속 압축률·압축 시간·압축 해제 시간의 3지표이며 memory는 `validation_only`, `score_inclusion=false`를 유지한다. Memory 추가 구현·측정·4지표 전환은 재개 일정이 없는 보류 과제다. 당장의 작업 우선순위는 기존 3지표 시스템 완성이다.
 
@@ -789,21 +791,32 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **중단 근거 보존:** 최초 10월 24일 시도는 첫 작업에서 120초 harness deadline 오류로 중단됐고 화면 완료는 기록되지 않았다. 뒤늦은 backend 로그는 성공이며 원래 package와 partial 로그를 보존했다. 시각 공백의 원인을 절전이라고 확정하지 않는다. 새 경로에서 최종 검증을 완료했고 실패 이력을 지우지 않았다.
 - **미완료·범위:** Windows 화면 자동화 도구는 reset/재시도에도 `kernel assets` 경로 오류(`os error 3`)로 초기화되지 않았다. OS 마우스/키보드·파일 선택 대화상자·스크린샷/글꼴/잘림/DPI QA는 미완료다. 실제 Tk 위젯/이벤트 검증과 구분한다. CLI·점수·모델·config·기존 연구 결과는 변경하지 않았다. 취소·스트리밍·새 학습·unseen 평가·memory 추가 구현은 수행하지 않았다.
 
+### 실제 파일 unseen 평가 사전 설계 완료 / corpus·평가는 미완료 — 2026-10-26
+
+- **근거:** [사전 설계 v1](research_log/unseen_evaluation_design_v1.md), [읽기 전용 계약·hash·검증 프로그램 원문](research_log/unseen_evaluation_design_v1_checks.json). 시작 HEAD는 `e1e9d41`(Tk GUI 구현·자동 검증 보존)이다.
+- **GUI 재시도·범위 변경:** 초기화와 kernel reset 후 재초기화 모두 `failed to write kernel assets` / `os error 3`로 실패했다. OS 입력·선택창·스크린샷 검증은 실행하지 않았고 완료로 바꾸지 않았다. 화면 도구와 독립적인 다음 연구 준비인 unseen 사전 설계만 진행했다.
+- **설계 완료:** 실제 원본 60개·여섯 형식 각 10개, 최소 12개 원본 그룹·그룹당 최대 5개·형식마다 최소 2개 원본, 원래 16 KiB~1 MiB 파일의 수집 목표를 정했다. 실제 확보 수가 아니며 개별 출처·라이선스·원본 그룹 목록은 미정이다. 선정 metadata와 제외/중복 사유·full 입력 hash를 예측/측정 전에 동결하며 원본 파일을 변형하지 않는다.
+- **누수 방지·평가 계약 완료:** 실제 파일을 기존 seed 기반 재학습 경로에 넣지 않는다. 두 저장 모델×세 mode와 기존 Pilot 학습 최빈 baseline을 고정하고 외부 holdout 전체를 별도 평가한다. 기존 12개 특징·공식 3지표/5회 중앙값·네 클래스 고정 Macro F1·oracle regret를 사용한다. 파일/그룹 동일 비중과 형식/크기/coverage를 구분하고 원본 그룹 mean regret의 baseline 대비 차이를 1차 비교량으로 정했다. 실패·미실행·baseline 미개선·모델 오답을 보존하며 조건부 집계를 전체 결과로 부르지 않는다.
+- **읽기 전용 검증 완료:** Python 표준 라이브러리로 기존 baseline/두 모델의 산출물 32개 hash·저장 Pilot 입력 hash·학습 분할 라벨에서 재계산한 baseline과 summary 일치·특징/설정/소스/런타임 계약·55개 보호 파일 전후 SHA-256 불변을 확인했다. 모델 pickle은 bytes/hash만 읽었으며 역직렬화·추론·학습을 하지 않았다. 이 숫자는 설계 계약 확인이며 새 연구 성능 결과가 아니다.
+- **미완료:** 출처/권리 확인·실제 후보 수집·후보 manifest/선정·기존 합성 bytes와의 겹침 검사·corpus 동결·별도 평가 runner·연구 실측·독립 저장 감사·실제 unseen 성능 평가. 이번에는 단위 테스트·특징 추출·합성 재생성·모델 로딩/예측·압축·GUI 입력·새 memory 측정을 실행하지 않았다. 문서/JSON 내용·링크·현재 소스/hash·diff를 검증해 보존한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
 - GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
-- 실제 파일 데이터·원본 그룹 분할 설계·별도 unseen 평가.
+- 실제 파일 후보 manifest·출처/권리/원본 그룹 확인·수집/중복 검사·corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1은 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**Windows GUI 입력·시각 QA:** 화면 도구가 복구된 환경에서 실제 클릭/키보드·파일/폴더 선택창·오류 대화상자·한국어 글꼴·긴 경로·크기/배율별 잘림을 점검하고 발견된 UI 문제만 수정한다. 이미 완료한 Tk callback/이벤트·기존 모델/CLI 흐름과 구분해 근거를 보존한다. 전체 GUI 검증을 마친 뒤 실제 unseen 파일의 원본 그룹 분할·별도 평가 설계로 진행한다. 새 모델·memory·연구 기준 변경을 자동으로 시작하지 않는다.
+**실제 파일 후보 manifest 작성·검증·동결 도구:** 사전 설계 v1의 경로/출처/권리/형식/원본 그룹·full hash·명시적 선정 ID·quota·중복/변경·새 출력 보호를 처리한다. Git 제외 경로를 먼저 확인하고 인위적 fixture로 계약을 검증한다. 이 단계에서 외부 자료를 자동 수집하거나 모델·압축·학습을 실행하지 않는다. 실제 출처/권리 검토·후보 수집/동결과 평가 runner는 후속 단위로 구분한다. 화면 도구 복구 시 GUI OS 입력·선택창·스크린샷/DPI QA를 별도로 마친다.
 
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 공식 4지표 전환·새 모델 학습은 수행하지 않았다.
+현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계를 마쳤으며 실제 corpus·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 unseen 사전 설계·읽기 전용 계약 확인의 시작 HEAD이자 마지막 관련 GUI 구현 보존은 `e1e9d41`이다. 기존 모델·실험 산출물·source hash와 검증 프로그램을 새 계획 근거 JSON에 보존했다. 이번에는 연구 실험·학습을 실행하지 않았으며 설계 문서 자신의 commit hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 이번 Tk GUI 구현·실제 창/callback 검증의 시작 HEAD는 `ea3892d`(GUI 작업 실행 계층 보존)이다. 실제 검증은 commit 전 작업 트리 상태이며 정확한 소스 hash·원시 산출물·표시 행·테스트와 최초 중단 근거를 기록했다.
 
@@ -822,6 +835,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `e1e9d41`: Tk GUI/Demo·전용 15개+계층 18개 테스트·실제 callback/CLI 흐름·최초 중단 근거 보존. 이번 unseen 평가 사전 설계의 시작 HEAD. GUI OS 입력·시각 QA는 미완료.
 - `ea3892d`: GUI 단일 작업 실행 계층·결과/로그 판정·전용 18개 및 실제 요청 14건 검증 보존. 이번 Tk GUI 구현·검증의 시작 HEAD.
 - `8a8d3c8`: GUI/Demo 화면·실행 흐름·결과/오류·검증 계획과 환경/계약 확인 보존. 이번 GUI 작업 실행 계층 작업의 시작 HEAD.
 - `f1d8388`: 통합 CLI·전용 12개/회귀 34개 검증·최종 실제 호출 22건과 원시 비교 근거 보존. 직전 GUI/Demo 설계 작업의 시작 HEAD.
