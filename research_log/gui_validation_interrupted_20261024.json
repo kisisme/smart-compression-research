@@ -1,0 +1,226 @@
+{
+  "status": "harness_timeout_backend_succeeded",
+  "scope": "Interrupted mapped Tk smoke, not research or timing performance evidence",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-B",
+    "tests/validate_gui_app.py",
+    "--record",
+    "research_log/gui_validation_20261024.json"
+  ],
+  "exit_code": 1,
+  "exception": "TimeoutError: Tk job did not finish (120 second harness deadline)",
+  "native_sleep_cause_confirmed": false,
+  "note": "Large execution gaps observed; cause not established. No completed GUI flow was recorded. Backend later reported a verified package. Preserve this attempt and rerun in a new output directory.",
+  "partial_record": {
+    "started_at_utc": "20261024T091306290446Z",
+    "kind": "Tk callback and real backend smoke; not research/model evaluation",
+    "git_head_at_execution": "ea3892d400e504d4c00c58ac14c9c5560a2c3e90",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z",
+    "protected_before": {
+      "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+      "config\\experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+      "data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+      "data\\results\\pilot_1008\\decision_tree\\decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+      "data\\results\\pilot_1008\\decision_tree\\decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+      "data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+      "data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+      "data\\results\\pilot_1008\\random_forest\\random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+      "data\\results\\pilot_1008\\random_forest\\random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+      "data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+      "data\\temp\\gui_app_validation_20261024T091306290446Z\\한글 공백 & GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "gui_app.py": "1f15869619516e0770c56d2ecdc43c37e827a01557aa0fa261d325d09c8a8ff1",
+      "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+      "README.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+      "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+      "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+      "src\\compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+      "src\\feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+      "src\\gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+      "src\\scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+      "tests\\test_gui_app.py": "7db70a7efd18f79d9b7a4572c2657907d1776eb40960cba478bac3c3aeb683b8",
+      "tests\\validate_gui_app.py": "1f1699580771e92c7c9d29a16cc764c21653052ddb0406390b7c0c2c37e151f7"
+    },
+    "jobs": [],
+    "checks": {
+      "mapped_window_without_starting_job": true
+    },
+    "visual_qa": {
+      "native_input_automation": false,
+      "screenshots": false,
+      "blocker": "Computer-use node_repl kernel initialization failed with os error 3 (kernel assets path missing), including retry after reset"
+    },
+    "tk_patchlevel": "8.6.15"
+  },
+  "eventual_job_logs": [
+    {
+      "job_id": "d2d4bc74018746ddbd71bb0959bbda91",
+      "request": {
+        "operation": "smart",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\한글 공백 & GUI 입력 🧪.md",
+        "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\decision_tree_archive",
+        "mode": "archive",
+        "model_kind": "decision_tree",
+        "model_dir": null
+      },
+      "status": "succeeded",
+      "message": "Smart package and verified response agree",
+      "command": [
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+        "smart",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\한글 공백 & GUI 입력 🧪.md",
+        "--mode",
+        "archive",
+        "--model",
+        "decision_tree",
+        "--output-dir",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\decision_tree_archive"
+      ],
+      "started_at_utc": "2026-10-24T10:51:16.745365+00:00",
+      "finished_at_utc": "2026-10-24T15:31:02.953079+00:00",
+      "return_code": 0,
+      "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\gui_app_validation_20261024T091306290446Z\\\\decision_tree_archive\"\r\n}\r\n",
+      "stderr": "",
+      "stdout_base64": "ew0KICAibW9kZSI6ICJhcmNoaXZlIiwNCiAgImFsZ29yaXRobSI6ICJ6c3RkIiwNCiAgInByZWRpY3Rpb25fY29uZmlkZW5jZSI6IDEuMCwNCiAgImNvbmZpZGVuY2Vfbm90ZSI6ICJVbmNhbGlicmF0ZWQgbW9kZWwgb3V0cHV0OyBub3QgYSB2YWxpZGF0ZWQgY29ycmVjdG5lc3MgcHJvYmFiaWxpdHkuIiwNCiAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcZ3VpX2FwcF92YWxpZGF0aW9uXzIwMjYxMDI0VDA5MTMwNjI5MDQ0NlpcXGRlY2lzaW9uX3RyZWVfYXJjaGl2ZSINCn0NCg==",
+      "stderr_base64": "",
+      "data": {
+        "smart_mode_version": 1,
+        "mode": "archive",
+        "algorithm": "zstd",
+        "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\한글 공백 & GUI 입력 🧪.md",
+        "original_filename": "한글 공백 & GUI 입력 🧪.md",
+        "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+        "original_size": 4433,
+        "compressed_file": "payload.zst",
+        "compressed_sha256": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+        "compressed_size": 2147,
+        "compression_ratio": 0.4843221294834198,
+        "verified": true,
+        "features": {
+          "file_size": 4433,
+          "entropy": 5.826112159673893,
+          "unique_byte_count": 125,
+          "most_common_byte_ratio": 0.0967741935483871,
+          "zero_byte_ratio": 0.0,
+          "adjacent_repeat_ratio": 0.02278880866425993,
+          "average_run_length": 1.02331486611265,
+          "max_run_length": 3,
+          "duplicate_block_ratio": 0.007194244604316547,
+          "bigram_diversity": 0.17982851985559567,
+          "segment_entropy_mean": 5.698317121279868,
+          "segment_entropy_std": 0.12503998871615973
+        },
+        "prediction_confidence": 1.0,
+        "algorithm_probabilities": {
+          "gzip": 0.0,
+          "bz2": 0.0,
+          "lzma": 0.0,
+          "zstd": 1.0
+        },
+        "provenance": {
+          "model_kind": "decision_tree",
+          "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl",
+          "model_sha256": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+          "model_summary_sha256": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+          "training_git": {
+            "commit_hash": "05623ccc6de31faab2ae7d53069e387bb34bc582",
+            "worktree_dirty": false
+          },
+          "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+          "compression_settings": {
+            "gzip": {
+              "level": 9
+            },
+            "bz2": {
+              "level": 9
+            },
+            "lzma": {
+              "preset": 6
+            },
+            "zstd": {
+              "level": 3
+            }
+          },
+          "feature_settings": {
+            "duplicate_block_size": 16,
+            "segment_size": 4096
+          },
+          "selection_weights": {
+            "compression_ratio": 0.7,
+            "compression_time": 0.15,
+            "decompression_time": 0.15
+          },
+          "model_settings": {
+            "criterion": "gini",
+            "splitter": "best",
+            "max_depth": null,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": null,
+            "class_weight": null,
+            "ccp_alpha": 0.0,
+            "random_state": 42
+          },
+          "source_sha256": {
+            "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+            "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+            "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+          },
+          "package_versions": {
+            "numpy": "2.5.2",
+            "pandas": "3.0.5",
+            "scikit-learn": "1.9.0",
+            "zstandard": "0.25.0"
+          },
+          "python_version": "3.14.4",
+          "operating_system": "Windows-11-10.0.26300-SP0",
+          "prediction_confidence_definition": "Maximum uncalibrated leaf class proportion from predict_proba."
+        },
+        "git": {
+          "commit_hash": "ea3892d400e504d4c00c58ac14c9c5560a2c3e90",
+          "worktree_dirty": true
+        },
+        "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "created_at_utc": "2026-10-24T15:31:01.666605+00:00",
+        "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+        "limitations": [
+          "Pilot models have not demonstrated improvement over the majority baseline.",
+          "Confidence is uncalibrated model output, not a validated probability of correctness.",
+          "Generalization to unseen real files has not been established."
+        ]
+      },
+      "input_snapshot": {
+        "source_sha256": {
+          "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+          "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+          "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+          "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+          "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+        },
+        "input_files": {
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\한글 공백 & GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+          "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\decision_tree\\decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2"
+        },
+        "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+        "original_size": 4433,
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_app_validation_20261024T091306290446Z\\sessions\\d2d4bc74018746ddbd71bb0959bbda91\\job.json",
+      "log_error": null,
+      "environment_overrides": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+    }
+  ]
+}
