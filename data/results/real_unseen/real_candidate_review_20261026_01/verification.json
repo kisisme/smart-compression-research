@@ -1,0 +1,35 @@
+{
+  "status": "review_decisions_inputs_notices_and_draft_verified",
+  "verified_at_utc": "2026-10-26T12:21:27.699267+00:00",
+  "execution_git_head": "4610aa3caab047aab5dc50e53528e79cd73a4515",
+  "verifier_sha256": "8bacdea0710691bc463de0505d6b55754fdf504738c1f9201ce83266a87ee3ac",
+  "reviewed_candidates": 60,
+  "rights_approved": 60,
+  "privacy_approved": 60,
+  "by_format": {
+    "json": 10,
+    "text": 10,
+    "binary": 10,
+    "log": 10,
+    "python": 10,
+    "csv": 10
+  },
+  "origin_groups": 18,
+  "original_inputs_unchanged": 60,
+  "original_inspection_protected_files_unchanged": 221,
+  "protected_with_supplemental_evidence_unchanged": 226,
+  "exact_duplicate_candidates": 0,
+  "supplemental_notice_candidate": "numpy_04",
+  "license_metadata_changed_candidates": [
+    "numpy_04"
+  ],
+  "relationship_records": 9,
+  "selected_files": 0,
+  "evaluation_ready": false,
+  "unseen_overlap_audit": "not_performed",
+  "corpus_frozen": false,
+  "research_runtime_executed": false,
+  "judgment_scope": "Use unchanged public originals as local compression-research inputs; preserve author/copyright, license notices and source citations. Approval is not corpus selection or an anonymity claim.",
+  "method": "Full-file structural parsing/scanning plus assistant review of source/license and flagged/structured contexts; not a claim that a person manually read every source line.",
+  "verifier_scope": "Checks artifact/decision consistency and preservation; does not independently establish legal facts or certify anonymity."
+}

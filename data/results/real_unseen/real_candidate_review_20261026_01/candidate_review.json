@@ -1,0 +1,2108 @@
+{
+  "review_version": 1,
+  "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+  "policy": {
+    "scope": "Use unchanged public originals as local compression-research inputs; preserve author/copyright, license notices and source citations. Approval is not corpus selection or an anonymity claim.",
+    "method": "Full-file structural parsing/scanning plus assistant review of source/license and flagged/structured contexts; not a claim that a person manually read every source line.",
+    "public_attribution": "Public author/copyright/contact and public mailing-list citation metadata remain attributed. They are distinguished from private user records, end-user credentials and unrelated personal data; no such records were identified in the reviewed input roles.",
+    "no_performance_selection": true,
+    "notices_required": true,
+    "no_raw_input_edits": true,
+    "evaluation_ready": false,
+    "unseen_overlap_audit": "not_performed"
+  },
+  "candidates": [
+    {
+      "candidate_id": "cldr_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license covers the official en/dateFields data; keep the notice.",
+      "privacy_basis": "Full JSON traversal matches relative-date/calendar localization strings, not person records.",
+      "findings": [],
+      "input_sha256": "4fcaa5f74d743a0bc734a556638c687ee7607824cc763be0f746a20d36e9cb0c",
+      "format": "json",
+      "origin_group_id": "cldr",
+      "source_locator": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/dateFields.json",
+      "source_version": "git:91c267402229a59e3ef2774544f001bf959e8809",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Unicode-3.0",
+      "license_evidence": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+          "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "cldr_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/timeZoneNames distribution.",
+      "privacy_basis": "Public time-zone/city names and formatting labels; no user-location history or contact records.",
+      "findings": [],
+      "input_sha256": "db04305a4bac1389b965e71974adf174adc4130f38b86dfcf1f4e2eec343a174",
+      "format": "json",
+      "origin_group_id": "cldr",
+      "source_locator": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-dates-full/main/en/timeZoneNames.json",
+      "source_version": "git:91c267402229a59e3ef2774544f001bf959e8809",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Unicode-3.0",
+      "license_evidence": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+          "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "cldr_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/languages distribution.",
+      "privacy_basis": "Language-code/display-name mapping, not individual profiles.",
+      "findings": [],
+      "input_sha256": "a5960d2371bc7d982da7fcfd9a0e237429d3467a5cc76f680bc3af5bcef9fb4e",
+      "format": "json",
+      "origin_group_id": "cldr",
+      "source_locator": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/languages.json",
+      "source_version": "git:91c267402229a59e3ef2774544f001bf959e8809",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Unicode-3.0",
+      "license_evidence": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+          "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "cldr_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/localeDisplayNames distribution.",
+      "privacy_basis": "Locale/type display labels, not end-user settings exported from an account.",
+      "findings": [],
+      "input_sha256": "29b07edcff9a65505c0b543e6c2dba90eea217cf1080232b37d3b461420ae078",
+      "format": "json",
+      "origin_group_id": "cldr",
+      "source_locator": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-localenames-full/main/en/localeDisplayNames.json",
+      "source_version": "git:91c267402229a59e3ef2774544f001bf959e8809",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Unicode-3.0",
+      "license_evidence": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+          "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "cldr_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/currencies distribution.",
+      "privacy_basis": "Currency names/symbols and formatting data; no transactions or account identifiers.",
+      "findings": [],
+      "input_sha256": "a6c41b28f4035f65ae698b53a66866982b4ff49bc0de7e840f91d2c6e6bdc23b",
+      "format": "json",
+      "origin_group_id": "cldr",
+      "source_locator": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/en/currencies.json",
+      "source_version": "git:91c267402229a59e3ef2774544f001bf959e8809",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Unicode-3.0",
+      "license_evidence": "https://github.com/unicode-org/cldr-json/blob/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+          "input_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "curl_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header lines 2-4 identify the curl license; upstream COPYING is retained.",
+      "privacy_basis": "Header contact is public copyright attribution; remaining content is TLS cipher documentation.",
+      "findings": [
+        "public_author_attribution"
+      ],
+      "input_sha256": "78a9964545b3269bac03c70601b014f96b18a98aabb71d1a37fde41fe0b572ab",
+      "format": "text",
+      "origin_group_id": "curl",
+      "source_locator": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/docs/CIPHERS-TLS12.md",
+      "source_version": "git:bc677a8f16a51e728136eff130509cfac57aad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "curl",
+      "license_evidence": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+          "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          2,
+          4
+        ],
+        "contact": [
+          2
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "curl_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header lines 2-4 identify the curl license; upstream COPYING is retained.",
+      "privacy_basis": "Header attribution and documented public DNS/DoH examples; no private host/user log.",
+      "findings": [
+        "public_author_attribution",
+        "documented_public_network_example"
+      ],
+      "input_sha256": "4cc689059c066c96eec06f123049f33a4c4d2b8f07c7f5df6cb9da61455c9fdd",
+      "format": "text",
+      "origin_group_id": "curl",
+      "source_locator": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/docs/ECH.md",
+      "source_version": "git:bc677a8f16a51e728136eff130509cfac57aad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "curl",
+      "license_evidence": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+          "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          2,
+          4
+        ],
+        "contact": [
+          2
+        ],
+        "home_path": [],
+        "network": [
+          109,
+          390
+        ],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "curl_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING; FAQ discusses other libraries but does not relicense this document.",
+      "privacy_basis": "Public author attribution and loopback/example.com command examples, not customer records.",
+      "findings": [
+        "public_author_attribution",
+        "documented_loopback_example"
+      ],
+      "input_sha256": "21789939dfb18654dfe05c8b299f883cb4f7a5d57eeedc1ff6f4c507db9ca26a",
+      "format": "text",
+      "origin_group_id": "curl",
+      "source_locator": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/docs/FAQ.md",
+      "source_version": "git:bc677a8f16a51e728136eff130509cfac57aad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "curl",
+      "license_evidence": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+          "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          2,
+          4,
+          61,
+          66,
+          182,
+          1282,
+          1284,
+          1290,
+          1298,
+          1307,
+          1317,
+          1323,
+          1324,
+          1327,
+          1331,
+          1333,
+          1336,
+          1338,
+          1340,
+          1341,
+          1342,
+          1353,
+          1359,
+          1361,
+          1364,
+          1365,
+          1367,
+          1368,
+          1370
+        ],
+        "contact": [
+          2
+        ],
+        "home_path": [],
+        "network": [
+          591
+        ],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "curl_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING are consistent.",
+      "privacy_basis": "Public author attribution in a CMake installation guide; no user-specific configuration export.",
+      "findings": [
+        "public_author_attribution"
+      ],
+      "input_sha256": "44fc74d7065e0963915425c69f894d95174354785d4936ed17da8d69522d5b47",
+      "format": "text",
+      "origin_group_id": "curl",
+      "source_locator": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL-CMAKE.md",
+      "source_version": "git:bc677a8f16a51e728136eff130509cfac57aad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "curl",
+      "license_evidence": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+          "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          2,
+          4
+        ],
+        "contact": [
+          2
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "curl_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING are consistent.",
+      "privacy_basis": "Public author attribution and generic installation instructions, not an actual user directory export.",
+      "findings": [
+        "public_author_attribution"
+      ],
+      "input_sha256": "c9440be6db41c62342742f334805f636cabdccb133a7944ea57a892d76be0951",
+      "format": "text",
+      "origin_group_id": "curl",
+      "source_locator": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/docs/INSTALL.md",
+      "source_version": "git:bc677a8f16a51e728136eff130509cfac57aad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "curl",
+      "license_evidence": "https://github.com/curl/curl/blob/bc677a8f16a51e728136eff130509cfac57aad19/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+          "input_sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          2,
+          4,
+          96
+        ],
+        "contact": [
+          2
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "git_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Git COPYING declares GPL v2 for project material; preserve the complete source document and COPYING.",
+      "privacy_basis": "Home-directory/SID fragments are openly published Trace2 documentation examples, not a private trace collected here. Version strings triggered IPv4-like matches.",
+      "findings": [
+        "published_trace_example",
+        "generic_ssh_transport_user",
+        "version_string_false_positive"
+      ],
+      "input_sha256": "a17b02c0be9804049293498f58f533a88b052f524eb7b0f813a9233a28e17ff4",
+      "format": "text",
+      "origin_group_id": "git",
+      "source_locator": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/api-trace2.adoc",
+      "source_version": "git:7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "GPL-2.0-only",
+      "license_evidence": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+          "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [
+          935
+        ],
+        "home_path": [
+          688,
+          933,
+          969,
+          974,
+          975,
+          1026,
+          1071,
+          1127
+        ],
+        "network": [
+          47,
+          55,
+          62,
+          82,
+          90,
+          97,
+          116,
+          124,
+          131,
+          348,
+          967,
+          973,
+          1024,
+          1069,
+          1125
+        ],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "git_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "The contact-like match is a public mailing-list message URL used as a technical reference.",
+      "findings": [
+        "public_mailing_list_citation"
+      ],
+      "input_sha256": "c00e786e56cde209dca048db487ecc15dc8fad29045f8b69730a45ee194b7e0b",
+      "format": "text",
+      "origin_group_id": "git",
+      "source_locator": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/bundle-uri.adoc",
+      "source_version": "git:7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "GPL-2.0-only",
+      "license_evidence": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+          "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [
+          568
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "git_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "Contact-like matches are public technical mailing-list reference/message IDs, not address-book entries.",
+      "findings": [
+        "public_mailing_list_citation"
+      ],
+      "input_sha256": "bf1e8aeeec83a1063e36c2ba88d3c513aa07b71b3facde924fe680cc43d22b1e",
+      "format": "text",
+      "origin_group_id": "git",
+      "source_locator": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/commit-graph.adoc",
+      "source_version": "git:7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "GPL-2.0-only",
+      "license_evidence": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+          "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [
+          386,
+          389,
+          393,
+          405,
+          408
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "git_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "Published author history, mailing-list citations and a public Git tag example are attributed; they are not anonymized or described as absent.",
+      "findings": [
+        "public_author_history",
+        "public_mailing_list_citation",
+        "published_tag_example"
+      ],
+      "input_sha256": "5525e6da835a7589d094b03b3c895e561518b71be3977c3cac592f6d7f05e9ba",
+      "format": "text",
+      "origin_group_id": "git",
+      "source_locator": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/hash-function-transition.adoc",
+      "source_version": "git:7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "GPL-2.0-only",
+      "license_evidence": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+          "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          181
+        ],
+        "contact": [
+          83,
+          585,
+          734,
+          786,
+          787,
+          789,
+          791,
+          798,
+          812,
+          831,
+          832,
+          833,
+          834,
+          835
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "git_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING; references to AGPL software describe other systems, not this document's license.",
+      "privacy_basis": "Design prose and generic system architecture; no private user data identified.",
+      "findings": [],
+      "input_sha256": "b76baff2c662164b423673ce3f7a663c96181f84998a7e71ada39bd650594e2f",
+      "format": "text",
+      "origin_group_id": "git",
+      "source_locator": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/technical/large-object-promisors.adoc",
+      "source_version": "git:7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "GPL-2.0-only",
+      "license_evidence": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/COPYING",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+          "input_sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          210,
+          234
+        ],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole document scan and attribution/example/reference contexts reviewed"
+    },
+    {
+      "candidate_id": "google_fonts_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and embedded name ID 13 both declare OFL 1.1; retain copyright/RFN and unchanged family name.",
+      "privacy_basis": "All name-table records reviewed: public designer/trademark/URL metadata, not end-user records.",
+      "findings": [
+        "public_designer_metadata"
+      ],
+      "input_sha256": "2901c8df256648cc2bb2e3afb381cb8d28e65ed3dbe11de20695ae4d5ffdeda9",
+      "format": "binary",
+      "origin_group_id": "google_fonts",
+      "source_locator": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/ABeeZee-Regular.ttf",
+      "source_version": "git:e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "OFL-1.1",
+      "license_evidence": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/OFL.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/abeezee/OFL.txt",
+          "input_sha256": "f0376d04eb58fb19e9f1690a99a1eb37380ad0246f7d503f2abd8e8a74ed12be"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "google_fonts_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original copyright/RFN.",
+      "privacy_basis": "Embedded public designer attribution/contact is preserved and classified as such, not declared anonymous.",
+      "findings": [
+        "public_designer_metadata",
+        "public_author_contact"
+      ],
+      "input_sha256": "8809dcad25318225052f88333e208c5aad4adcb7b2c934c135735ec19aa410b4",
+      "format": "binary",
+      "origin_group_id": "google_fonts",
+      "source_locator": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/Abel-Regular.ttf",
+      "source_version": "git:e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "OFL-1.1",
+      "license_evidence": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/OFL.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/abel/OFL.txt",
+          "input_sha256": "4f4bc3806a1e55789c6ef75ca5fc628297b05292f74966474dc0d40324abc609"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "google_fonts_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original notices.",
+      "privacy_basis": "Embedded designer and portfolio URL are public font authorship metadata.",
+      "findings": [
+        "public_designer_metadata"
+      ],
+      "input_sha256": "fc702d535857fa2bda802647b9d55f82a07502d4acdfd95b47279b3bf479eaa1",
+      "format": "binary",
+      "origin_group_id": "google_fonts",
+      "source_locator": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/Aboreto-Regular.ttf",
+      "source_version": "git:e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "OFL-1.1",
+      "license_evidence": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aboreto/OFL.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/aboreto/OFL.txt",
+          "input_sha256": "da0971c73aa1773b791926b81530f3cec50c94031912f162a320263488805ef8"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "google_fonts_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original copyright/RFN.",
+      "privacy_basis": "Name table identifies public font author/manufacturer; no private user records identified.",
+      "findings": [
+        "public_designer_metadata"
+      ],
+      "input_sha256": "76fdb582f54653c27274d5cd986f994c28d7fa7d323e7eb9ee14ce8875d39dc4",
+      "format": "binary",
+      "origin_group_id": "google_fonts",
+      "source_locator": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/Acme-Regular.ttf",
+      "source_version": "git:e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "OFL-1.1",
+      "license_evidence": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/acme/OFL.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/acme/OFL.txt",
+          "input_sha256": "48f7bdf873033e141893f72d36f06ef8aa320c822d884d59ea7847899a291025"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "google_fonts_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and explicit name ID 13 declare OFL 1.1. Name ID 14 has a stale/inconsistent URL; the explicit license text and complete family notice resolve it without editing the font.",
+      "privacy_basis": "Embedded public designer/contact/RFN metadata is retained; no end-user records.",
+      "findings": [
+        "public_designer_metadata",
+        "public_author_contact",
+        "stale_license_url_resolved_by_explicit_text"
+      ],
+      "input_sha256": "a7cf62975a5ecaa8a3be2e2913ffb4a335831315478b93bec722ad982308ea38",
+      "format": "binary",
+      "origin_group_id": "google_fonts",
+      "source_locator": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/Actor-Regular.ttf",
+      "source_version": "git:e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "OFL-1.1",
+      "license_evidence": "https://github.com/google/fonts/blob/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/actor/OFL.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/actor/OFL.txt",
+          "input_sha256": "c1bcd16ffc9d095822fd6b7fa1a24c7918b24815ed05711421f804293d2efa62"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "mlperf_inference_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned result repository Apache-2.0 notice retained; this is a results execution log, not redistributed weights/code from the benchmark model.",
+      "privacy_basis": "Every MLLOG record/string parsed. Source filenames, public build hashes, process/thread counters and machine-test metadata; no prompts, participant contacts or authentication records.",
+      "findings": [
+        "machine_execution_metadata"
+      ],
+      "input_sha256": "6c6dc8a8836720c83e73146347e4d003b90637347ba35121af77edc436a12e23",
+      "format": "log",
+      "origin_group_id": "mlperf_inference",
+      "source_locator": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "source_version": "git:198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_inference_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; public server-run metadata and counters, not private request/prompt content.",
+      "findings": [
+        "machine_execution_metadata"
+      ],
+      "input_sha256": "cd70d9725e7e2b3e7e6f190f453f84eb71374081e386eb51fca1b7702557322b",
+      "format": "log",
+      "origin_group_id": "mlperf_inference",
+      "source_locator": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/1xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "source_version": "git:198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_inference_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; thread IDs are process execution counters and source paths are filenames, not personal identities.",
+      "findings": [
+        "machine_execution_metadata"
+      ],
+      "input_sha256": "ad99d73ccaac30b049a128d0ce598eb95dedf45d5d4bb0e2b561c1cc956ff0d1",
+      "format": "log",
+      "origin_group_id": "mlperf_inference",
+      "source_locator": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "source_version": "git:198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_inference_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; timing/configuration/build metadata, with no private user payload identified.",
+      "findings": [
+        "machine_execution_metadata"
+      ],
+      "input_sha256": "562b18fd8bb76caf0277ccc945df016315540f234d901e043a4862558442ca64",
+      "format": "log",
+      "origin_group_id": "mlperf_inference",
+      "source_locator": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-9374F/llama2-70b-99.9/Server/performance/run_1/mlperf_log_detail.txt",
+      "source_version": "git:198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_inference_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; public runtime/build/test counters, not contact or credential records.",
+      "findings": [
+        "machine_execution_metadata"
+      ],
+      "input_sha256": "0c0012d120f190f47ea766e0944c6a7695a8dbe87f04b6d19e8cef8e7b7fab84",
+      "format": "log",
+      "origin_group_id": "mlperf_inference",
+      "source_locator": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/closed/AMD/results/8xMI300X_2xEPYC-TURIN/llama2-70b-99.9/Offline/performance/run_1/mlperf_log_detail.txt",
+      "source_version": "git:198fc46799b3328b36ee4bcbdebfa2db5a8e6183",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/inference_results_v4.1/blob/198fc46799b3328b36ee4bcbdebfa2db5a8e6183/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_training_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: submission organization/platform are corporate identifiers and source path is a generic container path.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ],
+      "input_sha256": "8fbe693da188061685b20dbb1952dd5e7b25b9eeb9fb8f320c2f02718dc8e167",
+      "format": "log",
+      "origin_group_id": "mlperf_training",
+      "source_locator": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_0.txt",
+      "source_version": "git:441d65f4445cd59687466533fd9f55399136e7a4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_training_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path, no personal user record identified.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ],
+      "input_sha256": "085ee9b85bd3ed2cc1e1aaa8f009545db7fb9250efbc659465d8833ec64a4cd1",
+      "format": "log",
+      "origin_group_id": "mlperf_training",
+      "source_locator": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_1.txt",
+      "source_version": "git:441d65f4445cd59687466533fd9f55399136e7a4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_training_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path, no prompts/credentials identified.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ],
+      "input_sha256": "6cf79a1a18dc75ec06b6cf4267ec2e36057faddca0df63ff90daafd829ece4cd",
+      "format": "log",
+      "origin_group_id": "mlperf_training",
+      "source_locator": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_2.txt",
+      "source_version": "git:441d65f4445cd59687466533fd9f55399136e7a4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_training_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path; repeated experiment stays in one group.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ],
+      "input_sha256": "e32ae0831d57afd0fa390613124663c8bcbed8ade8f2b82acd9b18d2f3f02724",
+      "format": "log",
+      "origin_group_id": "mlperf_training",
+      "source_locator": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_3.txt",
+      "source_version": "git:441d65f4445cd59687466533fd9f55399136e7a4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "mlperf_training_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path; repeated experiment stays in one group.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ],
+      "input_sha256": "9bf2b3283bc88dd4743aec85e0d47c686037752900a46d847fee2748677f1e5c",
+      "format": "log",
+      "origin_group_id": "mlperf_training",
+      "source_locator": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/AMD/results/MI350X_EPYC_9575F_pytorch/llama31_8b/result_4.txt",
+      "source_version": "git:441d65f4445cd59687466533fd9f55399136e7a4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "Apache-2.0",
+      "license_evidence": "https://github.com/mlcommons/training_results_v5.1/blob/441d65f4445cd59687466533fd9f55399136e7a4/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+          "input_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every MLLOG record and all string values reviewed; numeric benchmark values not used for candidate selection"
+    },
+    {
+      "candidate_id": "natural_earth_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every shapefile record parsed as numeric polyline geometry only; coarse global coastline, no DBF/person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ],
+      "input_sha256": "a1f8285d0e0a4858392cd78fc74fa3ee4cd9088947cf6e3693729dc852d70b60",
+      "format": "binary",
+      "origin_group_id": "natural_earth",
+      "source_locator": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_coastline.shp",
+      "source_version": "git:ca96624a56bd078437bca8184e78163e5039ad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_evidence": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+          "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "natural_earth_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric polygon geometry only; coarse marine geography, no named user/location history.",
+      "findings": [
+        "common_geography_collection"
+      ],
+      "input_sha256": "e37b4d4e1009be878ea51afca5f94c456d954deec1fc5ba5a690112edb907bfe",
+      "format": "binary",
+      "origin_group_id": "natural_earth",
+      "source_locator": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_geography_marine_polys.shp",
+      "source_version": "git:ca96624a56bd078437bca8184e78163e5039ad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_evidence": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+          "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "natural_earth_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric land polygons only; no person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ],
+      "input_sha256": "8689e6932b8e370e2ca4587cf3ba21e460b1235db37b6ed3c172c35b4a6088de",
+      "format": "binary",
+      "origin_group_id": "natural_earth",
+      "source_locator": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_land.shp",
+      "source_version": "git:ca96624a56bd078437bca8184e78163e5039ad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_evidence": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+          "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "natural_earth_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric ocean polygons only; no person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ],
+      "input_sha256": "8006f16c5af40875fbe8e975bef6d4b6c1ffc7b767491bdc277fbc0b62ba5d02",
+      "format": "binary",
+      "origin_group_id": "natural_earth",
+      "source_locator": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_ocean.shp",
+      "source_version": "git:ca96624a56bd078437bca8184e78163e5039ad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_evidence": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+          "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "natural_earth_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration includes river/lake data with provider releases retained in the notice.",
+      "privacy_basis": "Every record parsed as numeric river/lake polyline geometry; no personal event/location records.",
+      "findings": [
+        "common_geography_collection"
+      ],
+      "input_sha256": "4a5d41e67457fbd3d0c82ef4ca972f42f21faf8a639d0b0368725d38940f72c2",
+      "format": "binary",
+      "origin_group_id": "natural_earth",
+      "source_locator": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/110m_physical/ne_110m_rivers_lake_centerlines.shp",
+      "source_version": "git:ca96624a56bd078437bca8184e78163e5039ad19",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "LicenseRef-Natural-Earth-Public-Domain",
+      "license_evidence": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/LICENSE.md",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+          "input_sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+        }
+      ],
+      "context_locations": {},
+      "structured_review_method": "Every shapefile record or all TrueType name-table records reviewed; complete structural parsing"
+    },
+    {
+      "candidate_id": "numpy_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production package entry point.",
+      "privacy_basis": "AST/token traversal plus literal/comment screening found library/API material, not private user data.",
+      "findings": [],
+      "input_sha256": "da15041cceb1f6f5abf9bae3140a5f3d95773221980ba60efe48780af4725483",
+      "format": "python",
+      "origin_group_id": "numpy",
+      "source_locator": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/numpy/__init__.py",
+      "source_version": "git:f9f1772ce010001208475f751d19253469788410",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+          "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "numpy_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production C-API documentation source.",
+      "privacy_basis": "Long literals were reviewed as nditer/einsum documentation, not embedded user-record payloads.",
+      "findings": [
+        "large_public_api_docstrings"
+      ],
+      "input_sha256": "40fe45928ca5081fd4c51c05dfd342bff3ad055a6d256a703431c09607b70103",
+      "format": "python",
+      "origin_group_id": "numpy",
+      "source_locator": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/numpy/_core/_add_newdocs.py",
+      "source_version": "git:f9f1772ce010001208475f751d19253469788410",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+          "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "numpy_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production internal helper source.",
+      "privacy_basis": "AST/token and literal/comment review found library helpers and examples, not private records.",
+      "findings": [],
+      "input_sha256": "497f1ce325bcc6ffc2ccf013e2cdd2ff2e32c55106a0a07997213d45d6c777a0",
+      "format": "python",
+      "origin_group_id": "numpy",
+      "source_locator": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/numpy/_core/_internal.py",
+      "source_version": "git:f9f1772ce010001208475f751d19253469788410",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+          "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "numpy_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Explicit CPython 3.2 reprlib-derived fragment at lines 574-600. Retain NumPy BSD-3-Clause plus the full pinned Python 3.2 license with PSF-2.0 component and an adaptation summary.",
+      "privacy_basis": "Public historical author attribution at line 12; source/AST context is array-formatting code, not an end-user dataset.",
+      "findings": [
+        "public_author_attribution",
+        "external_cpython_fragment"
+      ],
+      "input_sha256": "4e80a4f9d2ab63c5b7b7c1e717c5f06d7cd7fb9a28cd088640b0c614d73c1a7c",
+      "format": "python",
+      "origin_group_id": "numpy",
+      "source_locator": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/numpy/_core/arrayprint.py",
+      "source_version": "git:f9f1772ce010001208475f751d19253469788410",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause AND PSF-2.0",
+      "license_evidence": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt ; https://github.com/python/cpython/blob/29360893df0931703cb2fe0c0fbc0fc963e64ead/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+          "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+        },
+        {
+          "path": "data/raw/real_unseen/review_evidence_20261026_02/python_cpython/LICENSE",
+          "input_sha256": "bfa8abea558e68c4e20fbb4f6c36e3b7e17763461e5cee3ad535d1f6624af9cb"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          581
+        ],
+        "contact": [
+          12
+        ],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "numpy_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production character-array source.",
+      "privacy_basis": "Source/AST context and strings are library API/code documentation, not personal records.",
+      "findings": [],
+      "input_sha256": "a174cd2354ef6fd8851d51c6f5b43f3fc836a344d1a37fa9600060387858d395",
+      "format": "python",
+      "origin_group_id": "numpy",
+      "source_locator": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/numpy/_core/defchararray.py",
+      "source_version": "git:f9f1772ce010001208475f751d19253469788410",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/numpy/numpy/blob/f9f1772ce010001208475f751d19253469788410/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+          "input_sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "pandas_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production option/configuration implementation.",
+      "privacy_basis": "AST/token and string/comment review found library defaults/examples, not an exported user settings file.",
+      "findings": [],
+      "input_sha256": "1b76a9475b7065e0757c84d0eb6691804a4134fe93de7a6f2d2533a08b6c4d5c",
+      "format": "python",
+      "origin_group_id": "pandas",
+      "source_locator": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_config/config.py",
+      "source_version": "git:180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+          "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "pandas_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production type declarations.",
+      "privacy_basis": "Type/alias definitions, not data about individuals.",
+      "findings": [],
+      "input_sha256": "98207bb411b9f2c318d8c06303d1aa3dc98ee3bf073acc9b484326590da2d164",
+      "format": "python",
+      "origin_group_id": "pandas",
+      "source_locator": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/_typing.py",
+      "source_version": "git:180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+          "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "pandas_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production Numba integration implementation.",
+      "privacy_basis": "Imports/dependency references do not contain private user records; no imported code was executed.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ],
+      "input_sha256": "b3ec1eeb3d57f9c00ccbb9f33d5cebb0d474acf33590550c9e98ff2018cec58d",
+      "format": "python",
+      "origin_group_id": "pandas",
+      "source_locator": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/_numba/extensions.py",
+      "source_version": "git:180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+          "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "pandas_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production algorithms implementation.",
+      "privacy_basis": "Library routines and public examples, not an embedded personal dataset.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ],
+      "input_sha256": "ac7b7dfd5d590dbab06439a3f07678a1d6cf09064197c4764a1c0b31919f9fd1",
+      "format": "python",
+      "origin_group_id": "pandas",
+      "source_locator": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/algorithms.py",
+      "source_version": "git:180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+          "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "pandas_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production apply implementation.",
+      "privacy_basis": "Library routines and public examples, not an embedded personal dataset.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ],
+      "input_sha256": "a38b4dc76a2bbb1157e369a700ab1e17c57b6b63385e237d7d6c141948408919",
+      "format": "python",
+      "origin_group_id": "pandas",
+      "source_locator": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/pandas/core/apply.py",
+      "source_version": "git:180b19f1ab9b2efcfe16baba967c9cde714f33f1",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "BSD-3-Clause",
+      "license_evidence": "https://github.com/pandas-dev/pandas/blob/180b19f1ab9b2efcfe16baba967c9cde714f33f1/LICENSE",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+          "input_sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Whole-source AST/token/string/comment scan with source-context review; no code execution"
+    },
+    {
+      "candidate_id": "uci_abalone_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 source page and original abalone.names provenance; retain dataset attribution.",
+      "privacy_basis": "All cells reviewed as numeric shellfish measurements or F/I/M shellfish category. These are not human sex/age records.",
+      "findings": [],
+      "input_sha256": "de37cdcdcaaa50c309d514f248f7c2302a5f1f88c168905eba23fe2fbc78449f",
+      "format": "csv",
+      "origin_group_id": "uci_abalone",
+      "source_locator": "https://archive.ics.uci.edu/static/public/1/abalone.zip#member=abalone.data",
+      "source_version": "doi:10.24432/C55C7W;archive_sha256:755a6a67c5b266961a3f149ea13be2cfb6e6c727e48cee3c83bc0b4526210ee4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/1/abalone",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_abalone/source_page.html",
+          "input_sha256": "8d2b2fb8ef0ed2d94b1e5700cbb7e8a297f89078c9d39472b53cd4932ce03e01"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_automobile_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original imports-85.names provenance; retain dataset/source attribution.",
+      "privacy_basis": "All cells are vehicle specifications, categories, model-level risk/loss or missing markers; no policyholder records.",
+      "findings": [],
+      "input_sha256": "125db8bd36a84801f7223faf54071d15f85f26c13a9a7aee63375ac46098fb7f",
+      "format": "csv",
+      "origin_group_id": "uci_automobile",
+      "source_locator": "https://archive.ics.uci.edu/static/public/10/automobile.zip#member=automobile/imports-85.data",
+      "source_version": "doi:10.24432/C5B01C;archive_sha256:0360d2379d2d505540f0c43bfe0ada96244ad2662faf9dada1629824948294ec",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/10/automobile",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_automobile/source_page.html",
+          "input_sha256": "e60688080b98b8b82998238fe3a6d6eb277a6c65e854c32b602d1316d9014d13"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_bike_sharing_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and archive Readme citation request; retain dataset and original-paper citation.",
+      "privacy_basis": "All cells checked: dates/weather/daily aggregate counts; instant is a row index, not a rider identifier.",
+      "findings": [
+        "aggregate_counts_not_individual_trips"
+      ],
+      "input_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be",
+      "format": "csv",
+      "origin_group_id": "uci_bike_sharing",
+      "source_locator": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip#member=day.csv",
+      "source_version": "doi:10.24432/C5W894;archive_sha256:b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_bike_sharing/source_page.html",
+          "input_sha256": "06b3d99b3477dc9a043be1072690a2f11ed82bdd3eedc9efb7a26bb40986f46d"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_biodegradation_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page; dataset attribution retained for molecular descriptors/experimental labels.",
+      "privacy_basis": "All cells are numeric chemical descriptors and RB/NRB labels, not personal data.",
+      "findings": [],
+      "input_sha256": "c66ac1a23aba11fb166fd5054fea14ac97b8e4f7e4940ae679dc863d1cc4b3c9",
+      "format": "csv",
+      "origin_group_id": "uci_biodegradation",
+      "source_locator": "https://archive.ics.uci.edu/static/public/254/qsar+biodegradation.zip#member=biodeg.csv",
+      "source_version": "doi:10.24432/C5H60M;archive_sha256:b5f7cf1b05564d94d65265a9a4aeae5fffcd15b8d3bcafe4225a8827d7ae08ac",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/254/qsar+biodegradation",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_biodegradation/source_page.html",
+          "input_sha256": "9fda2277741d417812c975a005ef02bd9173802c454aa9f3bb397a0c339f6187"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_forest_fires_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original forestfires.names citation request; retain original-paper attribution.",
+      "privacy_basis": "All cells are weather/fire/map-grid/month/day data, not individual location history.",
+      "findings": [],
+      "input_sha256": "0d6586a1fa52f55bef48578aef14eb97273f1e9330e1a53423df497a77065253",
+      "format": "csv",
+      "origin_group_id": "uci_forest_fires",
+      "source_locator": "https://archive.ics.uci.edu/static/public/162/forest+fires.zip#member=forestfires.csv",
+      "source_version": "doi:10.24432/C5D88D;archive_sha256:abd40d6142b5e30fea73ff7292f91dcdd8b64bf3b3f36e20f96c37f5d14f06fb",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/162/forest+fires",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_forest_fires/source_page.html",
+          "input_sha256": "2cd058c0f63745f33d16cc7fa83f1aec6077bd5cdb9e30b6838e99d1cf4e1209"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_seoul_bike_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset attribution retained.",
+      "privacy_basis": "All cells are dates/weather/hourly aggregate bicycle counts and fixed categories; no individual trip identifiers.",
+      "findings": [
+        "aggregate_counts_not_individual_trips"
+      ],
+      "input_sha256": "373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60",
+      "format": "csv",
+      "origin_group_id": "uci_seoul_bike",
+      "source_locator": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip#member=SeoulBikeData.csv",
+      "source_version": "doi:10.24432/C5F62R;archive_sha256:139e9908f0a3544bb222386855c9ce107e96467306bb8e4ce936aab59e7baac4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_seoul_bike/source_page.html",
+          "input_sha256": "0a5b541d523c1d40f2517d4bf1da29f776fbbf5a79960b0a7b7afe649eb6a674"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_wilt_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset/original-study attribution retained; no original satellite image is redistributed.",
+      "privacy_basis": "All cells are numeric image-segment descriptors and w/n land-cover labels; upstream filename training does not mean training this system.",
+      "findings": [
+        "same_observation_collection"
+      ],
+      "input_sha256": "2e439f523f913c8e6bf1ad8d975d3b0f8a7249f43d6f427a7ecf0e30841f6caa",
+      "format": "csv",
+      "origin_group_id": "uci_wilt",
+      "source_locator": "https://archive.ics.uci.edu/static/public/285/wilt.zip#member=training.csv",
+      "source_version": "doi:10.24432/C5KS4M;archive_sha256:80b96a0a23e2593442c3f57fa23e1c168895d4c81f826f2792424e48df62486a",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wilt/source_page.html",
+          "input_sha256": "b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_wilt_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset/original-study attribution retained; same collection as training.csv.",
+      "privacy_basis": "All cells are numeric image-segment descriptors and w/n land-cover labels; both upstream files are external candidates for this research.",
+      "findings": [
+        "same_observation_collection"
+      ],
+      "input_sha256": "00b50577283aac9f1e54e31074fd5a8866fc954ccb5d3523d2974d0d95ed6994",
+      "format": "csv",
+      "origin_group_id": "uci_wilt",
+      "source_locator": "https://archive.ics.uci.edu/static/public/285/wilt.zip#member=testing.csv",
+      "source_version": "doi:10.24432/C5KS4M;archive_sha256:80b96a0a23e2593442c3f57fa23e1c168895d4c81f826f2792424e48df62486a",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/285/wilt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wilt/source_page.html",
+          "input_sha256": "b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_wine_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original winequality.names citation request; retain original-paper attribution.",
+      "privacy_basis": "All cells are physicochemical wine measurements/quality scores; no expert identity, brand or customer records.",
+      "findings": [
+        "same_observation_collection"
+      ],
+      "input_sha256": "4a402cf041b025d4566d954c3b9ba8635a3a8a01e039005d97d6a710278cf05e",
+      "format": "csv",
+      "origin_group_id": "uci_wine",
+      "source_locator": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip#member=winequality-red.csv",
+      "source_version": "doi:10.24432/C56S3T;archive_sha256:3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wine/source_page.html",
+          "input_sha256": "09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "uci_wine_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original winequality.names citation request; same original wine collection.",
+      "privacy_basis": "All cells are physicochemical wine measurements/quality scores; red/white variants remain one group.",
+      "findings": [
+        "same_observation_collection"
+      ],
+      "input_sha256": "76c3f809815c17c07212622f776311faeb31e87610d52c26d87d6e361b169836",
+      "format": "csv",
+      "origin_group_id": "uci_wine",
+      "source_locator": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip#member=winequality-white.csv",
+      "source_version": "doi:10.24432/C56S3T;archive_sha256:3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "CC-BY-4.0",
+      "license_evidence": "https://archive.ics.uci.edu/dataset/186/wine+quality",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wine/source_page.html",
+          "input_sha256": "09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+          "input_sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "context_locations": {
+        "rights": [],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Every cell parsed; all nonnumeric values and date representations reviewed against the published observation schema"
+    },
+    {
+      "candidate_id": "vscode_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File declares SEE LICENSE IN LICENSE.txt; the pinned Copilot folder MIT notice is retained along with the root notice.",
+      "privacy_basis": "JSON is public extension configuration. apiKey entries are schemas; /Users/someone is an explicit patch example. Publisher telemetry identifiers are traced to the pinned TelemetryReporter path, not an end-user credential store.",
+      "findings": [
+        "explicit_documented_path_example",
+        "public_publisher_telemetry_configuration",
+        "upstream_repository_reference"
+      ],
+      "input_sha256": "0006be00196847dee96d00ea60b2dc02378ef7521f95bdd47498828078de1f62",
+      "format": "json",
+      "origin_group_id": "vscode",
+      "source_locator": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/package.json",
+      "source_version": "git:e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "MIT",
+      "license_evidence": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/extensions/copilot/LICENSE.txt",
+          "input_sha256": "8f3b85643422256a936daede0159c60fe5d140ace61a4fbb7de8b912e1274260"
+        },
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+          "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          13
+        ],
+        "contact": [],
+        "home_path": [
+          416
+        ],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "vscode_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON declares CSS extension configuration, types and defaults; no exported end-user settings/credentials identified.",
+      "findings": [],
+      "input_sha256": "5069d45656a0b9239658170bc580f94cb886f5d9b346440328de30d50d3f8a9e",
+      "format": "json",
+      "origin_group_id": "vscode",
+      "source_locator": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/css-language-features/package.json",
+      "source_version": "git:e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "MIT",
+      "license_evidence": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+          "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          7
+        ],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "vscode_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON is public Git extension configuration; aiKey equals the same public publisher telemetry identifier in the Copilot/Markdown/TypeScript configurations, not a personal account record.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ],
+      "input_sha256": "ef1349f9dc21abbe666f1e35b5c6103d740fb357c350dd6efa7e5a9ee4ef9ce6",
+      "format": "json",
+      "origin_group_id": "vscode",
+      "source_locator": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/git/package.json",
+      "source_version": "git:e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "MIT",
+      "license_evidence": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+          "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          6
+        ],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "vscode_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON is public Markdown extension configuration; the common publisher telemetry identifier is not treated as an end-user credential.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ],
+      "input_sha256": "e0a23d4e66aa70cdeb8832e135c65ce6e4b43b1f8653aa2bea57988a5aa0a45f",
+      "format": "json",
+      "origin_group_id": "vscode",
+      "source_locator": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/markdown-language-features/package.json",
+      "source_version": "git:e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "MIT",
+      "license_evidence": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+          "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          8
+        ],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    },
+    {
+      "candidate_id": "vscode_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "Author/publisher are project identifiers; public TypeScript configuration and common publisher telemetry identifier, not a user settings export.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ],
+      "input_sha256": "601bcd52beb81ab31a05da96d57279d7cc0263f310b5f7573dd14237340a50de",
+      "format": "json",
+      "origin_group_id": "vscode",
+      "source_locator": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/typescript-language-features/package.json",
+      "source_version": "git:e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "reviewed_at_utc": "2026-10-26T11:37:00.326661+00:00",
+      "license_id": "MIT",
+      "license_evidence": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/LICENSE.txt",
+      "notice_refs": [
+        {
+          "path": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+          "input_sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+        }
+      ],
+      "context_locations": {
+        "rights": [
+          8
+        ],
+        "contact": [],
+        "home_path": [],
+        "network": [],
+        "secret_like": []
+      },
+      "structured_review_method": "Full JSON traversal, manifest/localization role and flagged/schema/telemetry contexts reviewed"
+    }
+  ],
+  "base_inventory_sha256": "ed305767cd2cbb993e6efe435a9739396a88b0e18c2c37a0f077248c853670e6",
+  "inspection_sha256": "ef7ae87b14b03673acf0bdb9e8bf62e3ea4b63a12a15e3093257dee5a0f6f8ad",
+  "inspection_material_path": "data/temp/unseen_content_review_20261026_01",
+  "raw_root": "data/raw/real_unseen/real_candidates_20261026_02",
+  "publisher_sha256": "869a5d80cc51ec4d94b4c4239168eae3544ce449464d6b1ec7d672e653e121af",
+  "inspector_sha256": "b91cdeb55ddff65577b5c7c9a42468c5b5fdce27e30cb55af5f299f8d5bcfe3a",
+  "decision_sha256": "245505f4c8a5b9440ef0c78db57c56654d81358184962c678f6dd2e7bf55660c",
+  "evaluation_ready": false,
+  "unseen_overlap_audit": "not_performed",
+  "selected_files": 0
+}

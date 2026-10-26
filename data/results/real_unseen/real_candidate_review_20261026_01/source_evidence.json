@@ -1,0 +1,136 @@
+{
+  "plan": {
+    "evidence_version": 1,
+    "files": [
+      {
+        "repo": "python/cpython",
+        "commit": "29360893df0931703cb2fe0c0fbc0fc963e64ead",
+        "path": "LICENSE",
+        "size": 14537,
+        "git_blob_sha1": "341de15829751d5d6396781cdb3cf785695404fb",
+        "purpose": "Supplemental full Python 3.2 license for explicit reprlib-derived fragment in numpy_04."
+      },
+      {
+        "repo": "python/cpython",
+        "commit": "29360893df0931703cb2fe0c0fbc0fc963e64ead",
+        "path": "Lib/reprlib.py",
+        "size": 5110,
+        "git_blob_sha1": "f8033604da28da12dcad7d164580be638e51904a",
+        "purpose": "Compare recursive_repr origin; proof only, not a corpus candidate."
+      },
+      {
+        "repo": "microsoft/vscode",
+        "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+        "path": "extensions/copilot/src/platform/telemetry/vscode-node/microsoftTelemetrySender.ts",
+        "size": 1122,
+        "git_blob_sha1": "1271f990629dd4f2432760ac1477f3806e1d8b4d",
+        "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+      },
+      {
+        "repo": "microsoft/vscode",
+        "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+        "path": "extensions/copilot/src/platform/telemetry/vscode-node/telemetryServiceImpl.ts",
+        "size": 7764,
+        "git_blob_sha1": "d70c0a8b5da094ab3abf8fb2c9652d462f157f0b",
+        "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+      }
+    ],
+    "web_context_sources": [
+      {
+        "url": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-coastline/",
+        "finding": "Coastline is matched to land and water polygons; preserve common group and undirected relationship."
+      },
+      {
+        "url": "https://openfontlicense.org/open-font-license-official-text/",
+        "finding": "Retain license/copyright and RFN restrictions; use unchanged originals."
+      },
+      {
+        "url": "https://spdx.org/licenses/PSF-2.0.html",
+        "finding": "PSF-2.0 identifies the PSF license component."
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/connection-strings",
+        "finding": "Instrumentation identifiers differ from security credentials. Applied only with pinned publisher source confirming telemetry use."
+      }
+    ]
+  },
+  "acquisition": {
+    "records": [
+      {
+        "url": "https://raw.githubusercontent.com/python/cpython/29360893df0931703cb2fe0c0fbc0fc963e64ead/LICENSE",
+        "final_url": "https://raw.githubusercontent.com/python/cpython/29360893df0931703cb2fe0c0fbc0fc963e64ead/LICENSE",
+        "started_at_utc": "2026-10-26T11:23:56.166219+00:00",
+        "acquired_at_utc": "2026-10-26T11:23:56.554622+00:00",
+        "headers": {
+          "ETag": "\"f32e7dd71b728593c00c31c2d9a578be5ae567bc4baf5b4ca6920a1c9510afb2\"",
+          "Last-Modified": null,
+          "Content-Type": "text/plain; charset=utf-8",
+          "Content-Length": "14537"
+        },
+        "size": 14537,
+        "input_sha256": "bfa8abea558e68c4e20fbb4f6c36e3b7e17763461e5cee3ad535d1f6624af9cb",
+        "git_blob_sha1": "341de15829751d5d6396781cdb3cf785695404fb",
+        "relative_path": "python_cpython/LICENSE",
+        "purpose": "Supplemental full Python 3.2 license for explicit reprlib-derived fragment in numpy_04."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/python/cpython/29360893df0931703cb2fe0c0fbc0fc963e64ead/Lib/reprlib.py",
+        "final_url": "https://raw.githubusercontent.com/python/cpython/29360893df0931703cb2fe0c0fbc0fc963e64ead/Lib/reprlib.py",
+        "started_at_utc": "2026-10-26T11:23:56.554832+00:00",
+        "acquired_at_utc": "2026-10-26T11:23:56.875893+00:00",
+        "headers": {
+          "ETag": "\"88513cb2fffa1fb6b08217f66aa7f8655317724a527cf834cbb0edcb8b30ab2b\"",
+          "Last-Modified": null,
+          "Content-Type": "text/plain; charset=utf-8",
+          "Content-Length": "5110"
+        },
+        "size": 5110,
+        "input_sha256": "8843f298e3b1ac36e0e264fd19103b155558b2564de8308a25bdb500327b95d0",
+        "git_blob_sha1": "f8033604da28da12dcad7d164580be638e51904a",
+        "relative_path": "python_cpython/Lib/reprlib.py",
+        "purpose": "Compare recursive_repr origin; proof only, not a corpus candidate."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/platform/telemetry/vscode-node/microsoftTelemetrySender.ts",
+        "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/platform/telemetry/vscode-node/microsoftTelemetrySender.ts",
+        "started_at_utc": "2026-10-26T11:23:56.876067+00:00",
+        "acquired_at_utc": "2026-10-26T11:23:57.190940+00:00",
+        "headers": {
+          "ETag": "\"435b09285151f046baa488eee941e2e62f2820377ad42d90cf8fbca0b90262ae\"",
+          "Last-Modified": null,
+          "Content-Type": "text/plain; charset=utf-8",
+          "Content-Length": "1122"
+        },
+        "size": 1122,
+        "input_sha256": "cedd4c4d878b6ff0efaf7b333f280c12fc53414b48cd5483dcc9f72b71a9aa7c",
+        "git_blob_sha1": "1271f990629dd4f2432760ac1477f3806e1d8b4d",
+        "relative_path": "microsoft_vscode/extensions/copilot/src/platform/telemetry/vscode-node/microsoftTelemetrySender.ts",
+        "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/platform/telemetry/vscode-node/telemetryServiceImpl.ts",
+        "final_url": "https://raw.githubusercontent.com/microsoft/vscode/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/platform/telemetry/vscode-node/telemetryServiceImpl.ts",
+        "started_at_utc": "2026-10-26T11:23:57.191085+00:00",
+        "acquired_at_utc": "2026-10-26T11:23:57.530793+00:00",
+        "headers": {
+          "ETag": "\"64632c151302729ac440454e8a4dbe7c195b71e02776215ab5878b65cbf7b295\"",
+          "Last-Modified": null,
+          "Content-Type": "text/plain; charset=utf-8",
+          "Content-Length": "7764"
+        },
+        "size": 7764,
+        "input_sha256": "f790cbbed51cf7a99658155d629850b422d54a944230d1478684ea4bf22200e4",
+        "git_blob_sha1": "d70c0a8b5da094ab3abf8fb2c9652d462f157f0b",
+        "relative_path": "microsoft_vscode/extensions/copilot/src/platform/telemetry/vscode-node/telemetryServiceImpl.ts",
+        "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+      }
+    ],
+    "scope": "Supplemental license/source review evidence, not corpus candidates"
+  },
+  "raw_evidence_root": "data/raw/real_unseen/review_evidence_20261026_02",
+  "limitations": [
+    "Official Python 3.2 docs endpoint was unavailable; pinned CPython v3.2 LICENSE/source were retrieved instead.",
+    "Publisher article endpoint returned HTTP 403; Wilt title/authors/pages were checked on the publisher issue page, not the full paper.",
+    "Initial restricted evidence download was refused before any file was downloaded; empty review_evidence_20261026_01 path retained. Approved retry used review_evidence_20261026_02."
+  ]
+}

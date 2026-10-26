@@ -1,0 +1,100 @@
+{
+  "relationships": [
+    {
+      "kind": "external_code_fragment",
+      "candidate_ids": [
+        "numpy_04"
+      ],
+      "source": "https://github.com/python/cpython/blob/29360893df0931703cb2fe0c0fbc0fc963e64ead/Lib/reprlib.py",
+      "handling": "Retain NumPy group; external fragment does not create an additional corpus group. Preserve supplemental license/adaptation summary."
+    },
+    {
+      "kind": "matched_geometry_undirected",
+      "candidate_ids": [
+        "natural_earth_01",
+        "natural_earth_03",
+        "natural_earth_04"
+      ],
+      "source": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-coastline/",
+      "handling": "Official source confirms matched coastline/land/water geometry, but not a directed candidate-to-candidate derivation. Keep same natural_earth group; do not invent derivative_of direction."
+    },
+    {
+      "kind": "same_original_collection_variants",
+      "candidate_ids": [
+        "uci_wine_01",
+        "uci_wine_02"
+      ],
+      "handling": "Red/white variants stay in one wine collection group."
+    },
+    {
+      "kind": "same_original_collection_upstream_split",
+      "candidate_ids": [
+        "uci_wilt_01",
+        "uci_wilt_02"
+      ],
+      "handling": "Upstream training/testing observations stay in one group and are both external input candidates; do not fit on either."
+    },
+    {
+      "kind": "repeated_training_experiment",
+      "candidate_ids": [
+        "mlperf_training_01",
+        "mlperf_training_02",
+        "mlperf_training_03",
+        "mlperf_training_04",
+        "mlperf_training_05"
+      ],
+      "handling": "All repetitions stay in one Training collection group."
+    },
+    {
+      "kind": "related_inference_configurations",
+      "candidate_ids": [
+        "mlperf_inference_01",
+        "mlperf_inference_02",
+        "mlperf_inference_03",
+        "mlperf_inference_04",
+        "mlperf_inference_05"
+      ],
+      "handling": "All system/scenario variants stay in one Inference collection group."
+    },
+    {
+      "kind": "shared_publisher_and_submitter",
+      "candidate_ids": [
+        "mlperf_training_01",
+        "mlperf_inference_01"
+      ],
+      "handling": "Training and Inference are separate benchmark execution collections, share MLCommons/AMD and are not claimed statistically independent."
+    },
+    {
+      "kind": "embedded_upstream_repository",
+      "candidate_ids": [
+        "vscode_01"
+      ],
+      "source": "https://github.com/microsoft/vscode-copilot-chat",
+      "handling": "Copilot metadata names its upstream repository; retain the conservative whole-VS-Code distribution group."
+    },
+    {
+      "kind": "software_dependency",
+      "candidate_ids": [
+        "pandas_03",
+        "pandas_04",
+        "pandas_05"
+      ],
+      "handling": "NumPy/Numba dependency references do not establish copied observations; whole pandas repository stays one group. No exhaustive code-lineage certification is claimed."
+    }
+  ],
+  "supplementary_source_view": {
+    "url": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/extension/extension/vscode-node/services.ts",
+    "git_blob_sha1": "a06d7287911fff5c10fcbe4875fe79d53c4780b2",
+    "lines": [
+      193,
+      194,
+      332,
+      333,
+      334,
+      335
+    ],
+    "finding": "Public package telemetry fields are passed to TelemetryService and then TelemetryReporter; authentication tokenStore is separate. No endpoint or identifier was exercised."
+  },
+  "candidate_derivative_of": "No directed relation between collected candidate files established. Undirected relationships and external lineage are explicit here; no direction is invented.",
+  "group_semantics": "Whole repositories/original observation collections; not statistically independent samples; no new training or split."
+}

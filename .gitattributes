@@ -8,3 +8,9 @@
 /research_log/collect_additional_unseen_20261026.py -text
 /research_log/verify_additional_unseen_20261026.py -text
 /research_log/unseen_additional_collection_plan_20261026.json -text
+/data/results/real_unseen/real_candidate_review_20261026_01/** -text
+/research_log/inspect_unseen_candidates_20261026.py -text
+/research_log/publish_unseen_review_20261026.py -text
+/research_log/verify_unseen_review_20261026.py -text
+/research_log/unseen_candidate_decisions_20261026.json -text
+/research_log/unseen_review_evidence_plan_20261026.json -text

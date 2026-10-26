@@ -1,0 +1,799 @@
+{
+  "review_version": 1,
+  "base_collection": "real_candidates_20261026_02",
+  "reviewed_corpus_id": "real_reviewed_20261026_01",
+  "policy": {
+    "scope": "Use unchanged public originals as local compression-research inputs; preserve author/copyright, license notices and source citations. Approval is not corpus selection or an anonymity claim.",
+    "method": "Full-file structural parsing/scanning plus assistant review of source/license and flagged/structured contexts; not a claim that a person manually read every source line.",
+    "public_attribution": "Public author/copyright/contact and public mailing-list citation metadata remain attributed. They are distinguished from private user records, end-user credentials and unrelated personal data; no such records were identified in the reviewed input roles.",
+    "no_performance_selection": true,
+    "notices_required": true,
+    "no_raw_input_edits": true,
+    "evaluation_ready": false,
+    "unseen_overlap_audit": "not_performed"
+  },
+  "scope_decision": "All listed candidates approved for the stated unchanged local research-input scope, with notice/citation obligations and relationship disclosures. No selection/freeze/evaluation performed.",
+  "entries": [
+    {
+      "candidate_id": "cldr_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license covers the official en/dateFields data; keep the notice.",
+      "privacy_basis": "Full JSON traversal matches relative-date/calendar localization strings, not person records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "cldr_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/timeZoneNames distribution.",
+      "privacy_basis": "Public time-zone/city names and formatting labels; no user-location history or contact records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "cldr_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/languages distribution.",
+      "privacy_basis": "Language-code/display-name mapping, not individual profiles.",
+      "findings": []
+    },
+    {
+      "candidate_id": "cldr_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/localeDisplayNames distribution.",
+      "privacy_basis": "Locale/type display labels, not end-user settings exported from an account.",
+      "findings": []
+    },
+    {
+      "candidate_id": "cldr_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Unicode-3.0 root license and official en/currencies distribution.",
+      "privacy_basis": "Currency names/symbols and formatting data; no transactions or account identifiers.",
+      "findings": []
+    },
+    {
+      "candidate_id": "curl_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header lines 2-4 identify the curl license; upstream COPYING is retained.",
+      "privacy_basis": "Header contact is public copyright attribution; remaining content is TLS cipher documentation.",
+      "findings": [
+        "public_author_attribution"
+      ]
+    },
+    {
+      "candidate_id": "curl_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header lines 2-4 identify the curl license; upstream COPYING is retained.",
+      "privacy_basis": "Header attribution and documented public DNS/DoH examples; no private host/user log.",
+      "findings": [
+        "public_author_attribution",
+        "documented_public_network_example"
+      ]
+    },
+    {
+      "candidate_id": "curl_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING; FAQ discusses other libraries but does not relicense this document.",
+      "privacy_basis": "Public author attribution and loopback/example.com command examples, not customer records.",
+      "findings": [
+        "public_author_attribution",
+        "documented_loopback_example"
+      ]
+    },
+    {
+      "candidate_id": "curl_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING are consistent.",
+      "privacy_basis": "Public author attribution in a CMake installation guide; no user-specific configuration export.",
+      "findings": [
+        "public_author_attribution"
+      ]
+    },
+    {
+      "candidate_id": "curl_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File header curl SPDX and upstream COPYING are consistent.",
+      "privacy_basis": "Public author attribution and generic installation instructions, not an actual user directory export.",
+      "findings": [
+        "public_author_attribution"
+      ]
+    },
+    {
+      "candidate_id": "git_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Git COPYING declares GPL v2 for project material; preserve the complete source document and COPYING.",
+      "privacy_basis": "Home-directory/SID fragments are openly published Trace2 documentation examples, not a private trace collected here. Version strings triggered IPv4-like matches.",
+      "findings": [
+        "published_trace_example",
+        "generic_ssh_transport_user",
+        "version_string_false_positive"
+      ]
+    },
+    {
+      "candidate_id": "git_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "The contact-like match is a public mailing-list message URL used as a technical reference.",
+      "findings": [
+        "public_mailing_list_citation"
+      ]
+    },
+    {
+      "candidate_id": "git_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "Contact-like matches are public technical mailing-list reference/message IDs, not address-book entries.",
+      "findings": [
+        "public_mailing_list_citation"
+      ]
+    },
+    {
+      "candidate_id": "git_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING retained with unchanged technical document.",
+      "privacy_basis": "Published author history, mailing-list citations and a public Git tag example are attributed; they are not anonymized or described as absent.",
+      "findings": [
+        "public_author_history",
+        "public_mailing_list_citation",
+        "published_tag_example"
+      ]
+    },
+    {
+      "candidate_id": "git_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "GPL-2.0-only project COPYING; references to AGPL software describe other systems, not this document's license.",
+      "privacy_basis": "Design prose and generic system architecture; no private user data identified.",
+      "findings": []
+    },
+    {
+      "candidate_id": "google_fonts_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and embedded name ID 13 both declare OFL 1.1; retain copyright/RFN and unchanged family name.",
+      "privacy_basis": "All name-table records reviewed: public designer/trademark/URL metadata, not end-user records.",
+      "findings": [
+        "public_designer_metadata"
+      ]
+    },
+    {
+      "candidate_id": "google_fonts_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original copyright/RFN.",
+      "privacy_basis": "Embedded public designer attribution/contact is preserved and classified as such, not declared anonymous.",
+      "findings": [
+        "public_designer_metadata",
+        "public_author_contact"
+      ]
+    },
+    {
+      "candidate_id": "google_fonts_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original notices.",
+      "privacy_basis": "Embedded designer and portfolio URL are public font authorship metadata.",
+      "findings": [
+        "public_designer_metadata"
+      ]
+    },
+    {
+      "candidate_id": "google_fonts_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and name ID 13 agree on OFL 1.1; preserve original copyright/RFN.",
+      "privacy_basis": "Name table identifies public font author/manufacturer; no private user records identified.",
+      "findings": [
+        "public_designer_metadata"
+      ]
+    },
+    {
+      "candidate_id": "google_fonts_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Family OFL.txt and explicit name ID 13 declare OFL 1.1. Name ID 14 has a stale/inconsistent URL; the explicit license text and complete family notice resolve it without editing the font.",
+      "privacy_basis": "Embedded public designer/contact/RFN metadata is retained; no end-user records.",
+      "findings": [
+        "public_designer_metadata",
+        "public_author_contact",
+        "stale_license_url_resolved_by_explicit_text"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_inference_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned result repository Apache-2.0 notice retained; this is a results execution log, not redistributed weights/code from the benchmark model.",
+      "privacy_basis": "Every MLLOG record/string parsed. Source filenames, public build hashes, process/thread counters and machine-test metadata; no prompts, participant contacts or authentication records.",
+      "findings": [
+        "machine_execution_metadata"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_inference_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; public server-run metadata and counters, not private request/prompt content.",
+      "findings": [
+        "machine_execution_metadata"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_inference_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; thread IDs are process execution counters and source paths are filenames, not personal identities.",
+      "findings": [
+        "machine_execution_metadata"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_inference_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; timing/configuration/build metadata, with no private user payload identified.",
+      "findings": [
+        "machine_execution_metadata"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_inference_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Apache-2.0 root notice retained for this published results file.",
+      "privacy_basis": "Every MLLOG record/string parsed; public runtime/build/test counters, not contact or credential records.",
+      "findings": [
+        "machine_execution_metadata"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_training_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: submission organization/platform are corporate identifiers and source path is a generic container path.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_training_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path, no personal user record identified.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_training_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path, no prompts/credentials identified.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_training_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path; repeated experiment stays in one group.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ]
+    },
+    {
+      "candidate_id": "mlperf_training_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned Training v5.1 Apache-2.0 notice retained for this published results file.",
+      "privacy_basis": "Complete MLLOG parse: corporate benchmark submission and generic container source path; repeated experiment stays in one group.",
+      "findings": [
+        "public_submission_metadata",
+        "generic_container_source_path"
+      ]
+    },
+    {
+      "candidate_id": "natural_earth_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every shapefile record parsed as numeric polyline geometry only; coarse global coastline, no DBF/person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ]
+    },
+    {
+      "candidate_id": "natural_earth_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric polygon geometry only; coarse marine geography, no named user/location history.",
+      "findings": [
+        "common_geography_collection"
+      ]
+    },
+    {
+      "candidate_id": "natural_earth_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric land polygons only; no person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ]
+    },
+    {
+      "candidate_id": "natural_earth_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration applies to this physical vector layer.",
+      "privacy_basis": "Every record parsed as numeric ocean polygons only; no person attributes.",
+      "findings": [
+        "matched_geography_layer"
+      ]
+    },
+    {
+      "candidate_id": "natural_earth_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned public-domain declaration includes river/lake data with provider releases retained in the notice.",
+      "privacy_basis": "Every record parsed as numeric river/lake polyline geometry; no personal event/location records.",
+      "findings": [
+        "common_geography_collection"
+      ]
+    },
+    {
+      "candidate_id": "numpy_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production package entry point.",
+      "privacy_basis": "AST/token traversal plus literal/comment screening found library/API material, not private user data.",
+      "findings": []
+    },
+    {
+      "candidate_id": "numpy_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production C-API documentation source.",
+      "privacy_basis": "Long literals were reviewed as nditer/einsum documentation, not embedded user-record payloads.",
+      "findings": [
+        "large_public_api_docstrings"
+      ]
+    },
+    {
+      "candidate_id": "numpy_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production internal helper source.",
+      "privacy_basis": "AST/token and literal/comment review found library helpers and examples, not private records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "numpy_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Explicit CPython 3.2 reprlib-derived fragment at lines 574-600. Retain NumPy BSD-3-Clause plus the full pinned Python 3.2 license with PSF-2.0 component and an adaptation summary.",
+      "privacy_basis": "Public historical author attribution at line 12; source/AST context is array-formatting code, not an end-user dataset.",
+      "findings": [
+        "public_author_attribution",
+        "external_cpython_fragment"
+      ]
+    },
+    {
+      "candidate_id": "numpy_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned NumPy BSD-3-Clause notice retained; production character-array source.",
+      "privacy_basis": "Source/AST context and strings are library API/code documentation, not personal records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "pandas_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production option/configuration implementation.",
+      "privacy_basis": "AST/token and string/comment review found library defaults/examples, not an exported user settings file.",
+      "findings": []
+    },
+    {
+      "candidate_id": "pandas_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production type declarations.",
+      "privacy_basis": "Type/alias definitions, not data about individuals.",
+      "findings": []
+    },
+    {
+      "candidate_id": "pandas_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production Numba integration implementation.",
+      "privacy_basis": "Imports/dependency references do not contain private user records; no imported code was executed.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ]
+    },
+    {
+      "candidate_id": "pandas_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production algorithms implementation.",
+      "privacy_basis": "Library routines and public examples, not an embedded personal dataset.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ]
+    },
+    {
+      "candidate_id": "pandas_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Pinned pandas BSD-3-Clause notice retained; production apply implementation.",
+      "privacy_basis": "Library routines and public examples, not an embedded personal dataset.",
+      "findings": [
+        "dependency_reference_not_corpus_copy"
+      ]
+    },
+    {
+      "candidate_id": "uci_abalone_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 source page and original abalone.names provenance; retain dataset attribution.",
+      "privacy_basis": "All cells reviewed as numeric shellfish measurements or F/I/M shellfish category. These are not human sex/age records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "uci_automobile_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original imports-85.names provenance; retain dataset/source attribution.",
+      "privacy_basis": "All cells are vehicle specifications, categories, model-level risk/loss or missing markers; no policyholder records.",
+      "findings": []
+    },
+    {
+      "candidate_id": "uci_bike_sharing_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and archive Readme citation request; retain dataset and original-paper citation.",
+      "privacy_basis": "All cells checked: dates/weather/daily aggregate counts; instant is a row index, not a rider identifier.",
+      "findings": [
+        "aggregate_counts_not_individual_trips"
+      ]
+    },
+    {
+      "candidate_id": "uci_biodegradation_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page; dataset attribution retained for molecular descriptors/experimental labels.",
+      "privacy_basis": "All cells are numeric chemical descriptors and RB/NRB labels, not personal data.",
+      "findings": []
+    },
+    {
+      "candidate_id": "uci_forest_fires_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original forestfires.names citation request; retain original-paper attribution.",
+      "privacy_basis": "All cells are weather/fire/map-grid/month/day data, not individual location history.",
+      "findings": []
+    },
+    {
+      "candidate_id": "uci_seoul_bike_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset attribution retained.",
+      "privacy_basis": "All cells are dates/weather/hourly aggregate bicycle counts and fixed categories; no individual trip identifiers.",
+      "findings": [
+        "aggregate_counts_not_individual_trips"
+      ]
+    },
+    {
+      "candidate_id": "uci_wilt_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset/original-study attribution retained; no original satellite image is redistributed.",
+      "privacy_basis": "All cells are numeric image-segment descriptors and w/n land-cover labels; upstream filename training does not mean training this system.",
+      "findings": [
+        "same_observation_collection"
+      ]
+    },
+    {
+      "candidate_id": "uci_wilt_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and dataset/original-study attribution retained; same collection as training.csv.",
+      "privacy_basis": "All cells are numeric image-segment descriptors and w/n land-cover labels; both upstream files are external candidates for this research.",
+      "findings": [
+        "same_observation_collection"
+      ]
+    },
+    {
+      "candidate_id": "uci_wine_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original winequality.names citation request; retain original-paper attribution.",
+      "privacy_basis": "All cells are physicochemical wine measurements/quality scores; no expert identity, brand or customer records.",
+      "findings": [
+        "same_observation_collection"
+      ]
+    },
+    {
+      "candidate_id": "uci_wine_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "Official UCI CC-BY-4.0 page and original winequality.names citation request; same original wine collection.",
+      "privacy_basis": "All cells are physicochemical wine measurements/quality scores; red/white variants remain one group.",
+      "findings": [
+        "same_observation_collection"
+      ]
+    },
+    {
+      "candidate_id": "vscode_01",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File declares SEE LICENSE IN LICENSE.txt; the pinned Copilot folder MIT notice is retained along with the root notice.",
+      "privacy_basis": "JSON is public extension configuration. apiKey entries are schemas; /Users/someone is an explicit patch example. Publisher telemetry identifiers are traced to the pinned TelemetryReporter path, not an end-user credential store.",
+      "findings": [
+        "explicit_documented_path_example",
+        "public_publisher_telemetry_configuration",
+        "upstream_repository_reference"
+      ]
+    },
+    {
+      "candidate_id": "vscode_02",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON declares CSS extension configuration, types and defaults; no exported end-user settings/credentials identified.",
+      "findings": []
+    },
+    {
+      "candidate_id": "vscode_03",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON is public Git extension configuration; aiKey equals the same public publisher telemetry identifier in the Copilot/Markdown/TypeScript configurations, not a personal account record.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ]
+    },
+    {
+      "candidate_id": "vscode_04",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "JSON is public Markdown extension configuration; the common publisher telemetry identifier is not treated as an end-user credential.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ]
+    },
+    {
+      "candidate_id": "vscode_05",
+      "rights_review_status": "approved",
+      "privacy_review_status": "approved",
+      "origin_review_status": "approved_with_disclosed_relationships",
+      "rights_basis": "File license field MIT agrees with the pinned root MIT notice.",
+      "privacy_basis": "Author/publisher are project identifiers; public TypeScript configuration and common publisher telemetry identifier, not a user settings export.",
+      "findings": [
+        "public_publisher_telemetry_configuration"
+      ]
+    }
+  ],
+  "special_license_update": {
+    "candidate_id": "numpy_04",
+    "license_id": "BSD-3-Clause AND PSF-2.0",
+    "supplemental_license": "data/raw/real_unseen/review_evidence_20261026_02/python_cpython/LICENSE",
+    "origin_source": "https://github.com/python/cpython/blob/29360893df0931703cb2fe0c0fbc0fc963e64ead/Lib/reprlib.py",
+    "adaptation_summary": "Upstream NumPy's wrapper accepts and forwards additional arguments and uses functools.wraps rather than the original manual attribute copies. We have not modified NumPy or CPython bytes."
+  },
+  "relationships": [
+    {
+      "kind": "external_code_fragment",
+      "candidate_ids": [
+        "numpy_04"
+      ],
+      "source": "https://github.com/python/cpython/blob/29360893df0931703cb2fe0c0fbc0fc963e64ead/Lib/reprlib.py",
+      "handling": "Retain NumPy group; external fragment does not create an additional corpus group. Preserve supplemental license/adaptation summary."
+    },
+    {
+      "kind": "matched_geometry_undirected",
+      "candidate_ids": [
+        "natural_earth_01",
+        "natural_earth_03",
+        "natural_earth_04"
+      ],
+      "source": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-coastline/",
+      "handling": "Official source confirms matched coastline/land/water geometry, but not a directed candidate-to-candidate derivation. Keep same natural_earth group; do not invent derivative_of direction."
+    },
+    {
+      "kind": "same_original_collection_variants",
+      "candidate_ids": [
+        "uci_wine_01",
+        "uci_wine_02"
+      ],
+      "handling": "Red/white variants stay in one wine collection group."
+    },
+    {
+      "kind": "same_original_collection_upstream_split",
+      "candidate_ids": [
+        "uci_wilt_01",
+        "uci_wilt_02"
+      ],
+      "handling": "Upstream training/testing observations stay in one group and are both external input candidates; do not fit on either."
+    },
+    {
+      "kind": "repeated_training_experiment",
+      "candidate_ids": [
+        "mlperf_training_01",
+        "mlperf_training_02",
+        "mlperf_training_03",
+        "mlperf_training_04",
+        "mlperf_training_05"
+      ],
+      "handling": "All repetitions stay in one Training collection group."
+    },
+    {
+      "kind": "related_inference_configurations",
+      "candidate_ids": [
+        "mlperf_inference_01",
+        "mlperf_inference_02",
+        "mlperf_inference_03",
+        "mlperf_inference_04",
+        "mlperf_inference_05"
+      ],
+      "handling": "All system/scenario variants stay in one Inference collection group."
+    },
+    {
+      "kind": "shared_publisher_and_submitter",
+      "candidate_ids": [
+        "mlperf_training_01",
+        "mlperf_inference_01"
+      ],
+      "handling": "Training and Inference are separate benchmark execution collections, share MLCommons/AMD and are not claimed statistically independent."
+    },
+    {
+      "kind": "embedded_upstream_repository",
+      "candidate_ids": [
+        "vscode_01"
+      ],
+      "source": "https://github.com/microsoft/vscode-copilot-chat",
+      "handling": "Copilot metadata names its upstream repository; retain the conservative whole-VS-Code distribution group."
+    },
+    {
+      "kind": "software_dependency",
+      "candidate_ids": [
+        "pandas_03",
+        "pandas_04",
+        "pandas_05"
+      ],
+      "handling": "NumPy/Numba dependency references do not establish copied observations; whole pandas repository stays one group. No exhaustive code-lineage certification is claimed."
+    }
+  ],
+  "supplementary_source_view": {
+    "url": "https://github.com/microsoft/vscode/blob/e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e/extensions/copilot/src/extension/extension/vscode-node/services.ts",
+    "git_blob_sha1": "a06d7287911fff5c10fcbe4875fe79d53c4780b2",
+    "lines": [
+      193,
+      194,
+      332,
+      333,
+      334,
+      335
+    ],
+    "finding": "Public package telemetry fields are passed to TelemetryService and then TelemetryReporter; authentication tokenStore is separate. No endpoint or identifier was exercised."
+  },
+  "additional_citations": [
+    {
+      "groups": [
+        "uci_bike_sharing"
+      ],
+      "citation": "Fanaee-T, H. & Gama, J. (2013). Event labeling combining ensemble detectors and background knowledge.",
+      "doi": "10.1007/s13748-013-0040-3",
+      "evidence": "archives/uci_bike_sharing.zip#Readme.txt"
+    },
+    {
+      "groups": [
+        "uci_wine"
+      ],
+      "citation": "Cortez, P., Cerdeira, A., Almeida, F., Matos, T. & Reis, J. (2009). Modeling wine preferences by data mining from physicochemical properties. Decision Support Systems 47(4), 547–553.",
+      "doi": "10.1016/j.dss.2009.05.016",
+      "evidence": "archives/uci_wine.zip#winequality.names"
+    },
+    {
+      "groups": [
+        "uci_forest_fires"
+      ],
+      "citation": "Cortez, P. & Morais, A. (2007). A Data Mining Approach to Predict Forest Fires using Meteorological Data. EPIA 2007, 512–523.",
+      "evidence": "archives/uci_forest_fires.zip#forestfires.names"
+    },
+    {
+      "groups": [
+        "uci_wilt"
+      ],
+      "citation": "Johnson, B. A., Tateishi, R. & Hoan, N. T. (2013). A hybrid pansharpening approach and multiscale object-based image analysis for mapping diseased pine and oak trees. International Journal of Remote Sensing 34(20), 6969–6982.",
+      "evidence": "https://www.tandfonline.com/toc/tres20/34/20?nav=tocList",
+      "note": "Title/authors/pages checked on publisher issue page. Direct article page returned HTTP 403; no full-paper reading is claimed."
+    }
+  ]
+}

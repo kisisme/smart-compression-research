@@ -1,0 +1,55 @@
+{
+  "evidence_version": 1,
+  "files": [
+    {
+      "repo": "python/cpython",
+      "commit": "29360893df0931703cb2fe0c0fbc0fc963e64ead",
+      "path": "LICENSE",
+      "size": 14537,
+      "git_blob_sha1": "341de15829751d5d6396781cdb3cf785695404fb",
+      "purpose": "Supplemental full Python 3.2 license for explicit reprlib-derived fragment in numpy_04."
+    },
+    {
+      "repo": "python/cpython",
+      "commit": "29360893df0931703cb2fe0c0fbc0fc963e64ead",
+      "path": "Lib/reprlib.py",
+      "size": 5110,
+      "git_blob_sha1": "f8033604da28da12dcad7d164580be638e51904a",
+      "purpose": "Compare recursive_repr origin; proof only, not a corpus candidate."
+    },
+    {
+      "repo": "microsoft/vscode",
+      "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "path": "extensions/copilot/src/platform/telemetry/vscode-node/microsoftTelemetrySender.ts",
+      "size": 1122,
+      "git_blob_sha1": "1271f990629dd4f2432760ac1477f3806e1d8b4d",
+      "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+    },
+    {
+      "repo": "microsoft/vscode",
+      "commit": "e2fb9a1be30766bd1d1cfd2107fe3e88666b7f4e",
+      "path": "extensions/copilot/src/platform/telemetry/vscode-node/telemetryServiceImpl.ts",
+      "size": 7764,
+      "git_blob_sha1": "d70c0a8b5da094ab3abf8fb2c9652d462f157f0b",
+      "purpose": "Confirm public publisher telemetry identifiers flow to TelemetryReporter, not an end-user secret record."
+    }
+  ],
+  "web_context_sources": [
+    {
+      "url": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-coastline/",
+      "finding": "Coastline is matched to land and water polygons; preserve common group and undirected relationship."
+    },
+    {
+      "url": "https://openfontlicense.org/open-font-license-official-text/",
+      "finding": "Retain license/copyright and RFN restrictions; use unchanged originals."
+    },
+    {
+      "url": "https://spdx.org/licenses/PSF-2.0.html",
+      "finding": "PSF-2.0 identifies the PSF license component."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/connection-strings",
+      "finding": "Instrumentation identifiers differ from security credentials. Applied only with pinned publisher source confirming telemetry use."
+    }
+  ]
+}

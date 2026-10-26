@@ -1,0 +1,11 @@
+{
+  "status": "report_json_links_and_preservation_checked",
+  "checked_at_utc": "2026-10-26T12:28:00.400356+00:00",
+  "json_files_checked": 15,
+  "report_local_links_checked": 14,
+  "previous_tracked_collection_files_unchanged": 30,
+  "new_metadata_sources_text_conversion_disabled": 18,
+  "report_sha256": "fc0072aa0c2585dfb397250c9c8031cffa692a48ff627bf6beee505dd536ae0e",
+  "progress_sha256": "825f6276aa0ea73859e8b5e0877754dcf72df2d0c104798bb11b5035793e125b",
+  "scope": "Review package/document validation only; no repeated research measurements or unit tests"
+}
