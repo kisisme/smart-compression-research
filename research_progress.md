@@ -6,9 +6,11 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자 지시로 연구 다음 구현보다 GUI 도구 오류 복구를 우선했다. `node_repl`의 최소 JavaScript도 실패함을 확인하고 실패 프로세스의 누락된 임시 폴더를 찾아 빈 폴더로 복원했다. 원래 `kernel assets` 단계는 통과했으나 현재 연결은 `failed to start Node runtime ... (os error 3)`가 남아 있다. 살아 있는 프로세스가 가리키는 구 CLI 경로가 없어졌고 디스크 설정은 현재 설치 경로다. 새 독립 프로세스는 정상이며, 임시 폴더 제거/복구로 원래 오류/회복을 재현했다. [진단·부분 복구 기록](research_log/node_repl_recovery_20261026.md)과 [근거 JSON](research_log/node_repl_recovery_20261026.json)을 보존한다. 공식 재로딩 연결은 초기화 timeout으로 적용하지 못했고 사용자에게 MCP 서버 Restart를 요청했다. 현재 연결·화면 자동화의 복구 완료는 아직 확인하지 않았다. 기존 연구 파일 55개 불변·공식 3지표·memory 참고 지표 방침을 유지한다.
+최신 진행: 다음 작업 지시에 따라 연결을 재확인했으나 `node_repl`의 Node 시작 오류는 남아 있다. GUI QA는 미완료로 유지하고, 화면 도구와 독립적인 [실제 파일 후보 manifest 도구](research_log/unseen_manifest.md)를 구현했다. 초안·명시적 후보 선정·동결·hash 감사·경로/수량/검토/중복/변경·실패 보존과 후보별 선정/미선정 사유를 확인한다. 전용 테스트 23개와 실제 CLI 9건의 인위적 검증을 완료하고 [최종 근거](research_log/unseen_manifest_validation_20261026_final.json)를 보존했다. 동결은 입력 목록 고정이며 `evaluation_ready=false`, 합성 데이터와의 겹침 검사는 미수행이다. 실제 corpus 수집·동결·압축·모델 평가는 수행하지 않았다. 기존 연구 파일 55개·공식 3지표·memory 참고 지표 방침은 유지한다.
 
-직전 unseen 준비: [실제 파일 unseen 평가 사전 설계 v1](research_log/unseen_evaluation_design_v1.md)을 완료했다. 60개 파일·여섯 형식·원본 그룹/중복/출처 확인·저장 모델/baseline 고정·3지표 점수·실패 보존·평가 범위를 정했다. 60개는 수집 목표이며 실제 corpus·예측·측정·평가는 아직 없다. 기존 산출물 32개 hash·Pilot 학습 라벨의 최빈 baseline·모델/설정 계약과 보호 파일 55개 불변을 확인한 [읽기 전용 근거](research_log/unseen_evaluation_design_v1_checks.json)를 보존한다. 후보 manifest 도구 구현은 도구 오류 복구 뒤로 둔다.
+직전 환경 복구: 누락된 커널 임시 폴더를 빈 폴더로 복원해 원래 `kernel assets` 단계는 통과했으나 Node 시작 오류가 남아 있다. 구 CLI 경로 누락·현재 디스크 설정과 살아 있는 프로세스의 차이 및 독립 재현을 [진단 기록](research_log/node_repl_recovery_20261026.md)과 [근거 JSON](research_log/node_repl_recovery_20261026.json)에 보존했다. 공식 reload 연결 초기화가 timeout돼 사용자에게 MCP Restart를 요청했다. 현재 연결·화면 자동화의 전체 복구 완료는 확인하지 않았다.
+
+직전 unseen 준비: [실제 파일 unseen 평가 사전 설계 v1](research_log/unseen_evaluation_design_v1.md)을 완료했다. 60개 파일·여섯 형식·원본 그룹/중복/출처 확인·저장 모델/baseline 고정·3지표 점수·실패 보존·평가 범위를 정했다. 60개는 수집 목표이며 실제 corpus·예측·측정·평가는 아직 없다. 기존 산출물 32개 hash·Pilot 학습 라벨의 최빈 baseline·모델/설정 계약과 보호 파일 55개 불변을 확인한 [읽기 전용 근거](research_log/unseen_evaluation_design_v1_checks.json)를 보존한다. 당시 미완료였던 후보 manifest 도구는 위 최신 진행에서 구현·인위적 검증을 마쳤다.
 
 직전 GUI 진행: `gui_app.py`에 Smart 압축·복원·실제 비교 탭과 명시적 Demo 대조를 연결했다. 실제 Tk 창을 생성해 callback/queue·이벤트 응답·중복/닫기 차단·결과/오류 표시를 검증했다. 전용 15개와 계층 회귀 18개, 총 33개 테스트가 통과했다. 저장 모델 두 종류×세 mode의 압축/복원 12개 및 Compare 1개 정상, 손상 복사본 복원 1개 실패 판정과 기존 출력의 사전 차단을 확인했다. 원시 반복·공식 점수·로그/queue·보호 hash를 Python으로 재검증했다. [GUI 안내](research_log/gui_app.md)·[완료 근거](research_log/gui_validation_20261026.json)·[중단된 최초 시도](research_log/gui_validation_interrupted_20261024.json)를 보존한다. OS 클릭·선택창·스크린샷/DPI QA는 미완료다.
 
@@ -44,6 +46,7 @@
 | 통합 CLI 진입점 | `main.py`: Smart 압축·해제·Compare 명령을 선택적으로 연결한다. 기존 파서·검증·종료 코드를 유지하고 Python 3.14 모듈 문맥의 도움말을 선택적 `prog`로 전달한다. 전용 12개/회귀 34개 및 최종 실제 호출 22건 검증 완료 |
 | GUI 작업 실행 계층 | `src/gui_jobs.py`: Tk와 분리된 frozen 요청·기존 CLI 프로세스·입력/모델/source 및 산출물 검증·단일 worker/queue·실행 기록. 전용 테스트 18개와 실제 요청 14건 검증 완료 |
 | Tkinter GUI·명시적 Demo | `gui_app.py`: Smart/복원/실제 비교 입력·새 출력·단일 작업·상태/결과/로그·조건 일치 시 예측/실측 대조. 전용 15개+계층 18개 통과 및 실제 Tk callback/이벤트/CLI 14개 검증. OS 클릭·파일 선택창·스크린샷/DPI QA는 미완료 |
+| 실제 파일 후보 manifest | `src/unseen_manifest.py`: metadata 초안·명시적 선정·고정 정책 검증·새 manifest 동결·기대 hash 기반 감사. 전용 23개·인위적 파일 CLI 9건 검증 완료. 실제 후보 수집/겹침 확인/연구 평가 준비 완료와 구분 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 참고·검증용으로 보존. 2026-10-23 사용자 결정에 따라 공식 점수 편입·추가 구현은 여건이 마련될 때까지 보류 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
@@ -810,22 +813,33 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **미확정·한계:** 없는 CLI 경로만 적용한 단순 독립 MCP는 정상이라, 그 테스트를 현재 세션 sandbox 실행과 같다고 보거나 CLI 경로를 다음 오류의 유일한 원인이라고 단정하지 않는다. 현재 설정으로 연결을 재시작해 검증해야 한다. 공식 app-server proxy의 initialize가 timeout돼 config reload는 전송되지 않았다. 사용자에게 Codex 설정의 `node_repl` Restart를 요청했으며 현재 연결 정상·Sky 초기화·Windows 창 조회·GUI QA는 미완료다.
 - **보존·범위:** 연구 코드·저장 모델·프로젝트 config·기존 결과 55개 SHA-256 불변을 확인했다. 사용자 MCP 설정은 변경하지 않았고 바이너리 위장/교체·process memory 쓰기·권한/sandbox 변경·앱/daemon 강제 종료를 하지 않았다. 진단에서 해당 프로세스의 임시/실행 경로만 출력했으며 전체 메모리 덤프나 인증 값은 보존하지 않았다. 연구 실행·학습·단위 테스트·GUI 입력은 수행하지 않았다.
 
+### 실제 파일 후보 manifest 도구 구현·인위적 검증 완료 — 2026-10-26
+
+- **근거:** `src/unseen_manifest.py`, `tests/test_unseen_manifest.py`, `tests/validate_unseen_manifest.py`, [도구 안내](research_log/unseen_manifest.md), [최종 CLI/테스트 기록](research_log/unseen_manifest_validation_20261026_final.json), [선정 상태 보강 전 CLI 기록](research_log/unseen_manifest_validation_20261026.json). 시작 HEAD는 `c0efb44`다.
+- **구현 완료:** 표준 라이브러리의 `draft`, `freeze`, `audit` CLI를 추가했다. 원래 metadata bytes·full 입력 hash·명시적 선정 ID·후보 상태/제외 사유·동결 정책·실행 Git/source와 artifact hash를 새 경로에 보존한다. 60개·여섯 형식 각 10개·원본 그룹/상한·크기·검토/근거·중복/파생 관계를 확인하고 자동 후보 보충/교체를 하지 않는다. `audit`는 별도로 기록한 기대 hash가 필수다.
+- **보호·실패 검증 완료:** 경로 탈출·예약 이름·symlink/junction/reparse point·대소문자/같은 파일 alias·메타데이터/원본/source 변경·기존 출력·손상/위조·부분 저장을 검사한다. Windows 열린 handle 경로도 확인한다. 실패 표시가 있으면 manifest 파일이 있어도 거부한다. 처음 테스트에서 path stat/handle fstat의 ctime 차이로 정상 파일을 변경으로 오판한 문제를 발견해, Windows birth time·파일 ID·크기·수정 시각 비교와 hash/게시 fence로 수정하고 회귀 fixture를 추가했다.
+- **최종 테스트 완료:** `python -B -m unittest discover -s tests -p test_unseen_manifest.py -v`의 23개가 48.910초에 통과했다. 연구/ML/codec/GUI 모듈을 차단한 fresh Python import/help도 확인했다. 인위적 파일·권리/그룹 선언은 계약 검사용 fixture이며 실제 자료·라이선스 검증 결과가 아니다. 전체 저장소 suite는 실행하지 않았다.
+- **실제 CLI 연결 완료 — fixture 전용:** 새 `data/temp/unseen_manifest_validation_20261026T014612253392Z/`에서 help·draft·freeze·audit와 거부 사례 총 9건을 확인했다. 기존 출력·잘못된 기대 hash·검토 대기 freeze·손상 복사본 audit가 종료 1로 차단되고 기존 파일은 유지됐다. Python으로 raw metadata와 정책/선정/full hash·원본 fixture bytes·기존 연구 파일 55개 및 최종 구현/테스트 source hash 불변을 대조했다. 최종 source는 commit 전 작업 트리 상태였으며 정확한 hash와 stdout/stderr·원래 산출물을 보존했다. 초기 CLI 검증의 새 경로와 근거도 유지했다.
+- **미완료·범위:** `data_kind=test_fixture`와 `research_candidate`를 구분한다. `frozen`은 입력 목록 고정이고 항상 `evaluation_ready=false`, `unseen_overlap_audit=not_performed`다. 실제 출처/권리/원본 관계 검토·후보 수집·기존 합성 bytes와의 겹침 검사·실제 corpus 동결·평가 runner·연구 실측·모델 평가는 미완료다. 기존 학습/압축/점수/특징/config/모델 코드는 변경하지 않았다. Memory 추가 구현·재학습을 하지 않았다. 현재 연결의 Node 시작 오류와 GUI OS QA도 미완료다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
 - 현재 `node_repl` MCP 연결 재시작 후 최소 JavaScript·Sky 초기화·Windows 창 조회 재검증. 원래 kernel assets 임시 경로는 부분 복구했으나 전체 정상 동작은 미확인이다.
 - GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
-- 실제 파일 후보 manifest·출처/권리/원본 그룹 확인·수집/중복 검사·corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1은 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
+- 실제 파일 출처/권리/원본 그룹 확인·후보 수집/중복 검사·합성 데이터와의 겹침 확인·실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 사전 설계 v1과 manifest 도구의 구현/인위적 검증은 완료했다. 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
 - 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**도구 오류 복구 완료 확인:** 사용자가 MCP 설정에서 `node_repl` Restart를 마치면 현재 연결의 최소 JavaScript → 문서에 따른 `@oai/sky` 초기화 → Windows 창 조회를 검증한다. 실패 응답을 보존하고 독립 프로세스 성공을 현재 연결 성공으로 취급하지 않는다. 연결 복구 뒤 남은 GUI OS 입력·선택창·스크린샷/DPI QA를 진행한다. 후보 manifest 작성·검증·동결 도구 구현은 그 뒤의 연구 작업으로 유지한다.
+**실제 파일 후보 출처 검토·초안 수집:** 사전 설계 v1의 여섯 형식·원본 그룹·크기 범위에 맞는 공개 원출처와 권리/개인정보/파생 관계 근거를 먼저 확인한다. 실제 원본은 새 Git 제외 경로에 두고 후보 inventory·선정/제외 사유와 draft를 보존한다. 목표 60개를 충족하지 못하면 미완료로 남기며 합성/fixture로 채우지 않는다. 특징·예측·압축 성능을 보고 후보를 선정하지 않는다. 겹침 검사·실제 동결·평가 runner는 후속 단위다. MCP Restart 완료가 확인되면 별도 작업으로 최소 JS/Sky/Windows 창 조회와 남은 GUI QA를 마친다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계를 마쳤으며 실제 corpus·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 manifest 도구 구현·CLI/인위적 검증의 시작 HEAD는 `c0efb44`(node_repl 진단·부분 복구 기록)다. 최종 구현은 commit 전 source hash로 확인했고 정확한 명령·fixture 산출물·테스트와 기존 보호 파일 hash를 기록했다. 실제 corpus나 모델 성능 실험의 실행 commit으로 취급하지 않는다.
 
 이번 node_repl 진단·부분 복구의 시작 HEAD는 `d474f54`(unseen 사전 설계 보존)다. 임시 폴더 복구와 독립 MCP 재현·미완료인 현재 연결 상태를 분리해 기록하며 연구 코드·모델·결과를 변경하지 않았다.
 
@@ -848,6 +862,7 @@ Implement persistent validation-only memory measurement matrix
 
 관련 이력:
 
+- `c0efb44`: node_repl 누락 임시 경로 진단·부분 복구·독립 재현·현재 연결 재시작 대기 기록 보존. 이번 manifest 도구 구현의 시작 HEAD.
 - `d474f54`: 실제 파일 unseen 평가 사전 설계·기존 모델/baseline·보호 파일의 읽기 전용 계약 확인 보존. 이번 node_repl 오류 복구의 시작 HEAD.
 - `e1e9d41`: Tk GUI/Demo·전용 15개+계층 18개 테스트·실제 callback/CLI 흐름·최초 중단 근거 보존. 이번 unseen 평가 사전 설계의 시작 HEAD. GUI OS 입력·시각 QA는 미완료.
 - `ea3892d`: GUI 단일 작업 실행 계층·결과/로그 판정·전용 18개 및 실제 요청 14건 검증 보존. 이번 Tk GUI 구현·검증의 시작 HEAD.

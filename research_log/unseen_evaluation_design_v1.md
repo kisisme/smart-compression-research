@@ -210,3 +210,9 @@ Compare의 짧은 sample ID를 그대로 corpus의 고유 ID로 간주하지 않
 현재 소스/설정/모델/baseline·저장 라벨의 읽기 전용 계약과 hash를 대조했으며 검증 프로그램 원문도
 포함한다. 이 단계에서 외부 파일 수집·합성 재생성·모델 로딩/예측·압축·새 학습·연구 실측·
 GUI 입력·단위 테스트를 실행하지 않았다. 실행되지 않은 계획을 실제 평가 결과로 취급하지 않는다.
+
+후속 구현 — 2026-10-26: [후보 manifest 도구](unseen_manifest.md)의 draft·freeze·audit와
+전용 인위적 fixture/CLI 검증을 완료했다. 선정 상태·미선정 사유·full hash·명시적 선택과
+수량/원본 그룹/검토 상태·경로/변경·실패 보존을 확인한다. `frozen`은 입력 목록만 고정하며
+겹침 검사는 `not_performed`, `evaluation_ready=false`다. 실제 corpus 수집·unseen 확인·평가를
+완료한 것으로 바꾸지 않는다. 구현된 JSON schema와 검증 근거는 위 도구 안내를 따른다.
