@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-10-27T07:15:33.754218+00:00",
+  "evidence_method": "Tool execution results transcribed after execution; count independently read by unittest discovery, no rerun.",
+  "tests": {
+    "command": ".venv\\Scripts\\python.exe -B -m unittest tests.test_unseen_overlap_audit -v",
+    "test_file_sha256": "22fb2b13e32a8556101870ac41a8dbfbc69b610dc25bf93e28a1c6eca5567cc2",
+    "tests": 10,
+    "initial_restricted_execution": {
+      "exit_code": 1,
+      "errors": 1,
+      "cause": "TemporaryDirectory access denied (WinError 5); no research artifacts involved"
+    },
+    "actual_permission_rerun": {
+      "exit_code": 0,
+      "status": "OK",
+      "tests_run": 10,
+      "duration_seconds": 0.05
+    }
+  },
+  "audit": {
+    "command": ".venv\\Scripts\\python.exe -B research_log/audit_unseen_overlap_20261027.py --output-dir data/results/real_unseen/synthetic_overlap_20261027_01",
+    "exit_code": 0
+  },
+  "verifier": {
+    "command": ".venv\\Scripts\\python.exe -B research_log/verify_unseen_overlap_20261027.py",
+    "exit_code": 0
+  },
+  "summary_sha256": "d8c77c1858340c2b1e710ab88b86119cfd681af9b73947b20d082f1be04a1903",
+  "verification_sha256": "59951bee3b86b0f2ae1c3fbb380cc6e0517fb06a8932e351b5fbcec4fd7eb14e"
+}

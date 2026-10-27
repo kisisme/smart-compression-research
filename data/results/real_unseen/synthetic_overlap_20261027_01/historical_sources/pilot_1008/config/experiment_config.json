@@ -1,0 +1,48 @@
+{
+  "compression": {
+    "gzip": {
+      "level": 9
+    },
+    "bz2": {
+      "level": 9
+    },
+    "lzma": {
+      "preset": 6
+    },
+    "zstd": {
+      "level": 3
+    }
+  },
+  "timing": {
+    "repeats": 5,
+    "timer": "time.perf_counter_ns",
+    "aggregate": "median"
+  },
+  "features": {
+    "duplicate_block_size": 16,
+    "segment_size": 4096
+  },
+  "selection_modes": {
+    "archive": {
+      "compression_ratio": 0.70,
+      "compression_time": 0.15,
+      "decompression_time": 0.15
+    },
+    "balanced": {
+      "compression_ratio": 0.50,
+      "compression_time": 0.25,
+      "decompression_time": 0.25
+    },
+    "fast_access": {
+      "compression_ratio": 0.30,
+      "compression_time": 0.20,
+      "decompression_time": 0.50
+    }
+  },
+  "sample_sizes": [
+    16384,
+    65536,
+    262144,
+    1048576
+  ]
+}
