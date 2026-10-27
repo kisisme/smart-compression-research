@@ -48,3 +48,25 @@ JavaScript 커널을 reset하고 Sky를 다시 import한 새 연결에서도 같
 근본 원인은 여전히 미확인이다. 사용자에게 실제 GUI 표시/foreground를 확인 요청했고 캡처가 맞지 않는 상태에서 추가 입력은 보내지 않았다.
 현재 원래 보호 파일 249개의 hash가 일치하고 제품 코드·모델·설정·기존 결과는 바꾸지 않았다.
 이번에도 native QA·선택창·시각 확인·테스트 suite·실제 데이터셋 동결을 완료했다고 기록하지 않는다.
+
+## 사용자 표시 확인·연결 재로딩 시도와 재개 경로
+
+사용자는 GUI가 보이며 PyCharm 가림 가능성이 있다고 알려 주었다. 새 창 선택/활성화와 대기 뒤 재캡처도 PyCharm을 보여 주었다.
+최대화 입력은 도구의 `user input was detected in this window; call get_window_state before continuing` 응답으로 차단됐다.
+그 뒤 상태를 새로 읽고 한 차례 재시도해도 같았으며 실제 최대화가 실행됐다고 기록하지 않는다. 사용자의 ‘오키’만으로 실제 최소화 완료를 단정하지 않는다.
+
+창 가림만 반복 점검하지 않고 공식 OpenAI 문서의 [app-server MCP reload](https://learn.chatgpt.com/docs/app-server)를 확인했다.
+설치 CLI `0.163.0`의 schema를 새 임시 경로에 생성해 `config/mcpServer/reload`의 null params와 초기화/현재 thread 확인 인자를 검토했다.
+현재 thread 연결임을 확인한 경우에만 reload를 요청하도록 검사 프로그램을 작성했다. 현재 설치된 CLI의 로컬 `app-server proxy`는
+`initialize did not respond`로 실패했으므로 **재로딩 요청 자체를 보내지 않았다**. 새 proxy client만 정리했고 기존 daemon/앱·MCP 설정을 변경하거나 종료하지 않았다.
+[새 연결 근거](gui_connection_handoff_20261027.json)에 실제 probe 결과·실행 프로그램·schema hash를 보존한다.
+기존 보호 파일 249개의 hash가 그대로였으며 모델·공식 config·후보/결과를 변경하지 않았다. 이번에는 연구 실행·학습·추가 테스트 suite를 수행하지 않았다.
+
+현재 연결 안에서 캡처 정상화를 확인하지 못했다. 설치된 `codex resume --help`에서 대화 선택과 `--no-daemon`의
+“Run without the shared background server, even if it is already running” 의미를 직접 확인했다.
+사용자가 현재 Codex를 정상 종료한 뒤 같은 프로젝트에서 `codex resume --no-daemon`을 실행해 이 대화를 고르면 공유 daemon을 재사용하지 않는 연결에서 점검할 수 있다.
+이는 다음 복구 절차이며 효과를 이미 검증한 해결책은 아니다. Codex 자체 UI/CLI를 Windows 자동화로 조작하는 것은 computer-use 지침상 금지돼 사용자에게 이 조작을 넘긴다.
+
+재개 시 현재 창을 새로 조회한다. GUI가 없으면 `tests/observe_gui_native.py`를 **새 output-root**로 실행한다.
+이전 root/launch/관찰 원본은 덮어쓰지 않는다. 캡처가 실제 GUI와 일치하면 native 입력·선택창·메시지창·현재 배율/긴 경로 QA를 수행하고,
+계속 다르면 GUI 오류라고 단정하지 말고 새 연결의 결과를 기록한다. 사용자 화면 확인을 테스트 완료나 capture 해결로 바꾸어 기록하지 않는다.

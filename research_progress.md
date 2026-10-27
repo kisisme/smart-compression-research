@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자 요청으로 [GUI 캡처 문제 복구를 재시도](research_log/gui_native_resume_20261027.md)했다. [새 근거](research_log/gui_capture_retry_20261027.json)에서 새 창 선택·공식 Raise·JavaScript 커널 reset/Sky 재초기화 뒤에도 GUI window/title과 PyCharm screenshot 불일치가 지속됨을 보존했다. GUI 프로세스는 Responding=True이고 Node REPL과 같은 Windows 세션이지만 근본 원인은 미확인이다. 실제 GUI 표시/foreground를 사용자에게 확인 요청했으며 잘못된 캡처를 기준으로 native 입력은 보내지 않았다. 이전 Node 시작 오류는 현재 미재현이고 보호 파일 249개는 그대로다. GUI native QA·후보 동결·연구 평가는 여전히 미완료이며 이번에 새 테스트를 통과했다고 기록하지 않는다.
+최신 진행: 사용자가 GUI 표시를 확인한 뒤에도 캡처는 PyCharm이었다. 최대화는 사용자 입력 감지 guard로 차단돼 성공으로 기록하지 않았다. 공식 API와 설치 CLI schema를 확인하고 현재 대화 연결 확인 후에만 MCP를 reload하는 로컬 proxy를 시도했지만 `initialize did not respond`로 요청 자체를 보내지 못했다. [연결 재개 근거](research_log/gui_connection_handoff_20261027.json)에 이를 보존했다. 현재 Codex를 정상 종료하고 같은 프로젝트에서 `codex resume --no-daemon`으로 이 대화를 선택하는 수동 재개 경로를 확인했으며, 효과는 아직 미검증이다. 기존 daemon/설정은 변경하지 않았고 보호 파일 249개는 그대로다. GUI native QA·후보 동결·연구 평가는 미완료다.
 
 직전 합성 감사: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
 
@@ -877,11 +877,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**GUI 중단 작업 우선 완료:** 사용자가 GUI를 직접 앞으로 가져온 상태를 확인하면 새 창 선택·캡처가 실제 GUI와 일치하는지 검증하고, 일치할 때만 native 입력·선택창·메시지창·현재 배율/긴 경로/화면 크기 QA를 재개한다. 불일치가 지속되면 정확한 원래 결과를 보존하고 다른 앱 좌표 입력이나 금지된 UI 자동화로 우회하지 않는다. 현재 연구 자식 작업 없이 새 GUI 창만 열려 있다. 이후 **후보의 명시적 선정·실제 corpus 동결:** 검토 inventory/draft와 이번 전체 재생성 hash 감사·한계, 필수 notice/citation·원본 관계·현재 파일 hash를 재확인하고 수집 metadata만으로 선정 ID/선정·제외 근거를 새 경로에 보존한다. 기존 manifest 도구로 새 실제 corpus를 동결하고 기대 hash로 독립 감사한다. 기존 승인·수집 draft를 덮어쓰거나 generic manifest의 과학적 준비 판정을 임의 상향하지 않는다. 특징/예측/benchmark 전에 동결 근거와 Git을 보존한다. 별도 평가 runner/연구 성능 측정은 후속 단위이며 MCP Restart 확인 시 GUI OS QA는 별도로 진행한다.
+**현재 연결 재개 후 GUI 중단 작업 우선 완료:** 사용자가 같은 프로젝트에서 `codex resume --no-daemon`으로 이 대화를 재개하면 새 창 조회와 실제 GUI 캡처 일치를 먼저 확인한다. GUI가 없으면 observer를 새 출력 경로로 실행하고 이전 원본/시도는 보존한다. 캡처가 맞는 경우에만 native 입력·파일/폴더 선택·메시지창·현재 배율/긴 경로/크기 QA를 진행한다. 계속 다르면 도구 문제의 정확한 근거를 남기며 GUI 구현 오류나 완료로 단정하지 않는다. 그 다음 후보의 명시적 선정·실제 corpus 동결을 기존 승인/notice/citation/overlap 근거에 연결하고 기대 hash를 감사한다. 특징/예측/benchmark 및 연구 평가 runner는 이후 단위다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 사용자 표시 확인·공식 proxy 재로딩 시도/재개 경로 확인의 시작 HEAD는 `d41661c`(직전 capture 복구 재시도 보존)이다. 실제 proxy는 초기화 timeout으로 reload를 보내지 못했고 관련 CLI/schema·프로그램·미완료 범위를 새 근거에 보존했다.
 
 이번 GUI 캡처 재복구 시도의 시작 HEAD는 `da4f877`(이전 GUI 재개/캡처 불일치 보존)이다. 새 창 선택·Raise·커널 reset/재초기화 및 프로세스 상태 확인을 새 진단 JSON에 보존했으며 근본 원인/정상 캡처/실제 GUI QA 완료와 구분한다.
 
