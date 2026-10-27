@@ -18,3 +18,5 @@
 /research_log/audit_unseen_overlap_20261027.py -text
 /research_log/verify_unseen_overlap_20261027.py -text
 /tests/test_unseen_overlap_audit.py -text
+/research_log/gui_native_resume_20261027.json -text
+/tests/observe_gui_native.py -text

@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
+최신 진행: 사용자 지시에 따라 [남은 GUI 중단 작업을 우선 재개](research_log/gui_native_resume_20261027.md)했다. 현재 최소 JavaScript·Sky import·창/접근성 조회가 성공해 기존 Node 시작 오류는 미재현이다. 새 읽기 전용 observer의 끝 공백 fixture 경로 오류를 고치고 GUI 창을 매핑했다. 다만 도구가 GUI window/title을 반환하면서 screenshot은 PyCharm을 보여 주는 불일치가 활성화·재선택/재시도 뒤에도 남았다. Skill 복구 지침에 따라 native 입력을 보내지 않고 사용자에게 GUI를 직접 앞으로 가져와 보이는지 확인 요청했다. 보호 파일 249개 일치·연구 자식 작업 0개이며 후보 동결/연구 평가는 진행하지 않았다. GUI OS 입력·시각 QA는 현재 캡처 대상 확인이 필요한 미완료 작업이다.
+
+직전 합성 감사: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
 
 직전 후보 검토: [후보 60개의 파일별 권리·개인정보 맥락·원본 관계 검토](research_log/unseen_candidate_review_20261026.md)를 마치고 새 검토 inventory/draft에 반영했다. 원본/notice/citation을 보존하는 무수정 로컬 연구 입력 범위에서 60개를 승인했으며, 공개 저자·예시·telemetry metadata가 있으므로 익명 자료라는 판정은 아니다. NumPy 한 파일의 CPython 유래를 확인해 PSF notice·적응 내용과 license 근거를 보완했고, 관련 지도/원래 자료/반복 run 관계를 기록했다. [독립 검증](data/results/real_unseen/real_candidate_review_20261026_01/verification.json)에서 원본 60개·기존 보호 파일 221개 및 추가 근거 포함 226개 불변, 판정/notice/draft 연결을 확인했다. 선정 0개·`evaluation_ready=false`, 합성 겹침 감사·동결·연구 평가는 미수행이다. 다음은 기존 합성 입력 재생성 근거 확인과 hash 겹침 감사다.
 
@@ -867,7 +869,7 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
-- 현재 `node_repl` MCP 연결 재시작 후 최소 JavaScript·Sky 초기화·Windows 창 조회 재검증. 원래 kernel assets 임시 경로는 부분 복구했으나 전체 정상 동작은 미확인이다.
+- GUI 화면 캡처 대상 불일치 해결·재검증. 2026-10-27 현재 `node_repl` 최소 JavaScript·Sky 초기화·Windows 창/접근성 조회는 성공해 이전 시작 오류는 미재현이다. GUI를 반환한 캡처가 PyCharm을 보여 재선택/재시도 뒤 입력을 중단했고 사용자 foreground 확인을 기다린다. 전체 화면 자동화 정상 동작은 미확인이다.
 - GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
 - 검토된 실제 후보 60개의 명시적 선정/실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 기존 합성 조건 재생성에 대한 full hash 겹침 감사는 완료했으며 과거 input bytes/hash 미저장 한계를 보존했다. 파일별 권리/개인정보 맥락/알려진 원본 관계 검토와 별도 승인 inventory/draft·필수 notice/citation 연결은 완료했다. 평가용 unseen 확인·익명성/모든 계보의 증명과 구분하며, 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
 - 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
@@ -875,11 +877,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**후보의 명시적 선정·실제 corpus 동결:** 검토 inventory/draft와 이번 전체 재생성 hash 감사·한계, 필수 notice/citation·원본 관계·현재 파일 hash를 재확인하고 수집 metadata만으로 선정 ID/선정·제외 근거를 새 경로에 보존한다. 기존 manifest 도구로 새 실제 corpus를 동결하고 기대 hash로 독립 감사한다. 기존 승인·수집 draft를 덮어쓰거나 generic manifest의 과학적 준비 판정을 임의 상향하지 않는다. 특징/예측/benchmark 전에 동결 근거와 Git을 보존한다. 별도 평가 runner/연구 성능 측정은 후속 단위이며 MCP Restart 확인 시 GUI OS QA는 별도로 진행한다.
+**GUI 중단 작업 우선 완료:** 사용자가 GUI를 직접 앞으로 가져온 상태를 확인하면 새 창 선택·캡처가 실제 GUI와 일치하는지 검증하고, 일치할 때만 native 입력·선택창·메시지창·현재 배율/긴 경로/화면 크기 QA를 재개한다. 불일치가 지속되면 정확한 원래 결과를 보존하고 다른 앱 좌표 입력이나 금지된 UI 자동화로 우회하지 않는다. 현재 연구 자식 작업 없이 새 GUI 창만 열려 있다. 이후 **후보의 명시적 선정·실제 corpus 동결:** 검토 inventory/draft와 이번 전체 재생성 hash 감사·한계, 필수 notice/citation·원본 관계·현재 파일 hash를 재확인하고 수집 metadata만으로 선정 ID/선정·제외 근거를 새 경로에 보존한다. 기존 manifest 도구로 새 실제 corpus를 동결하고 기대 hash로 독립 감사한다. 기존 승인·수집 draft를 덮어쓰거나 generic manifest의 과학적 준비 판정을 임의 상향하지 않는다. 특징/예측/benchmark 전에 동결 근거와 Git을 보존한다. 별도 평가 runner/연구 성능 측정은 후속 단위이며 MCP Restart 확인 시 GUI OS QA는 별도로 진행한다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 GUI 중단 재개/현재 캡처 진단의 시작 HEAD는 `684b2bc`(합성 입력 재생성·겹침 감사 보존)이다. 새 observer source hash와 실제 launch·원래 실패·현재 미완료 범위를 별도로 보존했다. GUI 제품 코드·모델·공식 config·기존 실험 결과는 바꾸지 않았다.
 
 이번 합성 재생성·hash 겹침 감사의 시작/실행 HEAD는 `cb9cd9d`(후보 파일별 검토 보존)이다. 실제 재생성은 그 이전 실험의 기록 commit 두 개에 저장된 source/config를 사용했으며 그 hash와 새 감사 source hash를 별도로 보존했다. 당시 bytes의 독립 확인이나 연구 성능 측정 commit으로 취급하지 않는다.
 
