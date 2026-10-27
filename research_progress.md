@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자 지시에 따라 [남은 GUI 중단 작업을 우선 재개](research_log/gui_native_resume_20261027.md)했다. 현재 최소 JavaScript·Sky import·창/접근성 조회가 성공해 기존 Node 시작 오류는 미재현이다. 새 읽기 전용 observer의 끝 공백 fixture 경로 오류를 고치고 GUI 창을 매핑했다. 다만 도구가 GUI window/title을 반환하면서 screenshot은 PyCharm을 보여 주는 불일치가 활성화·재선택/재시도 뒤에도 남았다. Skill 복구 지침에 따라 native 입력을 보내지 않고 사용자에게 GUI를 직접 앞으로 가져와 보이는지 확인 요청했다. 보호 파일 249개 일치·연구 자식 작업 0개이며 후보 동결/연구 평가는 진행하지 않았다. GUI OS 입력·시각 QA는 현재 캡처 대상 확인이 필요한 미완료 작업이다.
+최신 진행: 사용자 요청으로 [GUI 캡처 문제 복구를 재시도](research_log/gui_native_resume_20261027.md)했다. [새 근거](research_log/gui_capture_retry_20261027.json)에서 새 창 선택·공식 Raise·JavaScript 커널 reset/Sky 재초기화 뒤에도 GUI window/title과 PyCharm screenshot 불일치가 지속됨을 보존했다. GUI 프로세스는 Responding=True이고 Node REPL과 같은 Windows 세션이지만 근본 원인은 미확인이다. 실제 GUI 표시/foreground를 사용자에게 확인 요청했으며 잘못된 캡처를 기준으로 native 입력은 보내지 않았다. 이전 Node 시작 오류는 현재 미재현이고 보호 파일 249개는 그대로다. GUI native QA·후보 동결·연구 평가는 여전히 미완료이며 이번에 새 테스트를 통과했다고 기록하지 않는다.
 
 직전 합성 감사: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
 
@@ -882,6 +882,8 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 GUI 캡처 재복구 시도의 시작 HEAD는 `da4f877`(이전 GUI 재개/캡처 불일치 보존)이다. 새 창 선택·Raise·커널 reset/재초기화 및 프로세스 상태 확인을 새 진단 JSON에 보존했으며 근본 원인/정상 캡처/실제 GUI QA 완료와 구분한다.
 
 이번 GUI 중단 재개/현재 캡처 진단의 시작 HEAD는 `684b2bc`(합성 입력 재생성·겹침 감사 보존)이다. 새 observer source hash와 실제 launch·원래 실패·현재 미완료 범위를 별도로 보존했다. GUI 제품 코드·모델·공식 config·기존 실험 결과는 바꾸지 않았다.
 

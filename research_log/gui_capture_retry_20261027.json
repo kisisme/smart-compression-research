@@ -1,0 +1,49 @@
+{
+  "status": "capture_mismatch_persists_after_raise_and_kernel_reset",
+  "recorded_at_utc": "2026-10-27T09:36:28.103932+00:00",
+  "execution_head": "da4f87796aa644507f4c4a038c1577b101efb570",
+  "prior_diagnostic": "research_log/gui_native_resume_20261027.json",
+  "prior_diagnostic_sha256": "aca4fb3f2dd9bf098d6fe71fff264c0f8f551af2632c22ff1bf5b6584f04c17f",
+  "evidence_method": "Computer Use and process-inspection tool results transcribed; screenshots inspected but not saved.",
+  "steps": [
+    {
+      "action": "Fresh list_windows and get_window_state",
+      "result": "GUI title/accessibility returned; screenshot shows PyCharm"
+    },
+    {
+      "action": "Rehydrate uniquely selected returned window and inspect accessibility",
+      "result": "GUI root element exposes supported secondary action Raise"
+    },
+    {
+      "action": "perform_secondary_action element_index=0 action=Raise; refresh",
+      "result": "No tool error; screenshot still shows PyCharm"
+    },
+    {
+      "action": "Read-only Get-Process inspection",
+      "result": "GUI python PID 31056 Responding=True SessionId=1; observed Node REPL processes also SessionId=1"
+    },
+    {
+      "action": "node_repl js_reset",
+      "result": "js kernel reset"
+    },
+    {
+      "action": "Reimport sky; fresh list/get_window; screenshot/accessibility",
+      "result": "Same GUI window ID 1051576, screenshot still PyCharm"
+    }
+  ],
+  "requested_title": "Smart Compression — 압축·복원·비교",
+  "product_code_changed": false,
+  "desktop_input_or_file_dialog_actions_sent": false,
+  "other_app_ui_automated": false,
+  "force_termination_or_server_configuration_changes": false,
+  "gui_hang_established": false,
+  "exact_capture_root_cause_established": false,
+  "node_start_error_reproduced": false,
+  "js_reset_is_server_restart": false,
+  "protected_reference": "tests/observe_gui_native.py",
+  "protected_files_unchanged": 249,
+  "pending": "User confirms actual GUI visibility/foreground; only reselect/capture after external state change, then resume native QA if correct.",
+  "completed": false,
+  "tests_rerun": false,
+  "dataset_freeze_or_research_evaluation": false
+}

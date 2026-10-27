@@ -20,3 +20,4 @@
 /tests/test_unseen_overlap_audit.py -text
 /research_log/gui_native_resume_20261027.json -text
 /tests/observe_gui_native.py -text
+/research_log/gui_capture_retry_20261027.json -text
