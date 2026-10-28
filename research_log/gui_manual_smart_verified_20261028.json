@@ -1,0 +1,478 @@
+{
+  "status": "manual_smart_package_and_observer_verified",
+  "verified_at_utc": "2026-10-28T08:10:04.964079+00:00",
+  "execution_head": "508aec2184ec4a95b3987cee3a0e373d2292f809",
+  "verifier_sha256": "39a8310a591c50d927e0311a29d3ce250a5b415db60138c23391e3ac22b7570d",
+  "plan_sha256": "e2df4acc8f7b003cc57d56b5c3e50a82041b0c8a3d45eea4b196267ea6707d5f",
+  "input_kind": "README smoke copy, not research corpus",
+  "interaction_operator": "user",
+  "verification_operator": "assistant",
+  "package_dir": "data/temp/manual_smart_20261028_01",
+  "algorithm": "zstd",
+  "mode": "archive",
+  "model": "random_forest",
+  "original_size": 4433,
+  "compressed_size": 2147,
+  "compression_ratio": 0.4843221294834198,
+  "restored_in_memory_matches_original": true,
+  "restored_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+  "verified_gui_rows": 20,
+  "job_log_path": "data/temp/gui_native_20261028_02/sessions/2064c4caf09f492f8b93773c5de70d1f/job.json",
+  "job_id": "2064c4caf09f492f8b93773c5de70d1f",
+  "job_started_at_utc": "2026-10-28T08:01:04.266791+00:00",
+  "job_finished_at_utc": "2026-10-28T08:01:13.898619+00:00",
+  "observed_state_snapshot": {
+    "at_utc": "2026-10-28T08:04:05.737048+00:00",
+    "heartbeat": 3239,
+    "geometry": "1120x840+156+156",
+    "selected_tab": ".!notebook.!frame",
+    "active": "None",
+    "runner_busy": false,
+    "panes": {
+      "smart": {
+        "source": "C:/Users/s0109/PycharmProjects/smart_compression_research/data/temp/gui_native_20261028_02/긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본/한글 공백 & 실제 GUI 입력 🧪.md",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "manual_smart_20261028_01",
+        "mode": "archive",
+        "model": "Random Forest",
+        "summary": "완료 · 검증 통과",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 있으면 예측과 실측을 대조합니다.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [
+          [
+            "선택 알고리즘",
+            "zstd"
+          ],
+          [
+            "사용 목적 / 모델",
+            "archive / Random Forest"
+          ],
+          [
+            "원본 bytes",
+            "4433"
+          ],
+          [
+            "압축 bytes",
+            "2147"
+          ],
+          [
+            "압축률 (작을수록 유리)",
+            "0.4843221"
+          ],
+          [
+            "복원 검증",
+            "통과"
+          ],
+          [
+            "모델 출력 (보정되지 않음)",
+            "1"
+          ],
+          [
+            "특징 · file_size",
+            "4433"
+          ],
+          [
+            "특징 · entropy",
+            "5.826112"
+          ],
+          [
+            "특징 · unique_byte_count",
+            "125"
+          ],
+          [
+            "특징 · most_common_byte_ratio",
+            "0.09677419"
+          ],
+          [
+            "특징 · zero_byte_ratio",
+            "0"
+          ],
+          [
+            "특징 · adjacent_repeat_ratio",
+            "0.02278881"
+          ],
+          [
+            "특징 · average_run_length",
+            "1.023315"
+          ],
+          [
+            "특징 · max_run_length",
+            "3"
+          ],
+          [
+            "특징 · duplicate_block_ratio",
+            "0.007194245"
+          ],
+          [
+            "특징 · bigram_diversity",
+            "0.1798285"
+          ],
+          [
+            "특징 · segment_entropy_mean",
+            "5.698317"
+          ],
+          [
+            "특징 · segment_entropy_std",
+            "0.12504"
+          ],
+          [
+            "요청 출력 경로",
+            "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01"
+          ]
+        ],
+        "start_state": "normal"
+      },
+      "decompress": {
+        "source": "",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "decompress_20261028_073612_7c296e",
+        "mode": "",
+        "model": "",
+        "summary": "아직 실행하지 않았습니다.",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 있으면 예측과 실측을 대조합니다.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [],
+        "start_state": "normal"
+      },
+      "compare": {
+        "source": "",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "compare_20261028_073612_4ffe43",
+        "mode": "",
+        "model": "",
+        "summary": "아직 실행하지 않았습니다.",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 없습니다. 필요하면 Smart 압축부터 명시적으로 실행하세요.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [],
+        "start_state": "normal"
+      }
+    },
+    "footer": "Smart 압축 · 완료 · 검증 통과"
+  },
+  "manifest_snapshot": {
+    "smart_mode_version": 1,
+    "mode": "archive",
+    "algorithm": "zstd",
+    "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md",
+    "original_filename": "한글 공백 & 실제 GUI 입력 🧪.md",
+    "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+    "original_size": 4433,
+    "compressed_file": "payload.zst",
+    "compressed_sha256": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+    "compressed_size": 2147,
+    "compression_ratio": 0.4843221294834198,
+    "verified": true,
+    "features": {
+      "file_size": 4433,
+      "entropy": 5.826112159673893,
+      "unique_byte_count": 125,
+      "most_common_byte_ratio": 0.0967741935483871,
+      "zero_byte_ratio": 0.0,
+      "adjacent_repeat_ratio": 0.02278880866425993,
+      "average_run_length": 1.02331486611265,
+      "max_run_length": 3,
+      "duplicate_block_ratio": 0.007194244604316547,
+      "bigram_diversity": 0.17982851985559567,
+      "segment_entropy_mean": 5.698317121279868,
+      "segment_entropy_std": 0.12503998871615973
+    },
+    "prediction_confidence": 1.0,
+    "algorithm_probabilities": {
+      "gzip": 0.0,
+      "bz2": 0.0,
+      "lzma": 0.0,
+      "zstd": 1.0
+    },
+    "provenance": {
+      "model_kind": "random_forest",
+      "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl",
+      "model_sha256": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+      "model_summary_sha256": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+      "training_git": {
+        "commit_hash": "01259749bb0bd517765d884f3bbb31b1ed648163",
+        "worktree_dirty": false
+      },
+      "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+      "compression_settings": {
+        "gzip": {
+          "level": 9
+        },
+        "bz2": {
+          "level": 9
+        },
+        "lzma": {
+          "preset": 6
+        },
+        "zstd": {
+          "level": 3
+        }
+      },
+      "feature_settings": {
+        "duplicate_block_size": 16,
+        "segment_size": 4096
+      },
+      "selection_weights": {
+        "compression_ratio": 0.7,
+        "compression_time": 0.15,
+        "decompression_time": 0.15
+      },
+      "model_settings": {
+        "n_estimators": 100,
+        "criterion": "gini",
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "min_weight_fraction_leaf": 0.0,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "bootstrap": true,
+        "oob_score": false,
+        "n_jobs": 1,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false,
+        "class_weight": null,
+        "ccp_alpha": 0.0,
+        "max_samples": null,
+        "monotonic_cst": null
+      },
+      "source_sha256": {
+        "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+        "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+        "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+      },
+      "package_versions": {
+        "numpy": "2.5.2",
+        "pandas": "3.0.5",
+        "scikit-learn": "1.9.0",
+        "zstandard": "0.25.0"
+      },
+      "python_version": "3.14.4",
+      "operating_system": "Windows-11-10.0.26300-SP0",
+      "prediction_confidence_definition": "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+    },
+    "git": {
+      "commit_hash": "508aec2184ec4a95b3987cee3a0e373d2292f809",
+      "worktree_dirty": false
+    },
+    "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+    "created_at_utc": "2026-10-28T08:01:13.489055+00:00",
+    "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+    "limitations": [
+      "Pilot models have not demonstrated improvement over the majority baseline.",
+      "Confidence is uncalibrated model output, not a validated probability of correctness.",
+      "Generalization to unseen real files has not been established."
+    ]
+  },
+  "job_log_snapshot": {
+    "job_id": "2064c4caf09f492f8b93773c5de70d1f",
+    "request": {
+      "operation": "smart",
+      "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md",
+      "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01",
+      "mode": "archive",
+      "model_kind": "random_forest",
+      "model_dir": null
+    },
+    "status": "succeeded",
+    "message": "Smart package and verified response agree",
+    "command": [
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\pythonw.exe",
+      "-B",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+      "smart",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md",
+      "--mode",
+      "archive",
+      "--model",
+      "random_forest",
+      "--output-dir",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01"
+    ],
+    "started_at_utc": "2026-10-28T08:01:04.266791+00:00",
+    "finished_at_utc": "2026-10-28T08:01:13.898619+00:00",
+    "return_code": 0,
+    "stdout": "{\r\n  \"mode\": \"archive\",\r\n  \"algorithm\": \"zstd\",\r\n  \"prediction_confidence\": 1.0,\r\n  \"confidence_note\": \"Uncalibrated model output; not a validated correctness probability.\",\r\n  \"verified\": true,\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\manual_smart_20261028_01\"\r\n}\r\n",
+    "stderr": "",
+    "stdout_base64": "ew0KICAibW9kZSI6ICJhcmNoaXZlIiwNCiAgImFsZ29yaXRobSI6ICJ6c3RkIiwNCiAgInByZWRpY3Rpb25fY29uZmlkZW5jZSI6IDEuMCwNCiAgImNvbmZpZGVuY2Vfbm90ZSI6ICJVbmNhbGlicmF0ZWQgbW9kZWwgb3V0cHV0OyBub3QgYSB2YWxpZGF0ZWQgY29ycmVjdG5lc3MgcHJvYmFiaWxpdHkuIiwNCiAgInZlcmlmaWVkIjogdHJ1ZSwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcbWFudWFsX3NtYXJ0XzIwMjYxMDI4XzAxIg0KfQ0K",
+    "stderr_base64": "",
+    "data": {
+      "smart_mode_version": 1,
+      "mode": "archive",
+      "algorithm": "zstd",
+      "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md",
+      "original_filename": "한글 공백 & 실제 GUI 입력 🧪.md",
+      "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "original_size": 4433,
+      "compressed_file": "payload.zst",
+      "compressed_sha256": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+      "compressed_size": 2147,
+      "compression_ratio": 0.4843221294834198,
+      "verified": true,
+      "features": {
+        "file_size": 4433,
+        "entropy": 5.826112159673893,
+        "unique_byte_count": 125,
+        "most_common_byte_ratio": 0.0967741935483871,
+        "zero_byte_ratio": 0.0,
+        "adjacent_repeat_ratio": 0.02278880866425993,
+        "average_run_length": 1.02331486611265,
+        "max_run_length": 3,
+        "duplicate_block_ratio": 0.007194244604316547,
+        "bigram_diversity": 0.17982851985559567,
+        "segment_entropy_mean": 5.698317121279868,
+        "segment_entropy_std": 0.12503998871615973
+      },
+      "prediction_confidence": 1.0,
+      "algorithm_probabilities": {
+        "gzip": 0.0,
+        "bz2": 0.0,
+        "lzma": 0.0,
+        "zstd": 1.0
+      },
+      "provenance": {
+        "model_kind": "random_forest",
+        "model_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl",
+        "model_sha256": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+        "model_summary_sha256": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+        "training_git": {
+          "commit_hash": "01259749bb0bd517765d884f3bbb31b1ed648163",
+          "worktree_dirty": false
+        },
+        "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+        "compression_settings": {
+          "gzip": {
+            "level": 9
+          },
+          "bz2": {
+            "level": 9
+          },
+          "lzma": {
+            "preset": 6
+          },
+          "zstd": {
+            "level": 3
+          }
+        },
+        "feature_settings": {
+          "duplicate_block_size": 16,
+          "segment_size": 4096
+        },
+        "selection_weights": {
+          "compression_ratio": 0.7,
+          "compression_time": 0.15,
+          "decompression_time": 0.15
+        },
+        "model_settings": {
+          "n_estimators": 100,
+          "criterion": "gini",
+          "max_depth": null,
+          "min_samples_split": 2,
+          "min_samples_leaf": 1,
+          "min_weight_fraction_leaf": 0.0,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "min_impurity_decrease": 0.0,
+          "bootstrap": true,
+          "oob_score": false,
+          "n_jobs": 1,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false,
+          "class_weight": null,
+          "ccp_alpha": 0.0,
+          "max_samples": null,
+          "monotonic_cst": null
+        },
+        "source_sha256": {
+          "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+          "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+          "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+        },
+        "package_versions": {
+          "numpy": "2.5.2",
+          "pandas": "3.0.5",
+          "scikit-learn": "1.9.0",
+          "zstandard": "0.25.0"
+        },
+        "python_version": "3.14.4",
+        "operating_system": "Windows-11-10.0.26300-SP0",
+        "prediction_confidence_definition": "Maximum of mean per-tree leaf class probabilities; uncalibrated predict_proba."
+      },
+      "git": {
+        "commit_hash": "508aec2184ec4a95b3987cee3a0e373d2292f809",
+        "worktree_dirty": false
+      },
+      "smart_compress_source_sha256": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+      "created_at_utc": "2026-10-28T08:01:13.489055+00:00",
+      "operation": "One selected compression and one verification decompression; no benchmark or oracle.",
+      "limitations": [
+        "Pilot models have not demonstrated improvement over the majority baseline.",
+        "Confidence is uncalibrated model output, not a validated probability of correctness.",
+        "Generalization to unseen real files has not been established."
+      ]
+    },
+    "input_snapshot": {
+      "source_sha256": {
+        "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+        "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+        "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+        "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+        "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+        "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+        "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "input_files": {
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\pilot_1008\\random_forest\\random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168"
+      },
+      "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "original_size": 4433,
+      "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+    },
+    "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\sessions\\2064c4caf09f492f8b93773c5de70d1f\\job.json",
+    "log_error": null,
+    "environment_overrides": {
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+  },
+  "native_screen_observations": {
+    "method": "Assistant inspected native cua_repl screenshots and sent scroll/click actions; screenshot payloads not saved.",
+    "gui_visible": true,
+    "pycharm_occludes_right_side": true,
+    "top_summary_and_sizes_seen": true,
+    "scroll_down_changed_visible_rows": true,
+    "bottom_bigram_segment_entropy_and_output_path_row_seen": true,
+    "row_click_selected_visible_feature": true,
+    "end_key_attempt_blocked_twice": true,
+    "end_key_blocker": "user input was detected in this window; call get_window_state before continuing",
+    "full_unoccluded_gui_or_all_dpi_verified": false,
+    "original_capture_root_cause_established": false
+  },
+  "existing_protected_files_unchanged": 250,
+  "artifact_sha256": {
+    "research_log/gui_manual_qa_plan_20261028.json": "e2df4acc8f7b003cc57d56b5c3e50a82041b0c8a3d45eea4b196267ea6707d5f",
+    "data/temp/manual_smart_20261028_01/manifest.json": "60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b",
+    "data/temp/manual_smart_20261028_01/payload.zst": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+    "data/temp/gui_native_20261028_02/sessions/2064c4caf09f492f8b93773c5de70d1f/job.json": "7c438f5892ae05b914e18acfd302c3b665449902c0e921ed15e1af54dcdd6f97",
+    "data/temp/gui_native_20261028_02/긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본/한글 공백 & 실제 GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+  },
+  "model_deserialized_or_new_prediction": false,
+  "new_compression_or_benchmark": false,
+  "restored_files_published": false,
+  "manual_gui_restore_and_compare_completed": false,
+  "tests_suite_rerun": false,
+  "unseen_research_evaluation": false,
+  "next_step": "User executes GUI restore to planned fresh output; verify actual restored bytes and logs next."
+}

@@ -6,7 +6,7 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [재부팅 후 GUI 재개](research_log/gui_reboot_recovery_20261028.md)에서도 GUI 접근성/최대화 정보와 PyCharm screenshot의 불일치·입력 guard/timeout이 남았다. 두 시도의 보호 파일 합집합 250개는 그대로이며 daemon recovery로 끊긴 첫 새 시도를 보존했다. 사용자가 ‘수동 GUI 검증 후 연구 계속’을 선택해 [수동 계획](research_log/gui_manual_qa_plan_20261028.json)에 새 README 사본/출력·archive/Random Forest·검증 순서를 고정했다. 현재 사용자의 첫 Smart 압축 실행을 기다리며 완료 후 assistant가 package/log/hash를 검사하고 복원/Compare를 안내한다. Agent 화면 QA·도구 오류 해결·연구 평가는 완료되지 않았고 새 테스트 suite도 실행하지 않았다.
+최신 진행: [수동 Smart 압축·실제 scroll 확인](research_log/gui_manual_smart_20261028.md)을 마쳤다. 사용자가 archive/Random Forest로 실행한 README 사본은 zstd로 4,433→2,147 bytes이며 실제 저장 payload의 메모리 복원 bytes/hash가 원본과 일치했다. GUI 표시 행 20개·성공 로그·모델/config/source hash와 보호 파일 250개 불변을 확인했다. 이번 화면에서는 GUI가 일부 보이며 agent scroll/click과 하단 행 확인이 성공했다. PyCharm 가림과 End 입력 guard는 남아 전체 화면 도구 오류 해결·모든 시각 QA 완료로 기록하지 않는다. 다음은 사용자의 수동 GUI 복원과 저장 bytes/hash 검증이며 Compare·corpus 동결/연구 평가는 미완료다.
 
 직전 합성 감사: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
 
@@ -877,11 +877,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**사용자 수동 GUI 검증:** 현재 새 GUI의 Smart 탭에서 고정 README 사본·archive·Random Forest와 `manual_smart_20261028_01` 출력으로 사용자가 실행한다. 저장 package/log·입력/모델/config/source hash와 observer 상태를 확인한 뒤 수동 복원·실제 Compare 및 사용자 화면 가독성/선택창 확인을 이어간다. 자동 클릭/픽셀 QA 완료와 구분하고 현재 capture blocker는 보존한다. 수동 검증이 끝나면 후보의 명시적 선정/실제 corpus 동결을 기존 review/notice/citation/overlap 근거와 연결한다.
+**수동 GUI 복원·저장 검증:** Smart 결과의 `이 결과 복원`을 사용해 입력을 준비하고 새 결과 폴더 `manual_restore_20261028_01`에서 사용자가 `검증해 복원`을 실행한다. 실제 저장된 원래 이름/bytes/hash·manifest/작업 로그와 observer를 확인한 뒤 같은 파일의 수동 Compare와 예측/실측 대조를 검증한다. 현재 agent scroll/click은 일부 성공했지만 End guard·창 가림이 남아 자동 시각 QA 전체 완료와 구분한다. 수동 검증을 마친 뒤 후보 선정·실제 corpus 동결을 이어간다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 수동 Smart 실행/저장 검증 및 agent 일부 화면 scroll/click의 시작/실행 HEAD는 `508aec2`(재부팅 복구 근거·수동 계획 보존)이다. 새 검증 프로그램 hash와 실제 package/log/model/config/source 근거를 보존했으며 새 압축/모델 평가 실행과 구분한다.
 
 이번 재부팅/daemon recovery 후 GUI 재개와 내장 도구 확인의 시작 HEAD는 `6f4743f`(공식 proxy 초기화 실패·재개 절차 보존)이다. 새 두 시도의 launch/관찰 및 확인/미완료 범위와 보호 hash를 2026-10-28 근거에 보존했다. 제품 코드와 기존 연구 산출물은 변경하지 않았다.
 
