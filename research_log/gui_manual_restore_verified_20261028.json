@@ -1,0 +1,269 @@
+{
+  "status": "manual_gui_restoration_saved_bytes_verified",
+  "verified_at_utc": "2026-10-28T09:58:14.231498+00:00",
+  "execution_head": "df09f49c93f66c9333aa401d5a4b0b4eb77f61de",
+  "verifier_sha256": "bffe5435677f936159d638bfa69f6fa21e506700d201b9e3da88f763759fa9ed",
+  "plan_sha256": "e2df4acc8f7b003cc57d56b5c3e50a82041b0c8a3d45eea4b196267ea6707d5f",
+  "input_kind": "README smoke copy, not research corpus",
+  "interaction_operator": "user",
+  "verification_operator": "assistant",
+  "algorithm": "zstd",
+  "restored_file": "한글 공백 & 실제 GUI 입력 🧪.md",
+  "restored_path": "data/temp/manual_restore_20261028_01/한글 공백 & 실제 GUI 입력 🧪.md",
+  "restored_size": 4433,
+  "restored_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+  "original_bytes_equal": true,
+  "original_filename_preserved": true,
+  "verified_gui_rows": 6,
+  "job_log_path": "data/temp/gui_native_20261028_02/sessions/0025be3ce8ec4740a117224174597646/job.json",
+  "job_log_snapshot": {
+    "job_id": "0025be3ce8ec4740a117224174597646",
+    "request": {
+      "operation": "decompress",
+      "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01",
+      "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_restore_20261028_01",
+      "mode": null,
+      "model_kind": null,
+      "model_dir": null
+    },
+    "status": "succeeded",
+    "message": "Restored artifact and verified response agree",
+    "command": [
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\pythonw.exe",
+      "-B",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\main.py",
+      "decompress",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01",
+      "--output-dir",
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_restore_20261028_01"
+    ],
+    "started_at_utc": "2026-10-28T09:56:46.003554+00:00",
+    "finished_at_utc": "2026-10-28T09:56:46.307091+00:00",
+    "return_code": 0,
+    "stdout": "{\r\n  \"smart_decompress_version\": 1,\r\n  \"smart_mode_version\": 1,\r\n  \"algorithm\": \"zstd\",\r\n  \"package_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\manual_smart_20261028_01\",\r\n  \"manifest_sha256\": \"60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b\",\r\n  \"compressed_file\": \"payload.zst\",\r\n  \"compressed_size\": 2147,\r\n  \"compressed_sha256\": \"27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b\",\r\n  \"output_dir\": \"C:\\\\Users\\\\s0109\\\\PycharmProjects\\\\smart_compression_research\\\\data\\\\temp\\\\manual_restore_20261028_01\",\r\n  \"restored_file\": \"\\ud55c\\uae00 \\uacf5\\ubc31 & \\uc2e4\\uc81c GUI \\uc785\\ub825 \\ud83e\\uddea.md\",\r\n  \"restored_size\": 4433,\r\n  \"restored_sha256\": \"391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71\",\r\n  \"verified\": true,\r\n  \"created_at_utc\": \"2026-10-28T09:56:46.253487+00:00\",\r\n  \"smart_decompress_source_sha256\": \"089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c\",\r\n  \"operation\": \"One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark.\"\r\n}\r\n",
+    "stderr": "",
+    "stdout_base64": "ew0KICAic21hcnRfZGVjb21wcmVzc192ZXJzaW9uIjogMSwNCiAgInNtYXJ0X21vZGVfdmVyc2lvbiI6IDEsDQogICJhbGdvcml0aG0iOiAienN0ZCIsDQogICJwYWNrYWdlX2RpciI6ICJDOlxcVXNlcnNcXHMwMTA5XFxQeWNoYXJtUHJvamVjdHNcXHNtYXJ0X2NvbXByZXNzaW9uX3Jlc2VhcmNoXFxkYXRhXFx0ZW1wXFxtYW51YWxfc21hcnRfMjAyNjEwMjhfMDEiLA0KICAibWFuaWZlc3Rfc2hhMjU2IjogIjYwZjU1OWNhOTMwNDBlMDdjYjIwMTMxMDg0NDVjNGIwMzg1OTBhYTkwNGM3YzY1ODc0NzU5MjliNDU0YTYxNGIiLA0KICAiY29tcHJlc3NlZF9maWxlIjogInBheWxvYWQuenN0IiwNCiAgImNvbXByZXNzZWRfc2l6ZSI6IDIxNDcsDQogICJjb21wcmVzc2VkX3NoYTI1NiI6ICIyNzk0NjYxMzQxODc5NjU2NGMyMGExOGEwNWE4ZmE0NzQxNmNkOGE0NmNlYmVjOTJkZWJkZDA1ZTI0MGYxMDFiIiwNCiAgIm91dHB1dF9kaXIiOiAiQzpcXFVzZXJzXFxzMDEwOVxcUHljaGFybVByb2plY3RzXFxzbWFydF9jb21wcmVzc2lvbl9yZXNlYXJjaFxcZGF0YVxcdGVtcFxcbWFudWFsX3Jlc3RvcmVfMjAyNjEwMjhfMDEiLA0KICAicmVzdG9yZWRfZmlsZSI6ICJcdWQ1NWNcdWFlMDAgXHVhY2Y1XHViYzMxICYgXHVjMmU0XHVjODFjIEdVSSBcdWM3ODVcdWI4MjUgXHVkODNlXHVkZGVhLm1kIiwNCiAgInJlc3RvcmVkX3NpemUiOiA0NDMzLA0KICAicmVzdG9yZWRfc2hhMjU2IjogIjM5MTM0NWM5ZjVkZDE3NmY5YTdlNjFjMWU1NjcwNzViOWYwYzAwZjcyMzM4NjkwNWY3N2NlOTEwMjA0MDlhNzEiLA0KICAidmVyaWZpZWQiOiB0cnVlLA0KICAiY3JlYXRlZF9hdF91dGMiOiAiMjAyNi0xMC0yOFQwOTo1Njo0Ni4yNTM0ODcrMDA6MDAiLA0KICAic21hcnRfZGVjb21wcmVzc19zb3VyY2Vfc2hhMjU2IjogIjA4OWEzZmZkMTIyMDE1MjY0MjUxYmZjMGZkNDllMWZiOWZlMWZiYjRhOTdiN2IwMmIwN2IzMmMzNmExYjg4M2MiLA0KICAib3BlcmF0aW9uIjogIk9uZSBzYXZlZC1hbGdvcml0aG0gZGVjb21wcmVzc2lvbjsgc2l6ZS9TSEEtMjU2IHZlcmlmaWNhdGlvbjsgbm8gbW9kZWwgb3IgYmVuY2htYXJrLiINCn0NCg==",
+    "stderr_base64": "",
+    "data": {
+      "smart_decompress_version": 1,
+      "smart_mode_version": 1,
+      "algorithm": "zstd",
+      "package_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01",
+      "manifest_sha256": "60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b",
+      "compressed_file": "payload.zst",
+      "compressed_size": 2147,
+      "compressed_sha256": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+      "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_restore_20261028_01",
+      "restored_file": "한글 공백 & 실제 GUI 입력 🧪.md",
+      "restored_size": 4433,
+      "restored_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "verified": true,
+      "created_at_utc": "2026-10-28T09:56:46.253487+00:00",
+      "smart_decompress_source_sha256": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+      "operation": "One saved-algorithm decompression; size/SHA-256 verification; no model or benchmark."
+    },
+    "input_snapshot": {
+      "source_sha256": {
+        "main.py": "dd0acfa44121ab7503306973f4db46ab1773618828a19e52c7d8a5f12ebd185f",
+        "smart_compress.py": "00c8d10b30c53106cf2a091e2955964e1e0eabdd76689c7ff65750cd5de2d98f",
+        "smart_decompress.py": "089a3ffd122015264251bfc0fd49e1fb9fe1fbb4a97b7b02b07b32c36a1b883c",
+        "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+        "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+        "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+        "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+        "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+        "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+      },
+      "input_files": {
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01\\manifest.json": "60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b",
+        "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01\\payload.zst": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b"
+      },
+      "manifest_sha256": "60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b",
+      "algorithm": "zstd",
+      "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+      "original_size": 4433,
+      "original_filename": "한글 공백 & 실제 GUI 입력 🧪.md",
+      "compressed_sha256": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+      "config_sha256": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+    },
+    "log_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\sessions\\0025be3ce8ec4740a117224174597646\\job.json",
+    "log_error": null,
+    "environment_overrides": {
+      "PYTHONIOENCODING": "utf-8"
+    },
+    "cwd": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research"
+  },
+  "observed_state_snapshot": {
+    "at_utc": "2026-10-28T09:56:46.491353+00:00",
+    "heartbeat": 5461,
+    "geometry": "1120x840+156+156",
+    "selected_tab": ".!notebook.!frame2",
+    "active": "None",
+    "runner_busy": false,
+    "panes": {
+      "smart": {
+        "source": "C:/Users/s0109/PycharmProjects/smart_compression_research/data/temp/gui_native_20261028_02/긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본/한글 공백 & 실제 GUI 입력 🧪.md",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "manual_smart_20261028_01",
+        "mode": "archive",
+        "model": "Random Forest",
+        "summary": "완료 · 검증 통과",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 있으면 예측과 실측을 대조합니다.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [
+          [
+            "선택 알고리즘",
+            "zstd"
+          ],
+          [
+            "사용 목적 / 모델",
+            "archive / Random Forest"
+          ],
+          [
+            "원본 bytes",
+            "4433"
+          ],
+          [
+            "압축 bytes",
+            "2147"
+          ],
+          [
+            "압축률 (작을수록 유리)",
+            "0.4843221"
+          ],
+          [
+            "복원 검증",
+            "통과"
+          ],
+          [
+            "모델 출력 (보정되지 않음)",
+            "1"
+          ],
+          [
+            "특징 · file_size",
+            "4433"
+          ],
+          [
+            "특징 · entropy",
+            "5.826112"
+          ],
+          [
+            "특징 · unique_byte_count",
+            "125"
+          ],
+          [
+            "특징 · most_common_byte_ratio",
+            "0.09677419"
+          ],
+          [
+            "특징 · zero_byte_ratio",
+            "0"
+          ],
+          [
+            "특징 · adjacent_repeat_ratio",
+            "0.02278881"
+          ],
+          [
+            "특징 · average_run_length",
+            "1.023315"
+          ],
+          [
+            "특징 · max_run_length",
+            "3"
+          ],
+          [
+            "특징 · duplicate_block_ratio",
+            "0.007194245"
+          ],
+          [
+            "특징 · bigram_diversity",
+            "0.1798285"
+          ],
+          [
+            "특징 · segment_entropy_mean",
+            "5.698317"
+          ],
+          [
+            "특징 · segment_entropy_std",
+            "0.12504"
+          ],
+          [
+            "요청 출력 경로",
+            "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01"
+          ]
+        ],
+        "start_state": "normal"
+      },
+      "decompress": {
+        "source": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_smart_20261028_01",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "manual_restore_20261028_01",
+        "mode": "",
+        "model": "",
+        "summary": "완료 · 검증 통과",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 있으면 예측과 실측을 대조합니다.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [
+          [
+            "복원 파일",
+            "한글 공백 & 실제 GUI 입력 🧪.md"
+          ],
+          [
+            "복원 bytes",
+            "4433"
+          ],
+          [
+            "알고리즘",
+            "zstd"
+          ],
+          [
+            "복원 SHA-256",
+            "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71"
+          ],
+          [
+            "크기·해시 검증",
+            "통과"
+          ],
+          [
+            "요청 출력 경로",
+            "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\manual_restore_20261028_01"
+          ]
+        ],
+        "start_state": "normal"
+      },
+      "compare": {
+        "source": "",
+        "parent": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp",
+        "name": "compare_20261028_073612_4ffe43",
+        "mode": "",
+        "model": "",
+        "summary": "아직 실행하지 않았습니다.",
+        "demo": "동일 파일·설정·사용 목적의 Smart 결과가 없습니다. 필요하면 Smart 압축부터 명시적으로 실행하세요.",
+        "best": "",
+        "view_mode": "archive",
+        "tree": [],
+        "start_state": "normal"
+      }
+    },
+    "footer": "복원 · 완료 · 검증 통과"
+  },
+  "artifact_sha256": {
+    "research_log/gui_manual_qa_plan_20261028.json": "e2df4acc8f7b003cc57d56b5c3e50a82041b0c8a3d45eea4b196267ea6707d5f",
+    "research_log/gui_manual_smart_verified_20261028.json": "968919b75771847fbdf73bd73802901a65d0cdf43ca4768c3821a2564e73d3cf",
+    "data/temp/gui_native_20261028_02/긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본/한글 공백 & 실제 GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+    "data/temp/manual_smart_20261028_01/manifest.json": "60f559ca93040e07cb2013108445c4b038590aa904c7c6587475929b454a614b",
+    "data/temp/manual_smart_20261028_01/payload.zst": "27946613418796564c20a18a05a8fa47416cd8a46cebec92debdd05e240f101b",
+    "data/temp/manual_restore_20261028_01/한글 공백 & 실제 GUI 입력 🧪.md": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+    "data/temp/gui_native_20261028_02/sessions/0025be3ce8ec4740a117224174597646/job.json": "9d91e3bef69ae74c9dd7a9ee2675688525ffa808fb31fe499d9598919bc23c9a"
+  },
+  "existing_protected_files_unchanged": 250,
+  "previous_smart_artifacts_unchanged": true,
+  "assistant_reran_decompression_or_prediction": false,
+  "tests_suite_rerun": false,
+  "agent_visual_restore_qa_performed": false,
+  "manual_compare_completed": false,
+  "unseen_research_evaluation": false,
+  "next_step": "User runs actual Compare from Smart result to planned fresh output; verify raw repeats/scores/log next."
+}

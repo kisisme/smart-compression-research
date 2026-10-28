@@ -26,3 +26,5 @@
 /research_log/gui_manual_qa_plan_20261028.json -text
 /research_log/verify_manual_smart_20261028.py -text
 /research_log/gui_manual_smart_verified_20261028.json -text
+/research_log/verify_manual_restore_20261028.py -text
+/research_log/gui_manual_restore_verified_20261028.json -text
