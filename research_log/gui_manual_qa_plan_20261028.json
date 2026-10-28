@@ -1,0 +1,28 @@
+{
+  "status": "awaiting_user_smart_action",
+  "created_at_utc": "2026-10-28T07:55:30.335523+00:00",
+  "user_choice": "manual GUI verification, then continue research",
+  "interaction_operator": "user",
+  "verification_operator": "assistant",
+  "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\temp\\gui_native_20261028_02\\긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 긴 경로 확인 원본\\한글 공백 & 실제 GUI 입력 🧪.md",
+  "input_sha256": "391345c9f5dd176f9a7e61c1e567075b9f0c00f723386905f77ce91020409a71",
+  "input_kind": "README smoke copy, not research corpus",
+  "observer_root": "data/temp/gui_native_20261028_02",
+  "mode": "archive",
+  "model": "random_forest",
+  "model_label": "Random Forest",
+  "output_paths": {
+    "smart": "data/temp/manual_smart_20261028_01",
+    "restore": "data/temp/manual_restore_20261028_01",
+    "compare": "data/temp/manual_compare_20261028_01"
+  },
+  "tests_or_jobs_executed_by_plan": false,
+  "steps": [
+    "User opens exact input using native file chooser and runs Smart archive/Random Forest to named new output",
+    "Assistant verifies package/input/model/config/source/log hashes and observer result before next step",
+    "User prepares restoration and runs to named new output; assistant checks restored bytes/hash",
+    "User prepares actual Compare and runs to named new output; assistant checks logs/raw repeats/score and displayed state",
+    "User reports current-size Korean/long-path layout, dialog and control behavior; observer records geometry; distinguish reports from automated pixel inspection"
+  ],
+  "exclusion": "No training, new unseen evaluation, memory work or codec outcome-based corpus selection"
+}

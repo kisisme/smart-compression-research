@@ -22,3 +22,5 @@
 /tests/observe_gui_native.py -text
 /research_log/gui_capture_retry_20261027.json -text
 /research_log/gui_connection_handoff_20261027.json -text
+/research_log/gui_reboot_recovery_20261028.json -text
+/research_log/gui_manual_qa_plan_20261028.json -text
