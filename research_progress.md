@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [사용자 수동 GUI 복원·저장 검증](research_log/gui_manual_restore_20261028.md)을 완료했다. 원래 이름의 4,433 bytes 파일이 원본 bytes와 SHA-256 모두 일치했고 GUI 표시 6개·성공 로그·package/manifest/payload·source snapshot을 대조했다. 직전 Smart 산출물/모델/config와 보호 파일 250개는 그대로다. 이번에 assistant는 복원을 재실행하지 않았고 별도 픽셀 QA·테스트 suite도 수행하지 않았다. 다음은 사용자가 같은 입력으로 수동 Compare를 실행한 뒤 원시 반복/점수/Demo/로그를 검증하는 작업이다. 창 가림/입력 guard·전체 시각 QA와 corpus 동결/연구 평가는 미완료다.
+최신 진행: 사용자 요청에 따라 [기존 Pilot 우세 조건·점수 민감도 분석](research_log/pilot_tradeoffs_20261029.md)을 완료했다. 압축 크기에서는 다른 압축기가 548/1008개에서 zstd보다 좋았다. 지표/Pareto·generator/size·공식 regret와 사전에 정한 가중치 격자를 별도 탐색 결과로 보존했다. 시간 비중을 조금 줄인 경로에서는 선택 변화가 작았고, 동일 시간 비중의 0.01 격자에서 0.88/0.06/0.06부터 비-zstd 엄격 개선 비율이 10%를 넘었다. 전용 테스트 8개·독립 저장 검증을 통과했고 보호 파일 59개는 불변이다. 공식 가중치·정답·모델은 유지하며 memory 추가/추정·새 압축·실제 unseen 평가를 하지 않았다. 다음 연구 결정은 사용 목적을 명시한 별도 후보 함수 설계이며, 수동 Compare 정식 저장 검증·GUI 전체 시각 QA와 corpus 동결/평가는 별도 미완료다.
+
+직전 수동 GUI 진행: [사용자 수동 GUI 복원·저장 검증](research_log/gui_manual_restore_20261028.md)을 완료했다. 원래 이름의 4,433 bytes 파일이 원본 bytes와 SHA-256 모두 일치했고 GUI 표시 6개·성공 로그·package/manifest/payload·source snapshot을 대조했다. 직전 Smart 산출물/모델/config와 보호 파일 250개는 그대로다. 이번에 assistant는 복원을 재실행하지 않았고 별도 픽셀 QA·테스트 suite도 수행하지 않았다. 다음은 사용자가 같은 입력으로 수동 Compare를 실행한 뒤 원시 반복/점수/Demo/로그를 검증하는 작업이다. 창 가림/입력 guard·전체 시각 QA와 corpus 동결/연구 평가는 미완료다.
 
 직전 합성 감사: [기존 합성 입력 재생성·후보 hash 겹침 감사](research_log/unseen_overlap_audit_20261027.md)를 완료했다. 초기 검증/Pilot의 clean 실행 commit·CPython 버전·당시 source/config·sample 계획과 매개변수를 대조해 1,080개 전체를 재생성했으며 검토 후보 60개와의 정확 full hash 중복은 0건이다. 과거 input bytes/hash·stdlib hash는 저장하지 않았으므로 기록 조건에 대한 재생성 감사이며 당시 bytes의 독립 증명은 아니다. [독립 저장 검증](data/results/real_unseen/synthetic_overlap_20261027_01/verification.json)에서 비교/index·source·보호 파일 246개 불변을 확인했고 전용 인위적 테스트 10개가 통과했다. 선정 0개·동결/특징/예측/benchmark/연구 평가는 미수행이다. 다음은 필수 notice/citation과 검토·감사 근거를 연결하는 명시적 선정/실제 corpus 동결이다.
 
@@ -866,6 +868,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **사용 조건/미완료:** 후보별 notice/citation/hash와 추가 PSF 적응 요약을 후속 동결·배포에 함께 보존해야 한다. 새 후보도 선정 0개이며 `evaluation_ready=false`, `unseen_overlap_audit=not_performed`다. 일반 manifest 도구의 `provenance_review=declared_metadata_only`와 별도 assistant 파일별 판단을 구분한다. 합성 72개/1,008개 입력 재생성 근거·겹침 감사·명시적 선정/실제 corpus 동결·평가 runner/평가는 남아 있다.
 - **범위:** source/입력/metadata를 실행하지 않고 읽어 검토했다. 연구 특징·압축 benchmark·pickle/모델 예측/학습·memory 추가 측정·기존 단위 테스트/전체 suite를 실행하지 않았다. 상세 맥락값은 Git 제외 로컬 검사 기록에 두고 게시한 판단에는 원본 hash·분류·위치만 연결했다.
 
+### 기존 Pilot 우세 조건·가중치 민감도 탐색 완료 — 2026-10-29
+
+- **근거/실행 기준:** [보고서](research_log/pilot_tradeoffs_20261029.md), [분석 전 고정 계획](research_log/pilot_tradeoff_plan_20261029.json), [결과/재현 근거](data/results/pilot_tradeoff_20261029_01/summary.json), [독립 검증](data/results/pilot_tradeoff_20261029_01/verification.json), [문서·그래프 hash](data/results/pilot_tradeoff_20261029_01/publication.json). 시작/실행 HEAD는 `699801e`, 원래 Pilot 측정 commit은 `4d2d637bea96a4a1ddbbedb2c077fd0474ca8c19`다. Commit 전 분석 source의 정확한 hash를 보존했다.
+- **완료:** 원래 1,008개 전체의 hash·설정·검증·완전한 측정 조합과 모든 공식 점수/라벨을 재계산했다. 압축률 단독 최소는 bz2 226·LZMA 322·zstd 460개다. 지표별 minima/동점·zstd 대비 절감 bytes/%/ms·Pareto·generator×size·공식 score regret를 새 CSV/JSON에 저장했다. 전체 0.05 단체 격자 231개와 동일 시간 비중의 0.01 경로 101개 전체를 보존하고, 선택 비율과 엄격 개선·동점만의 선택을 분리했다. 10%는 해석용 참고선이며 가중치를 채택하거나 클래스 비율을 강제하지 않았다.
+- **검증 완료:** 전용 인위적 수학 fixture 테스트 8개 통과(0.034초). 최초 제한 실행에서는 임시 폴더 접근 오류 2개가 있었고 승인 재실행에서 통과했다. 별도 검증기가 원래 측정값에서 pairwise 4,032행·가중치 조건 332개 전체의 선택/엄격 개선/평균 regret 및 파일별 지표/Pareto·그룹 선택 수를 대조했다. 보호 파일 59개와 분석 source/output hash 불변을 확인했다. 보고서 로컬 링크와 그래프 렌더링을 확인했으며 기존 전체 suite는 재실행하지 않았다.
+- **한계/미완료:** 기존 train/test를 포함한 전체 Pilot의 탐색 재분석이며 일반화 성능 검증이 아니다. 기존 중앙값만 사용해 작은 시간 차이의 통계적 유의성을 입증하지 않는다. 공식 점수·라벨·모델/config를 수정하지 않았고 memory 보충·4지표 점수·새 압축/학습·실제 후보 성능 평가를 하지 않았다. 사용 목적에 근거한 새 함수 채택과 독립 평가, 수동 Compare 저장 검증·GUI 전체 QA, corpus 동결/평가는 남아 있다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
@@ -877,11 +886,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**수동 GUI Compare·저장 검증:** 사용자가 Smart 탭의 `사용한 파일 실제 비교`로 같은 입력을 준비하고 새 `manual_compare_20261028_01` 결과 폴더에 `네 알고리즘 실제 비교`를 실행한다. 원시 반복/중앙값·기존 공식 점수·정답·GUI 표시·조건 일치 Demo·작업 로그와 보호 hash를 확인한다. 해당 흐름이 끝나면 사용자 화면 가독성/선택창 확인의 범위를 정리한 뒤 후보 선정·실제 corpus 동결을 이어간다. 단일 README smoke를 연구 성능 평가나 화면 도구 전체 해결로 기록하지 않는다.
+**후속 목적 함수의 사용 조건 명시:** 이번 탐색을 바탕으로 장기 보관·복원 빈도·허용 지연/메모리 제한 등 실제 요구를 먼저 정하고, 별도 버전의 후보 함수와 검증 계획을 작성한다. 10% 달성을 위해 공식 가중치를 자동 변경하지 않는다. Memory는 참고 지표 유지다. 별도로 사용자 수동 Compare는 화면상 완료를 확인했으며 원시 반복/중앙값·공식 점수·GUI/Demo·로그 저장 검증과 전체 시각 QA는 미완료다. 그 범위를 정리한 뒤 검토 후보의 명시적 선정·실제 corpus 동결/평가를 진행한다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 Pilot 우세 조건·가중치 민감도 탐색의 시작/실행 HEAD는 `699801e`(수동 GUI 복원 검증 보존)다. 원래 Pilot 실측 commit과 새 분석 source hash·고정 계획·독립 저장 검증을 별도로 기록했다. 공식 점수/모델 전환이나 새 실측 commit이 아니다.
 
 이번 수동 GUI 복원 실행·저장 검증의 시작/실행 HEAD는 `df09f49`(수동 Smart 검증·일부 실제 scroll/click 보존)이다. 실제 저장 복원 bytes와 원래 작업 로그/GUI 상태·검증 source hash를 새 근거에 기록했다.
 

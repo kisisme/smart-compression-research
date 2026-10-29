@@ -1,0 +1,904 @@
+{
+  "sample_count": 1008,
+  "metrics": {
+    "compression_ratio": {
+      "exact_minima_sets": {
+        "zstd": 460,
+        "bz2": 226,
+        "lzma": 322
+      },
+      "zstd_strictly_beaten_count": 548,
+      "best_saving_pct_all_samples": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 4.92196476672335,
+        "p90": 32.44090182192497,
+        "max": 52.37028587639407,
+        "mean": 10.403927677448156
+      },
+      "best_saving_pct_strict_improvements_only": {
+        "count": 548,
+        "min": 1.3411391002437762,
+        "median": 15.919976218380363,
+        "p90": 40.71507757666957,
+        "max": 52.37028587639407,
+        "mean": 19.1371516402696
+      }
+    },
+    "compression_time_ms": {
+      "exact_minima_sets": {
+        "zstd": 1005,
+        "gzip": 3
+      },
+      "zstd_strictly_beaten_count": 3,
+      "best_saving_pct_all_samples": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 30.363175675675684,
+        "mean": 0.05983142253936049
+      },
+      "best_saving_pct_strict_improvements_only": {
+        "count": 3,
+        "min": 0.17636684303350658,
+        "median": 29.77053140096618,
+        "p90": 30.244646820733784,
+        "max": 30.363175675675684,
+        "mean": 20.103357973225126
+      }
+    },
+    "decompression_time_ms": {
+      "exact_minima_sets": {
+        "zstd": 794,
+        "gzip": 211,
+        "gzip|zstd": 3
+      },
+      "zstd_strictly_beaten_count": 211,
+      "best_saving_pct_all_samples": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 21.864201056689996,
+        "max": 81.26195028680688,
+        "mean": 4.954287423534016
+      },
+      "best_saving_pct_strict_improvements_only": {
+        "count": 211,
+        "min": 0.08340283569641606,
+        "median": 20.794049863817307,
+        "p90": 47.635524798154556,
+        "max": 81.26195028680688,
+        "mean": 23.66787546408667
+      }
+    }
+  },
+  "pairwise_vs_zstd": {
+    "gzip": {
+      "compression_ratio": {
+        "better": 400,
+        "equal": 0,
+        "worse": 608,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -1806.5217391304348,
+          "median": -0.042718091111585754,
+          "p90": 15.675241397267607,
+          "max": 20.613346162094487,
+          "mean": -119.99324651554237
+        },
+        "saving_pct_when_better": {
+          "count": 400,
+          "min": 0.0005053721054812659,
+          "median": 7.675787541349834,
+          "p90": 18.907387458994688,
+          "max": 20.613346162094487,
+          "mean": 9.037466270730967
+        },
+        "absolute_saving_when_better": {
+          "count": 400,
+          "min": 9.5367431640625e-07,
+          "median": 0.022613525390625,
+          "p90": 0.03736228942871094,
+          "max": 0.04876708984375,
+          "mean": 0.021535520553588868
+        }
+      },
+      "compression_time_ms": {
+        "better": 3,
+        "equal": 0,
+        "worse": 1005,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -36406.152351655466,
+          "median": -982.7713414693301,
+          "p90": -246.22572311109067,
+          "max": 30.363175675675684,
+          "mean": -2587.1894100986433
+        },
+        "saving_pct_when_better": {
+          "count": 3,
+          "min": 0.17636684303350658,
+          "median": 29.77053140096618,
+          "p90": 30.244646820733784,
+          "max": 30.363175675675684,
+          "mean": 20.103357973225126
+        },
+        "absolute_saving_when_better": {
+          "count": 3,
+          "min": 0.0002999999999999947,
+          "median": 0.0493,
+          "p90": 0.12490000000000004,
+          "max": 0.14380000000000004,
+          "mean": 0.06446666666666667
+        }
+      },
+      "decompression_time_ms": {
+        "better": 211,
+        "equal": 3,
+        "worse": 794,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -9907.692307692307,
+          "median": -57.57667731662394,
+          "p90": 21.864201056689996,
+          "max": 81.26195028680688,
+          "mean": -177.96375435798709
+        },
+        "saving_pct_when_better": {
+          "count": 211,
+          "min": 0.08340283569641606,
+          "median": 20.794049863817307,
+          "p90": 47.635524798154556,
+          "max": 81.26195028680688,
+          "mean": 23.66787546408667
+        },
+        "absolute_saving_when_better": {
+          "count": 211,
+          "min": 0.0003999999999999976,
+          "median": 0.0511,
+          "p90": 0.3589,
+          "max": 4.8835,
+          "mean": 0.17098104265402841
+        }
+      },
+      "bytes_saved_when_smaller": {
+        "count": 400,
+        "min": 1,
+        "median": 2051.5,
+        "p90": 34871.5,
+        "max": 41462,
+        "mean": 8788.8675
+      }
+    },
+    "bz2": {
+      "compression_ratio": {
+        "better": 481,
+        "equal": 0,
+        "worse": 527,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -351.28205128205127,
+          "median": -0.48225792454575533,
+          "p90": 30.770684087758475,
+          "max": 52.37028587639407,
+          "mean": -29.411808833143095
+        },
+        "saving_pct_when_better": {
+          "count": 481,
+          "min": 0.1518987341772152,
+          "median": 13.536701620591039,
+          "p90": 39.36045062848069,
+          "max": 52.37028587639407,
+          "mean": 17.444853551825926
+        },
+        "absolute_saving_when_better": {
+          "count": 481,
+          "min": 3.814697265625e-06,
+          "median": 0.05206298828125,
+          "p90": 0.0819091796875,
+          "max": 0.09861373901367188,
+          "mean": 0.04557491786266811
+        }
+      },
+      "compression_time_ms": {
+        "better": 0,
+        "equal": 0,
+        "worse": 1008,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -127746.63212435231,
+          "median": -3052.892870239699,
+          "p90": -717.9472896086027,
+          "max": -271.0412815773259,
+          "mean": -8909.30305077614
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "decompression_time_ms": {
+        "better": 0,
+        "equal": 0,
+        "worse": 1008,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -267350.0,
+          "median": -1934.095105034679,
+          "p90": -750.3482999795793,
+          "max": -81.8355640535373,
+          "mean": -15012.446528504728
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "bytes_saved_when_smaller": {
+        "count": 481,
+        "min": 4,
+        "median": 4927,
+        "p90": 61203.0,
+        "max": 95592,
+        "mean": 15863.918918918918
+      }
+    },
+    "lzma": {
+      "compression_ratio": {
+        "better": 521,
+        "equal": 0,
+        "worse": 487,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -572.7272727272727,
+          "median": 2.3794491637978448,
+          "p90": 30.9029588922007,
+          "max": 41.9069147394656,
+          "mean": -34.34775473133039
+        },
+        "saving_pct_when_better": {
+          "count": 521,
+          "min": 0.6369426751592356,
+          "median": 13.976380103350705,
+          "p90": 34.72153596385967,
+          "max": 41.9069147394656,
+          "mean": 17.14062250387712
+        },
+        "absolute_saving_when_better": {
+          "count": 521,
+          "min": 0.00072479248046875,
+          "median": 0.03887939453125,
+          "p90": 0.08892822265625,
+          "max": 0.14156341552734375,
+          "mean": 0.04481035184951753
+        }
+      },
+      "compression_time_ms": {
+        "better": 0,
+        "equal": 0,
+        "worse": 1008,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -82369.78417266188,
+          "median": -10881.260643558682,
+          "p90": -3464.7974447839006,
+          "max": -1956.7241555260741,
+          "mean": -16230.420119900293
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "decompression_time_ms": {
+        "better": 1,
+        "equal": 0,
+        "worse": 1007,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": -13785.714285714288,
+          "median": -982.3787560807868,
+          "p90": -420.0057603686636,
+          "max": 13.862332695984703,
+          "mean": -1578.5988172076793
+        },
+        "saving_pct_when_better": {
+          "count": 1,
+          "min": 13.862332695984703,
+          "median": 13.862332695984703,
+          "p90": 13.862332695984703,
+          "max": 13.862332695984703,
+          "mean": 13.862332695984703
+        },
+        "absolute_saving_when_better": {
+          "count": 1,
+          "min": 0.014499999999999999,
+          "median": 0.014499999999999999,
+          "p90": 0.014499999999999999,
+          "max": 0.014499999999999999,
+          "mean": 0.014499999999999999
+        }
+      },
+      "bytes_saved_when_smaller": {
+        "count": 521,
+        "min": 47,
+        "median": 4367,
+        "p90": 41317.0,
+        "max": 144675,
+        "mean": 16393.3877159309
+      }
+    },
+    "zstd": {
+      "compression_ratio": {
+        "better": 0,
+        "equal": 1008,
+        "worse": 0,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "compression_time_ms": {
+        "better": 0,
+        "equal": 1008,
+        "worse": 0,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "decompression_time_ms": {
+        "better": 0,
+        "equal": 1008,
+        "worse": 0,
+        "saving_pct_all": {
+          "count": 1008,
+          "min": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "saving_pct_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        },
+        "absolute_saving_when_better": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p90": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "bytes_saved_when_smaller": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p90": null,
+        "max": null,
+        "mean": null
+      }
+    }
+  },
+  "official": {
+    "archive": {
+      "selected_counts": {
+        "gzip": 8,
+        "bz2": 0,
+        "lzma": 0,
+        "zstd": 1000
+      },
+      "non_zstd_pct": 0.7936507936507936,
+      "zstd_regret": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.12640528997329442,
+        "mean": 0.0005355109519581345
+      },
+      "size_saved_bytes": {
+        "count": 1008,
+        "min": 0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 32147,
+        "mean": 84.77281746031746
+      },
+      "compress_saved_ms": {
+        "count": 1008,
+        "min": -33.6224,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.0,
+        "mean": -0.06500684523809523
+      },
+      "decompress_saved_ms": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 4.8835,
+        "mean": 0.007951587301587302
+      }
+    },
+    "balanced": {
+      "selected_counts": {
+        "gzip": 5,
+        "bz2": 0,
+        "lzma": 0,
+        "zstd": 1003
+      },
+      "non_zstd_pct": 0.49603174603174605,
+      "zstd_regret": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.09493620058590835,
+        "mean": 0.0002458728277661975
+      },
+      "size_saved_bytes": {
+        "count": 1008,
+        "min": 0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 32147,
+        "mean": 73.5297619047619
+      },
+      "compress_saved_ms": {
+        "count": 1008,
+        "min": -33.6224,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.0,
+        "mean": -0.059372519841269844
+      },
+      "decompress_saved_ms": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 4.8835,
+        "mean": 0.007777678571428571
+      }
+    },
+    "fast_access": {
+      "selected_counts": {
+        "gzip": 12,
+        "bz2": 0,
+        "lzma": 0,
+        "zstd": 996
+      },
+      "non_zstd_pct": 1.1904761904761905,
+      "zstd_regret": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.38295156154000487,
+        "mean": 0.0025073719579793083
+      },
+      "size_saved_bytes": {
+        "count": 1008,
+        "min": -16,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 32147,
+        "mean": 79.58829365079364
+      },
+      "compress_saved_ms": {
+        "count": 1008,
+        "min": -33.6224,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.0,
+        "mean": -0.06650882936507936
+      },
+      "decompress_saved_ms": {
+        "count": 1008,
+        "min": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 4.8835,
+        "mean": 0.008385912698412698
+      }
+    }
+  },
+  "pareto": {
+    "front_inclusion_counts": {
+      "gzip": 477,
+      "bz2": 467,
+      "lzma": 506,
+      "zstd": 1008
+    },
+    "zstd_dominates_all_others_count": 398
+  },
+  "simplex": {
+    "grid_point_count": 231,
+    "positive_weight_point_count": 171,
+    "points_with_strict_non_zstd_gain_at_least_10pct": 31,
+    "positive_points_with_strict_non_zstd_gain_at_least_10pct": 7
+  },
+  "equal_time_path": {
+    "grid_point_count": 101,
+    "size_weights_with_strict_gain_at_least_10pct": [
+      0.88,
+      0.89,
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0
+    ]
+  },
+  "schema_version": 1,
+  "status": "exploratory_completed",
+  "plan": {
+    "analysis_kind": "exploratory_reanalysis_of_existing_synthetic_pilot",
+    "input_root": "data/results/pilot_1008",
+    "output_root": "data/results/pilot_tradeoff_20261029_01",
+    "reference_algorithm": "zstd",
+    "official_definition": "research_protocol_v2.md and config/experiment_config.json; unchanged",
+    "analyses": [
+      "Validate original metadata hashes, complete sample/algorithm coverage, positive finite metrics, restored verification and all official scores/labels",
+      "Metric minima including exact ties; strict improvement over zstd; absolute and relative saving distributions",
+      "Pareto non-dominated algorithms and zstd dominance using measured size/compression/decompression metrics",
+      "Official oracle versus fixed-zstd score regret and metric trade-offs, overall and by generator/size",
+      "Complete non-negative 3-metric weight simplex with integer numerator sum 20 (step 0.05), separating strict gain from tie-order selections",
+      "Archive-style equal-time-weight path (r, (1-r)/2, (1-r)/2) for all r=i/100, i=0..100"
+    ],
+    "sensitivity_policy": {
+      "form": "sum_j w_j * ln(metric_j / within_sample_min_j)",
+      "tie_order": [
+        "gzip",
+        "bz2",
+        "lzma",
+        "zstd"
+      ],
+      "selection_ties": "exact Python float equality; no epsilon in winner choice",
+      "strict_gain": "selected score strictly below zstd score; report a separate >1e-12 numerical-margin count",
+      "reference_share": 0.1,
+      "reference_share_role": "descriptive feasibility marker only; no recommended or adopted weights",
+      "grid_scope": "finite grid only, not an exhaustive proof over continuous weights",
+      "endpoints": "zero-weight edges included and explicitly flagged"
+    },
+    "scope": {
+      "all_pilot_samples_including_prior_test": "descriptive exploration only; no new generalization or predictive-performance claims",
+      "unseen_candidates": "not used for weight selection or evaluation",
+      "memory": "not measured, imputed or scored; validation_only policy unchanged",
+      "new_compression_or_training": false,
+      "ten_percent_target_enforced": false,
+      "official_labels_models_or_config_changed": false
+    }
+  },
+  "started_at_utc": "2026-10-29T11:40:41.724438+00:00",
+  "completed_at_utc": "2026-10-29T11:40:43.011609+00:00",
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "git_head": "699801eb536f88613a3ac2409697c404ecc86aa5",
+  "git_status": "?? data/results/pilot_tradeoff_20261029_01/\n?? research_log/analyze_pilot_tradeoffs_20261029.py\n?? research_log/pilot_tradeoff_plan_20261029.json\n?? tests/test_pilot_tradeoffs.py\n",
+  "command": [
+    "research_log/analyze_pilot_tradeoffs_20261029.py"
+  ],
+  "historical_measurement_metadata": {
+    "base_seed": 20260983,
+    "completed_at_utc": "2026-09-12T07:08:35.038191+00:00",
+    "compression_result_count": 4032,
+    "compression_settings": {
+      "bz2": {
+        "level": 9
+      },
+      "gzip": {
+        "level": 9
+      },
+      "lzma": {
+        "preset": 6
+      },
+      "zstd": {
+        "level": 3
+      }
+    },
+    "duration_seconds": 1370.3384859999933,
+    "feature_settings": {
+      "duplicate_block_size": 16,
+      "segment_size": 4096
+    },
+    "generator_counts": {
+      "long_runs": 168,
+      "mixed": 168,
+      "random": 168,
+      "repeated_pattern": 168,
+      "small_alphabet": 168,
+      "structured": 168
+    },
+    "generators": [
+      "random",
+      "small_alphabet",
+      "repeated_pattern",
+      "long_runs",
+      "structured",
+      "mixed"
+    ],
+    "git": {
+      "commit_hash": "4d2d637bea96a4a1ddbbedb2c077fd0474ca8c19",
+      "worktree_dirty": false
+    },
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "output_files": {
+      "compression_results.csv": {
+        "sha256": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792"
+      },
+      "samples.csv": {
+        "sha256": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1"
+      }
+    },
+    "package_versions": {
+      "matplotlib": "3.11.1",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "zstandard": "0.25.0"
+    },
+    "python_implementation": "CPython",
+    "python_version": "3.14.4",
+    "sample_count": 1008,
+    "sample_id_strategy": "sample_{zero_based_sample_index:06d}",
+    "sample_sizes": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ],
+    "schema_version": 1,
+    "seed_strategy": "base_seed + zero_based_sample_index",
+    "size_counts": {
+      "1048576": 252,
+      "16384": 252,
+      "262144": 252,
+      "65536": 252
+    },
+    "started_at_utc": "2026-09-12T06:45:44.699703+00:00",
+    "timing": {
+      "aggregate": "median",
+      "repeats": 5,
+      "timer": "time.perf_counter_ns"
+    },
+    "verification_failure_count": 0,
+    "verification_failures": []
+  },
+  "source_sha256": {
+    "research_log/pilot_tradeoff_plan_20261029.json": "3772e8d585e8e2bd7e2537b31d759a67d1ef1e13def1d5a60fea65ac81abdf0f",
+    "research_log/analyze_pilot_tradeoffs_20261029.py": "db6f64489a0505eafa7dad1812be3cb9e12f9d3eacdf7756469e8a05ef30cd0d",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "tests/test_pilot_tradeoffs.py": "c1661a64f9ae01ce8227eb7bc9a4bfb9ff0dc953ab12a9b047a90453af584431"
+  },
+  "protected_before_sha256": {
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "data/results/pilot_1008/analysis/algorithm_metric_summary.csv": "b291fa17ee4a1852d766cf14bd3b52434aa2a7a659aa2d3e78f9d3057be3473d",
+    "data/results/pilot_1008/analysis/analysis_summary.json": "052a79b02c868c9c8745d4eb950639ace7a4de204d2204a74d7dfcbd32cb7881",
+    "data/results/pilot_1008/analysis/correlations.csv": "39b32cb9999cafc93ccb8c01ee73ed1f8bd835708e815ce092f568a54dc960c7",
+    "data/results/pilot_1008/analysis/feature_summary.csv": "055e600757fd2297820c7d72ea1943ef43d692857b45b11ed1d814ccd1ad8dd7",
+    "data/results/pilot_1008/analysis/pareto_frequency.csv": "0bdd59f8eee1da8bd4153896bfaed357cf5381a483e2c1e3a47d902cb8f24a33",
+    "data/results/pilot_1008/analysis/win_rates_by_generator_mode.csv": "0d067640a422678e7d6d03fae1c7a386e68d85cd1f9600c6e2297348ddcae2c7",
+    "data/results/pilot_1008/analysis/win_rates_by_mode.csv": "49c6890a43cb03106792364e2ba71d92c1f9abb769fdc67482fcc610cc9ffe58",
+    "data/results/pilot_1008/analysis/win_rates_by_size_mode.csv": "3abbe22c1df8c3c4f73a316aa7a3fccd2cd37b56a4fe39664c59e0d33f72cd65",
+    "data/results/pilot_1008/baseline/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/baseline/baseline_summary.json": "25fbe59770b970beb05f5c0745fa98687fa14e0a9515174e694747864824d7fc",
+    "data/results/pilot_1008/baseline/confusion_matrix.csv": "9b9b4a5058bdae359739180b747da386de093fb9ba9272556abbbcd3ba2598e2",
+    "data/results/pilot_1008/baseline/metrics.csv": "49fade82818d1d534aec484350674353daf95245af360136ca8695d4f2f39dc6",
+    "data/results/pilot_1008/baseline/misclassified_samples.csv": "9524abedfa8ae74814777c0fda418c8b15b28dd70468c7ec4b021bb86c791049",
+    "data/results/pilot_1008/baseline/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/baseline/strategy_comparison.csv": "977686d5059c56473f5602f8d768a5e5c268ec4044e82d24e8f42964f0c15104",
+    "data/results/pilot_1008/baseline/test_predictions.csv": "c4d8e9f19ac1b932d3e673d714a2c8ef55e5890b76cb9c2a4f930219b212a5fa",
+    "data/results/pilot_1008/compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "data/results/pilot_1008/decision_tree/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/decision_tree/confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "data/results/pilot_1008/decision_tree/decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "data/results/pilot_1008/decision_tree/feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "data/results/pilot_1008/decision_tree/metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "data/results/pilot_1008/decision_tree/misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "data/results/pilot_1008/decision_tree/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/decision_tree/strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "data/results/pilot_1008/decision_tree/test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "data/results/pilot_1008/experiment_metadata.json": "9f2075a20331a7498edaffd14b7ed7abda7f1689a3ec11bdc75019da4b9a177e",
+    "data/results/pilot_1008/failure_analysis/confidence_summary.csv": "d1e48cbea5e77fc4a5cf92e089f2fd284f8e758aeaa35af9c209a9581d3c9e3a",
+    "data/results/pilot_1008/failure_analysis/error_algorithm_metrics.csv": "35d95439c3f41a1a7dc459903337f892ea86b72096ab6477af4dd3f2bb7d0549",
+    "data/results/pilot_1008/failure_analysis/error_details.csv": "819653d5d429f6e2b8f346db7db4bce7b35e0352d682c7db50b7ecd39ade53f4",
+    "data/results/pilot_1008/failure_analysis/error_feature_context.csv": "805dc902f0bf1763b25ae0da76a1c43a42d26e549d5ec75931a5b58db651b2eb",
+    "data/results/pilot_1008/failure_analysis/failure_analysis_summary.json": "a941721a65b7461e014be87898e2e2e042ac1df6eda73ec6fbbb565efa444ac7",
+    "data/results/pilot_1008/failure_analysis/grouped_error_rates.csv": "45427866b9f7ecb96d7226d5fdc01ac834a24059f15c62331969fdb8b9bc61f4",
+    "data/results/pilot_1008/failure_analysis/label_distribution.csv": "0f92bc4ad4ac84ff404a5aeb63dafb0be55d36165b67179a0cea7c4fbdc3a360",
+    "data/results/pilot_1008/failure_analysis/model_summary.csv": "7d8fb39e2130efbd060c1d89bdd6d9d844c599dfdfcd444c9b76189c460e795c",
+    "data/results/pilot_1008/failure_analysis/report.md": "479911f2262a7b752552c755e7f722d55a5a2ba5ff8d4f61a43a45cce9e2194d",
+    "data/results/pilot_1008/random_forest/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/random_forest/confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "data/results/pilot_1008/random_forest/feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "data/results/pilot_1008/random_forest/metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "data/results/pilot_1008/random_forest/misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "data/results/pilot_1008/random_forest/random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "data/results/pilot_1008/random_forest/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/random_forest/strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "data/results/pilot_1008/random_forest/test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82",
+    "data/results/pilot_1008/samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "data/results/pilot_1008/selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+  },
+  "protected_after_sha256": {
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "data/results/pilot_1008/analysis/algorithm_metric_summary.csv": "b291fa17ee4a1852d766cf14bd3b52434aa2a7a659aa2d3e78f9d3057be3473d",
+    "data/results/pilot_1008/analysis/analysis_summary.json": "052a79b02c868c9c8745d4eb950639ace7a4de204d2204a74d7dfcbd32cb7881",
+    "data/results/pilot_1008/analysis/correlations.csv": "39b32cb9999cafc93ccb8c01ee73ed1f8bd835708e815ce092f568a54dc960c7",
+    "data/results/pilot_1008/analysis/feature_summary.csv": "055e600757fd2297820c7d72ea1943ef43d692857b45b11ed1d814ccd1ad8dd7",
+    "data/results/pilot_1008/analysis/pareto_frequency.csv": "0bdd59f8eee1da8bd4153896bfaed357cf5381a483e2c1e3a47d902cb8f24a33",
+    "data/results/pilot_1008/analysis/win_rates_by_generator_mode.csv": "0d067640a422678e7d6d03fae1c7a386e68d85cd1f9600c6e2297348ddcae2c7",
+    "data/results/pilot_1008/analysis/win_rates_by_mode.csv": "49c6890a43cb03106792364e2ba71d92c1f9abb769fdc67482fcc610cc9ffe58",
+    "data/results/pilot_1008/analysis/win_rates_by_size_mode.csv": "3abbe22c1df8c3c4f73a316aa7a3fccd2cd37b56a4fe39664c59e0d33f72cd65",
+    "data/results/pilot_1008/baseline/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/baseline/baseline_summary.json": "25fbe59770b970beb05f5c0745fa98687fa14e0a9515174e694747864824d7fc",
+    "data/results/pilot_1008/baseline/confusion_matrix.csv": "9b9b4a5058bdae359739180b747da386de093fb9ba9272556abbbcd3ba2598e2",
+    "data/results/pilot_1008/baseline/metrics.csv": "49fade82818d1d534aec484350674353daf95245af360136ca8695d4f2f39dc6",
+    "data/results/pilot_1008/baseline/misclassified_samples.csv": "9524abedfa8ae74814777c0fda418c8b15b28dd70468c7ec4b021bb86c791049",
+    "data/results/pilot_1008/baseline/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/baseline/strategy_comparison.csv": "977686d5059c56473f5602f8d768a5e5c268ec4044e82d24e8f42964f0c15104",
+    "data/results/pilot_1008/baseline/test_predictions.csv": "c4d8e9f19ac1b932d3e673d714a2c8ef55e5890b76cb9c2a4f930219b212a5fa",
+    "data/results/pilot_1008/compression_results.csv": "b2b6b5db46583a61f2008641f41591a9cb9b1e2e0c001b4f28356ade3a228792",
+    "data/results/pilot_1008/decision_tree/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/decision_tree/confusion_matrix.csv": "1dc681b1bebdc373db19a38bc5555066655ddcca7bf7d54a7fd43a50514e1a97",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive.pkl": "dc445088c7e41e28861974d9f513e0b6c08151c8c204ae5ef74f55471c804a91",
+    "data/results/pilot_1008/decision_tree/decision_tree_archive_rules.txt": "1419e223ba5b3c4d83fd818a04cdef2d8bb6397ca54e23ce1fc04397975e0dd3",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced.pkl": "6d28a30ba9497d0a3d775fc61628bbeb33543309cec0706b8110d3d7f74107fb",
+    "data/results/pilot_1008/decision_tree/decision_tree_balanced_rules.txt": "98c0f47e8b9437475c8ad3e5ca21ea154a9c63a10516107eb72bdc4993038c2b",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access.pkl": "cf4401d84e40ccad52edd59d98d75de0a5902add2a7692ee76f11c5cfa530721",
+    "data/results/pilot_1008/decision_tree/decision_tree_fast_access_rules.txt": "66a17be29cb7b17cd0130a7b85f80adbbd56498aeffb1e2b1e522fac9efdd3ef",
+    "data/results/pilot_1008/decision_tree/decision_tree_summary.json": "7d11d4d48788fd6d9e76a7cd43ce54c9323a0d6a0fe9aab4f081f2f9ef6887c2",
+    "data/results/pilot_1008/decision_tree/feature_importance.csv": "05f2cc8f95cdca04c490a524742e49f7e2ee282b124bf29f317a0b42893983b2",
+    "data/results/pilot_1008/decision_tree/metrics.csv": "3983f8bb255838df8e4bbabe202b9ed999372a1b270099db1161d31f715ae5d7",
+    "data/results/pilot_1008/decision_tree/misclassified_samples.csv": "c1ac77af1e301ebb970b86178b0903449df284971c361c26f128d78e60a62414",
+    "data/results/pilot_1008/decision_tree/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/decision_tree/strategy_comparison.csv": "bb32818a894ef23fd349e177bd8ccab14ed7466494c831d21e7df9905b5d4f92",
+    "data/results/pilot_1008/decision_tree/test_predictions.csv": "50b868435d07897ca7200272ef0ed54155fb467f5e6754d79fef0b24c328154d",
+    "data/results/pilot_1008/experiment_metadata.json": "9f2075a20331a7498edaffd14b7ed7abda7f1689a3ec11bdc75019da4b9a177e",
+    "data/results/pilot_1008/failure_analysis/confidence_summary.csv": "d1e48cbea5e77fc4a5cf92e089f2fd284f8e758aeaa35af9c209a9581d3c9e3a",
+    "data/results/pilot_1008/failure_analysis/error_algorithm_metrics.csv": "35d95439c3f41a1a7dc459903337f892ea86b72096ab6477af4dd3f2bb7d0549",
+    "data/results/pilot_1008/failure_analysis/error_details.csv": "819653d5d429f6e2b8f346db7db4bce7b35e0352d682c7db50b7ecd39ade53f4",
+    "data/results/pilot_1008/failure_analysis/error_feature_context.csv": "805dc902f0bf1763b25ae0da76a1c43a42d26e549d5ec75931a5b58db651b2eb",
+    "data/results/pilot_1008/failure_analysis/failure_analysis_summary.json": "a941721a65b7461e014be87898e2e2e042ac1df6eda73ec6fbbb565efa444ac7",
+    "data/results/pilot_1008/failure_analysis/grouped_error_rates.csv": "45427866b9f7ecb96d7226d5fdc01ac834a24059f15c62331969fdb8b9bc61f4",
+    "data/results/pilot_1008/failure_analysis/label_distribution.csv": "0f92bc4ad4ac84ff404a5aeb63dafb0be55d36165b67179a0cea7c4fbdc3a360",
+    "data/results/pilot_1008/failure_analysis/model_summary.csv": "7d8fb39e2130efbd060c1d89bdd6d9d844c599dfdfcd444c9b76189c460e795c",
+    "data/results/pilot_1008/failure_analysis/report.md": "479911f2262a7b752552c755e7f722d55a5a2ba5ff8d4f61a43a45cce9e2194d",
+    "data/results/pilot_1008/random_forest/baseline_models.json": "f6f730498b24d60630f0f4a09718d3ff9e8d958d7d299176d8ece37ed8aa41f8",
+    "data/results/pilot_1008/random_forest/confusion_matrix.csv": "5beca08137d8ba17ab48af78c15ef927a87f5da7edfec0775814c9f343f9438c",
+    "data/results/pilot_1008/random_forest/feature_importance.csv": "87a31ee025ae1674968886d36ffb0381deb6fa1ebc4d1211e68e09720bbce437",
+    "data/results/pilot_1008/random_forest/metrics.csv": "75c99877e13ef553263f5dd503619f7fa899a47f0d3565de32d76fd51c1f489b",
+    "data/results/pilot_1008/random_forest/misclassified_samples.csv": "a9169792a40e0c5d440d21ac5f746024576a622875d821a9c53bb875516b0300",
+    "data/results/pilot_1008/random_forest/random_forest_archive.pkl": "ef28dab5a163ff32c4aae64d7cfb621d2cabc507215a3562e1dcb4cd1acf4b60",
+    "data/results/pilot_1008/random_forest/random_forest_balanced.pkl": "526e369ca14cb682ba61cf375d2383633b6d4d244f35048ed7c99cdb975ab3b2",
+    "data/results/pilot_1008/random_forest/random_forest_fast_access.pkl": "9ebaa303764b2954787dbcc5b20b8ac4eb27e2378ba8f41b5377adbfb6515f50",
+    "data/results/pilot_1008/random_forest/random_forest_summary.json": "ddb22c91fc031117bcad91c507f79c0ce3d11d4d7b4c17f9c390528b70afa168",
+    "data/results/pilot_1008/random_forest/split_assignments.csv": "c9454497d0e7da7f747420249f378dd12fb9efd9923fe90b72acebeec6199727",
+    "data/results/pilot_1008/random_forest/strategy_comparison.csv": "bf9156af02e5df573ff8cad13a938d19d25c97d0b9a682a8dcb47b31463d2860",
+    "data/results/pilot_1008/random_forest/test_predictions.csv": "be6de524f71c4681fcf9e627cd0beb67403f60d185b7b2a43060aaad24c91c82",
+    "data/results/pilot_1008/samples.csv": "85193aeed85da04090b3b99af4e05e422294f3f2b3b9d6edf1a0b7282596ead1",
+    "data/results/pilot_1008/selection_labels.csv": "558876684af2e1a85d2dde153d84460dc576e3b10951da81e72fb99179bcc9c2",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778"
+  },
+  "output_sha256": {
+    "per_sample.csv": "d6437c3bd45126938f1550d6177ca2dde6d982d82056f942c9567d859b7068bd",
+    "pairwise_vs_zstd.csv": "5e465735985c7297a083b306e4573aed98d448e8f24833d4f28eb7053f592218",
+    "group_summary.csv": "6315ba3a274e89caf040f9ff2025590002b019a1b0ac21bf97543d2fc17170b1",
+    "weight_simplex.csv": "09ac04058248b69bca6d50853f248e5f59e3f05d20ee8fb0d3b9044519c00880",
+    "equal_time_path.csv": "d0a9ec375b7f23956e17fea26d9782e26baf1a6e2b3306c5e85b8c2c52956bd5"
+  },
+  "memory_score_computed": false,
+  "new_model_evaluation": false,
+  "limitations": [
+    "All historical Pilot samples including prior train/test used for descriptive exploration.",
+    "No held-out or real-file generalization assessment; no weight recommendation or adoption.",
+    "Stored medians only: original raw repeat timings and noise inference are unavailable here.",
+    "Codec times exclude feature extraction, prediction, I/O and end-to-end costs.",
+    "Zero-weight faces may select earlier tied algorithms without an improvement over zstd.",
+    "Finite weight grids do not exhaust all continuous weight choices."
+  ]
+}

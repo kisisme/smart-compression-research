@@ -1,0 +1,40 @@
+{
+  "status": "verified_against_original_pilot",
+  "created_at_utc": "2026-10-29T11:44:04.681686+00:00",
+  "sample_count": 1008,
+  "pair_rows": 4032,
+  "sensitivity_points": 332,
+  "protected_file_count": 59,
+  "protected_files_unchanged": true,
+  "source_and_output_hashes_verified": true,
+  "independent_checks": [
+    "Per-sample metric minima and strict gains",
+    "Pareto front",
+    "Official label/regret join",
+    "All pairwise metric savings",
+    "Grouped label counts",
+    "Every saved weight-grid selection, strict gain and regret"
+  ],
+  "summary_sha256": "6ab2b0eb748ee65e52ceb1942d00b93d9e4c22cd9127686893edebc10de0a231",
+  "verifier_sha256": "184c900ea5311f170dd507e484443727033a8edf136d672892c6b51b955a60f9",
+  "source_sha256": {
+    "research_log/pilot_tradeoff_plan_20261029.json": "3772e8d585e8e2bd7e2537b31d759a67d1ef1e13def1d5a60fea65ac81abdf0f",
+    "research_log/analyze_pilot_tradeoffs_20261029.py": "db6f64489a0505eafa7dad1812be3cb9e12f9d3eacdf7756469e8a05ef30cd0d",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "tests/test_pilot_tradeoffs.py": "c1661a64f9ae01ce8227eb7bc9a4bfb9ff0dc953ab12a9b047a90453af584431"
+  },
+  "output_sha256": {
+    "per_sample.csv": "d6437c3bd45126938f1550d6177ca2dde6d982d82056f942c9567d859b7068bd",
+    "pairwise_vs_zstd.csv": "5e465735985c7297a083b306e4573aed98d448e8f24833d4f28eb7053f592218",
+    "group_summary.csv": "6315ba3a274e89caf040f9ff2025590002b019a1b0ac21bf97543d2fc17170b1",
+    "weight_simplex.csv": "09ac04058248b69bca6d50853f248e5f59e3f05d20ee8fb0d3b9044519c00880",
+    "equal_time_path.csv": "d0a9ec375b7f23956e17fea26d9782e26baf1a6e2b3306c5e85b8c2c52956bd5"
+  },
+  "tests": {
+    "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_pilot_tradeoffs.py -v",
+    "passed": 8,
+    "seconds": 0.034,
+    "initial_restricted_attempt": "6 passed, 2 temporary-directory PermissionError; elevated rerun passed"
+  },
+  "scope": "Stored measurements only; no codecs, models, memory or held-out-file evaluation executed."
+}

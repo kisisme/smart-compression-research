@@ -28,3 +28,11 @@
 /research_log/gui_manual_smart_verified_20261028.json -text
 /research_log/verify_manual_restore_20261028.py -text
 /research_log/gui_manual_restore_verified_20261028.json -text
+
+/data/results/pilot_tradeoff_20261029_01/** -text
+/research_log/analyze_pilot_tradeoffs_20261029.py -text
+/research_log/verify_pilot_tradeoffs_20261029.py -text
+/research_log/publish_pilot_tradeoffs_20261029.py -text
+/research_log/pilot_tradeoff_plan_20261029.json -text
+/research_log/pilot_tradeoffs_20261029.md -text
+/tests/test_pilot_tradeoffs.py -text

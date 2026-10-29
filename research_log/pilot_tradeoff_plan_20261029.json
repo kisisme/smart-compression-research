@@ -1,0 +1,33 @@
+{
+  "analysis_kind": "exploratory_reanalysis_of_existing_synthetic_pilot",
+  "input_root": "data/results/pilot_1008",
+  "output_root": "data/results/pilot_tradeoff_20261029_01",
+  "reference_algorithm": "zstd",
+  "official_definition": "research_protocol_v2.md and config/experiment_config.json; unchanged",
+  "analyses": [
+    "Validate original metadata hashes, complete sample/algorithm coverage, positive finite metrics, restored verification and all official scores/labels",
+    "Metric minima including exact ties; strict improvement over zstd; absolute and relative saving distributions",
+    "Pareto non-dominated algorithms and zstd dominance using measured size/compression/decompression metrics",
+    "Official oracle versus fixed-zstd score regret and metric trade-offs, overall and by generator/size",
+    "Complete non-negative 3-metric weight simplex with integer numerator sum 20 (step 0.05), separating strict gain from tie-order selections",
+    "Archive-style equal-time-weight path (r, (1-r)/2, (1-r)/2) for all r=i/100, i=0..100"
+  ],
+  "sensitivity_policy": {
+    "form": "sum_j w_j * ln(metric_j / within_sample_min_j)",
+    "tie_order": ["gzip", "bz2", "lzma", "zstd"],
+    "selection_ties": "exact Python float equality; no epsilon in winner choice",
+    "strict_gain": "selected score strictly below zstd score; report a separate >1e-12 numerical-margin count",
+    "reference_share": 0.10,
+    "reference_share_role": "descriptive feasibility marker only; no recommended or adopted weights",
+    "grid_scope": "finite grid only, not an exhaustive proof over continuous weights",
+    "endpoints": "zero-weight edges included and explicitly flagged"
+  },
+  "scope": {
+    "all_pilot_samples_including_prior_test": "descriptive exploration only; no new generalization or predictive-performance claims",
+    "unseen_candidates": "not used for weight selection or evaluation",
+    "memory": "not measured, imputed or scored; validation_only policy unchanged",
+    "new_compression_or_training": false,
+    "ten_percent_target_enforced": false,
+    "official_labels_models_or_config_changed": false
+  }
+}

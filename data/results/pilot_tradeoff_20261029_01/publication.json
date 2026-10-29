@@ -1,0 +1,9 @@
+{
+  "created_at_utc": "2026-10-29T11:46:25.294548+00:00",
+  "publisher_sha256": "168cb32a4f33efd19091dad5d1cef4e4e70fd7409d7178a863fe33ba310ee8bb",
+  "artifacts_sha256": {
+    "research_log/pilot_tradeoffs_20261029.md": "bda163f42047854e75037fe92ff61cb6898e3309143b044921b2c5145607144f",
+    "data/results/pilot_tradeoff_20261029_01/size_weight_sensitivity.png": "d4f35506f3c42b4f1077c904b16fae356c04d88e8671cbca3ffc2b769727eac3",
+    "data/results/pilot_tradeoff_20261029_01/verification.json": "1473463e231ba8062f08b38b8d1d5f517543bbe0fb032d1e835af1bb76e28237"
+  }
+}
