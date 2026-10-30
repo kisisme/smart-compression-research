@@ -36,3 +36,8 @@
 /research_log/pilot_tradeoff_plan_20261029.json -text
 /research_log/pilot_tradeoffs_20261029.md -text
 /tests/test_pilot_tradeoffs.py -text
+
+/research_log/usage_objective_design_v1.md -text
+/research_log/usage_objective_spec_v1.json -text
+/research_log/verify_usage_objective_design_20261030.py -text
+/research_log/usage_objective_design_checks_20261030.json -text

@@ -1,0 +1,76 @@
+{
+  "design_id": "usage_objective_design_v1_20261030",
+  "status": "candidate_design_only",
+  "official_protocol": "research_protocol_v2.md",
+  "official_config": "config/experiment_config.json",
+  "official_replacement": false,
+  "decision_basis": "User delegated scenario choice on 2026-10-30; retain the three existing modes, use lifetime policy cost as primary candidate and deadline-constrained size as comparator.",
+  "primary_candidate": {
+    "id": "lifetime_policy_cost_v1",
+    "formula": "J(a|theta) = k_s * H * B_a + k_c * T_c_a + k_d * N * T_d_a",
+    "minimize": true,
+    "measurement_scope": "codec-only until a distinct end-to-end experiment is designed",
+    "measurements": {
+      "B_a": "compressed frame bytes; historical compressed_size, not full Smart package bytes",
+      "T_c_a": "compression wall time in milliseconds",
+      "T_d_a": "decompression wall time in milliseconds"
+    },
+    "context": {
+      "H": {"unit": "days", "domain": "finite, >= 0", "meaning": "retention duration"},
+      "N": {"unit": "expected full restorations during H", "domain": "finite, >= 0", "meaning": "expected count; may be fractional"}
+    },
+    "policy_coefficients": {
+      "k_s": {"unit": "policy cost points / (byte day)", "domain": "finite, >= 0"},
+      "k_c": {"unit": "policy cost points / ms", "domain": "finite, >= 0"},
+      "k_d": {"unit": "policy cost points / ms", "domain": "finite, >= 0"}
+    },
+    "validity": [
+      "Each measurement must be verified, finite and positive; costs and contexts must be finite and non-negative",
+      "At least one effective coefficient among k_s*H, k_c, k_d*N must be positive",
+      "For a general-purpose storage profile, require k_s*H > 0; a time-only objective must have an explicit distinct profile",
+      "Missing parameters remain missing; null is not zero and no rates are inferred from compressor labels",
+      "Boolean values are not numeric parameters; non-finite products or final costs are rejected"
+    ],
+    "assumptions": [
+      "One initial compression, no recompression or partial restoration",
+      "Constant policy rates, unchanged retained bytes, no time discounting or tiered costs",
+      "Linear additive storage and latency disutility; not a measured currency bill or CPU/energy usage model",
+      "Expected cost proxy uses measured representative times; no tail-latency guarantee"
+    ],
+    "boundary_when_a_is_smaller": {
+      "delta_bytes": "B_b - B_a > 0",
+      "prefer_a": "k_s*H*(B_b-B_a) > k_c*(T_c_a-T_c_b) + k_d*N*(T_d_a-T_d_b)",
+      "retention_boundary": "H_star = [k_c*(T_c_a-T_c_b) + k_d*N*(T_d_a-T_d_b)] / [k_s*(B_b-B_a)] for k_s > 0",
+      "interpretation": "a wins strictly for H > H_star; negative H_star means a already wins for every H >= 0; equality is a tie",
+      "restoration_boundary": "N_star = [k_s*H*(B_b-B_a) - k_c*(T_c_a-T_c_b)] / [k_d*(T_d_a-T_d_b)] only if k_d > 0 and T_d_a > T_d_b",
+      "other_signs": "Handle equal size/time, zero rates and negative boundaries directly from the cost difference; do not divide by zero or reverse an inequality silently"
+    }
+  },
+  "comparison_candidate": {
+    "id": "deadline_constrained_size_v1",
+    "feasible_set": "F = {a: verified and T_c_a <= tau_c and T_d_a <= tau_d}",
+    "selection": "argmin over F of B_a",
+    "tau_units": "milliseconds; finite and > 0",
+    "inclusive_boundary": true,
+    "no_feasible_candidate": "constraint_unsatisfied, selected_algorithm=null; retain all measurements and violations",
+    "unknown_measurement": "measurement_required, not zero, not silently excluded",
+    "memory_constraint": "not enabled; would require separately validated memory definition and a new approved experiment",
+    "smart_guarantee": "An offline measured feasible set is an oracle. Prediction cannot guarantee deadlines; actual violations must be recorded without silently running the remaining codecs."
+  },
+  "profiles": {
+    "archive": {"intent": "Long retention and infrequent restoration; storage benefit can accumulate over H", "H": null, "N": null, "k_s": null, "k_c": null, "k_d": null},
+    "balanced": {"intent": "Use the same cost formula with an explicit representative workload and policy trade-offs", "H": null, "N": null, "k_s": null, "k_c": null, "k_d": null},
+    "fast_access": {"intent": "Restoration count N and decompression latency policy k_d materially affect the objective; deadline feasibility also matters", "H": null, "N": null, "k_s": null, "k_c": null, "k_d": null}
+  },
+  "profile_readiness": "not executable defaults: workload/rate/deadline values require a separately recorded scenario assumption or measured usage; mathematical implementation can proceed with explicit supplied parameters",
+  "common_rules": {
+    "tie_break": ["gzip", "bz2", "lzma", "zstd"],
+    "tie_tolerance": "no post-hoc epsilon; exact equality in the recorded implementation representation",
+    "ten_percent_non_zstd": "descriptive only, never an acceptance target or coefficient fitting objective",
+    "memory": "validation_only; no measurement, imputation, scoring or constraint addition",
+    "existing_models": "trained for official v2 labels; not automatically valid for the new objective",
+    "model_inputs": "Existing pre-compression statistical features only; a frozen external profile selects its model. Arbitrary context-as-feature models require a separate design.",
+    "smart_sequence": "features -> profile-specific prediction -> one codec -> restore verification -> save",
+    "evaluation_separation": "Pilot exploration is development; freeze new definition/scenarios before examining held-out performance, and preserve official v2 evaluation separately"
+  }
+}
