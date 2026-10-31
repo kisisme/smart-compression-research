@@ -1,0 +1,96 @@
+{
+  "compression": {
+    "gzip": {
+      "level": 9
+    },
+    "bz2": {
+      "level": 9
+    },
+    "lzma": {
+      "preset": 6
+    },
+    "zstd": {
+      "level": 3
+    }
+  },
+  "timing": {
+    "repeats": 5,
+    "timer": "time.perf_counter_ns",
+    "aggregate": "median"
+  },
+  "memory": {
+    "status": "validation_only",
+    "platform": "win32",
+    "metric": "peak_process_working_set_bytes",
+    "backend": "GetProcessMemoryInfo.PeakWorkingSetSize",
+    "unit": "bytes",
+    "isolation": "fresh_subprocess_per_phase_repeat",
+    "repeats": 5,
+    "aggregate": "median",
+    "combined": "max_of_phase_medians"
+  },
+  "features": {
+    "duplicate_block_size": 16,
+    "segment_size": 4096
+  },
+  "selection_modes": {
+    "archive": {
+      "compression_ratio": 0.70,
+      "compression_time": 0.15,
+      "decompression_time": 0.15
+    },
+    "balanced": {
+      "compression_ratio": 0.50,
+      "compression_time": 0.25,
+      "decompression_time": 0.25
+    },
+    "fast_access": {
+      "compression_ratio": 0.30,
+      "compression_time": 0.20,
+      "decompression_time": 0.50
+    }
+  },
+  "baseline": {
+    "test_size": 0.20,
+    "random_state": 42,
+    "group_column": "seed"
+  },
+  "decision_tree": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "max_features": null,
+    "class_weight": null,
+    "ccp_alpha": 0.0,
+    "random_state": 42
+  },
+  "random_forest": {
+    "n_estimators": 100,
+    "criterion": "gini",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "bootstrap": true,
+    "oob_score": false,
+    "n_jobs": 1,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false,
+    "class_weight": null,
+    "ccp_alpha": 0.0,
+    "max_samples": null,
+    "monotonic_cst": null
+  },
+  "sample_sizes": [
+    16384,
+    65536,
+    262144,
+    1048576
+  ]
+}

@@ -1,0 +1,5 @@
+sample_id,algorithm,original_size,compressed_size,compression_ratio,compression_time_ms,decompression_time_ms,verified,status,error
+file_6cf79a1a18dc75ec,gzip,30952,2097,0.0677500646161799,0.6811,0.2362,True,ok,
+file_6cf79a1a18dc75ec,bz2,30952,2062,0.0666192814680796,8.3736,1.2353,True,ok,
+file_6cf79a1a18dc75ec,lzma,30952,1860,0.06009304729904368,14.9826,0.6555,True,ok,
+file_6cf79a1a18dc75ec,zstd,30952,2188,0.07069010080124064,0.1913,0.0545,True,ok,

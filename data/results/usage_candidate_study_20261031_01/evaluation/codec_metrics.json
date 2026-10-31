@@ -1,0 +1,3132 @@
+{
+  "archive_t0p1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.21666666666666667,
+      "macro_f1": 0.08904109589041095,
+      "confusion_matrix": [
+        [
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          38,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 700.834632157898,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": -4.959923329123543,
+      "mean_regret": 0.7279778841959635,
+      "max_regret": 5.241098633422851,
+      "primary_group_mean_difference_vs_majority": 0.9757930798746745,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.15,
+      "macro_f1": 0.06521739130434782,
+      "confusion_matrix": [
+        [
+          0,
+          13,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          38,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 728.8058746942139,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": -9.14901350435134,
+      "mean_regret": 1.194165259801229,
+      "max_regret": 14.26963154937745,
+      "primary_group_mean_difference_vs_majority": 0.6488302922821046,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          13,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          38,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 1016.1079015002441,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": -52.17656568597464,
+      "mean_regret": 5.982532373235066,
+      "max_regret": 46.018015594482414,
+      "primary_group_mean_difference_vs_majority": 8.914451210513644,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.6333333333333333,
+      "macro_f1": 0.19387755102040816,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          38
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 667.7164101580811,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.17600751753234864,
+      "max_regret": 2.2684455651855444,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.6333333333333333,
+      "macro_f1": 0.19387755102040816,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          38
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 667.7164101580811,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.17600751753234864,
+      "max_regret": 2.2684455651855444,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.75,
+      "confusion_matrix": [
+        [
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          38
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 38,
+        "gzip": 13,
+        "bz2": 9
+      },
+      "policy_cost_sum": 657.1559591061401,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": 1.5815772821040572,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -0.32500887987772614,
+      "mean_compressed_size": 28715.183333333334,
+      "mean_compression_time_ms": 7.19059,
+      "mean_decompression_time_ms": 2.3803983333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.6,
+      "macro_f1": 0.2617056856187291,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          2,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          34
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 54,
+        "gzip": 2,
+        "bz2": 4
+      },
+      "policy_cost_sum": 666.7778505093384,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": 0.14056261527562822,
+      "mean_regret": 0.1603648567199708,
+      "max_regret": 2.2089186633300812,
+      "primary_group_mean_difference_vs_majority": -0.1206454796854653,
+      "mean_compressed_size": 30573.683333333334,
+      "mean_compression_time_ms": 3.664328333333333,
+      "mean_decompression_time_ms": 1.041035
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.6333333333333333,
+      "macro_f1": 0.3263888888888889,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          5,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          33
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 50,
+        "gzip": 1,
+        "bz2": 9
+      },
+      "policy_cost_sum": 666.8851912094116,
+      "fixed_zstd_cost_sum": 667.7164101580811,
+      "cost_saving_pct_vs_zstd": 0.12448682345139997,
+      "mean_regret": 0.16215386838785814,
+      "max_regret": 2.6577929199218744,
+      "primary_group_mean_difference_vs_majority": -0.047072394454955944,
+      "mean_compressed_size": 29185.25,
+      "mean_compression_time_ms": 7.345395,
+      "mean_decompression_time_ms": 2.210871666666667
+    }
+  },
+  "archive_t1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 1445.513532157898,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": -85.62646327013927,
+      "mean_regret": 11.113197366663616,
+      "max_regret": 91.2586937515259,
+      "primary_group_mean_difference_vs_majority": 17.726572079874675,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          60,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 2171.5181146942136,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": -178.856765149741,
+      "mean_regret": 23.213273742268882,
+      "max_regret": 155.39949291992187,
+      "primary_group_mean_difference_vs_majority": 29.2151202922821,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          60,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 5325.044831500244,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": -583.8187376569999,
+      "mean_regret": 75.77205235570271,
+      "max_regret": 595.0292655944824,
+      "primary_group_mean_difference_vs_majority": 113.74971621051364,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 778.7216901580811,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 778.7216901580811,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 778.7216901580811,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 778.7216901580811,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 778.7216901580811,
+      "fixed_zstd_cost_sum": 778.7216901580811,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "archive_t10": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 8892.302532157897,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": -370.7974709788491,
+      "mean_regret": 116.72546736666362,
+      "max_regret": 951.7189937515259,
+      "primary_group_mean_difference_vs_majority": 185.23436207987467,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          60,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 16598.640514694212,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": -778.8047806228572,
+      "mean_regret": 245.1644337422689,
+      "max_regret": 1682.8164929199218,
+      "primary_group_mean_difference_vs_majority": 314.8780202922821,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          60,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 48414.41413150024,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": -2463.271284304999,
+      "mean_regret": 775.4273273557027,
+      "max_regret": 6085.1417655944815,
+      "primary_group_mean_difference_vs_majority": 1162.1023662105135,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 1888.774490158081,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 1888.774490158081,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 1888.774490158081,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 1888.774490158081,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 1888.774490158081,
+      "fixed_zstd_cost_sum": 1888.774490158081,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "balanced_t0p1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 229.98256593078614,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": -75.23913303271405,
+      "mean_regret": 1.6996616513671874,
+      "max_regret": 11.889279623413087,
+      "primary_group_mean_difference_vs_majority": 2.4096030758192275,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 1425.0268884680177,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": -985.8235078505713,
+      "mean_regret": 21.61706702698771,
+      "max_regret": 156.19806722351075,
+      "primary_group_mean_difference_vs_majority": 26.408784434221054,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 1340.679205739746,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": -921.5533544378596,
+      "mean_regret": 20.211272314849854,
+      "max_regret": 138.61542641235354,
+      "primary_group_mean_difference_vs_majority": 25.78939093967692,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 131.2392739855957,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.05394011894734699,
+      "max_regret": 3.2340293731689442,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 131.2392739855957,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.05394011894734699,
+      "max_regret": 3.2340293731689442,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 128.00286684875488,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": 2.4660355384136303,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -0.03596007929823133,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 131.2392739855957,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.05394011894734699,
+      "max_regret": 3.2340293731689442,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 131.2392739855957,
+      "fixed_zstd_cost_sum": 131.2392739855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.05394011894734699,
+      "max_regret": 3.2340293731689442,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "balanced_t1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 1842.6065259307861,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": -122.6474687844191,
+      "mean_regret": 17.435657651367187,
+      "max_regret": 122.1091296234131,
+      "primary_group_mean_difference_vs_majority": 24.750987575819227,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 13829.731298468017,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": -1571.0863791265135,
+      "mean_regret": 217.22107052698772,
+      "max_regret": 1562.5489572235108,
+      "primary_group_mean_difference_vs_majority": 265.95580193422103,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 13009.309795739746,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": -1471.9524792145469,
+      "mean_regret": 203.54737881484985,
+      "max_regret": 1403.4417664123537,
+      "primary_group_mean_difference_vs_majority": 259.9162549396769,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 827.5892539855957,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.5187031189473472,
+      "max_regret": 31.102529373168963,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 827.5892539855957,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.5187031189473472,
+      "max_regret": 31.102529373168963,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 796.4670668487548,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": 3.760583766277686,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -0.34580207929823154,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.6,
+      "macro_f1": 0.20540098199672668,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          0,
+          0,
+          35
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 24,
+        "zstd": 36
+      },
+      "policy_cost_sum": 955.8890108276368,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": -15.50283020522087,
+      "mean_regret": 2.6570323996480307,
+      "max_regret": 31.102529373168963,
+      "primary_group_mean_difference_vs_majority": 1.676886230400933,
+      "mean_compressed_size": 31029.933333333334,
+      "mean_compression_time_ms": 3.2628600000000003,
+      "mean_decompression_time_ms": 0.39269499999999996
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 827.5892539855957,
+      "fixed_zstd_cost_sum": 827.5892539855957,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.5187031189473472,
+      "max_regret": 31.102529373168963,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "balanced_t10": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 17968.846125930784,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": -130.63330429702475,
+      "mean_regret": 174.79561765136717,
+      "max_regret": 1224.307629623413,
+      "primary_group_mean_difference_vs_majority": 248.16483257581922,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 137876.77539846802,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": -1669.6726920087767,
+      "mean_regret": 2173.2611055269876,
+      "max_regret": 15626.057857223512,
+      "primary_group_mean_difference_vs_majority": 2661.425976934221,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 129695.61569573975,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": -1564.666066541659,
+      "mean_regret": 2036.9084438148498,
+      "max_regret": 14051.705166412354,
+      "primary_group_mean_difference_vs_majority": 2601.1848949396767,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 7791.0890539855955,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 5.166333118947349,
+      "max_regret": 309.78752937316904,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 7791.0890539855955,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 5.166333118947349,
+      "max_regret": 309.78752937316904,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 7481.109066848755,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": 3.978647721633571,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -3.4442220792982328,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 7791.0890539855955,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 5.166333118947349,
+      "max_regret": 309.78752937316904,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 7791.0890539855955,
+      "fixed_zstd_cost_sum": 7791.0890539855955,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 5.166333118947349,
+      "max_regret": 309.78752937316904,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "fast_access_t0p1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 413.65604419769284,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": -75.16161482561873,
+      "mean_regret": 3.2461829217122395,
+      "max_regret": 27.584940003662105,
+      "primary_group_mean_difference_vs_majority": 3.9793464006754555,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 4319.8559366156005,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": -1729.232165915115,
+      "mean_regret": 68.3495144620107,
+      "max_regret": 502.47490524078364,
+      "primary_group_mean_difference_vs_majority": 83.19428636077033,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 3271.850866524658,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": -1285.4570464711114,
+      "mean_regret": 50.88276329382833,
+      "max_regret": 425.2595322137451,
+      "primary_group_mean_difference_vs_majority": 60.68251360910035,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 236.15678846618653,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.28786199285380054,
+      "max_regret": 16.85468431243897,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 236.15678846618653,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.28786199285380054,
+      "max_regret": 16.85468431243897,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 218.8850688949585,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": 7.313666349972843,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -0.19190799523586702,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.75,
+      "macro_f1": 0.24300399771559109,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0,
+          44
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 45,
+        "gzip": 15
+      },
+      "policy_cost_sum": 315.22354876373294,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": -33.480621417269724,
+      "mean_regret": 1.6056413311462403,
+      "max_regret": 27.584940003662105,
+      "primary_group_mean_difference_vs_majority": 2.058365135257297,
+      "mean_compressed_size": 30733.216666666667,
+      "mean_compression_time_ms": 5.611496666666667,
+      "mean_decompression_time_ms": 0.46632666666666667
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 236.15678846618653,
+      "fixed_zstd_cost_sum": 236.15678846618653,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 0.28786199285380054,
+      "max_regret": 16.85468431243897,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "fast_access_t1": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 4121.319804197693,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": -75.71868992712044,
+      "mean_regret": 32.47646392171224,
+      "max_regret": 275.9694600036621,
+      "primary_group_mean_difference_vs_majority": 39.81529590067546,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 43184.5414466156,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": -1741.238100565206,
+      "mean_regret": 683.5301579620107,
+      "max_regret": 5024.767995240784,
+      "primary_group_mean_difference_vs_majority": 832.0051288607704,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 32705.25925652466,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": -1294.438088602083,
+      "mean_regret": 508.8754547938283,
+      "max_regret": 4253.171572213746,
+      "primary_group_mean_difference_vs_majority": 606.8925476091003,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 2345.4077684661866,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 2.877929992853801,
+      "max_regret": 168.505584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 2345.4077684661866,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 2.877929992853801,
+      "max_regret": 168.505584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 2172.7319688949588,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": 7.362293324548491,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -1.9186199952358673,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.75,
+      "macro_f1": 0.24300399771559109,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0,
+          44
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 45,
+        "gzip": 15
+      },
+      "policy_cost_sum": 3136.408368763733,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": -33.72550440620536,
+      "mean_regret": 16.06127333114624,
+      "max_regret": 275.9694600036621,
+      "primary_group_mean_difference_vs_majority": 20.5934981352573,
+      "mean_compressed_size": 30733.216666666667,
+      "mean_compression_time_ms": 5.611496666666667,
+      "mean_decompression_time_ms": 0.46632666666666667
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 2345.4077684661866,
+      "fixed_zstd_cost_sum": 2345.4077684661866,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 2.877929992853801,
+      "max_regret": 168.505584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  },
+  "fast_access_t10": {
+    "gzip": {
+      "sample_count": 60,
+      "accuracy": 0.03333333333333333,
+      "macro_f1": 0.016129032258064516,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          58,
+          0,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "gzip": 60
+      },
+      "policy_cost_sum": 41197.957404197696,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": -75.77481994230665,
+      "mean_regret": 324.7792739217122,
+      "max_regret": 2759.814660003662,
+      "primary_group_mean_difference_vs_majority": 398.1747909006755,
+      "mean_compressed_size": 29594.383333333335,
+      "mean_compression_time_ms": 13.236106666666666,
+      "mean_decompression_time_ms": 0.5542433333333333
+    },
+    "bz2": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "bz2": 60
+      },
+      "policy_cost_sum": 431831.3965466156,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": -1742.4477997465513,
+      "mean_regret": 6835.33659296201,
+      "max_regret": 50247.698895240785,
+      "primary_group_mean_difference_vs_majority": 8320.11355386077,
+      "mean_compressed_size": 27220.1,
+      "mean_compression_time_ms": 19.716898333333333,
+      "mean_decompression_time_ms": 6.999995
+    },
+    "lzma": {
+      "sample_count": 60,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          58,
+          0
+        ]
+      ],
+      "selected_counts": {
+        "lzma": 60
+      },
+      "policy_cost_sum": 327039.34315652464,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": -1295.3430043483452,
+      "mean_regret": 5088.802369793829,
+      "max_regret": 42532.291972213745,
+      "primary_group_mean_difference_vs_majority": 6068.9928876091,
+      "mean_compressed_size": 25727.8,
+      "mean_compression_time_ms": 75.09545166666666,
+      "mean_decompression_time_ms": 4.699676666666666
+    },
+    "zstd": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 23437.917568466186,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 28.7786099928538,
+      "max_regret": 1685.014584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "train_majority": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 23437.917568466186,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 28.7786099928538,
+      "max_regret": 1685.014584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    },
+    "oracle": {
+      "sample_count": 60,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 58,
+        "gzip": 2
+      },
+      "policy_cost_sum": 21711.20096889496,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": 7.367192902386449,
+      "mean_regret": 0.0,
+      "max_regret": 0.0,
+      "primary_group_mean_difference_vs_majority": -19.185739995235863,
+      "mean_compressed_size": 31299.45,
+      "mean_compression_time_ms": 2.177516666666667,
+      "mean_decompression_time_ms": 0.34004833333333334
+    },
+    "decision_tree": {
+      "sample_count": 60,
+      "accuracy": 0.75,
+      "macro_f1": 0.24300399771559109,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0,
+          44
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 45,
+        "gzip": 15
+      },
+      "policy_cost_sum": 31348.256568763733,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": -33.75017843283255,
+      "mean_regret": 160.61759333114622,
+      "max_regret": 2759.814660003662,
+      "primary_group_mean_difference_vs_majority": 205.94482813525732,
+      "mean_compressed_size": 30733.216666666667,
+      "mean_compression_time_ms": 5.611496666666667,
+      "mean_decompression_time_ms": 0.46632666666666667
+    },
+    "random_forest": {
+      "sample_count": 60,
+      "accuracy": 0.9666666666666667,
+      "macro_f1": 0.2457627118644068,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "selected_counts": {
+        "zstd": 60
+      },
+      "policy_cost_sum": 23437.917568466186,
+      "fixed_zstd_cost_sum": 23437.917568466186,
+      "cost_saving_pct_vs_zstd": 0.0,
+      "mean_regret": 28.7786099928538,
+      "max_regret": 1685.014584312439,
+      "primary_group_mean_difference_vs_majority": 0.0,
+      "mean_compressed_size": 31379.833333333332,
+      "mean_compression_time_ms": 1.68187,
+      "mean_decompression_time_ms": 0.3737833333333333
+    }
+  }
+}

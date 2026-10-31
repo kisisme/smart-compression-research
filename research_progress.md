@@ -4,9 +4,11 @@
 
 공식 기준: [research_protocol_v2.md](research_protocol_v2.md)
 
-최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
+최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 동결한 실제 corpus 60개에서 사전 통계 특징과 후보 모델 예측 1080개를 [predictions checkpoint](data/results/usage_candidate_study_20261031_01/predictions.json)에 고정했다. 원본 full hash·모델 hash/설정/runtime·특징 순서를 확인했으며 confidence는 보정되지 않은 모델 출력이다. 이 파일들의 codec benchmark/전체 경로 실측은 아직 수행하지 않았다. 이 예측을 commit한 뒤 측정하고 사후 모델/시나리오 재선택을 하지 않는다.
+최신 진행: 사용자 요청의 기준 확정→별도 모델 학습→실제 파일 검증을 모두 완료했다. [결과 보고서](research_log/usage_model_study_results_20261031.md)와 [원시 저장 감사](data/results/usage_candidate_study_20261031_01/audit.json)·[독립 지표 검증](data/results/usage_candidate_study_20261031_01/metrics_verification.json)을 보존했다. 모델 18개·실제 파일 60개·사전 예측 1080개, codec 반복 2,400개와 전체 경로 trial 5,700개를 검증했다. 순수 codec 비용에서만 Archive 0.1배 시간 비용의 작은 개선(DT 0.1406%, RF 0.1245%)이 있었고, 특징/예측/검증/저장 포함 상주 모델 비용은 모든 조건에서 zstd보다 6.36~708.52% 높았다. 이번 corpus/가상 정책에서 자동 선택의 실용적 비용 이득을 확인하지 못했다. 공식 모델/score와 memory 방침은 유지했다. GUI 수동 Compare 저장 검증/전체 시각 QA와 기존 공식 v2 모델의 별도 외부 평가/공식 채택은 미완료다.
+
+직전 예측 동결: 동결한 실제 corpus 60개에서 사전 통계 특징과 후보 모델 예측 1080개를 [predictions checkpoint](data/results/usage_candidate_study_20261031_01/predictions.json)에 고정했다. 원본 full hash·모델 hash/설정/runtime·특징 순서를 확인했으며 confidence는 보정되지 않은 모델 출력이다. 이 파일들의 codec benchmark/전체 경로 실측은 아직 수행하지 않았다. 이 예측을 commit한 뒤 측정하고 사후 모델/시나리오 재선택을 하지 않는다.
 
 직전 후보 모델 학습: 후보 모델 학습을 완료하고 [저장 검증](data/results/usage_candidate_study_20261031_01/training_verification.json)을 통과했다. 기존 train 806개만 사용해 고정 시나리오 전체의 두 모델 18개와 별도 후보 정답 9072행을 저장했다. 기존 test 202개는 개발 진단으로만 사용했고 실제 corpus는 학습에 쓰지 않았다. 모든 모델의 저장 hash·실제 class/설정·특징 순서/패키지·재로딩 예측과 train-only majority를 대조했다. 다음은 동결된 실제 60개 입력의 특징·모델 예측을 benchmark 전에 고정한 뒤 raw codec/전체 경로 평가를 실행하는 단계다.
 
@@ -77,6 +79,7 @@
 | GUI 작업 실행 계층 | `src/gui_jobs.py`: Tk와 분리된 frozen 요청·기존 CLI 프로세스·입력/모델/source 및 산출물 검증·단일 worker/queue·실행 기록. 전용 테스트 18개와 실제 요청 14건 검증 완료 |
 | Tkinter GUI·명시적 Demo | `gui_app.py`: Smart/복원/실제 비교 입력·새 출력·단일 작업·상태/결과/로그·조건 일치 시 예측/실측 대조. 전용 15개+계층 18개 통과 및 실제 Tk callback/이벤트/CLI 14개 검증. OS 클릭·파일 선택창·스크린샷/DPI QA는 미완료 |
 | 실제 파일 후보 manifest | `src/unseen_manifest.py`: metadata 초안·명시적 선정·고정 정책 검증·새 manifest 동결·기대 hash 기반 감사. 전용 23개·인위적 파일 CLI 9건 검증 완료. 실제 후보 수집/겹침 확인/연구 평가 준비 완료와 구분 |
+| 후보 사용 조건 모델·실제 파일 평가 엔진 | `src/usage_objectives.py`와 `research_log/run_usage_model_study_20261031.py`: 별도 후보 정답/모델·train-only 학습·성능 전 예측 동결·실제 Compare 및 특징/예측/검증/저장 경로·저장 감사 완료. 공식 Smart/GUI 모델과 분리 |
 | 독립 memory 측정 | `src/memory_benchmark.py`: 참고·검증용으로 보존. 2026-10-23 사용자 결정에 따라 공식 점수 편입·추가 구현은 여건이 마련될 때까지 보류 |
 | Memory 검증 기록 저장 | `src/memory_validation.py`: 반복 원시값·pair 집계·실패·환경 metadata 저장 및 종료 처리 보강 (`3e9b267`). 2026-09-15 실행은 미완료 보존, 2026-09-22 새 전체 행렬은 완료·audit 통과 |
 | 완료 실행의 저장 기록 감사 | `research_log/verify_memory_validation.py`: 완료된 schema-v1 검증 기록의 일관성 확인. 미완료 실행 거부, 공식 검증 완료 판정과 구분 |
@@ -102,13 +105,14 @@ Smart Mode는 Decision Tree 또는 Random Forest를 명시적으로 지정한다
 |---|---|---:|---:|---:|---:|
 | 초기 3지표 검증 | `data/results/` | 72 | 288 | 216 | 0 |
 | 기존 3지표 Pilot | `data/results/pilot_1008/` | 1,008 | 4,032 | 3,024 | 0 |
+| 외부 실제 파일 codec 측정·후보 연구 | `data/results/usage_candidate_study_20261031_01/` | 60 | 240 | 180 (v2 참조) | 0 |
 
 - 두 실험 모두 `samples.csv`, `compression_results.csv`, `selection_labels.csv`, `experiment_metadata.json`을 보존한다.
 - generator: `random`, `small_alphabet`, `repeated_pattern`, `long_runs`, `structured`, `mixed`.
 - Pilot은 generator별 168개, 파일 크기별 252개이다.
 - 파일 크기: 16,384 / 65,536 / 262,144 / 1,048,576 bytes.
 - 초기 검증 base seed는 `20260911`, Pilot base seed는 `20260983`이다. sample별 seed는 base seed + sample index이다.
-- 현재 저장된 정식 실험 결과는 합성 데이터이다. 실제 unseen 파일 평가 결과는 없다.
+- 기존 공식 Pilot은 합성 데이터이며 그대로다. 별도 후보 함수 연구에서 실제 60개 파일의 codec/모델 및 전체 경로 평가를 추가했다. 새 후보 정답 조건은 540개이며 공식 참조 라벨과 구분한다. 기존 공식 v2 저장 모델의 별도 외부 비교를 완료한 것은 아니다.
 - **기존 72개와 1,008개 결과에는 memory 열·측정값이 없다. 이 결과는 계속 3지표 결과로 보존한다.**
 
 ## 4. 현재 사용 중인 특징
@@ -184,6 +188,8 @@ Score_m(a) = w_size       * ln(C_a / C_best)
 - 루트 `models/`는 비어 있다. 저장 모델은 `data/results/pilot_1008/decision_tree/decision_tree_<mode>.pkl`과 `data/results/pilot_1008/random_forest/random_forest_<mode>.pkl`에 있다. 각 디렉터리에 평가 summary가 함께 있다.
 - Smart Mode의 기본 모델 디렉터리도 위 Pilot 경로이다. 단일 최종 모델을 자동 채택한 상태는 아니다.
 
+별도 후보 연구의 모델 18개는 `data/results/usage_candidate_study_20261031_01/training/`에 보존했다. 기존 train 806개만 학습했고 원래 test 202개는 개발 진단으로 구분했다. 공식 Smart/GUI 기본 경로는 바꾸지 않았다.
+
 ## 9. 현재 평가 결과 요약
 
 근거: [model_summary.csv](data/results/pilot_1008/failure_analysis/model_summary.csv), 각 모델의 `metrics.csv`와 `strategy_comparison.csv`. 아래는 저장된 Python 계산 결과를 소수점 6자리로 표시한 것이다.
@@ -204,6 +210,10 @@ Score_m(a) = w_size       * ln(C_a / C_best)
 
 Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한다. 실제·예측에 없는 클래스도 F1=0으로 포함한다. 높은 accuracy와 약 0.25의 Macro F1을 함께 해석해야 한다.
 
+### 별도 후보 함수의 외부 실제 파일 평가 — 2026-10-31
+
+고정된 가상 총비용 시나리오×두 모델 18개 조건에서 순수 codec 비용의 양의 개선은 2개 조건뿐이었다. Archive 0.1배 시간 비용에서 DT 0.1406%, RF 0.1245%로 작았다. 특징·예측·검증·저장을 포함한 상주 모델 경로의 가상 비용은 모든 조건에서 고정 zstd보다 6.36~708.52% 높았다. 모델 load는 별도 실측/비용 proxy로 구분하고 process startup/cold cache·실제 GUI/CLI 배포는 측정하지 않았다. 일부 accuracy=1은 zstd 고정과 같은 선택이며 개선을 뜻하지 않는다. 모든 조건·baseline·oracle·오류/혼동행렬/그룹 집계를 [보고서](research_log/usage_model_study_results_20261031.md)와 결과 파일에 보존했다. 단일 quota corpus·가상 정책의 기술적 비교로 제한한다.
+
 ## 10. 현재 알려진 문제와 한계
 
 - 정답이 zstd에 집중된다. Pilot의 zstd 정답 수는 Archive 1,000개, Balanced 1,003개, Fast Access 996개이다. 나머지는 gzip이며 bz2·LZMA 정답은 없다. 분포를 맞추기 위한 데이터 삭제나 점수 조정은 하지 않는다.
@@ -211,7 +221,7 @@ Macro F1은 네 알고리즘을 고정하고 `zero_division=0`으로 계산한�
 - Decision Tree 오류 11건 모두 confidence=1이며 Random Forest 오류 6건 중 4건도 confidence=1이다. confidence는 보정된 정답 확률이 아니다.
 - seed 그룹 분할은 서로 다른 seed에서 생성된 유사 데이터까지 탐지하지 않는다. 실제 파일에는 원본 단위 분할 정책이 필요하다.
 - 기존 결과에는 시간 반복별 원시 분포가 없다. 중앙값만으로 시간 변동·통계적 유의성·정답 안정성을 판정할 수 없다.
-- 기존 전략 비교의 시간에는 특징 추출·예측 비용이 없다. end-to-end 성능과 실제 unseen 파일 일반화 성능은 미검증이다.
+- 기존 공식 Pilot 전략 비교에는 특징/예측 비용이 없다. 별도 후보 연구의 실제 파일·상주 모델 package 경로는 새로 검증했으나 기존 공식 저장 모델·실제 GUI/CLI 배포·cold start 및 모집단 일반화는 미검증이다. 새 후보도 모든 조건에서 전체 경로의 비용 이득을 확인하지 못했다.
 - baseline의 작은 소수 압축률 파싱 오류는 `6898bc8`에서 수정되었다. 현재 미해결 오류로 취급하지 않으며 실패 기록은 `research_log/baseline_evaluation.md`에 남아 있다.
 - 프로토콜 v2의 32절은 초기 구현 현황이며 실제 진행 상태보다 오래되었다. 연구 기준은 v2를 따르되 현재 완료 상태는 이 문서와 실제 저장소를 대조한다.
 
@@ -931,22 +941,30 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **완료/검증:** 원래 train 806개만 학습하고 고정 시나리오×두 모델 18개를 저장했다. 기존 test 202개는 Pilot 전체 탐색에 따른 개발 진단이며 독립 시험 성능이 아니다. 후보 정답 9072행은 공식 라벨과 분리했다. 전체 모델을 다시 읽어 hash·class·명시 config/전체 저장 매개변수·feature_names·runtime version과 개발 예측 일치, train-only majority를 확인했다.
 - **미실행/다음:** 실제 corpus의 특징/예측/압축과 전체 경로 실측은 아직 없다. 사전 예측 동결 후 같은 파일·조건으로 평가한다. 공식 기준·과거 모델/config·memory 방침을 유지한다.
 
+### 후보 모델의 실제 파일·전체 경로 평가 및 독립 검증 완료 — 2026-10-31
+
+- **근거/실행 기준:** [보고서](research_log/usage_model_study_results_20261031.md), [기준](research_log/usage_model_study_design_20261031.md), [사전 계획](research_log/usage_model_study_plan_20261031.json), [원시 저장 감사](data/results/usage_candidate_study_20261031_01/audit.json), [독립 지표 검증](data/results/usage_candidate_study_20261031_01/metrics_verification.json), 각 단계 checkpoint/CSV·원래 Compare 보고서. 기준/corpus `419c484`, 실행부 `4ab7c73`, train-only 모델 `0cc7df1`, 성능 전 사전 예측 `6a75f98`로 순서대로 commit했다. 실제 codec/전체 경로 측정·집계 HEAD도 `6a75f98`이며 source/hash를 고정했다.
+- **완료:** 원본 60개, 모델 18개, 예측 1080개, codec 반복 2,400개, 전체 경로 trial 5,700개·별도 모델 load 반복 90개, 전략 선택 4,320행. 동결한 자료 전체와 모든 시나리오/모델·고정 codec·train-majority·oracle을 보존했다. 부적합 repeat 제거/자동 재시도·실제 자료 학습/튜닝은 하지 않았다.
+- **검증 완료:** 실행 전 전용 인위적 fixture 11개 통과. 초기 모델 reload 검사의 config 기본값 비교 오류를 실제 학습 전에 수정/재검증했다. 각 단계 artifact/source/input/model hash·복원 bytes·원시 ns/중앙값·사전 예측 순서를 감사했다. 별도 산술로 Fraction 비용·수동 네 클래스 accuracy/Macro F1/혼동행렬·원본 그룹 동일 비중 비교 등 codec 72개/전체 경로 18개 조건을 검산했다. 기존 보호 파일 268개는 그대로다. 전체 저장소 테스트 suite는 재실행하지 않았다.
+- **결과:** 순수 codec에서 Archive 시간 비용 0.1배의 DT/RF만 각각 0.1406%/0.1245% 비용 개선이었다. 전체 경로 비용은 모든 후보 조건에서 6.36~708.52% 증가했다. 고정 corpus/가상 정책에서 실용적 비용 개선 미확인으로 기록하고 불리한 결과를 유지한다.
+- **한계/후속:** 상주 모델 연구용 package 엔진이며 실제 배포 GUI/CLI·process startup·cold cache/fsync·모델 배포 공간·CPU/전력/메모리·모집단 효과는 검증하지 않았다. Generic corpus manifest의 evaluation_ready=false와 과거 합성 원본 bytes/hash 미저장·권리/익명성/독립성 범위를 유지한다. 이 외부 자료는 이후 튜닝에 활용하면 개발 자료이며 새 최종 일반화 평가는 다른 원본 그룹의 holdout이 필요하다. 공식 score/라벨/모델/config와 memory 방침은 유지하며 GUI 수동 Compare 저장 검증/전체 시각 QA는 별도 미완료다.
+
 ## 12. 아직 완료하지 않은 작업
 
-- **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
-- GUI 화면 캡처 대상 불일치 해결·재검증. 2026-10-27 현재 `node_repl` 최소 JavaScript·Sky 초기화·Windows 창/접근성 조회는 성공해 이전 시작 오류는 미재현이다. GUI를 반환한 캡처가 PyCharm을 보여 재선택/재시도 뒤 입력을 중단했고 사용자 foreground 확인을 기다린다. 전체 화면 자동화 정상 동작은 미확인이다.
-- GUI의 OS 입력·파일/폴더 선택 대화상자·스크린샷/DPI 시각 QA. Tk 화면·작업 계층·callback/이벤트 응답·명시적 예측/실측 대조와 통합/독립 CLI의 구현·자동 검증은 완료했다.
-- 검토된 실제 후보 60개의 명시적 선정/실제 corpus 동결·별도 unseen 평가 runner와 실제 평가. 기존 합성 조건 재생성에 대한 full hash 겹침 감사는 완료했으며 과거 input bytes/hash 미저장 한계를 보존했다. 파일별 권리/개인정보 맥락/알려진 원본 관계 검토와 별도 승인 inventory/draft·필수 notice/citation 연결은 완료했다. 평가용 unseen 확인·익명성/모든 계보의 증명과 구분하며, 이후 재학습에서는 원본 그룹 전체를 분할 단위로 유지한다.
-- 특징 추출·예측 비용을 포함한 end-to-end 성능 평가.
-- 약 5,000개·10,000개로의 실험 확대 및 최종 연구 정리.
+- **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
+- GUI 화면 도구의 창 가림/입력 guard 원인·전체 시각/선택창/DPI QA. 수동 Smart/복원 저장 검증과 일부 실제 scroll/click은 완료했으나 전체 도구 복구로 취급하지 않는다.
+- 사용자 수동 Compare의 화면상 성공 이후 원시 반복/점수/Demo/로그의 정식 저장 검증. 이번 연구 엔진 감사와 별개다.
+- 기존 공식 v2 저장 모델의 별도 실제 파일 비교 및 운영 모델/목적 함수 공식 채택. 후보 모델 연구의 corpus 동결·별도 학습·실제 파일/상주 engine 평가는 완료했으나 실용적 비용 개선은 미확인이다.
+- 실제 사용량/비용 교환비 근거, 배포 GUI/CLI·cold start·대용량/스트리밍·새 환경 평가. 이후 모델/특징 튜닝에는 관찰된 실제 자료를 개발 자료로 구분하고 새 최종 holdout을 마련한다.
+- 약 5,000개·10,000개 실험 확대 여부 판단 및 최종 연구 정리.
 
 ## 13. 다음 단일 작업
 
-**후보 목적 함수의 적용 범위·후속 평가 결정 기록:** 고정 시나리오의 선택 빈도·실제 크기/시간 증감·가상 비용 절감·제약 미충족을 함께 비교하고, 총비용/시간 제한 후보를 어떤 사용 목적에서 검토할지와 필요한 실제 계수/예산 근거·독립 평가 조건을 정리한다. 10% 선택 비율을 이유로 특정 시나리오를 운영값으로 채택하거나 기존 공식 점수/라벨·모델/config를 바꾸지 않는다. GUI 수동 Compare 저장 검증/전체 시각 QA·실제 corpus 선정/동결·독립 평가·새 모델은 별도 후속 과제다.
-
-현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
+**비용 병목·오류 선택의 읽기 전용 진단:** 새로 저장한 파일별 예측/정답·특징/추론/검증/저장 시간을 분해해, 작은 codec 선택 이득이 사라진 원인과 개선 가능 범위를 정리한다. 진단은 현재 자료의 개발 분석이며 결과를 이유로 평가 계수·sample·원시 반복을 소급 변경하지 않는다. 후속 특징/모델 최적화·재측정을 진행한다면 새 계획/버전과 별도 최종 holdout이 필요하다. 기존 공식 시스템과 memory 참고 방침을 유지한다. GUI 수동 Compare 저장 검증/전체 QA는 별도 미완료다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 후보 실험의 기준/corpus 동결 `419c484`, 구현/fixture `4ab7c73`, train-only 학습/재로딩 검증 `0cc7df1`, 성능 확인 전 예측 동결 `6a75f98`을 보존했다. 원시 codec/전체 경로 측정·평가/감사는 `6a75f98`의 고정 source에서 실행했다. 결과 보고서 자신의 hash를 넣기 위한 반복 commit은 만들지 않는다.
 
 이번 가상 사용 시나리오 탐색의 마지막 관련 구현/실행 commit은 `73ce6df`(시나리오·실행 코드/fixture의 분석 전 고정)다. 외부 기대 freeze SHA-256과 source hash를 검증하고 깨끗한 HEAD에서 새 파생 결과를 만들었다. 새 codec 측정이나 공식 점수·모델 전환 commit이 아니다.
 

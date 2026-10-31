@@ -1,0 +1,189 @@
+{
+  "compare_mode_version": 1,
+  "status": "completed",
+  "scope": "Single-file measured comparison; not Smart prediction, model evaluation, or a new Pilot",
+  "input_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\raw\\real_unseen\\real_candidates_20261026_02\\additional\\google_fonts\\ofl\\acme\\Acme-Regular.ttf",
+  "original_filename": "Acme-Regular.ttf",
+  "input_sha256": "76fdb582f54653c27274d5cd986f994c28d7fa7d323e7eb9ee14ce8875d39dc4",
+  "original_size": 23292,
+  "sample_id": "file_76fdb582f54653c2",
+  "seed": null,
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\usage_candidate_study_20261031_01\\benchmark\\16",
+  "started_at_utc": "2026-10-31T10:52:47.602753+00:00",
+  "finished_measurement_at_utc": "2026-10-31T10:52:48.100271+00:00",
+  "algorithm_order": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "phase_order": [
+    "compress",
+    "decompress"
+  ],
+  "compression_settings": {
+    "gzip": {
+      "level": 9
+    },
+    "bz2": {
+      "level": 9
+    },
+    "lzma": {
+      "preset": 6
+    },
+    "zstd": {
+      "level": 3
+    }
+  },
+  "timing": {
+    "repeats": 5,
+    "timer": "time.perf_counter_ns",
+    "aggregate": "median"
+  },
+  "selection_modes": {
+    "archive": {
+      "compression_ratio": 0.7,
+      "compression_time": 0.15,
+      "decompression_time": 0.15
+    },
+    "balanced": {
+      "compression_ratio": 0.5,
+      "compression_time": 0.25,
+      "decompression_time": 0.25
+    },
+    "fast_access": {
+      "compression_ratio": 0.3,
+      "compression_time": 0.2,
+      "decompression_time": 0.5
+    }
+  },
+  "tie_order": [
+    "gzip",
+    "bz2",
+    "lzma",
+    "zstd"
+  ],
+  "score_epsilon": null,
+  "memory_measured": false,
+  "memory_score_inclusion": false,
+  "git_commit": "6a75f987e9f0d6197d4edab0d6504637850591c1",
+  "source_sha256": {
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    "research_protocol_v2.md": "d292acaa9218528eeb847d8c669a079c5c9982c9531c2bd33ad290db0bf425f5",
+    "requirements.txt": "318e2e2349c43b1c5a39e2cc98f852ed83ef6ffa7f1083d03f601fe4fdbb596e"
+  },
+  "environment": {
+    "python_version": "3.14.4",
+    "python_executable": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "operating_system": "Windows-11-10.0.26300-SP0",
+    "zstandard_version": "0.25.0"
+  },
+  "row_counts": {
+    "algorithms": 4,
+    "planned_repeats": 40,
+    "attempted_repeats": 40,
+    "labels": 3
+  },
+  "measurements": [
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "algorithm": "gzip",
+      "original_size": 23292,
+      "compressed_size": 13316,
+      "compression_ratio": 0.5716984372316676,
+      "compression_time_ms": 1.6304,
+      "decompression_time_ms": 0.1715,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "algorithm": "bz2",
+      "original_size": 23292,
+      "compressed_size": 14251,
+      "compression_ratio": 0.6118409754422119,
+      "compression_time_ms": 10.4507,
+      "decompression_time_ms": 2.9104,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "algorithm": "lzma",
+      "original_size": 23292,
+      "compressed_size": 12280,
+      "compression_ratio": 0.5272196462304654,
+      "compression_time_ms": 48.5985,
+      "decompression_time_ms": 4.0792,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "algorithm": "zstd",
+      "original_size": 23292,
+      "compressed_size": 13582,
+      "compression_ratio": 0.5831186673535979,
+      "compression_time_ms": 0.8567,
+      "decompression_time_ms": 0.1393,
+      "verified": true,
+      "status": "ok",
+      "error": ""
+    }
+  ],
+  "selections": [
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "mode": "archive",
+      "best_algorithm": "zstd",
+      "best_score": 0.07054142478082234,
+      "score_gzip": 0.18441301529345205,
+      "score_bz2": 0.9353114652009877,
+      "score_lzma": 1.1122929652799898,
+      "score_zstd": 0.07054142478082234
+    },
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "mode": "balanced",
+      "best_algorithm": "zstd",
+      "best_score": 0.050386731986301676,
+      "score_gzip": 0.25335876082656533,
+      "score_bz2": 1.4596156706869272,
+      "score_lzma": 1.8538216087999833,
+      "score_zstd": 0.050386731986301676
+    },
+    {
+      "sample_id": "file_76fdb582f54653c2",
+      "mode": "fast_access",
+      "best_algorithm": "zstd",
+      "best_score": 0.030232039191781003,
+      "score_gzip": 0.25697358470794446,
+      "score_bz2": 2.064631798945763,
+      "score_lzma": 2.4961651737265425,
+      "score_zstd": 0.030232039191781003
+    }
+  ],
+  "errors": [],
+  "publication_contract": "Use scores only for status=completed, successful return, and no publication_failed.json.",
+  "limitations": [
+    "Fixed algorithm order and one execution environment; no generalization or model accuracy claim.",
+    "All data are in memory; file I/O and verification/hash work are outside timed codec calls.",
+    "Five repeats per phase; medians in ms are derived from raw ns; no warmup, epsilon or measurement retries.",
+    "Failed repeats stop that algorithm and retain unexecuted slots; other algorithms continue; no partial-set scoring.",
+    "No model or features are loaded; no memory measurement, training or compressed packages are produced.",
+    "Source byte hashes describe this execution; Git HEAD may predate working-tree implementation."
+  ],
+  "artifact_sha256": {
+    "timing_repeats.csv": "2132c7ed7a39ad36cd4e6ec2ebb954834eb709d5004025faf1a8c7570f10c3eb",
+    "compression_results.csv": "c10cf7d7e1d8484f16c1713e6bda52a8161b307d410f9e777a66047e82a1e928",
+    "selection_labels.csv": "fb405726469d548b5464d9182ba80d9e18d1e6e48d8bb7b28f29f7383194c86f",
+    "config_snapshot.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652",
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  }
+}

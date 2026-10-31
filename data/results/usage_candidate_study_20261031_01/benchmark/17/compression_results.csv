@@ -1,0 +1,5 @@
+sample_id,algorithm,original_size,compressed_size,compression_ratio,compression_time_ms,decompression_time_ms,verified,status,error
+file_8809dcad25318225,gzip,35220,16055,0.4558489494605338,2.5541,0.2449,True,ok,
+file_8809dcad25318225,bz2,35220,16482,0.46797274275979556,12.5208,3.6215,True,ok,
+file_8809dcad25318225,lzma,35220,13640,0.38727995457126635,61.4055,3.7656,True,ok,
+file_8809dcad25318225,zstd,35220,16618,0.47183418512208974,1.5495,0.1878,True,ok,

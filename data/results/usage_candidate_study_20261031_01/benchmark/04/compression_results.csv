@@ -1,0 +1,5 @@
+sample_id,algorithm,original_size,compressed_size,compression_ratio,compression_time_ms,decompression_time_ms,verified,status,error
+file_db04305a4bac1389,gzip,44939,4531,0.10082556354168985,2.1433,0.1278,True,ok,
+file_db04305a4bac1389,bz2,44939,3760,0.0836689734974076,8.0324,1.4653,True,ok,
+file_db04305a4bac1389,lzma,44939,4144,0.09221388993969604,37.6946,1.4083,True,ok,
+file_db04305a4bac1389,zstd,44939,5061,0.11261932842297337,0.3044,0.1056,True,ok,
