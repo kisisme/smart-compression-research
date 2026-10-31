@@ -1,0 +1,38 @@
+{
+  "started_at_utc": "2026-10-31T10:43:57.521057+00:00",
+  "sample_count": 60,
+  "prediction_count": 1080,
+  "training_sha256": "e9d2efa9cd17576bd38b73f9445bbfae12a252f40edfa947cd6a0e41226c2061",
+  "before_benchmark": true,
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T10:44:30.161060+00:00",
+  "git_head": "0cc7df16c116adf0fbeaafd38a11e1f743ba7e8e",
+  "runtime_source_sha256": {
+    "src/analysis.py": "50d1d2f8e919b4f026fb8edd5c545372081a4c2220681bfe94d763fb17aa1f69",
+    "src/compressors.py": "0d21b130c32ff9f4449853233333969d56a11cf37a8dcc9abb107d99f4316f7c",
+    "src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+    "src/failure_analysis.py": "040d92d74108b9524077c136f055710df5ab7e26295943477ea9ca9e245eb0cc",
+    "src/feature_extractor.py": "e9730a815bcfc1c47fc671888c5396bdf0c657b719e24918c88bf5ad4300e292",
+    "src/gui_jobs.py": "2685e90091e9d21b355b3deddc2b359f41f6393a8baa7d9278d9b8e5fccbcc5f",
+    "src/memory_benchmark.py": "168bfedae63807d9f718fe0c9f22494c68177db1b389915583788fc3d5461247",
+    "src/memory_repeatability_validation.py": "84f8c82dc5de4b5dfabf12d71440e5ee5426bb046a6b8a5a219870ffa6776c44",
+    "src/memory_runtime_validation.py": "a605e0c4b8140e566029036bf97f6fbaf7f4186ed39b83f512eb70f8cc2828c8",
+    "src/memory_runtime_worker.py": "784dd81effa4537994dbb15c84e2b9efce90304a4b8cf3b50db34ff836bb8d5d",
+    "src/memory_stability_timing_worker.py": "1e1d127835fdf733be406d086f925a2f5afd9c922a641a150df93024f2398559",
+    "src/memory_stability_validation.py": "4c9aa886ebe9ed18fe66496827ee5bf6ec09b6beb303bf8b897ae32917ac01ff",
+    "src/memory_validation.py": "3405a3326ee2d93ab08f3c2067c465ea119fbdbdc3a5f0ecdfaaf759b015aa0e",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "src/selection_labels.py": "be90ce306250621f8c91261028e111cb8bc51c3169fcb61a7b9105ee5cc09d01",
+    "src/train_model.py": "27e0e91d222b35775de93a8d67c2be4e0f4b82a551c4d85e12ee5a0c6cdd5a57",
+    "src/unseen_manifest.py": "a3584eb7423bc2e71ca2b02ac56f0e9e8f5b6c0b4b6e5b086a565c068c856133",
+    "src/usage_objectives.py": "09312aee53111506cef431b5ed8e14a32d37f93fd3047e1458ca2bdc715437e0",
+    "compare_compress.py": "8a710d169e353a650b216cfdf722615e7327463bdb0adc6906aaca632000cf07",
+    "research_log/run_usage_model_study_20261031.py": "493f172becb9a05ec0d8ec64091263a1ed470e1b86639c22769c96390d3840c2",
+    "tests/test_usage_model_study.py": "a356f895e7460bba9e05d5d92cf6ae3a381aba78f434fb0a23dbab12d65c8a30"
+  },
+  "artifact_sha256": {
+    "predictions/frozen_predictions.csv": "1516205225a5403af5c2e4613ef73946ea663207e406ddd5d82dd5bad94d438f",
+    "predictions/samples.csv": "0140b6be9c88e38bcde45330c7e2135d1fbac328fbba93022c2dcdc53e404a5d"
+  }
+}

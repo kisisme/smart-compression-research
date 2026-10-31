@@ -65,3 +65,5 @@
 
 # Preserve imported notices verbatim, including upstream whitespace.
 /data/results/usage_candidate_study_20261031_01/corpus_evidence/notices/*.notice -diff
+
+/research_log/verify_usage_model_metrics_20261031.py -text

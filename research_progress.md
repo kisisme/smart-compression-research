@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 후보 모델 학습을 완료하고 [저장 검증](data/results/usage_candidate_study_20261031_01/training_verification.json)을 통과했다. 기존 train 806개만 사용해 고정 시나리오 전체의 두 모델 18개와 별도 후보 정답 9072행을 저장했다. 기존 test 202개는 개발 진단으로만 사용했고 실제 corpus는 학습에 쓰지 않았다. 모든 모델의 저장 hash·실제 class/설정·특징 순서/패키지·재로딩 예측과 train-only majority를 대조했다. 다음은 동결된 실제 60개 입력의 특징·모델 예측을 benchmark 전에 고정한 뒤 raw codec/전체 경로 평가를 실행하는 단계다.
+최신 진행: 동결한 실제 corpus 60개에서 사전 통계 특징과 후보 모델 예측 1080개를 [predictions checkpoint](data/results/usage_candidate_study_20261031_01/predictions.json)에 고정했다. 원본 full hash·모델 hash/설정/runtime·특징 순서를 확인했으며 confidence는 보정되지 않은 모델 출력이다. 이 파일들의 codec benchmark/전체 경로 실측은 아직 수행하지 않았다. 이 예측을 commit한 뒤 측정하고 사후 모델/시나리오 재선택을 하지 않는다.
+
+직전 후보 모델 학습: 후보 모델 학습을 완료하고 [저장 검증](data/results/usage_candidate_study_20261031_01/training_verification.json)을 통과했다. 기존 train 806개만 사용해 고정 시나리오 전체의 두 모델 18개와 별도 후보 정답 9072행을 저장했다. 기존 test 202개는 개발 진단으로만 사용했고 실제 corpus는 학습에 쓰지 않았다. 모든 모델의 저장 hash·실제 class/설정·특징 순서/패키지·재로딩 예측과 train-only majority를 대조했다. 다음은 동결된 실제 60개 입력의 특징·모델 예측을 benchmark 전에 고정한 뒤 raw codec/전체 경로 평가를 실행하는 단계다.
 
 직전 실행부 구현: 후보 모델의 별도 학습·사전 예측 동결·Compare 연결·overhead 포함 검증용 엔진·저장 감사 실행부를 구현했다. 학습 전 전용 인위적 fixture 11개가 통과했고 source/hash·테스트 출력을 [implementation lock](data/results/usage_candidate_study_20261031_01/implementation_lock.json)에 고정했다. 초기 모델 reload 검사에서 명시적 config와 estimator 기본값의 차이를 정상 모델 오류로 본 문제를 수정하고 전체 저장 매개변수·명시적 config·runtime version을 검증했다. 실제 학습·corpus 예측/측정은 아직 없으며 이 코드를 commit한 뒤 기존 train 부분으로 별도 후보 모델을 학습한다.
 
