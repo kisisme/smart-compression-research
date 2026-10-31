@@ -1,0 +1,49 @@
+{
+  "study_id": "usage_candidate_study_v1_20261031",
+  "status": "predeclared_candidate_experiment_not_official_v2_replacement",
+  "output_root": "data/results/usage_candidate_study_20261031_01",
+  "e2e_artifact_root": "data/temp/usage_study_e2e_20261031_01",
+  "scenario_freeze": "research_log/usage_scenarios_frozen_20261031.json",
+  "scenario_freeze_sha256": "92b7c97e98abb6bcb74c148f1bb403c0e07e32d67dd42a8a52b5f160e1331be5",
+  "candidate_scope": "All nine frozen lifetime-cost scenarios, both Decision Tree and Random Forest. No scenario chosen by non-zstd share or favorable performance. Nine deadline settings remain oracle diagnostics, not classification targets.",
+  "training": {
+    "source": "data/results/pilot_1008",
+    "split_reference": "data/results/pilot_1008/baseline/split_assignments.csv",
+    "split_rule": "Recompute original seed-group split and require byte-referenced assignments to agree. Fit original train IDs only; original test IDs are descriptive development diagnostics because the full Pilot was previously explored.",
+    "model_settings": "Exact current config decision_tree/random_forest dictionaries; no tuning, class balancing, resampling, calibration or refit on external files",
+    "inputs": "Exactly FEATURE_NAMES in existing order, pre-compression statistics only",
+    "baselines": "All four constant codecs and scenario-specific training-label majority; deterministic codec-order ties",
+    "separation": "New labels, models and summaries in this study only. Existing official labels, models and configuration remain unchanged."
+  },
+  "corpus": {
+    "draft": "data/results/real_unseen/real_candidate_review_20261026_01/draft",
+    "inventory": "data/results/real_unseen/real_candidate_review_20261026_01/inventory.json",
+    "review_root": "data/results/real_unseen/real_candidate_review_20261026_01",
+    "overlap_root": "data/results/real_unseen/synthetic_overlap_20261027_01",
+    "selection": "Explicitly select all 60 already reviewed candidates. Validate unchanged hashes, quotas, groups, approval and notices; no feature, prediction or compression-based selection/replacement.",
+    "notice_policy": "Preserve usage_requirements, source/citation/relationship records and byte-exact copies of unique required notices with a path/hash index including PSF adaptation summary.",
+    "eligibility": "Generic manifest remains evaluation_ready=false and declared_metadata_only; this study separately checks reviewed metadata and reconstructed-synthetic overlap evidence. No anonymity, exhaustive lineage or statistical independence certification."
+  },
+  "measurement": {
+    "predictions": "Freeze all corpus features, model hashes, predictions and uncalibrated class probabilities before the first corpus benchmark; no later model/scenario selection",
+    "codec": "Existing Compare Mode per file; gzip9,bz2_9,lzma6,zstd3, five repeats per compression/decompression, perf_counter_ns, median ms, exact byte verification, original raw reports retained",
+    "order": "Files sorted by origin_group_id then full sample_id. Fixed codec order and fixed E2E strategy order are limitations, not randomized causal estimates.",
+    "failure": "No retries, sample removal or repeat replacement. Preserve exceptions/failed slots. No successful study claim unless all required inputs, predictions, codecs and E2E trials complete."
+  },
+  "evaluation": {
+    "strategies": ["gzip", "bz2", "lzma", "zstd", "train_majority", "decision_tree", "random_forest", "oracle"],
+    "primary": "For each scenario/model, mean over origin groups of within-group (model policy-cost regret minus training-majority regret); negative indicates lower loss on this fixed corpus",
+    "secondary": "Pooled accuracy, Macro F1 over all four codecs with zero_division=0, 4x4 confusion matrix, policy cost and regret, size/codec times, per-format/group coverage and all failure counts",
+    "reporting": "All scenario/model outcomes including worse-than-baseline, absent classes and high-confidence errors. Descriptive fixed-corpus comparison, no population significance claim. No 10 percent class-share acceptance target.",
+    "official_v2": "Original Compare v2 labels retained as reference; no official model/score deployment change. New policy-cost regret is not numerically comparable to old logarithmic score regret."
+  },
+  "end_to_end": {
+    "strategies": "Fixed zstd and every scenario's Decision Tree/Random Forest, no oracle selection used by execution",
+    "repeats": 5,
+    "compress_phase": "Within an existing Python process with resident model: read original -> hash -> feature extraction -> predict -> one selected codec -> decompress/byte verification -> write payload and research-package manifest. Prepared output directory is outside timer.",
+    "restore_phase": "Read research manifest and payload -> verify payload hash -> decompress -> verify original size/hash -> write restored original filename; exact source-byte comparison also checked",
+    "cost": "Policy coefficients applied to measured package bytes and medians of these two pipeline phases; use the same stored fixed-zstd trials for all scenarios. Report overhead-aware costs alongside pure-codec costs.",
+    "loading": "Measure verified model file read/hash/deserialization separately five times and report raw and median load time; model loading is outside warm pipeline timing. No cold-process-startup performance claim.",
+    "limits": "Research engine package, not deployed Smart CLI/GUI. Includes Python/feature/prediction/verification/file I/O work but excludes process startup, filesystem durability fsync, trained model distribution/storage and network/energy/memory. OS caches and fixed strategy order remain limitations."
+  }
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "candidate_id": "cldr_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+    "copy": "corpus_evidence/notices/220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b.notice",
+    "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  {
+    "candidate_id": "cldr_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+    "copy": "corpus_evidence/notices/220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b.notice",
+    "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  {
+    "candidate_id": "cldr_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+    "copy": "corpus_evidence/notices/220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b.notice",
+    "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  {
+    "candidate_id": "cldr_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+    "copy": "corpus_evidence/notices/220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b.notice",
+    "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  {
+    "candidate_id": "cldr_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/cldr/LICENSE",
+    "copy": "corpus_evidence/notices/220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b.notice",
+    "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  {
+    "candidate_id": "curl_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+    "copy": "corpus_evidence/notices/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.notice",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "candidate_id": "curl_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+    "copy": "corpus_evidence/notices/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.notice",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "candidate_id": "curl_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+    "copy": "corpus_evidence/notices/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.notice",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "candidate_id": "curl_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+    "copy": "corpus_evidence/notices/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.notice",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "candidate_id": "curl_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/curl/COPYING",
+    "copy": "corpus_evidence/notices/82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681.notice",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "candidate_id": "git_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+    "copy": "corpus_evidence/notices/5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e.notice",
+    "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+  },
+  {
+    "candidate_id": "git_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+    "copy": "corpus_evidence/notices/5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e.notice",
+    "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+  },
+  {
+    "candidate_id": "git_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+    "copy": "corpus_evidence/notices/5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e.notice",
+    "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+  },
+  {
+    "candidate_id": "git_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+    "copy": "corpus_evidence/notices/5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e.notice",
+    "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+  },
+  {
+    "candidate_id": "git_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/git/COPYING",
+    "copy": "corpus_evidence/notices/5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e.notice",
+    "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e"
+  },
+  {
+    "candidate_id": "google_fonts_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/abeezee/OFL.txt",
+    "copy": "corpus_evidence/notices/f0376d04eb58fb19e9f1690a99a1eb37380ad0246f7d503f2abd8e8a74ed12be.notice",
+    "sha256": "f0376d04eb58fb19e9f1690a99a1eb37380ad0246f7d503f2abd8e8a74ed12be"
+  },
+  {
+    "candidate_id": "google_fonts_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/abel/OFL.txt",
+    "copy": "corpus_evidence/notices/4f4bc3806a1e55789c6ef75ca5fc628297b05292f74966474dc0d40324abc609.notice",
+    "sha256": "4f4bc3806a1e55789c6ef75ca5fc628297b05292f74966474dc0d40324abc609"
+  },
+  {
+    "candidate_id": "google_fonts_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/aboreto/OFL.txt",
+    "copy": "corpus_evidence/notices/da0971c73aa1773b791926b81530f3cec50c94031912f162a320263488805ef8.notice",
+    "sha256": "da0971c73aa1773b791926b81530f3cec50c94031912f162a320263488805ef8"
+  },
+  {
+    "candidate_id": "google_fonts_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/acme/OFL.txt",
+    "copy": "corpus_evidence/notices/48f7bdf873033e141893f72d36f06ef8aa320c822d884d59ea7847899a291025.notice",
+    "sha256": "48f7bdf873033e141893f72d36f06ef8aa320c822d884d59ea7847899a291025"
+  },
+  {
+    "candidate_id": "google_fonts_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/google_fonts/ofl/actor/OFL.txt",
+    "copy": "corpus_evidence/notices/c1bcd16ffc9d095822fd6b7fa1a24c7918b24815ed05711421f804293d2efa62.notice",
+    "sha256": "c1bcd16ffc9d095822fd6b7fa1a24c7918b24815ed05711421f804293d2efa62"
+  },
+  {
+    "candidate_id": "mlperf_inference_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_inference_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_inference_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_inference_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_inference_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_inference/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_training_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_training_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_training_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_training_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "mlperf_training_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/mlperf_training/LICENSE.md",
+    "copy": "corpus_evidence/notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.notice",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "candidate_id": "natural_earth_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+    "copy": "corpus_evidence/notices/2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b.notice",
+    "sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+  },
+  {
+    "candidate_id": "natural_earth_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+    "copy": "corpus_evidence/notices/2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b.notice",
+    "sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+  },
+  {
+    "candidate_id": "natural_earth_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+    "copy": "corpus_evidence/notices/2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b.notice",
+    "sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+  },
+  {
+    "candidate_id": "natural_earth_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+    "copy": "corpus_evidence/notices/2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b.notice",
+    "sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+  },
+  {
+    "candidate_id": "natural_earth_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/natural_earth/LICENSE.md",
+    "copy": "corpus_evidence/notices/2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b.notice",
+    "sha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b"
+  },
+  {
+    "candidate_id": "numpy_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+    "copy": "corpus_evidence/notices/1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491.notice",
+    "sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+  },
+  {
+    "candidate_id": "numpy_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+    "copy": "corpus_evidence/notices/1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491.notice",
+    "sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+  },
+  {
+    "candidate_id": "numpy_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+    "copy": "corpus_evidence/notices/1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491.notice",
+    "sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+  },
+  {
+    "candidate_id": "numpy_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+    "copy": "corpus_evidence/notices/1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491.notice",
+    "sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+  },
+  {
+    "candidate_id": "numpy_04",
+    "original": "data/raw/real_unseen/review_evidence_20261026_02/python_cpython/LICENSE",
+    "copy": "corpus_evidence/notices/bfa8abea558e68c4e20fbb4f6c36e3b7e17763461e5cee3ad535d1f6624af9cb.notice",
+    "sha256": "bfa8abea558e68c4e20fbb4f6c36e3b7e17763461e5cee3ad535d1f6624af9cb"
+  },
+  {
+    "candidate_id": "numpy_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/numpy/LICENSE.txt",
+    "copy": "corpus_evidence/notices/1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491.notice",
+    "sha256": "1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491"
+  },
+  {
+    "candidate_id": "pandas_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+    "copy": "corpus_evidence/notices/9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae.notice",
+    "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+  },
+  {
+    "candidate_id": "pandas_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+    "copy": "corpus_evidence/notices/9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae.notice",
+    "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+  },
+  {
+    "candidate_id": "pandas_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+    "copy": "corpus_evidence/notices/9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae.notice",
+    "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+  },
+  {
+    "candidate_id": "pandas_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+    "copy": "corpus_evidence/notices/9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae.notice",
+    "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+  },
+  {
+    "candidate_id": "pandas_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/prior/notices/pandas/LICENSE",
+    "copy": "corpus_evidence/notices/9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae.notice",
+    "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+  },
+  {
+    "candidate_id": "uci_abalone_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_abalone/source_page.html",
+    "copy": "corpus_evidence/notices/8d2b2fb8ef0ed2d94b1e5700cbb7e8a297f89078c9d39472b53cd4932ce03e01.notice",
+    "sha256": "8d2b2fb8ef0ed2d94b1e5700cbb7e8a297f89078c9d39472b53cd4932ce03e01"
+  },
+  {
+    "candidate_id": "uci_abalone_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_automobile_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_automobile/source_page.html",
+    "copy": "corpus_evidence/notices/e60688080b98b8b82998238fe3a6d6eb277a6c65e854c32b602d1316d9014d13.notice",
+    "sha256": "e60688080b98b8b82998238fe3a6d6eb277a6c65e854c32b602d1316d9014d13"
+  },
+  {
+    "candidate_id": "uci_automobile_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_bike_sharing_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_bike_sharing/source_page.html",
+    "copy": "corpus_evidence/notices/06b3d99b3477dc9a043be1072690a2f11ed82bdd3eedc9efb7a26bb40986f46d.notice",
+    "sha256": "06b3d99b3477dc9a043be1072690a2f11ed82bdd3eedc9efb7a26bb40986f46d"
+  },
+  {
+    "candidate_id": "uci_bike_sharing_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_biodegradation_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_biodegradation/source_page.html",
+    "copy": "corpus_evidence/notices/9fda2277741d417812c975a005ef02bd9173802c454aa9f3bb397a0c339f6187.notice",
+    "sha256": "9fda2277741d417812c975a005ef02bd9173802c454aa9f3bb397a0c339f6187"
+  },
+  {
+    "candidate_id": "uci_biodegradation_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_forest_fires_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_forest_fires/source_page.html",
+    "copy": "corpus_evidence/notices/2cd058c0f63745f33d16cc7fa83f1aec6077bd5cdb9e30b6838e99d1cf4e1209.notice",
+    "sha256": "2cd058c0f63745f33d16cc7fa83f1aec6077bd5cdb9e30b6838e99d1cf4e1209"
+  },
+  {
+    "candidate_id": "uci_forest_fires_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_seoul_bike_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_seoul_bike/source_page.html",
+    "copy": "corpus_evidence/notices/0a5b541d523c1d40f2517d4bf1da29f776fbbf5a79960b0a7b7afe649eb6a674.notice",
+    "sha256": "0a5b541d523c1d40f2517d4bf1da29f776fbbf5a79960b0a7b7afe649eb6a674"
+  },
+  {
+    "candidate_id": "uci_seoul_bike_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_wilt_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wilt/source_page.html",
+    "copy": "corpus_evidence/notices/b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e.notice",
+    "sha256": "b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e"
+  },
+  {
+    "candidate_id": "uci_wilt_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_wilt_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wilt/source_page.html",
+    "copy": "corpus_evidence/notices/b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e.notice",
+    "sha256": "b04e2527900fcde0f06f33910558c65dd5efca7551da8925eb13dbca2fe0b46e"
+  },
+  {
+    "candidate_id": "uci_wilt_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_wine_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wine/source_page.html",
+    "copy": "corpus_evidence/notices/09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451.notice",
+    "sha256": "09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451"
+  },
+  {
+    "candidate_id": "uci_wine_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "uci_wine_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/uci_wine/source_page.html",
+    "copy": "corpus_evidence/notices/09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451.notice",
+    "sha256": "09e087d5c5eb6f91e3462fa82d6c71e2e4e43141e00dc1d5f9cc63070aec8451"
+  },
+  {
+    "candidate_id": "uci_wine_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/CC-BY-4.0/legalcode.en.html",
+    "copy": "corpus_evidence/notices/58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650.notice",
+    "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+  },
+  {
+    "candidate_id": "vscode_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/extensions/copilot/LICENSE.txt",
+    "copy": "corpus_evidence/notices/8f3b85643422256a936daede0159c60fe5d140ace61a4fbb7de8b912e1274260.notice",
+    "sha256": "8f3b85643422256a936daede0159c60fe5d140ace61a4fbb7de8b912e1274260"
+  },
+  {
+    "candidate_id": "vscode_01",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+    "copy": "corpus_evidence/notices/9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9.notice",
+    "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+  },
+  {
+    "candidate_id": "vscode_02",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+    "copy": "corpus_evidence/notices/9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9.notice",
+    "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+  },
+  {
+    "candidate_id": "vscode_03",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+    "copy": "corpus_evidence/notices/9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9.notice",
+    "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+  },
+  {
+    "candidate_id": "vscode_04",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+    "copy": "corpus_evidence/notices/9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9.notice",
+    "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+  },
+  {
+    "candidate_id": "vscode_05",
+    "original": "data/raw/real_unseen/real_candidates_20261026_02/notices/vscode/LICENSE.txt",
+    "copy": "corpus_evidence/notices/9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9.notice",
+    "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "reconstruction_audit_completed",
+  "completed_at_utc": "2026-10-27T07:13:15.101239+00:00",
+  "execution_git_head": "cb9cd9d23fc3e51cb517118cd3dae7cbd91fe12e",
+  "auditor_sha256": "b13b3e126d17ef9264054cca13a1aa1ccc2ea601856fce1ec0861e07bd3a6f4e",
+  "corpus_id": "real_reviewed_20261026_01",
+  "inventory_path": "data/results/real_unseen/real_candidate_review_20261026_01/inventory.json",
+  "inventory_sha256": "900ce66603064a773b92d42035ac5f50ce67274d647f30f582e9d2d1654eee9b",
+  "reconstructed_inputs": 1080,
+  "reconstructed_unique_hashes": 1080,
+  "candidates_checked": 60,
+  "candidate_exact_overlaps": 0,
+  "candidates_without_exact_reconstructed_overlap": 60,
+  "protected_files_unchanged": 246,
+  "unseen_overlap_audit": "completed_against_reconstructed_synthetic_inputs",
+  "original_byte_identity_independently_verified": false,
+  "limitation": "Original experiments did not store input bytes or input hashes. Full SHA-256 values here are reconstructed from clean recorded Git sources, matching CPython version, seed, size and generation parameters. Original byte identity cannot independently be proven. Historical stdlib binary/source hashes were not recorded. Exact hash checks do not establish semantic novelty, anonymity, independence or evaluation readiness.",
+  "stdlib_random": {
+    "path": "C:\\Users\\s0109\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\random.py",
+    "sha256": "d4086a8430bb46d15a79fb4003565ca9d1ed454e7c535b8afe06cbc4fec26837"
+  },
+  "corpus_frozen": false,
+  "selected_files": 0,
+  "evaluation_ready": false,
+  "features_predictions_benchmarks_training_executed": false,
+  "artifact_sha256": {
+    "candidate_overlap.json": "f4d4b90c3920fde199d6cc0e504db2cc8390e24a6d91f7b906cbe9e304f5898b",
+    "pilot_1008_hashes.jsonl": "2ff591ad2b9039e32c1e1e32a6bca24cb8ff38ff169cc70173151d326bf1c5c1",
+    "protected_after.json": "4481dfd46b77695286775b3f15895d67c0f93b8936a1f0fad0ced91516284194",
+    "protected_before.json": "4481dfd46b77695286775b3f15895d67c0f93b8936a1f0fad0ced91516284194",
+    "reconstruction_evidence.json": "024e213a4b9340c30d17c109c6266af2c7234fd2a108e9061718320799c4ccb9",
+    "synthetic_duplicate_hashes.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "validation_72_hashes.jsonl": "d5bb1486ded8dceedbc9a697b536a5cb52d7692af3bf194d6ec4a4ba4ee0b672",
+    "historical_sources/validation_72/config/experiment_config.json": "83fc6188d85821c26f0694647b85a7bbc6c6d9008f6d972d624eb7a0e5d07840",
+    "historical_sources/validation_72/src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "historical_sources/validation_72/src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+    "historical_sources/pilot_1008/config/experiment_config.json": "83fc6188d85821c26f0694647b85a7bbc6c6d9008f6d972d624eb7a0e5d07840",
+    "historical_sources/pilot_1008/src/data_generator.py": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+    "historical_sources/pilot_1008/src/experiment_runner.py": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b"
+  }
+}

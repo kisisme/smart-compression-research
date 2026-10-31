@@ -54,3 +54,14 @@
 /research_log/analyze_usage_scenarios_20261031.py -text
 /research_log/usage_scenarios_20261031.md -text
 /tests/test_usage_scenarios.py -text
+
+/data/results/usage_candidate_study_20261031_01/** -text
+/research_log/usage_model_study_plan_20261031.json -text
+/research_log/usage_model_study_design_20261031.md -text
+/research_log/prepare_usage_model_study_20261031.py -text
+/research_log/run_usage_model_study_20261031.py -text
+/research_log/usage_model_study_results_20261031.md -text
+/tests/test_usage_model_study.py -text
+
+# Preserve imported notices verbatim, including upstream whitespace.
+/data/results/usage_candidate_study_20261031_01/corpus_evidence/notices/*.notice -diff

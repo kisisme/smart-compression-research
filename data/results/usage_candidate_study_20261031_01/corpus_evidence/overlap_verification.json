@@ -1,0 +1,11 @@
+{
+  "status": "saved_reconstruction_audit_verified",
+  "verified_at_utc": "2026-10-27T07:14:02.546146+00:00",
+  "verifier_sha256": "2b3286624bcf834924837c048421f907d6e54655f7d4b3b2777721c76a53b43d",
+  "summary_sha256": "d8c77c1858340c2b1e710ab88b86119cfd681af9b73947b20d082f1be04a1903",
+  "reconstructed_inputs": 1080,
+  "candidates_checked": 60,
+  "candidate_exact_overlaps": 0,
+  "protected_files_unchanged": 246,
+  "scope": "Independent saved-artifact and comparison verification; no second generation or proof of historical original bytes."
+}

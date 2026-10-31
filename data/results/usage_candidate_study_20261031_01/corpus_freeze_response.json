@@ -1,0 +1,10 @@
+{
+  "status": "frozen",
+  "corpus_id": "real_reviewed_20261026_01",
+  "data_kind": "research_candidate",
+  "output_dir": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\usage_candidate_study_20261031_01\\corpus",
+  "manifest_sha256": "7386a00b5fb1eaae55f6586e56f6e46efe6e34f32613b61c0d848c0de3860341",
+  "selected_count": 60,
+  "candidate_count": 60,
+  "evaluation_ready": false
+}

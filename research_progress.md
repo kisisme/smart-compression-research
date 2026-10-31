@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 실행 전 고정/commit한 가상 사용 조건으로 [Pilot 시나리오별 탐색](research_log/usage_scenarios_20261031.md)을 완료했다. 원래 1,008개 전체에서 총비용/시간 제한 각 9개 시나리오를 계산하고, 각 9,072행의 선택/비용/제약과 그룹 집계를 독립 검증했다. 기본 시간 비용의 비-zstd 선택 비율은 archive 0.30%, balanced 2.88%, fast_access 7.44%다. 시간 비용 0.1배 Archive는 28.97% 선택·2.50% 가상 총비용 절감이었다. 보호 파일 84개는 불변이다. 이는 모든 실측을 알고 있는 oracle의 가상 정책 결과이며 모델/Smart의 성능 개선이 아니다. 공식 score·모델·memory 방침을 유지했다. 다음은 실제 적용 목적·계수 근거와 후속 평가 정의를 정리하는 후보 검토 기록이다. GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결·독립 평가·새 모델은 미완료다.
+최신 진행: 사용자 요청의 기준 확정→후보 모델 학습→실제 파일 평가 순서 중 기준/입력 동결을 완료했다. [평가 기준](research_log/usage_model_study_design_20261031.md)·[계획](research_log/usage_model_study_plan_20261031.json)에 모든 고정 총비용 시나리오/두 모델·기존 train-only 분할·전체 실패 보존·원본 그룹 동일 비중 평가와 overhead 포함 검증용 엔진 범위를 명시했다. 검토 후보 60개 전체·notice 참조 72개와 겹침 근거를 새 corpus에 연결했고 보호 파일 268개는 불변이다. 이 단계에서는 특징/예측/학습/압축을 실행하지 않았다. 다음은 별도 후보 모델과 평가 엔진 구현·fixture 검증·학습이다. 공식 score/config·기존 모델·memory 방침을 유지한다.
+
+직전 시나리오 탐색: 실행 전 고정/commit한 가상 사용 조건으로 [Pilot 시나리오별 탐색](research_log/usage_scenarios_20261031.md)을 완료했다. 원래 1,008개 전체에서 총비용/시간 제한 각 9개 시나리오를 계산하고, 각 9,072행의 선택/비용/제약과 그룹 집계를 독립 검증했다. 기본 시간 비용의 비-zstd 선택 비율은 archive 0.30%, balanced 2.88%, fast_access 7.44%다. 시간 비용 0.1배 Archive는 28.97% 선택·2.50% 가상 총비용 절감이었다. 보호 파일 84개는 불변이다. 이는 모든 실측을 알고 있는 oracle의 가상 정책 결과이며 모델/Smart의 성능 개선이 아니다. 공식 score·모델·memory 방침을 유지했다. 다음은 실제 적용 목적·계수 근거와 후속 평가 정의를 정리하는 후보 검토 기록이다. GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결·독립 평가·새 모델은 미완료다.
 
 직전 시나리오 고정: [가상 사용 시나리오 사전 계획](research_log/usage_scenarios_plan_20261031.json)과 [실행 전 고정 근거](research_log/usage_scenarios_frozen_20261031.json)를 보존했다. 총비용 9개와 시간 제한 9개를 고정하고 집계 fixture 테스트 7개를 통과했다. 정책점수의 교환비·세 profile의 가상 보관/복원 사용량·시간 비용 배수·절대 deadline 전체 조합과 분모/실패 규칙을 명시했다. 이 단계에서는 실제 Pilot 후보 함수 분석을 아직 실행하지 않았다. 다음은 이 계획/실행 코드를 commit한 HEAD에서 지정 freeze hash로 새 출력에 분석·독립 검증하는 작업이다. 공식 score·모델/config·memory 방침과 실제 unseen 자료는 유지한다.
 
@@ -910,6 +912,12 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **관측:** 기본 시간 비용에서 비-zstd 선택은 archive 0.30%, balanced 2.88%, fast_access 7.44%. 0.1배 시간 비용의 Archive는 28.97% 선택과 2.50% 총비용 절감을 보였다. 선택 빈도와 비용 절감은 서로 다른 지표이며 실제 사용 조건의 적합성이나 달성한 모델 성능으로 해석하지 않는다.
 - **검증 완료:** 실행 전 집계 fixture 7개 통과 후 `73ce6df`로 계획/코드를 commit하고 깨끗한 HEAD에서 실행했다. 원래 metadata/hash·설정·공식 점수/라벨 검증 뒤 독립 Fraction 비용 및 binary64 순위·동점 대조, 총비용 9,072행·시간 제한 9,072행 전체의 coverage/선택·제약·집계/그룹을 확인했다. 보호 파일 84개와 source/input/output hash 불변·보고서 링크를 대조했다. 새 codec 실행·복원·특징·모델/학습·memory·실제 파일 평가·기존 전체 suite를 실행하지 않았다.
 - **범위/미완료:** 사전 가정한 정책점수·사용량·절대 시간 제한의 탐색 결과이며 운영 profile 채택이나 공식 3지표 정답/모델 전환이 아니다. 저장 중앙값은 꼬리/실시간 지연 보장이 아니고 전체 Pilot은 개발 자료다. 실제 적용 목적·계수 근거/후속 평가 정의, GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결·독립 평가·새 모델은 남아 있다.
+
+### 후보 모델 학습·실제 파일 평가 기준/입력 동결 완료 — 2026-10-31
+
+- **근거:** [기준](research_log/usage_model_study_design_20261031.md), [계획](research_log/usage_model_study_plan_20261031.json), [동결 도구](research_log/prepare_usage_model_study_20261031.py), [study lock](data/results/usage_candidate_study_20261031_01/study_lock.json), 새 corpus manifest/audit·selection·notice index. 시작 HEAD `8fcc29b`.
+- **완료/검증:** 후보 60개 전부를 명시 선정하고 기존 manifest freeze/audit로 hash·quota·group·검토 metadata를 확인했다. 필수 notice 72개 참조의 실제 bytes/hash 사본, source/citation/PSF 적응 요약·알려진 관계·합성 재생성 겹침 근거를 연결했다. 보호 파일 268개는 그대로다. 일반 manifest의 evaluation_ready=false/declared_metadata_only는 유지하며 이번 연구별 실행 자격·과거 합성 원본 hash 미저장·독립성/익명성 미인증 한계를 별도로 기록했다.
+- **미실행/다음:** 모델 선택·특징·예측·학습·benchmark는 아직 없다. 기존 고정 총비용 시나리오 전체×두 모델을 기존 train IDs로 학습하고 실제 자료 예측을 benchmark 전에 고정한다. Overhead 포함 검증 엔진과 모델 load 시간을 별도 측정한다. 공식 변경은 하지 않는다.
 
 ## 12. 아직 완료하지 않은 작업
 

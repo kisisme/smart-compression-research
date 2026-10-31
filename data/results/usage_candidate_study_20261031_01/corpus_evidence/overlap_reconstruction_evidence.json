@@ -1,0 +1,70 @@
+[
+  {
+    "dataset": "validation_72",
+    "experiment_metadata": "data/results/experiment_metadata.json",
+    "recorded_commit": "e44fea992bb6c70330e3b4de235764be36bb0b5f",
+    "recorded_worktree_dirty": false,
+    "python_version": "3.14.4",
+    "python_implementation": "CPython",
+    "recorded_os": "Windows-11-10.0.26200-SP0",
+    "current_os": "Windows-11-10.0.26300-SP0",
+    "base_seed": 20260911,
+    "regenerated_count": 72,
+    "all_generation_parameters_match": true,
+    "sources": {
+      "src/data_generator.py": {
+        "git_blob_sha1": "139e03593d08c8a13ac13bfbd727ce744ebab0e6",
+        "sha256": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+        "snapshot": "historical_sources/validation_72/src/data_generator.py",
+        "current_text_equal_ignoring_crlf": true
+      },
+      "src/experiment_runner.py": {
+        "git_blob_sha1": "ea8f07ab0f53cde63fb1f192038c47cf9d3db65f",
+        "sha256": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+        "snapshot": "historical_sources/validation_72/src/experiment_runner.py",
+        "current_text_equal_ignoring_crlf": true
+      },
+      "config/experiment_config.json": {
+        "git_blob_sha1": "3f7a0ad18e6b80fe5bfdd61ca463c75ddb0d567b",
+        "sha256": "83fc6188d85821c26f0694647b85a7bbc6c6d9008f6d972d624eb7a0e5d07840",
+        "snapshot": "historical_sources/validation_72/config/experiment_config.json",
+        "current_text_equal_ignoring_crlf": false
+      }
+    },
+    "packages_used_for_generation": "Python stdlib only; external package versions not used"
+  },
+  {
+    "dataset": "pilot_1008",
+    "experiment_metadata": "data/results/pilot_1008/experiment_metadata.json",
+    "recorded_commit": "4d2d637bea96a4a1ddbbedb2c077fd0474ca8c19",
+    "recorded_worktree_dirty": false,
+    "python_version": "3.14.4",
+    "python_implementation": "CPython",
+    "recorded_os": "Windows-11-10.0.26200-SP0",
+    "current_os": "Windows-11-10.0.26300-SP0",
+    "base_seed": 20260983,
+    "regenerated_count": 1008,
+    "all_generation_parameters_match": true,
+    "sources": {
+      "src/data_generator.py": {
+        "git_blob_sha1": "139e03593d08c8a13ac13bfbd727ce744ebab0e6",
+        "sha256": "30124cfcf7c1eba4638ec2d0e8be5f6fd5bb56fd7e3d4438a73f45cdf7ed7da2",
+        "snapshot": "historical_sources/pilot_1008/src/data_generator.py",
+        "current_text_equal_ignoring_crlf": true
+      },
+      "src/experiment_runner.py": {
+        "git_blob_sha1": "ea8f07ab0f53cde63fb1f192038c47cf9d3db65f",
+        "sha256": "55e299dbb8d76fe6d78260b0eb0f0530c551343f72898e3652690b42a465433b",
+        "snapshot": "historical_sources/pilot_1008/src/experiment_runner.py",
+        "current_text_equal_ignoring_crlf": true
+      },
+      "config/experiment_config.json": {
+        "git_blob_sha1": "3f7a0ad18e6b80fe5bfdd61ca463c75ddb0d567b",
+        "sha256": "83fc6188d85821c26f0694647b85a7bbc6c6d9008f6d972d624eb7a0e5d07840",
+        "snapshot": "historical_sources/pilot_1008/config/experiment_config.json",
+        "current_text_equal_ignoring_crlf": false
+      }
+    },
+    "packages_used_for_generation": "Python stdlib only; external package versions not used"
+  }
+]
