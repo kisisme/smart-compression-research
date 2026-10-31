@@ -41,3 +41,9 @@
 /research_log/usage_objective_spec_v1.json -text
 /research_log/verify_usage_objective_design_20261030.py -text
 /research_log/usage_objective_design_checks_20261030.json -text
+
+/src/usage_objectives.py -text
+/tests/test_usage_objectives.py -text
+/research_log/usage_objectives.md -text
+/research_log/validate_usage_objectives_20261031.py -text
+/research_log/usage_objectives_validation_20261031.json -text

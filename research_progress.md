@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자에게 사용 상황 선택을 위임받아 [사용 조건 기반 후보 목적 함수 v1](research_log/usage_objective_design_v1.md)을 설계했다. 기존 세 모드를 유지하고 주후보는 `J=k_s H B+k_c T_c+k_d N T_d`의 생애 총비용, 비교 대안은 시간 제한을 만족한 후보 중 크기 최소화로 정했다. 보관 기간/복원 횟수·정책 계수의 단위·유효 범위·순위 전환 경계·동점/빈 제약 집합·후속 별도 모델/평가 계약을 기록했다. 익명 가상 비용 예제 6개·제약 예제 4개와 불변성 검산, 로컬 링크 9개·보호 파일 75개 불변을 확인했다. 운영 profile 값은 근거 미확정으로 null이며 공식 점수/모델 전환이나 새 실측을 하지 않았다. 다음 단일 작업은 별도 순수 계산부 구현과 인위적 fixture 검증이다. Memory 참고 지표 유지, GUI 저장 검증·전체 시각 QA와 corpus 동결/평가 미완료 상태를 유지한다.
+최신 진행: [후보 목적 함수의 순수 계산부](research_log/usage_objectives.md)를 별도 `src/usage_objectives.py`로 구현했다. `LifetimePolicy`의 명시적 매개변수로 생애 총비용을 계산하고, 시간 제한 아래 정수 압축 크기를 최소화한다. 누락 측정은 measurement_required, 빈 시간 제약 집합은 constraint_unsatisfied로 구분하고 검증 실패/잘못된 값·overflow/0 underflow는 거부한다. 전용 인위적 테스트 25개(0.181초), 설계의 가상 비용 6개·제약 4개 대조, 기존 보호 파일 79개 불변을 확인한 [실행 근거](research_log/usage_objectives_validation_20261031.json)를 보존했다. 공식 score·모델/CLI/GUI에는 연결하지 않았고 연구 압축·학습·memory 측정을 하지 않았다. 다음 단일 작업은 가상 사용 scenario를 먼저 고정한 뒤 별도 출력에서 기존 Pilot을 탐색하는 것이다. 운영 계수·공식 전환·독립 평가와 GUI 저장 검증/전체 QA·corpus 동결은 미완료다.
+
+직전 후보 수학 설계: 사용자에게 사용 상황 선택을 위임받아 [사용 조건 기반 후보 목적 함수 v1](research_log/usage_objective_design_v1.md)을 설계했다. 기존 세 모드를 유지하고 주후보는 `J=k_s H B+k_c T_c+k_d N T_d`의 생애 총비용, 비교 대안은 시간 제한을 만족한 후보 중 크기 최소화로 정했다. 보관 기간/복원 횟수·정책 계수의 단위·유효 범위·순위 전환 경계·동점/빈 제약 집합·후속 별도 모델/평가 계약을 기록했다. 익명 가상 비용 예제 6개·제약 예제 4개와 불변성 검산, 로컬 링크 9개·보호 파일 75개 불변을 확인했다. 운영 profile 값은 근거 미확정으로 null이며 공식 점수/모델 전환이나 새 실측을 하지 않았다. 다음 단일 작업은 별도 순수 계산부 구현과 인위적 fixture 검증이다. Memory 참고 지표 유지, GUI 저장 검증·전체 시각 QA와 corpus 동결/평가 미완료 상태를 유지한다.
 
 직전 Pilot 탐색: 사용자 요청에 따라 [기존 Pilot 우세 조건·점수 민감도 분석](research_log/pilot_tradeoffs_20261029.md)을 완료했다. 압축 크기에서는 다른 압축기가 548/1008개에서 zstd보다 좋았다. 지표/Pareto·generator/size·공식 regret와 사전에 정한 가중치 격자를 별도 탐색 결과로 보존했다. 시간 비중을 조금 줄인 경로에서는 선택 변화가 작았고, 동일 시간 비중의 0.01 격자에서 0.88/0.06/0.06부터 비-zstd 엄격 개선 비율이 10%를 넘었다. 전용 테스트 8개·독립 저장 검증을 통과했고 보호 파일 59개는 불변이다. 공식 가중치·정답·모델은 유지하며 memory 추가/추정·새 압축·실제 unseen 평가를 하지 않았다. 다음 연구 결정은 사용 목적을 명시한 별도 후보 함수 설계이며, 수동 Compare 정식 저장 검증·GUI 전체 시각 QA와 corpus 동결/평가는 별도 미완료다.
 
@@ -884,6 +886,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **검증 완료:** Decimal로 익명 인위적 A/B 비용 사례 6개와 제약 사례 4개, 계수 스케일·bytes/KiB 변환·음수 보관 경계·복원 횟수 경계를 검산했다. 로컬 링크 9개와 새 명세/문서/source hash, 기존 Pilot/모델/config·직전 분석 등 보호 파일 75개 불변을 대조했다. 이번은 문서/수학 설계 검증이며 연구 실험·기존 분석 전체·unit test suite를 재실행하지 않았다.
 - **미완료:** 실제 사용량·비용 교환비·deadline 근거가 없어 운영 profile 값은 null로 남긴다. 명시적 가상 매개변수로 계산부 구현은 진행 가능하다. 실제 scenario 고정·새 계산부/fixture·새 정의의 정답/모델·독립 평가는 아직 없다. 기존 공식 score·정답·모델과 memory validation_only를 유지한다. GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결/평가는 별도 미완료다.
 
+### 후보 목적 함수 순수 계산부·fixture 검증 완료 — 2026-10-31
+
+- **근거/실행 기준:** [계산부 안내](research_log/usage_objectives.md), [모듈](src/usage_objectives.py), [전용 테스트](tests/test_usage_objectives.py), [실행/설계 대조 근거](research_log/usage_objectives_validation_20261031.json), [검증 프로그램](research_log/validate_usage_objectives_20261031.py). 시작/검증 HEAD는 `2dfa7a41201b83dd9e74612c9b5577c58c9db31f`(후보 수학 설계 보존)이며 commit 전 새 source의 정확한 hash를 기록했다.
+- **구현 완료:** 명시적 `LifetimePolicy`와 별도 offline 후보 선택 함수를 추가했다. 생애 총비용의 저장/압축/복원 항을 분리하고 시간 제한은 경계 포함·빈 집합/위반 이유·정확 정수 bytes를 처리한다. 누락을 0으로 보충하거나 나머지 후보만으로 고르지 않는다. 같은 sample/원본 크기·복원 검증·측정 status·숫자/매개변수와 정확 동점 순서를 검증한다. Binary64 곱/합과 0 underflow를 거부하며 숫자 문자열 변환 단계의 작은 양수가 0이 되는 경우도 거부하도록 보강했다. 기본 저장 profile과 명시적 time_only profile을 구분한다.
+- **검증 완료:** 최종 전용 인위적 테스트 25개 통과(0.181초), stdout/stderr 원문 보존. 독립 Fraction 비용 대조·순위 반전/동점·유효/실패/누락·시간 경계·정수 정밀도·모든 입력 순서·원본 불변·overflow/underflow·fresh import 격리를 확인했다. 기존 설계의 익명 가상 비용 6개와 제약 4개를 새 함수로 계산해 대조하고, 보호 파일 79개·source hash 불변과 안내 링크 7개를 검증했다. 전체 저장소 테스트 suite는 실행하지 않았다.
+- **범위/미완료:** 모든 codec 이름의 새 입력은 인위적 fixture이고 실제 압축 연구 결과가 아니다. 공식 scoring/config·기존 라벨/모델을 수정하지 않았으며 함수를 CLI/GUI/Smart에 연결하거나 새 압축·특징·모델 로딩/학습/평가·memory 측정을 하지 않았다. 운영 profile 값은 여전히 null이다. 다음은 실제 사용 사실과 구분한 가상 scenario 집합의 사전 고정·Pilot 별도 탐색이며, 목적 함수 공식 채택/새 모델/독립 평가와 GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결은 별도 미완료다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
@@ -895,11 +904,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**후보 목적 함수 순수 계산부 구현·fixture 검증:** 확정한 후보 설계/명세에 따라 공식 scoring/config와 분리한 계산부를 만든다. 명시적 사용 조건과 측정값의 검증, 생애 비용·시간 제약·경계/동점·빈 후보·단위 변환을 인위적 fixture로 확인한다. 운영 계수를 임의 채우거나 기존 라벨/모델을 바꾸지 않는다. 실제 scenario를 고정한 새 탐색/평가·GUI 수동 Compare 저장 검증/전체 시각 QA·corpus 선정/동결은 별도 후속 과제다.
+**가상 사용 scenario 고정·Pilot 탐색:** 실제 운영값과 구분한 scenario의 H/N·비용 단위/계수·시간 제한·탐색 범위와 근거를 먼저 기록하고 고정한다. 그 뒤 기존 Pilot을 새 후보 함수로 별도 경로에서 계산해 모든 선택/절감/비용/위반 결과를 보존한다. 선택 비율 10%를 맞추도록 계수나 파일을 고르지 않고, 기존 공식 라벨·모델/config와 최종 unseen 평가 자료를 유지한다. 운영 계수/공식 채택·새 모델/독립 평가·GUI 수동 Compare 저장 검증/전체 시각 QA·corpus 선정/동결은 별도 후속 과제다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 후보 목적 함수 순수 계산부 구현·fixture 검증의 시작/검증 HEAD는 `2dfa7a4`(후보 수학 설계·검산 보존)다. 새 계산부/전용 테스트/source hash·기존 설계 예제 대조와 보호 hash를 기록했으며 공식 점수 전환이나 연구 실측 commit이 아니다.
 
 이번 사용 조건 기반 후보 목적 함수 설계/검산의 시작 HEAD는 `210e13e`(기존 Pilot 우세 조건·가중치 민감도 탐색 보존)다. 가상 수학 예제와 실제 연구 측정값을 구분하고 source/hash·공식 기준 불변을 기록했다. 새 score의 공식 채택 commit이 아니다.
 
