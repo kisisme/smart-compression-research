@@ -1,0 +1,50 @@
+{
+  "status": "independently_verified",
+  "created_at_utc": "2026-10-31T14:34:57.009244+00:00",
+  "verifier_sha256": "96b634723102914b85891e09c3c5287143778fdf9f0cd89f74803583ac0cb2dd",
+  "audit_sha256": "df82e3e34ef64b6d7a1869d891f28bef837e4bb596497c4ae5dd64d2774b6701",
+  "test_source_sha256": "30aeb793ec4b668ee5fb5aeb173cc219b8bc7714132beb7d3bd317ec5b410dec",
+  "coverage": {
+    "prediction_count": 1080,
+    "choices_count": 4320,
+    "measurement_count": 240,
+    "raw_repeat_count": 2400,
+    "cost_file_scenarios": 540,
+    "zstd_choices": 995,
+    "missed_cases": 57,
+    "missed_files": 21,
+    "missed_file_scenarios": 32,
+    "better_alternative_pairs": 59,
+    "unique_better_pairs": 33,
+    "ties": 0,
+    "best_codec_case_counts": {
+      "gzip": 46,
+      "bz2": 11
+    },
+    "alternative_codec_pair_counts": {
+      "gzip": 46,
+      "bz2": 11,
+      "lzma": 2
+    }
+  },
+  "zstd_miss_rate_pct": 5.728643216080402,
+  "reverse_error_cases": 74,
+  "checks": [
+    "Frozen strategy cost enumeration independent of analyzer/scorer",
+    "Exact all cases/all alternatives/ties sets",
+    "Every measurement and source join",
+    "Per-file and per-condition counts/regret/reverse errors",
+    "Every missed case present in report",
+    "Input and saved output hashes"
+  ],
+  "implementation_note": "Initial analysis guard required compression-only consistency on decompression slots and halted before output. Corrected to phase-specific status/hash checks; dedicated fixture added. No original study failure or new measurement.",
+  "verified_output_sha256": {
+    "data/results/usage_zstd_misses_20261031_01/better_alternatives.csv": "5a18b3660331d9151ea76b959cb3dd991e90ccb9e74c7ee6bdafd69ee2d6fc0d",
+    "data/results/usage_zstd_misses_20261031_01/missed_cases.csv": "e7de0848dc23a89a150c13427c93a935ef3794b2b82e2610c8d984fb5f9563c8",
+    "data/results/usage_zstd_misses_20261031_01/scenario_model_summary.csv": "88852e8d3ab4069c7da3d80ba4c24ab9057f555236c6be91b46d6561320f2b2c",
+    "data/results/usage_zstd_misses_20261031_01/ties.csv": "1127ae9a1674596174110e47169ae54b529334485fbed9e11c457b426dccd497",
+    "data/results/usage_zstd_misses_20261031_01/timing_repeat_summary.csv": "5eb64d4cb0dfff221603b2183763a8beac612019594ac4c7a3189e738ccd8990",
+    "data/results/usage_zstd_misses_20261031_01/unique_files.csv": "02432adae6f5dc47e7198aa4d9c71c0227c9b227d952e20378e6d27c5c91046c",
+    "research_log/zstd_misses_20261031.md": "11e6a27b2908eb91f5709bb7302b2a0a7bf942bc0254f37c354d3d47cb469477"
+  }
+}

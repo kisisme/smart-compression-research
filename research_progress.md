@@ -6,7 +6,9 @@
 
 최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 사용자 요청의 기준 확정→별도 모델 학습→실제 파일 검증을 모두 완료했다. [결과 보고서](research_log/usage_model_study_results_20261031.md)와 [원시 저장 감사](data/results/usage_candidate_study_20261031_01/audit.json)·[독립 지표 검증](data/results/usage_candidate_study_20261031_01/metrics_verification.json)을 보존했다. 모델 18개·실제 파일 60개·사전 예측 1080개, codec 반복 2,400개와 전체 경로 trial 5,700개를 검증했다. 순수 codec 비용에서만 Archive 0.1배 시간 비용의 작은 개선(DT 0.1406%, RF 0.1245%)이 있었고, 특징/예측/검증/저장 포함 상주 모델 비용은 모든 조건에서 zstd보다 6.36~708.52% 높았다. 이번 corpus/가상 정책에서 자동 선택의 실용적 비용 이득을 확인하지 못했다. 공식 모델/score와 memory 방침은 유지했다. GUI 수동 Compare 저장 검증/전체 시각 QA와 기존 공식 v2 모델의 별도 외부 평가/공식 채택은 미완료다.
+최신 진행: 사용자 요청에 따라 직전 후보 모델 실제 파일 평가의 zstd 선택 누락을 전수 분석했다. [57건 전체 목록·보고서](research_log/zstd_misses_20261031.md)와 [독립 저장 검증](data/results/usage_zstd_misses_20261031_01/verification.json)을 보존했다. 사전 예측 1,080건 중 zstd 선택 995건에서 다른 압축기의 가상 정책 비용이 엄격히 낮았던 선택은 57건(5.7286%), 중복 제거 파일은 21개·파일×시나리오는 32개다. 최저 비용은 gzip 46건·bz2 11건이며 최저가 아니어도 나은 LZMA 2건까지 대안 59건을 보존했다. 정확 동점은 0건이다. Archive 시간 비용 0.1배에 37건이 있고, 반대 방향으로 비-zstd 선택이 고정 zstd보다 나빴던 경우도 74건이다. 기존 측정/예측을 다시 읽은 개발 진단이며 재측정·재학습·계수/모델 변경은 하지 않았다. 다음은 특징/추론/저장 비용 병목의 별도 분해이며, 공식 score/모델과 memory 참고 지표 방침은 유지한다.
+
+직전 전체 실험: 사용자 요청의 기준 확정→별도 모델 학습→실제 파일 검증을 모두 완료했다. [결과 보고서](research_log/usage_model_study_results_20261031.md)와 [원시 저장 감사](data/results/usage_candidate_study_20261031_01/audit.json)·[독립 지표 검증](data/results/usage_candidate_study_20261031_01/metrics_verification.json)을 보존했다. 모델 18개·실제 파일 60개·사전 예측 1080개, codec 반복 2,400개와 전체 경로 trial 5,700개를 검증했다. 순수 codec 비용에서만 Archive 0.1배 시간 비용의 작은 개선(DT 0.1406%, RF 0.1245%)이 있었고, 특징/예측/검증/저장 포함 상주 모델 비용은 모든 조건에서 zstd보다 6.36~708.52% 높았다. 이번 corpus/가상 정책에서 자동 선택의 실용적 비용 이득을 확인하지 못했다. 공식 모델/score와 memory 방침은 유지했다. GUI 수동 Compare 저장 검증/전체 시각 QA와 기존 공식 v2 모델의 별도 외부 평가/공식 채택은 미완료다.
 
 직전 예측 동결: 동결한 실제 corpus 60개에서 사전 통계 특징과 후보 모델 예측 1080개를 [predictions checkpoint](data/results/usage_candidate_study_20261031_01/predictions.json)에 고정했다. 원본 full hash·모델 hash/설정/runtime·특징 순서를 확인했으며 confidence는 보정되지 않은 모델 출력이다. 이 파일들의 codec benchmark/전체 경로 실측은 아직 수행하지 않았다. 이 예측을 commit한 뒤 측정하고 사후 모델/시나리오 재선택을 하지 않는다.
 
@@ -949,6 +951,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **결과:** 순수 codec에서 Archive 시간 비용 0.1배의 DT/RF만 각각 0.1406%/0.1245% 비용 개선이었다. 전체 경로 비용은 모든 후보 조건에서 6.36~708.52% 증가했다. 고정 corpus/가상 정책에서 실용적 비용 개선 미확인으로 기록하고 불리한 결과를 유지한다.
 - **한계/후속:** 상주 모델 연구용 package 엔진이며 실제 배포 GUI/CLI·process startup·cold cache/fsync·모델 배포 공간·CPU/전력/메모리·모집단 효과는 검증하지 않았다. Generic corpus manifest의 evaluation_ready=false와 과거 합성 원본 bytes/hash 미저장·권리/익명성/독립성 범위를 유지한다. 이 외부 자료는 이후 튜닝에 활용하면 개발 자료이며 새 최종 일반화 평가는 다른 원본 그룹의 holdout이 필요하다. 공식 score/라벨/모델/config와 memory 방침은 유지하며 GUI 수동 Compare 저장 검증/전체 시각 QA는 별도 미완료다.
 
+### zstd 선택 누락의 전수 개발 진단 완료 — 2026-10-31
+
+- **근거:** [분석 코드](research_log/analyze_zstd_misses_20261031.py), [57건 보고서](research_log/zstd_misses_20261031.md), [모든 더 나은 대안 59건](data/results/usage_zstd_misses_20261031_01/better_alternatives.csv), 파일·조건별 CSV, [독립 검증기](research_log/verify_zstd_misses_20261031.py)·[검증 기록](data/results/usage_zstd_misses_20261031_01/verification.json). 원본 실측 source commit `6a75f98`, 원본 결과 보존 commit/이번 분석 시작 HEAD `f5fcb24`.
+- **완료/결과:** 실제 파일 60개×9개 정책×DT/RF 전체 1,080개 사전 예측을 대조했다. zstd 995개 선택 중 엄격한 누락 57개, 파일 21개·파일×시나리오 32개, 모든 나은 대안 59개(중복 제거 파일×시나리오×대안 33개)를 보존했다. gzip 최선 46건·bz2 최선 11건이며 LZMA도 더 나은 2건이 있지만 최선은 아니다. Archive 시간 비용 0.1배의 DT 20건·RF 17건에 집중된다. `mlperf_inference_03`은 Fast Access에서 gzip의 짧은 복원 시간 때문에 파일별 정책 비용 절감 여지가 약 52.3%였지만 두 모델이 zstd를 선택했다. 비-zstd로 잘못 바꿔 비용이 높아진 74건도 조건별 요약에 함께 보존했다.
+- **검증:** 인위적 fixture 7개 통과(명령: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_zstd_misses.py -v`). 전체 4,320개 선택 key·240개 정상 복원 측정·2,400개 원시 슬롯/5회 중앙값과 540개 파일×정책의 네 비용/성분을 대조했다. 별도 Fraction 산술 및 기존 계산부, 사전 예측·full hash/출처, 모든 누락/대안/동점 set과 보고서 57행을 검증했다. 기존 study 전체와 기준 source/config 등 451개 파일의 실행 전후 SHA-256이 일치했다. 초기 분석기의 압축 전용 반복 필드를 복원 슬롯에도 요구한 검사 오류는 산출물 생성 전에 중단됐고 phase별 검증으로 수정·회귀 fixture를 추가했다. 원본 연구 측정 실패가 아니다.
+- **범위/미완료:** 저장된 codec 중앙값을 이용한 가상 정책 기술 분석이며 작은 시간 차이의 유의성·파일 형식/특징의 인과·실제 배포 성능을 입증하지 않는다. 원시 반복/계수/라벨/모델을 수정하거나 새 압축·추론·학습·memory 측정을 하지 않았다. 관찰된 실제 60개는 후속 튜닝의 개발 자료이며 새 최종 원본 그룹 holdout이 필요하다. 특징/추론/검증/저장 비용 병목의 추가 분해와 공식 모델 외부 평가/GUI 관련 미완료는 별도다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
@@ -960,9 +969,11 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**비용 병목·오류 선택의 읽기 전용 진단:** 새로 저장한 파일별 예측/정답·특징/추론/검증/저장 시간을 분해해, 작은 codec 선택 이득이 사라진 원인과 개선 가능 범위를 정리한다. 진단은 현재 자료의 개발 분석이며 결과를 이유로 평가 계수·sample·원시 반복을 소급 변경하지 않는다. 후속 특징/모델 최적화·재측정을 진행한다면 새 계획/버전과 별도 최종 holdout이 필요하다. 기존 공식 시스템과 memory 참고 방침을 유지한다. GUI 수동 Compare 저장 검증/전체 QA는 별도 미완료다.
+**남은 비용 병목의 읽기 전용 진단:** zstd 선택 누락 57건과 역방향 손실의 전수 정리는 완료했다. 다음은 저장된 특징/추론/검증/저장 시간에서 작은 codec 선택 이득이 사라진 원인과 개선 가능 범위를 별도로 분해하는 작업이다. 진단은 현재 자료의 개발 분석이며 결과를 이유로 평가 계수·sample·원시 반복을 소급 변경하지 않는다. 후속 특징/모델 최적화·재측정을 진행한다면 새 계획/버전과 별도 최종 holdout이 필요하다. 기존 공식 시스템과 memory 참고 방침을 유지한다. GUI 수동 Compare 저장 검증/전체 QA는 별도 미완료다.
 
 ## 14. 마지막 관련 Git commit
+
+zstd 선택 누락의 읽기 전용 분석은 원본 결과 보존 commit `f5fcb24`에서 수행했다. 모든 파일별 사전 예측/원시 실측은 기존 `6a75f98` source에서 실행된 결과를 읽었다. 새 모델/codec 실험 commit이 아니며 분석 source/output hash는 별도 audit·verification에 기록했다.
 
 이번 후보 실험의 기준/corpus 동결 `419c484`, 구현/fixture `4ab7c73`, train-only 학습/재로딩 검증 `0cc7df1`, 성능 확인 전 예측 동결 `6a75f98`을 보존했다. 원시 codec/전체 경로 측정·평가/감사는 `6a75f98`의 고정 source에서 실행했다. 결과 보고서 자신의 hash를 넣기 위한 반복 commit은 만들지 않는다.
 

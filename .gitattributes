@@ -67,3 +67,9 @@
 /data/results/usage_candidate_study_20261031_01/corpus_evidence/notices/*.notice -diff
 
 /research_log/verify_usage_model_metrics_20261031.py -text
+
+/research_log/analyze_zstd_misses_20261031.py -text
+/tests/test_zstd_misses.py -text
+/research_log/zstd_misses_20261031.md -text
+/data/results/usage_zstd_misses_20261031_01/** -text
+/research_log/verify_zstd_misses_20261031.py -text
