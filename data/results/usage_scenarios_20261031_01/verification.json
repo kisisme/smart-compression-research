@@ -1,0 +1,18 @@
+{
+  "status": "verified_against_original_measurements",
+  "created_at_utc": "2026-10-31T08:28:39.754992+00:00",
+  "cost_rows": 9072,
+  "deadline_rows": 9072,
+  "protected_file_count": 84,
+  "freeze_sha256": "92b7c97e98abb6bcb74c148f1bb403c0e07e32d67dd42a8a52b5f160e1331be5",
+  "summary_sha256": "f360dc9b735f69b0410279aaf43f171e9f627132ed2dd195edb748f7857153f4",
+  "source_sha256": "e96ea382578d44818facb34792bc238bbed06e9d856ba3bdf41101b3943f65c1",
+  "checks": [
+    "Every candidate cost with exact Fraction oracle and binary64 operation order",
+    "All cost/deadline winners and sample-scenario coverage",
+    "Deadline feasibility and zstd-comparable denominator",
+    "Aggregate cost/counts and group counts",
+    "Prior input/output/source hashes"
+  ],
+  "official_or_model_evaluation": false
+}

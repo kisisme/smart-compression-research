@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [가상 사용 시나리오 사전 계획](research_log/usage_scenarios_plan_20261031.json)과 [실행 전 고정 근거](research_log/usage_scenarios_frozen_20261031.json)를 보존했다. 총비용 9개와 시간 제한 9개를 고정하고 집계 fixture 테스트 7개를 통과했다. 정책점수의 교환비·세 profile의 가상 보관/복원 사용량·시간 비용 배수·절대 deadline 전체 조합과 분모/실패 규칙을 명시했다. 이 단계에서는 실제 Pilot 후보 함수 분석을 아직 실행하지 않았다. 다음은 이 계획/실행 코드를 commit한 HEAD에서 지정 freeze hash로 새 출력에 분석·독립 검증하는 작업이다. 공식 score·모델/config·memory 방침과 실제 unseen 자료는 유지한다.
+최신 진행: 실행 전 고정/commit한 가상 사용 조건으로 [Pilot 시나리오별 탐색](research_log/usage_scenarios_20261031.md)을 완료했다. 원래 1,008개 전체에서 총비용/시간 제한 각 9개 시나리오를 계산하고, 각 9,072행의 선택/비용/제약과 그룹 집계를 독립 검증했다. 기본 시간 비용의 비-zstd 선택 비율은 archive 0.30%, balanced 2.88%, fast_access 7.44%다. 시간 비용 0.1배 Archive는 28.97% 선택·2.50% 가상 총비용 절감이었다. 보호 파일 84개는 불변이다. 이는 모든 실측을 알고 있는 oracle의 가상 정책 결과이며 모델/Smart의 성능 개선이 아니다. 공식 score·모델·memory 방침을 유지했다. 다음은 실제 적용 목적·계수 근거와 후속 평가 정의를 정리하는 후보 검토 기록이다. GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결·독립 평가·새 모델은 미완료다.
+
+직전 시나리오 고정: [가상 사용 시나리오 사전 계획](research_log/usage_scenarios_plan_20261031.json)과 [실행 전 고정 근거](research_log/usage_scenarios_frozen_20261031.json)를 보존했다. 총비용 9개와 시간 제한 9개를 고정하고 집계 fixture 테스트 7개를 통과했다. 정책점수의 교환비·세 profile의 가상 보관/복원 사용량·시간 비용 배수·절대 deadline 전체 조합과 분모/실패 규칙을 명시했다. 이 단계에서는 실제 Pilot 후보 함수 분석을 아직 실행하지 않았다. 다음은 이 계획/실행 코드를 commit한 HEAD에서 지정 freeze hash로 새 출력에 분석·독립 검증하는 작업이다. 공식 score·모델/config·memory 방침과 실제 unseen 자료는 유지한다.
 
 직전 후보 계산부: [후보 목적 함수의 순수 계산부](research_log/usage_objectives.md)를 별도 `src/usage_objectives.py`로 구현했다. `LifetimePolicy`의 명시적 매개변수로 생애 총비용을 계산하고, 시간 제한 아래 정수 압축 크기를 최소화한다. 누락 측정은 measurement_required, 빈 시간 제약 집합은 constraint_unsatisfied로 구분하고 검증 실패/잘못된 값·overflow/0 underflow는 거부한다. 전용 인위적 테스트 25개(0.181초), 설계의 가상 비용 6개·제약 4개 대조, 기존 보호 파일 79개 불변을 확인한 [실행 근거](research_log/usage_objectives_validation_20261031.json)를 보존했다. 공식 score·모델/CLI/GUI에는 연결하지 않았고 연구 압축·학습·memory 측정을 하지 않았다. 다음 단일 작업은 가상 사용 scenario를 먼저 고정한 뒤 별도 출력에서 기존 Pilot을 탐색하는 것이다. 운영 계수·공식 전환·독립 평가와 GUI 저장 검증/전체 QA·corpus 동결은 미완료다.
 
@@ -901,6 +903,14 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **고정 완료:** 총비용 9개·시간 제한 9개 전체. 1 MiB·day 보관과 1 ms 지연을 같은 기본 정책 비용으로 가정하고 시간 비용 0.1/1/10배를 탐색한다. Archive 365일/복원 1회·Balanced 30일/30회·Fast Access 1일/100회는 가상 상황이며 실제 운영값/요금이 아니다. 마지막 10% 선택 비율에 맞춰 계수를 고르거나 결과 후 시나리오를 교체하지 않는다.
 - **검증 완료/미실행:** 집계 전용 인위적 테스트 7개 통과. 총비용 합 비율/파일별 비율, 제약 미충족을 남긴 분모와 누락 거부/전체 조합을 확인했다. 이번 고정 단계에서는 실제 Pilot의 새 후보 결과를 계산하지 않았다. 원래 Pilot은 전부 탐색 자료로 쓰며 공식 점수·모델·실제 unseen 자료를 수정하지 않는다. 이 계획/코드를 commit한 후 새 경로에서 분석과 독립 검증을 수행한다.
 
+### 고정 가상 사용 시나리오의 기존 Pilot 탐색 완료 — 2026-10-31
+
+- **근거/실행 기준:** [보고서](research_log/usage_scenarios_20261031.md), [사전 계획](research_log/usage_scenarios_plan_20261031.json), [실행 전 고정 파일](research_log/usage_scenarios_frozen_20261031.json), [분석/검증 코드](research_log/analyze_usage_scenarios_20261031.py), `data/results/usage_scenarios_20261031_01/`의 파생 CSV·summary·verification·publication. 실제 분석 HEAD는 `73ce6df1104904ca4d3d3c47379a53e9faaba6a0`이며 고정된 source/plan hash와 외부 기대 freeze SHA-256을 확인했다.
+- **완료:** 1,008개 전체에 총비용 9개·시간 제한 9개를 계산했다. 선택/정확 동점·총비용 합과 파일별 비율·크기/시간 증감·미충족 및 zstd도 같은 제한을 만족한 비교 분모·feasibility 회복을 보존했다. 가상 조건 전체와 generator/size/교차 집계를 남겼으며 선택 비율을 보고 시나리오/파일/계수를 바꾸지 않았다.
+- **관측:** 기본 시간 비용에서 비-zstd 선택은 archive 0.30%, balanced 2.88%, fast_access 7.44%. 0.1배 시간 비용의 Archive는 28.97% 선택과 2.50% 총비용 절감을 보였다. 선택 빈도와 비용 절감은 서로 다른 지표이며 실제 사용 조건의 적합성이나 달성한 모델 성능으로 해석하지 않는다.
+- **검증 완료:** 실행 전 집계 fixture 7개 통과 후 `73ce6df`로 계획/코드를 commit하고 깨끗한 HEAD에서 실행했다. 원래 metadata/hash·설정·공식 점수/라벨 검증 뒤 독립 Fraction 비용 및 binary64 순위·동점 대조, 총비용 9,072행·시간 제한 9,072행 전체의 coverage/선택·제약·집계/그룹을 확인했다. 보호 파일 84개와 source/input/output hash 불변·보고서 링크를 대조했다. 새 codec 실행·복원·특징·모델/학습·memory·실제 파일 평가·기존 전체 suite를 실행하지 않았다.
+- **범위/미완료:** 사전 가정한 정책점수·사용량·절대 시간 제한의 탐색 결과이며 운영 profile 채택이나 공식 3지표 정답/모델 전환이 아니다. 저장 중앙값은 꼬리/실시간 지연 보장이 아니고 전체 Pilot은 개발 자료다. 실제 적용 목적·계수 근거/후속 평가 정의, GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결·독립 평가·새 모델은 남아 있다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표 보존과 결정 기록은 완료했다. 사전 안정성·관측 선택 이득 미충족 및 기존 3일 attempt의 미완료 증거를 보존하고 여건이 마련됐을 때 별도 설계로 재검토한다. 현재 필수 진행 작업이나 자동 재개 대상으로 두지 않는다.
@@ -912,11 +922,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**가상 사용 scenario 고정·Pilot 탐색:** 실제 운영값과 구분한 scenario의 H/N·비용 단위/계수·시간 제한·탐색 범위와 근거를 먼저 기록하고 고정한다. 그 뒤 기존 Pilot을 새 후보 함수로 별도 경로에서 계산해 모든 선택/절감/비용/위반 결과를 보존한다. 선택 비율 10%를 맞추도록 계수나 파일을 고르지 않고, 기존 공식 라벨·모델/config와 최종 unseen 평가 자료를 유지한다. 운영 계수/공식 채택·새 모델/독립 평가·GUI 수동 Compare 저장 검증/전체 시각 QA·corpus 선정/동결은 별도 후속 과제다.
+**후보 목적 함수의 적용 범위·후속 평가 결정 기록:** 고정 시나리오의 선택 빈도·실제 크기/시간 증감·가상 비용 절감·제약 미충족을 함께 비교하고, 총비용/시간 제한 후보를 어떤 사용 목적에서 검토할지와 필요한 실제 계수/예산 근거·독립 평가 조건을 정리한다. 10% 선택 비율을 이유로 특정 시나리오를 운영값으로 채택하거나 기존 공식 점수/라벨·모델/config를 바꾸지 않는다. GUI 수동 Compare 저장 검증/전체 시각 QA·실제 corpus 선정/동결·독립 평가·새 모델은 별도 후속 과제다.
 
 현재 원래 attempt02의 `completed_with_failures` 기록은 snapshot에 보존됐고 활성 결과는 Run 2 전체 재측정·교체·독립 저장 감사·실제 후보 분석을 마쳤다. 활성 측정의 실패 0건과 원래 수집의 실패 이력을 구분한다. 후보 안정성 기준은 미충족이며 memory 참고 지표 보존·추가 구현 보류를 사용자가 선택했다. 통합/독립 CLI·Tk GUI/Demo·작업 계층·자동 검증을 완료했고 OS 입력·시각 QA는 남아 있다. 별도 unseen 사전 설계·manifest 도구, 실제 후보 60개 수집과 파일별 검토를 반영한 미선정 draft를 마련했다. 기존 합성 조건의 전체 재생성 hash 겹침 감사까지 완료했다. 과거 input hash 미저장 한계와 정확 hash 확인 범위를 유지하며 실제 corpus 동결·평가·공식 4지표 전환·새 모델 학습은 수행하지 않았다.
 
 ## 14. 마지막 관련 Git commit
+
+이번 가상 사용 시나리오 탐색의 마지막 관련 구현/실행 commit은 `73ce6df`(시나리오·실행 코드/fixture의 분석 전 고정)다. 외부 기대 freeze SHA-256과 source hash를 검증하고 깨끗한 HEAD에서 새 파생 결과를 만들었다. 새 codec 측정이나 공식 점수·모델 전환 commit이 아니다.
 
 이번 후보 목적 함수 순수 계산부 구현·fixture 검증의 시작/검증 HEAD는 `2dfa7a4`(후보 수학 설계·검산 보존)다. 새 계산부/전용 테스트/source hash·기존 설계 예제 대조와 보호 hash를 기록했으며 공식 점수 전환이나 연구 실측 commit이 아니다.
 
