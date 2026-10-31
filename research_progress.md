@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 후보 모델의 별도 학습·사전 예측 동결·Compare 연결·overhead 포함 검증용 엔진·저장 감사 실행부를 구현했다. 학습 전 전용 인위적 fixture 11개가 통과했고 source/hash·테스트 출력을 [implementation lock](data/results/usage_candidate_study_20261031_01/implementation_lock.json)에 고정했다. 초기 모델 reload 검사에서 명시적 config와 estimator 기본값의 차이를 정상 모델 오류로 본 문제를 수정하고 전체 저장 매개변수·명시적 config·runtime version을 검증했다. 실제 학습·corpus 예측/측정은 아직 없으며 이 코드를 commit한 뒤 기존 train 부분으로 별도 후보 모델을 학습한다.
+최신 진행: 후보 모델 학습을 완료하고 [저장 검증](data/results/usage_candidate_study_20261031_01/training_verification.json)을 통과했다. 기존 train 806개만 사용해 고정 시나리오 전체의 두 모델 18개와 별도 후보 정답 9072행을 저장했다. 기존 test 202개는 개발 진단으로만 사용했고 실제 corpus는 학습에 쓰지 않았다. 모든 모델의 저장 hash·실제 class/설정·특징 순서/패키지·재로딩 예측과 train-only majority를 대조했다. 다음은 동결된 실제 60개 입력의 특징·모델 예측을 benchmark 전에 고정한 뒤 raw codec/전체 경로 평가를 실행하는 단계다.
+
+직전 실행부 구현: 후보 모델의 별도 학습·사전 예측 동결·Compare 연결·overhead 포함 검증용 엔진·저장 감사 실행부를 구현했다. 학습 전 전용 인위적 fixture 11개가 통과했고 source/hash·테스트 출력을 [implementation lock](data/results/usage_candidate_study_20261031_01/implementation_lock.json)에 고정했다. 초기 모델 reload 검사에서 명시적 config와 estimator 기본값의 차이를 정상 모델 오류로 본 문제를 수정하고 전체 저장 매개변수·명시적 config·runtime version을 검증했다. 실제 학습·corpus 예측/측정은 아직 없으며 이 코드를 commit한 뒤 기존 train 부분으로 별도 후보 모델을 학습한다.
 
 직전 기준/입력 동결: 사용자 요청의 기준 확정→후보 모델 학습→실제 파일 평가 순서 중 기준/입력 동결을 완료했다. [평가 기준](research_log/usage_model_study_design_20261031.md)·[계획](research_log/usage_model_study_plan_20261031.json)에 모든 고정 총비용 시나리오/두 모델·기존 train-only 분할·전체 실패 보존·원본 그룹 동일 비중 평가와 overhead 포함 검증용 엔진 범위를 명시했다. 검토 후보 60개 전체·notice 참조 72개와 겹침 근거를 새 corpus에 연결했고 보호 파일 268개는 불변이다. 이 단계에서는 특징/예측/학습/압축을 실행하지 않았다. 다음은 별도 후보 모델과 평가 엔진 구현·fixture 검증·학습이다. 공식 score/config·기존 모델·memory 방침을 유지한다.
 
@@ -920,6 +922,12 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **근거:** [기준](research_log/usage_model_study_design_20261031.md), [계획](research_log/usage_model_study_plan_20261031.json), [동결 도구](research_log/prepare_usage_model_study_20261031.py), [study lock](data/results/usage_candidate_study_20261031_01/study_lock.json), 새 corpus manifest/audit·selection·notice index. 시작 HEAD `8fcc29b`.
 - **완료/검증:** 후보 60개 전부를 명시 선정하고 기존 manifest freeze/audit로 hash·quota·group·검토 metadata를 확인했다. 필수 notice 72개 참조의 실제 bytes/hash 사본, source/citation/PSF 적응 요약·알려진 관계·합성 재생성 겹침 근거를 연결했다. 보호 파일 268개는 그대로다. 일반 manifest의 evaluation_ready=false/declared_metadata_only는 유지하며 이번 연구별 실행 자격·과거 합성 원본 hash 미저장·독립성/익명성 미인증 한계를 별도로 기록했다.
 - **미실행/다음:** 모델 선택·특징·예측·학습·benchmark는 아직 없다. 기존 고정 총비용 시나리오 전체×두 모델을 기존 train IDs로 학습하고 실제 자료 예측을 benchmark 전에 고정한다. Overhead 포함 검증 엔진과 모델 load 시간을 별도 측정한다. 공식 변경은 하지 않는다.
+
+### 후보 모델 별도 학습·재로딩 검증 완료 — 2026-10-31
+
+- **근거:** [학습 checkpoint](data/results/usage_candidate_study_20261031_01/training.json), [저장 검증](data/results/usage_candidate_study_20261031_01/training_verification.json), training/의 후보 라벨·원래 분할·개발 예측·새 모델. 실행 코드 commit `4ab7c73`, 기준/corpus commit `419c484`.
+- **완료/검증:** 원래 train 806개만 학습하고 고정 시나리오×두 모델 18개를 저장했다. 기존 test 202개는 Pilot 전체 탐색에 따른 개발 진단이며 독립 시험 성능이 아니다. 후보 정답 9072행은 공식 라벨과 분리했다. 전체 모델을 다시 읽어 hash·class·명시 config/전체 저장 매개변수·feature_names·runtime version과 개발 예측 일치, train-only majority를 확인했다.
+- **미실행/다음:** 실제 corpus의 특징/예측/압축과 전체 경로 실측은 아직 없다. 사전 예측 동결 후 같은 파일·조건으로 평가한다. 공식 기준·과거 모델/config·memory 방침을 유지한다.
 
 ## 12. 아직 완료하지 않은 작업
 
