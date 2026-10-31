@@ -47,3 +47,10 @@
 /research_log/usage_objectives.md -text
 /research_log/validate_usage_objectives_20261031.py -text
 /research_log/usage_objectives_validation_20261031.json -text
+
+/data/results/usage_scenarios_20261031_01/** -text
+/research_log/usage_scenarios_plan_20261031.json -text
+/research_log/usage_scenarios_frozen_20261031.json -text
+/research_log/analyze_usage_scenarios_20261031.py -text
+/research_log/usage_scenarios_20261031.md -text
+/tests/test_usage_scenarios.py -text

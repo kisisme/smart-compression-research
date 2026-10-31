@@ -1,0 +1,267 @@
+{
+  "status": "frozen_before_analysis",
+  "created_at_utc": "2026-10-31T08:26:01.733430+00:00",
+  "preparation_git_head": "623872f7bf411c8bcffc86624a22842cddcde838",
+  "plan": {
+    "analysis_id": "hypothetical_usage_scenarios_v1_20261031",
+    "status": "exploratory_scenario_plan_not_operational_defaults",
+    "input_root": "data/results/pilot_1008",
+    "output_root": "data/results/usage_scenarios_20261031_01",
+    "scope": "All existing synthetic Pilot measurements including the former test set; descriptive offline oracle only. No codecs, model prediction/training, memory measurement or real-file evaluation.",
+    "objective_definition": "research_log/usage_objective_spec_v1.json and src/usage_objectives.py implementation v1",
+    "cost_unit": "arbitrary policy cost points, not currency or measured CPU/energy cost",
+    "base_costs": {
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "1",
+      "decompression_cost_per_ms": "1"
+    },
+    "anchor_interpretation": "At multiplier 1, one millisecond of compression/decompression latency has the same hypothetical policy cost as retaining one MiB for one day. This is a declared sensitivity anchor, not an empirically fitted or real pricing ratio.",
+    "profiles": [
+      {
+        "id": "archive",
+        "retention_days": "365",
+        "expected_restorations": "1",
+        "reason": "Hypothetical annual archive restored once in its retained lifetime"
+      },
+      {
+        "id": "balanced",
+        "retention_days": "30",
+        "expected_restorations": "30",
+        "reason": "Hypothetical month retained with one full restoration per day"
+      },
+      {
+        "id": "fast_access",
+        "retention_days": "1",
+        "expected_restorations": "100",
+        "reason": "Hypothetical one-day object with frequent full restoration"
+      }
+    ],
+    "time_cost_multipliers": [
+      "0.1",
+      "1",
+      "10"
+    ],
+    "cost_scenario_rule": "Full Cartesian product of profiles and time multipliers; scale both latency coefficients by the multiplier, keep storage coefficient unchanged. All scenarios are reported; multiplier 1 is a reference illustration, not an adopted profile.",
+    "deadline_compression_ms": [
+      "1",
+      "10",
+      "100"
+    ],
+    "deadline_decompression_ms": [
+      "0.1",
+      "1",
+      "10"
+    ],
+    "deadline_scenario_rule": "Full Cartesian product of absolute per-file codec deadlines spanning sub-ms to 100ms policy budgets. Chosen as a coarse hypothetical grid, not from Pilot quantiles. Include all input sizes and report size groups; no proportional-size rescaling.",
+    "comparison_policy": {
+      "reference": "fixed zstd; not a newly fitted majority baseline",
+      "cost_saving_pct": "100 * (sum fixed-zstd policy cost - sum oracle policy cost) / sum fixed-zstd policy cost; per-file percentages reported separately",
+      "strict_gain": "chosen cost strictly less than zstd cost; exact ties are distinct",
+      "deadline_denominators": "Report all-sample selection share and feasible-subset share separately. Unsatisfied samples stay in the denominator of all-sample counts.",
+      "deadline_regret": "Size saving versus zstd only when zstd itself meets the same limits; when zstd violates and another is feasible, report feasibility recovery separately",
+      "tie_order": [
+        "gzip",
+        "bz2",
+        "lzma",
+        "zstd"
+      ],
+      "ten_percent_other_codec_share": "descriptive reference only; not a selection/acceptance criterion",
+      "verification_numeric_tolerance": {
+        "relative": 1e-12,
+        "absolute": 1e-12,
+        "purpose": "Independent exact-Fraction cost comparison only; never used for choosing winners or merging ties"
+      }
+    },
+    "preservation": "Keep original measurements, official v2 labels, configuration, models and all prior evidence byte-identical. New derived tables are exploratory candidate results, not official new labels.",
+    "failure_policy": "Existing output refused. Incomplete/invalid source or input/source hash drift aborts and is preserved. No sample removal, fallback codec, scenario replacement or post-result parameter changes.",
+    "interpretation_limits": [
+      "Oracle has access to all codec results; it is not an achieved Smart/model improvement",
+      "Cost savings depend on hypothetical policies; magnitudes across scenarios are not directly comparable",
+      "Stored median codec times exclude features, prediction, verification and I/O; no tail-latency or end-to-end guarantee",
+      "The explored Pilot is development data; preserve a separate held-out evaluation for later frozen definitions"
+    ]
+  },
+  "expanded_cost_scenarios": [
+    {
+      "id": "archive_t0p1",
+      "profile": "archive",
+      "time_multiplier": "0.1",
+      "policy": {
+        "retention_days": "365",
+        "expected_restorations": "1",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "0.1",
+        "decompression_cost_per_ms": "0.1"
+      }
+    },
+    {
+      "id": "archive_t1",
+      "profile": "archive",
+      "time_multiplier": "1",
+      "policy": {
+        "retention_days": "365",
+        "expected_restorations": "1",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "1",
+        "decompression_cost_per_ms": "1"
+      }
+    },
+    {
+      "id": "archive_t10",
+      "profile": "archive",
+      "time_multiplier": "10",
+      "policy": {
+        "retention_days": "365",
+        "expected_restorations": "1",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "10",
+        "decompression_cost_per_ms": "10"
+      }
+    },
+    {
+      "id": "balanced_t0p1",
+      "profile": "balanced",
+      "time_multiplier": "0.1",
+      "policy": {
+        "retention_days": "30",
+        "expected_restorations": "30",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "0.1",
+        "decompression_cost_per_ms": "0.1"
+      }
+    },
+    {
+      "id": "balanced_t1",
+      "profile": "balanced",
+      "time_multiplier": "1",
+      "policy": {
+        "retention_days": "30",
+        "expected_restorations": "30",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "1",
+        "decompression_cost_per_ms": "1"
+      }
+    },
+    {
+      "id": "balanced_t10",
+      "profile": "balanced",
+      "time_multiplier": "10",
+      "policy": {
+        "retention_days": "30",
+        "expected_restorations": "30",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "10",
+        "decompression_cost_per_ms": "10"
+      }
+    },
+    {
+      "id": "fast_access_t0p1",
+      "profile": "fast_access",
+      "time_multiplier": "0.1",
+      "policy": {
+        "retention_days": "1",
+        "expected_restorations": "100",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "0.1",
+        "decompression_cost_per_ms": "0.1"
+      }
+    },
+    {
+      "id": "fast_access_t1",
+      "profile": "fast_access",
+      "time_multiplier": "1",
+      "policy": {
+        "retention_days": "1",
+        "expected_restorations": "100",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "1",
+        "decompression_cost_per_ms": "1"
+      }
+    },
+    {
+      "id": "fast_access_t10",
+      "profile": "fast_access",
+      "time_multiplier": "10",
+      "policy": {
+        "retention_days": "1",
+        "expected_restorations": "100",
+        "storage_cost_per_byte_day": "0.00000095367431640625",
+        "compression_cost_per_ms": "10",
+        "decompression_cost_per_ms": "10"
+      }
+    }
+  ],
+  "expanded_deadline_scenarios": [
+    {
+      "id": "deadline_c1_d0p1",
+      "compression_limit_ms": "1",
+      "decompression_limit_ms": "0.1"
+    },
+    {
+      "id": "deadline_c1_d1",
+      "compression_limit_ms": "1",
+      "decompression_limit_ms": "1"
+    },
+    {
+      "id": "deadline_c1_d10",
+      "compression_limit_ms": "1",
+      "decompression_limit_ms": "10"
+    },
+    {
+      "id": "deadline_c10_d0p1",
+      "compression_limit_ms": "10",
+      "decompression_limit_ms": "0.1"
+    },
+    {
+      "id": "deadline_c10_d1",
+      "compression_limit_ms": "10",
+      "decompression_limit_ms": "1"
+    },
+    {
+      "id": "deadline_c10_d10",
+      "compression_limit_ms": "10",
+      "decompression_limit_ms": "10"
+    },
+    {
+      "id": "deadline_c100_d0p1",
+      "compression_limit_ms": "100",
+      "decompression_limit_ms": "0.1"
+    },
+    {
+      "id": "deadline_c100_d1",
+      "compression_limit_ms": "100",
+      "decompression_limit_ms": "1"
+    },
+    {
+      "id": "deadline_c100_d10",
+      "compression_limit_ms": "100",
+      "decompression_limit_ms": "10"
+    }
+  ],
+  "source_sha256": {
+    "research_log/usage_scenarios_plan_20261031.json": "7d2c099fa7a25ff712c8ef5207972b3a5b930bbd33d8fbf65d8561ceb2c386d8",
+    "research_log/analyze_usage_scenarios_20261031.py": "e96ea382578d44818facb34792bc238bbed06e9d856ba3bdf41101b3943f65c1",
+    "tests/test_usage_scenarios.py": "5ff470574f1ef073d38ae423d15d6223fd9fd733f0bf7262de740424a442dc6c",
+    "src/usage_objectives.py": "09312aee53111506cef431b5ed8e14a32d37f93fd3047e1458ca2bdc715437e0",
+    "research_log/analyze_pilot_tradeoffs_20261029.py": "db6f64489a0505eafa7dad1812be3cb9e12f9d3eacdf7756469e8a05ef30cd0d",
+    "src/scoring.py": "7e6b1e0245ea0cf509834bb98b133cebdc932f38b2e9dc1e1b77baeeb1678778",
+    "config/experiment_config.json": "f9767ae5ffb7f62f3aeacaa37c6d88e131d9c459f8c2f9d0e9ac04e73c29b652"
+  },
+  "tests": {
+    "command": [
+      "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usage_scenarios.py",
+      "-v"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "test_all_combinations_and_group_counts_preserve_inputs (test_usage_scenarios.ScenarioTests.test_all_combinations_and_group_counts_preserve_inputs) ... ok\ntest_cost_summary_uses_total_cost_not_mean_of_percentages (test_usage_scenarios.ScenarioTests.test_cost_summary_uses_total_cost_not_mean_of_percentages) ... ok\ntest_deadline_infeasibility_stays_in_all_sample_denominator (test_usage_scenarios.ScenarioTests.test_deadline_infeasibility_stays_in_all_sample_denominator) ... ok\ntest_full_cartesian_scenarios_and_duplicate_ids (test_usage_scenarios.ScenarioTests.test_full_cartesian_scenarios_and_duplicate_ids) ... ok\ntest_mismatched_sample_coverage_is_rejected (test_usage_scenarios.ScenarioTests.test_mismatched_sample_coverage_is_rejected) ... ok\ntest_unknown_measurement_aborts_instead_of_dropping_sample (test_usage_scenarios.ScenarioTests.test_unknown_measurement_aborts_instead_of_dropping_sample) ... ok\ntest_zero_feasible_subset_is_null_not_zero_performance (test_usage_scenarios.ScenarioTests.test_zero_feasible_subset_is_null_not_zero_performance) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n"
+  }
+}

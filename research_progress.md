@@ -6,7 +6,9 @@
 
 최신 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: [후보 목적 함수의 순수 계산부](research_log/usage_objectives.md)를 별도 `src/usage_objectives.py`로 구현했다. `LifetimePolicy`의 명시적 매개변수로 생애 총비용을 계산하고, 시간 제한 아래 정수 압축 크기를 최소화한다. 누락 측정은 measurement_required, 빈 시간 제약 집합은 constraint_unsatisfied로 구분하고 검증 실패/잘못된 값·overflow/0 underflow는 거부한다. 전용 인위적 테스트 25개(0.181초), 설계의 가상 비용 6개·제약 4개 대조, 기존 보호 파일 79개 불변을 확인한 [실행 근거](research_log/usage_objectives_validation_20261031.json)를 보존했다. 공식 score·모델/CLI/GUI에는 연결하지 않았고 연구 압축·학습·memory 측정을 하지 않았다. 다음 단일 작업은 가상 사용 scenario를 먼저 고정한 뒤 별도 출력에서 기존 Pilot을 탐색하는 것이다. 운영 계수·공식 전환·독립 평가와 GUI 저장 검증/전체 QA·corpus 동결은 미완료다.
+최신 진행: [가상 사용 시나리오 사전 계획](research_log/usage_scenarios_plan_20261031.json)과 [실행 전 고정 근거](research_log/usage_scenarios_frozen_20261031.json)를 보존했다. 총비용 9개와 시간 제한 9개를 고정하고 집계 fixture 테스트 7개를 통과했다. 정책점수의 교환비·세 profile의 가상 보관/복원 사용량·시간 비용 배수·절대 deadline 전체 조합과 분모/실패 규칙을 명시했다. 이 단계에서는 실제 Pilot 후보 함수 분석을 아직 실행하지 않았다. 다음은 이 계획/실행 코드를 commit한 HEAD에서 지정 freeze hash로 새 출력에 분석·독립 검증하는 작업이다. 공식 score·모델/config·memory 방침과 실제 unseen 자료는 유지한다.
+
+직전 후보 계산부: [후보 목적 함수의 순수 계산부](research_log/usage_objectives.md)를 별도 `src/usage_objectives.py`로 구현했다. `LifetimePolicy`의 명시적 매개변수로 생애 총비용을 계산하고, 시간 제한 아래 정수 압축 크기를 최소화한다. 누락 측정은 measurement_required, 빈 시간 제약 집합은 constraint_unsatisfied로 구분하고 검증 실패/잘못된 값·overflow/0 underflow는 거부한다. 전용 인위적 테스트 25개(0.181초), 설계의 가상 비용 6개·제약 4개 대조, 기존 보호 파일 79개 불변을 확인한 [실행 근거](research_log/usage_objectives_validation_20261031.json)를 보존했다. 공식 score·모델/CLI/GUI에는 연결하지 않았고 연구 압축·학습·memory 측정을 하지 않았다. 다음 단일 작업은 가상 사용 scenario를 먼저 고정한 뒤 별도 출력에서 기존 Pilot을 탐색하는 것이다. 운영 계수·공식 전환·독립 평가와 GUI 저장 검증/전체 QA·corpus 동결은 미완료다.
 
 직전 후보 수학 설계: 사용자에게 사용 상황 선택을 위임받아 [사용 조건 기반 후보 목적 함수 v1](research_log/usage_objective_design_v1.md)을 설계했다. 기존 세 모드를 유지하고 주후보는 `J=k_s H B+k_c T_c+k_d N T_d`의 생애 총비용, 비교 대안은 시간 제한을 만족한 후보 중 크기 최소화로 정했다. 보관 기간/복원 횟수·정책 계수의 단위·유효 범위·순위 전환 경계·동점/빈 제약 집합·후속 별도 모델/평가 계약을 기록했다. 익명 가상 비용 예제 6개·제약 예제 4개와 불변성 검산, 로컬 링크 9개·보호 파일 75개 불변을 확인했다. 운영 profile 값은 근거 미확정으로 null이며 공식 점수/모델 전환이나 새 실측을 하지 않았다. 다음 단일 작업은 별도 순수 계산부 구현과 인위적 fixture 검증이다. Memory 참고 지표 유지, GUI 저장 검증·전체 시각 QA와 corpus 동결/평가 미완료 상태를 유지한다.
 
@@ -892,6 +894,12 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **구현 완료:** 명시적 `LifetimePolicy`와 별도 offline 후보 선택 함수를 추가했다. 생애 총비용의 저장/압축/복원 항을 분리하고 시간 제한은 경계 포함·빈 집합/위반 이유·정확 정수 bytes를 처리한다. 누락을 0으로 보충하거나 나머지 후보만으로 고르지 않는다. 같은 sample/원본 크기·복원 검증·측정 status·숫자/매개변수와 정확 동점 순서를 검증한다. Binary64 곱/합과 0 underflow를 거부하며 숫자 문자열 변환 단계의 작은 양수가 0이 되는 경우도 거부하도록 보강했다. 기본 저장 profile과 명시적 time_only profile을 구분한다.
 - **검증 완료:** 최종 전용 인위적 테스트 25개 통과(0.181초), stdout/stderr 원문 보존. 독립 Fraction 비용 대조·순위 반전/동점·유효/실패/누락·시간 경계·정수 정밀도·모든 입력 순서·원본 불변·overflow/underflow·fresh import 격리를 확인했다. 기존 설계의 익명 가상 비용 6개와 제약 4개를 새 함수로 계산해 대조하고, 보호 파일 79개·source hash 불변과 안내 링크 7개를 검증했다. 전체 저장소 테스트 suite는 실행하지 않았다.
 - **범위/미완료:** 모든 codec 이름의 새 입력은 인위적 fixture이고 실제 압축 연구 결과가 아니다. 공식 scoring/config·기존 라벨/모델을 수정하지 않았으며 함수를 CLI/GUI/Smart에 연결하거나 새 압축·특징·모델 로딩/학습/평가·memory 측정을 하지 않았다. 운영 profile 값은 여전히 null이다. 다음은 실제 사용 사실과 구분한 가상 scenario 집합의 사전 고정·Pilot 별도 탐색이며, 목적 함수 공식 채택/새 모델/독립 평가와 GUI 수동 Compare 저장 검증/전체 QA·실제 corpus 선정/동결은 별도 미완료다.
+
+### 가상 사용 시나리오·탐색 계약 실행 전 고정 — 2026-10-31
+
+- **근거:** [사전 계획](research_log/usage_scenarios_plan_20261031.json), [고정 파일](research_log/usage_scenarios_frozen_20261031.json), [탐색/검증 코드](research_log/analyze_usage_scenarios_20261031.py), [fixture](tests/test_usage_scenarios.py). 준비 시작 HEAD는 `623872f`다. Freeze SHA-256은 `92b7c97e98abb6bcb74c148f1bb403c0e07e32d67dd42a8a52b5f160e1331be5`이며 source/plan hash와 테스트 출력 원문을 보존했다.
+- **고정 완료:** 총비용 9개·시간 제한 9개 전체. 1 MiB·day 보관과 1 ms 지연을 같은 기본 정책 비용으로 가정하고 시간 비용 0.1/1/10배를 탐색한다. Archive 365일/복원 1회·Balanced 30일/30회·Fast Access 1일/100회는 가상 상황이며 실제 운영값/요금이 아니다. 마지막 10% 선택 비율에 맞춰 계수를 고르거나 결과 후 시나리오를 교체하지 않는다.
+- **검증 완료/미실행:** 집계 전용 인위적 테스트 7개 통과. 총비용 합 비율/파일별 비율, 제약 미충족을 남긴 분모와 누락 거부/전체 조합을 확인했다. 이번 고정 단계에서는 실제 Pilot의 새 후보 결과를 계산하지 않았다. 원래 Pilot은 전부 탐색 자료로 쓰며 공식 점수·모델·실제 unseen 자료를 수정하지 않는다. 이 계획/코드를 commit한 후 새 경로에서 분석과 독립 검증을 수행한다.
 
 ## 12. 아직 완료하지 않은 작업
 

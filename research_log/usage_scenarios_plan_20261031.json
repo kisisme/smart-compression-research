@@ -1,0 +1,43 @@
+{
+  "analysis_id": "hypothetical_usage_scenarios_v1_20261031",
+  "status": "exploratory_scenario_plan_not_operational_defaults",
+  "input_root": "data/results/pilot_1008",
+  "output_root": "data/results/usage_scenarios_20261031_01",
+  "scope": "All existing synthetic Pilot measurements including the former test set; descriptive offline oracle only. No codecs, model prediction/training, memory measurement or real-file evaluation.",
+  "objective_definition": "research_log/usage_objective_spec_v1.json and src/usage_objectives.py implementation v1",
+  "cost_unit": "arbitrary policy cost points, not currency or measured CPU/energy cost",
+  "base_costs": {
+    "storage_cost_per_byte_day": "0.00000095367431640625",
+    "compression_cost_per_ms": "1",
+    "decompression_cost_per_ms": "1"
+  },
+  "anchor_interpretation": "At multiplier 1, one millisecond of compression/decompression latency has the same hypothetical policy cost as retaining one MiB for one day. This is a declared sensitivity anchor, not an empirically fitted or real pricing ratio.",
+  "profiles": [
+    {"id": "archive", "retention_days": "365", "expected_restorations": "1", "reason": "Hypothetical annual archive restored once in its retained lifetime"},
+    {"id": "balanced", "retention_days": "30", "expected_restorations": "30", "reason": "Hypothetical month retained with one full restoration per day"},
+    {"id": "fast_access", "retention_days": "1", "expected_restorations": "100", "reason": "Hypothetical one-day object with frequent full restoration"}
+  ],
+  "time_cost_multipliers": ["0.1", "1", "10"],
+  "cost_scenario_rule": "Full Cartesian product of profiles and time multipliers; scale both latency coefficients by the multiplier, keep storage coefficient unchanged. All scenarios are reported; multiplier 1 is a reference illustration, not an adopted profile.",
+  "deadline_compression_ms": ["1", "10", "100"],
+  "deadline_decompression_ms": ["0.1", "1", "10"],
+  "deadline_scenario_rule": "Full Cartesian product of absolute per-file codec deadlines spanning sub-ms to 100ms policy budgets. Chosen as a coarse hypothetical grid, not from Pilot quantiles. Include all input sizes and report size groups; no proportional-size rescaling.",
+  "comparison_policy": {
+    "reference": "fixed zstd; not a newly fitted majority baseline",
+    "cost_saving_pct": "100 * (sum fixed-zstd policy cost - sum oracle policy cost) / sum fixed-zstd policy cost; per-file percentages reported separately",
+    "strict_gain": "chosen cost strictly less than zstd cost; exact ties are distinct",
+    "deadline_denominators": "Report all-sample selection share and feasible-subset share separately. Unsatisfied samples stay in the denominator of all-sample counts.",
+    "deadline_regret": "Size saving versus zstd only when zstd itself meets the same limits; when zstd violates and another is feasible, report feasibility recovery separately",
+    "tie_order": ["gzip", "bz2", "lzma", "zstd"],
+    "ten_percent_other_codec_share": "descriptive reference only; not a selection/acceptance criterion",
+    "verification_numeric_tolerance": {"relative": 1e-12, "absolute": 1e-12, "purpose": "Independent exact-Fraction cost comparison only; never used for choosing winners or merging ties"}
+  },
+  "preservation": "Keep original measurements, official v2 labels, configuration, models and all prior evidence byte-identical. New derived tables are exploratory candidate results, not official new labels.",
+  "failure_policy": "Existing output refused. Incomplete/invalid source or input/source hash drift aborts and is preserved. No sample removal, fallback codec, scenario replacement or post-result parameter changes.",
+  "interpretation_limits": [
+    "Oracle has access to all codec results; it is not an achieved Smart/model improvement",
+    "Cost savings depend on hypothetical policies; magnitudes across scenarios are not directly comparable",
+    "Stored median codec times exclude features, prediction, verification and I/O; no tail-latency or end-to-end guarantee",
+    "The explored Pilot is development data; preserve a separate held-out evaluation for later frozen definitions"
+  ]
+}
