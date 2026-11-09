@@ -73,3 +73,9 @@
 /research_log/zstd_misses_20261031.md -text
 /data/results/usage_zstd_misses_20261031_01/** -text
 /research_log/verify_zstd_misses_20261031.py -text
+
+/research_log/analyze_pipeline_bottlenecks_20261109.py -text
+/research_log/verify_pipeline_bottlenecks_20261109.py -text
+/research_log/pipeline_bottlenecks_20261109.md -text
+/tests/test_pipeline_bottlenecks.py -text
+/data/results/usage_pipeline_bottlenecks_20261109_01/** -text

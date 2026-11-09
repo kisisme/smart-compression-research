@@ -1,0 +1,29 @@
+{
+  "status": "independently_verified",
+  "created_at_utc": "2026-11-09T06:43:53.526375+00:00",
+  "verifier_sha256": "03fe740bbe0dd178cf8f5ff9f839c7f51b3c3d1325ffbb34651495cb6f910c10",
+  "test_source_sha256": "353681b251ce4fa7ad7b46ee106f1af055da976dcdfbb4a00be02a440798c345",
+  "audit_sha256": "13e6e08e490a04e7ce05a4968865f2836c8b86502a144944ceb986ac90450d94",
+  "coverage": {
+    "file_count": 60,
+    "scenario_count": 9,
+    "model_conditions": 18,
+    "trial_count": 5700,
+    "trace_medians": 1140,
+    "decomposition_rows": 1080,
+    "load_repeat_count": 90
+  },
+  "report_link_count": 7,
+  "protected_file_count": 460,
+  "checks": [
+    "Independent sorted-middle raw medians",
+    "Per-trial hypothetical timer removal",
+    "All 1080 independent component identities",
+    "All scenario/size/origin aggregates",
+    "Original warm/load metrics",
+    "Prior evidence/output hashes and file sets",
+    "Report links"
+  ],
+  "negative_without_feature": 13,
+  "negative_without_both": 3
+}
