@@ -79,3 +79,9 @@
 /research_log/pipeline_bottlenecks_20261109.md -text
 /tests/test_pipeline_bottlenecks.py -text
 /data/results/usage_pipeline_bottlenecks_20261109_01/** -text
+
+/research_log/feature_profile_plan_20261109.json -text
+/research_log/feature_profile_design_20261109.md -text
+/research_log/prepare_feature_profile_20261109.py -text
+/research_log/verify_feature_profile_plan_20261109.py -text
+/data/results/feature_profile_plan_20261109_01/** -text

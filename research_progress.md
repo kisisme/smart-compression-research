@@ -6,7 +6,9 @@
 
 최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 저장된 후보 모델 전체 경로의 비용 병목 진단을 완료했다(2026-11-09). [보고서](research_log/pipeline_bottlenecks_20261109.md)와 [독립 검증](data/results/usage_pipeline_bottlenecks_20261109_01/verification.json)을 보존했다. 5,700개 원시 trial을 1,140개 파일×전략 중앙값으로 재집계하고, 모델 파일별 1,080개 비용 차이를 분해했다. 특징 계산/입력 frame 준비는 파일당 조건별 평균 54.45~66.12ms, 압축 전체 시간에서 DT 84.02~87.75%·RF 61.53~70.89%였고, 평균 예측은 DT 2.50~2.86ms·RF 19.13~23.00ms였다. 특징 시간을 0으로 두는 가정에서도 18개 중 13개 조건의 가상 비용은 고정 zstd보다 불리했다. 이는 원시 trial에서 시간을 제거한 진단이며 최적화 실측이 아니다. 검증/hash/읽기/쓰기의 개별 계측은 없어 나머지 시간으로 구분했다. 기존 근거 460개 파일은 불변이고 전용 fixture 6개·독립 저장 검산을 통과했다. 다음은 기존 특징값을 보존하는 함수별 profiling의 사전 계획과 동등성 확인이다. 공식 score/모델과 memory 방침은 유지한다.
+최신 진행: 특징 계산 profiling·정확 동등성 검증의 사전 계획과 참조 자료 동결을 완료했다(2026-11-09). [설계](research_log/feature_profile_design_20261109.md)·[계획](research_log/feature_profile_plan_20261109.json)·[동결](data/results/feature_profile_plan_20261109_01/freeze.json)·[독립 구조/저장 검증](data/results/feature_profile_plan_20261109_01/verification.json)을 보존했다. 기존 실제 파일 60개·저장 특징 720개·모델 18개·예측 1,080개를 연결했고, 비계측 특징/입력 frame/결합과 함수별 계측의 네 모드에 측정 1,200회·warmup 240회 순서를 미리 고정했다. 이름/순서/builtin type·정수값/float.hex·모델 출력의 정확 보존과 nested timer/self-time 규칙을 명시했다. 인위적 정상 131개·오류 5개 입력은 계획만 수립했다. Python/패키지·모델 bytes·기존 근거 467개 파일과 참조 코드 사본/계획 링크를 확인했다. 원본 bytes 재검증·특징 재계산·모델 로딩/예측·실측·최적화·fixture 테스트는 아직 수행하지 않았다. 다음은 이 계획에 따른 격리 worker/runner·동등성 검증기 구현과 인위적 fixture 검증이다.
+
+직전 비용 진단: 저장된 후보 모델 전체 경로의 비용 병목 진단을 완료했다(2026-11-09). [보고서](research_log/pipeline_bottlenecks_20261109.md)와 [독립 검증](data/results/usage_pipeline_bottlenecks_20261109_01/verification.json)을 보존했다. 5,700개 원시 trial을 1,140개 파일×전략 중앙값으로 재집계하고, 모델 파일별 1,080개 비용 차이를 분해했다. 특징 계산/입력 frame 준비는 파일당 조건별 평균 54.45~66.12ms, 압축 전체 시간에서 DT 84.02~87.75%·RF 61.53~70.89%였고, 평균 예측은 DT 2.50~2.86ms·RF 19.13~23.00ms였다. 특징 시간을 0으로 두는 가정에서도 18개 중 13개 조건의 가상 비용은 고정 zstd보다 불리했다. 이는 원시 trial에서 시간을 제거한 진단이며 최적화 실측이 아니다. 검증/hash/읽기/쓰기의 개별 계측은 없어 나머지 시간으로 구분했다. 기존 근거 460개 파일은 불변이고 전용 fixture 6개·독립 저장 검산을 통과했다. 당시 다음은 기존 특징값을 보존하는 함수별 profiling의 사전 계획이었다. 공식 score/모델과 memory 방침은 유지했다.
 
 직전 zstd 진단: 사용자 요청에 따라 직전 후보 모델 실제 파일 평가의 zstd 선택 누락을 전수 분석했다. [57건 전체 목록·보고서](research_log/zstd_misses_20261031.md)와 [독립 저장 검증](data/results/usage_zstd_misses_20261031_01/verification.json)을 보존했다. 사전 예측 1,080건 중 zstd 선택 995건에서 다른 압축기의 가상 정책 비용이 엄격히 낮았던 선택은 57건(5.7286%), 중복 제거 파일은 21개·파일×시나리오는 32개다. 최저 비용은 gzip 46건·bz2 11건이며 최저가 아니어도 나은 LZMA 2건까지 대안 59건을 보존했다. 정확 동점은 0건이다. Archive 시간 비용 0.1배에 37건이 있고, 반대 방향으로 비-zstd 선택이 고정 zstd보다 나빴던 경우도 74건이다. 기존 측정/예측을 다시 읽은 개발 진단이며 재측정·재학습·계수/모델 변경은 하지 않았다. 당시 다음 작업은 특징/추론/저장 비용 병목의 별도 분해였으며 공식 score/모델과 memory 참고 지표 방침은 유지했다.
 
@@ -968,6 +970,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **검증:** 전용 인위적 fixture 6개 통과(명령: `.venv/Scripts/python.exe -m unittest discover -s tests -p test_pipeline_bottlenecks.py -v`). 중복/누락 슬롯·복원 hash/verified·압축기 사전 예측·내부 timer 포함 관계, 기존 18개 pipeline 비용/평균 timer/load proxy를 검사했다. 별도 검증기는 분석기를 import하지 않고 정렬 중앙 원소로 원시 중앙값·세 시간 제거 가정·1,080개 분해·조건/크기/원본 그룹 집계를 다시 검산했다. 기존 study/누락 분석/기준 config·source 등 460개 파일의 해시와 파일 집합이 일치했고 보고서 링크를 확인했다.
 - **한계/미완료:** 검증/hash/읽기/쓰기의 개별 timer가 없으므로 순수 비용을 따로 확정하지 않는다. 기록된 특징 구간은 통계 함수와 pandas 입력 준비를 합친 값이다. 어느 함수가 가장 느린지는 실제 함수별 profile이 필요하다. 시간 제거는 낙관적 계산이며 구현/새 실측·실제 cold start/배포 성능을 뜻하지 않는다. 새 연구 압축·특징 계산·모델 예측/학습·memory 측정을 하지 않았다. 관찰한 60개는 개발 자료이며 향후 최종 평가는 새 원본 그룹 holdout이 필요하다. 다음은 기존 12개 특징의 의미/순서/값을 보존하는 profiling/동등성 검증 계획이다.
 
+### 특징 profiling·정확 동등성의 사전 계획/참조 동결 완료 — 2026-11-09
+
+- **근거:** [설계](research_log/feature_profile_design_20261109.md), [JSON 계획](research_log/feature_profile_plan_20261109.json), [준비 코드](research_log/prepare_feature_profile_20261109.py), [동결 기록](data/results/feature_profile_plan_20261109_01/freeze.json), [독립 계획 검증기](research_log/verify_feature_profile_plan_20261109.py)·[검증 기록](data/results/feature_profile_plan_20261109_01/verification.json). 시작 HEAD는 직전 비용 진단 `fdf6f66`이다.
+- **완료:** 원래 특징 source/config/테스트/study runner를 byte 그대로 복사했고, 기존 frame 함수의 AST가 같은 사본을 만들었다. 실제 60개 파일 metadata와 저장 특징 720개를 타입별 정수/float.hex로 연결했다. 기존 18개 모델 hash/클래스와 1,080개 예측 파일을 보존했으며 새 단일 행 예측·확률·confidence 정확 보존 기준을 정했다. 네 모드×파일당 5회 측정(1,200회)·1회 warmup(240회)의 고정 seed 전체 순서를 저장했다. 정상 경계 입력 131개·오류 입력 5개는 인위적 fixture 계획이다.
+- **검증:** 기존 감사 chain·467개 관련 파일 hash, feature AST/설정/모델 기록과 현재 Python·패키지 일치, 원본 파일 metadata/모델 bytes·저장 특징·예측 key, 각 모드/round의 전체 입력 포함과 deterministic shuffle, source 사본 bytes/frame AST와 문서 링크를 확인했다. 별도 검증기는 준비 코드를 import하지 않고 저장 자료/구조/해시/순서를 재검사했다. 계획 준비·검증 명령은 각각 `.venv/Scripts/python.exe research_log/prepare_feature_profile_20261109.py`, `.venv/Scripts/python.exe research_log/verify_feature_profile_plan_20261109.py`다. 문서/설정 동결 단계이므로 fixture 테스트·연구 실험을 실행하거나 통과했다고 기록하지 않았다.
+- **계획/미실행:** 이후 worker에서 원본 bytes/hash 확인→참조 특징의 기존 저장값 일치→계측/향후 후보의 정확 특징·frame/예측 일치를 먼저 확인한다. 비계측 특징·frame·결합 시간과 nested 함수별 계측을 구분하고 inclusive/self 중복 합산·독립 중앙값 가산을 금지한다. 계측 observer overhead와 fixed mode order/cache 한계를 표시한다. 이번에는 원본 bytes 재검증·특징 실행·모델 역직렬화/예측·시간 측정·최적화를 하지 않았다. 후속 실행부/인위적 검증과 commit 후 새 경로에서 기준선 profile하며, 최적화의 실제 비교는 별도의 균형 paired 계획으로 진행한다. 공식 score/모델·memory 보류·GUI 미완료는 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
@@ -979,9 +988,11 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**특징값을 보존하는 profiling·동등성 검증의 사전 계획:** 오류 선택 전수 정리와 저장 시간/비용 병목 분해는 완료했다. 다음은 현재 12개 특징의 함수별 계산·입력 frame 준비를 구분해 측정하는 계획과, 이후 최적화에서 특징 이름/순서/의미/값·예측을 보존하는 검증 기준을 먼저 정하는 작업이다. 계획을 고정한 뒤 별도 출력에서 profile하고 결과에 근거해 구현 범위를 정한다. 특징 변경·재학습·최종 성능 재측정은 별도 버전/계획과 새 원본 그룹 holdout이 필요하다. 기존 원시 반복·시나리오 계수·sample·공식 시스템·memory 참고 방침을 유지한다. GUI 수동 Compare 저장 검증/전체 QA는 별도 미완료다.
+**고정 계획에 따른 profiling worker/runner·정확 동등성 검증기 구현:** [사전 계획](research_log/feature_profile_plan_20261109.json)과 참조/순서 동결은 완료했다. 다음은 격리 참조 module/frame·네 timer 모드·nested call accounting·raw/실패 보존·원본/모델/특징/예측 사전 검증을 구현하고 인위적 fixture로 검증하는 작업이다. 구현과 검증을 commit한 뒤 새 출력에서 기준선 profile한다. 속도 개선은 이후 실제 함수별 병목에 근거한 별도 최적화/paired 계획으로 평가한다. 특징 변경·재학습·최종 성능 재측정에는 별도 버전/계획과 새 원본 그룹 holdout이 필요하다. 기존 원시 반복·시나리오 계수·sample·공식 시스템·memory 참고 방침과 GUI 관련 미완료를 유지한다.
 
 ## 14. 마지막 관련 Git commit
+
+특징 profiling 사전 계획/참조 동결은 직전 비용 병목 진단 commit `fdf6f66`에서 준비했다. 이번 단계는 저장 특징/예측/모델과 source를 읽어 계획·metadata/hash를 고정했으며 실제 profiling/모델 실행 commit이 아니다. source/사본/산출물 hash와 실행 환경은 freeze/verification에 남겼다.
 
 후보 모델 전체 경로 비용 병목의 읽기 전용 분석은 직전 누락 분석 commit `eea90af`에서 수행했다. 기존 실측은 `6a75f98` source/`f5fcb24` 결과를 그대로 읽었으며 새 최적화/연구 실측 commit이 아니다. 분석/검증 코드와 산출물 hash·실행 환경은 별도 audit/verification에 보존했다.
 

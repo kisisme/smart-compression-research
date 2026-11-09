@@ -1,0 +1,164 @@
+{
+  "plan_id": "feature_profile_exact_equivalence_v1_20261109",
+  "status": "predeclared_plan_not_profile_results",
+  "purpose": "Locate feature/frame preparation costs while preserving the existing twelve-feature contract and frozen model predictions.",
+  "freeze_root": "data/results/feature_profile_plan_20261109_01",
+  "future_profile_root": "data/results/feature_profile_baseline_20261109_01",
+  "source_study": "data/results/usage_candidate_study_20261031_01",
+  "source_bottleneck_analysis": "data/results/usage_pipeline_bottlenecks_20261109_01",
+  "reference_sources": [
+    "src/feature_extractor.py",
+    "config/experiment_config.json",
+    "tests/test_feature_extractor.py",
+    "research_log/run_usage_model_study_20261031.py"
+  ],
+  "feature_contract": {
+    "names_in_order": [
+      "file_size",
+      "entropy",
+      "unique_byte_count",
+      "most_common_byte_ratio",
+      "zero_byte_ratio",
+      "adjacent_repeat_ratio",
+      "average_run_length",
+      "max_run_length",
+      "duplicate_block_ratio",
+      "bigram_diversity",
+      "segment_entropy_mean",
+      "segment_entropy_std"
+    ],
+    "integer_features": [
+      "file_size",
+      "unique_byte_count",
+      "max_run_length"
+    ],
+    "duplicate_block_bytes": 16,
+    "segment_bytes": 4096,
+    "input": "Nonempty bytes, including bytes subclasses as accepted by the reference; preserve invalid-input exception class/message.",
+    "comparison": "Same ordered keys and exact builtin types. Integers exactly equal. Finite float.hex() exactly equal, including signed zero. No epsilon/rounding gate.",
+    "frame": "One row, columns in names_in_order, float64 values exactly equal to float(reference_feature); same finite-value/schema checks as frozen feature_frame.",
+    "floating_point_caution": "Counter insertion order, math.fsum input order, statistics mean/pstdev and partial final blocks/segments belong to the reference contract. Algebraically equivalent formulas may change binary64 results."
+  },
+  "corpus": {
+    "selection": "All sixty selected files from the frozen source manifest; no replacements or exclusions based on features/times/codec outcomes.",
+    "identity": "Inventory full sample_id, candidate_id, original_size, input_sha256, original path, format and origin_group_id. Read/hash-check original bytes before execution; no feature computation during plan preparation.",
+    "saved_features": "predictions/samples.csv, all 60 by 12 values, parsed according to the reference builtin type and stored canonically without recomputation.",
+    "saved_predictions": "predictions/frozen_predictions.csv, all 60 by 9 by 2 single-row decisions and uncalibrated probability fields.",
+    "models": "All eighteen existing files in training.json; verify hashes/runtime/class/settings/feature order before local deserialization. No fit/refit or class balancing.",
+    "interpretation": "Observed development corpus, not a new final holdout. Historical accuracy and policy targets are not changed."
+  },
+  "correctness_stages": [
+    "Verify frozen plan/source/input/model hashes and original runtime versions before measurement; abort on mismatch without refreshing expected values.",
+    "Use an isolated byte-identical reference feature module and copied config. Recompute all sixty reference feature rows and require exact canonical equality to saved feature values before trusting the runner.",
+    "Require instrumented output equal to uninstrumented reference for every invocation. Future candidate implementations must pass the same strict feature/frame gate on the complete corpus and deterministic fixture suite.",
+    "Validate all 1080 frozen single-row predictions using all eighteen unchanged models. Require exact predicted_algorithm, class ordering, probability fields and confidence float.hex() agreement; confidence remains uncalibrated.",
+    "Future optimization comparison requires both reference and candidate on the same inputs/runtime, unchanged model bytes and identical predictions; altered features require a separate research version and evaluation plan."
+  ],
+  "timing": {
+    "clock": "time.perf_counter_ns",
+    "warmup_calls_per_file_per_mode": 1,
+    "recorded_repeats": 5,
+    "aggregate": "Median of all five raw slots per file and mode. Preserve warmups separately, every repeat and every failure. Never select favorable repeats.",
+    "schedule_seed": 20261109,
+    "file_order": "For each mode and warmup/measurement round, shuffle the full list sorted by (origin_group_id,sample_id) with a fresh random.Random(schedule_seed + 1000*mode_index + round_index); warmup round_index=0, measurements=1..5.",
+    "modes_in_order": [
+      "extract_only",
+      "frame_only",
+      "extract_and_frame",
+      "instrumented_extract"
+    ],
+    "process_scope": "Run each mode in its own fresh worker; imports/model loading/input reads/hash checks outside all feature timers. Data are resident bytes; no CPU-affinity/priority/power-setting changes. Record Python/packages/OS/timer resolution and user-observable run interruptions.",
+    "mode_boundaries": {
+      "extract_only": "Uninstrumented frozen extract_features(data), including allocations and its full work; validate returned features after the timer.",
+      "frame_only": "Build one-row frame from prevalidated reference values using the frozen feature_frame definition; include schema and finite checks, exclude extraction.",
+      "extract_and_frame": "Uninstrumented extract_features plus frozen feature_frame; matches the old feature timer's logical scope, but is a new resident-byte measurement and excludes old read/hash work.",
+      "instrumented_extract": "Frozen reference code with process-local timing wrappers for functions/Counter; record inclusive/self times, parent/depth/call count. Restore originals in finally; never patch project files."
+    },
+    "instrumented_targets": [
+      "extract_features",
+      "Counter",
+      "_run_statistics",
+      "_segment_entropy_statistics",
+      "_entropy_from_counts",
+      "_duplicate_block_ratio",
+      "_bigram_diversity"
+    ],
+    "nested_accounting": "Segment entropy contains segment Counter and entropy calls; global histogram/whole entropy are distinguished by parent context. Sum only direct-child elapsed times to derive parent self time; never sum inclusive parent and child times as disjoint work. Self time includes wrapper/bookkeeping overhead.",
+    "instrumentation_caution": "Primary durations come from uninstrumented modes. Instrumented times locate candidate hot functions, do not prove production speed. Report observer overhead against extract_only on the same full corpus, including negative/noisy differences; no causal speedup claim.",
+    "median_caution": "Do not add independent phase medians or subtract them to invent unmeasured stages. Keep combined duration and separate-mode durations distinct.",
+    "excluded": [
+      "codec benchmark",
+      "model prediction timing study",
+      "file I/O timing",
+      "model load timing",
+      "cold-start performance",
+      "memory measurement",
+      "GUI/CLI end-to-end measurement"
+    ]
+  },
+  "fixture_plan": {
+    "kind": "test_fixture_not_research_data",
+    "lengths": [
+      1,
+      2,
+      15,
+      16,
+      17,
+      31,
+      32,
+      33,
+      255,
+      256,
+      257,
+      4095,
+      4096,
+      4097,
+      8191,
+      8192,
+      8193,
+      65535,
+      65536,
+      65537,
+      65538
+    ],
+    "patterns": [
+      "constant_00",
+      "constant_41",
+      "cycle_00_to_ff",
+      "alternating_00_ff",
+      "seeded_full_byte_random",
+      "seeded_four_byte_alphabet"
+    ],
+    "seed": 20261109,
+    "generation": "For each pattern/length start from a fresh RNG with the declared seed. Random uses Random.randbytes(length), four-byte alphabet uses bytes(Random.randrange(4) per byte); truncate cyclic patterns to exact length.",
+    "extra_valid_cases": {
+      "run_crosses_boundaries": "b'A'*4097 + b'B'*16 + b'A'",
+      "partial_duplicate_block": "b'A'*16 + b'A'*16 + b'B'*16 + b'A'*15",
+      "all_ordered_byte_pairs": "b''.join(bytes((a,b)) for a in range(256) for b in range(256)); covers every bigram and saturation/early-exit path",
+      "mixed_entropy_segments": "bytes(4096) + bytes((0,1))*2048 + b'X'",
+      "bytes_subclass": "A local bytes subclass holding b'ABCABC'; preserve reference acceptance"
+    },
+    "invalid_cases": [
+      "empty bytes",
+      "bytearray",
+      "memoryview",
+      "str",
+      "None"
+    ],
+    "failure_policy": "Generate expected values only with the frozen reference at execution. Preserve every mismatch with feature/type/hex/input hash, then mark validation failed; no tolerance relaxation or fixture removal."
+  },
+  "reporting": {
+    "all_files": "Raw ns, mode/round/warmup flags, full IDs/input hashes, output canonical values, component call tree, self/inclusive times, runtime, source/model hashes and execution Git commit.",
+    "summaries": "Per-file five-slot medians; all-file descriptive distributions; format/origin and fixed <=64KiB,(64,256]KiB,>256KiB groups. Report empty/failure coverage and instrumentation overhead. Do not choose a favorable subset.",
+    "decision_rule": "Rank reference helper costs only after exact-output and schedule completeness audits. Choose optimization scope from measured full-corpus costs, preserving semantic/equality gates. No speedup/class-share adoption threshold is fitted here.",
+    "future_optimization": "Any candidate must be independently snapshotted and compared with reference in a new balanced paired schedule/plan, including equality first. Do not compare a future candidate against historical timing as if runs were paired.",
+    "failure_and_resume": "Append explicit error/interrupt evidence. Preserve partial run paths; do not overwrite/retry a failed slot or merge partial attempts into one complete run. A new attempt uses a new path and full schedule.",
+    "boundaries": "Official v2 score/models and memory validation_only remain as-is. No retraining, quota adjustment, sample deletion, final generalization claim or deployment is authorized by this profiling plan."
+  },
+  "delivery_sequence": [
+    "Freeze this plan, source snapshots, expected-value inventory, deterministic schedule and hash audit; local commit before implementation/real profiling.",
+    "Implement an isolated worker/runner and exact comparison audits; validate on artificial fixtures and commit before corpus timings.",
+    "Run all predeclared baseline profile modes in a new output path, preserve full raw evidence and independently verify/report.",
+    "Use measured bottlenecks to define a separate exact-feature-preserving optimization and paired validation."
+  ]
+}

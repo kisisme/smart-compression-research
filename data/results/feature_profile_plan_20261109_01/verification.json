@@ -1,0 +1,28 @@
+{
+  "status": "plan_references_and_schedule_verified",
+  "created_at_utc": "2026-11-09T06:57:06.019400+00:00",
+  "verifier_sha256": "56e8dcecfe3bafbd672ec2ca69d1336a909f8119df78f3ce08381dffff01ee19",
+  "freeze_sha256": "ce8c09436af8306396f61da71ff2203b7727f34679e45ac0ea4dccb30b297d2a",
+  "coverage": {
+    "corpus_files": 60,
+    "feature_values": 720,
+    "model_files": 18,
+    "frozen_predictions": 1080,
+    "scheduled_measurements": 1200,
+    "scheduled_warmups": 240,
+    "planned_valid_fixtures": 131,
+    "planned_invalid_fixtures": 5
+  },
+  "protected_file_count": 467,
+  "design_link_count": 4,
+  "checks": [
+    "Plan/source/snapshot hashes",
+    "Frame AST identity",
+    "Complete inventory and stored canonical features",
+    "Byte-exact frozen prediction file",
+    "Unchanged model hashes without deserialization",
+    "Every deterministic schedule round",
+    "Explicit no-execution scope",
+    "Design links"
+  ]
+}
