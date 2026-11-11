@@ -1,0 +1,122 @@
+{
+  "plan_id": "exact_feature_numpy_pair_v1_20261111",
+  "status": "candidate_design_and_predeclared_comparison_not_results",
+  "freeze_root": "data/results/feature_optimization_pair_plan_20261111_01",
+  "future_result_root": "data/results/feature_optimization_pair_20261111_01",
+  "reference_freeze": "data/results/feature_profile_plan_20261109_01",
+  "reference_implementation": "data/results/feature_profile_implementation_20261111_01/implementation.json",
+  "observed_baseline": "data/results/feature_profile_baseline_20261109_01",
+  "bottleneck_analysis": "data/results/feature_profile_baseline_analysis_20261111_01/analysis.json",
+  "scope": "Isolated feature-computation candidates only. Existing official source/config/models/scores remain immutable. Current real files are development inputs, not a final holdout.",
+  "candidate_designs": {
+    "reference": "Byte-identical frozen feature module and copied config, with unchanged frame factory.",
+    "bigram_numpy": {
+      "replace_only": [
+        "_bigram_diversity"
+      ],
+      "buffer": "For exact builtin bytes of length >=2, numpy.frombuffer(data,dtype=uint8); never mutate input/view.",
+      "codes": "Convert each adjacent side explicitly to uint16 BEFORE shifting. code_i = (uint16(byte_i) << uint16(8)) | uint16(byte_(i+1)). All codes are in [0,65535].",
+      "count": "count_nonzero(bincount(codes,minlength=65536)), converted to builtin int. No weights, truncation, sampling, hash collisions or approximate count.",
+      "result": "Python integer division U / min(len(data)-1,65536), preserving the reference's exact denominator and builtin float result.",
+      "fallback": "If type(data) is not bytes or len(data)<2, call the saved original helper. Preserve bytes-subclass overrides and original short/private-helper behavior.",
+      "limits": "Full temporary arrays/histogram; reference early-exit may be faster on some inputs. Allocations are included in the timer. No chunk-size/length-threshold search in this version."
+    },
+    "run_numpy": {
+      "replace_only": [
+        "_run_statistics"
+      ],
+      "buffer": "For exact builtin bytes of length >=2, numpy.frombuffer(data,dtype=uint8); never mutate input/view.",
+      "changes": "flatnonzero(bytes[1:] != bytes[:-1]) + 1 gives change boundaries in [1,N-1]. Use signed platform intp boundaries; include endpoints 0 and N with explicit intp dtype.",
+      "counts": "r = int(number_of_change_boundaries)+1; adjacent_repeat_count = N-r; longest = int(max(diff([0,*boundaries,N]))). Never store run lengths in uint8/uint16.",
+      "result": "Return ((N-r)/(N-1), N/r, longest) with builtin Python int operands and the same reference division order; tuple types are float,float,int.",
+      "fallback": "If type(data) is not bytes or len(data)<2, call the saved original helper. Preserve bytes-subclass overrides and original short/private-helper behavior.",
+      "limits": "Boundary and difference arrays are temporaries. No feature sampling or alternative floating-point formula."
+    },
+    "both_numpy": {
+      "replace_only": [
+        "_bigram_diversity",
+        "_run_statistics"
+      ],
+      "composition": "Combine the two exact designs without sharing or caching input-dependent intermediate results across extraction calls."
+    }
+  },
+  "implementation_boundary": {
+    "isolation": "Load the existing frozen reference in separate namespaces and bind only the allowlisted helper implementations. Keep original helpers for fallback. Do not edit src/feature_extractor.py or the old locked runner.",
+    "unchanged": [
+      "global Counter and insertion order",
+      "entropy/fsum/segment statistics",
+      "duplicate blocks",
+      "12 feature names/order/types",
+      "config",
+      "frame factory/schema checks",
+      "model files/classes/settings",
+      "score/labels",
+      "Smart/GUI behavior"
+    ],
+    "dependencies": "Use the already installed, frozen NumPy version; no dependency install/upgrade. NumPy/pandas imports and module setup are outside feature timers.",
+    "memory": "No new memory measurement or score integration. Auxiliary-array allocation/deallocation work belongs inside feature timings; do not claim zero-copy extraction or lower memory use.",
+    "no_adoption_yet": "A faster candidate is not automatically adopted or deployed. End-to-end cost verification and final evaluation remain separate."
+  },
+  "correctness_gates": {
+    "stored_reference": "First require original bytes/hash, runtime/model hashes and the frozen reference's exact equality to all saved reference features and single-row model outputs.",
+    "feature": "Every variant must preserve ordered builtin keys/types, exact integers, finite float.hex() including signed zero, frame float64/columns/values and input bytes.",
+    "models": "Validate all eighteen unchanged models for every variant against all 1080 saved single-row decisions/probabilities/uncalibrated confidence fields. No fit/refit or class balancing.",
+    "public_fixtures": "Reuse all 131 valid and five invalid cases from the frozen feature-profile plan. Add two bytes subclasses: integer __getitem__ returning zero with normal slices; __len__ returning actual length minus one for nontrivial input. Compare to the frozen reference, never invent expected outputs.",
+    "private_helpers": "Compare both replaced helpers directly on b'' and b'X' in addition to public feature tests. Public extract_features must continue rejecting empty bytes.",
+    "arithmetic_checks": "Cover high-bit byte pairs, all 65536 pair codes and long runs above uint16 range. Preserve builtin int/float outputs and uint16-before-shift/intp run boundaries.",
+    "failure": "Any exact mismatch disqualifies that run before timing. Preserve full mismatch evidence and all variants; do not relax epsilon, alter stored expectations or delete a case."
+  },
+  "comparison": {
+    "primary_candidate": "both_numpy",
+    "primary_mode": "extract_and_frame",
+    "secondary_candidates": [
+      "bigram_numpy",
+      "run_numpy"
+    ],
+    "comparisons_in_order": [
+      "bigram_numpy",
+      "run_numpy",
+      "both_numpy"
+    ],
+    "modes_in_order": [
+      "extract_only",
+      "extract_and_frame"
+    ],
+    "warmup_pairs_per_file_mode_comparison": 1,
+    "measured_pairs_per_file_mode_comparison": 6,
+    "reason_for_six": "Even repeat count gives exactly three reference-first and three candidate-first measured pairs per file/mode/comparison; separate from official five-repeat codec settings.",
+    "clock": "time.perf_counter_ns",
+    "worker_scope": "Fresh worker per comparison and mode. Both reference and that candidate run in the same worker on the same resident bytes, adjacent within each pair.",
+    "schedule_seed": 20261111,
+    "file_order": "Base list sorted by (origin_group_id,sample_id). For comparison index c, mode index m and round r, shuffle the full base list using fresh random.Random(seed+10000*c+1000*m+r); warmup r=0, measured r=1..6.",
+    "pair_order": "Reference first iff (base_file_index + round_index + comparison_index + mode_index) mod 2 == 0. Otherwise candidate first. No order change after outcomes.",
+    "timed_work": "extract_only includes full feature allocations/work; extract_and_frame includes full fresh extraction plus unchanged frame creation/validation. No feature/intermediate caching, output-dependent shortcut or instrumentation wrappers inside timed calls.",
+    "outside_timers": [
+      "imports",
+      "model loading and prediction equality gates",
+      "source/input hash checks and file reads",
+      "raw writing and post-call equality checks"
+    ],
+    "environment": "Record Python/packages/OS/timer/source/model hashes, execution Git commit and observed events/unknowns. Keep ordinary GC, affinity, priority and power settings; no per-variant special treatment."
+  },
+  "statistics": {
+    "primary": "For both_numpy/extract_and_frame, calculate candidate_ns-reference_ns for each measured adjacent pair; take six-pair median per file, then within-origin-group mean, then equal-weight mean over all origin groups. Negative means lower measured feature-plus-frame latency on this corpus.",
+    "secondary": "All comparisons/modes: every paired delta, per-file six-pair median, reference/candidate separate medians, all-file/group/format/fixed size-bin distributions, regressions/ties and ref-first/candidate-first diagnostics.",
+    "pooled_ratio": "sum(per-file median reference_ns) / sum(per-file median candidate_ns). Saving percentage = 100*(reference sum-candidate sum)/reference sum. Do not substitute separate-median subtraction for the paired primary metric.",
+    "advance_rule": "Only if every exact gate and all slots pass, the predeclared primary group-mean paired delta is <0 and the primary pooled ratio is >1, recommend a separate full-pipeline verification. This is not statistical significance, generalization or automatic deployment.",
+    "mixed_results": "Report every regression/negative result. No minimum zstd-share target or fitted speedup threshold. A favorable secondary cannot silently replace the primary; changing the main design requires a new reason/version/plan.",
+    "scope": "Developmental fixed-corpus engineering comparison, not independent population inference. No bootstrap/p-value claim or final holdout claim in this plan."
+  },
+  "preservation": {
+    "raw": "Every call/pair/warmup/order/elapsed ns/status, canonical feature/frame gate, model equality log, input/source/runtime hashes and process records.",
+    "no_overwrite": "New output path only; no rewriting old baseline/profile/labels/models. No failed-slot retry, favorable-repeat selection, outlier deletion or partial-attempt merge.",
+    "interruptions": "Preserve explicit failure/interruption and partial records. A fresh attempt needs a fresh path and the full balanced schedule.",
+    "official_and_deferred": "Official v2 scoring/model/config unchanged. Memory remains deferred validation_only. No codec/GUI/cold-start/final generalization claim; later tuning requires fresh origin-group holdout."
+  },
+  "delivery_sequence": [
+    "Freeze candidate designs, paired schedule, exact gates, runtime and evidence hashes; commit before implementing/timing candidates.",
+    "Implement isolated variants/paired runner/independent audit; validate artificial fixtures and commit source lock before real paired runs.",
+    "Execute full predeclared development-corpus equality and paired measurements in the new path; independently verify/report all outcomes.",
+    "If the fixed advance rule holds, separately verify full Smart-engine cost including inference/codec/restoration/verification/storage. Final generalization needs new origin groups."
+  ]
+}

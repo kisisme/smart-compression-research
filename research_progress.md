@@ -6,7 +6,9 @@
 
 최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 실제 60개 파일의 특징 기준선 profile·독립 감사·병목 집계를 완료했다(2026-11-11). [결과 보고서](research_log/feature_profile_baseline_results_20261111.md)·[완료 기록](data/results/feature_profile_baseline_20261109_01/complete.json)·[독립 감사](data/results/feature_profile_baseline_20261109_01/verification.json)·[추가 집계](data/results/feature_profile_baseline_analysis_20261111_01/analysis.json)를 보존했다. 원본 bytes/hash·저장 특징 720개·예측/확률 1,080개가 정확히 일치했고 본 측정 1,200회·warmup 240회가 실패/재시도 없이 완료됐다. 파일별 중앙값 평균은 특징만 58.7273ms·입력 준비만 0.7204ms·결합 66.0665ms·계측 특징 64.2090ms였다. 계측 raw root의 비중복 분해에서 bigram 39.3633%·run 통계 29.7661%, 합 69.1294%로 우선 병목이었다. 비중은 계측 시간이며 예상 속도 향상률이 아니다. 기존 근거/구현 source는 불변이다. 다음은 두 함수를 우선 대상으로 한 특징값 보존 최적화 후보와 새 paired 검증 계획이다. 실제 최적화·새 모델/score 전환·memory는 진행하지 않았다.
+최신 진행: Bigram/run의 정확 특징값 보존 최적화 후보와 새 paired 비교 계획을 고정했다(2026-11-11). [후보 설계](research_log/feature_optimization_pair_design_20261111.md)·[JSON 계획](research_log/feature_optimization_pair_plan_20261111.json)·[동결](data/results/feature_optimization_pair_plan_20261111_01/freeze.json)·[독립 일정 검증](data/results/feature_optimization_pair_plan_20261111_01/verification.json)을 보존했다. NumPy 정수 pair histogram과 run 경계 계산을 후보로 정하고, 두 함수 결합을 주 후보·단독 변경 둘을 보조로 사전 구분했다. 세 후보×두 모드에서 파일당 6-pair 본 측정·1-pair warmup 순서를 정해 매 파일 참조 먼저 3회/후보 먼저 3회가 되도록 확인했다. 예정 본 호출 4,320회·warmup 720회이며 실제 실행 결과가 아니다. 정확 builtin type/float.hex/frame/예측·subclass fallback과 주 판정식을 고정했고 기존 근거 523개 파일을 보존했다. 후보 코드·fixture 테스트·새 특징/예측·paired 속도 측정은 아직 없다. 다음은 격리 후보/paired 실행부·독립 감사 구현과 인위적 동등성 검증이다.
+
+직전 기준선 실측: 실제 60개 파일의 특징 기준선 profile·독립 감사·병목 집계를 완료했다(2026-11-11). [결과 보고서](research_log/feature_profile_baseline_results_20261111.md)·[완료 기록](data/results/feature_profile_baseline_20261109_01/complete.json)·[독립 감사](data/results/feature_profile_baseline_20261109_01/verification.json)·[추가 집계](data/results/feature_profile_baseline_analysis_20261111_01/analysis.json)를 보존했다. 원본 bytes/hash·저장 특징 720개·예측/확률 1,080개가 정확히 일치했고 본 측정 1,200회·warmup 240회가 실패/재시도 없이 완료됐다. 파일별 중앙값 평균은 특징만 58.7273ms·입력 준비만 0.7204ms·결합 66.0665ms·계측 특징 64.2090ms였다. 계측 raw root의 비중복 분해에서 bigram 39.3633%·run 통계 29.7661%, 합 69.1294%로 우선 병목이었다. 비중은 계측 시간이며 예상 속도 향상률이 아니다. 기존 근거/구현 source는 불변이었다. 당시 다음은 특징값 보존 최적화 후보와 paired 검증 계획이었다. 실제 최적화·새 모델/score 전환·memory는 진행하지 않았다.
 
 직전 실행부 구현: 고정 계획의 특징 profile 실행부·정확 동등성/저장 감사 도구를 구현하고 인위적 입력으로 검증했다(2026-11-11). [구현 설명](research_log/feature_profile_implementation_20261111.md)·[source lock/검증 결과](data/results/feature_profile_implementation_20261111_01/implementation.json)·[테스트 로그](data/results/feature_profile_implementation_20261111_01/tests.log)를 보존했다. 전용 테스트 17개가 실패/오류/skip 0개로 통과했고 정상 fixture 131개·오류 입력 5개의 정확한 특징/frame/예외·nested call tree를 확인했다. 네 모드의 기록/실패 보존·자식 프로세스 smoke·중단/반환 코드 처리, 미commit 구현/lock의 corpus 실행 차단을 구현했다. 원본 corpus 읽기·저장 모델 역직렬화/예측을 금지한 검증이며 기존 근거 481개 파일은 불변이다. 실제 60개 입력의 새 특징/예측 gate·실측·최적화는 당시 실행하지 않았다. 다음 단계는 구현/lock commit 후 기준선 profile과 독립 저장 감사였다.
 
@@ -996,6 +998,14 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **결과:** 파일별 5회 중앙값의 평균은 extract_only 58.727250ms, frame_only 0.720367ms, extract_and_frame 66.066533ms, instrumented_extract 64.209005ms다. Warmup 제외 계측 trial 300개를 root 직접 자식/self로 정수 ns 분해한 결과 bigram 39.3633%·run 29.7661%·segment entropy 13.3236%·전체 Counter 12.3847%·duplicate block 4.8299% 순이었다. Bigram/run 합 69.1294%는 계측 raw 시간 비중이며 독립 helper 중앙값을 더해 만든 비율이 아니다. 원시 2,100개 분해 항목의 합이 root와 정확히 일치했다.
 - **한계/다음:** 계측−비계측 파일 중앙값 차이 평균은 5.481755ms이고 -71.6894~60.5139ms 범위의 음/양 변동을 모두 보존했다. Observer 비용과 고정 mode 순서/cache·다른 실행 영향이 섞여 있으므로 과거 시간과 비교한 속도 개선이나 69.1% 향상을 주장하지 않는다. 사용자 동시 작업/전원 사건 상태는 미제공으로 남겼고 전원 설정을 바꾸지 않았다. 다음은 bigram/run의 정확 count·나눗셈/타입/float.hex·frame/예측을 보존하는 별도 최적화 후보와 동시점 paired 계획이다. 실제 최적화/전체 비용/GUI·cold start·모집단/최종 holdout·memory·공식 전환은 별도 미완료다.
 
+### Bigram/run 최적화 후보 설계·균형 paired 계획 동결 완료 — 2026-11-11
+
+- **근거:** [설계](research_log/feature_optimization_pair_design_20261111.md), [JSON 계획](research_log/feature_optimization_pair_plan_20261111.json), [준비 코드](research_log/prepare_feature_optimization_pair_20261111.py), [독립 검증기](research_log/verify_feature_optimization_pair_plan_20261111.py), [동결](data/results/feature_optimization_pair_plan_20261111_01/freeze.json)·[검증](data/results/feature_optimization_pair_plan_20261111_01/verification.json)·pair_schedule.csv·input_inventory.csv·numpy_api.json. 시작 HEAD는 실제 기준선 보존 `3ca5f2a`다.
+- **완료/후보:** uint16 승격 후 인접 byte code를 histogram으로 세는 bigram 후보와 intp 경계 차이로 run 길이/count를 계산하는 후보를 설계했다. 원래 정수 나눗셈/builtin 출력·entropy/Counter 순서/기타 통계는 보존한다. 짧은 입력·bytes subclass는 원래 helper로 fallback해 기존 override/예외를 유지한다. 두 변경 결합이 주 후보이고 단독 둘은 보조 비교다. 기존 NumPy 2.5.2 설치 문서·dtype metadata만 확인했으며 새 의존성이나 후보 연산을 실행하지 않았다.
+- **계획/순서:** 같은 worker·입력에서 참조/후보를 인접 실행하고 파일별 6개 본 pair에서 3회씩 선행하도록 2,520개 pair 행을 동결했다. 예정 본 pair 2,160개(호출 4,320개)·warmup pair 360개(호출 720개)다. 전체 실제 개발 파일 60개·18개 원본 그룹, 네 버전·두 모드를 포함하며 예상 특징 확인 2,880개·단일 행 예측 확인 4,320개는 계획 수량이다. 정상 공개 fixture 133개·오류 5개·두 helper의 빈/단일 byte 직접 확인 4개를 계획했다. 주 지표는 결합 후보의 결합 모드에서 파일별 paired delta 중앙값을 그룹 동일 비중으로 평균한 값이며, 음수와 pooled 중앙값 합 비율 >1·모든 정확 gate 통과를 전체 경로 검증 진입 조건으로 고정했다.
+- **검증:** 준비/독립 검증 도구로 기존 감사 chain·523개 보호 파일/기준선 source·참조 hash·원본 metadata 목록·후보 allowlist·각 파일/round의 전체 포함과 seed 순서·매 round 30/30 선행 및 파일별 3/3 선행·실행하지 않았다는 상태/문서 링크를 확인했다. 첫 검증은 아직 만들기 전인 자신의 verification.json 링크를 존재 검사해 출력 전에 중단됐고, 다른 링크를 먼저 확인하고 자신의 링크는 생성 후 확인하도록 수정했다. 후보/계획/일정은 바꾸지 않았으며 그 경위를 검증 기록에 남겼다. 단위/fixture 테스트나 연구 실험을 통과했다고 기록하지 않았다.
+- **미실행/다음:** 격리 후보·paired runner/저장 감사·133개 fixture/오류/전체 corpus 동등성·새 속도 측정은 아직 없다. source/fixture를 구현·검증·commit한 뒤 `data/results/feature_optimization_pair_20261111_01`의 새 전체 일정으로 실측한다. 과거 시간만으로 향상을 확정하거나 보조 후보를 사후 주 후보로 교체하지 않는다. 공식 source/모델/score·memory 보류·GUI 미완료와 새 최종 원본 그룹 holdout 필요성을 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
@@ -1007,9 +1017,11 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**Bigram/run 통계의 특징값 보존 최적화 후보·paired 검증 계획:** 실제 기준선과 독립 감사는 완료했다. 다음은 관측 병목인 두 함수의 정수 count·분모/나눗셈·dtype/정확 float.hex·frame/기존 예측을 보존할 후보를 정하고, 같은 시점의 reference/candidate를 균형 배치할 새 계획/출력을 고정하는 작업이다. 인위적 경계 입력과 전체 개발 corpus의 동등성부터 확인한 뒤 새 paired 실측으로 비용/시간을 평가한다. 과거 기준선과 새 candidate 시간만 비교하거나 원하는 zstd 비율/향상률을 기준으로 조정하지 않는다. 기존 원시 반복·계수·sample·공식 시스템·memory 참고 방침과 GUI 관련 미완료를 유지하며 최종 일반화 평가에는 새 원본 그룹 holdout이 필요하다.
+**고정 후보·paired 계획의 격리 구현과 인위적 동등성 검증:** [새 계획](research_log/feature_optimization_pair_plan_20261111.json)과 전체 균형 순서는 동결했다. 다음은 원래 참조 helper/namespace를 보존하는 NumPy bigram/run/결합 후보, 두 비계측 모드의 인접 pair runner·정확 feature/frame/prediction gate·raw/실패 보존·독립 paired 감사 구현과 fixture 검증이다. 구현/검증 source를 commit한 뒤 새 일정에서 전체 개발 corpus 동등성 및 paired 실측을 수행한다. 주 후보/판정식·표본·계수는 결과를 보고 바꾸지 않는다. 이 단계는 특징 계산 속도 후보이며 zstd 선택 비율 변경이나 공식 시스템 전환을 뜻하지 않는다. Memory·GUI 기존 미완료를 유지하고 최종 일반화 평가는 새 원본 그룹 holdout을 사용한다.
 
 ## 14. 마지막 관련 Git commit
+
+Bigram/run 최적화 후보·paired 사전 계획은 실제 기준선 보존 commit `3ca5f2a`에서 준비했다. 후보 구현/새 특징/예측/속도 실측 commit이 아니며 계획·일정·환경·관련 source/입력 hash를 freeze/verification에 보존했다.
 
 실제 특징 기준선 profile은 실행부/fixture commit `642a733`의 고정 source/lock에서 실행했다. 사전 계획/참조 commit은 `c680183`이며, 실측 raw·모델/특징/예측·함수별 분해 근거를 새 출력에 보존했다. 최적화 구현/실험 commit은 아니다.
 

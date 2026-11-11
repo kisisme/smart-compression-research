@@ -1,0 +1,35 @@
+{
+  "status": "paired_plan_and_balance_verified",
+  "created_at_utc": "2026-11-11T12:27:08.611502+00:00",
+  "verifier_sha256": "32be1251f0f7edfb9c4652ed32036b29f2ea5d32db962dfbede36186300e55d5",
+  "freeze_sha256": "8672a30c41e3999732ed8f6693aacd35dafcd2a948ac7da986b64b5b35f0b139",
+  "coverage": {
+    "corpus_files": 60,
+    "origin_groups": 18,
+    "candidates": 3,
+    "compared_variants": 4,
+    "modes": 2,
+    "planned_measured_pairs": 2160,
+    "planned_timed_calls": 4320,
+    "planned_warmup_pairs": 360,
+    "planned_warmup_calls": 720,
+    "planned_feature_value_checks": 2880,
+    "planned_single_row_prediction_checks": 4320,
+    "planned_valid_public_fixtures": 133,
+    "planned_invalid_public_fixtures": 5,
+    "planned_short_private_helper_checks": 4
+  },
+  "protected_file_count": 523,
+  "balanced_file_mode_comparisons": 360,
+  "development_note": "Initial verification stopped before output because its own not-yet-created verification.json link was required to exist. Other links are checked first and the self link is checked after publication. Plan and schedule were unchanged.",
+  "checks": [
+    "Source/reference/old-evidence hashes",
+    "Exact original input list",
+    "Complete pair key set",
+    "All seeded file orders",
+    "Every round 30/30 first position",
+    "Every file 3/3 measured first position",
+    "Explicit no-implementation/no-execution flags",
+    "Design links"
+  ]
+}

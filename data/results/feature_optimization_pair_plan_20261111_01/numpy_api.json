@@ -1,0 +1,57 @@
+{
+  "numpy_version": "2.5.2",
+  "local_module_path": "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Lib\\site-packages\\numpy\\__init__.py",
+  "local_module_sha256": "a6958cb364663b7acce81ccfd58eeb65a2b34d5376157f924777b97211a73be4",
+  "apis": {
+    "frombuffer": {
+      "first_line": "frombuffer(buffer, dtype=np.float64, count=-1, offset=0, *, like=None)",
+      "doc_sha256": "4b84e8a47723fa8b9bcdf2681f89348a8bf058ce504b1ab6a9812f6b7d1e16a8"
+    },
+    "bincount": {
+      "first_line": "bincount(x, /, weights=None, minlength=0)",
+      "doc_sha256": "35e3debe6fa3bc48f9780cbf3658abf6a3412c0c4867f022839dc1c38ced44da"
+    },
+    "count_nonzero": {
+      "first_line": "Counts the number of non-zero values in the array ``a``.",
+      "doc_sha256": "6192b6fe89eed5a4cc158197259fd61066adad235f073c10390caed8fc138580"
+    },
+    "flatnonzero": {
+      "first_line": "Return indices that are non-zero in the flattened version of a.",
+      "doc_sha256": "7e69335bfd32667a5befaf3f8464aaa47a7808554100ac0f8bf4cf6a276e3dfd"
+    },
+    "diff": {
+      "first_line": "Calculate the n-th discrete difference along the given axis.",
+      "doc_sha256": "42ae403219cb58445f88495c98fc71e3821d61a9677e406d11e8f55958a117c4"
+    },
+    "concatenate": {
+      "first_line": "Join a sequence of arrays along an existing axis.",
+      "doc_sha256": "bc9db3b9f5dda0288a2ba3931f740fee7bac14adf05ae128450b2425728a6b90"
+    },
+    "left_shift": {
+      "first_line": "left_shift(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature])",
+      "doc_sha256": "3d54e4c3a36564b918f89fa999459189da98f00df8cd314d05be037aa4cf1241"
+    },
+    "bitwise_or": {
+      "first_line": "bitwise_or(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature])",
+      "doc_sha256": "ee3f98fc12b6e00c8f0918be5155f45793bec8d97250ce3fb753ea3988ab198f"
+    }
+  },
+  "dtypes": {
+    "uint8": {
+      "itemsize": 1,
+      "minimum": 0,
+      "maximum": 255
+    },
+    "uint16": {
+      "itemsize": 2,
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "intp": {
+      "itemsize": 8,
+      "minimum": -9223372036854775808,
+      "maximum": 9223372036854775807
+    }
+  },
+  "scope": "Installed documentation/dtype metadata only; no candidate feature computations."
+}

@@ -98,3 +98,9 @@
 /data/results/feature_profile_baseline_analysis_20261111_01/** -text
 /research_log/analyze_feature_profile_baseline_20261111.py -text
 /research_log/feature_profile_baseline_results_20261111.md -text
+
+/research_log/feature_optimization_pair_plan_20261111.json -text
+/research_log/feature_optimization_pair_design_20261111.md -text
+/research_log/prepare_feature_optimization_pair_20261111.py -text
+/research_log/verify_feature_optimization_pair_plan_20261111.py -text
+/data/results/feature_optimization_pair_plan_20261111_01/** -text
