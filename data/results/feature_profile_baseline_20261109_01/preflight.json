@@ -1,0 +1,8 @@
+{
+  "status": "exact_reference_and_predictions_verified",
+  "input_files": 60,
+  "feature_values": 720,
+  "predictions": 1080,
+  "plan_freeze_sha256": "ce8c09436af8306396f61da71ff2203b7727f34679e45ac0ea4dccb30b297d2a",
+  "implementation_sha256": "3c1f426624caa164d6a4a5f58d5f3833c77bf72e8286192b1a0405d05e781d53"
+}

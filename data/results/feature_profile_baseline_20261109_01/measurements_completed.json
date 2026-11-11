@@ -1,0 +1,9 @@
+{
+  "status": "all_workers_completed",
+  "modes": [
+    "extract_only",
+    "frame_only",
+    "extract_and_frame",
+    "instrumented_extract"
+  ]
+}

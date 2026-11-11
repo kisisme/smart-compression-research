@@ -1,0 +1,14 @@
+{
+  "status": "profile_independently_verified",
+  "at_utc": "2026-11-11T10:33:58.267418+00:00",
+  "verification_sha256": "cd3e222df4686487eeb01886f23db2cb650c33576f6fb0b9131961ccf00ec630",
+  "coverage": {
+    "corpus_files": 60,
+    "modes": 4,
+    "raw_slots": 1440,
+    "warmups": 240,
+    "measurements": 1200,
+    "predictions": 1080,
+    "file_medians": 240
+  }
+}

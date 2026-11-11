@@ -1,0 +1,23 @@
+{
+  "started_at_utc": "2026-11-11T10:32:13.287744+00:00",
+  "pid": 19208,
+  "notes": "User requested the frozen baseline. No user report of concurrent activity or power events supplied. Power settings were not changed by this run.",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "implementation_sha256": "3c1f426624caa164d6a4a5f58d5f3833c77bf72e8286192b1a0405d05e781d53",
+  "source_sha256": {
+    "research_log/feature_profile_runtime_20261111.py": "ee54fd35df1abe5f67c5d9bb73164f7a395501436164394d773dedfa127a683a",
+    "research_log/run_feature_profile_20261111.py": "afaf1dec8b9d34c443b07a1aa54cdfa72080deeb6b902ab18eca6a478eaa058f",
+    "research_log/verify_feature_profile_run_20261111.py": "ecbfc195e8dd929865a8c85e88c56d2890803adb3f8bbcb7b13969ccb7543a93",
+    "tests/test_feature_profile.py": "b04bd458b2e7d8b9bb7b7c27716792d3ba68cb61804445445a3edc1eb4e0ba73",
+    "research_log/validate_feature_profile_implementation_20261111.py": "17eb12acc9162eafe8d7b2b08b054ff8670f7c1733ca1ec338ac9f673a7a2d19",
+    "research_log/feature_profile_implementation_20261111.md": "dac6fe1dc5c9f8743a998a075cfd2c5ae7da14523f2bc2b162d6a83fa9026d63"
+  },
+  "data_kind": "observed_development_corpus",
+  "git_head": "642a733f7fecea15e95b329fe86d505e43f85324",
+  "timer": {
+    "implementation": "QueryPerformanceCounter()",
+    "resolution": 1e-07,
+    "monotonic": true
+  }
+}

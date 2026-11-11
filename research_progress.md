@@ -6,7 +6,9 @@
 
 최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: 고정 계획의 특징 profile 실행부·정확 동등성/저장 감사 도구를 구현하고 인위적 입력으로 검증했다(2026-11-11). [구현 설명](research_log/feature_profile_implementation_20261111.md)·[source lock/검증 결과](data/results/feature_profile_implementation_20261111_01/implementation.json)·[테스트 로그](data/results/feature_profile_implementation_20261111_01/tests.log)를 보존했다. 전용 테스트 17개가 실패/오류/skip 0개로 통과했고 정상 fixture 131개·오류 입력 5개의 정확한 특징/frame/예외·nested call tree를 확인했다. 네 모드의 기록/실패 보존·자식 프로세스 smoke·중단/반환 코드 처리, 미commit 구현/lock의 corpus 실행 차단을 구현했다. 원본 corpus 읽기·저장 모델 역직렬화/예측을 금지한 검증이며 기존 근거 481개 파일은 불변이다. 실제 60개 입력의 새 특징/예측 gate와 1,200회 측정·240회 warmup, 최적화는 아직 실행하지 않았다. 다음은 구현/lock commit 후 고정 경로의 기준선 profile과 독립 저장 감사다.
+최신 진행: 실제 60개 파일의 특징 기준선 profile·독립 감사·병목 집계를 완료했다(2026-11-11). [결과 보고서](research_log/feature_profile_baseline_results_20261111.md)·[완료 기록](data/results/feature_profile_baseline_20261109_01/complete.json)·[독립 감사](data/results/feature_profile_baseline_20261109_01/verification.json)·[추가 집계](data/results/feature_profile_baseline_analysis_20261111_01/analysis.json)를 보존했다. 원본 bytes/hash·저장 특징 720개·예측/확률 1,080개가 정확히 일치했고 본 측정 1,200회·warmup 240회가 실패/재시도 없이 완료됐다. 파일별 중앙값 평균은 특징만 58.7273ms·입력 준비만 0.7204ms·결합 66.0665ms·계측 특징 64.2090ms였다. 계측 raw root의 비중복 분해에서 bigram 39.3633%·run 통계 29.7661%, 합 69.1294%로 우선 병목이었다. 비중은 계측 시간이며 예상 속도 향상률이 아니다. 기존 근거/구현 source는 불변이다. 다음은 두 함수를 우선 대상으로 한 특징값 보존 최적화 후보와 새 paired 검증 계획이다. 실제 최적화·새 모델/score 전환·memory는 진행하지 않았다.
+
+직전 실행부 구현: 고정 계획의 특징 profile 실행부·정확 동등성/저장 감사 도구를 구현하고 인위적 입력으로 검증했다(2026-11-11). [구현 설명](research_log/feature_profile_implementation_20261111.md)·[source lock/검증 결과](data/results/feature_profile_implementation_20261111_01/implementation.json)·[테스트 로그](data/results/feature_profile_implementation_20261111_01/tests.log)를 보존했다. 전용 테스트 17개가 실패/오류/skip 0개로 통과했고 정상 fixture 131개·오류 입력 5개의 정확한 특징/frame/예외·nested call tree를 확인했다. 네 모드의 기록/실패 보존·자식 프로세스 smoke·중단/반환 코드 처리, 미commit 구현/lock의 corpus 실행 차단을 구현했다. 원본 corpus 읽기·저장 모델 역직렬화/예측을 금지한 검증이며 기존 근거 481개 파일은 불변이다. 실제 60개 입력의 새 특징/예측 gate·실측·최적화는 당시 실행하지 않았다. 다음 단계는 구현/lock commit 후 기준선 profile과 독립 저장 감사였다.
 
 직전 계획 동결: 특징 계산 profiling·정확 동등성 검증의 사전 계획과 참조 자료 동결을 완료했다(2026-11-09). [설계](research_log/feature_profile_design_20261109.md)·[계획](research_log/feature_profile_plan_20261109.json)·[동결](data/results/feature_profile_plan_20261109_01/freeze.json)·[독립 구조/저장 검증](data/results/feature_profile_plan_20261109_01/verification.json)을 보존했다. 기존 실제 파일 60개·저장 특징 720개·모델 18개·예측 1,080개를 연결했고, 비계측 특징/입력 frame/결합과 함수별 계측의 네 모드에 측정 1,200회·warmup 240회 순서를 미리 고정했다. 이름/순서/builtin type·정수값/float.hex·모델 출력의 정확 보존과 nested timer/self-time 규칙을 명시했다. 인위적 정상 131개·오류 5개 입력은 계획만 수립했다. Python/패키지·모델 bytes·기존 근거 467개 파일과 참조 코드 사본/계획 링크를 확인했다. 원본 bytes 재검증·특징 재계산·모델 로딩/예측·실측·최적화·fixture 테스트는 당시 수행하지 않았다. 다음 작업은 이 계획의 실행부/검증기 구현과 인위적 fixture 검증이었다.
 
@@ -987,6 +989,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **개발 중 제한/처리:** 첫 샌드박스 테스트는 새 TemporaryDirectory의 ACL 접근 거부로 6개 파일 검사가 중단됐다. 권한을 허용한 동일 테스트에서 통과했고 추가한 child 종료 검사까지 최종 통과했다. 권한을 코드로 바꾸거나 이전 실패 임시 폴더를 삭제하지 않았다. 서버 재시작 때 저장된 runtime 파일/Git 상태를 먼저 대조한 뒤 이어서 작성했다. 원본 연구 측정의 실패/재시도나 corpus 결과가 아니다.
 - **미실행/다음:** 실제 원본 60개 bytes 재검증·새 특징/기존 1,080개 예측 gate·고정된 1,200회 본 측정/240회 warmup·독립 실측 감사/보고는 아직 없다. source/lock commit 후 새 기본 경로에서 전체 profile하고, 실패 시 기존 경로를 보존하며 새 attempt에서 전체 일정으로 실행한다. 이후 실제 병목에 근거한 특징값 보존 최적화/새 paired 계획을 검토한다. Memory·공식 채택·GUI 관련 기존 미완료는 유지한다.
 
+### 실제 60개 파일의 기준선 특징 profile·독립 감사·병목 집계 완료 — 2026-11-11
+
+- **근거/실행 기준:** [보고서](research_log/feature_profile_baseline_results_20261111.md), [실행 완료](data/results/feature_profile_baseline_20261109_01/complete.json), [독립 검증](data/results/feature_profile_baseline_20261109_01/verification.json), 각 mode raw/started/complete·process/log·사전 정확 예측 JSONL·파일/함수/형식/그룹/크기 집계, [병목 집계 코드](research_log/analyze_feature_profile_baseline_20261111.py)·[비중복 분해 감사](data/results/feature_profile_baseline_analysis_20261111_01/analysis.json). 실행 HEAD는 구현 commit `642a733`; 계획/참조 동결 `c680183`을 따랐다.
+- **실행/검증:** 깨끗한 HEAD와 commit된 source/lock·원본 60개 크기/full SHA-256을 먼저 확인했다. 기존 특징 720개와 18개 모델의 단일 행 예측·확률/비보정 confidence 1,080개가 정확히 일치했다. 네 새 worker에서 본 측정 1,200회와 warmup 240회·파일별 중앙값 240개를 보존했다. 고정 일정·raw timer·호출 tree 포함/직접 자식 비중복/self 합/helper 횟수·원본/모델/코드 hash를 독립 검증했다. 네 worker 반환 코드 0이며 실패/중단·재시도·표본/반복 교체는 없었다. 기존 근거 481개와 구현 source 6개의 hash를 다시 확인했다. 코드/fixture 테스트를 수정하거나 재실행하지 않았으며 이번 실제 실행/독립 감사를 수행했다.
+- **결과:** 파일별 5회 중앙값의 평균은 extract_only 58.727250ms, frame_only 0.720367ms, extract_and_frame 66.066533ms, instrumented_extract 64.209005ms다. Warmup 제외 계측 trial 300개를 root 직접 자식/self로 정수 ns 분해한 결과 bigram 39.3633%·run 29.7661%·segment entropy 13.3236%·전체 Counter 12.3847%·duplicate block 4.8299% 순이었다. Bigram/run 합 69.1294%는 계측 raw 시간 비중이며 독립 helper 중앙값을 더해 만든 비율이 아니다. 원시 2,100개 분해 항목의 합이 root와 정확히 일치했다.
+- **한계/다음:** 계측−비계측 파일 중앙값 차이 평균은 5.481755ms이고 -71.6894~60.5139ms 범위의 음/양 변동을 모두 보존했다. Observer 비용과 고정 mode 순서/cache·다른 실행 영향이 섞여 있으므로 과거 시간과 비교한 속도 개선이나 69.1% 향상을 주장하지 않는다. 사용자 동시 작업/전원 사건 상태는 미제공으로 남겼고 전원 설정을 바꾸지 않았다. 다음은 bigram/run의 정확 count·나눗셈/타입/float.hex·frame/예측을 보존하는 별도 최적화 후보와 동시점 paired 계획이다. 실제 최적화/전체 비용/GUI·cold start·모집단/최종 holdout·memory·공식 전환은 별도 미완료다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
@@ -998,9 +1007,11 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**실제 60개 입력의 고정 기준선 profile·독립 저장 감사:** 계획 동결과 실행부/검증기·인위적 검증은 완료했다. 다음은 commit된 source/lock 확인→원본 bytes/hash·저장 특징/예측 정확 gate→네 fresh worker의 고정 일정(본 측정 1,200회·warmup 240회)→독립 감사/보고다. 기본 새 출력은 `data/results/feature_profile_baseline_20261109_01`이며 구현 설명의 명령으로 실행한다. 실패/중단은 보존하고 같은 경로/slot을 덮어쓰지 않는다. 현재 단계에서는 참조 구현을 측정하며 최적화 속도 향상을 주장하지 않는다. 이후 실제 병목에 근거한 별도 특징값 보존 최적화/paired 계획과 새 최종 holdout을 검토한다. 기존 원시 반복·시나리오 계수·sample·공식 시스템·memory 참고 방침과 GUI 관련 미완료를 유지한다.
+**Bigram/run 통계의 특징값 보존 최적화 후보·paired 검증 계획:** 실제 기준선과 독립 감사는 완료했다. 다음은 관측 병목인 두 함수의 정수 count·분모/나눗셈·dtype/정확 float.hex·frame/기존 예측을 보존할 후보를 정하고, 같은 시점의 reference/candidate를 균형 배치할 새 계획/출력을 고정하는 작업이다. 인위적 경계 입력과 전체 개발 corpus의 동등성부터 확인한 뒤 새 paired 실측으로 비용/시간을 평가한다. 과거 기준선과 새 candidate 시간만 비교하거나 원하는 zstd 비율/향상률을 기준으로 조정하지 않는다. 기존 원시 반복·계수·sample·공식 시스템·memory 참고 방침과 GUI 관련 미완료를 유지하며 최종 일반화 평가에는 새 원본 그룹 holdout이 필요하다.
 
 ## 14. 마지막 관련 Git commit
+
+실제 특징 기준선 profile은 실행부/fixture commit `642a733`의 고정 source/lock에서 실행했다. 사전 계획/참조 commit은 `c680183`이며, 실측 raw·모델/특징/예측·함수별 분해 근거를 새 출력에 보존했다. 최적화 구현/실험 commit은 아니다.
 
 특징 profile 실행부/fixture 검증은 계획 동결 commit `c680183`에서 구현했다. 실제 corpus를 실행한 commit이 아니며 새 source/검증 log·fixture 값/보호 hash는 implementation lock에 기록했다. 실제 측정은 이 source/lock을 commit한 이후에만 진행한다.
 

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\research_log\\run_feature_profile_20261111.py",
+    "--worker",
+    "instrumented_extract",
+    "--output",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\feature_profile_baseline_20261109_01"
+  ],
+  "pid": 19580,
+  "returncode": 0,
+  "status": "exited"
+}

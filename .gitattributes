@@ -93,3 +93,8 @@
 /research_log/feature_profile_implementation_20261111.md -text
 /tests/test_feature_profile.py -text
 /data/results/feature_profile_implementation_20261111_01/** -text
+
+/data/results/feature_profile_baseline_20261109_01/** -text
+/data/results/feature_profile_baseline_analysis_20261111_01/** -text
+/research_log/analyze_feature_profile_baseline_20261111.py -text
+/research_log/feature_profile_baseline_results_20261111.md -text
