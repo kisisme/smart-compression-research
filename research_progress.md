@@ -6,7 +6,9 @@
 
 최신 memory 실제 측정 확인: 2026-10-22. 독립 감사 실행 확인: 2026-10-23(KST). 별도 동일 환경 반복 검증 attempt02의 최초 수집은 Run 2 timeout 3건을 포함한 `completed_with_failures`로 마감·보존했다. 이후 사용자 지시에 따라 Run 2 전체를 새로 측정하고 검증 후 기존 활성 경로에 교체했다. 새 Run 2는 실패 0건·336개 pair 검증 통과이며 활성 여섯 슬롯은 실패 0건이다. 현재 상태는 `completed_after_run_replacement`이고 실제 활성 실행 순서는 1→3→4→5→6→replacement 2다. 이번에는 이 변경을 포함한 저장 기록 일관성 독립 감사를 통과했다. 원래 수집의 실패와 기존 3일 attempt01의 미완료 증거는 그대로 보존한다.
 
-최신 진행: Bigram/run의 정확 특징값 보존 최적화 후보와 새 paired 비교 계획을 고정했다(2026-11-11). [후보 설계](research_log/feature_optimization_pair_design_20261111.md)·[JSON 계획](research_log/feature_optimization_pair_plan_20261111.json)·[동결](data/results/feature_optimization_pair_plan_20261111_01/freeze.json)·[독립 일정 검증](data/results/feature_optimization_pair_plan_20261111_01/verification.json)을 보존했다. NumPy 정수 pair histogram과 run 경계 계산을 후보로 정하고, 두 함수 결합을 주 후보·단독 변경 둘을 보조로 사전 구분했다. 세 후보×두 모드에서 파일당 6-pair 본 측정·1-pair warmup 순서를 정해 매 파일 참조 먼저 3회/후보 먼저 3회가 되도록 확인했다. 예정 본 호출 4,320회·warmup 720회이며 실제 실행 결과가 아니다. 정확 builtin type/float.hex/frame/예측·subclass fallback과 주 판정식을 고정했고 기존 근거 523개 파일을 보존했다. 후보 코드·fixture 테스트·새 특징/예측·paired 속도 측정은 아직 없다. 다음은 격리 후보/paired 실행부·독립 감사 구현과 인위적 동등성 검증이다.
+최신 진행: 격리 NumPy 후보 세 개와 균형 paired 실행부·저장 기록 검사를 구현했다(2026-11-11). [후보 코드](research_log/feature_pair_candidates_20261111.py)·[실행부](research_log/run_feature_pairs_20261111.py)·[검증 lock](data/results/feature_pair_implementation_20261111_01/implementation.json)에 근거를 보존했다. 전용 테스트 7개가 실패/오류 0개로 통과했고 정상 입력 133개·오류 입력 5개에서 정확 특징/frame/예외를 확인했다. 두 순서·모드·세 후보의 pair 기록과 변조/부분 실패 보존을 검사했다. 원본 corpus 읽기와 저장 모델 로딩을 막은 검증이며 기존 근거 529개 파일은 불변이다. 실제 개발 corpus 동등성·예측 gate·4,320회 본 호출과 속도 비교는 아직 실행하지 않았다. 다음은 커밋한 source/lock으로 전체 paired 실행과 결과 검증이다.
+
+직전 후보 계획: Bigram/run의 정확 특징값 보존 최적화 후보와 새 paired 비교 계획을 고정했다(2026-11-11). [후보 설계](research_log/feature_optimization_pair_design_20261111.md)·[JSON 계획](research_log/feature_optimization_pair_plan_20261111.json)·[동결](data/results/feature_optimization_pair_plan_20261111_01/freeze.json)·[독립 일정 검증](data/results/feature_optimization_pair_plan_20261111_01/verification.json)을 보존했다. NumPy 정수 pair histogram과 run 경계 계산을 후보로 정하고, 두 함수 결합을 주 후보·단독 변경 둘을 보조로 사전 구분했다. 세 후보×두 모드에서 파일당 6-pair 본 측정·1-pair warmup 순서를 정해 매 파일 참조 먼저 3회/후보 먼저 3회가 되도록 확인했다. 예정 본 호출 4,320회·warmup 720회이며 실제 실행 결과가 아니다. 정확 builtin type/float.hex/frame/예측·subclass fallback과 주 판정식을 고정했고 기존 근거 523개 파일을 보존했다. 후보 코드·fixture 테스트·새 특징/예측·paired 속도 측정은 아직 없다. 다음은 격리 후보/paired 실행부·독립 감사 구현과 인위적 동등성 검증이다.
 
 직전 기준선 실측: 실제 60개 파일의 특징 기준선 profile·독립 감사·병목 집계를 완료했다(2026-11-11). [결과 보고서](research_log/feature_profile_baseline_results_20261111.md)·[완료 기록](data/results/feature_profile_baseline_20261109_01/complete.json)·[독립 감사](data/results/feature_profile_baseline_20261109_01/verification.json)·[추가 집계](data/results/feature_profile_baseline_analysis_20261111_01/analysis.json)를 보존했다. 원본 bytes/hash·저장 특징 720개·예측/확률 1,080개가 정확히 일치했고 본 측정 1,200회·warmup 240회가 실패/재시도 없이 완료됐다. 파일별 중앙값 평균은 특징만 58.7273ms·입력 준비만 0.7204ms·결합 66.0665ms·계측 특징 64.2090ms였다. 계측 raw root의 비중복 분해에서 bigram 39.3633%·run 통계 29.7661%, 합 69.1294%로 우선 병목이었다. 비중은 계측 시간이며 예상 속도 향상률이 아니다. 기존 근거/구현 source는 불변이었다. 당시 다음은 특징값 보존 최적화 후보와 paired 검증 계획이었다. 실제 최적화·새 모델/score 전환·memory는 진행하지 않았다.
 
@@ -1006,6 +1008,13 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 - **검증:** 준비/독립 검증 도구로 기존 감사 chain·523개 보호 파일/기준선 source·참조 hash·원본 metadata 목록·후보 allowlist·각 파일/round의 전체 포함과 seed 순서·매 round 30/30 선행 및 파일별 3/3 선행·실행하지 않았다는 상태/문서 링크를 확인했다. 첫 검증은 아직 만들기 전인 자신의 verification.json 링크를 존재 검사해 출력 전에 중단됐고, 다른 링크를 먼저 확인하고 자신의 링크는 생성 후 확인하도록 수정했다. 후보/계획/일정은 바꾸지 않았으며 그 경위를 검증 기록에 남겼다. 단위/fixture 테스트나 연구 실험을 통과했다고 기록하지 않았다.
 - **미실행/다음:** 격리 후보·paired runner/저장 감사·133개 fixture/오류/전체 corpus 동등성·새 속도 측정은 아직 없다. source/fixture를 구현·검증·commit한 뒤 `data/results/feature_optimization_pair_20261111_01`의 새 전체 일정으로 실측한다. 과거 시간만으로 향상을 확정하거나 보조 후보를 사후 주 후보로 교체하지 않는다. 공식 source/모델/score·memory 보류·GUI 미완료와 새 최종 원본 그룹 holdout 필요성을 유지한다.
 
+### 격리 후보·paired 실행부 구현 및 인위적 검증 완료 — 2026-11-11
+
+- **완료:** 고정 계획의 bigram_numpy/run_numpy/both_numpy를 별도 참조 namespace에 구현했다. uint16 승격/정수 histogram·intp run 경계와 subclass/짧은 입력 fallback을 유지한다. 공식 feature/config/모델은 수정하지 않았다. 고정 일정의 인접 실행·raw flush·오류 보존, 새 worker별 실행 및 정확 특징/예측 gate, 저장 pair의 순서/시간/값 검증과 그룹 동일 비중 paired delta·pooled ratio 집계를 연결했다.
+- **검증:** `.venv/Scripts/python.exe research_log/validate_feature_pairs_20261111.py`의 전용 테스트 7개가 실패/오류 0개로 통과했다. 정상 입력 133개에서 세 후보의 특징/frame이 정확히 같고 오류 입력 5개·private helper 경계·subclass override를 보존했다. 두 실행 순서/두 모드, 부분/중복/출력/hash/timer 변조·실패 flush·미commit lock의 실행 차단을 확인했다. 실제 corpus 읽기와 저장 모델 pickle 로딩을 금지했고 기존 529개 근거 파일 hash가 일치했다. 전체 프로젝트 suite나 실제 paired 성능 검증으로 해석하지 않는다.
+- **근거:** [후보/실행 코어](research_log/feature_pair_candidates_20261111.py), [controller/worker와 집계](research_log/run_feature_pairs_20261111.py), [전용 테스트](tests/test_feature_pair_candidates.py), [검증 실행기](research_log/validate_feature_pairs_20261111.py), [source lock](data/results/feature_pair_implementation_20261111_01/implementation.json)·tests.log·fixtures.json. 시작 HEAD는 후보 계획 commit `554009b`다.
+- **미실행:** 실제 60개 파일의 네 버전 동등성·4,320개 모델 출력 확인·4,320회 본 호출/720회 warmup·실제 worker 전체 일정·저장 감사는 다음 단계다. 속도 향상/공식 채택을 주장하지 않으며 memory 보류와 기존 GUI 미완료는 유지한다.
+
 ## 12. 아직 완료하지 않은 작업
 
 - **사용자 선택에 따른 보류:** Memory 추가 구현·측정 검증·공식 4지표 전환. 참고 지표와 기존 미충족/실패 증거를 보존하며 자동 재개하지 않는다.
@@ -1017,9 +1026,11 @@ python -B -m research_log.analyze_memory_stability_validation --experiment-dir <
 
 ## 13. 다음 단일 작업
 
-**고정 후보·paired 계획의 격리 구현과 인위적 동등성 검증:** [새 계획](research_log/feature_optimization_pair_plan_20261111.json)과 전체 균형 순서는 동결했다. 다음은 원래 참조 helper/namespace를 보존하는 NumPy bigram/run/결합 후보, 두 비계측 모드의 인접 pair runner·정확 feature/frame/prediction gate·raw/실패 보존·독립 paired 감사 구현과 fixture 검증이다. 구현/검증 source를 commit한 뒤 새 일정에서 전체 개발 corpus 동등성 및 paired 실측을 수행한다. 주 후보/판정식·표본·계수는 결과를 보고 바꾸지 않는다. 이 단계는 특징 계산 속도 후보이며 zstd 선택 비율 변경이나 공식 시스템 전환을 뜻하지 않는다. Memory·GUI 기존 미완료를 유지하고 최종 일반화 평가는 새 원본 그룹 holdout을 사용한다.
+**전체 개발 corpus의 정확 동등성·균형 paired 실행:** commit된 후보/source lock을 확인한 뒤 `research_log/run_feature_pairs_20261111.py`로 새 경로 `data/results/feature_optimization_pair_20261111_01`에서 실행한다. 원본 hash/특징/frame·네 버전의 저장 모델 예측 확인을 먼저 통과해야 한다. 모든 본 호출 4,320회·warmup 720회·실패/악화 결과를 보존하고 주 후보/고정 그룹 지표를 평가한다. 과거 기준선과 새 후보 시간만 비교하지 않는다. 실패 시 같은 경로/slot을 덮어쓰지 않는다. 전체 Smart 경로 비용 검증·공식 채택·최종 holdout은 별도다.
 
 ## 14. 마지막 관련 Git commit
+
+격리 후보/paired 실행부의 인위적 구현 검증은 계획 commit `554009b`에서 수행했다. 새 실제 파일 성능 실험 commit이 아니며 source/테스트 결과와 보호 hash는 implementation lock에 기록했다.
 
 Bigram/run 최적화 후보·paired 사전 계획은 실제 기준선 보존 commit `3ca5f2a`에서 준비했다. 후보 구현/새 특징/예측/속도 실측 commit이 아니며 계획·일정·환경·관련 source/입력 hash를 freeze/verification에 보존했다.
 

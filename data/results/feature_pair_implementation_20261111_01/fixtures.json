@@ -1,0 +1,1335 @@
+{
+  "data_kind": "test_fixture",
+  "cases": [
+    {
+      "fixture": "constant_00_1",
+      "input_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_1",
+      "input_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_1",
+      "input_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_1",
+      "input_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_1",
+      "input_sha256": "8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_1",
+      "input_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_2",
+      "input_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_2",
+      "input_sha256": "58bb119c35513a451d24dc20ef0e9031ec85b35bfc919d263e7e5d9868909cb5",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_2",
+      "input_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_2",
+      "input_sha256": "06eb7d6a69ee19e5fbdf749018d3d2abfa04bcbd1365db312eb86dc7169389b8",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_2",
+      "input_sha256": "707329b4fbc449bc56cc9e5ae33d557f87f68b5c2c84c996387136f76f67d1e0",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_2",
+      "input_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_15",
+      "input_sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_15",
+      "input_sha256": "6f9f84c09a5950e1ea7888f17922a69e5292dcbcb1e682ddfc977a9b4ea1a8c0",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_15",
+      "input_sha256": "7071fc3188fde7e7e500d4768f1784bede1a22e991648dcab9dc3219acff1d4c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_15",
+      "input_sha256": "d4ad63a48c113988423fa392f03fb435db3bd3ba0be59b4758b89ed65469659b",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_15",
+      "input_sha256": "8563ec3c23999ffff5bce8d56b125d4b75b5aa87d874fd6974da6ad66be4a575",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_15",
+      "input_sha256": "f87073e61696eee582e1191aa09ffc3d91268807f55576b81f965fa2b4da6fb3",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_16",
+      "input_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_16",
+      "input_sha256": "991204fba2b6216d476282d375ab88d20e6108d109aecded97ef424ddd114706",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_16",
+      "input_sha256": "be45cb2605bf36bebde684841a28f0fd43c69850a3dce5fedba69928ee3a8991",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_16",
+      "input_sha256": "92473e976b82a7533986f1b8aa449430293f8d8bc65d72157440abbaa543daa2",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_16",
+      "input_sha256": "ecc5de6d295aaea8ef93f833bd9849a43402b6b6153d192c2d05151f20145678",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_16",
+      "input_sha256": "8d7f3e5d0e7fff8684f35b4fda55d77f6bef3089712e822939b0ee4295eeb0f4",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_17",
+      "input_sha256": "0a88111852095cae045340ea1f0b279944b2a756a213d9b50107d7489771e159",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_17",
+      "input_sha256": "444074d5328d52b4e0036d37b1b6ea0a9fe3b0c96872d1157fbf01b6fdb2ce8d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_17",
+      "input_sha256": "3e5718fea51a8f3f5baca61c77afab473c1810f8b9db330273b4011ce92c787e",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_17",
+      "input_sha256": "d69eccf6818d0ae1f7c7d39dbc96f8dd9e03af43ca75df2d2bc44c850c06bc71",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_17",
+      "input_sha256": "a6670d45b49902bbfd8a3c1ef8b5b67ecc57d99a29a8649c029f9f8272b2e9c7",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_17",
+      "input_sha256": "6b2ad27a14ba85bf500179e2a22e3337ac8980545898d6827e58b35303e1ea8d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_31",
+      "input_sha256": "fd08be957bda07dc529ad8100df732f9ce12ae3e42bcda6acabe12c02dfd6989",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_31",
+      "input_sha256": "55ee740f58335c97d42c32125218eb7c325fbe34206912f1aa7af7fd6580c9a1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_31",
+      "input_sha256": "4f23c2ca8c5c962e50cd31e221bfb6d0adca19111dca8e0c62598ff146dd19c4",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_31",
+      "input_sha256": "d16ecfab7ed8c92304ff516bdf1ef70f776fe7eabfee04a3f6ceb9da16900bc1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_31",
+      "input_sha256": "339d4c53c421ba833723e4f9abea3bacc1649b1e35cf3b7c21c1788a57560a74",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_31",
+      "input_sha256": "93ab7186bf386ae736e3e2037a4c365420ce8f832cdcd15d82063c61ac200def",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_32",
+      "input_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_32",
+      "input_sha256": "22a48051594c1949deed7040850c1f0f8764537f5191be56732d16a54c1d8153",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_32",
+      "input_sha256": "630dcd2966c4336691125448bbb25b4ff412a49c732db2c8abc1b8581bd710dd",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_32",
+      "input_sha256": "6bd25f5d5bc8ca90d74d76e96509d85351800e38ce101abf0ffa81c8a7e755a7",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_32",
+      "input_sha256": "891d5fab6012f74f0260387eae50b255bbda159779fbe8353f894dec94cd1d83",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_32",
+      "input_sha256": "29d1aed8d920f6dcd1dc11418154fe0bfb020b736f65bc3edde81fd3502b1a73",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_33",
+      "input_sha256": "7f9c9e31ac8256ca2f258583df262dbc7d6f68f2a03043d5c99a4ae5a7396ce9",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_33",
+      "input_sha256": "5d873590851b7b00b60490c8e6966b3409c385adcc9590d801f0e03e268b5ba5",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_33",
+      "input_sha256": "5d8fcfefa9aeeb711fb8ed1e4b7d5c8a9bafa46e8e76e68aa18adce5a10df6ab",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_33",
+      "input_sha256": "4706b974c090b41fbe16fa76179fd3dc61ac553457b4f99128a9daa0c7d6d65f",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_33",
+      "input_sha256": "fa6bf6cabf6214f33b8ff35f0d76b9bdfc1d638a3474f27f5f4d3fd85697f319",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_33",
+      "input_sha256": "35f7b54c054a718d65bbbe1643d2898552b5a0da4b867bb74b34802b5619834d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_255",
+      "input_sha256": "80bd5cb5a9ca35dcdea1d59b5f1778f4114f6215af38004a02a99a1d37383648",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_255",
+      "input_sha256": "ae53ef4fa49739df77cfc1f4074418f77bb99b00713f097514c8b404e458fedf",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_255",
+      "input_sha256": "3f8591112c6bbe5c963965954e293108b7208ed2af893e500d859368c654eabe",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_255",
+      "input_sha256": "b87948cf3abe6bc2171d4211a5f78d93069a84734a0de655371e0126a37f2864",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_255",
+      "input_sha256": "034b46cc10824b4d0661c24a3dc1b70e3ce88fcfbbe2fa972b03b66ba52135d1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_255",
+      "input_sha256": "1c4a1d9c5cdfaf13102481d70df3f57eea7602be7ea28f697404a6fab5e7ae02",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_256",
+      "input_sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_256",
+      "input_sha256": "e075f2f51cad23d0537186cfcd50f911ea954f9c2e32a437f45327f1b7899bbb",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_256",
+      "input_sha256": "40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_256",
+      "input_sha256": "b4b8868b8dbbe0e497492d5b01faa59813760910557b898c169177175b451636",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_256",
+      "input_sha256": "a6e37662414f6c838b85d363826b28d1e5cc5c737a67db9796165a9e9c26b8b1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_256",
+      "input_sha256": "d051d45e3148f2df031b31f345c573e77c4c08e00b38f836c52abe45e432e9bf",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_257",
+      "input_sha256": "6c934d0cdf9dba94b474d6d1929f16739bd9a8ed31d0c3bcaf82c283fb7a3568",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_257",
+      "input_sha256": "77608f24da6140277bd789efec57a179b1c1e57f44045ebd2b39e3c1e7e18d42",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_257",
+      "input_sha256": "54acfbfedc4d8da40f76f275e1a98f10af8ef1fb9fb39e5a67a00aabcbe6597c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_257",
+      "input_sha256": "4b4b123ac67360362fb2930aefa57b7f885df0b70abf94679b03258745895848",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_257",
+      "input_sha256": "5fbae1a5025531fa7ba9ec6787d8b8c7c6034f387cb68f2359198e56b0d30080",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_257",
+      "input_sha256": "00d931b5c715723347e124a880c2253084a736d95f0f6cc8485ba20e77a5bea4",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_4095",
+      "input_sha256": "2cae68411db14d6b340e650cd7e512a0d604379425f48e5a8ba846336777ff5c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_4095",
+      "input_sha256": "ec3a61bfe4f74b1db3d423f57c491060dd0e57a2392591f82c44323b0fd3410c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_4095",
+      "input_sha256": "02eb925ab7d50a3333adc330ce64d365f863e21a4c9605b5455211c65f600cb1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_4095",
+      "input_sha256": "378547ce89a49e4b5aced59fa31a88603234a6fbb7081c655722a656f5c5e4f3",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_4095",
+      "input_sha256": "a9b6d02ab1bbe5ea397d4814b5023f1e3314a32083c19de1fb2c0c07e6ea128c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_4095",
+      "input_sha256": "39f4211af15dd76fb3332bae1b2440c97b71d8a310389840b19ab58aa5b8b597",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_4096",
+      "input_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_4096",
+      "input_sha256": "6896d9ea3f73a4434f5832bc65714e7d066f177373f36f34dc8a6f735daa41b1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_4096",
+      "input_sha256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_4096",
+      "input_sha256": "56419a079049271b37eea3515c12bbafb46578e6ac4db012c61395ef8b2e5a68",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_4096",
+      "input_sha256": "750162c9a84dc0b743acfb87e9a3a0a4b553dba959cd885992634c33533f36ba",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_4096",
+      "input_sha256": "707e82652c2166916627e600fffb7afd9b52d328c5b487dc97e53b25dbdeaa80",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_4097",
+      "input_sha256": "b587fa297299ce9c602e58292b51379402bf7b1074f6b18679c2fb871c917ca8",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_4097",
+      "input_sha256": "225e68d4d9603bdfca93fe3896ba95ab8a10e6505172d8a386af21c5525b950a",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_4097",
+      "input_sha256": "1e973d029df2b2c66cb42a942c5edb45966f02abaff29fe99410e44d271d0efc",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_4097",
+      "input_sha256": "c51c57ce9fee12d82d1a80a88972d04bfb0bf44f54b6a9e78ee3f2618cb447c3",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_4097",
+      "input_sha256": "f3ffc0376d223b9d7d7dd2abe4e8fdc26a7e6b2add7e11198104fb8734f01a84",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_4097",
+      "input_sha256": "087da53c3ec988c3fc4d6750c1eba84ed4beabb057c5950a4503c2d576ce532f",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_8191",
+      "input_sha256": "ded7e73bae26db73b29a51bca3cd2d1d6906107d889775f610f0ce63c2089365",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_8191",
+      "input_sha256": "ec1193d76721a80d4f7315042d20e83940f91eb88180e4d169215ecb7e6a371c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_8191",
+      "input_sha256": "b7df6856454480f5f474e69991e5a45f76f627b4750d4869c040d9d50c21f0ff",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_8191",
+      "input_sha256": "b2cf38c486a986b1fb038c0322ea15dcbfe57fbbf09165d7b4140ec73a5085e4",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_8191",
+      "input_sha256": "fd085066b28049be371f60023894c35ff25b90aa23e82e3f40a040feab6bfc2f",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_8191",
+      "input_sha256": "9b0f7cc6fcebf6d8d8257aeb847799ef7b6dc82e874d7d5a0b3ddf3b4a382c8d",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_8192",
+      "input_sha256": "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_8192",
+      "input_sha256": "f8ca02c69621dd84cd1212ebfd7d6cdc9ba6ad658854f29567723531912d1a35",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_8192",
+      "input_sha256": "dc404a613fedaeb54034514bc6505f56b933caa5250299ba7d094377a51caa46",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_8192",
+      "input_sha256": "e6816f9abfd87bfbd8266688334a176445a3f4647869649843a55679b0f318aa",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_8192",
+      "input_sha256": "1fb7a71f26c74c0742b367c7af6de84a935480055a5a3f77660eb50170d05b0c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_8192",
+      "input_sha256": "5bbbdf75d1360457654a137854c737afa2289ee0ae884231269055516b7c5531",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_8193",
+      "input_sha256": "b1fb0079828ab653919011a9f8cfdd3704387eb08e1dc971155b33c03e0da1ef",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_8193",
+      "input_sha256": "34ffbefd07f99603e2aa52c8157d907ade98e839b1d7ab474b9178d80c75c977",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_8193",
+      "input_sha256": "db8e82fcacaeceb336ecb8be90fad31da698c72a6c10fd1ea68a2e5874b78b17",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_8193",
+      "input_sha256": "1e63e618ad3ed557e844bef8cc5eb10f379d79c454d21beea5132764cc7177b3",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_8193",
+      "input_sha256": "e65506019ae99f7dd0cc8c36bbfca8bda38e01ff73d1e70b3baadfd24c32103b",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_8193",
+      "input_sha256": "65a872b2607d2c98920cae7ca34be242f02aedd0ca17e8ce2099a585ebf48465",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_65535",
+      "input_sha256": "9f797b60edaf440d5831da53c35f4d4847a2f55adc64cfe887a7bcfcd9eca495",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_65535",
+      "input_sha256": "51fecdc444f8748f49729feb8fb3c4fdcb84bd15b31e805c3f2280154a2489aa",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_65535",
+      "input_sha256": "5f1bf999bcba5e05d4c34a13710d2e4bff005877874dcce49ac87af61076231e",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_65535",
+      "input_sha256": "5d6f8e3a4b4c6fa3efad2198582971d9b7fe58854a112aae5032b15a37d9e2dd",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_65535",
+      "input_sha256": "2b7bd1b066b9fb7859ee29be53e33372df0607e85c3b0498953b0cf2d6d4b5cd",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_65535",
+      "input_sha256": "ef52833725705fea0fdd6e199e156731467a90b6bbba67efae98dc82c1bfaab9",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_65536",
+      "input_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_65536",
+      "input_sha256": "156c38442089c1323d3e3ba549a6ac24341c47e8b6367bec4740c9b8c865826e",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_65536",
+      "input_sha256": "7daca2095d0438260fa849183dfc67faa459fdf4936e1bc91eec6b281b27e4c2",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_65536",
+      "input_sha256": "9cb11b57898a05612433d14f6dac343ec9fb23306e4b9a2878e85ca08b96f9ab",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_65536",
+      "input_sha256": "8544e96445fd07d1d3bf0a3e142c1cef5a83ff9abb14eeb674d0617962d87c40",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_65536",
+      "input_sha256": "d1e4ec9b433c8cd9b2e5bfa4776e72e19c7590f2bf7fbd7dd50234002400104b",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_65537",
+      "input_sha256": "3266304f31be278d06c3bd3eb9aa3e00c59bedec0a890de466568b0b90b0e01f",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_65537",
+      "input_sha256": "ac72112c832fa4683b15ebff51a8f5f2ca08226c0d59bdb9ac739c2cdc28a05c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_65537",
+      "input_sha256": "2deb0bd2129a9d3aed91e3cff58b3993752be549642890a3e853ec1065f9b617",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_65537",
+      "input_sha256": "579d335f75abd7f76bec85140406524383d1b05d32083dd7eefbf817692a5459",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_65537",
+      "input_sha256": "565521e91282eaa4dd1609c0677238e5892386b64aebbc01eb95a686307f649c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_65537",
+      "input_sha256": "2281cf63927a863776df88bfa4d0b08a17e4222d2f496e6944158ffca5cfaf4b",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_00_65538",
+      "input_sha256": "4afcaba0f3eaddda95e3ee1589dcca36f05d1300b5259bcd57b534d82e36daf9",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "constant_41_65538",
+      "input_sha256": "235790eb0ffd39c8cda96b0503fb7e7134cd7c5ff5c831a1d6733b37474f192c",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "cycle_00_to_ff_65538",
+      "input_sha256": "d4c1299d0fb039fbeec27ed3a6e78858ed5a4c840ec0ee1ce58a20eee644f2a7",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "alternating_00_ff_65538",
+      "input_sha256": "5cce0f1007cabb43fe45d237f4059c92ba5ddeffbf4cd22bfe12c55b8958038e",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_full_byte_random_65538",
+      "input_sha256": "6227110431c506c206d56e9285ac59703ac6927c4db8ab5cc883754de2b769db",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "seeded_four_byte_alphabet_65538",
+      "input_sha256": "96bcec2107cef0d3493ff215776029c2cd9f4fbd668887f32965f1d015248dde",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "run_crosses_boundaries",
+      "input_sha256": "b0ae7fd9efd94e87a95057449fbcf2320a28fefde94491e4e2a40be582381780",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "partial_duplicate_block",
+      "input_sha256": "62abe39bafe3598b6b855e996918a55c9adc4ee866a9eeb7d97eb6a92e4843d1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "all_ordered_byte_pairs",
+      "input_sha256": "281f79f89f0121c31db2bea5d7151db246349b25f5901c114505c18bfaa50ba1",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "mixed_entropy_segments",
+      "input_sha256": "c50d3e839856039ae24852164846d7222f9c5c7c48e5c8cbc078a6c4b76a4a71",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "bytes_subclass",
+      "input_sha256": "babd6736192360b0e254b13f0eb5da9a9e17ed31bccf54b38ae8132d0515f43a",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "indexed_subclass",
+      "input_sha256": "e9c0f8b575cbfcb42ab3b78ecc87efa3b011d9a5d10b09fa4e96f240bf6a82f5",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    },
+    {
+      "fixture": "length_subclass",
+      "input_sha256": "e9c0f8b575cbfcb42ab3b78ecc87efa3b011d9a5d10b09fa4e96f240bf6a82f5",
+      "variants": [
+        "bigram_numpy",
+        "run_numpy",
+        "both_numpy"
+      ],
+      "exact": true
+    }
+  ]
+}

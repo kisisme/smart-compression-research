@@ -1,0 +1,12 @@
+test_133_public_inputs_all_variants_exact (test_feature_pair_candidates.PairCandidatesTests.test_133_public_inputs_all_variants_exact) ... ok
+test_both_orders_all_candidates_and_modes (test_feature_pair_candidates.PairCandidatesTests.test_both_orders_all_candidates_and_modes) ... ok
+test_controller_requires_lock_before_corpus_reads (test_feature_pair_candidates.PairCandidatesTests.test_controller_requires_lock_before_corpus_reads) ... ok
+test_failure_is_flushed_and_not_retried (test_feature_pair_candidates.PairCandidatesTests.test_failure_is_flushed_and_not_retried) ... ok
+test_invalid_inputs_and_private_short_helpers (test_feature_pair_candidates.PairCandidatesTests.test_invalid_inputs_and_private_short_helpers) ... ok
+test_namespaces_and_unmodified_helpers_are_isolated (test_feature_pair_candidates.PairCandidatesTests.test_namespaces_and_unmodified_helpers_are_isolated) ... ok
+test_partial_duplicate_timing_output_and_order_tampering_reject (test_feature_pair_candidates.PairCandidatesTests.test_partial_duplicate_timing_output_and_order_tampering_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.914s
+
+OK

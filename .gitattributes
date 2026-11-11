@@ -104,3 +104,10 @@
 /research_log/prepare_feature_optimization_pair_20261111.py -text
 /research_log/verify_feature_optimization_pair_plan_20261111.py -text
 /data/results/feature_optimization_pair_plan_20261111_01/** -text
+
+/research_log/feature_pair_candidates_20261111.py -text
+/research_log/run_feature_pairs_20261111.py -text
+/research_log/validate_feature_pairs_20261111.py -text
+/tests/test_feature_pair_candidates.py -text
+/data/results/feature_pair_implementation_20261111_01/** -text
+/data/results/feature_pair_implementation_20261111_01/tests.log whitespace=cr-at-eol
