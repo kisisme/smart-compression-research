@@ -85,3 +85,11 @@
 /research_log/prepare_feature_profile_20261109.py -text
 /research_log/verify_feature_profile_plan_20261109.py -text
 /data/results/feature_profile_plan_20261109_01/** -text
+
+/research_log/feature_profile_runtime_20261111.py -text
+/research_log/run_feature_profile_20261111.py -text
+/research_log/verify_feature_profile_run_20261111.py -text
+/research_log/validate_feature_profile_implementation_20261111.py -text
+/research_log/feature_profile_implementation_20261111.md -text
+/tests/test_feature_profile.py -text
+/data/results/feature_profile_implementation_20261111_01/** -text
