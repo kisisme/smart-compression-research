@@ -111,3 +111,9 @@
 /tests/test_feature_pair_candidates.py -text
 /data/results/feature_pair_implementation_20261111_01/** -text
 /data/results/feature_pair_implementation_20261111_01/tests.log whitespace=cr-at-eol
+
+/research_log/analyze_feature_pairs_20261112.py -text
+/research_log/feature_pair_analysis_validation_20261112.json -text
+/tests/test_feature_pair_analysis.py -text
+/data/results/feature_optimization_pair_20261112_01/** -text
+/data/results/feature_optimization_pair_analysis_20261112_01/** -text

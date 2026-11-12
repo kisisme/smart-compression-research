@@ -1,0 +1,15 @@
+{
+  "data_kind": "test_fixture",
+  "at_utc": "2026-11-12T12:27:41.787508+00:00",
+  "command": "python -m unittest discover -s tests -p test_feature_pair*.py -v",
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "source_sha256": {
+    "research_log/analyze_feature_pairs_20261112.py": "79d01fe4f7b2fd11ae73215f57e76e8005802d4b24ea6b3f2678dc34a8c533bd",
+    "tests/test_feature_pair_analysis.py": "cc647756005323aa0381fd075c78a57be81c495b1e240d478dc77673fd9d254e"
+  },
+  "log": "test_equal_group_weight_is_not_pooled_file_weight (test_feature_pair_analysis.PairAnalysisTests.test_equal_group_weight_is_not_pooled_file_weight) ... ok\ntest_pair_difference_and_frame (test_feature_pair_analysis.PairAnalysisTests.test_pair_difference_and_frame) ... ok\ntest_partial_duplicates_and_corruption_rejected (test_feature_pair_analysis.PairAnalysisTests.test_partial_duplicates_and_corruption_rejected) ... ok\ntest_133_public_inputs_all_variants_exact (test_feature_pair_candidates.PairCandidatesTests.test_133_public_inputs_all_variants_exact) ... ok\ntest_both_orders_all_candidates_and_modes (test_feature_pair_candidates.PairCandidatesTests.test_both_orders_all_candidates_and_modes) ... ok\ntest_controller_requires_lock_before_corpus_reads (test_feature_pair_candidates.PairCandidatesTests.test_controller_requires_lock_before_corpus_reads) ... ok\ntest_failure_is_flushed_and_not_retried (test_feature_pair_candidates.PairCandidatesTests.test_failure_is_flushed_and_not_retried) ... ok\ntest_invalid_inputs_and_private_short_helpers (test_feature_pair_candidates.PairCandidatesTests.test_invalid_inputs_and_private_short_helpers) ... ok\ntest_namespaces_and_unmodified_helpers_are_isolated (test_feature_pair_candidates.PairCandidatesTests.test_namespaces_and_unmodified_helpers_are_isolated) ... ok\ntest_partial_duplicate_timing_output_and_order_tampering_reject (test_feature_pair_candidates.PairCandidatesTests.test_partial_duplicate_timing_output_and_order_tampering_reject) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 4.019s\n\nOK\n"
+}

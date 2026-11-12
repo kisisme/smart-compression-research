@@ -1,0 +1,7 @@
+{
+  "notes": "Concurrent activity/power events not reported; absence is not inferred.",
+  "at_utc": "2026-11-12T12:19:45.891801+00:00",
+  "pid": 19428,
+  "implementation_sha256": "6bf842f0b9a26f577aa0c4c5c119e6cadd90417853491da56a8c28047a0cd5ca",
+  "git_head": "b2957bc50ad41611ed1ca7435d584923661e1ca3"
+}

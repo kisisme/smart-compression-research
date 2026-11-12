@@ -1,0 +1,44 @@
+[
+  {
+    "candidate": "bigram_numpy",
+    "mode": "extract_only",
+    "equal_origin_mean_paired_delta_ns": -31184255.277777776,
+    "pooled_median_ratio": 1.5971075300941973,
+    "advance_to_pipeline": false
+  },
+  {
+    "candidate": "bigram_numpy",
+    "mode": "extract_and_frame",
+    "equal_origin_mean_paired_delta_ns": -31012659.166666668,
+    "pooled_median_ratio": 1.5647079166233364,
+    "advance_to_pipeline": false
+  },
+  {
+    "candidate": "run_numpy",
+    "mode": "extract_only",
+    "equal_origin_mean_paired_delta_ns": -26492401.944444444,
+    "pooled_median_ratio": 1.3932907605781095,
+    "advance_to_pipeline": false
+  },
+  {
+    "candidate": "run_numpy",
+    "mode": "extract_and_frame",
+    "equal_origin_mean_paired_delta_ns": -25798579.444444444,
+    "pooled_median_ratio": 1.377239430260776,
+    "advance_to_pipeline": false
+  },
+  {
+    "candidate": "both_numpy",
+    "mode": "extract_only",
+    "equal_origin_mean_paired_delta_ns": -61327182.777777776,
+    "pooled_median_ratio": 2.851312162051679,
+    "advance_to_pipeline": false
+  },
+  {
+    "candidate": "both_numpy",
+    "mode": "extract_and_frame",
+    "equal_origin_mean_paired_delta_ns": -57902357.222222224,
+    "pooled_median_ratio": 2.767644383533535,
+    "advance_to_pipeline": true
+  }
+]

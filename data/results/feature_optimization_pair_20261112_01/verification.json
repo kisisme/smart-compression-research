@@ -1,0 +1,73 @@
+{
+  "status": "all_pairs_verified",
+  "summaries": [
+    {
+      "candidate": "bigram_numpy",
+      "mode": "extract_only",
+      "equal_origin_mean_paired_delta_ns": -31184255.277777776,
+      "pooled_median_ratio": 1.5971075300941973,
+      "advance_to_pipeline": false
+    },
+    {
+      "candidate": "bigram_numpy",
+      "mode": "extract_and_frame",
+      "equal_origin_mean_paired_delta_ns": -31012659.166666668,
+      "pooled_median_ratio": 1.5647079166233364,
+      "advance_to_pipeline": false
+    },
+    {
+      "candidate": "run_numpy",
+      "mode": "extract_only",
+      "equal_origin_mean_paired_delta_ns": -26492401.944444444,
+      "pooled_median_ratio": 1.3932907605781095,
+      "advance_to_pipeline": false
+    },
+    {
+      "candidate": "run_numpy",
+      "mode": "extract_and_frame",
+      "equal_origin_mean_paired_delta_ns": -25798579.444444444,
+      "pooled_median_ratio": 1.377239430260776,
+      "advance_to_pipeline": false
+    },
+    {
+      "candidate": "both_numpy",
+      "mode": "extract_only",
+      "equal_origin_mean_paired_delta_ns": -61327182.777777776,
+      "pooled_median_ratio": 2.851312162051679,
+      "advance_to_pipeline": false
+    },
+    {
+      "candidate": "both_numpy",
+      "mode": "extract_and_frame",
+      "equal_origin_mean_paired_delta_ns": -57902357.222222224,
+      "pooled_median_ratio": 2.767644383533535,
+      "advance_to_pipeline": true
+    }
+  ],
+  "artifact_sha256": {
+    "bigram_numpy_predictions.jsonl": "675bae6a3b1d8d22b75b837a78cb60e1389c14fb687591a7762ea60e4904a757",
+    "bigram_numpy__extract_and_frame.jsonl": "6352c86c8aefb3078f6769dc7a8bc7098e681d3ef8b6afd47acf1edefede4f7e",
+    "bigram_numpy__extract_and_frame.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bigram_numpy__extract_and_frame_process.json": "bfd9ec5278791a21151e6218610828f1ca366f8fef69134b58528489366d5f3d",
+    "bigram_numpy__extract_only.jsonl": "dda645391a85fb934fb7bd08ed371af2972e5017b9d3cf1df70dccbb454e4743",
+    "bigram_numpy__extract_only.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bigram_numpy__extract_only_process.json": "ddc08f66dffff9144bab361b7e0b527fed82e19ae84b62b802067b7dd5576dc8",
+    "both_numpy_predictions.jsonl": "675bae6a3b1d8d22b75b837a78cb60e1389c14fb687591a7762ea60e4904a757",
+    "both_numpy__extract_and_frame.jsonl": "bf933257493a0d45149b57cdf2d6dab8a47542e37c1a67b86bfd5de451cb499d",
+    "both_numpy__extract_and_frame.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "both_numpy__extract_and_frame_process.json": "1d9b48bde7cbd1f405504293788065ad60ee438e37bb770b741c3c873a870fc8",
+    "both_numpy__extract_only.jsonl": "41934343bb224918f1562f70f562550207e78ae0f273edbe0adca41270a9cee4",
+    "both_numpy__extract_only.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "both_numpy__extract_only_process.json": "2af760ba282fa592410beecdb010d41934b0dae4aafc6734d25d2958e82acc3b",
+    "reference_predictions.jsonl": "675bae6a3b1d8d22b75b837a78cb60e1389c14fb687591a7762ea60e4904a757",
+    "run_numpy_predictions.jsonl": "675bae6a3b1d8d22b75b837a78cb60e1389c14fb687591a7762ea60e4904a757",
+    "run_numpy__extract_and_frame.jsonl": "afc1ff31d9cebc24d5a26b6cc81e7f3841e793dc05e351643baffcd33d58ea16",
+    "run_numpy__extract_and_frame.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_numpy__extract_and_frame_process.json": "bf662e28d838e8fd09fc3b604273010032687861cf7acc1df575b9418a7a556c",
+    "run_numpy__extract_only.jsonl": "628e22b259264092ca4993e8acda3f2b71d102c37c6597afab9a0dfbcb94c3e3",
+    "run_numpy__extract_only.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run_numpy__extract_only_process.json": "6db348741fa6cc56ad9078d339f9f51ffe1adf8a6826db5dc7fb4756c07cf2ff",
+    "started.json": "0b1b1e51f7c231a1c52a39869ccf3874f9e22bdfe9d84d77f1896d39a6352e9a",
+    "summary.json": "6f1cfb957f00b10ea0847d4b9957b51aa2277f42dee0fd709397928e585a1ff7"
+  }
+}

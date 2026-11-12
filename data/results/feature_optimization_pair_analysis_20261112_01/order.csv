@@ -1,0 +1,13 @@
+candidate,mode,first,pairs,mean_delta_ns,median_delta_ns,regressed,tied
+bigram_numpy,extract_only,reference,180,-23560707.222222224,-11504300.0,1,0
+bigram_numpy,extract_only,bigram_numpy,180,-23261525.0,-11891150.0,0,0
+bigram_numpy,extract_and_frame,reference,180,-23390718.333333332,-12274100.0,1,0
+bigram_numpy,extract_and_frame,bigram_numpy,180,-24921496.666666668,-12423950.0,0,0
+run_numpy,extract_only,reference,180,-20417770.0,-10028550.0,1,0
+run_numpy,extract_only,run_numpy,180,-20069754.444444444,-10217600.0,4,0
+run_numpy,extract_and_frame,reference,180,-19593737.222222224,-9456250.0,1,0
+run_numpy,extract_and_frame,run_numpy,180,-19367797.222222224,-9653950.0,1,0
+both_numpy,extract_only,reference,180,-46255577.777777776,-23258550.0,0,0
+both_numpy,extract_only,both_numpy,180,-46926673.88888889,-23846050.0,0,0
+both_numpy,extract_and_frame,reference,180,-44598632.222222224,-23204200.0,0,0
+both_numpy,extract_and_frame,both_numpy,180,-44642276.666666664,-22876700.0,0,0

@@ -1,0 +1,13 @@
+{
+  "returncode": 0,
+  "pid": 26100,
+  "command": [
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\research_log\\run_feature_pairs_20261111.py",
+    "--worker",
+    "bigram_numpy",
+    "extract_only",
+    "--output",
+    "C:\\Users\\s0109\\PycharmProjects\\smart_compression_research\\data\\results\\feature_optimization_pair_20261112_01"
+  ]
+}
