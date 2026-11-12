@@ -1,0 +1,60 @@
+{
+  "plan_id": "exact_numpy_full_pipeline_triplets_v1_20261112",
+  "status": "predeclared_plan_not_results_or_adoption",
+  "freeze_root": "data/results/pipeline_pair_plan_20261112_01",
+  "future_result_root": "data/results/pipeline_pairs_20261112_01",
+  "future_artifact_root": "data/temp/pipeline_pairs_20261112_01",
+  "prior_analysis": "data/results/feature_optimization_pair_analysis_20261112_01/analysis.json",
+  "prior_run": "data/results/feature_optimization_pair_20261112_01",
+  "reference_study": "data/results/usage_candidate_study_20261031_01",
+  "scenario_freeze": "research_log/usage_scenarios_frozen_20261031.json",
+  "arms_in_order": ["reference", "both_numpy", "fixed_zstd"],
+  "scope": "All sixty previously explored development files and every one of the eighteen unchanged candidate models. This is a resident-model research-package-engine comparison, not official CLI/GUI deployment or final holdout evaluation.",
+  "implementation": {
+    "reference": "Use the frozen execute_pipeline behavior from run_usage_model_study_20261031.py, with the frozen original feature extractor and unchanged frame factory/codecs/config.",
+    "candidate": "Identical engine with only the extract_features binding replaced by the locked both_numpy namespace. No helper changes, caches, prediction substitution, model changes or refit.",
+    "fixed_zstd": "Same engine with model=None; no feature extraction or inference. Run freshly in every triplet, not reused from historical measurements.",
+    "namespace": "Load separate engine namespaces before timing; permit injection only of the selected extraction binding and the existing frozen frame factory. Preserve read/hash, codec, package schema, verification and write behavior. Freeze implementation source hashes after fixture validation and commit them before corpus execution.",
+    "smart_contract": "For model arms, compute fresh pre-compression features and model.predict(frame), then execute only that selected compressor. Frozen predictions are assertions after prediction, never execution shortcuts. No benchmark or four-codec search inside Smart arms."
+  },
+  "schedule": {
+    "seed": 20261112,
+    "worker": "One fresh subprocess per scenario/model, in original training.json models order. All three arms share that resident model and process. No concurrent timing workers.",
+    "warmup_triplets_per_file": 1,
+    "measured_triplets_per_file": 6,
+    "rounds": "round_index=0 is warmup; 1..6 measured. File base order is (origin_group_id,sample_id); shuffle a fresh copy with random.Random(seed+1000*worker_index+round_index).",
+    "permutations": "Lexicographic itertools.permutations(arms_in_order) in that explicit arm order, not alphabetical sorting. For file base index b, worker w, measured round r, permutation index=(b+w+r-1)%6; warmup uses (b+w)%6.",
+    "balance": "Each file sees all six permutations once; every arm is first/second/third twice and precedes every other arm three times. Every worker/round has ten files in each permutation. Each triplet runs its three full compression-and-restoration trials consecutively.",
+    "reason": "Six repeats balance three-arm order; official five-repeat codec benchmark settings are unchanged."
+  },
+  "timing": {
+    "clock": "time.perf_counter_ns",
+    "compression_ns": "Start immediately before reading original; include input read/hash, fresh features/frame, inference, one compression, compression-side decompression and equality, payload hash, payload/manifest encoding and writes; stop after both files close.",
+    "restoration_ns": "Start before saved manifest/payload reads; include payload hash, one decompression, size/hash verification, restored-directory mkdir and restored-file write/close. Stop before the final independent saved-byte comparison, matching the frozen engine.",
+    "outside": "Imports, model load/hash/deserialization, gates, prepared per-trial output directory mkdir, raw-record writes and final saved-byte audit. Model load is excluded from all arms' resident-model latency and no cold-start benefit is claimed.",
+    "instrumentation": "Preserve existing feature_ns and prediction_ns timers within compression_ns. Do not add new inner timers or derive component times by subtracting historical measurements. Record outer trial start/end ns to verify sequential arms; label those spans separately from compression/restoration metrics.",
+    "environment": "Record actual execution Python/packages/OS/timer info, source/model/config hashes, Git HEAD, ordinary GC/priority/affinity and reported power/concurrent events or unknowns. Do not change these per arm; warmup and OS caching remain limitations.",
+    "storage": "Use exclusive new per-slot directories of equal structural depth with arm labels outside package contents. No overwrites, fsync, deletion during measurement or reuse of saved outputs. Preserve every warmup and measured package/restored file for subsequent audit."
+  },
+  "gates": {
+    "before_timing": "Check committed plan and implementation locks, all protected hashes and exact runtime versions; verify full original input hashes; compare reference and both_numpy exact ordered builtin features/float.hex/frame and all 1080 frozen model decisions/class probabilities/confidence per arm. Verify model classes/settings and original model hashes. No training.",
+    "per_trial": "Assert actual algorithm equals frozen prediction (or zstd); verified=True, positive integer durations, source/input hashes. Reference and candidate must have identical payload bytes and manifest bytes and package_bytes for each triplet; fixed zstd bytes must be invariant across trials. All restored bytes must equal the original. Keep canonical pre-timing gate evidence; do not add feature canonicalization inside measured engine calls.",
+    "after": "Independent saved-record verifier reconstructs full schedule, timer arithmetic/order, process exit codes, every package/manifest/restored hash and bytes, exact gate coverage and all aggregate formulae. Recheck all protected files. No success claim on incomplete/failure runs.",
+    "resources": "Before creating result output, estimate output bytes from preserved previous package sizes and original lengths for every scheduled arm; record free disk and require at least twice that estimate plus 1 GiB. This is a resource estimate, not a bound or measured new result; failure/space shortage is preserved without deleting old artifacts."
+  },
+  "statistics": {
+    "cost": "For each fresh trial J=ks*H*package_bytes+kc*(compression_ns/1000000)+kd*N*(restoration_ns/1000000). Copy all nine expanded frozen policies exactly; policy points are hypothetical, not currency or CPU/energy. Never multiply raw ns by per-ms coefficients.",
+    "primary_optimization": "Within each measured triplet compute (candidate.compression_ns-reference.compression_ns)/reference.compression_ns. Take six-triplet median per file, then within-origin-group mean, equal-origin mean per scenario/model, then equal mean of all eighteen conditions. Negative is lower resident compression-path latency on this development corpus. Report the unnormalized paired ns differences too.",
+    "per_condition_cost": "For every scenario/model independently compute J(both_numpy)-J(reference), J(both_numpy)-J(fixed_zstd), and J(reference)-J(fixed_zstd) within each measured triplet. Six-triplet median per file -> within-origin mean -> equal-origin mean. Never pool raw policy points across scenarios or choose a favorable model/scenario afterward.",
+    "secondary": "All arm file medians, paired compression/restoration/total latency deltas and ratios, package sizes, cost ratios/savings, exact ties and regressions; all-file/format/origin/fixed size bins <=64KiB,(64,256]KiB,>256KiB; all six order permutations and arm positions. Keep all files and warmups, exclude warmups only from main summaries.",
+    "pooled_ratio": "Within each scenario/model compute sum(file six-trial median reference metric)/sum(file six-trial median candidate metric) for latency or trial J; use medians of trial J, not J of independently medianed components. Report 100*(reference_sum-candidate_sum)/reference_sum and specify the compared reference arm.",
+    "decision": "Optimization propagation is supported only if every exact/schedule/storage gate passes and primary_optimization is strictly negative. For each of all eighteen conditions, report cheaper_than_fixed_zstd only when its equal-origin paired J(candidate)-J(zstd) is strictly negative AND its pooled sum(file-median J(candidate))/sum(file-median J(zstd)) is strictly below one. Otherwise record no demonstrated gain or tie. No automatic production adoption; any mixed/worse conditions remain visible.",
+    "limits": "Descriptive development comparison only. No p-values/significance/population inference, minimum non-zstd share, post-hoc coefficient tuning or extrapolation of isolated feature speedup. Final evaluation requires previously unused origin groups after freezing the system."
+  },
+  "preservation": {
+    "raw": "Every schedule slot/order/warmup, trial timers and package path/hash/bytes, process record, canonical feature/frame and prediction gates, runtime/source/model/config hashes, start/completion/failure metadata and descriptive tables.",
+    "failure": "Flush each completed/failed arm immediately; abort without retries/fallbacks. Preserve partial triplets and interruption/exception. Fresh attempts require new result/artifact paths and the full unchanged schedule, never successful-slot merging.",
+    "unchanged": "Existing official source/config/models/labels, candidate models and prior results remain immutable. Memory remains deferred validation_only with no new measurements."
+  },
+  "next_step": "Commit plan/freeze, then implement isolated engine/worker/controller and independent auditor; validate synthetic exactness, codec-call counts, both error paths and tamper/partial-run rejection; commit source lock before fresh whole-corpus execution."
+}

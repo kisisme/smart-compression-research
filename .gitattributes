@@ -117,3 +117,9 @@
 /tests/test_feature_pair_analysis.py -text
 /data/results/feature_optimization_pair_20261112_01/** -text
 /data/results/feature_optimization_pair_analysis_20261112_01/** -text
+
+/research_log/pipeline_pair_plan_20261112.json -text
+/research_log/pipeline_pair_design_20261112.md -text
+/research_log/prepare_pipeline_pair_plan_20261112.py -text
+/research_log/verify_pipeline_pair_plan_20261112.py -text
+/data/results/pipeline_pair_plan_20261112_01/** -text

@@ -1,0 +1,1050 @@
+[
+  {
+    "scenario_id": "archive_t0p1",
+    "kind": "decision_tree",
+    "file": "training/archive_t0p1__decision_tree.pkl",
+    "sha256": "6c9c59997ebb96bf6ccb7494b975dbf7730b891eab3605bb127a50a624a7cdb3",
+    "classes": [
+      "bz2",
+      "gzip",
+      "lzma",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.900990099009901,
+      "macro_f1": 0.55905568056002,
+      "confusion_matrix": [
+        [
+          4,
+          2,
+          0,
+          3
+        ],
+        [
+          3,
+          33,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          145
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "archive_t0p1",
+    "kind": "random_forest",
+    "file": "training/archive_t0p1__random_forest.pkl",
+    "sha256": "a09fe0a031739d49bb6ebfc47a0220970e9960dbb485de4ec9770bedcf361a76",
+    "classes": [
+      "bz2",
+      "gzip",
+      "lzma",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9108910891089109,
+      "macro_f1": 0.4544711824123589,
+      "confusion_matrix": [
+        [
+          0,
+          4,
+          0,
+          5
+        ],
+        [
+          0,
+          38,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          5,
+          0,
+          146
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "archive_t1",
+    "kind": "decision_tree",
+    "file": "training/archive_t1__decision_tree.pkl",
+    "sha256": "6fefa185c26b1ad37c36c0c9dc8a31286600ddbe37c9fa7942ffd09667d54457",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          202
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "archive_t1",
+    "kind": "random_forest",
+    "file": "training/archive_t1__random_forest.pkl",
+    "sha256": "b757fbed92ca3c9ea7cffc0dcc893cf3cdd8ec01b333bdd5a5f1a1473996dc1b",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          202
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "archive_t10",
+    "kind": "decision_tree",
+    "file": "training/archive_t10__decision_tree.pkl",
+    "sha256": "515e537ea7c593550cf74ee65633b44365ee589d74570d58813bed111f87258f",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          202
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "archive_t10",
+    "kind": "random_forest",
+    "file": "training/archive_t10__random_forest.pkl",
+    "sha256": "56f308cca10a716827cf6a4339fc645061fc848584a57f7b1fbc60d266b6aff3",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 1.0,
+      "macro_f1": 0.25,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          202
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t0p1",
+    "kind": "decision_tree",
+    "file": "training/balanced_t0p1__decision_tree.pkl",
+    "sha256": "bf168230a384a50c21710238e15ca0d1a771a49e92352e49df58936be2eb2003",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9603960396039604,
+      "macro_f1": 0.24494949494949494,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          194
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t0p1",
+    "kind": "random_forest",
+    "file": "training/balanced_t0p1__random_forest.pkl",
+    "sha256": "e8f3c0c6630da65cbdfebb753dae9c42789b6241f19c66c637991653a0c56eb9",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9653465346534653,
+      "macro_f1": 0.2455919395465995,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          195
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t1",
+    "kind": "decision_tree",
+    "file": "training/balanced_t1__decision_tree.pkl",
+    "sha256": "654cddf9c4c5c8e580d8561663f65ab6236719d5d09b16312606a58776f3f452",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9306930693069307,
+      "macro_f1": 0.24102564102564103,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          188
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t1",
+    "kind": "random_forest",
+    "file": "training/balanced_t1__random_forest.pkl",
+    "sha256": "43b2de2031d4077b0b9f607f67dbda899436de9fb3dea4c3ab6a5bf62aca7065",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9554455445544554,
+      "macro_f1": 0.24430379746835443,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          193
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t10",
+    "kind": "decision_tree",
+    "file": "training/balanced_t10__decision_tree.pkl",
+    "sha256": "e7f9611741e82d415e06dfcbf2c176fb983aa7d80c52f3f6c449b3c385583546",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9455445544554455,
+      "macro_f1": 0.2430025445292621,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          191
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "balanced_t10",
+    "kind": "random_forest",
+    "file": "training/balanced_t10__random_forest.pkl",
+    "sha256": "488767021cfe549c92461b64027598f260b891cb3e1898d2931935fea77b8868",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9603960396039604,
+      "macro_f1": 0.24494949494949494,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          194
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t0p1",
+    "kind": "decision_tree",
+    "file": "training/fast_access_t0p1__decision_tree.pkl",
+    "sha256": "d12dc898f33f47d5ffa0d0b9dab8c1aa7b2e46958e12e3df30d98cd0d5623e18",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9158415841584159,
+      "macro_f1": 0.3187862796833773,
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          11
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          181
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t0p1",
+    "kind": "random_forest",
+    "file": "training/fast_access_t0p1__random_forest.pkl",
+    "sha256": "46d6685053f2a0ca577f6475683a3079c5de9e0c9ea0a88021c776eadb2d2b43",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9158415841584159,
+      "macro_f1": 0.26527682843472317,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          14
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          184
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t1",
+    "kind": "decision_tree",
+    "file": "training/fast_access_t1__decision_tree.pkl",
+    "sha256": "f29075ddbbfeb19d5201f61fc9eefc43b276debadfbf84963247e18da49db654",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9207920792079208,
+      "macro_f1": 0.3077106139933365,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          183
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t1",
+    "kind": "random_forest",
+    "file": "training/fast_access_t1__random_forest.pkl",
+    "sha256": "a6ec2ac46d726885c8249bbae96dd91c59ee4b4756ee36cfe23088e6f5d89ca1",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9207920792079208,
+      "macro_f1": 0.28958333333333336,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          184
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t10",
+    "kind": "decision_tree",
+    "file": "training/fast_access_t10__decision_tree.pkl",
+    "sha256": "f29075ddbbfeb19d5201f61fc9eefc43b276debadfbf84963247e18da49db654",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "development_metrics": {
+      "accuracy": 0.9207920792079208,
+      "macro_f1": 0.3077106139933365,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          183
+        ]
+      ]
+    }
+  },
+  {
+    "scenario_id": "fast_access_t10",
+    "kind": "random_forest",
+    "file": "training/fast_access_t10__random_forest.pkl",
+    "sha256": "a6ec2ac46d726885c8249bbae96dd91c59ee4b4756ee36cfe23088e6f5d89ca1",
+    "classes": [
+      "gzip",
+      "zstd"
+    ],
+    "parameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "development_metrics": {
+      "accuracy": 0.9207920792079208,
+      "macro_f1": 0.28958333333333336,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          184
+        ]
+      ]
+    }
+  }
+]

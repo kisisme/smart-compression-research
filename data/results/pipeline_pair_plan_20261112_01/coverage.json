@@ -1,0 +1,12 @@
+{
+  "files": 60,
+  "origins": 18,
+  "conditions": 18,
+  "policies": 9,
+  "permutations": 6,
+  "planned_measured_triplets": 6480,
+  "planned_measured_trials": 19440,
+  "planned_warmup_triplets": 1080,
+  "planned_warmup_trials": 3240,
+  "planned_prediction_checks_per_model_arm": 1080
+}

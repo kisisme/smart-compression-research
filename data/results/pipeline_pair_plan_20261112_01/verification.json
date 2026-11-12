@@ -1,0 +1,34 @@
+{
+  "status": "pipeline_plan_grid_schedule_and_preservation_verified",
+  "at_utc": "2026-11-12T12:37:52.708496+00:00",
+  "verifier_sha256": "eec45270b30dd2831823290176c053110a2e78da31049d583a3a997c66e081a1",
+  "freeze_sha256": "a756c7d306a24ee8b2b7aad34b47ef31ac20592a25c1dbe36fa65b81c073b203",
+  "coverage": {
+    "files": 60,
+    "origins": 18,
+    "conditions": 18,
+    "policies": 9,
+    "permutations": 6,
+    "planned_measured_triplets": 6480,
+    "planned_measured_trials": 19440,
+    "planned_warmup_triplets": 1080,
+    "planned_warmup_trials": 3240,
+    "planned_prediction_checks_per_model_arm": 1080
+  },
+  "protected_files": 571,
+  "resource_estimate_verified": true,
+  "corpus_bytes_read": false,
+  "model_execution": false,
+  "measurement_executed": false,
+  "checks": [
+    "Full original corpus and model/policy grid",
+    "All old/frozen artifact hashes",
+    "Exact seeded round/file/permutation order",
+    "Six orders per file",
+    "Two slots per position",
+    "Three precedences in each direction",
+    "Historical-only resource formula",
+    "No execution claims",
+    "Document links"
+  ]
+}

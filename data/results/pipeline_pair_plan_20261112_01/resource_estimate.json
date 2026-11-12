@@ -1,0 +1,7 @@
+{
+  "estimated_payload_manifest_restored_bytes": 2711319114,
+  "minimum_free_disk_bytes": 6496380052,
+  "free_disk_bytes_at_plan": 44167028736,
+  "source_raw_sha256": "8fbd28e8291c8f8ced32890ce56fca2916c6b9b6831a1fee30ee704421a053ca",
+  "scope": "Computed from existing file lengths and package sizes, not new output measurements; excludes filesystem/record overhead. Recheck actual free space before execution."
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "archive_t0p1",
+    "profile": "archive",
+    "time_multiplier": "0.1",
+    "policy": {
+      "retention_days": "365",
+      "expected_restorations": "1",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "0.1",
+      "decompression_cost_per_ms": "0.1"
+    }
+  },
+  {
+    "id": "archive_t1",
+    "profile": "archive",
+    "time_multiplier": "1",
+    "policy": {
+      "retention_days": "365",
+      "expected_restorations": "1",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "1",
+      "decompression_cost_per_ms": "1"
+    }
+  },
+  {
+    "id": "archive_t10",
+    "profile": "archive",
+    "time_multiplier": "10",
+    "policy": {
+      "retention_days": "365",
+      "expected_restorations": "1",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "10",
+      "decompression_cost_per_ms": "10"
+    }
+  },
+  {
+    "id": "balanced_t0p1",
+    "profile": "balanced",
+    "time_multiplier": "0.1",
+    "policy": {
+      "retention_days": "30",
+      "expected_restorations": "30",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "0.1",
+      "decompression_cost_per_ms": "0.1"
+    }
+  },
+  {
+    "id": "balanced_t1",
+    "profile": "balanced",
+    "time_multiplier": "1",
+    "policy": {
+      "retention_days": "30",
+      "expected_restorations": "30",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "1",
+      "decompression_cost_per_ms": "1"
+    }
+  },
+  {
+    "id": "balanced_t10",
+    "profile": "balanced",
+    "time_multiplier": "10",
+    "policy": {
+      "retention_days": "30",
+      "expected_restorations": "30",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "10",
+      "decompression_cost_per_ms": "10"
+    }
+  },
+  {
+    "id": "fast_access_t0p1",
+    "profile": "fast_access",
+    "time_multiplier": "0.1",
+    "policy": {
+      "retention_days": "1",
+      "expected_restorations": "100",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "0.1",
+      "decompression_cost_per_ms": "0.1"
+    }
+  },
+  {
+    "id": "fast_access_t1",
+    "profile": "fast_access",
+    "time_multiplier": "1",
+    "policy": {
+      "retention_days": "1",
+      "expected_restorations": "100",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "1",
+      "decompression_cost_per_ms": "1"
+    }
+  },
+  {
+    "id": "fast_access_t10",
+    "profile": "fast_access",
+    "time_multiplier": "10",
+    "policy": {
+      "retention_days": "1",
+      "expected_restorations": "100",
+      "storage_cost_per_byte_day": "0.00000095367431640625",
+      "compression_cost_per_ms": "10",
+      "decompression_cost_per_ms": "10"
+    }
+  }
+]
